@@ -24,7 +24,7 @@ header {
   height: 25;
   margin: 0 auto;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
   padding-top: 10px;
 }
 
@@ -514,12 +514,9 @@ select,
 
 
 
-@media only screen and (max-width: 1750px) {
-  .efecto-HOVER-cuentaDesplegable {
+@media only screen and (max-width: 982px) {
+  .cuenta_botom {
     display: none;
-    position: absolute;
-    left: -200px;
-
   }
 }
 

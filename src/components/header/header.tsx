@@ -10,7 +10,7 @@ export default component$(() => {
 
   return (
     <header>
-      <div class="container-cajas-header ">
+      <div class="container container-cajas-header ">
         <div class="cajas">
           <a href="/" class="logo" aria-label="Douvery">
             <DouveryLogo />
@@ -69,13 +69,11 @@ export default component$(() => {
               <div class="badget-circle">1</div>
             </a>
             <DouveryUser />
-            <div class="Cuenta-desplegable">
-              <div class="cuenta_botom">
-                <a class="title-desplg" href="/signin">
-                  <span class="wl-hi">¡Hola! </span>
-                  <h4 class="pointer">Registrate</h4>
-                </a>
-              </div>
+            <div class="cuenta_botom">
+              <a class="title-desplg" href="/signin">
+                <span class="wl-hi">¡Hola! </span>
+                <h4 class="pointer">Registrate</h4>
+              </a>
             </div>
           </div>
         </div>

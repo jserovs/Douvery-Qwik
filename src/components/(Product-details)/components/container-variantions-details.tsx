@@ -14,8 +14,8 @@ export default component$(({ props }: any) => {
             {val.nameVariation}
             <size-w class="size-w-10" />
             <div class="container-variation-cont-most">
-              {val.productVariation.map((val: any) => (
-                <CardProductVariations1 dui={val} slug={props} />
+              {val.productVariation.map((valle: any) => (
+                <CardProductVariations1 dui={valle} slug={props} />
               ))}
             </div>
           </div>
