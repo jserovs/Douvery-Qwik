@@ -1,0 +1,52 @@
+.c-vrt-usr {
+
+    border-radius: 10px;
+    BACKGROUND-COLOR: var(--backgroundColor);
+
+}
+
+/**NO CONECTS **/
+
+.gif-user {
+    object-fit: contain;
+    width: 100%;
+    height: 150px;
+
+}
+
+.user-parece {
+
+
+    width: 80%;
+    color: var(--text2);
+    font-weight: var(---font-weight-lg);
+    opacity: 100%;
+
+    font-size: 13px;
+
+
+
+}
+
+.box-user {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+@media only screen and (max-width: 1025px) {
+    .c-vrt-usr {
+        display: none;
+    }
+
+    .user-parece {
+        margin: 0 auto;
+        width: 80%;
+        font-size: 12px;
+    }
+
+}

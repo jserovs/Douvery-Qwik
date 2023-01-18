@@ -1,0 +1,545 @@
+header {
+  position: relative;
+  width: 100%;
+  height: 5rem;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--primary-color);
+  padding: 28px 9.5%;
+  transition: all 0.5s ease;
+}
+
+
+
+
+.container-cajas-header {
+  display: grid;
+  grid-template-columns: AUTO 80% AUTO;
+  width: 100%;
+  height: 25;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: left;
+  padding-top: 10px;
+}
+
+.cajas {
+
+  margin: 10px;
+  padding-top: 0px;
+  justify-content: center;
+  float: left;
+}
+
+
+
+
+
+.badget-circle {
+  position: absolute;
+  width: 17px;
+  max-width: 20px;
+  height: 18px;
+  background-color: #e84118;
+  border-radius: 100%;
+  top: 25px;
+  margin-left: 13px;
+  opacity: 0.9;
+  font-size: 13px;
+  text-align: center;
+}
+
+.badget-circle:hover {
+  color: aliceblue;
+
+}
+
+.main:hover {
+
+  color: aliceblue;
+
+
+}
+
+select {
+  /* Reset Select */
+  appearance: none;
+  outline: 0;
+  border: 0;
+  box-shadow: none;
+  /* Personalize */
+  flex: 1;
+  outline: none;
+  color: var(--text2);
+  font-size: 14px;
+  font-weight: 400;
+
+  background-color: transparent;
+  border-right: 1px solid var(--border-1);
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+
+/* Custom Select wrapper */
+.select {
+  position: relative;
+  display: flex;
+  width: 8em;
+
+
+
+  overflow: hidden;
+  margin-right: 5px;
+}
+
+
+
+select,
+.select:after {
+  grid-area: select;
+}
+
+/* Arrow */
+.select::after {
+  content: '';
+  width: 1;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid var(--text1);
+  position: absolute;
+  right: 10px;
+  top: calc(50% - 2.5px);
+  pointer-events: none;
+  z-index: 3;
+}
+
+
+
+/* Transition */
+.select:hover::after {
+  color: #050007;
+}
+
+.search {
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  position: relative;
+  display: flex;
+  width: 100%;
+  border: 1px solid #ffff;
+  background-color: #ffff;
+  border-right: none;
+  padding: 2px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  font-size: 15px;
+  font-weight: 400;
+  padding-left: 5px;
+
+}
+
+::placeholder {
+  color: #9e9e9e;
+}
+
+
+
+.searchButton {
+  border: 1px solid #ffff;
+  padding-top: 5px;
+  color: #fff;
+  width: 4%;
+  background-color: #F0F0F0;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+  padding-left: 10px;
+
+}
+
+
+
+/*Resize the wrap to see the search bar change!*/
+
+/*Resize the wrap to see the search bar change!*/
+.wrap {
+  position: absolute;
+  right: 48%;
+  transform: translate(48%, -40%);
+}
+
+
+.main {
+  display: flex;
+  align-items: center;
+  padding: 10;
+}
+
+.main a {
+  margin-right: 15px;
+  margin-left: 10px;
+  color: var(--white);
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.5s ease;
+}
+
+.wl-hi {
+  font-weight: 400;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+}
+
+.user i {
+  color: var(--white);
+  font-size: 28px;
+  margin-right: 7px;
+}
+
+.main a:hover {
+  color: var(--white);
+}
+
+#menu-icon {
+  font-size: 35px;
+  color: var(--white);
+  cursor: pointer;
+  z-index: 10001;
+  display: none;
+}
+
+
+.cuenta_botom {
+
+  width: 50px;
+  height: 50px;
+  position: relative;
+  right: 10px;
+  text-align: center;
+
+}
+
+
+
+.cuenta_botom a {
+  text-decoration: none;
+  color: #fff;
+  cursor: context-menu;
+  font-size: 14px;
+  position: relative;
+  top: 5px;
+  font-weight: 100;
+
+
+
+
+}
+
+
+.cuenta_botom h4 {
+  color: var(--white);
+  font-weight: var(--font-weight-sm);
+  text-transform: capitalize;
+  position: absolute;
+  left: 0px;
+
+}
+
+.Cuenta-desplegable {
+  position: relative;
+  width: 0px;
+  height: 30px;
+  margin: auto;
+  bottom: 7px;
+  left: 8px;
+
+
+
+}
+
+
+.d-flex {
+  position: relative;
+  top: 2PX;
+}
+
+
+.efecto-HOVER-cuentaDesplegable {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  color: #000;
+  min-width: 300px;
+  height: 390px;
+  z-index: 100000;
+  border-radius: 3%;
+
+  top: 45px;
+  left: -100px;
+  right: -100px;
+
+
+
+}
+
+.msg-bienv {
+  margin-left: 30px;
+}
+
+
+
+.efecto-HOVER-cuentaDesplegable .titulo_cajaCuentas {
+  position: relative;
+  text-align: center;
+
+
+  left: 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  color: #0B347B;
+  font-family: 'Open Sans', sans-serif;
+  opacity: 90%;
+  letter-spacing: 0.5px;
+}
+
+
+.efecto-HOVER-cuentaDesplegable h5 {
+  position: relative;
+  width: 80%;
+  text-align: left;
+  padding: 0px 0 0px 0;
+  top: 15px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 100;
+  color: #6b7c93;
+
+
+}
+
+.efecto-HOVER-cuentaDesplegable .iconify {
+  position: relative;
+  top: 15px;
+  left: 12px;
+}
+
+
+.CJAS-DESPLEGABLE {
+  display: flex;
+
+}
+
+.CJAS-DESPLEGABLE-adm {
+  display: flex;
+
+}
+
+.lISTA_CJAS-DESPLEGABLE {
+  position: relative;
+  top: 30px;
+  right: 13px;
+
+}
+
+.lISTA_CJAS-DESPLEGABLE h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  color: #0B347B;
+  opacity: 85%;
+
+  text-align: left;
+  align-items: left;
+
+}
+
+.lISTA_CJAS-DESPLEGABLE li {
+
+  font-size: 10px;
+  font-weight: 100;
+  color: #0B347B;
+  list-style: none;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 5px;
+
+  text-align: left;
+  align-items: left;
+}
+
+.lISTA_CJAS-DESPLEGABLE li a {
+
+
+  text-decoration: none;
+  color: #6b7c93;
+  font-size: 13px;
+  font-weight: 100;
+  list-style: none;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 5px;
+
+  text-align: left;
+  align-items: left;
+}
+
+.lISTA_CJAS-DESPLEGABLE li a:hover {
+  color: #0B347B;
+}
+
+
+
+.cjas_articulosFav_MisPedidos_CerrarSension {
+  margin-top: 30px;
+  width: 100%;
+  height: 150px;
+  background-color: #f5f9f9f9;
+
+
+  border-radius: 3%;
+
+}
+
+.cjas_articulosFav_MisPedidos_CerrarSension .CAJAS_CONTENDORAS_diferente-UBI {
+  width: 100%;
+  height: 25px;
+
+  position: relative;
+  top: 15px;
+  margin-bottom: 15px;
+
+}
+
+.cjas_articulosFav_MisPedidos_CerrarSension .CAJAS_CONTENDORAS_diferente-UBI a {
+  position: relative;
+  left: 20px;
+  font-family: 'Open Sans', sans-serif;
+  text-decoration: none;
+  font-weight: 700;
+  color: #0B347B;
+  opacity: 90%;
+  width: 0px;
+}
+
+.cjas_articulosFav_MisPedidos_CerrarSension .CAJAS_CONTENDORAS_diferente-UBI a i {
+  margin-right: 10px;
+  text-align: left;
+  align-items: left;
+}
+
+
+.CAJAS_CONTENDORAS_diferente-UBI a:hover {
+  opacity: 70%;
+}
+
+
+.une {
+  text-align: left;
+  align-items: left;
+}
+
+.une:hover {
+  opacity: 90%;
+
+}
+
+
+
+
+.Cuenta-desplegable:hover .efecto-HOVER-cuentaDesplegable {
+  display: block;
+}
+
+@media only screen and (max-width: 665px) {
+  header {
+    height: 7rem;
+    padding: 0px;
+  }
+
+
+
+  .logo {
+    position: absolute;
+    top: 10px;
+  }
+
+  .search {
+    position: relative;
+    display: flex;
+    top: 15px;
+  }
+
+  .searchTerm {
+    width: 100%;
+  }
+
+  .main {
+    position: absolute;
+    top: 10px;
+    margin: 5px;
+    right: 0;
+  }
+
+  .badget-circle {
+    position: absolute;
+
+    top: -5px;
+  }
+
+  .container-cajas-header {
+    display: grid;
+    grid-template-columns: 0 100% 0;
+  }
+
+  .cuenta_botom {
+    display: none;
+  }
+}
+
+
+
+@media only screen and (max-width: 1750px) {
+  .efecto-HOVER-cuentaDesplegable {
+    display: none;
+    position: absolute;
+    left: -200px;
+
+  }
+}
+
+@media only screen and (max-width: 1025px) {
+  .efecto-HOVER-cuentaDesplegable {
+    display: none;
+    position: absolute;
+
+    left: -220px;
+
+  }
+
+  .searchButton {
+
+    width: 10%;
+    background-color: #F0F0F0;
+
+  }
+
+
+}
+
+@media only screen and (max-width: 1250px) {}

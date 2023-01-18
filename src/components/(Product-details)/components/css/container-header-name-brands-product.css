@@ -1,0 +1,26 @@
+.super-container-title-brand-product {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: left;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 19px;
+    background-color: #ffffff;
+
+}
+
+.container-brand-product {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    justify-content: left;
+
+}
+
+.container-brand-product * {
+    color: var(--primary-color);
+    font-weight: var(--font-weight-sm);
+    font-size: 13px;
+
+}

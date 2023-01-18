@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.5s ease;
+}
+
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  --family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+
+  --primary-color: #0d47a1;
+  --secondary-color: #2c3e50;
+
+  --logo-secondary-color: #0d47a1;
+  --logo-secondary-color: #FBD316;
+
+  --downBackgroundColor: #f1f5f9;
+  --backgroundColor: #ffffff;
+  --backgroundCard: rgba(247, 248, 248, 0.952);
+
+  --button-pay-backgroundColor: #008080;
+  --button-cart-backgroundColor: #1a49ab;
+
+  --text0: rgba(0, 0, 0, .8);
+  --text1: rgba(0, 0, 0, .45);
+  --text2: #565959;
+  --text3: #333333;
+  --text4: #0f1111;
+
+  --blue-clear: #2185D5;
+  --blue: #0b347b;
+  --black: #212529;
+  --white: #ffffff;
+  --grey: #666666;
+  --orange: #e84118;
+  --green: #38E54D;
+  --violet: #1613d3;
+  --rose: #F8485E;
+  --red: #EE2B47;
+
+  --start-color: #FF2E4C;
+  --text-actions: rgb(22, 19, 211);
+
+
+  --border-1: #00000010;
+  --border-2: #00000018;
+  --border-3: #00000024;
+  --border-4: #d9d9d9;
+
+  --font-size-s: 10px;
+  --font-size-sm: 13px;
+  --font-size-md: 15px;
+  --font-size-mdl: 17.5px;
+  --font-size-l: 18px;
+  --font-size-lg: 18px;
+
+  --font-weight-sm: 400;
+  --font-weight-lg: 600;
+}
+
+
+body {
+  margin: 0 auto;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+input {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.App {
+  text-align: center;
+
+}
+
+main {
+  flex: 1;
+  min-height: 50rem;
+
+}
+
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+  font-size: 15px;
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  text-decoration: none;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.size-w-10 {
+  width: 10px;
+}
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text3);
+  margin: 0;
+
+}
+
+p {
+  color: var(--text3);
+  margin: 0;
+}
+
+
+html {
+  min-height: 100%;
+  background-color: var(--downBackgroundColor);
+}
+
+*,
+button,
+input {
+  border: 0;
+  background-color: none;
+  font-size: var(--family);
+}
+
+.tach {
+  text-decoration: line-through;
+
+}
+
+.envio {
+  font-size: var(--font-size-sm);
+  color: var(--blue-clear);
+  font-weight: var(--font-weight-lg);
+
+}
+
+.margin-left {
+  margin-left: 10px
+}
+
+.eftHover:hover {
+  opacity: 1;
+  background-color: #01050a04;
+}

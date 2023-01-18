@@ -1,0 +1,7 @@
+.carousel {
+
+
+    height: 150px;
+    background-color: var(--backgroundColor);
+    border-radius: 10px;
+}

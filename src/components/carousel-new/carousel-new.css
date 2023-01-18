@@ -1,0 +1,61 @@
+.ct-crousel-new {
+    width: 95%;
+    margin-top: 10PX;
+    margin-left: 30PX;
+    display: grid;
+    grid-template-columns: 150PX auto;
+    align-items: center;
+    height: 250px;
+    border-radius: 10px;
+    padding: 1px;
+    background-color: var(--backgroundColor);
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 3px 5px;
+}
+
+
+.ct-ttl-new {
+    display: grid;
+    width: 90%;
+    height: 220px;
+    border-radius: 10px;
+    background-color: #C70039;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+    margin-left: 10px;
+}
+
+.ct-ttl-new p {
+
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    position: relative;
+    font-weight: 400;
+    padding-top: 2px;
+
+
+
+}
+
+.ct-ttl-new a {
+    color: rgb(255, 255, 255);
+    font-size: 1em;
+    font-weight: 500;
+    position: relative;
+    margin-left: 8px;
+    padding-top: 20px;
+}
+
+@media only screen and (max-width: 1025px) {
+    .ct-crousel-new {
+        width: 100%;
+        margin-top: 10PX;
+        margin-left: 0px;
+        display: grid;
+
+
+
+
+    }
+}
