@@ -1,8 +1,7 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './css/container-datails.css?inline';
 import { Stars } from '~/components/Ratings/stars/stars';
-import { DouveryCart } from '~/components/icons/cart';
-import { DouveryPayIconBTC } from '~/components/icons/pay-icon-btc';
+import { ContainerButtonDetails } from './container-button-details';
 
 export default component$(({ props }: any) => {
   useStylesScoped$(styles);
@@ -31,7 +30,7 @@ export default component$(({ props }: any) => {
               {props.discount === 0 ? <>Precio :</> : <>Ahora :</>}
             </h5>
             <size-w class="size-w-10" />
-            <h4>
+            <h4 class="font-price-mobiles">
               {' '}
               $
               {props.discount === 0 ? (
@@ -46,12 +45,17 @@ export default component$(({ props }: any) => {
           ) : (
             <>
               <div class="price-descount-table-mobiles">
-                <h5 class="tach price-tach"> ${props.price.toFixed(2)} </h5>
+                <h5 class="tach price-tach price-tach-mobiles">
+                  {' '}
+                  ${props.price.toFixed(2)}{' '}
+                </h5>
                 <size-w class="size-w-10" />
-                <h6 class="porce">
-                  -%
-                  {props.discount}
-                </h6>
+                <div class="ctr-porce-mobiles">
+                  <h6 class="porce-mobiles  ">
+                    -%
+                    {props.discount}
+                  </h6>
+                </div>
               </div>
             </>
           )}
@@ -63,6 +67,7 @@ export default component$(({ props }: any) => {
             <></>
           )}
         </div>
+
         <div class="container-NavAggPayProduct-web">
           <Stars props={totalRating} />{' '}
           <div class="ct-ratig">
@@ -103,22 +108,7 @@ export default component$(({ props }: any) => {
           <size-w class="size-w-10" />
           <size-w class="size-w-10" />
           <button class="button-envio">Envio gratis</button>
-          <size-w class="size-w-10" />
-          {props.quantity <= 1 ? (
-            <></>
-          ) : (
-            <>
-              <size-w class="size-w-10" />{' '}
-              <button class="buttonCart">
-                <DouveryCart size="20px" /> Añadir al carrito
-              </button>
-              <size-w class="size-w-10" />{' '}
-              <button class="buttonPay">
-                {' '}
-                <DouveryPayIconBTC size="20" /> Pagar
-              </button>
-            </>
-          )}
+          <ContainerButtonDetails props={props} />
         </div>
       </div>
     </>

@@ -1,0 +1,75 @@
+.button-lapto {
+    display: flex;
+}
+
+.buttonCart {
+    display: grid;
+    grid-template-columns: 0.3fr 1fr;
+
+    min-width: 150px;
+    background-color: var(--button-cart-backgroundColor);
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 7px 15px 7px 15px;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.buttonCart:hover {
+    color: #fff;
+    opacity: 90%;
+    border-color: #0a58ca;
+}
+
+.buttonPay {
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
+
+    min-width: 150px;
+    background-color: var(--button-pay-backgroundColor);
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 7px 15px 7px 15px;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.buttonPay:hover {
+    color: #fff;
+    opacity: 90%;
+    border-color: #0a58ca;
+}
+
+.buttom-mobiles {
+    display: none
+}
+
+
+
+@media only screen and (max-width: 885px) {
+
+    .button-lapto {
+        display: none;
+    }
+
+    .button-mobiles {
+        margin-top: 5px;
+        padding: 10px 0px 10px 0px;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        background-color: var(--backgroundColor);
+    }
+
+
+
+
+}
