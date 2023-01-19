@@ -68,8 +68,16 @@
     display: none;
 }
 
+.buttons-mobiles {
+    display: none;
+}
+
 
 @media only screen and (max-width: 885px) {
+    .buttons-mobiles {
+        display: block;
+    }
+
     .container-img-product {
         display: none;
     }
