@@ -36,7 +36,9 @@ export const ContainerViewsIMGDetails = component$(({ props }: any) => {
           <ContainerVariantionsDetails props={props} />
         )}
 
-        <ContainerButtonDetails props={props} />
+        <div class="buttons-mobiles">
+          <ContainerButtonDetails props={props} />
+        </div>
       </div>
     </div>
   );
