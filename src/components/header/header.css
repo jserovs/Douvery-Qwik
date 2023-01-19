@@ -82,7 +82,9 @@ select {
   background-color: transparent;
   border-right: 1px solid var(--border-1);
   cursor: pointer;
+  display: grid;
   text-align: center;
+  justify-content: center;
 }
 
 /* Remove IE arrow */
@@ -95,18 +97,24 @@ select::-ms-expand {
   position: relative;
   display: flex;
   width: 8em;
-
+  text-align: center;
 
 
   overflow: hidden;
   margin-right: 5px;
 }
 
+select option {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+}
 
 
 select,
 .select:after {
   grid-area: select;
+
 }
 
 /* Arrow */
@@ -122,6 +130,7 @@ select,
   top: calc(50% - 2.5px);
   pointer-events: none;
   z-index: 3;
+
 }
 
 
@@ -155,6 +164,7 @@ select,
 
 .searchTerm input {
   padding: 6px;
+
 }
 
 ::placeholder {
@@ -479,7 +489,9 @@ select,
     padding: 0px;
   }
 
-
+  .select {
+    width: 5em;
+  }
 
   .logo {
     position: absolute;
@@ -487,6 +499,7 @@ select,
   }
 
   .search {
+    height: 38PX;
     position: relative;
     display: flex;
     top: 15px;
