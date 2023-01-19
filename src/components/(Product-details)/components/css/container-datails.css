@@ -121,7 +121,6 @@
     color: var(--text1);
     font-weight: var(---font-weight-sm);
 
-    margin-bottom: 5px;
 }
 
 .font-price-mobiles {
@@ -147,8 +146,10 @@
     }
 
     .container-NavAggPayProduct-table-mobiles {
-        display: flex;
-
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 40% 20% 40%;
+        overflow: hidden;
     }
 
     .buttom-mobiles {
@@ -156,6 +157,18 @@
         justify-content: center;
         position: relative;
     }
+
+    .price-descount-table-mobiles {
+        width: 100%;
+
+    }
+
+    .button-envio {
+        color: var(--text3);
+        ;
+
+    }
+
 
 
 

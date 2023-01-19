@@ -25,6 +25,24 @@ export default component$(({ props }: any) => {
               ({totalRating}) {props.ratings.length}
             </div>
           </div>
+
+          {props.discount === 0 ? (
+            <>
+              {' '}
+              <button class="button-envio">Envio gratis</button>
+            </>
+          ) : (
+            <>
+              <div class="price-descount-table-mobiles">
+                <div class="ctr-porce-mobiles">
+                  <h6 class="porce-mobiles  ">
+                    -%
+                    {props.discount}
+                  </h6>
+                </div>
+              </div>
+            </>
+          )}
           <div class="price-table-mobiles">
             <h5 class="aviso-ahora">
               {props.discount === 0 ? <>Precio :</> : <>Ahora :</>}
@@ -40,32 +58,6 @@ export default component$(({ props }: any) => {
               )}
             </h4>
           </div>
-          {props.discount === 0 ? (
-            ''
-          ) : (
-            <>
-              <div class="price-descount-table-mobiles">
-                <h5 class="tach price-tach price-tach-mobiles">
-                  {' '}
-                  ${props.price.toFixed(2)}{' '}
-                </h5>
-                <size-w class="size-w-10" />
-                <div class="ctr-porce-mobiles">
-                  <h6 class="porce-mobiles  ">
-                    -%
-                    {props.discount}
-                  </h6>
-                </div>
-              </div>
-            </>
-          )}
-          {props.discount === 0 ? (
-            <>
-              <button class="button-envio">{'  Envio gratis'}</button>{' '}
-            </>
-          ) : (
-            <></>
-          )}
         </div>
 
         <div class="container-NavAggPayProduct-web">

@@ -6,7 +6,7 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
     <div class="super-container-title-brand-product mobiles-title-brand">
       <div class="container-brand-product">
         <a href="/" aria-label={props.marca}>
-          {props.marca}
+          Visita {props.marca}
         </a>
       </div>
       <size-w class="size-w-10" />

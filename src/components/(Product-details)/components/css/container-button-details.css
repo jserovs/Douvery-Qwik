@@ -29,7 +29,7 @@
     display: grid;
     grid-template-columns: 0.2fr 1fr;
 
-    min-width: 150px;
+    min-width: 190px;
     background-color: var(--button-pay-backgroundColor);
     color: #ffffff;
     border: none;
@@ -48,7 +48,7 @@
     border-color: #0a58ca;
 }
 
-.button-mobiles {
+.crt-button-mobiles {
     display: none
 }
 
@@ -60,15 +60,63 @@
         display: none;
     }
 
+    .crt-button-mobiles {
+        width: 100%;
+
+
+        display: grid;
+
+        background-color: var(--backgroundColor);
+    }
+
+    .crt-button-mobiles h5 {
+        font-size: 13px;
+        margin-left: 20px;
+        color: #606d80;
+        display: flex;
+        gap: 5px;
+    }
+
     .button-mobiles {
+        width: 100%;
         margin-top: 5px;
         padding: 10px 0px 10px 0px;
-        display: flex;
+        display: grid;
         justify-content: center;
+        align-items: center;
         position: relative;
         background-color: var(--backgroundColor);
     }
 
+    .buttonCart,
+    .buttonPay {
+        min-width: 350px;
+        height: 50px;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5px;
+        text-align: left;
+        grid-template-columns: 0.7fr 1fr;
+    }
+
+    .buttonCart svg {
+        position: relative;
+        left: 100px;
+    }
+
+    .buttonPay svg {
+        position: relative;
+        left: 100px;
+    }
+
+
+
+
+    .buttonCart,
+    .buttonPay:hover {
+        transition: all 0.9s ease;
+    }
 
 
 
