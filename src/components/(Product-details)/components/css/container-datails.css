@@ -172,7 +172,7 @@
         display: grid;
         justify-content: center;
         font-size: smaller;
-        color: #DC143C;
+        color: var(--button-pay-backgroundColor);
         ;
         font-weight: --var(--font-weight-sm);
 
@@ -183,5 +183,3 @@
 
 
 }
-
-@media only screen and (max-width: 455px) {}
