@@ -72,6 +72,14 @@
     display: none;
 }
 
+.crt-variations {
+    background-color: var(--backgroundColor);
+    display: grid;
+    padding-left: 10px;
+    margin-bottom: 10PX;
+}
+
+
 
 @media only screen and (max-width: 885px) {
     .buttons-mobiles {
