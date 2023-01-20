@@ -118,6 +118,7 @@ nav a:hover {
 
         display: grid;
         grid-template-columns: auto 113px auto auto auto auto;
+        overflow: auto;
 
 
 
