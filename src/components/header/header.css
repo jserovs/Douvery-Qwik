@@ -489,7 +489,14 @@ select,
     padding: 0px;
   }
 
-
+  .select {
+    width: 5em;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    place-content: center;
+  }
 
   .logo {
     position: absolute;
@@ -497,6 +504,7 @@ select,
   }
 
   .search {
+
     height: 38PX;
     position: relative;
     display: flex;
@@ -504,6 +512,7 @@ select,
   }
 
   .searchTerm {
+
     width: 100%;
   }
 
@@ -532,7 +541,7 @@ select,
   select {
     display: grid;
 
-
+    text-align: center;
 
     color: var(--text2);
     font-size: 14px;
