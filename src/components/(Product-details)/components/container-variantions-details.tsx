@@ -11,7 +11,7 @@ export default component$(({ props }: any) => {
         <div class="container-variation-product">
           <size-w class="size-w-10" />
           <div class="col-auto">
-            {val.nameVariation}
+            <p class="title-varitia-srdr"> {val.nameVariation} :</p>
             <size-w class="size-w-10" />
             <div class="container-variation-cont-most">
               {val.productVariation.map((valle: any) => (

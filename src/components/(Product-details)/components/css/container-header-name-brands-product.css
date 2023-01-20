@@ -8,6 +8,7 @@
     font-size: 19px;
     background-color: #ffffff;
     margin-bottom: 10px;
+
 }
 
 .container-brand-product {
@@ -30,4 +31,63 @@
     margin-top: 5PX;
     margin-bottom: 10px;
     padding: 15px;
+}
+
+.brt-irft-lapto {
+    display: flex;
+    gap: 5px;
+    margin-top: 5PX;
+}
+
+.brt-irft-lapto h5 {
+    font-size: 13px;
+    color: #666;
+    display: flex;
+    gap: 5px;
+
+
+}
+
+.brt-irft-lapto h4 {
+    font-size: var(--font-size-md);
+    color: #0a0b0c;
+    opacity: 95%;
+}
+
+
+.dsier-strs-lapto {
+    display: flex;
+    gap: 5px;
+    margin-top: 5PX;
+}
+
+.dsier-strs-lapto p {
+    font-size: 13px;
+    color: #4c956c;
+    opacity: 90%;
+    font-weight: 500;
+}
+
+.dsier-strs-lapto .exhausted-for {
+    font-size: 13px;
+    color: #bc4b51;
+    opacity: 90%;
+    font-weight: 500;
+    margin-right: 15px;
+}
+
+.dsier-strs-lapto button {
+    padding: 5px;
+    border-radius: 5px;
+    color: #4c956c;
+    border: 1px solid #4c956c;
+    font-size: var(--font-size-md);
+}
+
+.dsier-strs-lapto .minus-dolceid-alert-buty {
+    padding: 2px;
+    border-radius: 5px;
+    color: #f26419;
+    border: 1px solid #f26419;
+    font-size: var(--font-size-md);
 }

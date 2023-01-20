@@ -33,9 +33,10 @@ export const ContainerViewsIMGDetails = component$(({ props }: any) => {
         {props.variations === undefined ? (
           ''
         ) : (
-          <ContainerVariantionsDetails props={props} />
+          <div class="crt-variations">
+            <ContainerVariantionsDetails props={props} />
+          </div>
         )}
-
         <div class="buttons-mobiles">
           <ContainerButtonDetails props={props} />
         </div>
