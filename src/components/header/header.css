@@ -532,22 +532,9 @@ select,
   }
 
   select {
-    /* Reset Select */
-    appearance: none;
-    outline: 0;
-    border: 0;
-    box-shadow: none;
-    /* Personalize */
-    flex: 1;
-    outline: none;
-    color: var(--text2);
-    font-size: 14px;
-    font-weight: 400;
-
-    background-color: transparent;
-    border-right: 1px solid var(--border-1);
-    cursor: pointer;
     display: grid;
+    padding: 10px;
+    align-items: center;
     text-align: center;
     justify-content: center;
   }
