@@ -489,9 +489,7 @@ select,
     padding: 0px;
   }
 
-  .select {
-    width: 5em;
-  }
+
 
   .logo {
     position: absolute;
@@ -512,7 +510,7 @@ select,
   .main {
     position: absolute;
     top: 10px;
-    margin: 5px;
+    margin: 5px 10px 0px 0px;
     right: 0;
   }
 
@@ -534,9 +532,8 @@ select,
   select {
     display: grid;
 
-    /* Personalize */
-    flex: 1;
-    outline: none;
+
+
     color: var(--text2);
     font-size: 14px;
     font-weight: 400;
