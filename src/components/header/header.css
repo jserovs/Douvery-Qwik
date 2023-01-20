@@ -533,9 +533,15 @@ select,
 
   select {
     display: grid;
-    padding: 10px;
+
     align-items: center;
     text-align: center;
+    /* Personalize */
+    flex: 1;
+    outline: none;
+    color: var(--text2);
+    font-size: 14px;
+    font-weight: 400;
     justify-content: center;
     background-color: transparent;
     border-right: 1px solid var(--border-1);
