@@ -21,9 +21,15 @@ export default component$(() => {
             <form class="searchTerm">
               <div class="select container">
                 <select>
-                  <option value="1">All</option>
-                  <option value="2">No JS</option>
-                  <option value="3">Nice!</option>
+                  <option class="texts-opts-crt-gg" value="1">
+                    All
+                  </option>
+                  <option class="texts-opts-crt-gg" value="2">
+                    No JS
+                  </option>
+                  <option class="texts-opts-crt-gg" value="3">
+                    Nice!
+                  </option>
                 </select>
               </div>
               <input
