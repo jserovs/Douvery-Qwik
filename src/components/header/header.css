@@ -175,16 +175,18 @@ select,
 
 .searchButton {
   border: 1px solid #ffff;
-  padding-top: 5px;
+
   color: #fff;
   width: 4%;
   background-color: #F0F0F0;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
   font-size: 20px;
-  padding-left: 10px;
-  text-align: center;
 
+  display: grid;
+  text-align: center;
+  justify-content: center;
+  place-content: center;
 
 }
 
@@ -483,6 +485,42 @@ select,
   display: block;
 }
 
+
+@media only screen and (max-width: 982px) {
+  .cuenta_botom {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1025px) {
+  .efecto-HOVER-cuentaDesplegable {
+    display: none;
+    position: absolute;
+
+    left: -220px;
+
+  }
+
+  .searchButton {
+
+    width: 10%;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: #F0F0F0;
+    padding: 0px 5PX 0PX 5PX;
+  }
+
+  .searchButton svg {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+}
+
 @media only screen and (max-width: 665px) {
   header {
     height: 7rem;
@@ -509,6 +547,11 @@ select,
     position: relative;
     display: flex;
     top: 15px;
+  }
+
+  .searchButton {
+    width: 20%;
+
   }
 
   .searchTerm {
@@ -550,42 +593,3 @@ select,
     border-right: 1px solid var(--border-2);
   }
 }
-
-
-
-@media only screen and (max-width: 982px) {
-  .cuenta_botom {
-    display: none;
-  }
-}
-
-@media only screen and (max-width: 1025px) {
-  .efecto-HOVER-cuentaDesplegable {
-    display: none;
-    position: absolute;
-
-    left: -220px;
-
-  }
-
-  .searchButton {
-
-    width: 10%;
-    display: grid;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    background-color: #F0F0F0;
-    padding: 0px 5PX 0PX 5PX;
-  }
-
-  .searchButton svg {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-  }
-
-
-}
-
-@media only screen and (max-width: 1250px) {}
