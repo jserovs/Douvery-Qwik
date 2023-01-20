@@ -537,6 +537,8 @@ select,
     align-items: center;
     text-align: center;
     justify-content: center;
+    background-color: transparent;
+    border-right: 1px solid var(--border-1);
   }
 }
 
