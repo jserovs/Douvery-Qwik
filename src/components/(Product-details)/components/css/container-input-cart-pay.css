@@ -1,0 +1,8 @@
+.inpt-nbr input {
+    width: 35px;
+    padding: 2px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

@@ -52,6 +52,14 @@
     display: none
 }
 
+.slect-qty-prt {
+    display: flex;
+
+}
+
+.brt-irft {
+    padding: 10px 10px 10px 10px;
+}
 
 
 @media only screen and (max-width: 885px) {
@@ -69,9 +77,10 @@
         background-color: var(--backgroundColor);
     }
 
-    .crt-button-mobiles h5 {
+    .brt-irft h5 {
         font-size: 13px;
-        margin-left: 20px;
+        padding-bottom: 10px;
+
         color: #606d80;
         display: flex;
         gap: 5px;
@@ -80,7 +89,7 @@
     .button-mobiles {
         width: 100%;
         margin-top: 5px;
-        padding: 10px 10px 10px 10px;
+        padding: 0px 10px 10px 10px;
         display: grid;
 
         align-items: center;
