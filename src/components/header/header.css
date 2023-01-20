@@ -117,23 +117,6 @@ select,
 
 }
 
-/* Arrow */
-.select::after {
-  content: '';
-  width: 1;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 5px solid var(--text1);
-  position: absolute;
-  right: 10px;
-  top: calc(50% - 2.5px);
-  pointer-events: none;
-  z-index: 3;
-
-}
-
-
 
 /* Transition */
 .select:hover::after {
@@ -528,13 +511,18 @@ select,
   }
 
   .select {
-    width: 5em;
+    margin: 0;
+    padding: 0;
+    width: 6em;
     display: grid;
     justify-content: center;
     align-items: center;
-    text-align: center;
+
     place-content: center;
+    border-right: 1px solid var(--border-2);
   }
+
+
 
   .logo {
     position: absolute;
@@ -583,6 +571,8 @@ select,
 
   select {
     display: grid;
+    width: 5em;
+    height: 3em;
 
     text-align: center;
 
@@ -590,6 +580,6 @@ select,
     font-size: 14px;
     font-weight: 400;
 
-    border-right: 1px solid var(--border-2);
+    border-right: 0px solid var(--border-2);
   }
 }

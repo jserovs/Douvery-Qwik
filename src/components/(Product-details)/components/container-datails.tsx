@@ -29,7 +29,7 @@ export default component$(({ props }: any) => {
           {props.discount === 0 ? (
             <>
               {' '}
-              <button class="button-envio">Envio gratis</button>
+              <div class="shw-free">Envio gratis</div>
             </>
           ) : (
             <>
@@ -44,7 +44,7 @@ export default component$(({ props }: any) => {
             </>
           )}
           <div class="price-table-mobiles">
-            <h5 class="aviso-ahora">
+            <h5 class="title-prtsea">
               {props.discount === 0 ? <>Precio :</> : <>Ahora :</>}
             </h5>
             <size-w class="size-w-10" />
