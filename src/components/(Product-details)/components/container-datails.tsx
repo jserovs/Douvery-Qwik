@@ -2,6 +2,7 @@ import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './css/container-datails.css?inline';
 import { Stars } from '~/components/Ratings/stars/stars';
 import { ContainerButtonDetails } from './container-button-details';
+import { ContainerInputCartPay } from './container-input-cart-pay';
 
 export default component$(({ props }: any) => {
   useStylesScoped$(styles);
@@ -100,6 +101,9 @@ export default component$(({ props }: any) => {
           <size-w class="size-w-10" />
           <size-w class="size-w-10" />
           <button class="button-envio">Envio gratis</button>
+          <size-w class="size-w-10" />
+          <size-w class="size-w-10" />
+          <ContainerInputCartPay quantity={1} />
           <ContainerButtonDetails props={props} />
         </div>
       </div>

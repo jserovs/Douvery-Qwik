@@ -2,7 +2,8 @@ import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import { DouveryCart } from '~/components/icons/cart';
 import { DouveryPayIconBTC } from '~/components/icons/pay-icon-btc';
 import styles from './css/container-button-details.css?inline';
-import { DouveryInfo } from '~/components/icons/info';
+
+import { ContainerInputCartPay } from './container-input-cart-pay';
 export const ContainerButtonDetails = component$(({ props }: any) => {
   useStylesScoped$(styles);
   return (
@@ -26,16 +27,19 @@ export const ContainerButtonDetails = component$(({ props }: any) => {
         )}
       </div>
       <div class="crt-button-mobiles">
-        <div class="brt-irft">
-          <h5>
-            <DouveryInfo /> Articulo disponible
-          </h5>
-        </div>
         <div class="button-mobiles">
           {props.quantity <= 1 ? (
             <></>
           ) : (
             <>
+              <div class="brt-irft">
+                <h5>Articulo disponible</h5>
+                <div class="slect-qty-prt">
+                  <p>Cantidad : </p>
+                  <size-w class="size-w-10" />
+                  <ContainerInputCartPay quantity={1} />
+                </div>
+              </div>
               <button class="buttonCart">
                 <DouveryCart size="20px" /> Añadir al carrito
               </button>
