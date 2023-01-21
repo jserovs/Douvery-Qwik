@@ -2,7 +2,7 @@ import { component$, useStylesScoped$ } from '@builder.io/qwik';
 
 import { CardProductVariations1 } from '~/components/cards/product-variant/card-product-variant';
 import styles from './css/container-variantions-details.css?inline';
-export default component$(({ props }: any) => {
+export default component$(({ props, imgS, imgP }: any) => {
   useStylesScoped$(styles);
 
   return (
@@ -15,7 +15,12 @@ export default component$(({ props }: any) => {
             <size-w class="size-w-10" />
             <div class="container-variation-cont-most">
               {val.productVariation.map((valle: any) => (
-                <CardProductVariations1 dui={valle} slug={props} />
+                <CardProductVariations1
+                  imgS={imgS}
+                  imgP={imgP}
+                  dui={valle}
+                  slug={props}
+                />
               ))}
             </div>
           </div>
