@@ -21,7 +21,7 @@ export default component$(({ props }: any) => {
       <div class="super-container">
         <div class="container-NavAggPayProduct-table-mobiles">
           <div class="rating-table-mobiles">
-            <Stars props={totalRating} />{' '}
+            <Stars rating={totalRating} />{' '}
             <div class="rating-ct-ratig">
               ({totalRating}) {props.ratings.length}
             </div>
@@ -62,7 +62,7 @@ export default component$(({ props }: any) => {
         </div>
 
         <div class="container-NavAggPayProduct-web">
-          <Stars props={totalRating} />{' '}
+          <Stars rating={totalRating} />{' '}
           <div class="ct-ratig">
             ({totalRating}) {props.ratings.length}
           </div>{' '}

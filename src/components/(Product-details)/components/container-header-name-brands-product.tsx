@@ -15,6 +15,7 @@ import type { Seller } from '~/utils/types';
 import { cleanUpParamsID } from '~/utils/cleurs';
 import { Loader } from '~/components/status/loader/loader';
 import { DouveryCircleLock } from '~/components/icons/circle-lock';
+import { ContainerExpectedShippingTime } from './container-expected-shipping-time';
 
 export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
   useStylesScoped$(sryles);
@@ -113,9 +114,12 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
         <DouveryCircleLock size="16" />
         <p>
           Esta compra está protegida por <strong>Douvery</strong> , puedes
-          comprar con confianza.{' '}
+          comprar con confianza.
         </p>
+        <a href="/">Saber mas.</a>
       </div>
+
+      <ContainerExpectedShippingTime />
     </div>
   );
 });

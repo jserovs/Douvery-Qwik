@@ -1,0 +1,29 @@
+.crt-expectend-ship {
+    height: 50px;
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.alrt-vsrt {
+    font-size: 13px;
+    color: #666;
+    font-size: small;
+}
+
+@media only screen and (max-width: 885px) {
+    .crt-expectend-ship {
+        height: 50px;
+
+        display: grid;
+        gap: 0px;
+    }
+
+    .alrt-vsrt {
+
+        color: #666;
+        font-size: small;
+    }
+
+
+}

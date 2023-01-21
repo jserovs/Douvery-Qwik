@@ -33,7 +33,6 @@ export const ContainerButtonDetails = component$(({ props }: any) => {
           ) : (
             <>
               <div class="brt-irft">
-                <h5>Articulo disponible</h5>
                 <div class="slect-qty-prt">
                   <p>Cantidad : </p>
                   <size-w class="size-w-10" />
