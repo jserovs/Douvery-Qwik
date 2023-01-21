@@ -4,3 +4,10 @@ export const cleanUpParams = (params: Record<string, string>) => {
 	}
 	return params;
 };
+
+export const cleanUpParamsID = (params: Record<string, string>) => {
+	if ('id' in params && params.id[params.id.length - 1] === '/') {
+		params.id = params.id.slice(0, params.id.length - 1);
+	}
+	return params;
+};

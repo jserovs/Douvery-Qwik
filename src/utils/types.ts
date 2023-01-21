@@ -27,3 +27,9 @@ export type variant = {
 		dui: string;
 	}>;
 };
+
+export type Seller = {
+	
+	name:string;
+	
+};
