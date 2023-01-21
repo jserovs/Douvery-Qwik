@@ -1,4 +1,9 @@
-import { component$, useStore, useStylesScoped$ } from '@builder.io/qwik';
+import {
+  component$,
+  useStore,
+  useStylesScoped$,
+  useTask$,
+} from '@builder.io/qwik';
 import styles from './css/container-views-images-details.css?inline';
 import ContainerVariantionsDetails from './container-variantions-details';
 import { ContainerHeaderNameBrandProduct } from './container-header-name-brands-product';
@@ -7,7 +12,12 @@ export const ContainerViewsIMGDetails = component$(({ props }: any) => {
   useStylesScoped$(styles);
 
   const img = useStore({ setImage: props.images[0] });
-  const activeBorder = useStore({ setActiveBorder: false });
+
+  useTask$(async ({ track }) => {
+    track(() => props.images[0]);
+
+    img.setImage = props.images[0];
+  });
 
   return (
     <div class="container-view-product">
@@ -22,10 +32,7 @@ export const ContainerViewsIMGDetails = component$(({ props }: any) => {
             >
               <button
                 onClick$={() => {
-                  return (
-                    (img.setImage = image),
-                    (activeBorder.setActiveBorder = true)
-                  );
+                  return (img.setImage = image);
                 }}
               >
                 <img
@@ -54,7 +61,11 @@ export const ContainerViewsIMGDetails = component$(({ props }: any) => {
           ''
         ) : (
           <div class="crt-variations">
-            <ContainerVariantionsDetails props={props} />
+            <ContainerVariantionsDetails
+              imgS={img}
+              imgP={props.images[0]}
+              props={props}
+            />
           </div>
         )}
         <div class="buttons-mobiles">
