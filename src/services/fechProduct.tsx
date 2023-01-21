@@ -3,7 +3,8 @@ export async function fetchCharacters(
   controller?: AbortController
 ): Promise<any> {
   const response = await fetch(
-    `https://server-douvery.vercel.app/api/products/${dui}`,
+    `
+    https://server-douvery.vercel.app/api/products/${dui}`,
     {
       signal: controller?.signal,
     }

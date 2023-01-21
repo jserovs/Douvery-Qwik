@@ -94,7 +94,7 @@ a {
 
 main {
   flex: 1;
-  min-height: 50rem;
+  min-height: 100rem;
 
 }
 
@@ -121,7 +121,9 @@ html {
   width: 10px;
 }
 
-
+.size-h-10 {
+  height: 10px;
+}
 
 h1,
 h2,
