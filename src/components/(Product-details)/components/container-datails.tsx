@@ -21,12 +21,26 @@ export default component$(({ props }: any) => {
       <div class="super-container">
         <div class="container-NavAggPayProduct-table-mobiles">
           <div class="rating-table-mobiles">
-            <Stars rating={totalRating} />{' '}
+            <Stars size="16" rating={totalRating} />{' '}
             <div class="rating-ct-ratig">
               ({totalRating}) {props.ratings.length}
             </div>
           </div>
-
+          <div class="price-table-mobiles">
+            <h5 class="title-prtsea">
+              <>Precio :</>
+            </h5>
+            <size-w class="size-w-10" />
+            <h4 class="font-price-mobiles">
+              {' '}
+              $
+              {props.discount === 0 ? (
+                <>{props.price.toFixed(2)}</>
+              ) : (
+                <>{price_discount.toFixed(2)}</>
+              )}
+            </h4>
+          </div>
           {props.discount === 0 ? (
             <>
               {' '}
@@ -44,21 +58,6 @@ export default component$(({ props }: any) => {
               </div>
             </>
           )}
-          <div class="price-table-mobiles">
-            <h5 class="title-prtsea">
-              {props.discount === 0 ? <>Precio :</> : <>Ahora :</>}
-            </h5>
-            <size-w class="size-w-10" />
-            <h4 class="font-price-mobiles">
-              {' '}
-              $
-              {props.discount === 0 ? (
-                <>{props.price.toFixed(2)}</>
-              ) : (
-                <>{price_discount.toFixed(2)}</>
-              )}
-            </h4>
-          </div>
         </div>
 
         <div class="container-NavAggPayProduct-web">
