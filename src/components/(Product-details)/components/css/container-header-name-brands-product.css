@@ -181,8 +181,10 @@
 
     .shrt-prd-alrt {
         display: grid;
+
         grid-template-columns: 30% 30% 40%;
         padding: 10PX;
+        text-align: center;
         border-top: 1px solid #e6e6e6;
         border-bottom: 1px solid #e6e6e6;
         margin-bottom: 10px;
