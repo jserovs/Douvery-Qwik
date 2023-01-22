@@ -17,3 +17,140 @@
     white-space: nowrap;
     width: 100%;
 }
+
+.modal {
+    position: fixed;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+    width: 20%;
+
+    height: 50%;
+
+    background-color: white;
+
+    border-radius: 10px;
+    /* bordes redondos */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+
+    padding: 20px;
+
+    overflow: auto;
+
+    z-index: 1000000;
+
+}
+
+.crtr-modal::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000000;
+    /* asegura que la sombra quede detrás del modal */
+}
+
+.modal button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    color: black;
+    font-size: 18px;
+    cursor: pointer;
+
+}
+
+.loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    /* tamaño */
+    height: 30px;
+    /* tamaño */
+    border-radius: 50%;
+    /* forma redonda */
+    border: 6px solid #eee;
+    /* borde */
+    border-top-color: #2c3e50;
+    /* color de la barra de carga */
+    animation: carga 1s linear infinite;
+    /* animación de carga */
+}
+
+/* animación de carga */
+@keyframes carga {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+.modal {
+    animation: easeIn 0.2s ease-in-out;
+}
+
+@keyframes easeIn {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-close {
+    animation: fadeIn 0.5s ease-in-out;
+    /* nombre de la animación, duración, tipo de easing */
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        /* comienza con transparencia 1 */
+    }
+
+    to {
+        opacity: 0;
+        /* termina con transparencia 0 */
+    }
+}
+
+@media (max-width: 1607px) {
+    .modal {
+        width: 35%;
+        height: 50%;
+    }
+}
+
+@media (max-width: 1207px) {
+    .modal {
+        width: 50%;
+        height: 50%;
+    }
+}
+
+@media (max-width: 650px) {
+    .modal {
+        width: 80%;
+        height: 50%;
+    }
+}
