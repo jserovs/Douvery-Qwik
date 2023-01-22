@@ -43,7 +43,7 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1000000;
-    /* asegura que la sombra quede detrás del modal */
+
 }
 
 .modal button {
@@ -63,20 +63,19 @@
     top: 50%;
     left: 50%;
     width: 30px;
-    /* tamaño */
+
     height: 30px;
-    /* tamaño */
+
     border-radius: 50%;
-    /* forma redonda */
+
     border: 6px solid #eee;
-    /* borde */
+
     border-top-color: #2c3e50;
-    /* color de la barra de carga */
+
     animation: carga 1s linear infinite;
-    /* animación de carga */
+
 }
 
-/* animación de carga */
 @keyframes carga {
     0% {
         transform: rotate(0deg);
@@ -109,18 +108,18 @@
 
 .modal-close {
     animation: fadeIn 0.5s ease-in-out;
-    /* nombre de la animación, duración, tipo de easing */
+
 }
 
 @keyframes fadeOut {
     from {
         opacity: 1;
-        /* comienza con transparencia 1 */
+
     }
 
     to {
         opacity: 0;
-        /* termina con transparencia 0 */
+
     }
 }
 
@@ -153,6 +152,6 @@
         height: 100%;
         background-color: rgba(0, 0, 0, 0.726);
         z-index: 1000000;
-        /* asegura que la sombra quede detrás del modal */
+
     }
 }
