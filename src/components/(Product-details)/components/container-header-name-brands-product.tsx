@@ -95,12 +95,17 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
             onRejected={(error) => <>Error: {error.message}</>}
             onResolved={() => (
               <>
-                <a href="/">
-                  {state.seller.name == undefined
-                    ? 'Vendedor no definido'
-                    : state.seller.name}
-                </a>
-                <a href="/">(4)185</a>
+                <div class="seller">
+                  <a href="/">
+                    {state.seller.name == undefined
+                      ? 'Vendedor no definido'
+                      : state.seller.name}
+                  </a>
+                  <a href="/">(4)185</a>
+                  <div class="review-popup">
+                    Review: This seller is reliable and always ships on time.
+                  </div>
+                </div>
               </>
             )}
           />
