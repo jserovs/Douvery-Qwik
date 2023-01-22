@@ -20,7 +20,7 @@ export const ContainerViewsIMGDetails = component$(({ props }: any) => {
 
     img.setImage = props.images[0];
   });
-
+  const isOpen = useStore({ setIsOpen: false });
   return (
     <div class="container-view-product">
       <div class="vert-left">
@@ -50,12 +50,63 @@ export const ContainerViewsIMGDetails = component$(({ props }: any) => {
 
         <size-w class="size-w-10" />
         <div class="img-vertical-mobiles-prev">
-          <img src={img.setImage} alt={props.slug} />
+          <img
+            onClick$={() => (isOpen.setIsOpen = true)}
+            src={img.setImage}
+            alt={props.slug}
+            class="img-product-llg"
+            title="Haz click para ver la imagen en un tamaño mayor"
+          />
         </div>
         <div class="container-img-product">
-          <img src={img.setImage} alt="" />
+          <img
+            onClick$={() => (isOpen.setIsOpen = true)}
+            src={img.setImage}
+            alt={props.slug}
+            class="img-product-llg"
+            title="Haz click para ver la imagen en un tamaño mayor"
+          />
         </div>
       </div>
+
+      {isOpen.setIsOpen && (
+        <>
+          {' '}
+          <div
+            class="shad-modal"
+            onClick$={() => (isOpen.setIsOpen = false)}
+          ></div>
+          <div class={`modal ${!isOpen && 'modal-close'}`}>
+            <img class="img-viws-modal-lllg" src={img.setImage} alt="" />
+            <div class="modal-prev-img">
+              {props.images.map((image: any, i: any) => (
+                <div
+                  class={
+                    img.setImage == image
+                      ? 'modal-img_wrap active-prev-view'
+                      : 'modal-img_wrap'
+                  }
+                  key={i}
+                >
+                  <button
+                    onClick$={() => {
+                      return (img.setImage = image);
+                    }}
+                  >
+                    <img
+                      src={image}
+                      onMouseOver$={() => (img.setImage = image)}
+                      onMouseOut$={() => (img.setImage = image)}
+                      alt={props.slug}
+                    />
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        </>
+      )}
+
       <div class="right">
         <size-w class="size-w-10" />
         <ContainerHeaderNameBrandProduct props={props} />
