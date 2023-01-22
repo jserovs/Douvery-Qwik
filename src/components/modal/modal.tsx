@@ -17,22 +17,16 @@ export const ModalButtonCou = component$(() => {
       {isOpen.setIsOpen && (
         <>
           {' '}
-          <div class="crtr-modal" onClick$={() => (isOpen.setIsOpen = false)}>
-            {' '}
-            <div class={`modal ${!isOpen && 'modal-close'}`}>
-              <button onClick$={() => (isOpen.setIsOpen = false)}>
-                Cerrar modal
-              </button>
-              <p>Contenido del modal</p>
-              <div class="loader"></div>
-            </div>{' '}
-            <div class={`modal ${!isOpen && 'modal-close'}`}>
-              <button onClick$={() => (isOpen.setIsOpen = false)}>
-                Cerrar modal
-              </button>
-              <p>Contenido del modal</p>
-              <div class="loader"></div>
-            </div>
+          <div
+            class="crtr-modal"
+            onClick$={() => (isOpen.setIsOpen = false)}
+          ></div>
+          <div class={`modal ${!isOpen && 'modal-close'}`}>
+            <button onClick$={() => (isOpen.setIsOpen = false)}>
+              Cerrar modal
+            </button>
+            <p>Contenido del modal</p>
+            <div class="loader"></div>
           </div>
         </>
       )}
