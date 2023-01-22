@@ -8,6 +8,8 @@ import styles from './css/container-views-images-details.css?inline';
 import ContainerVariantionsDetails from './container-variantions-details';
 import { ContainerHeaderNameBrandProduct } from './container-header-name-brands-product';
 import { ContainerButtonDetails } from './container-button-details';
+import { ContainerDescriptionShort } from './container-desc-short';
+
 export const ContainerViewsIMGDetails = component$(({ props }: any) => {
   useStylesScoped$(styles);
 
@@ -71,6 +73,8 @@ export const ContainerViewsIMGDetails = component$(({ props }: any) => {
         <div class="buttons-mobiles">
           <ContainerButtonDetails props={props} />
         </div>
+
+        <ContainerDescriptionShort props={props} />
       </div>
     </div>
   );

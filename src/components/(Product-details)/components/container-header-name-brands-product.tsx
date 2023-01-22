@@ -88,21 +88,23 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
       <div class="shrt-prd-alrt">
         {' '}
         <p>Enviado & Vendido por</p>
-        <Resource
-          value={ageResource}
-          onPending={() => <Loader />}
-          onRejected={(error) => <>Error: {error.message}</>}
-          onResolved={() => (
-            <>
-              <a href="/">
-                {state.seller.name == undefined
-                  ? 'Vendedor no definido'
-                  : state.seller.name}
-              </a>
-              <a href="/">(4)185</a>
-            </>
-          )}
-        />
+        <div class="sll-rps">
+          <Resource
+            value={ageResource}
+            onPending={() => <Loader />}
+            onRejected={(error) => <>Error: {error.message}</>}
+            onResolved={() => (
+              <>
+                <a href="/">
+                  {state.seller.name == undefined
+                    ? 'Vendedor no definido'
+                    : state.seller.name}
+                </a>
+                <a href="/">(4)185</a>
+              </>
+            )}
+          />
+        </div>
         <div class="chg-shr-prtd">
           <button>
             Elegir otra opcion <DouveryArrowDown size="14" />
