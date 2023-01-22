@@ -9,19 +9,19 @@ export default component$(() => {
     <nav>
       <ul class="container-cajas-nav">
         <li class="cajas-nav">
-          <a href="/">Inicio</a>
+          <a href="/">Mobiles</a>
         </li>
         <li class="cajas-nav">
-          <a href="/">Quiénes somos</a>
+          <a href="/">Ropas</a>
         </li>
         <li class="cajas-nav">
-          <a href="/">Servicios</a>
+          <a href="/">Hogar</a>
         </li>
         <li class="cajas-nav">
-          <a href="/">Blog</a>
+          <a href="/">Electronics</a>
         </li>
         <li class="cajas-nav">
-          <a href="/">Contacto</a>
+          <a href="/">Nuevo</a>
         </li>
       </ul>
     </nav>

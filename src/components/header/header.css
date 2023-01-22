@@ -511,15 +511,7 @@ select,
   }
 
   .select {
-    margin-top: 5px;
-    width: 6em;
-    height: 2em;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-
-    place-content: center;
-    border-right: 1px solid var(--border-2);
+    display: none;
   }
 
 
@@ -527,30 +519,44 @@ select,
   .logo {
     position: absolute;
     top: 10px;
+
+  }
+
+  .logo svg {
+    width: 105px;
+    height: 50px;
   }
 
   .search {
 
-    height: 38PX;
+    height: 36PX;
     position: relative;
-    display: flex;
+
+    display: grid;
     top: 15px;
   }
 
   .searchButton {
-    width: 20%;
+
+
+    background-color: transparent;
 
   }
 
   .searchTerm {
 
+    display: flex;
+    flex-direction: row-reverse;
     width: 100%;
   }
 
   .main {
     position: absolute;
-    top: 10px;
-    margin: 5px 10px 0px 0px;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+    top: 15px;
+    margin: 5px 8px 0px 0px;
     right: 0;
   }
 
@@ -569,23 +575,7 @@ select,
     display: none;
   }
 
-  select {
-    display: grid;
-    width: 4em;
-    height: 3em;
-    margin-left: 10px;
-    text-align: center;
-    display: grid;
-    justify-content: center;
-    align-items: center;
 
-    place-content: center;
-    color: var(--text2);
-    font-size: 14px;
-    font-weight: 400;
-
-    border-right: 0px solid var(--border-2);
-  }
 
   .texts-opts-crt-gg {
     display: grid;

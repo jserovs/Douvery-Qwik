@@ -106,10 +106,31 @@ nav a:hover {
         display: grid;
 
 
-        height: 2rem;
+        height: 1.9rem;
 
-        margin: 0 auto;
-        align-items: start;
+        justify-content: left;
+
+        align-items: center;
+    }
+
+    .container-cajas-nav {
+        display: flex;
+        grid-template-columns: auto;
+        gap: 10px;
+        margin-left: 13PX;
+        align-items: center;
+    }
+
+    .cajas-nav {
+
+
+        padding: 0PX;
+    }
+
+    .cajas-nav a {
+        display: flex;
+        font-size: 12px;
+        align-items: center;
     }
 }
 
