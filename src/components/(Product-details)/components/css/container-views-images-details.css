@@ -57,6 +57,7 @@
     background-color: var(--backgroundColor);
     padding: 10px;
     z-index: 1000;
+
 }
 
 .image-zoom {
@@ -189,17 +190,25 @@
 .exp-shared {
     position: absolute;
     padding: 10px;
-
-    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.26);
+    background-color: #eee;
+    border-radius: 100px;
     z-index: 1000000;
     top: 02;
-    right: 10px;
+
     border-radius: 10px;
     top: 0;
 
+    display: none;
 
 }
 
+.exp-shared svg {
+    width: 20px;
+    height: 20px;
+    color: var(--primary-color);
+    background-color: #eee;
+}
 
 @media only screen and (max-width: 885px) {
     .buttons-mobiles {

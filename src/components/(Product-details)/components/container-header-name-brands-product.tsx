@@ -8,7 +8,6 @@ import {
 } from '@builder.io/qwik';
 import sryles from './css/container-header-name-brands-product.css?inline';
 import { DouveryCheckMark } from '~/components/icons/checkMark';
-import { DouveryArrowDown } from '~/components/icons/arrow-down';
 
 import { fetchSeller } from '~/services/fechSeller';
 import type { Seller } from '~/utils/types';
@@ -16,6 +15,7 @@ import { cleanUpParamsID } from '~/utils/cleurs';
 import { Loader } from '~/components/status/loader/loader';
 import { DouveryCircleLock } from '~/components/icons/circle-lock';
 import { ContainerExpectedShippingTime } from './container-expected-shipping-time';
+import { Dropdown } from '~/components/dropdown/dropdown';
 
 export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
   useStylesScoped$(sryles);
@@ -111,9 +111,7 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
           />
         </div>
         <div class="chg-shr-prtd">
-          <button>
-            Elegir otra opcion <DouveryArrowDown size="14" />
-          </button>
+          <Dropdown title="Elegir otra opcion" />
         </div>
       </div>
       <div class="srte-art-alrt">

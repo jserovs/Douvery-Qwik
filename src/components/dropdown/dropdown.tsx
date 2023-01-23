@@ -1,0 +1,47 @@
+import { component$, useStore, useStylesScoped$ } from '@builder.io/qwik';
+import styles from './dropdown.css?inline';
+import { DouveryArrowDown } from '../icons/arrow-down';
+import { DouveryArrowUp } from '../icons/arrow-up';
+export const Dropdown = component$(({ title }: any) => {
+  useStylesScoped$(styles);
+  const isOpen = useStore({ setIsOpen: false });
+  const options = [
+    { name: 'Option 1', subtitle: 'Subtitle 1', time: '5min' },
+    { name: 'Option 2', subtitle: 'Subtitle 2', time: '10min' },
+    { name: 'Option 3', subtitle: 'Subtitle 3', time: '15min' },
+  ];
+  return (
+    <div>
+      {' '}
+      <div>
+        <button
+          class="trl-drs"
+          onClick$={() => (isOpen.setIsOpen = !isOpen.setIsOpen)}
+        >
+          {title}{' '}
+          {isOpen.setIsOpen ? (
+            <DouveryArrowUp size="14" />
+          ) : (
+            <DouveryArrowDown size="14" />
+          )}
+        </button>
+        <div class="crt-drpd">
+          <ul class={`dropdown-menu ${isOpen.setIsOpen ? 'show' : ''}`}>
+            <div class="list-container">
+              <h3 class="list-title">{title}</h3>
+              <ul>
+                {options.map((option) => (
+                  <li key={option.name} class="list-item">
+                    <div class="item-title">{option.name}</div>
+                    <div class="item-subtitle">{option.subtitle}</div>
+                    <div class="item-time">{option.time}</div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+});
