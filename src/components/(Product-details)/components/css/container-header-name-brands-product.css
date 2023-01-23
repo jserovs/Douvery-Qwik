@@ -225,6 +225,19 @@
         padding-top: 10px;
     }
 
+    .dsier-strs-lapto {
+        display: grid;
+        grid-template-columns: auto 99%;
+
+
+    }
+
+    .minus-dolceid-alert-buty {
+        font-size: small;
+        color: #F55050;
+        font-weight: 500;
+    }
+
     .shrt-prd-alrt {
         display: grid;
 
