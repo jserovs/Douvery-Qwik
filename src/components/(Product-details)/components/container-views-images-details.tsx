@@ -9,6 +9,7 @@ import ContainerVariantionsDetails from './container-variantions-details';
 import { ContainerHeaderNameBrandProduct } from './container-header-name-brands-product';
 import { ContainerButtonDetails } from './container-button-details';
 import { ContainerDescriptionShort } from './container-desc-short';
+import { DouveryExportShared } from '~/components/icons/export-shared';
 
 export const ContainerViewsIMGDetails = component$(({ props }: any) => {
   useStylesScoped$(styles);
@@ -58,14 +59,23 @@ export const ContainerViewsIMGDetails = component$(({ props }: any) => {
             title="Haz click para ver la imagen en un tamaño mayor"
           />
         </div>
-        <div class="container-img-product">
-          <img
-            onClick$={() => (isOpen.setIsOpen = true)}
-            src={img.setImage}
-            alt={props.slug}
-            class="img-product-llg"
-            title="Haz click para ver la imagen en un tamaño mayor"
-          />
+
+        <div class="crtr-dirjfs">
+          <div class="container-img-product">
+            <img
+              onClick$={() => (isOpen.setIsOpen = true)}
+              src={img.setImage}
+              alt={props.slug}
+              class="img-product-llg"
+              title="Haz click para ver la imagen en un tamaño mayor"
+            />
+          </div>
+          <div class="exp-shared">
+            <button>
+              {' '}
+              <DouveryExportShared />
+            </button>
+          </div>
         </div>
       </div>
 
