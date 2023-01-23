@@ -63,7 +63,6 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
       <div class="brt-irft-lapto">
         <h5>Estado : </h5> <h4>{props.item_condition}</h4>
       </div>
-
       <div class="dsier-strs-lapto">
         {props.quantity <= 1 ? (
           <>
@@ -91,7 +90,6 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
           </>
         )}
       </div>
-
       <div class="shrt-prd-alrt">
         {' '}
         <p>Enviado & Vendido por</p>
@@ -121,7 +119,6 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
           <Dropdown title="Elegir otra opcion" />
         </div>
       </div>
-
       <div class="srte-art-alrt">
         {' '}
         <DouveryCircleLock size="16" />
@@ -133,7 +130,6 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
           Saber mas
         </a>
       </div>
-
       {props.quantity == 0 ? <></> : <ContainerExpectedShippingTime />}
     </div>
   );
