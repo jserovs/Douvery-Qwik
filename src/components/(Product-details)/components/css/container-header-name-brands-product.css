@@ -238,6 +238,12 @@
         font-weight: 500;
     }
 
+
+    .dsier-strs-lapto button {
+
+        width: 80%;
+    }
+
     .shrt-prd-alrt {
         display: grid;
 

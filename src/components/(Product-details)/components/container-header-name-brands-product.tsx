@@ -114,19 +114,20 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
           <Dropdown title="Elegir otra opcion" />
         </div>
       </div>
+
       <div class="srte-art-alrt">
         {' '}
         <DouveryCircleLock size="16" />
         <p>
           Esta compra está protegida por <strong>Douvery</strong> , puedes
-          comprar con confianza.
+          comprar con total confianza.
         </p>
         <a class="sbr-slr-slri" href="/">
           Saber mas
         </a>
       </div>
 
-      <ContainerExpectedShippingTime />
+      {props.quantity == 0 ? <></> : <ContainerExpectedShippingTime />}
     </div>
   );
 });
