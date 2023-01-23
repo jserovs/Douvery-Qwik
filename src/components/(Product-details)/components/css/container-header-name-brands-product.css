@@ -132,6 +132,11 @@
     align-items: center;
 }
 
+.dsier-strs-lapto div {
+    display: flex;
+    gap: 5PX;
+}
+
 .shrt-prd-alrt p {
     font-size: 13px;
     color: #666;
@@ -225,11 +230,16 @@
         padding-top: 10px;
     }
 
+
     .dsier-strs-lapto {
         display: grid;
-        grid-template-columns: auto 99%;
+        grid-template-columns: 100%;
+        gap: 3px;
+    }
 
-
+    .dsier-strs-lapto div {
+        display: flex;
+        gap: 5PX;
     }
 
     .minus-dolceid-alert-buty {

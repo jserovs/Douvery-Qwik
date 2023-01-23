@@ -72,7 +72,11 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
           </>
         ) : props.quantity <= 12 ? (
           <>
-            <DouveryCheckMark size="16px" /> <p>Articulo disponible</p>
+            <div>
+              <DouveryCheckMark size="16px" />
+              <p>Articulo disponible</p>
+            </div>
+
             <size-w class="size-w-10" />
             <div class="minus-dolceid-alert-buty">
               Queda(n) {props.quantity} unidades , puede que lleguen mas!
@@ -80,7 +84,10 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
           </>
         ) : (
           <>
-            <DouveryCheckMark size="20px" /> <p>Articulo disponible</p>
+            <div>
+              <DouveryCheckMark size="16px" />
+              <p>Articulo disponible</p>
+            </div>
           </>
         )}
       </div>
