@@ -3,11 +3,14 @@
     flex-direction: column;
     text-align: left;
     justify-content: left;
-    padding: 5px;
+
     border-radius: 5px;
     font-size: 19px;
     background-color: #ffffff;
     margin-bottom: 10px;
+    padding: 5px 5px 10px 5px;
+    border-bottom: 1px solid var(--border-0);
+
 
 }
 
@@ -24,6 +27,7 @@
     font-weight: var(--font-weight-sm);
     font-size: 13px;
 
+
 }
 
 .mobiles-title-brand {
@@ -34,7 +38,8 @@
 }
 
 .crt--tlr-brnd {
-    margin-bottom: 20px;
+    padding: 0px 0px 10px 0px;
+    border-bottom: 1px solid var(--border-0);
 
 }
 
@@ -84,11 +89,17 @@
     opacity: 95%;
 }
 
+.brt-irft-lapto {
+    padding: 10px 0px 0px 0px;
+}
 
 
 .dsier-strs-lapto {
+
     display: flex;
     gap: 5px;
+    padding: 0px 0px 10px 0px;
+
 
 }
 
@@ -235,6 +246,7 @@
         display: grid;
         grid-template-columns: 100%;
         gap: 3px;
+        border: 0px;
     }
 
     .dsier-strs-lapto div {

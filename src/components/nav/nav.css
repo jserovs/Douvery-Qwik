@@ -66,24 +66,25 @@ nav a:hover {
     color: rgba(255, 255, 255, 0.945);
 }
 
-
-@media only screen and (max-width: 1204px) {
+@media only screen and (max-width: 1700px) {
     .container-cajas-nav {
-
-        display: grid;
-        grid-template-columns: auto auto auto auto auto auto;
-        width: 100%;
-
-
+        width: 82%;
     }
 }
+
+@media only screen and (max-width: 1351px) {
+    .container-cajas-nav {
+        width: 88%;
+    }
+}
+
+
 
 @media only screen and (max-width: 1024px) {
     .container-cajas-nav {
 
-        display: grid;
-        grid-template-columns: auto auto auto auto auto auto;
-        width: 95%;
+
+        width: 90%;
 
 
     }
