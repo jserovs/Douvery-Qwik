@@ -13,8 +13,10 @@
 
 
 .vert-left {
+
     display: flex;
     height: 70vh;
+    justify-content: center;
 }
 
 
