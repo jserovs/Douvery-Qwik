@@ -217,7 +217,7 @@
     display: none;
     /* hide the review by default */
     position: absolute;
-    background-color: #ffff;
+    background-color: var(--backgroundColor);
     padding: 5px;
     border: 1px solid #d3d3d3;
     z-index: 1;
