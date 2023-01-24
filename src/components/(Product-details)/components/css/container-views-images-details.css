@@ -15,7 +15,9 @@
 .vert-left {
 
     display: flex;
-    height: 70vh;
+    min-width: 70vh;
+    height: 100%;
+    max-height: 150vh;
     justify-content: center;
 }
 
