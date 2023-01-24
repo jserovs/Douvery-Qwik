@@ -45,8 +45,13 @@
         display: grid;
         grid-template-columns: 100%;
         object-fit: contain;
-        height: 650px;
+        height: 450px;
         overflow: auto;
+        margin-bottom: 10PX;
 
+    }
+
+    .crtr-img-tree::-webkit-scrollbar {
+        display: none;
     }
 }
