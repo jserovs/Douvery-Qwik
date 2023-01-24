@@ -1,7 +1,7 @@
 .crtr-img-hr-prs {
     display: grid;
     grid-template-rows: 15% 80%;
-
+    margin-bottom: 50px;
 }
 
 

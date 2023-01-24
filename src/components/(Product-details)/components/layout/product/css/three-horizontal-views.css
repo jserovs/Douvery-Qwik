@@ -1,0 +1,52 @@
+.crtr--prd-prodct {
+    display: grid;
+
+}
+
+
+
+
+.crtr-img-tree {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    object-fit: contain;
+    height: 650px;
+
+}
+
+.ig-grid-img {
+    border-radius: 5px;
+    display: grid;
+    border-bottom: 1px solid rgba(204, 204, 204, 0.226);
+    padding: 10px;
+    object-fit: contain;
+    justify-content: center;
+    align-items: center;
+}
+
+.ig-grid-img img {
+    width: 20vw;
+    height: 250px;
+    object-fit: contain;
+
+}
+
+@media only screen and (max-width: 885px) {
+    .ig-grid-img img {
+        width: 100%;
+        height: 250px;
+        object-fit: contain;
+
+
+    }
+
+    .crtr-img-tree {
+        padding: 0px;
+        display: grid;
+        grid-template-columns: 100%;
+        object-fit: contain;
+        height: 650px;
+        overflow: auto;
+
+    }
+}
