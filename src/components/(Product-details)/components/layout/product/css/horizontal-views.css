@@ -1,12 +1,21 @@
-.preview_img-vert {
+.crtr-img-hr-prs {
+    display: grid;
+    grid-template-rows: 15% 80%;
+
+}
+
+
+
+
+.preview_img-hrt-lft {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
     position: sticky;
     top: 50px;
     bottom: 50PX;
-
 }
+
 
 .img_wrap {
     width: 80px;
