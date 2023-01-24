@@ -9,7 +9,8 @@ import ContainerVariantionsDetails from './container-variantions-details';
 import { ContainerHeaderNameBrandProduct } from './container-header-name-brands-product';
 import { ContainerButtonDetails } from './container-button-details';
 import { ContainerDescriptionShort } from './container-desc-short';
-import { DouveryExportShared } from '~/components/icons/export-shared';
+
+import { VarticalViewProductIMG } from './layout/product/vartical-views';
 
 export const ContainerViewsIMGDetails = component$(({ props }: any) => {
   useStylesScoped$(styles);
@@ -25,97 +26,8 @@ export const ContainerViewsIMGDetails = component$(({ props }: any) => {
   return (
     <div class="container-view-product">
       <div class="vert-left">
-        <div class="preview_img-vert">
-          {props.images.map((image: any, i: any) => (
-            <div
-              class={
-                img.setImage == image ? 'img_wrap active-prev-view' : 'img_wrap'
-              }
-              key={i}
-            >
-              <button
-                onClick$={() => {
-                  return (img.setImage = image);
-                }}
-              >
-                <img
-                  src={image}
-                  onMouseOver$={() => (img.setImage = image)}
-                  onMouseOut$={() => (img.setImage = image)}
-                  alt={props.slug}
-                />
-              </button>
-            </div>
-          ))}
-        </div>
-
-        <size-w class="size-w-10" />
-        <div class="img-vertical-mobiles-prev">
-          <img
-            onClick$={() => (isOpen.setIsOpen = true)}
-            src={img.setImage}
-            alt={props.slug}
-            class="img-product-llg"
-            title="Haz click para ver la imagen en un tamaño mayor"
-          />
-        </div>
-
-        <div class="crtr-dirjfs">
-          <div class="container-img-product">
-            <img
-              onClick$={() => (isOpen.setIsOpen = true)}
-              src={img.setImage}
-              alt={props.slug}
-              class="img-product-llg"
-              title="Haz click para ver la imagen en un tamaño mayor"
-            />
-          </div>
-          <div class="exp-shared">
-            <button>
-              {' '}
-              <DouveryExportShared />
-            </button>
-          </div>
-        </div>
+        <VarticalViewProductIMG img={img} isOpen={isOpen} props={props} />
       </div>
-
-      {isOpen.setIsOpen && (
-        <>
-          {' '}
-          <div
-            class="shad-modal"
-            onClick$={() => (isOpen.setIsOpen = false)}
-          ></div>
-          <div class={`modal ${!isOpen && 'modal-close'}`}>
-            <img class="img-viws-modal-lllg" src={img.setImage} alt="" />
-            <div class="modal-prev-img">
-              {props.images.map((image: any, i: any) => (
-                <div
-                  class={
-                    img.setImage == image
-                      ? 'modal-img_wrap active-prev-view'
-                      : 'modal-img_wrap'
-                  }
-                  key={i}
-                >
-                  <button
-                    onClick$={() => {
-                      return (img.setImage = image);
-                    }}
-                  >
-                    <img
-                      src={image}
-                      onMouseOver$={() => (img.setImage = image)}
-                      onMouseOut$={() => (img.setImage = image)}
-                      alt={props.slug}
-                    />
-                  </button>
-                </div>
-              ))}
-            </div>
-          </div>
-        </>
-      )}
 
       <div class="right">
         <size-w class="size-w-10" />

@@ -46,6 +46,8 @@
     "vite-tsconfig-paths": "3.5.0"
   },
   "dependencies": {
-    "@blacklab/react-image-magnify": "^4.1.1"
+    "@blacklab/react-image-magnify": "^4.1.1",
+    "@types/dompurify": "^2.4.0",
+    "dompurify": "^2.4.3"
   }
 }
