@@ -21,7 +21,7 @@
   --logo-secondary-color: #FBD316;
 
   --downBackgroundColor: #f1f5f9;
-  --backgroundColor: #ffffff;
+  --backgroundColor: #fcfcfc;
   --backgroundCard: rgba(247, 248, 248, 0.952);
 
   --button-pay-backgroundColor: #008080;
@@ -36,7 +36,7 @@
   --blue-clear: #2185D5;
   --blue: #0b347b;
   --black: #212529;
-  --white: #ffffff;
+  --white: var(--backgroundColor);
   --grey: #666666;
   --orange: #e84118;
   --green: #38E54D;

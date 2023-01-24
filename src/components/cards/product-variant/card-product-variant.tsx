@@ -55,17 +55,15 @@ export const CardProductVariations1 = component$(
                       : 'container-card-options '
                   }
                 >
-                  <div class="product-logo-colors">
-                    <img
-                      class="product-image-car"
-                      src={state.product.images?.[0]}
-                      alt={state.product.name}
-                      onMouseOver$={() =>
-                        (imgS.setImage = state.product.images[0])
-                      }
-                      onMouseOut$={() => (imgS.setImage = imgP)}
-                    />
-                  </div>
+                  <img
+                    class="product-image-car"
+                    src={state.product.images?.[0]}
+                    alt={state.product.name}
+                    onMouseOver$={() =>
+                      (imgS.setImage = state.product.images[0])
+                    }
+                    onMouseOut$={() => (imgS.setImage = imgP)}
+                  />
                 </div>
               </Link>
             </>
