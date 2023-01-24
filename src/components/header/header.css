@@ -134,7 +134,7 @@ select,
   width: 100%;
 
 
-  background-color: #ffff;
+  background-color: var(--backgroundColor);
   border-right: none;
 
   border-radius: 5px 5px 5px 5px;
@@ -157,7 +157,7 @@ select,
 
 
 .searchButton {
-  border: 1px solid #ffff;
+  border: 1px solid var(--backgroundColor);
 
   color: #fff;
   width: 4%;
