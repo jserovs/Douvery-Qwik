@@ -1,18 +1,18 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
-import styles from './css/three-horizontal-views.css?inline';
+import styles from './css/fixed-vertical-views.css?inline';
 import { ModalD } from '../modal/modal-de';
-export const ThreeHorizontalViewProductIMG = component$(
+export const FixedVerticalViewProductIMG = component$(
   ({ props, img, isOpen }: any) => {
     useStylesScoped$(styles);
     return (
-      <div class="crtr--prd-prodct">
-        <div class="crtr-img-tree">
+      <div class="crtr-firx-prd-prodct ">
+        <div class="crtr-img-fixr">
           {props.images.map((image: any, i: any) => (
             <div
               class={
                 img.setImage == image
-                  ? 'ig-grid-img active-prev-view'
-                  : 'ig-grid-img'
+                  ? 'ig-firx-img active-prev-view'
+                  : 'ig-firx-img'
               }
               key={i}
             >

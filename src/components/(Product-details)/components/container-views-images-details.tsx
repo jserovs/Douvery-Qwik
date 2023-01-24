@@ -10,7 +10,7 @@ import { ContainerHeaderNameBrandProduct } from './container-header-name-brands-
 import { ContainerButtonDetails } from './container-button-details';
 import { ContainerDescriptionShort } from './container-desc-short';
 
-import { ThreeHorizontalViewProductIMG } from './layout/product/three-horizontal-views';
+import { FixedVerticalViewProductIMG } from './layout/product/fixed-vertical-views';
 
 export const ContainerViewsIMGDetails = component$(({ props }: any) => {
   useStylesScoped$(styles);
@@ -26,11 +26,7 @@ export const ContainerViewsIMGDetails = component$(({ props }: any) => {
   return (
     <div class="container-view-product">
       <div class="vert-left">
-        <ThreeHorizontalViewProductIMG
-          img={img}
-          isOpen={isOpen}
-          props={props}
-        />
+        <FixedVerticalViewProductIMG img={img} isOpen={isOpen} props={props} />
       </div>
 
       <div class="right">
