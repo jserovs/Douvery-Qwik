@@ -125,10 +125,10 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
         <p>
           Esta compra está protegida por <strong>Douvery</strong> , puedes
           comprar con total confianza.
+          <a class="sbr-slr-slri" href="/">
+            Saber mas
+          </a>
         </p>
-        <a class="sbr-slr-slri" href="/">
-          Saber mas
-        </a>
       </div>
       {props.quantity == 0 ? <></> : <ContainerExpectedShippingTime />}
     </div>

@@ -139,6 +139,7 @@
 
 .shrt-prd-alrt {
     margin-top: 2px;
+
     display: flex;
     align-items: center;
 }
@@ -177,6 +178,9 @@
     gap: 3px
 }
 
+.srte-art-alrt p a {
+    color: var(--primary-color);
+}
 
 .srte-art-alrt {
     display: flex;
@@ -235,6 +239,14 @@
     /* change the scale to 1 to make the review visible */
 }
 
+@media only screen and (max-width: 950px) {
+
+    .shrt-prd-alrt {
+        padding-bottom: 11px;
+    }
+
+
+}
 
 @media only screen and (max-width: 885px) {
     .srte-art-alrt {
@@ -244,7 +256,7 @@
 
     .dsier-strs-lapto {
         display: grid;
-        grid-template-columns: 100%;
+        grid-template-columns: 100% 0%;
         gap: 3px;
         border: 0px;
     }
@@ -272,10 +284,18 @@
         grid-template-columns: 30% 30% 40%;
         padding: 10PX;
         text-align: center;
+        align-items: center;
+        justify-content: center;
+
         border-top: 1px solid #e6e6e6;
         border-bottom: 1px solid #e6e6e6;
         margin-bottom: 10px;
         margin-top: 10px;
+    }
+
+    .shrt-prd-alrt div {
+        display: grid;
+        justify-content: center;
     }
 
     .sbr-slr-slri {
