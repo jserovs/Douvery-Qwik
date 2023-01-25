@@ -40,7 +40,7 @@
 }
 
 .button-envio {
-    font-size: 1.5vh;
+    font-size: 95%;
     color: var(--text3);
 }
 
@@ -148,7 +148,7 @@
     margin-bottom: 5px;
 }
 
-@media only screen and (max-width: 1061px) {
+@media only screen and (max-width: 1085px) {
     .container-NavAggPayProduct-web {
         display: flex;
         padding-top: 10px;
