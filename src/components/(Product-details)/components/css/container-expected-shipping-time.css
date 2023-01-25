@@ -1,14 +1,32 @@
 .crt-expectend-ship {
-    height: 50px;
+
     margin-top: 20px;
+    padding-top: 5px;
+    display: grid;
+    gap: 1px;
+    border-top: 1px solid var(--border-0);
+
+}
+
+.crt-expectend-ship h5 {
+    font-size: 68%;
+    font-weight: 500;
+}
+
+.shrp-prsx {
     display: flex;
-    gap: 10px;
+    gap: 8px;
+
 }
 
 .alrt-vsrt {
     font-size: 13px;
     color: #666;
     font-size: small;
+}
+
+.tm-srh-exp {
+    font-size: 68%;
 }
 
 @media only screen and (max-width: 885px) {

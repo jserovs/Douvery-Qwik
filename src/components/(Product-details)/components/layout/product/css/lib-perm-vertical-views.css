@@ -1,0 +1,112 @@
+.crtr-firx-prd-prodct {
+    display: grid;
+    padding: 0;
+    grid-template-rows: 10% 90%;
+
+}
+
+
+
+.books-art-crtr img {
+    display: grid;
+    position: sticky;
+    top: 3px;
+    width: 800px;
+    height: 550px;
+    object-fit: contain;
+    background-color: var(--backgroundColor);
+    padding: 10px;
+    z-index: 1000;
+    justify-content: center;
+
+
+}
+
+
+.crtr-books-aresdt {
+    display: grid;
+
+    object-fit: contain;
+    height: 0vh;
+
+
+}
+
+
+
+.book-perm-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3vh;
+    background-color: var(--downBackgroundColor);
+    border-radius: 5px;
+    gap: 0px;
+    width: 100%;
+
+}
+
+.book-perm-top h5 {
+    font-size: 80%;
+    font-weight: 500;
+    padding-right: 10px;
+    padding-left: 10px;
+
+}
+
+.book-perm-top p {
+    font-size: 90%;
+    color: #666;
+
+}
+
+
+.prvw_img-hrt-brt {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+
+
+}
+
+
+.prvw_img-hrt-brt .ig-firx-img {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #eee;
+    cursor: pointer;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+    border-radius: 5PX;
+    padding: 10px;
+}
+
+
+
+@media only screen and (max-width: 885px) {
+    .ig-firx-img img {
+        width: 100%;
+        height: 250px;
+        object-fit: contain;
+        border-bottom: 1px solid rgba(204, 204, 204, 0.226);
+
+    }
+
+    .crtr-img-tree {
+        padding: 0px;
+        display: grid;
+        grid-template-columns: 100%;
+        object-fit: contain;
+        height: 450px;
+        overflow: auto;
+        margin-bottom: 10PX;
+
+    }
+
+    .crtr-img-tree::-webkit-scrollbar {
+        display: none;
+    }
+}
