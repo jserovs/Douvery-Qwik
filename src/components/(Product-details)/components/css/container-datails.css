@@ -46,7 +46,7 @@
 
 .ctr-porce {
     display: flex;
-    width: 2.8%;
+    width: 3.8%;
     height: 30px;
     justify-content: center;
     align-items: center;
@@ -148,7 +148,29 @@
     margin-bottom: 5px;
 }
 
+@media only screen and (max-width: 1061px) {
+    .container-NavAggPayProduct-web {
+        display: flex;
+        padding-top: 10px;
+        align-items: center;
 
+    }
+
+
+    .div-button {
+        display: none;
+    }
+
+    .div-input-sertts {
+        display: none;
+    }
+
+    .ctr-porce {
+        width: 5.8%;
+    }
+
+
+}
 
 @media only screen and (max-width: 885px) {
 

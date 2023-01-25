@@ -114,9 +114,19 @@
     .container-view-product {
         display: grid;
         margin-top: 5px;
-        grid-template-columns: 50%50%;
+        grid-template-columns: 40% 40% 30%;
 
         background-color: var(--backgroundColor);
+    }
+}
+
+@media only screen and (max-width: 1061px) {
+    .buttons-mobiles {
+        display: block;
+    }
+
+    .div-input-sertts {
+        width: 60px;
     }
 }
 

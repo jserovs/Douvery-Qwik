@@ -13,7 +13,8 @@ import { ContainerDescriptionShort } from './container-desc-short';
 import { HorizontalViewProductIMG } from './layout/product/horizontal-views';
 import { VarticalViewProductIMG } from './layout/product/vartical-views';
 import { ThreeHorizontalViewProductIMG } from './layout/product/three-horizontal-views';
-import { LibPermVerticalViewProductIMG } from './layout/product/lib-perm-vertical-views';
+import { LibPermVerticalViewProductIMG } from './layout/product/books-perm-vertical-views';
+import { ContainerInputCartPay } from './container-input-cart-pay';
 
 export const ContainerViewsIMGDetails = component$(({ props }: any) => {
   useStylesScoped$(styles);
@@ -81,6 +82,9 @@ export const ContainerViewsIMGDetails = component$(({ props }: any) => {
             </div>
           )}
           <div class="buttons-mobiles">
+            <div class="div-input-sertts">
+              <ContainerInputCartPay quantity={1} />
+            </div>
             <ContainerButtonDetails props={props} />
           </div>
 
