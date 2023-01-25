@@ -81,7 +81,9 @@ export default component$(() => {
           onRejected={(error) => <>Error: {error.message}</>}
           onResolved={() => (
             <>
-              <ContainerDatails props={state.product} />
+              <div class="nd-det-1">
+                <ContainerDatails props={state.product} />
+              </div>
               <ContainerViewsIMGDetails props={state.product} />
             </>
           )}

@@ -11,7 +11,10 @@
     justify-content: center;
     background-color: var(--backgroundColor);
     border-radius: 5px;
+
 }
+
+
 
 .Carousel-img-product {
     width: 250px;

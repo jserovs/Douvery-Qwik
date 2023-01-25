@@ -17,6 +17,8 @@
     justify-content: center;
     align-items: center;
     margin-left: 5px;
+    border-radius: 5px;
+
 
 }
 
@@ -26,12 +28,16 @@
     height: 70px;
     object-fit: contain;
 
+
 }
 
+.container-img-product {
+    position: sticky;
+    top: 0;
+}
 
 .container-img-product img {
-    position: sticky;
-    top: 3px;
+
     width: 800px;
     height: 550px;
     object-fit: contain;
@@ -49,7 +55,7 @@
 
 .active-prev-view {
     border: 1px solid var(--primary-color);
-    border-radius: 5PX;
+    border-radius: 5px;
 }
 
 .img-vertical-mobiles-prev img {
@@ -80,5 +86,22 @@
 
     to {
         transform: translateX(-100%);
+    }
+}
+
+@media only screen and (max-width: 885px) {
+
+    .preview_img-vert {
+        display: flex;
+    }
+
+    .img_wrap {
+        width: 60px;
+        height: 50px;
+    }
+
+    .preview_img-vert img {
+        width: 60px;
+        height: 50px;
     }
 }

@@ -14,6 +14,10 @@
 
 }
 
+.container-title-product p {
+    font-size: 90%;
+}
+
 .container-brand-product {
     display: flex;
     flex-direction: row;
@@ -25,7 +29,7 @@
 .container-brand-product * {
     color: var(--primary-color);
     font-weight: var(--font-weight-sm);
-    font-size: 13px;
+    font-size: 65%;
 
 }
 
@@ -56,7 +60,7 @@
     height: 18px;
     background-color: #181818;
     color: var(--backgroundColor);
-    font-size: 12px;
+    font-size: 68%;
     text-align: center;
     border-radius: 5px;
     font-style: italic;
@@ -64,7 +68,7 @@
 
 .di a {
     font-style: inherit;
-    font-size: small;
+    font-size: 68%;
 }
 
 .brt-irft-lapto {
@@ -74,7 +78,7 @@
 }
 
 .brt-irft-lapto h5 {
-    font-size: 13px;
+    font-size: 63%;
     color: #666;
     display: flex;
     gap: 5px;
@@ -83,7 +87,7 @@
 }
 
 .brt-irft-lapto h4 {
-    font-size: var(--font-size-md);
+    font-size: 73%;
     color: #0a0b0c;
     opacity: 95%;
 }
@@ -103,14 +107,14 @@
 }
 
 .dsier-strs-lapto p {
-    font-size: 13px;
+    font-size: 68%;
     color: #497950;
 
     font-weight: 500;
 }
 
 .dsier-strs-lapto .exhausted-for {
-    font-size: 13px;
+    font-size: 68%;
     color: #bc4b51;
     opacity: 90%;
     font-weight: 500;
@@ -149,7 +153,7 @@
 }
 
 .shrt-prd-alrt p {
-    font-size: 13px;
+    font-size: 68%;
     color: #666;
     display: flex;
     gap: 5px;
@@ -158,14 +162,14 @@
 }
 
 .shrt-prd-alrt a {
-    font-size: 13px;
+    font-size: 68%;
     color: var(--primary-color);
     margin-right: 2PX;
 }
 
 .chg-shr-prtd {
     margin-left: 10px;
-    font-size: 13px;
+    font-size: 68%;
     color: #666;
 
 }
@@ -177,14 +181,22 @@
     gap: 3px
 }
 
+.srte-art-alrt p strong {
+    font-size: 95%;
+    font-weight: 600;
+    opacity: 90%;
+}
+
 .srte-art-alrt p a {
+    font-size: 88%;
+
     color: var(--primary-color);
 }
 
 .srte-art-alrt {
     display: flex;
     gap: 5px;
-    font-size: 13px;
+    font-size: 68%;
     color: var(--primary-color);
 }
 

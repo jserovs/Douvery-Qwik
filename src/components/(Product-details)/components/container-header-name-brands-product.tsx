@@ -53,7 +53,7 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
               Visita {props.marca}
             </a>
           </div>
-          <h5>{props.name}</h5>
+          <p>{props.name}</p>
           <div class="di">
             <p>De</p>
             <a href="/">{props.category}</a>

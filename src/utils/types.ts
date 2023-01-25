@@ -16,6 +16,7 @@ export type Product = {
 	description: string;
 	images: string[];
 	variations: variant[];
+
 	
 };
 
@@ -27,6 +28,7 @@ export type variant = {
 		dui: string;
 	}>;
 };
+
 
 export type Seller = {
 	

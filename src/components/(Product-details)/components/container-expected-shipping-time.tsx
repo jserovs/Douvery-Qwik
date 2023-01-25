@@ -10,17 +10,20 @@ export const ContainerExpectedShippingTime = component$(() => {
 
   return (
     <div class="crt-expectend-ship">
-      <p class="alrt-vsrt">Compra antes de 8 hrs 10 mins:</p>
-      <p class="tm-srh-exp">
-        Recibelo el {''}
-        {mañana.toLocaleDateString('es-ES', {
-          weekday: 'long',
+      <h5>Envio :</h5>
+      <div class="shrp-prsx">
+        <p class="alrt-vsrt">Compra antes de 8 hrs 10 mins:</p>
+        <p class="tm-srh-exp">
+          Recibelo el {''}
+          {mañana.toLocaleDateString('es-ES', {
+            weekday: 'long',
 
-          month: 'long',
-          day: 'numeric',
-        })}
-        {'.'}
-      </p>
+            month: 'long',
+            day: 'numeric',
+          })}
+          {'.'}
+        </p>
+      </div>
     </div>
   );
 });
