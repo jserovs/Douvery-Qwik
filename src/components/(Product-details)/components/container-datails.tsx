@@ -102,8 +102,13 @@ export default component$(({ props }: any) => {
           <button class="button-envio">Envio gratis</button>
           <size-w class="size-w-10" />
           <size-w class="size-w-10" />
-          <ContainerInputCartPay quantity={1} />
-          <ContainerButtonDetails props={props} />
+          <div class="div-input-sertts">
+            <ContainerInputCartPay quantity={1} />
+          </div>
+          <div class="div-button">
+            {' '}
+            <ContainerButtonDetails props={props} />
+          </div>
         </div>
       </div>
     </>

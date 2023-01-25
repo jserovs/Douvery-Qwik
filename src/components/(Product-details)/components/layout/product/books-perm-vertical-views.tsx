@@ -1,5 +1,5 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
-import styles from './css/lib-perm-vertical-views.css?inline';
+import styles from './css/books-perm-vertical-views.css?inline';
 import { ModalD } from '../modal/modal-de';
 export const LibPermVerticalViewProductIMG = component$(
   ({ props, img, isOpen }: any) => {
@@ -22,6 +22,31 @@ export const LibPermVerticalViewProductIMG = component$(
               class="img-product-llg"
               title="Haz click para ver la imagen en un tamaño mayor"
             />
+          </div>
+          <div class="prvd-books-arts-drs">
+            {props.images.map((image: any, i: any) => (
+              <div
+                class={
+                  img.setImage == image
+                    ? 'img_wrap active-prev-view'
+                    : 'img_wrap'
+                }
+                key={i}
+              >
+                <button
+                  onClick$={() => {
+                    return (img.setImage = image);
+                  }}
+                >
+                  <img
+                    src={image}
+                    onMouseOver$={() => (img.setImage = image)}
+                    onMouseOut$={() => (img.setImage = image)}
+                    alt={props.slug}
+                  />
+                </button>
+              </div>
+            ))}
           </div>
         </div>
 
