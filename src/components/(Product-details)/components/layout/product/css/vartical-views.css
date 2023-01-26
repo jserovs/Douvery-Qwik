@@ -118,4 +118,12 @@
         width: 60px;
         height: 50px;
     }
+
+    .container-img-product img {
+
+
+        width: 800px;
+        height: 550px;
+
+    }
 }

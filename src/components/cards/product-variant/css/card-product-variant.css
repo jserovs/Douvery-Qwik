@@ -1,9 +1,9 @@
 .container-card-options {
-    width: 60PX;
-    height: 60PX;
+    width: 50PX;
+    height: 50PX;
     display: flex;
     border-radius: 5PX;
-    padding: 3px;
+
     margin-left: 5px;
     background-color: var(--backgroundColor);
     border: 1px solid #f0efefc4;
@@ -14,8 +14,9 @@
 .container-card-options img {
     width: 50px;
     height: 50px;
-    border: 1px solid #FFF;
+  
     object-fit: contain;
+    padding: 5px;
 
 }
 
