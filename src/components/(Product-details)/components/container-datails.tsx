@@ -3,6 +3,7 @@ import styles from './css/container-datails.css?inline';
 import { Stars } from '~/components/Ratings/stars/stars';
 import { ContainerButtonDetails } from './container-button-details';
 import { ContainerInputCartPay } from './container-input-cart-pay';
+import numeral from 'numeral';
 
 export default component$(({ props }: any) => {
   useStylesScoped$(styles);
@@ -15,7 +16,9 @@ export default component$(({ props }: any) => {
   //*CALCULAR EL DESCUENTO
   const discount = (props.price * props.discount) / 100;
   const price_discount = props.price - discount;
-
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const locateCurrency = 'US';
+  const formCurrency = '$0,0.00';
   return (
     <>
       <div class="super-container">
@@ -33,11 +36,10 @@ export default component$(({ props }: any) => {
             <size-w class="size-w-10" />
             <h4 class="font-price-mobiles">
               {' '}
-              $
               {props.discount === 0 ? (
-                <>{props.price.toFixed(2)}</>
+                <>{numeral(props.price).format(formCurrency)}</>
               ) : (
-                <>{price_discount.toFixed(2)}</>
+                <>{numeral(price_discount).format(formCurrency)}</>
               )}
             </h4>
           </div>
@@ -73,7 +75,10 @@ export default component$(({ props }: any) => {
             <>
               <div class="titles-of"> Antes: </div>
               <size-w class="size-w-10" />{' '}
-              <h5 class="tach price-tach "> ${props.price.toFixed(2)}</h5>
+              <h5 class="tach price-tach ">
+                {' '}
+                {numeral(props.price).format(formCurrency)}
+              </h5>
               <size-w class="size-w-10" />
               <size-w class="size-w-10" />
               <div class="ctr-porce">
@@ -90,11 +95,10 @@ export default component$(({ props }: any) => {
           <div class="titles-of">Precio :</div>
           <size-w class="size-w-10" />{' '}
           <h4 class="font-price ">
-            <>$</>
             {props.discount === 0 ? (
-              <>{props.price.toFixed(2)}</>
+              <>{numeral(props.price).format(formCurrency)}</>
             ) : (
-              <>{price_discount.toFixed(2)}</>
+              <>{numeral(price_discount).format(formCurrency)}</>
             )}
           </h4>{' '}
           <size-w class="size-w-10" />

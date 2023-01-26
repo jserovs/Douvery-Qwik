@@ -28,6 +28,7 @@
     "@types/eslint": "8.4.10",
     "@types/node": "^18.11.18",
     "@types/node-fetch": "latest",
+    "@types/numeral": "^2.0.2",
     "@typescript-eslint/eslint-plugin": "5.48.0",
     "@typescript-eslint/parser": "5.48.0",
     "@vanilla-extract/css": "^1.9.2",
@@ -48,6 +49,7 @@
   "dependencies": {
     "@blacklab/react-image-magnify": "^4.1.1",
     "@types/dompurify": "^2.4.0",
-    "dompurify": "^2.4.3"
+    "dompurify": "^2.4.3",
+    "numeral": "^2.0.6"
   }
 }
