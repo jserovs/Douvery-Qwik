@@ -1,6 +1,6 @@
 .crtr-img-hr-prs {
     display: grid;
-    grid-template-rows: 15% 80%;
+    grid-template-rows: 10% 80%;
     margin-bottom: 50px;
 }
 
@@ -18,8 +18,8 @@
 
 
 .img_wrap {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 50px;
     border: 1px solid #eee;
     cursor: pointer;
     display: grid;
@@ -27,9 +27,15 @@
     align-items: center;
     margin-left: 5px;
     border-radius: 5PX;
-    padding: 10px;
+
 }
 
+.img_wrap img {
+    width: 60px;
+    height: 50px;
+    object-fit: contain;
+    padding: 5px;
+}
 
 
 .container-img-product img {

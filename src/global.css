@@ -22,6 +22,7 @@
 
   --downBackgroundColor: #f1f5f9;
   --backgroundColor: #fcfcfc;
+  --threeBackgroundColor: #f4f4f4;
   --backgroundCard: rgba(247, 248, 248, 0.952);
 
   --button-pay-backgroundColor: #008080;
@@ -175,4 +176,9 @@ input {
 .eftHover:hover {
   opacity: 1;
   background-color: #01050a04;
+}
+
+.active-prev-view {
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
 }

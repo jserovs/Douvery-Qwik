@@ -11,18 +11,20 @@
     grid-template-columns: 50% 50%;
     object-fit: contain;
     height: 650px;
-    padding: 5px;
+    padding-left: 15px;
+    gap: 5px;
 
 }
 
 .ig-grid-img {
     border-radius: 5px;
     display: grid;
-    border: 1px solid var(--downBackgroundColor);
+    background-color: var(--threeBackgroundColor);
     padding: 10px;
     object-fit: contain;
     justify-content: center;
     align-items: center;
+
 }
 
 .ig-grid-img img {
@@ -31,6 +33,12 @@
     object-fit: contain;
 
 }
+
+.active-prev-view {
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+}
+
 
 @media only screen and (max-width: 885px) {
     .ig-grid-img img {
