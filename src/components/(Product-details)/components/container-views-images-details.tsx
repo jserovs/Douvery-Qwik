@@ -66,7 +66,7 @@ export const ContainerViewsIMGDetails = component$(({ props }: any) => {
     <div class="container-view-product">
       <div class="vert-left">{selectComponent()}</div>
 
-      <div class="right">
+      <div class="center">
         <div class="crtr-div-ifrms-aetr">
           <size-w class="size-w-10" />
           <ContainerHeaderNameBrandProduct props={props} />
@@ -90,6 +90,10 @@ export const ContainerViewsIMGDetails = component$(({ props }: any) => {
 
           <ContainerDescriptionShort props={props} />
         </div>
+      </div>
+
+      <div class="vert-right">
+        <div class="vert-arr-prodsrsdt"></div>
       </div>
     </div>
   );
