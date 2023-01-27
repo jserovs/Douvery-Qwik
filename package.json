@@ -50,6 +50,7 @@
     "@blacklab/react-image-magnify": "^4.1.1",
     "@types/dompurify": "^2.4.0",
     "dompurify": "^2.4.3",
-    "numeral": "^2.0.6"
+    "numeral": "^2.0.6",
+    "react-responsive-carousel": "^3.2.23"
   }
 }
