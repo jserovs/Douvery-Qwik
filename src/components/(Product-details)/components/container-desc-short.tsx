@@ -16,7 +16,10 @@ export const ContainerDescriptionShort = component$(({ props }: any) => {
                 {props.vinetas.map((val: any) => (
                   <>
                     {' '}
-                    <li>{val}</li>{' '}
+                    <div class="crte-crot-sart">
+                      {' '}
+                      <div class="cirle-bg"></div> <li>{val}</li>{' '}
+                    </div>
                   </>
                 ))}{' '}
               </ul>
