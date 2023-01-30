@@ -16,6 +16,13 @@ h5 {
     font-weight: 500;
 }
 
+.crte-crot-sart {
+    display: grid;
+    grid-template-columns: 10px auto;
+    align-items: center;
+    gap: 10px;
+}
+
 .detailed-list {
     padding: 0;
     padding-top: 10PX;
@@ -24,18 +31,16 @@ h5 {
 .detailed-list li {
     color: var(--text2);
     font-size: 13.5px;
-    padding-bottom: 10PX;
+    padding: 5px;
 }
 
-.detailed-list li::before {
-    content: "";
-    display: inline-block;
+
+.cirle-bg {
     width: 5px;
     height: 5px;
     border-radius: 50%;
     background-color: var(--text3);
-    margin-right: 10px;
-    vertical-align: middle;
+
 }
 
 .crets-chrlsr-hrslrs-artes {
