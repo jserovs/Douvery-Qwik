@@ -1,0 +1,33 @@
+.crtr-brst-csr {
+    display: flex;
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+
+.icrt-heart {
+    fill: #333333;
+}
+
+.icrt-info {
+    fill: #333333;
+}
+
+span {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    font-size: 13px;
+    color: #333333;
+    cursor: pointer;
+}
+
+span:hover {
+
+
+    color: #199b8c;
+}

@@ -1,0 +1,16 @@
+.crrtr-srtrt {
+    padding: 15px;
+    background-color: #f1f5f9;
+}
+
+
+h5 {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.crrtr-srtrt p {
+    font-size: small;
+    color: #565959;
+}

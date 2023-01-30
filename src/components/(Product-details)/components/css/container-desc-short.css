@@ -1,0 +1,44 @@
+.crtr-sbr-art {
+    background-color: var(--backgroundColor);
+}
+
+.drtr-arte-ores {
+    display: grid;
+    gap: 10px;
+    padding: 15px;
+}
+
+
+
+h5 {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+}
+
+.detailed-list {
+    list-style: none;
+    padding: 0;
+    padding: 5PX;
+}
+
+.detailed-list li {
+    color: var(--text2);
+    font-size: 13.5px;
+
+}
+
+.detailed-list li::before {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--text3);
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.crets-chrlsr-hrslrs-artes {
+    display: grid;
+    gap: 5px;
+}

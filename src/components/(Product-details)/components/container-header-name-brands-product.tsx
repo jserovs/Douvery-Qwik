@@ -83,7 +83,7 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
           </>
         ) : (
           <>
-            <div>
+            <div class="art-stock">
               <DouveryCheckMark size="16px" />
               <p>Articulo disponible</p>
             </div>
@@ -126,7 +126,7 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
           Esta compra está protegida por <strong>Douvery</strong> , puedes
           comprar con total confianza.
           <a class="sbr-slr-slri" href="/">
-            Saber mas
+            Aprender mas
           </a>
         </p>
       </div>

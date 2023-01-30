@@ -15,6 +15,9 @@ import { VarticalViewProductIMG } from './layout/product/vartical-views';
 import { ThreeHorizontalViewProductIMG } from './layout/product/three-horizontal-views';
 import { LibPermVerticalViewProductIMG } from './layout/product/books-perm-vertical-views';
 import { ContainerInputCartPay } from './container-input-cart-pay';
+import { ContainerVertInfo } from './container-vrt-brts-product';
+import { ContainerButtonExtr } from './container-hrs-butros';
+import { ContainerDescriptionGPT } from './crtr-description-gpt';
 
 export const ContainerViewsIMGDetails = component$(({ props }: any) => {
   useStylesScoped$(styles);
@@ -70,8 +73,8 @@ export const ContainerViewsIMGDetails = component$(({ props }: any) => {
         <div class="crtr-div-ifrms-aetr">
           <size-w class="size-w-10" />
           <ContainerHeaderNameBrandProduct props={props} />
-          {props.variations === undefined ? (
-            ''
+          {props.variations == 0 ? (
+            <> </>
           ) : (
             <div class="crt-variations">
               <ContainerVariantionsDetails
@@ -87,13 +90,23 @@ export const ContainerViewsIMGDetails = component$(({ props }: any) => {
             </div>
             <ContainerButtonDetails props={props} />
           </div>
+          {props.category == 'Books' ? (
+            <>
+              <ContainerDescriptionGPT />{' '}
+            </>
+          ) : (
+            <>
+              {' '}
+              <ContainerDescriptionShort props={props} />
+            </>
+          )}
 
-          <ContainerDescriptionShort props={props} />
+          <ContainerButtonExtr />
         </div>
       </div>
 
       <div class="vert-right">
-        <div class="vert-arr-prodsrsdt"></div>
+        <ContainerVertInfo />
       </div>
     </div>
   );

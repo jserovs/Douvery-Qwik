@@ -10,7 +10,9 @@ export const ContainerExpectedShippingTime = component$(() => {
 
   return (
     <div class="crt-expectend-ship">
-      <h5>Envio :</h5>
+      <div class="srt-shrt-prsrd-nrms">
+        <h5>Envio: </h5> <p>Estándar gratuito en compras mayores a $23</p>
+      </div>
       <div class="shrp-prsx">
         <p class="alrt-vsrt">Compra antes de 8 hrs 10 mins:</p>
         <p class="tm-srh-exp">

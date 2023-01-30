@@ -103,7 +103,6 @@ export default component$(({ props }: any) => {
           </h4>{' '}
           <size-w class="size-w-10" />
           <size-w class="size-w-10" />
-          <button class="button-envio">Envio gratis</button>
           <size-w class="size-w-10" />
           <size-w class="size-w-10" />
           <div class="div-input-sertts">

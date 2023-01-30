@@ -46,6 +46,10 @@
 
 }
 
+.apleada {
+    color: red;
+}
+
 .modal button {
     position: absolute;
     bottom: 10px;
