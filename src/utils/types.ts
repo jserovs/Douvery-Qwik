@@ -35,3 +35,12 @@ export type Seller = {
 	name:string;
 	
 };
+
+
+export type CodePostalData = {
+	name:string;
+	county:string;
+	postcode:string;
+	state:string;
+	
+};

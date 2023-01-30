@@ -6,9 +6,9 @@ export const DouveryCheckMark = ({ size }: any) => (
     width={size || '20px'}
     height={size || '20px'}
     fill-rule="nonzero"
+    class="icrt-checkmark"
   >
     <g
-      fill="#4c956c"
       fill-rule="nonzero"
       stroke="none"
       stroke-width="1"

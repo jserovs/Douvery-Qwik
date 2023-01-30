@@ -9,13 +9,15 @@
     background-color: var(--backgroundColor);
 
     padding: 5px 5px 0px 5px;
-    border-bottom: 1px solid var(--border-0);
+
 
 
 }
 
 .container-title-product p {
-    font-size: 90%;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 0.3em;
 }
 
 .container-brand-product {
@@ -33,12 +35,6 @@
 
 }
 
-.mobiles-title-brand {
-
-    margin-top: 5PX;
-    margin-bottom: 10px;
-    padding: 15px;
-}
 
 .crt--tlr-brnd {
     padding: 0px 0px 10px 0px;
@@ -52,10 +48,14 @@
     text-align: left;
     justify-content: left;
     gap: 5px;
-    margin-top: 5PX
+    margin-top: 5PX;
+    align-items: center;
 }
 
 .di p {
+    display: grid;
+    justify-content: center;
+    align-items: center;
     width: 30px;
     height: 18px;
     background-color: #181818;
@@ -64,6 +64,7 @@
     text-align: center;
     border-radius: 5px;
     font-style: italic;
+
 }
 
 .di a {
@@ -102,14 +103,22 @@
     display: flex;
     gap: 5px;
     padding: 0px 0px 10px 0px;
+    align-items: center;
 
+}
 
+.art-stock {
+    display: flex;
+    align-items: center;
+}
+
+.icrt-checkmark {
+    fill: #497950;
 }
 
 .dsier-strs-lapto p {
     font-size: 68%;
     color: #497950;
-
     font-weight: 500;
 }
 
@@ -244,6 +253,7 @@
 
 
 
+
 .seller:hover .review-popup {
     display: block;
     transform: scale(1);
@@ -262,6 +272,13 @@
 @media only screen and (max-width: 885px) {
     .srte-art-alrt {
         padding-top: 10px;
+    }
+
+    .mobiles-title-brand {
+
+        margin-top: 5PX;
+        margin-bottom: 10px;
+        padding: 15px;
     }
 
 

@@ -11,3 +11,10 @@ export const cleanUpParamsID = (params: Record<string, string>) => {
 	}
 	return params;
 };
+
+export const cleanUpParamsCodePostal = (params: Record<string, string>) => {
+	if ('code' in params && params.code[params.code.length - 1] === '/') {
+		params.code = params.code.slice(0, params.code.length - 1);
+	}
+	return params;
+};
