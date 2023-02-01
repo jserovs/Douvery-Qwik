@@ -29,6 +29,7 @@
     grid-template-rows: auto 50px;
     padding: 5px;
     position: relative;
+    min-height: 50em;
     height: 100%;
 
 }

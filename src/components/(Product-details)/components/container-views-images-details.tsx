@@ -92,7 +92,7 @@ export const ContainerViewsIMGDetails = component$(({ props }: any) => {
           </div>
           {props.category == 'Books' ? (
             <>
-              <ContainerDescriptionGPT />{' '}
+              <ContainerDescriptionGPT props={props} />{' '}
             </>
           ) : (
             <>

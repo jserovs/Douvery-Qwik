@@ -8,10 +8,10 @@ export const LibPermVerticalViewProductIMG = component$(
       <div class="crtr-firx-prd-prodct">
         <div class="book-perm-top">
           <h5>Autor:</h5>
-          <p> Joe Navarro</p>
+          <p> {props.author}</p>
           <h5>Genero:</h5>
 
-          <p>No-Ficción / Autoayuda / Psicología</p>
+          <p>{props.gender}</p>
         </div>
         <div class="crtr-books-aresdt">
           <div class="books-art-crtr">
