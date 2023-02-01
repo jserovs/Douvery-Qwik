@@ -18,7 +18,10 @@ export const ContainerDescriptionShort = component$(({ props }: any) => {
                     {' '}
                     <div class="crte-crot-sart">
                       {' '}
-                      <div class="cirle-bg"></div> <li>{val}</li>{' '}
+                      <div class="cirle-bg"></div>{' '}
+                      <div class="list">
+                        <li>{val}</li>
+                      </div>{' '}
                     </div>
                   </>
                 ))}{' '}
@@ -34,11 +37,9 @@ export const ContainerDescriptionShort = component$(({ props }: any) => {
               {' '}
               <h5>Highlights:</h5>
               <ul class="detailed-list">
-                <li>Regular Fit.</li>
-                <li>Full sleeves.</li>
-                <li>70% cotton, 30% polyester.</li>
-                <li>Easy to wear and versatile as Casual.</li>
-                <li>Machine wash, tumble dry..</li>
+                {props.highlights.map((val: any) => (
+                  <li>{val}</li>
+                ))}
               </ul>
             </div>
           </>
