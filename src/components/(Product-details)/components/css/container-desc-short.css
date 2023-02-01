@@ -19,19 +19,28 @@ h5 {
 .crte-crot-sart {
     display: grid;
     grid-template-columns: 10px auto;
-    align-items: center;
-    gap: 10px;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+
+li {
+    display: flex;
+    align-items: flex-start;
+
+    text-align: end;
+    padding-bottom: 5px;
 }
 
 .detailed-list {
-    padding: 0;
+
     padding-top: 10PX;
 }
 
 .detailed-list li {
     color: var(--text2);
     font-size: 13.5px;
-    padding: 5px;
+    text-align: start;
 }
 
 
@@ -40,7 +49,7 @@ h5 {
     height: 5px;
     border-radius: 50%;
     background-color: var(--text3);
-
+    margin-top: 8px;
 }
 
 .crets-chrlsr-hrslrs-artes {

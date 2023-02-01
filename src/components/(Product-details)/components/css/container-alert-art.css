@@ -1,0 +1,23 @@
+.crtr-alert-prodc {
+    background-color: #03C988;
+    border: 1px solid #fff;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 10px 0;
+    color: #fff;
+}
+
+.crtr-alert-prodc p {
+    color: #fff;
+    font-size: 16px;
+}
+
+.org {
+    font-weight: bold;
+}
+
+.prd-d {
+    margin-left: 10px;
+    font-size: small;
+}

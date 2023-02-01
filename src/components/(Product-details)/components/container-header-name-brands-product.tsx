@@ -16,6 +16,7 @@ import { Loader } from '~/components/status/loader/loader';
 import { DouveryCircleLock } from '~/components/icons/circle-lock';
 import { ContainerExpectedShippingTime } from './container-expected-shipping-time';
 import { Dropdown } from '~/components/dropdown/dropdown';
+import { ContainerAlertArt } from './container-alert-art';
 
 export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
   useStylesScoped$(sryles);
@@ -131,6 +132,7 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
         </p>
       </div>
       {props.quantity == 0 ? <></> : <ContainerExpectedShippingTime />}
+      <ContainerAlertArt props={props} />
     </div>
   );
 });

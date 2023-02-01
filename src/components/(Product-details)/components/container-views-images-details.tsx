@@ -100,9 +100,8 @@ export const ContainerViewsIMGDetails = component$(({ props }: any) => {
               <ContainerDescriptionShort props={props} />
             </>
           )}
-
-          <ContainerButtonExtr />
         </div>
+        <ContainerButtonExtr props={props} />
       </div>
 
       <div class="vert-right">
