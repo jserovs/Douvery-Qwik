@@ -16,7 +16,7 @@ import { ThreeHorizontalViewProductIMG } from './layout/product/three-horizontal
 import { LibPermVerticalViewProductIMG } from './layout/product/books-perm-vertical-views';
 import { ContainerInputCartPay } from './container-input-cart-pay';
 import { ContainerVertInfo } from './container-vrt-brts-product';
-import { ContainerButtonExtr } from './container-hrs-butros';
+
 import { ContainerDescriptionGPT } from './crtr-description-gpt';
 
 export const ContainerViewsIMGDetails = component$(({ props }: any) => {
@@ -101,7 +101,6 @@ export const ContainerViewsIMGDetails = component$(({ props }: any) => {
             </>
           )}
         </div>
-        <ContainerButtonExtr props={props} />
       </div>
 
       <div class="vert-right">

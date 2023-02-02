@@ -6,23 +6,21 @@ export const ContainerButtonExtr = component$(({ props }: any) => {
   useStylesScoped$(styles);
   return (
     <div class="crtr-brst-csr">
-      <div class="whastlit etqsitms">
+      <div class="q-r-pred etqsitms">
         <span>
           <DouveryHeart size="15px" />
           Add to Wishlist
         </span>
-      </div>
-      <div class="infor-srgrs etqsitms">
+        <div class="se-pr">|</div>
         <span>
           <DouveryInfo size="15px" /> Suggest information
         </span>
-      </div>
-      <div class="q-r-pred etqsitms">
+        <div class="se-pr">|</div>
         <span>
           {props.ratings.length == 0 ? <>Sin</> : props.ratings.length}{' '}
           calificaciones
         </span>
-        <h6>|</h6>
+        <div class="se-pr">|</div>
         <span>Sin preguntas Respondidas</span>
       </div>
     </div>

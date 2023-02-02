@@ -35,7 +35,7 @@ export const ContainerDescriptionShort = component$(({ props }: any) => {
               <>
                 <div class="srte-prdsr-isrndfotms">
                   <h5>Sobre este artículo:</h5>
-                  <ul class="detailed-list">
+                  <div class="detailed-list">
                     {props.vinetas.map((val: any) => (
                       <>
                         {' '}
@@ -43,12 +43,12 @@ export const ContainerDescriptionShort = component$(({ props }: any) => {
                           {' '}
                           <div class="cirle-bg"></div>{' '}
                           <div class="list">
-                            <li>{val}</li>
+                            <div>{val}</div>
                           </div>{' '}
                         </div>
                       </>
                     ))}{' '}
-                  </ul>
+                  </div>
                 </div>
               </>
             )}

@@ -37,12 +37,17 @@ li {
     padding-top: 10PX;
 }
 
-.detailed-list li {
+.detailed-list div {
     color: var(--text2);
     font-size: 13.5px;
     text-align: start;
 }
 
+.detailed-list li {
+    color: var(--text2);
+    font-size: 13.5px;
+    text-align: start;
+}
 
 .cirle-bg {
     width: 5px;
