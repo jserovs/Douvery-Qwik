@@ -504,28 +504,40 @@ select,
 
 }
 
+.lgo-smm {
+  display: none;
+
+}
+
 @media only screen and (max-width: 665px) {
   header {
     height: 7rem;
     padding: 0px;
   }
 
+
   .select {
     display: none;
   }
 
 
+  .lgo-lxx {
+    display: none;
+  }
+
+
+  .lgo-smm {
+    display: block;
+
+  }
 
   .logo {
     position: absolute;
-    top: 10px;
+    top: 19px;
 
   }
 
-  .logo svg {
-    width: 105px;
-    height: 50px;
-  }
+
 
   .search {
 

@@ -1,11 +1,11 @@
-<svg width="719" height="601" viewBox="0 0 719 601" fill="none"
+<svg width="719" height="685" viewBox="0 0 719 685" fill="none"
     xmlns="http://www.w3.org/2000/svg">
-    <rect width="719" height="601" rx="234" fill="#0D47A1"/>
+    <rect width="719" height="685" rx="150" fill="#0D47A1"/>
     <g filter="url(#filter0_b_0_1)">
-        <path d="M582.714 147.696L262.016 209.265C256.435 210.336 254.39 217.261 258.493 221.193L334.837 294.351C338.855 298.201 336.992 304.972 331.57 306.225L148.358 348.556L11.1107 383.436C2.90939 385.52 4.75669 397.66 13.2067 397.211L270.488 383.519H572.084C577.899 383.519 581.179 376.839 577.622 372.238L513.991 289.911C510.435 285.31 513.715 278.63 519.53 278.63H702.007C708.257 278.63 711.374 271.063 706.938 266.661L588.964 149.602C587.323 147.974 584.984 147.261 582.714 147.696Z" fill="white"/>
+        <path d="M582.714 191.696L262.016 253.265C256.435 254.336 254.39 261.261 258.493 265.193L334.837 338.351C338.855 342.201 336.992 348.972 331.57 350.225L148.358 392.556L11.1106 427.436C2.90937 429.52 4.75669 441.66 13.2067 441.211L270.488 427.519H572.084C577.899 427.519 581.179 420.839 577.622 416.238L513.991 333.911C510.435 329.31 513.715 322.63 519.53 322.63H702.007C708.257 322.63 711.374 315.063 706.938 310.661L588.964 193.602C587.323 191.974 584.984 191.261 582.714 191.696Z" fill="white"/>
     </g>
     <defs>
-        <filter id="filter0_b_0_1" x="-4.17236" y="137.571" width="723.194" height="269.652" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <filter id="filter0_b_0_1" x="-4.17236" y="181.571" width="723.193" height="269.652" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
             <feFlood flood-opacity="0" result="BackgroundImageFix"/>
             <feGaussianBlur in="BackgroundImageFix" stdDeviation="5"/>
             <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_0_1"/>

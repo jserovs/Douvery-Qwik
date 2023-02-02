@@ -4,6 +4,7 @@ import styles from './header.css?inline';
 import { DouveryLogo } from '../icons/logo';
 import { DouveryUser } from '../icons/user';
 import { DouveryCart } from '../icons/cart';
+import { DouveryLogo105X40PX } from '../icons/logo105X40';
 
 export default component$(({ is }: any) => {
   useStylesScoped$(styles);
@@ -13,7 +14,14 @@ export default component$(({ is }: any) => {
       <div class="container container-cajas-header ">
         <div class="cajas">
           <a href="/" class="logo" aria-label="Douvery">
-            <DouveryLogo />
+            <div class="lgo-lxx">
+              {' '}
+              <DouveryLogo />
+            </div>
+            <div class="lgo-smm">
+              {' '}
+              <DouveryLogo105X40PX />
+            </div>
           </a>
         </div>
         <div class="cajas">
