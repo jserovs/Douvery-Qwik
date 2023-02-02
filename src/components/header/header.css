@@ -533,7 +533,8 @@ select,
 
   .logo {
     position: absolute;
-    top: 19px;
+    top: 15px;
+    left: 5px;
 
   }
 
