@@ -5,7 +5,9 @@ export const ContainerDescription = component$(({ props }: any) => {
   return (
     <div class="crrtr-srtrt">
       <h5>Descripcion</h5>
-      <p>{props.description}</p>
+      <div class="descr">
+        <p>{props.description}</p>
+      </div>
     </div>
   );
 });

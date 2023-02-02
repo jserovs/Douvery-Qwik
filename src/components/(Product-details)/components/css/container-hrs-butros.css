@@ -1,23 +1,26 @@
 .crtr-brst-csr {
     display: flex;
-    margin-top: 10px;
+
     width: 100%;
     height: 50px;
     padding: 10px;
-    justify-content: space-between;
-    gap: 10px;
+    justify-content: flex-end;
+    gap: 20px;
     background-color: var(--backgroundColor);
-    border-top: 1px solid #33333313;
+    border-top: 1px solid #3333330c;
     ;
 }
 
+.se-pr {
+    color: #33333320;
+}
 
 .icrt-heart {
-    fill: #333333;
+    fill: #33333380;
 }
 
 .icrt-info {
-    fill: #333333;
+    fill: #33333380;
 }
 
 .etqsitms {
@@ -28,7 +31,7 @@
 
 .q-r-pred {
     display: flex;
-    gap: 5PX;
+    gap: 10PX;
     justify-content: center;
     align-items: center;
 }
@@ -45,5 +48,5 @@ span {
 span:hover {
 
 
-    color: #199b8c;
+    color: var(--blueVivo);
 }

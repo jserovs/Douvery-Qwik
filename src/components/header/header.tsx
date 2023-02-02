@@ -5,7 +5,7 @@ import { DouveryLogo } from '../icons/logo';
 import { DouveryUser } from '../icons/user';
 import { DouveryCart } from '../icons/cart';
 
-export default component$(() => {
+export default component$(({ is }: any) => {
   useStylesScoped$(styles);
 
   return (
@@ -36,8 +36,9 @@ export default component$(() => {
                 type="text"
                 class="searchTerm"
                 placeholder="Busca tu aticulos ... "
+                onClick$={() => (is.setIsOpen = true)}
               />
-
+              <div class="lsgrs"></div>
               <button
                 aria-label="button-search"
                 name="button-search"

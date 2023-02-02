@@ -13,6 +13,12 @@ export const Dropdown = component$(({ title }: any) => {
   return (
     <div>
       {' '}
+      {isOpen.setIsOpen && (
+        <div
+          class="shad-modal"
+          onClick$={() => (isOpen.setIsOpen = false)}
+        ></div>
+      )}
       <div>
         <button
           class="trl-drs"

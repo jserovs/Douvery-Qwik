@@ -22,6 +22,7 @@ import { useLocation } from '@builder.io/qwik-city';
 import ContainerDatails from '~/components/(Product-details)/components/container-datails';
 import { cleanUpParams } from '~/utils/cleurs';
 import { ContainerViewsIMGDetails } from '~/components/(Product-details)/components/container-views-images-details';
+import { ContainerButtonExtr } from '~/components/(Product-details)/components/container-hrs-butros';
 
 export default component$(() => {
   useStylesScoped$(styles);
@@ -71,6 +72,7 @@ export default component$(() => {
   // const store = useStore<{ name?: string }>({
   //   name: undefined,
   // });
+  const isOpen = useStore({ setIsOpen: false });
 
   return (
     <>
@@ -82,9 +84,11 @@ export default component$(() => {
           onResolved={() => (
             <>
               <div class="nd-det-1">
-                <ContainerDatails props={state.product} />
+                <ContainerDatails is={isOpen} props={state.product} />
               </div>
+
               <ContainerViewsIMGDetails props={state.product} />
+              <ContainerButtonExtr props={state.product} />
             </>
           )}
         />
