@@ -22,7 +22,7 @@
 
 .srt-shrt-prsrd-nrms p {
     font-size: 68%;
-    color: #666;
+    color: var(--textOpa);
     font-size: small;
 }
 
@@ -34,7 +34,7 @@
 
 .alrt-vsrt {
     font-size: 13px;
-    color: #666;
+    color: var(--textOpa);
     font-size: small;
 }
 
@@ -53,7 +53,7 @@
 
     .alrt-vsrt {
 
-        color: #666;
+        color: var(--textOpa);
         font-size: small;
     }
 

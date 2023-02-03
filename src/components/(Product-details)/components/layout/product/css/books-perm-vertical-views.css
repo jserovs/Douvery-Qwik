@@ -38,7 +38,7 @@
 
 .book-perm-top p {
     font-size: 90%;
-    color: #666;
+    color: var(--textOpa);
 }
 
 .books-art-crtr {

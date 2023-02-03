@@ -34,12 +34,16 @@
   --text3: #333333;
   --text4: #0f1111;
 
+
+  --textOpa: #3C4048;
+
+
   --blue-clear: #2185D5;
   --blue: #0b347b;
   --blueVivo: #2146C7;
   --black: #212529;
   --white: var(--backgroundColor);
-  --grey: #666666;
+  --grey: var(--textOpa)666;
   --orange: #e84118;
   --green: #38E54D;
   --violet: #1613d3;
