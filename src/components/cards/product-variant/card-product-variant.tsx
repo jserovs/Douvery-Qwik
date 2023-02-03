@@ -6,7 +6,7 @@ import {
   useStylesScoped$,
 } from '@builder.io/qwik';
 import { Link } from '@builder.io/qwik-city';
-import { fetchCharacters } from '~/services/fechProduct';
+import { fetchProduct } from '~/services/fechProduct';
 
 import type { Product } from '~/utils/types';
 import styles from './css/card-product-variant.css?inline';
@@ -31,7 +31,7 @@ export const CardProductVariations1 = component$(
     );
 
     const productResource = useResource$<void>(async () => {
-      const product = await fetchCharacters(dui);
+      const product = await fetchProduct(dui);
 
       state.product = product;
     });

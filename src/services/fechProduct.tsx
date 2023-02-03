@@ -1,4 +1,4 @@
-export async function fetchCharacters(
+export async function fetchProduct(
   dui: string,
   controller?: AbortController
 ): Promise<any> {

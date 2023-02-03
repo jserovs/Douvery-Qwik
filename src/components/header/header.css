@@ -489,6 +489,12 @@ select,
 .lis-sgrs {
   padding: 10px;
   color: var(--textOpa);
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #050007;
+
 }
 
 .crrtrSrers:hover {

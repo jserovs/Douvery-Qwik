@@ -9,12 +9,12 @@ import {
 
 import styles from './index.css?inline';
 
-// import { fetchCharacters } from '~/services/fechProduct';
+// import { fetchProduct } from '~/services/fechProduct';
 
 // import { cleanUpParams } from '~/utils/cleurs';
 // import { execute } from '~/utils/api';
 // import { getProductQuery } from '~/services/query';
-import { fetchCharacters } from '~/services/fechProduct';
+import { fetchProduct } from '~/services/fechProduct';
 import type { Product } from '~/utils/types';
 import type { DocumentHead } from '@builder.io/qwik-city';
 
@@ -51,7 +51,7 @@ export default component$(() => {
 
     const { dui } = cleanUpParams({ dui: location.params.dui });
 
-    const product = await fetchCharacters(dui);
+    const product = await fetchProduct(dui);
 
     state.product = product;
   });
@@ -59,7 +59,7 @@ export default component$(() => {
   const productResource = useResource$<void>(async () => {
     const { dui } = cleanUpParams({ dui: location.params.dui });
 
-    const product = await fetchCharacters(dui);
+    const product = await fetchProduct(dui);
 
     state.product = product;
   });
@@ -67,7 +67,7 @@ export default component$(() => {
   // const ageResource = useResource$<{
   //   [x: string]: any;
   //   Product: Product;
-  // }>(async () => fetchCharacters('D99658'));
+  // }>(async () => fetchProduct('D99658'));
 
   // const store = useStore<{ name?: string }>({
   //   name: undefined,
