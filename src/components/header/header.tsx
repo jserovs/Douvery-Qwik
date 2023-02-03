@@ -71,7 +71,7 @@ export default component$(({ is }: any) => {
               <input
                 type="text"
                 class="searchTerm"
-                placeholder="Busca tus productos favoritos aquí ..."
+                placeholder="Busca tus futuros productos aquí ..."
                 onClick$={() => (is.setIsOpen = true)}
                 onInput$={(ev) =>
                   (state.searchInput = (ev.target as HTMLInputElement).value)
@@ -105,7 +105,7 @@ export default component$(({ is }: any) => {
                   </div>
                 </>
               )}
-              <div class="lsgrs"></div>
+
               <button
                 aria-label="button-search"
                 name="button-search"
