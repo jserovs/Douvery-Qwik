@@ -57,11 +57,11 @@
     justify-content: center;
     align-items: center;
     width: 30px;
-    height: 18px;
+    place-content: center;
     background-color: #181818;
     color: var(--backgroundColor);
     font-size: 68%;
-    text-align: center;
+
     border-radius: 5px;
     font-style: italic;
 
