@@ -17,6 +17,7 @@ import { DouveryCircleLock } from '~/components/icons/circle-lock';
 import { ContainerExpectedShippingTime } from './container-expected-shipping-time';
 import { Dropdown } from '~/components/dropdown/dropdown';
 import { ContainerAlertArt } from './container-alert-art';
+import { Link } from '@builder.io/qwik-city';
 
 export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
   useStylesScoped$(sryles);
@@ -50,9 +51,9 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
         <div class="container-title-product">
           {' '}
           <div class="container-brand-product">
-            <a href="/" aria-label={props.marca}>
+            <Link href="/" aria-label={props.marca}>
               Visita {props.marca}
-            </a>
+            </Link>
           </div>
           <p>{props.name}</p>
           <div class="di">

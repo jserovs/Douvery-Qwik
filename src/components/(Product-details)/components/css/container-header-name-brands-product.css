@@ -28,9 +28,8 @@
 
 }
 
-.container-brand-product * {
+.container-brand-product {
     color: var(--primary-color);
-    font-weight: var(--font-weight-sm);
     font-size: 65%;
 
 }
@@ -90,7 +89,7 @@
 .brt-irft-lapto h4 {
     font-size: 73%;
     color: #0a0b0c;
-    opacity: 95%;
+
 }
 
 .brt-irft-lapto {

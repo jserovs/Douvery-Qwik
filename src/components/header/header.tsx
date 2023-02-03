@@ -37,7 +37,7 @@ export default component$(({ is }: any) => {
               <input
                 type="text"
                 class="searchTerm"
-                placeholder="Busca tu aticulos ... "
+                placeholder="Busca tus productos favoritos aquí ..."
                 onClick$={() => (is.setIsOpen = true)}
               />
               <div class="lsgrs"></div>
