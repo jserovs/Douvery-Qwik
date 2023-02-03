@@ -69,6 +69,7 @@
 .di a {
     font-style: inherit;
     font-size: 68%;
+    color: var(--textOpa);
 }
 
 .brt-irft-lapto {
@@ -79,7 +80,7 @@
 
 .brt-irft-lapto h5 {
     font-size: 63%;
-    color: #666;
+    color: var(--textOpa);
     display: flex;
     gap: 5px;
     margin-right: 8PX;
@@ -162,7 +163,7 @@
 
 .shrt-prd-alrt p {
     font-size: 68%;
-    color: #666;
+    color: var(--textOpa);
     display: flex;
     gap: 5px;
     margin-right: 8PX;
@@ -178,7 +179,7 @@
 .chg-shr-prtd {
     margin-left: 10px;
     font-size: 68%;
-    color: #666;
+    color: var(--textOpa);
 
 }
 
@@ -192,7 +193,6 @@
 .srte-art-alrt p strong {
     font-size: 95%;
     font-weight: 600;
-    opacity: 90%;
 }
 
 .srte-art-alrt p a {
