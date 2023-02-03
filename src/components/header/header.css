@@ -461,8 +461,41 @@ select,
 
 }
 
+.suggestions {
+  width: 100%;
 
+  display: block;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  background-color: #fff;
 
+  z-index: 1;
+  border-radius: 10px 10px;
+}
+
+.crrtrSrers {
+  display: flex;
+  padding-left: 10px;
+  border-radius: 10px 10px;
+}
+
+.suggestions ul {
+
+  margin: 0;
+}
+
+.lis-sgrs {
+  padding: 10px;
+  color: var(--textOpa);
+}
+
+.crrtrSrers:hover {
+  background-color: rgba(241, 241, 241, 0.911);
+  transition: none;
+  cursor: default;
+}
 
 .Cuenta-desplegable:hover .efecto-HOVER-cuentaDesplegable {
   display: block;
@@ -528,6 +561,7 @@ select,
 
 
   }
+
 
 
 
