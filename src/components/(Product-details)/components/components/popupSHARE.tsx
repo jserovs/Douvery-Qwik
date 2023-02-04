@@ -26,6 +26,7 @@ export const ContainerPoput = component$(({ title }: any) => {
         <div class="crt-drpd">
           <ul class={`dropdown-menu ${isOpen.setIsOpen ? 'show' : ''}`}>
             <div class="list-container">
+              <div class="tolst-tip"></div>
               <ul>
                 <li class="list-item">
                   <div class="item-title">Instagram</div>
