@@ -21,8 +21,8 @@ import type { DocumentHead } from '@builder.io/qwik-city';
 import { useLocation } from '@builder.io/qwik-city';
 import ContainerDatails from '~/components/(Product-details)/components/container-datails';
 import { cleanUpParams } from '~/utils/cleurs';
-import { ContainerViewsIMGDetails } from '~/components/(Product-details)/components/container-views-images-details';
-import { ContainerButtonExtr } from '~/components/(Product-details)/components/container-hrs-butros';
+import { View2 } from '~/components/(Product-details)/components/sessions/VIEW 2/view2';
+import { View1 } from '~/components/(Product-details)/components/sessions/VIEW 1/view1';
 
 export default component$(() => {
   useStylesScoped$(styles);
@@ -87,15 +87,11 @@ export default component$(() => {
                 <ContainerDatails is={isOpen} props={state.product} />
               </div>
 
-              <ContainerViewsIMGDetails props={state.product} />
-              <ContainerButtonExtr props={state.product} />
+              <View1 props={state.product} />
+              <View2 />
             </>
           )}
         />
-
-        <div class="container-details ">
-          <div class="container-mobiles-button"></div>
-        </div>
       </div>
     </>
   );

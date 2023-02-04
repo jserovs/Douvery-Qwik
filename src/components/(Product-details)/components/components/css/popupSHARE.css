@@ -20,12 +20,12 @@
     position: relative;
 
     align-items: center;
-    color: #0a0b0c;
+    color: var(--textOpa);
     ;
 }
 
 .trl-drs svg {
-    fill: #0a0b0c;
+    fill: var(--textOpa);
     width: 16px;
     height: 16px;
 }
