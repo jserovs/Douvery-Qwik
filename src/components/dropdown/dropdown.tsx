@@ -34,6 +34,7 @@ export const Dropdown = component$(({ title }: any) => {
         <div class="crt-drpd">
           <ul class={`dropdown-menu ${isOpen.setIsOpen ? 'show' : ''}`}>
             <div class="list-container">
+              <div class="tolst-tip"></div>
               <h3 class="list-title">{title}</h3>
               <ul>
                 {options.map((option) => (
