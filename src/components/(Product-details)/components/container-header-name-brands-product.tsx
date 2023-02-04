@@ -19,6 +19,8 @@ import { Dropdown } from '~/components/dropdown/dropdown';
 import { ContainerAlertArt } from './container-alert-art';
 import { Link } from '@builder.io/qwik-city';
 
+import { ContainerPoput } from './components/popupSHARE';
+
 export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
   useStylesScoped$(sryles);
 
@@ -56,9 +58,14 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
             </Link>
           </div>
           <p>{props.name}</p>
-          <div class="di">
-            <p>De</p>
-            <a href="/">{props.category}</a>
+          <div class="crtr-di">
+            <div class="di">
+              <p>De</p>
+              <a href="/">{props.category}</a>
+            </div>
+            <div class="brt-shared-art">
+              <ContainerPoput title={'Compartir'} />
+            </div>
           </div>
         </div>
       </div>
