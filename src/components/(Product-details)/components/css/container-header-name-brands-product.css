@@ -41,13 +41,50 @@
 
 }
 
+.crtr-di {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 30px;
+}
+
+.brt-shared-art {
+
+    left: 0;
+    right: 30px;
+    display: flex;
+    gap: 5px;
+    border-radius: 5px;
+    justify-content: right;
+    top: 5px;
+
+
+}
+
+.brt-shared-art {
+    display: flex;
+    gap: 5px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: transparent;
+    cursor: pointer;
+
+    border-radius: 8px;
+}
+
+
+
+
+
+
 .di {
     display: flex;
     flex-direction: row;
     text-align: left;
     justify-content: left;
     gap: 5px;
-    margin-top: 5PX;
+    margin-top: 0PX;
     align-items: center;
 }
 

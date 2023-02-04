@@ -21,10 +21,7 @@ export default component$(() => {
     <QwikCityProvider>
       <head>
         <meta charSet="utf-8" />
-        <meta
-          name="viewport"
-          content="width=device-width, user-scalable=no"
-        ></meta>
+
         <meta name="theme-color" content="#0d47a1" />
         <link rel="manifest" href="/manifest.json" />
         <QwikPartytown forward={['dataLayer.push']} />

@@ -1,0 +1,129 @@
+.ccrt-cnst-prp {
+    background-color: bisque;
+}
+
+.crtr-ppptr {
+    position: relative;
+    display: grid;
+
+    padding: 10px;
+    box-sizing: border-box;
+    width: 500px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.ttle-draw {
+    font-size: 68%;
+    text-align: center;
+    display: flex;
+    position: relative;
+    top: 2px;
+    align-items: center;
+}
+
+.trl-drs svg {
+    fill: #0a0b0c;
+    width: 16px;
+    height: 16px;
+}
+
+.crtr-brts {
+    width: 100%;
+    height: 100%;
+
+}
+
+.trl-drs {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #FFF;
+}
+
+
+
+.trl-drs .arrow-up {
+    transform: rotate(360deg);
+    transition: transform 300ms ease-in-out;
+
+}
+
+.dropdown-menu {
+    display: none;
+    min-width: 150px;
+    min-height: 500px;
+
+}
+
+.dropdown-menu.show {
+    display: block;
+
+}
+
+.crt-drpd {
+    position: absolute;
+    z-index: 10;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
+}
+
+.shad-modal {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.dropdown-menu {
+    width: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 100%;
+    left: 20%;
+    transform: translateX(-20%);
+    background-color: var(--backgroundColor);
+    padding: 8px 0;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    z-index: 1;
+    margin-top: 10px;
+}
+
+.dropdown-menu::after {
+    content: "";
+    display: block;
+    border-bottom: 7px solid var(--backgroundColor);
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    position: absolute;
+    top: -7px;
+    left: calc(50% - 7px);
+}
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+
+
+    padding: 0px 5px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    text-align: center
+}
+
+.list-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #0a0b0c;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    position: relative;
+    float: center;
+
+}
