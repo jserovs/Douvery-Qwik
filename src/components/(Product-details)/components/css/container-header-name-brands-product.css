@@ -365,4 +365,9 @@
     .sbr-slr-slri {
         display: none;
     }
+
+    .crtr-di {
+
+        padding-right: 0px;
+    }
 }

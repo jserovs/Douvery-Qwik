@@ -106,6 +106,14 @@ input {
   outline: none;
 }
 
+input:focus {
+  transform: none !important;
+  -webkit-transform: none !important;
+  -ms-transform: none !important;
+  -moz-transform: none !important;
+  -o-transform: none !important;
+}
+
 a {
   text-decoration: none;
 }

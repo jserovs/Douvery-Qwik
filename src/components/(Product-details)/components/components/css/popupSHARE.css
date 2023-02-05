@@ -114,8 +114,6 @@
 .list-container {
     display: flex;
     flex-direction: column;
-
-
     padding: 0px 5px;
     box-sizing: border-box;
     width: 100%;
@@ -133,4 +131,15 @@
     position: relative;
     float: center;
 
+}
+
+@media only screen and (max-width: 885px) {
+    .tolst-tip {
+        left: calc(80% - 7px);
+    }
+
+    .dropdown-menu {
+        left: 45%;
+        transform: translateX(-45%);
+    }
 }
