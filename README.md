@@ -1,5 +1,7 @@
 # README
 
+![logo](https://res.cloudinary.com/dul3tpj2d/image/upload/v1675632563/dou/douvery_dpopvl.png)
+
 ## Introduction
 
 Welcome to Entorno a Douvery, a project focused on the sales environment for all audiences. This project is under development and is expected to launch soon.
