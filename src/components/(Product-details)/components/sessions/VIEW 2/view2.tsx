@@ -1,10 +1,11 @@
-import { component$ } from '@builder.io/qwik';
+import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import { ContainerCombinedBySeller } from './components/container-combined-by-seller';
-
-export const View2 = component$(() => {
+import styles from './view2.css?inline';
+export const View2 = component$(({ product }: any) => {
+  useStylesScoped$(styles);
   return (
-    <div>
-      <ContainerCombinedBySeller />
+    <div class="crtr-views2">
+      <ContainerCombinedBySeller product={product} />
     </div>
   );
 });

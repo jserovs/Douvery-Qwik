@@ -88,7 +88,7 @@ export default component$(() => {
               </div>
 
               <View1 props={state.product} />
-              <View2 />
+              <View2 product={state.product} />
             </>
           )}
         />
