@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Welcome to Entorno a Douvery, a project focused on the sales environment for all audiences. This project is under development and is expected to launch soon.
+Welcome to Douvery, a project focused on the sales environment for all audiences. This project is under development and is expected to launch soon.
 
 ## Development Progress
 
