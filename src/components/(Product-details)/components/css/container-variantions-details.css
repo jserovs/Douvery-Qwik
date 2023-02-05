@@ -19,6 +19,11 @@
 
 }
 
+.col-auto {
+    display: grid;
+    gap: 5px;
+}
+
 @media only screen and (max-width: 885px) {
     .super-container-options-product {
         width: 100%;

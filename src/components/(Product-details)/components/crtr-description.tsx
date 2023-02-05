@@ -4,7 +4,7 @@ export const ContainerDescription = component$(({ props }: any) => {
   useStylesScoped$(styles);
   return (
     <div class="crrtr-srtrt">
-      <h5>Descripcion</h5>
+      <hs-sr1>Descripcion</hs-sr1>
       <div class="descr">
         <p>{props.description}</p>
       </div>

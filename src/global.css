@@ -36,6 +36,7 @@
 
 
   --textOpa: #3C4048;
+  --textHs-sr1: #181818;
 
 
   --blue-clear: #2185D5;
@@ -174,6 +175,36 @@ p {
   color: var(--text3);
   margin: 0;
 }
+
+/** Title label in different sizes */
+
+hs-sr1 {
+  font-size: 12.92px;
+  font-weight: var(--font-weight-m);
+  color: var(--textHs-sr1);
+}
+
+
+/** Paragraph label */
+
+p-sr1 {
+  font-size: 13.5px;
+  color: var(--textOpa);
+}
+
+p-sr2 {
+  font-size: 15px;
+  color: var(--textOpa);
+}
+
+/** A label */
+
+a-sr1-info {
+  font-size: 13.5px;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
 
 
 html {
