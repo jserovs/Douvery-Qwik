@@ -11,10 +11,11 @@ export const ContainerExpectedShippingTime = component$(() => {
   return (
     <div class="crt-expectend-ship">
       <div class="srt-shrt-prsrd-nrms">
-        <h5>Envio: </h5> <p>Estándar gratuito en compras mayores a $23</p>
+        <hs-sr1>Envio: </hs-sr1>{' '}
+        <p-sr1>Estándar gratuito en compras mayores a $23</p-sr1>
       </div>
       <div class="shrp-prsx">
-        <p class="alrt-vsrt">Compra antes de 8 hrs 10 mins:</p>
+        <p-sr1>Compra antes de 8 hrs 10 mins:</p-sr1>
         <p class="tm-srh-exp">
           Recibelo el {''}
           {mañana.toLocaleDateString('es-ES', {

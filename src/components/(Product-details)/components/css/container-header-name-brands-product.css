@@ -114,7 +114,7 @@
 
 .brt-irft-lapto {
     display: flex;
-    gap: 5px;
+    gap: 10px;
     margin-top: 5PX;
 }
 
@@ -129,7 +129,11 @@
 
 .brt-irft-lapto h4 {
     font-size: 73%;
-    color: #0a0b0c;
+
+    color: var(--textOpa);
+    display: flex;
+    gap: 5px;
+    margin-right: 8PX;
 
 }
 
@@ -189,31 +193,33 @@
     font-size: var(--font-size-md);
 }
 
+.dsier-strs-lapto div {
+    display: flex;
+    gap: 5PX;
+}
+
 .shrt-prd-alrt {
     margin-top: 2px;
 
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 
-.dsier-strs-lapto div {
-    display: flex;
-    gap: 5PX;
-}
 
 .shrt-prd-alrt p {
     font-size: 68%;
     color: var(--textOpa);
     display: flex;
     gap: 5px;
-    margin-right: 8PX;
+
 
 }
 
 .shrt-prd-alrt a {
     font-size: 68%;
     color: var(--primary-color);
-    margin-right: 2PX;
+
 }
 
 .chg-shr-prtd {

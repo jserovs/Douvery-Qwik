@@ -70,7 +70,7 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
         </div>
       </div>
       <div class="brt-irft-lapto">
-        <h5>Estado : </h5> <h4>{props.item_condition}</h4>
+        <hs-sr1>Estado:</hs-sr1> <p-sr1>{props.item_condition}</p-sr1>
       </div>
       <div class="dsier-strs-lapto">
         {props.quantity <= 1 ? (
@@ -101,7 +101,7 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
       </div>
       <div class="shrt-prd-alrt">
         {' '}
-        <p>Enviado & Vendido por</p>
+        <hs-sr1>Enviado & Vendido por </hs-sr1>
         <div class="sll-rps">
           <Resource
             value={ageResource}
@@ -131,13 +131,13 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
       <div class="srte-art-alrt">
         {' '}
         <DouveryCircleLock size="16" />
-        <p>
+        <p-sr1>
           Esta compra está protegida por <strong>Douvery</strong> , puedes
           comprar con total confianza.
-          <a class="sbr-slr-slri" href="/">
+          <a-sr1-info class="sbr-slr-slri" href="/">
             Aprender mas
-          </a>
-        </p>
+          </a-sr1-info>
+        </p-sr1>
       </div>
       {props.quantity == 0 ? <></> : <ContainerExpectedShippingTime />}
       <ContainerAlertArt props={props} />

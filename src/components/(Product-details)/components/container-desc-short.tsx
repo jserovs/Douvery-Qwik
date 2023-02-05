@@ -16,7 +16,7 @@ export const ContainerDescriptionShort = component$(({ props }: any) => {
             <>
               <div class="crets-chrlsr-hrslrs-artes">
                 {' '}
-                <h5>Highlights:</h5>
+                <hs-sr1>Highlights:</hs-sr1>
                 <ul class="detailed-list">
                   {props.highlights.map((val: any) => (
                     <li>{val}</li>
@@ -34,7 +34,7 @@ export const ContainerDescriptionShort = component$(({ props }: any) => {
             ) : (
               <>
                 <div class="srte-prdsr-isrndfotms">
-                  <h5>Sobre este artículo:</h5>
+                  <hs-sr1>Sobre este artículo:</hs-sr1>
                   <div class="detailed-list">
                     {props.vinetas.map((val: any) => (
                       <>
@@ -43,7 +43,7 @@ export const ContainerDescriptionShort = component$(({ props }: any) => {
                           {' '}
                           <div class="cirle-bg"></div>{' '}
                           <div class="list">
-                            <div>{val}</div>
+                            <p-sr1>{val}</p-sr1>
                           </div>{' '}
                         </div>
                       </>
@@ -58,7 +58,7 @@ export const ContainerDescriptionShort = component$(({ props }: any) => {
               <>
                 <div class="crets-chrlsr-hrslrs-artes">
                   {' '}
-                  <h5>Highlights:</h5>
+                  <hs-sr1>Highlights:</hs-sr1>
                   <ul class="detailed-list">
                     {props.highlights.map((val: any) => (
                       <li>{val}</li>

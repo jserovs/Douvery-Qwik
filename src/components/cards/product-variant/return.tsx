@@ -1,25 +1,23 @@
-import { component$, useStylesScoped$ } from '@builder.io/qwik';
+import { component$ } from '@builder.io/qwik';
 
 import { CardProductVariations1 } from '~/components/cards/product-variant/card-product-variant';
-import styles from './css/container-variantions-details.css?inline';
-export default component$(({ props, imgS, imgP }: any) => {
-  useStylesScoped$(styles);
 
+export default component$(({ valla, imgS, imgP, props }: any) => {
   return (
-    <div class="super-container-options-product">
-      {props.variations.map((val: any, key: any) => (
+    <div>
+      {valla.variations.map((val: any, key: any) => (
         <div key={key} class="container-variation-product">
           <size-w class="size-w-10" />
           <div class="col-auto">
-            <hs-sr1> {val.nameVariation} :</hs-sr1>
+            <hs-sr1> {val.name} :</hs-sr1>
             <size-w class="size-w-10" />
             <div class="container-variation-cont-most">
-              {val.productVariation.map((valle: any, key: any) => (
+              {val.dui.map((valll: any, key: any) => (
                 <CardProductVariations1
                   key={key}
                   imgS={imgS}
                   imgP={imgP}
-                  dui={valle}
+                  dui={valll}
                   slug={props}
                 />
               ))}

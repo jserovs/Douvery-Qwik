@@ -24,9 +24,13 @@ export type Product = {
 export type variant = {
 	id: string;
 	variations:string;
-	productVariation:Array<{
-		dui: string;
-	}>;
+	productVariation:variantDate;
+};
+
+export type variantDate = {
+	name: string;
+	dui:string;
+	
 };
 
 
