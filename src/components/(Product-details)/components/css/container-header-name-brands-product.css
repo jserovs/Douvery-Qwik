@@ -73,7 +73,10 @@
     border-radius: 8px;
 }
 
+.brt-shared-art svg {
+    fill: var(--textOpa);
 
+}
 
 
 
