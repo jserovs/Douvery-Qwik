@@ -551,40 +551,24 @@ select,
     padding: 0px;
   }
 
-
   .select {
     display: none;
   }
 
-
-
-
-
-
   .logo {
     position: absolute;
     top: 12px;
-
-
   }
 
-
-
-
   .search {
-
     height: 36PX;
     position: relative;
-
     display: grid;
     top: 15px;
   }
 
   .searchButton {
-
-
     background-color: transparent;
-
   }
 
   .searchTerm {
@@ -619,13 +603,16 @@ select,
     display: none;
   }
 
-
-
   .texts-opts-crt-gg {
     display: grid;
     justify-content: center;
     align-items: center;
     place-content: center;
     text-align: center;
+  }
+
+  .lis-sgrs {
+    font-size: small;
+
   }
 }
