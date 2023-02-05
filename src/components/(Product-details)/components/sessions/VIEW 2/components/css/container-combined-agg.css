@@ -1,0 +1,25 @@
+.crtr-combined-info {
+    display: grid;
+    gap: 5px;
+}
+
+.obts {
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+}
+
+.price-conmbr {
+    display: grid;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 885px) {
+    .crtr-combined-info {
+        padding-left: 20px;
+    }
+}

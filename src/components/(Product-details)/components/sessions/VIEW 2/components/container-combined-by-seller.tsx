@@ -4,25 +4,30 @@ import styles from './css/container-combined-by-seller.css?inline';
 import { CtnrCardImageOnly } from '~/components/cards/product-img-only/product-img-only';
 import { DouveryAdd } from '~/components/icons/add';
 
-export const ContainerCombinedBySeller = component$(({ product }: any) => {
+export const ContainerCombinedBySeller = component$(({ data }: any) => {
   useStylesScoped$(styles);
-
-  const data = [
-    {
-      images: ['https://via.placeholder.com/150x150'],
-      price: '19',
-    },
-  ];
 
   return (
     <div class="crrts-csrtos">
-      <div class="p-istnr">
-        <CtnrCardImageOnly product={product} />
-        <div class="slxr">
-          <DouveryAdd />
+      <div class="crrts-title">
+        <div class="ofrs">
+          <hs-sr3>Combinaciones por el vendedor</hs-sr3>
+          <a-sr1-info>Saber mas</a-sr1-info>
         </div>
+
+        <p-sr1>Obtienes un descuento al comprar combinados</p-sr1>
+      </div>
+
+      <div class="p-istnr">
         {data.map((val: any, key: any) => (
-          <CtnrCardImageOnly product={val} key={key} />
+          <>
+            <CtnrCardImageOnly product={val} key={key} />
+            {key !== data.length - 1 && (
+              <div class="slxr">
+                <DouveryAdd />
+              </div>
+            )}
+          </>
         ))}
       </div>
     </div>

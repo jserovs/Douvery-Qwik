@@ -187,9 +187,9 @@
     padding: 0px;
     margin: 0px;
     background-color: var(--backgroundColor);
-    color: #000000;
+    color: #5D3891;
     font-weight: 400;
-    border: 0px solid #F55050;
+
     font-size: var(--font-size-md);
 }
 
