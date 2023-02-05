@@ -1,9 +1,9 @@
 .container-card-options {
-    width: 50PX;
-    height: 50PX;
+
     display: flex;
     border-radius: 5PX;
-
+    width: 60px;
+    height: 60px;
     margin-left: 5px;
     background-color: var(--backgroundColor);
     border: 1px solid #f0efefc4;
@@ -12,12 +12,9 @@
 
 
 .container-card-options img {
-    width: 50px;
-    height: 50px;
 
     object-fit: contain;
     padding: 5px;
-
 }
 
 .super-container-card-options>.active {

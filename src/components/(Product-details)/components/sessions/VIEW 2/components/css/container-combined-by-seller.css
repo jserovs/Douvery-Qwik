@@ -1,7 +1,27 @@
 .crrts-csrtos {
-    display: grid;
+    display: flex;
     align-items: center;
-    height: 100px;
-    width: 100%;
     background-color: var(--backgroundColor);
+}
+
+.p-istnr {
+    display: grid;
+    grid-template-columns: auto 30px auto;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+}
+
+.slxr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--backgroundColor);
+}
+
+.slxr svg {
+    color: black;
 }

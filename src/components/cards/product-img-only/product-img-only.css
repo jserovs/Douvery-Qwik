@@ -1,0 +1,17 @@
+.card {
+    background-color: var(--downBackgroundColor);
+    width: 100%;
+    text-align: center;
+
+}
+
+img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+.nfo {
+    background-color: var(--backgroundColor);
+}

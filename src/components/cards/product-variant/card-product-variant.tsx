@@ -9,7 +9,7 @@ import { Link } from '@builder.io/qwik-city';
 import { fetchProduct } from '~/services/fechProduct';
 
 import type { Product } from '~/utils/types';
-import styles from './css/card-product-variant.css?inline';
+import styles from './card-product-variant.css?inline';
 export const CardProductVariations1 = component$(
   ({ dui, slug, imgS, imgP }: any) => {
     useStylesScoped$(styles);
@@ -37,7 +37,7 @@ export const CardProductVariations1 = component$(
     });
 
     return (
-      <div class="super-container-card-options">
+      <div class="crtr-product-image">
         <Resource
           value={productResource}
           onPending={() => <>Cargando...</>}
