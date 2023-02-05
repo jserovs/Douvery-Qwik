@@ -87,7 +87,7 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
 
             <size-w class="size-w-10" />
             <div class="minus-dolceid-alert-buty">
-              Queda(n) {props.quantity} unidades , puede que lleguen mas!
+              ¡Solo Queda(n) {props.quantity} unidades!
             </div>
           </>
         ) : (

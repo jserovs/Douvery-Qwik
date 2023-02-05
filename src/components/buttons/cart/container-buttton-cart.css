@@ -1,0 +1,27 @@
+div {
+    display: grid;
+    justify-content: center;
+}
+
+.buttonCart {
+    display: grid;
+    grid-template-columns: 0.3fr 1fr;
+
+    min-width: 150px;
+    background-color: var(--button-cart-backgroundColor);
+    color: var(--backgroundColor);
+    border: none;
+    border-radius: 6px;
+    padding: 7px 15px 7px 15px;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.buttonCart:hover {
+    color: #fff;
+    opacity: 90%;
+    border-color: #0a58ca;
+}

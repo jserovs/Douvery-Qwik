@@ -1,15 +1,23 @@
 .crrts-csrtos {
-    display: flex;
+    display: grid;
     align-items: center;
     background-color: var(--backgroundColor);
+    gap: 30px;
+    padding: 10px 50px;
 }
 
 .p-istnr {
-    display: grid;
-    grid-template-columns: auto 30px auto;
+    display: flex;
+
     width: 100%;
     height: 100%;
     gap: 10px;
+    background-color: var(--backgroundColor);
+    padding: 10px 30px;
+    margin: 0px 0px 0px 0px;
+    border-radius: 3px;
+    border: 1px solid var(--border-1);
+    ;
 }
 
 .slxr {
@@ -17,11 +25,31 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 40PX;
     height: 100%;
     background-color: var(--backgroundColor);
 }
 
 .slxr svg {
     color: black;
+}
+
+.crrts-title {
+    display: grid;
+    padding: 0px;
+
+}
+
+.ofrs {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+}
+
+
+@media only screen and (max-width: 885px) {
+    .crrts-csrtos {
+        padding: 0px 10px;
+    }
 }
