@@ -27,7 +27,7 @@
 
 .center {
     display: grid;
-    grid-template-rows: auto 50px;
+    grid-template-rows: auto 0px;
     padding: 5px;
     position: relative;
     min-height: 50em;
@@ -37,6 +37,9 @@
 
 .vert-right {
     display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 10PX 0PX 10PX 0px;
 
 }
 

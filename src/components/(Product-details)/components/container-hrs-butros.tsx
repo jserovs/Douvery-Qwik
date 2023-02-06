@@ -2,6 +2,7 @@ import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './css/container-hrs-butros.css?inline';
 import { DouveryHeart } from '~/components/icons/heart';
 import { DouveryInfo } from '~/components/icons/info';
+import { ContainerPoputCategory } from './components/popupCategory';
 export const ContainerButtonExtr = component$(({ props }: any) => {
   useStylesScoped$(styles);
   return (
@@ -22,6 +23,11 @@ export const ContainerButtonExtr = component$(({ props }: any) => {
         </span>
         <div class="se-pr">|</div>
         <span>Sin preguntas Respondidas</span>
+      </div>
+      <div class="opcs">
+        {' '}
+        <p-sr1>Puede ver algunas</p-sr1>
+        <ContainerPoputCategory props={props} title="Opciones" />
       </div>
     </div>
   );

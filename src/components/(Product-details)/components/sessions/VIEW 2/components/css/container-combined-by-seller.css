@@ -52,4 +52,10 @@
     .crrts-csrtos {
         padding: 0px 10px;
     }
+
+    .ofrs {
+        display: flex;
+        gap: 5px;
+
+    }
 }

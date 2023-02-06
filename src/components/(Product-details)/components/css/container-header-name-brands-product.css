@@ -319,11 +319,16 @@
         padding-top: 10px;
     }
 
+    .super-container-title-brand-product {
+        background-color: red;
+    }
+
     .mobiles-title-brand {
 
         margin-top: 5PX;
         margin-bottom: 10px;
-        padding: 15px;
+        padding: 10px 10PX 30PX 10px;
+        background-color: var(--backgroundColor);
     }
 
 

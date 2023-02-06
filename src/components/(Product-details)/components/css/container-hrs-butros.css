@@ -8,8 +8,14 @@
     gap: 20px;
     background-color: var(--backgroundColor);
     border-top: 1px solid #3333330c;
+    border-bottom: 1px solid #3333330c;
     ;
 }
+
+.opcs {
+    display: none;
+}
+
 
 .se-pr {
     color: #33333320;
@@ -49,4 +55,21 @@ span:hover {
 
 
     color: var(--blueVivo);
+}
+
+
+@media only screen and (max-width: 885px) {
+    .q-r-pred {
+        display: none;
+    }
+
+    .opcs {
+        display: grid;
+        grid-template-columns: auto 112px;
+
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+    }
+
 }
