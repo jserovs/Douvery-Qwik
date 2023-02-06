@@ -28,10 +28,10 @@
 .center {
     display: grid;
     grid-template-rows: auto 0px;
-    padding: 5px;
     position: relative;
     min-height: 50em;
     height: 100%;
+    padding-left: 30px;
 
 }
 
