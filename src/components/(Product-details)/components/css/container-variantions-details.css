@@ -1,7 +1,7 @@
 .super-container-options-product {
     width: 40%;
     margin-top: 10px;
-    margin-left: 10px;
+    padding: 10px;
 }
 
 .title-varitia-srdr {
@@ -20,6 +20,7 @@
 }
 
 .col-auto {
+
     display: grid;
     gap: 5px;
 }
@@ -27,8 +28,7 @@
 @media only screen and (max-width: 885px) {
     .super-container-options-product {
         width: 100%;
-        background-color: var(--backgroundColor);
-        padding-left: 10px;
+
         flex-direction: row;
         gap: 13px;
     }
