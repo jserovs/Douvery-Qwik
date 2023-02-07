@@ -1,7 +1,7 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import { ContainerCombinedBySeller } from './components/container-combined-by-seller';
 import styles from './view2.css?inline';
-import { ContainerCombinedAGG } from './components/container-combined-agg';
+import { ContainerSponsoreProduct } from './components/container-sponsore';
 export const View2 = component$(({ product }: any) => {
   useStylesScoped$(styles);
   const data = [
@@ -20,10 +20,14 @@ export const View2 = component$(({ product }: any) => {
   ];
   return (
     <div class="crtr-views2">
-      <div class="combined">
-        {' '}
-        <ContainerCombinedBySeller SRTproduct={product} data={data} />
-        <ContainerCombinedAGG totalPrice="$15" />
+      <div class="viewleft">
+        <div class="combined">
+          {' '}
+          <ContainerCombinedBySeller SRTproduct={product} data={data} />
+        </div>
+      </div>
+      <div class="viewrigth">
+        <ContainerSponsoreProduct />
       </div>
     </div>
   );
