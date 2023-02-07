@@ -1,0 +1,16 @@
+.crtr-prds-card {
+    width: 200px;
+    height: 200px;
+    display: grid;
+    background-color: var(--backgroundColor);
+
+    position: relative;
+
+}
+
+.crtr-prds-card-img {
+    padding: 10px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}

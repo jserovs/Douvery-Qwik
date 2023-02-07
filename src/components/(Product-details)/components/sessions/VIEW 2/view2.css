@@ -1,8 +1,7 @@
 .crtr-views2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    display: grid;
+    align-items: stretch;
+    grid-template-columns: 70% 30%;
     width: 100%;
     height: 100%;
     background-color: var(--backgroundColor);
@@ -13,16 +12,22 @@
 
 .combined {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
-@media only screen and (max-width: 885px) {
+
+@media only screen and (max-width: 685px) {
     .crtr-views2 {
         padding: 10px;
     }
 
     .combined {
         display: grid;
+        justify-content: center;
+    }
+
+    .crtr-views2 {
+        grid-template-columns: auto;
     }
 }
