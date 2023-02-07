@@ -9,6 +9,7 @@ export const ContainerCombinedAGG = component$(({ totalPrice }: any) => {
     <div class="crtr-combined-info">
       <div class="price-conmbr">
         {' '}
+        <h-sr1>Detalles</h-sr1>
         <div class="obts">
           <p-sr1>Descuento al comprar</p-sr1>
           <hs-sr1> -10% </hs-sr1>
@@ -18,7 +19,10 @@ export const ContainerCombinedAGG = component$(({ totalPrice }: any) => {
           <hs-sr1> {totalPrice} </hs-sr1>
         </div>{' '}
       </div>
-      <ContainerButtonCart />
+      <div class="crts-bts">
+        {' '}
+        <ContainerButtonCart />
+      </div>
     </div>
   );
 });
