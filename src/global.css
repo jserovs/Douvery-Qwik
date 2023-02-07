@@ -204,6 +204,22 @@ a-sr1-info {
 }
 
 
+/** Etiq product card */
+
+et-sr1 {
+
+  font-size: 13.5px;
+  color: var(--textOpa);
+  text-align: center;
+  width: 100%;
+  padding: 2PX 0px 2px 0px;
+  background-color: #1f3c72;
+  color: var(--white);
+  position: absolute;
+  bottom: 0;
+  border-radius: 5px;
+
+}
 
 html {
   min-height: 100%;

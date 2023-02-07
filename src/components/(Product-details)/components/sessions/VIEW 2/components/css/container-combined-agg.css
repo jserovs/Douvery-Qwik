@@ -13,11 +13,16 @@
 .price-conmbr {
     display: grid;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin-top: 10px;
     margin-bottom: 0px;
 
+}
+
+.crts-bts {
+    position: relative;
+    right: 2px;
 }
 
 @media only screen and (max-width: 885px) {
