@@ -8,8 +8,9 @@ import {
 import styles from './css/container-sponsore.css?inline';
 import { ContainerCardProduct1 } from '~/components/cards/product/product-card-1/product-card-1';
 import { DouveryArrowRigth1 } from '~/components/icons/arrow-right-1';
-import { fetchProductU } from '~/services/fechProduct';
+
 import type { Product } from '~/utils/types';
+import { fetchProductCategory } from '~/services/fechProduct';
 
 export const ContainerSponsoreProduct = component$(({ product }: any) => {
   useStylesScoped$(styles);
@@ -19,10 +20,10 @@ export const ContainerSponsoreProduct = component$(({ product }: any) => {
   });
 
   useTask$(async ({ track }) => {
-    track(() => product);
-
+    track(() => product.dui);
+    const category = product.category;
     const controller = new AbortController();
-    state.productResults = await fetchProductU();
+    state.productResults = await fetchProductCategory(category);
 
     return () => {
       controller.abort();

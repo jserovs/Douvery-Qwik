@@ -6,7 +6,8 @@
     flex-direction: column;
     align-items: center;
     text-align: start;
-    background-color: var(--threeBackgroundColor);
+    background-color: var(--background-color);
+    border: 1px solid var(--threeBackgroundColor);
     padding: 10px;
 }
 
@@ -38,7 +39,7 @@
 
 .product-brand {
     font-size: small;
-    color: #182747;
+    color: var(--primary-color);
     font-weight: var(--font-weight-m);
 }
 
