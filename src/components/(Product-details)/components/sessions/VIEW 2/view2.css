@@ -19,8 +19,8 @@
 
 .crtr-characte {
     display: grid;
-    grid-template-columns: 40% 60%;
-    gap: 10px;
+    grid-template-columns: 100%;
+    gap: 50px;
 
 }
 
