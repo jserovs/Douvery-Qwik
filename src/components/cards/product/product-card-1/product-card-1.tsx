@@ -7,45 +7,19 @@ export const ContainerCardProduct1 = component$(({ product }: any) => {
   useStylesScoped$(styles);
   const discoun = product.price - product.price * (product.discount / 100);
   return (
-    <div class="crtr-prds-card">
-      <div class="crtrt-s">
+    <div class="product-card">
+      <img src={product.images[0]} class="product-image" />
+      <h2 class="product-name">{product.name}</h2>
+      <p-sr1 class="product-brand">{product.marca}</p-sr1>
+      <div class="crt-prc">
         {' '}
-        <div class="crt-img">
-          {product && product.images && product.images.length > 0 ? (
-            <img src={product.images[0]} alt="" />
-          ) : (
-            <div>No image available</div>
-          )}
-        </div>
-      </div>
-      <div class="crt-title">
-        <p-sr1>
-          <div class="sr"> {product.name}</div>
-          <div class="dsr">
-            {' '}
-            <hs-sr1> {product.marca}</hs-sr1>
-          </div>
-        </p-sr1>
-      </div>
-      <div class="crt-price">
-        <hs-sr1 class="pr-n-ta">
+        <hs-sr1 class="product-price">
           <UsePrice price={discoun} />
         </hs-sr1>
-        <p class="pr-ta">
+        <p-sr1 class="product-price tach">
           <UsePrice price={product.price} />
-        </p>
+        </p-sr1>
       </div>
-      {product.shippingFree === true ? (
-        <>
-          {' '}
-          <div class="fllr-res">
-            {' '}
-            <f-srt1>Envio Gratis</f-srt1>
-          </div>{' '}
-        </>
-      ) : (
-        <> </>
-      )}
     </div>
   );
 });
