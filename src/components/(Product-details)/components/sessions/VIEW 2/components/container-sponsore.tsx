@@ -16,6 +16,7 @@ export const ContainerSponsoreProduct = component$(() => {
       <div class="div-car">
         {' '}
         <ContainerCardProduct1 />
+        <ContainerCardProduct1 />
       </div>
       <div class="sr-of">
         {' '}
