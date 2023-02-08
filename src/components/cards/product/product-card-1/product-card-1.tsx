@@ -1,35 +1,51 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 
 import styles from './product-card-1.css?inline';
+import { UsePrice } from '~/components/use/price/price';
 
-export const ContainerCardProduct1 = component$(() => {
+export const ContainerCardProduct1 = component$(({ product }: any) => {
   useStylesScoped$(styles);
-
+  const discoun = product.price - product.price * (product.discount / 100);
   return (
     <div class="crtr-prds-card">
-      <div class="crt-img">
-        <img
-          src="https://res.cloudinary.com/douvery/image/upload/v1666290931/Under%20Armour%20Charged%20Pursuit%203%20-%20Tenis%20de%20correr%20para%20hombre/f5hvekoyhofm1f2o4j3u.webp"
-          alt=""
-        />
+      <div class="crtrt-s">
+        {' '}
+        <div class="crt-img">
+          {product && product.images && product.images.length > 0 ? (
+            <img src={product.images[0]} alt="" />
+          ) : (
+            <div>No image available</div>
+          )}
+        </div>
       </div>
       <div class="crt-title">
         <p-sr1>
-          Under Armour Charged Pursuit 3 - Tenis de correr para hombre
+          <div class="sr"> {product.name}</div>
           <div class="dsr">
             {' '}
-            <hs-sr1>Under Armour</hs-sr1>
+            <hs-sr1> {product.marca}</hs-sr1>
           </div>
         </p-sr1>
       </div>
       <div class="crt-price">
-        <hs-sr1 class="pr-n-ta">$ 2,500.00</hs-sr1>
-        <p class="pr-ta">$ 2,999.00</p>
+        <hs-sr1 class="pr-n-ta">
+          <UsePrice price={discoun} />
+        </hs-sr1>
+        <p class="pr-ta">
+          <UsePrice price={product.price} />
+        </p>
       </div>
-      <div class="fllr-res">
-        {' '}
-        <f-srt1>Envio Gratis</f-srt1>
-      </div>
+      {product.shippingFree === true ? (
+        <>
+          {' '}
+          <div class="fllr-res">
+            {' '}
+            <f-srt1>Envio Gratis</f-srt1>
+          </div>{' '}
+        </>
+      ) : (
+        <> </>
+      )}
     </div>
   );
 });
