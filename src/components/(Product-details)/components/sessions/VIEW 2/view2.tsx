@@ -21,27 +21,6 @@ export const View2 = component$(({ product }: any) => {
     },
   ];
 
-  const dataSponsore = [
-    {
-      name: 'Under Armour Charged Pursuit 3 - Tenis de correr para hombre',
-      images: [
-        'https://res.cloudinary.com/douvery/image/upload/v1666290931/Under%20Armour%20Charged%20Pursuit%203%20-%20Tenis%20de%20correr%20para%20hombre/f5hvekoyhofm1f2o4j3u.webp',
-      ],
-      price: '19',
-      discount: 10,
-      shippingFree: false,
-    },
-    {
-      name: 'Under Armour Charged Pursuit 3 - Tenis de correr para hombre',
-      images: [
-        'https://res.cloudinary.com/douvery/image/upload/v1666290931/Under%20Armour%20Charged%20Pursuit%203%20-%20Tenis%20de%20correr%20para%20hombre/f5hvekoyhofm1f2o4j3u.webp',
-      ],
-      price: '19',
-      discount: 80,
-
-      shippingFree: true,
-    },
-  ];
   return (
     <div class="crtr-views2">
       <div class="viewleft">
@@ -56,7 +35,7 @@ export const View2 = component$(({ product }: any) => {
         </div>
       </div>
       <div class="viewrigth">
-        <ContainerSponsoreProduct product={dataSponsore} />
+        <ContainerSponsoreProduct product={product} />
       </div>
     </div>
   );

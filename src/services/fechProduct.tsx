@@ -35,6 +35,25 @@ export async function fetchProductU(
   return results;
 }
 
+export async function fetchProductCategory(
+  category: string,
+  controller?: AbortController
+): Promise<any> {
+  const response = await fetch(
+    `
+    https://server-douvery.vercel.app/api/productsByCategory/?category=${category}&limit=2`,
+    {
+      signal: controller?.signal,
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch product');
+  }
+  const results = await response.json();
+  return results;
+}
+
 export async function fetchSuggestions(
   searchInput: string,
   controller?: AbortController

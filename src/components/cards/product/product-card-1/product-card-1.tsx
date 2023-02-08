@@ -13,13 +13,31 @@ export const ContainerCardProduct1 = component$(({ product }: any) => {
       <p-sr1 class="product-brand">{product.marca}</p-sr1>
       <div class="crt-prc">
         {' '}
-        <hs-sr1 class="product-price">
-          <UsePrice price={discoun} />
-        </hs-sr1>
-        <p-sr1 class="product-price tach">
-          <UsePrice price={product.price} />
-        </p-sr1>
+        {product.discount > 0 ? (
+          <>
+            {' '}
+            <hs-sr1 class="product-price">
+              <UsePrice price={discoun} />
+            </hs-sr1>
+            <p-sr1 class="product-price tach">
+              <UsePrice price={product.price} />
+            </p-sr1>
+          </>
+        ) : (
+          <>
+            <hs-sr1 class="product-price">
+              <UsePrice price={discoun} />
+            </hs-sr1>
+          </>
+        )}
       </div>
+      {product.price > 200 ? (
+        <>
+          <et-sr1>Envio gratis</et-sr1>
+        </>
+      ) : (
+        <></>
+      )}
     </div>
   );
 });
