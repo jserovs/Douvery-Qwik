@@ -11,9 +11,17 @@
 }
 
 .combined {
-    display: flex;
+    display: grid;
     justify-content: flex-start;
     align-items: center;
+    gap: 50px;
+}
+
+.crtr-characte {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 10px;
+
 }
 
 
@@ -27,7 +35,21 @@
         justify-content: center;
     }
 
+    .crtr-characte {
+        display: grid;
+        grid-template-columns: 100%;
+        gap: 10px;
+    }
+
     .crtr-views2 {
         grid-template-columns: auto;
+    }
+
+}
+
+@media only screen and (max-width: 1098px) {
+    .crtr-views2 {
+        display: grid;
+        grid-template-columns: 100%;
     }
 }

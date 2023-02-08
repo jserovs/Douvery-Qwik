@@ -1,7 +1,6 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 
 import styles from './product-card-1.css?inline';
-import { DouveryArrowRigth1 } from '~/components/icons/arrow-right-1';
 
 export const ContainerCardProduct1 = component$(() => {
   useStylesScoped$(styles);
@@ -15,13 +14,13 @@ export const ContainerCardProduct1 = component$(() => {
         />
       </div>
       <div class="crt-title">
-        <hs-sr1>
+        <p-sr1>
           Under Armour Charged Pursuit 3 - Tenis de correr para hombre
           <div class="dsr">
             {' '}
             <hs-sr1>Under Armour</hs-sr1>
           </div>
-        </hs-sr1>
+        </p-sr1>
       </div>
       <div class="crt-price">
         <hs-sr1 class="pr-n-ta">$ 2,500.00</hs-sr1>
@@ -30,16 +29,6 @@ export const ContainerCardProduct1 = component$(() => {
       <div class="fllr-res">
         {' '}
         <f-srt1>Envio Gratis</f-srt1>
-      </div>
-
-      <div class="sr-of">
-        {' '}
-        <p-sr1>Sponsor</p-sr1>
-        <div class="ssr-f">
-          {' '}
-          <p-sr1> Ver ofertas</p-sr1>
-          <DouveryArrowRigth1 size="20" />
-        </div>
       </div>
     </div>
   );

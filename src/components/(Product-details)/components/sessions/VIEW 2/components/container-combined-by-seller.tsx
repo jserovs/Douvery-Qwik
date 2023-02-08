@@ -19,7 +19,7 @@ export const ContainerCombinedBySeller = component$(({ data }: any) => {
           </div>
         </div>
 
-        <p-sr1>Obtienes un descuento al comprar combinados</p-sr1>
+        <p-sr1>Ahorra dinero al comprar en conjunto</p-sr1>
         <div class="srs-md">
           <a-sr1-info>Saber mas</a-sr1-info>
         </div>
