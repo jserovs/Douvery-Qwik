@@ -2,7 +2,7 @@
     width: 250px;
     height: 350px;
     display: grid;
-    grid-template-rows: 50% 25% 15%;
+    grid-template-rows: 40% 30% 20% 10%;
     background-color: var(--backgroundColor);
     padding: 5px;
     position: relative;
@@ -13,22 +13,20 @@
 }
 
 .crt-img {
-    width: 100%;
-    height: 100%;
-    padding: 10px;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--threeBackgroundColor);
+    width: 230px;
+    height: 150PX;
+    padding-top: 10px;
+    position: relative;
 }
 
-.crt-img img {
-    width: 100%;
-
+img {
+    width: 230px;
+    height: 150PX;
     object-fit: contain;
 }
 
 .crt-title {
+    height: 50px;
     padding: 10PX 5PX;
 }
 
@@ -40,7 +38,7 @@
 }
 
 .dsr hs-sr1 {
-    color: #DD5353;
+    color: #609EA2;
 }
 
 .crt-price {
@@ -70,11 +68,4 @@
 .ssr-f {
     display: flex;
     gap: 5px;
-}
-
-@media only screen and (max-width: 885px) {
-    .crtr-prds-card {
-        width: 290px;
-        height: 454px;
-    }
 }

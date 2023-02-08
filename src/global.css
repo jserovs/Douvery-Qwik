@@ -230,11 +230,11 @@ et-sr1 {
 f-srt1 {
   font-size: 13.5px;
   color: var(--textOpa);
-  text-align: center;
+  text-align: end;
   width: 100%;
   padding: 2PX 20px 2px 20px;
-  background-color: #678983;
-  color: var(--white);
+  background-color: transparent;
+  color: #332C39;
   font-weight: 500;
   position: relative;
   bottom: 0;
