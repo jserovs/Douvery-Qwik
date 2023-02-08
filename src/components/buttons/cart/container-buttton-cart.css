@@ -5,14 +5,14 @@ div {
 
 .buttonCart {
     display: grid;
-    grid-template-columns: 0.3fr 1fr;
+    grid-template-columns: 100%;
 
     min-width: 150px;
-    background-color: var(--button-cart-backgroundColor);
-    color: var(--backgroundColor);
+    background-color: #20262E;
+    color: var(--white);
     border: none;
     border-radius: 6px;
-    padding: 7px 15px 7px 15px;
+    padding: 7px 17px 7px 17px;
     text-align: center;
     text-decoration: none;
     vertical-align: middle;
