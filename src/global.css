@@ -177,6 +177,12 @@ hs-sr1 {
   color: var(--textHs-sr1);
 }
 
+hs-sr2 {
+  font-size: 14.92px;
+  font-weight: var(--font-weight-m);
+  color: var(--textHs-sr1);
+}
+
 hs-sr3 {
   font-size: 20.92px;
   font-weight: var(--font-weight-m);

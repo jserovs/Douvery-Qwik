@@ -1,10 +1,12 @@
 .crtrs-bsc {
     display: grid;
-    padding: 10px 50px;
+    padding: 50px 50px;
 }
 
 .div-car {
-    margin-top: 20px;
+    display: grid;
+    justify-content: center;
+    padding: 20px 0px;
 }
 
 
@@ -23,25 +25,21 @@
     border: 1px solid var(--border-1);
 }
 
-.ofrs {
+.sr-of {
     display: flex;
-    gap: 10px;
-    align-items: center;
-
+    gap: 5px;
+    justify-content: space-between;
 }
 
-.scss-md {
-    display: none;
+.ssr-f {
+    display: flex;
+    gap: 5px;
 }
 
 @media only screen and (max-width: 1544) {
     .crtrs-bsc {
         display: grid;
         padding: 0px 0px;
-    }
-
-    .scss-md {
-        display: flex;
     }
 
     .crtrs-bsc {
@@ -56,15 +54,8 @@
         padding: 0px 10px;
     }
 
-
-    .ofrs {
-        display: flex;
-        gap: 5px;
-
-    }
-
-    .srtr-eqs {
-        display: none;
+    .crtrs-bsc {
+        padding: 50px 10px;
     }
 
     .p-istnr {
