@@ -32,9 +32,7 @@ export const ContainerSponsoreProduct = component$(({ product }: any) => {
   return (
     <div class="crtrs-bsc">
       <div class="crrts-title">
-        <hs-sr3>
-          Productos a precios reducidos que pueden ser de tu interés
-        </hs-sr3>
+        <hs-sr3>Pueden ser de tu interés</hs-sr3>
         <div class="sr-of">
           {' '}
           <div class="ssr-f">

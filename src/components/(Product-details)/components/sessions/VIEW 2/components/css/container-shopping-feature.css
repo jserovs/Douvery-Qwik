@@ -35,7 +35,7 @@ li {
     display: none;
 }
 
-@media only screen and (max-width: 1576px) {
+@media only screen and (max-width: 1176px) {
     li {
         width: 100%;
         display: grid;
