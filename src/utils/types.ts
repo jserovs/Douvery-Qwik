@@ -17,9 +17,10 @@ export type Product = {
 	images: string[];
 	category: string;
 	variations: variant[];
-
+	productDetails: productDetails[];	
 	
 };
+
 
 
 export type variant = {
@@ -27,6 +28,19 @@ export type variant = {
 	variations:string;
 	productVariation:variantDate;
 };
+
+
+export type productDetails = {
+	basicFeatures: basicFeatures[];
+}
+
+
+
+export type basicFeatures ={
+	dui:string;
+	sizes: string;
+}
+
 
 export type variantDate = {
 	name: string;

@@ -2,6 +2,7 @@ import { component$, useStylesScoped$ } from '@builder.io/qwik';
 
 import styles from './product-card-1.css?inline';
 import { UsePrice } from '~/components/use/price/price';
+import { Link } from '@builder.io/qwik-city';
 
 export const ContainerCardProduct1 = component$(({ product }: any) => {
   useStylesScoped$(styles);
@@ -9,8 +10,11 @@ export const ContainerCardProduct1 = component$(({ product }: any) => {
   return (
     <div class="product-card">
       <img src={product.images[0]} class="product-image" />
-      <h2 class="product-name">{product.name}</h2>
-      <p-sr1 class="product-brand">{product.marca}</p-sr1>
+      <h2 class="product-name">
+        {' '}
+        <Link href={`/v/${product.slug}/${product.dui}`}>{product.name}</Link>
+      </h2>
+      <p-sr1 class="product-brand"> {product.marca}</p-sr1>
       <div class="crt-prc">
         {' '}
         {product.discount > 0 ? (
@@ -34,6 +38,16 @@ export const ContainerCardProduct1 = component$(({ product }: any) => {
       {product.price > 200 ? (
         <>
           <et-sr1>Envio gratis</et-sr1>
+        </>
+      ) : (
+        <></>
+      )}
+      {product.sponsored ? (
+        <>
+          {' '}
+          <div class="product-sponsor">
+            <p-sr1>Sponsor</p-sr1>
+          </div>
         </>
       ) : (
         <></>
