@@ -34,15 +34,15 @@ export const ContainerBasicFeacture = component$(({ product }: any) => {
               <a-sr1-info>{product.marca}</a-sr1-info>{' '}
               <p-sr1>
                 {' '}
-                ( Seller en douvery desde 2021{' '}
+                , Seller en douvery desde 2021{' '}
                 {product.sponsored === true ? (
                   <>
-                    - <a-sr1-info>+50 Opiniones</a-sr1-info>
+                     <a-sr1-info> +50 Opiniones</a-sr1-info>
                   </>
                 ) : (
                   <></>
                 )}
-                )
+                
               </p-sr1>
             </div>
           </li>
