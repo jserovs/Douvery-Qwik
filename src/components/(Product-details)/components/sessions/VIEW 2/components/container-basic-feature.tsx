@@ -20,7 +20,7 @@ export const ContainerBasicFeacture = component$(({ product }: any) => {
             <strong>Dui:</strong> {product.dui}
           </li>
           <li>
-            <strong>Tamaño:</strong> {product.basicFeatures.size}
+            <strong>Medidas:</strong> {product.basicFeatures.size}
           </li>
           <li>
             <strong>Peso:</strong> {product.basicFeatures.weight}

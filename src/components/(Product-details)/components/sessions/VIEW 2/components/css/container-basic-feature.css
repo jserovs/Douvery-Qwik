@@ -12,7 +12,7 @@
 
 li {
 
-    max-width: 250px;
+    max-width: 350px;
     min-width: 200px;
     display: grid;
     grid-template-columns: 80px auto;
@@ -36,5 +36,10 @@ li {
     .crtr-charac-bs {
         padding: 0px 10px;
 
+    }
+
+    li {
+
+        max-width: 850px;
     }
 }
