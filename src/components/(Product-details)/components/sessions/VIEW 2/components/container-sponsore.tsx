@@ -32,9 +32,17 @@ export const ContainerSponsoreProduct = component$(({ product }: any) => {
   return (
     <div class="crtrs-bsc">
       <div class="crrts-title">
-        <p-sr1>
+        <hs-sr3>
           Productos a precios reducidos que pueden ser de tu interés
-        </p-sr1>
+        </hs-sr3>
+        <div class="sr-of">
+          {' '}
+          <div class="ssr-f">
+            {' '}
+            <p-sr1> Ver mas</p-sr1>
+            <DouveryArrowRigth1 size="20" />
+          </div>
+        </div>
       </div>
       <div class="div-car">
         {' '}
@@ -44,15 +52,6 @@ export const ContainerSponsoreProduct = component$(({ product }: any) => {
           </div>
         ))}
         <div> </div>
-      </div>
-      <div class="sr-of">
-        {' '}
-        <p-sr1>Sponsor</p-sr1>
-        <div class="ssr-f">
-          {' '}
-          <p-sr1> Ver ofertas</p-sr1>
-          <DouveryArrowRigth1 size="20" />
-        </div>
       </div>
     </div>
   );

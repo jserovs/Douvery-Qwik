@@ -4,6 +4,7 @@ import styles from './css/container-basic-feature.css?inline';
 
 export const ContainerBasicFeacture = component$(({ product }: any) => {
   useStylesScoped$(styles);
+
   return (
     <div class="crtr-charac-bs">
       <div class="crrts-title">
@@ -16,17 +17,16 @@ export const ContainerBasicFeacture = component$(({ product }: any) => {
       <div>
         <ul>
           <li>
-            <strong>Dui</strong> {product.dui}
+            <strong>Dui:</strong> {product.basicFeatures.dui}
           </li>
           <li>
-            <strong>Tamaño</strong> 15 x 20 x 25 cm
-          </li>
-
-          <li>
-            <strong>Peso</strong> 2 kg
+            <strong>Tamaño:</strong> {product.basicFeatures.size}
           </li>
           <li>
-            <strong>Color</strong> Azul
+            <strong>Peso:</strong> {product.basicFeatures.weight}
+          </li>
+          <li>
+            <strong>Color:</strong> {product.basicFeatures.color}
           </li>
         </ul>
       </div>
