@@ -61,3 +61,9 @@ li {
     display: grid;
     gap: 5px;
 }
+
+@media only screen and (max-width: 885px) {
+    .drtr-arte-ores {
+        padding: 15px;
+    }
+}
