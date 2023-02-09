@@ -11,7 +11,14 @@ export const ContainerCombinedAGG = component$(({ totalPrice }: any) => {
         {' '}
         <hs-sr1>Detalles</hs-sr1>
         <div class="obts">
-          <p-sr1>Descuento al comprar</p-sr1>
+          <div class="dr-ls">
+            {' '}
+            <p-sr1>Descuento al comprar</p-sr1>
+          </div>
+          <div class="dr-ms">
+            {' '}
+            <p-sr1>Descuento</p-sr1>
+          </div>
           <hs-sr1> -10% </hs-sr1>
         </div>{' '}
         <div class="obts">

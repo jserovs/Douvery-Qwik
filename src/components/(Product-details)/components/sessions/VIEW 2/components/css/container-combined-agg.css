@@ -7,10 +7,14 @@
     display: flex;
     gap: 50px;
     justify-content: space-between;
+}
 
+.dr-ms {
+    display: none;
 }
 
 .price-conmbr {
+    width: 100%;
     display: grid;
     flex-direction: row;
     justify-content: center;
@@ -32,4 +36,38 @@
         height: 155px;
     }
 
+    .obts {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+
+    }
+
+    .crtr-combined-info {
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .crts-bts {
+        position: relative;
+        top: 10px;
+    }
+}
+
+@media only screen and (max-width: 395px) {
+    .obts {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+    }
+
+    .dr-ls {
+        display: none;
+    }
+
+    .dr-ms {
+        display: block;
+    }
 }

@@ -61,3 +61,14 @@
     gap: 10px;
     align-items: center;
 }
+
+@media only screen and (max-width: 885px) {
+    .product-image {
+        height: 180px;
+    }
+
+    .product-card {
+
+        min-height: 300px;
+    }
+}

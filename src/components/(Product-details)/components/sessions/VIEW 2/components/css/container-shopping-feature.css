@@ -35,13 +35,13 @@ li {
     display: none;
 }
 
-@media only screen and (max-width: 1176px) {
+@media only screen and (max-width: 1576px) {
     li {
         width: 100%;
         display: grid;
         grid-template-columns: 100%;
 
-        gap: 10px;
+        gap: 0px;
 
     }
 }
