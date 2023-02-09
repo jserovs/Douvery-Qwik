@@ -35,13 +35,7 @@ export const ContainerCardProduct1 = component$(({ product }: any) => {
           </>
         )}
       </div>
-      {product.price > 200 ? (
-        <>
-          <et-sr1>Envio gratis</et-sr1>
-        </>
-      ) : (
-        <></>
-      )}
+
       {product.sponsored ? (
         <>
           {' '}
