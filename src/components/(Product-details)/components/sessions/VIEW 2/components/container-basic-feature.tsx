@@ -4,6 +4,22 @@ import styles from './css/container-basic-feature.css?inline';
 
 export const ContainerBasicFeacture = component$(({ product }: any) => {
   useStylesScoped$(styles);
+  const renderFeatureBasic = (key: any, label: any) => {
+    if (!product || !product.basicFeatures[key]) return null;
+    return (
+      <li>
+        <strong>{label}:</strong> {product.basicFeatures[key]}
+      </li>
+    );
+  };
+  const renderFeatureUtil = (key: any, label: any) => {
+    if (!product || !product.basicFeatures.util[key]) return null;
+    return (
+      <li>
+        <strong>{label}:</strong> {product.basicFeatures.util[key]}
+      </li>
+    );
+  };
 
   return (
     <div class="crtr-charac-bs">
@@ -19,15 +35,26 @@ export const ContainerBasicFeacture = component$(({ product }: any) => {
           <li>
             <strong>Dui:</strong> {product.dui}
           </li>
-          <li>
-            <strong>Medidas:</strong> {product.basicFeatures.size}
-          </li>
-          <li>
-            <strong>Peso:</strong> {product.basicFeatures.weight}
-          </li>
-          <li>
-            <strong>Color:</strong> {product.basicFeatures.color}
-          </li>
+          {product.basicFeatures === undefined ? (
+            <></>
+          ) : (
+            <>
+              {renderFeatureBasic('size', 'Medidas')}
+              {renderFeatureBasic('weight', 'Peso')}
+
+              {product.basicFeatures.util === undefined ? (
+                <></>
+              ) : (
+                <>
+                  {renderFeatureUtil('color', 'Color')}
+                  {renderFeatureUtil('size', 'Talla')}
+                  {renderFeatureUtil('materialSole', 'Material de la suela')}
+                  {renderFeatureUtil('material', 'Material')}
+                </>
+              )}
+            </>
+          )}
+
           <li>
             <strong>Vendedor:</strong>{' '}
             <div>
