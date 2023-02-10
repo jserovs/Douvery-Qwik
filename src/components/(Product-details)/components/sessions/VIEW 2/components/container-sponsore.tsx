@@ -22,8 +22,9 @@ export const ContainerSponsoreProduct = component$(({ product }: any) => {
   useTask$(async ({ track }) => {
     track(() => product.dui);
     const category = product.category;
+    const dui = product.dui;
     const controller = new AbortController();
-    state.productResults = await fetchProductCategory(category);
+    state.productResults = await fetchProductCategory(category, dui);
 
     return () => {
       controller.abort();
