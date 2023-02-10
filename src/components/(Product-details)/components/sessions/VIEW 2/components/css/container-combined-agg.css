@@ -47,7 +47,7 @@
         display: grid;
         grid-template-columns: auto auto;
         align-items: center;
-        gap: 15px;
+        gap: 30px;
     }
 
     .crts-bts {
