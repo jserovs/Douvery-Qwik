@@ -9,7 +9,11 @@ export const ContainerCardProduct1 = component$(({ product }: any) => {
   const discoun = product.price - product.price * (product.discount / 100);
   return (
     <div class="product-card">
-      <img src={product.images[0]} class="product-image" />
+      <Link href={`/v/${product.slug}/${product.dui}`}>
+        {' '}
+        <img src={product.images[0]} class="product-image" />
+      </Link>
+
       <h2 class="product-name">
         {' '}
         <Link href={`/v/${product.slug}/${product.dui}`}>{product.name}</Link>

@@ -6,27 +6,13 @@ import { ContainerBasicFeacture } from './components/container-basic-feature';
 import { ContainerShoppingFeacture } from './components/container-shopping-feature';
 export const View2 = component$(({ product }: any) => {
   useStylesScoped$(styles);
-  const data = [
-    {
-      images: ['https://via.placeholder.com/150x150'],
-      price: '19',
-    },
-    {
-      images: ['https://via.placeholder.com/150x150'],
-      price: '19',
-    },
-    {
-      images: ['https://via.placeholder.com/150x150'],
-      price: '19',
-    },
-  ];
 
   return (
     <div class="crtr-views2">
       <div class="viewleft">
         <div class="combined">
           {' '}
-          <ContainerCombinedBySeller SRTproduct={product} data={data} />
+          <ContainerCombinedBySeller SRTproduct={product} product={product} />
           <div class="crtr-characte">
             {' '}
             <ContainerBasicFeacture product={product} />
