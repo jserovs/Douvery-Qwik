@@ -1,9 +1,14 @@
-import { component$, useStylesScoped$ } from '@builder.io/qwik';
+import { component$, useStore, useStylesScoped$ } from '@builder.io/qwik';
 
 import styles from './css/container-shopping-feature.css?inline';
+import { DouveryArrowUp } from '~/components/icons/arrow-up';
+import { DouveryArrowDown } from '~/components/icons/arrow-down';
 
 export const ContainerShoppingFeacture = component$(() => {
   useStylesScoped$(styles);
+
+  const showText = useStore({ setShowText: false });
+
   return (
     <div class="crtr-charac-bs">
       <div class="crrts-title">
@@ -21,30 +26,55 @@ export const ContainerShoppingFeacture = component$(() => {
       </div>
 
       <div>
-        <ul>
-          <li>
-            <hs-sr2>Política de devolución:</hs-sr2>{' '}
-            <p-sr1>
-              45 días sin preguntas. Devuelva el producto en su paquete original
-              para recibir un reembolso completo.{' '}
-              <a-sr1-info>Saber mas</a-sr1-info>
-            </p-sr1>
-          </li>
-          <li>
-            <hs-sr2>Compensación por daños durante el envío:</hs-sr2>{' '}
-            <p-sr1>
-              En caso de que un producto se dañe durante el envío, ofrecemos
-              reemplazo o reembolso completo.
-            </p-sr1>
-          </li>
-          <li>
-            <hs-sr2>Opciones adicionales: </hs-sr2>{' '}
-            <p-sr1>
-              Planes de aumento de garantía disponibles por un costo adicional
-              para una mayor protección. <a-sr1-info>Ver planes</a-sr1-info>
-            </p-sr1>
-          </li>
-        </ul>
+        {showText.setShowText ? (
+          <ul>
+            <li>
+              <hs-sr2>Política de devolución:</hs-sr2>{' '}
+              <p-sr1>
+                45 días sin preguntas. Devuelva el producto en su paquete
+                original para recibir un reembolso completo.{' '}
+                <a-sr1-info>Saber mas</a-sr1-info>
+              </p-sr1>
+            </li>
+            <li>
+              <hs-sr2>Compensación por daños durante el envío:</hs-sr2>{' '}
+              <p-sr1>
+                En caso de que un producto se dañe durante el envío, ofrecemos
+                reemplazo o reembolso completo.
+              </p-sr1>
+            </li>
+            <li>
+              <hs-sr2>Opciones adicionales: </hs-sr2>{' '}
+              <p-sr1>
+                Planes de aumento de garantía disponibles por un costo adicional
+                para una mayor protección. <a-sr1-info>Ver planes</a-sr1-info>
+              </p-sr1>
+            </li>
+          </ul>
+        ) : (
+          <ul>
+            <li>
+              <hs-sr2>Política de devolución:</hs-sr2>{' '}
+              <p-sr1>
+                45 días sin preguntas. Devuelva el producto en su paquete
+                original para recibir un reembolso completo.{' '}
+                <a-sr1-info>Saber mas</a-sr1-info>
+              </p-sr1>
+            </li>
+          </ul>
+        )}
+
+        <button onClick$={() => (showText.setShowText = !showText.setShowText)}>
+          {showText.setShowText ? (
+            <srw-sr1>
+              <DouveryArrowUp size="15" /> Ver menos
+            </srw-sr1>
+          ) : (
+            <srw-sr1>
+              <DouveryArrowDown size="15" /> Ver más
+            </srw-sr1>
+          )}
+        </button>
       </div>
     </div>
   );

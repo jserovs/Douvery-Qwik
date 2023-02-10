@@ -259,6 +259,16 @@ f-srt-f-r {
   border-radius: 5px;
 }
 
+
+srw-sr1 {
+  font-size: small;
+  color: var(--blue);
+  fill: var(--black);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
 html {
   min-height: 100%;
   background-color: var(--downBackgroundColor);

@@ -30,6 +30,7 @@ export const ContainerSponsoreProduct = component$(({ product }: any) => {
       controller.abort();
     };
   });
+
   return (
     <div class="crtrs-bsc">
       <div class="crrts-title">
