@@ -91,6 +91,21 @@
     }
 }
 
+@media only screen and (max-width: 1480px) {
+    .container-img-product img {
+
+        width: 800px;
+        height: 400px;
+        object-fit: contain;
+        background-color: var(--backgroundColor);
+        padding: 10px;
+        z-index: 1000;
+
+    }
+
+}
+
+
 @media only screen and (max-width: 1100px) {
     .container-img-product img {
 
