@@ -1,12 +1,13 @@
 .crtr-sbr-art {
     background-color: var(--backgroundColor);
+
 }
 
 .drtr-arte-ores {
 
     display: grid;
     gap: 15PX;
-    padding: 8px;
+    padding: 5px;
 }
 
 
