@@ -8,13 +8,13 @@
     background-color: var(--backgroundColor);
     border: 1px solid #f0efefc4;
     transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+    justify-content: center;
 }
 
 
 .container-card-options img {
-
     object-fit: contain;
-    padding: 5px;
+
 }
 
 .super-container-card-options>.active {

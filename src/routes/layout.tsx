@@ -1,7 +1,7 @@
 import { component$, Slot, useStore } from '@builder.io/qwik';
 import Header from '../components/header/header';
 import Nav from '../components/nav/nav';
-import Footer from '../components/footer/footer';
+import { Footer } from '~/components/footer/footer';
 
 export default component$(() => {
   const isOpen = useStore({ setIsOpen: false });

@@ -61,3 +61,28 @@ li {
     display: grid;
     gap: 5px;
 }
+
+table {
+    width: 400px;
+    border-collapse: collapse;
+    margin-bottom: 10PX;
+}
+
+th,
+td {
+    border: 1px solid var(--black);
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    text-align: center;
+}
+
+th {
+    background-color: rgb(243, 242, 242);
+}
+
+.td-scs {
+    text-align: center;
+}
