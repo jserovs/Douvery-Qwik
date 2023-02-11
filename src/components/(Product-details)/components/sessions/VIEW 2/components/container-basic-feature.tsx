@@ -50,6 +50,7 @@ export const ContainerBasicFeacture = component$(({ product }: any) => {
                   {renderFeatureUtil('size', 'Talla')}
                   {renderFeatureUtil('materialSole', 'Material de la suela')}
                   {renderFeatureUtil('material', 'Material')}
+                  {renderFeatureUtil('mgCafS', 'Mg de cafeína por porción')}
                 </>
               )}
             </>

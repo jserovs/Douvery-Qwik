@@ -29,9 +29,9 @@
 }
 
 .container-brand-product {
-    color: var(--primary-color);
-    font-size: 65%;
-    font-weight: var(--font-weight-m);
+    color: #034cb8;
+    font-size: 12.9px;
+    font-weight: 400;
 
 }
 
@@ -199,11 +199,18 @@
     gap: 5PX;
 }
 
-.shrt-prd-alrt {
-    margin-top: 2px;
+.crtr-shr- {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
 
+    border: 1px solid var(--border-3);
+    border-radius: 5px;
+}
+
+.shrt-prd-alrt {
     display: flex;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-end;
     gap: 10px;
 }
 
@@ -237,23 +244,30 @@
     gap: 3px
 }
 
-.srte-art-alrt p strong {
-    font-size: 95%;
-    font-weight: 600;
-}
 
-.srte-art-alrt p a {
-    font-size: 88%;
-
-    color: var(--primary-color);
-}
 
 .srte-art-alrt {
-    display: flex;
+    width: 100%;
+    display: grid;
+    justify-content: center;
     gap: 5px;
     font-size: 68%;
     color: var(--primary-color);
+
 }
+
+.srtrsdr {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    color: var(--primary-color);
+}
+
+
+
 
 .sbr-slr-slri {
     font-size: 12px;
@@ -306,6 +320,30 @@
     /* change the scale to 1 to make the review visible */
 }
 
+@media only screen and (max-width: 1150px) {
+    .srte-art-alrt {
+        width: 100%;
+        display: grid;
+        justify-content: center;
+        gap: 5px;
+        font-size: 68%;
+        color: var(--primary-color);
+
+    }
+
+    .srtrsdr {
+        display: grid;
+        grid-template-columns: 10% 90%;
+        align-items: center;
+        justify-content: c;
+    }
+
+    .srtrsdr svg {
+        display: grid;
+        justify-content: center;
+    }
+}
+
 @media only screen and (max-width: 950px) {
 
     .shrt-prd-alrt {
@@ -313,9 +351,23 @@
     }
 
 
+
 }
 
 @media only screen and (max-width: 885px) {
+    .crtr-shr- {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+
+        border: 1px solid transparent;
+        border-radius: 5px;
+    }
+
+    .srtrsdr {
+        display: grid;
+        grid-template-columns: 5% 95%;
+    }
+
     .srte-art-alrt {
         padding-top: 10px;
     }

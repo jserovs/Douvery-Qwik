@@ -99,46 +99,49 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
           </>
         )}
       </div>
-      <div class="shrt-prd-alrt">
+      <div class="crtr-shr-">
         {' '}
-        <hs-sr1>Enviado & Vendido por </hs-sr1>
-        <div class="sll-rps">
-          <Resource
-            value={ageResource}
-            onPending={() => <Loader />}
-            onRejected={(error) => <>Error: {error.message}</>}
-            onResolved={() => (
-              <>
-                <div class="seller">
-                  <a href="/">
-                    {state.seller.name == undefined
-                      ? 'Vendedor no definido'
-                      : state.seller.name}
-                  </a>
-                  <a href="/">(4)185</a>
-                  <div class="review-popup">
-                    Review: This seller is reliable and always ships on time.
+        <div class="shrt-prd-alrt">
+          {' '}
+          <hs-sr1>Enviado & Vendido por </hs-sr1>
+          <div class="sll-rps">
+            <Resource
+              value={ageResource}
+              onPending={() => <Loader />}
+              onRejected={(error) => <>Error: {error.message}</>}
+              onResolved={() => (
+                <>
+                  <div class="seller">
+                    <a href="/">
+                      {state.seller.name == undefined
+                        ? 'Vendedor no definido'
+                        : state.seller.name}
+                    </a>
+                    <a href="/">(4)185</a>
+                    <div class="review-popup">
+                      Review: This seller is reliable and always ships on time.
+                    </div>
                   </div>
-                </div>
-              </>
-            )}
-          />
+                </>
+              )}
+            />
+          </div>
+          <div class="chg-shr-prtd">
+            <Dropdown title="Elegir otra opcion" />
+          </div>
         </div>
-        <div class="chg-shr-prtd">
-          <Dropdown title="Elegir otra opcion" />
+        <div class="srte-art-alrt">
+          <div class="srtrsdr">
+            {' '}
+            <DouveryCircleLock size="16" />
+            <p-sr1>
+              Esta compra está protegida por <strong>Douvery</strong>, puedes
+              comprar con total confianza.
+            </p-sr1>
+          </div>
         </div>
       </div>
-      <div class="srte-art-alrt">
-        {' '}
-        <DouveryCircleLock size="16" />
-        <p-sr1>
-          Esta compra está protegida por <strong>Douvery</strong> , puedes
-          comprar con total confianza.
-          <a-sr1-info class="sbr-slr-slri" href="/">
-            Aprender mas
-          </a-sr1-info>
-        </p-sr1>
-      </div>
+
       {props.quantity == 0 ? <></> : <ContainerExpectedShippingTime />}
       <ContainerAlertArt props={props} />
     </div>

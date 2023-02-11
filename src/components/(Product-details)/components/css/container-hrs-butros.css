@@ -7,8 +7,8 @@
     justify-content: flex-end;
     gap: 20px;
     background-color: var(--backgroundColor);
-    border-top: 1px solid #3333330c;
-    border-bottom: 1px solid #3333330c;
+    border-top: 1px solid var(--border-3);
+    border-bottom: 1px solid var(--border-3);
     ;
 }
 
