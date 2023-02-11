@@ -46,8 +46,9 @@ export const ContainerShoppingFeacture = component$(() => {
             <li>
               <hs-sr2>Opciones adicionales: </hs-sr2>{' '}
               <p-sr1>
-                Planes de aumento de garantía disponibles por un costo adicional
-                para una mayor protección. <a-sr1-info>Ver planes</a-sr1-info>
+                Para una tranquilidad adicional, tenemos planes de ampliación de
+                garantía disponibles a un precio adicional.
+                <a-sr1-info>Revisa las opciones.</a-sr1-info>
               </p-sr1>
             </li>
           </ul>
@@ -64,17 +65,22 @@ export const ContainerShoppingFeacture = component$(() => {
           </ul>
         )}
 
-        <button onClick$={() => (showText.setShowText = !showText.setShowText)}>
-          {showText.setShowText ? (
-            <srw-sr1>
-              <DouveryArrowUp size="15" /> Ver menos
-            </srw-sr1>
-          ) : (
-            <srw-sr1>
-              <DouveryArrowDown size="15" /> Ver más
-            </srw-sr1>
-          )}
-        </button>
+        <div class="sdw-bts">
+          {' '}
+          <button
+            onClick$={() => (showText.setShowText = !showText.setShowText)}
+          >
+            {showText.setShowText ? (
+              <srw-sr1>
+                <DouveryArrowUp size="15" /> Ver menos
+              </srw-sr1>
+            ) : (
+              <srw-sr1>
+                <DouveryArrowDown size="15" /> Ver más
+              </srw-sr1>
+            )}
+          </button>
+        </div>
       </div>
     </div>
   );

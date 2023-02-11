@@ -1,6 +1,5 @@
 .crtr-charac-bs {
     display: grid;
-    gap: 10px;
     padding: 10px 20px;
 }
 
@@ -12,16 +11,14 @@
 
 ul {
     display: grid;
-    gap: 20px;
+
 }
 
 li {
     width: 90%;
     display: grid;
-    grid-template-columns: 180px auto;
-
-    gap: 10px;
-
+    padding: 10px 20px;
+    list-style: circle;
 }
 
 .ofrs {
@@ -33,6 +30,12 @@ li {
 
 .srs-md {
     display: none;
+}
+
+.sdw-bts {
+
+    align-items: center;
+    margin-top: 10px;
 }
 
 @media only screen and (max-width: 1576px) {
@@ -67,4 +70,12 @@ li {
 
     }
 
+
+    .sdw-bts {
+        display: flex;
+        flex-direction: row-reverse;
+
+        align-items: center;
+
+    }
 }
