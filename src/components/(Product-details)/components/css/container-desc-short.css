@@ -58,8 +58,9 @@ li {
 }
 
 .crets-chrlsr-hrslrs-artes {
+    margin-top: 20px;
     display: grid;
-    gap: 5px;
+
 }
 
 table {
