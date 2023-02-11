@@ -78,5 +78,6 @@ td {
 
 th {
     text-align: center;
+
     background-color: var(--backgroundColor);
 }
