@@ -6,7 +6,7 @@
 
 .title-varitia-srdr {
     font-size: small;
-    color: var(--textOpa);
+    color: var(--color-text-opaque);
     font-weight: 500;
 
     padding: 0px 0px 10px 0px;
@@ -15,7 +15,7 @@
 .container-variation-cont-most {
     display: flex;
     flex-direction: row;
-    background-color: var(--downBackgroundColor);
+    background-color: var(--color-background-down);
 
 }
 
@@ -36,7 +36,7 @@
     .col-auto {
         font-size: 11px;
         font-weight: 400;
-        color: var(--text2);
+        color: var(--color-text-medium-light);
     }
 
 

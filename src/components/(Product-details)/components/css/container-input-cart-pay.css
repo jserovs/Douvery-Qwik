@@ -9,7 +9,7 @@
 
 .caja {
 
-    background-color: var(--backgroundColor);
+    background-color: var(--color-background-light);
     border: 1px solid #d9d9d9;
     overflow: hidden;
     padding: 3px;

@@ -1,5 +1,5 @@
 .alert-procss {
-    background-color: var(--backgroundColor);
+    background-color: var(--color-background-light);
     border: 1px solid #e9ecef;
     border-radius: 0.25rem;
     padding: 1.25rem;
@@ -8,7 +8,7 @@
     gap: 10px;
     align-items: center;
     justify-content: center;
-    color: var(--black);
+    color: var(--color-black);
 
 }
 

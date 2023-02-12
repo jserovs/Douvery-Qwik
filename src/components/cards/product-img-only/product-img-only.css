@@ -1,5 +1,5 @@
 .card {
-    background-color: var(--downBackgroundColor);
+    background-color: var(--color-background-down);
     width: 100%;
     text-align: center;
 
@@ -13,5 +13,5 @@ img {
 }
 
 .nfo {
-    background-color: var(--backgroundColor);
+    background-color: var(--color-background-light);
 }

@@ -4,11 +4,9 @@
 
 .buttonCart {
     display: grid;
-    grid-template-columns: 0.3fr 1fr;
-
-    min-width: 150px;
-    background-color: var(--button-cart-backgroundColor);
-    color: var(--backgroundColor);
+    min-width: 180px;
+    background-color: var(--color-button-cart);
+    color: var(--color-background-light);
     border: none;
     border-radius: 6px;
     padding: 7px 15px 7px 15px;
@@ -27,11 +25,10 @@
 
 .buttonPay {
     display: grid;
-    grid-template-columns: 0.2fr 1fr;
 
-    min-width: 190px;
-    background-color: var(--button-pay-backgroundColor);
-    color: var(--backgroundColor);
+    min-width: 180px;
+    background-color: var(--color-button-pay);
+    color: var(--color-background-light);
     border: none;
     border-radius: 6px;
     padding: 7px 15px 7px 15px;
@@ -91,7 +88,7 @@
     .crt-button-mobiles {
         width: 100%;
         display: grid;
-        background-color: var(--backgroundColor);
+        background-color: var(--color-background-light);
     }
 
     .brt-irft h5 {
@@ -111,7 +108,7 @@
 
         align-items: center;
         position: relative;
-        background-color: var(--backgroundColor);
+        background-color: var(--color-background-light);
     }
 
 

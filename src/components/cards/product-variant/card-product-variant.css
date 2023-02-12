@@ -5,7 +5,7 @@
     width: 60px;
     height: 60px;
     margin-left: 5px;
-    background-color: var(--backgroundColor);
+    background-color: var(--color-background-light);
     border: 1px solid #f0efefc4;
     transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
     justify-content: center;
@@ -19,14 +19,14 @@
 
 .super-container-card-options>.active {
     border-radius: 5PX;
-    border: 1px solid var(--secondary-color);
+    border: 1px solid var(--color-secondary);
     transition: all 0.3s ease;
 }
 
 
 
 .super-container-card-options a {
-    color: var(--text2);
+    color: var(--color-text-medium-light);
 
 }
 
@@ -34,6 +34,6 @@
 
 
 .active {
-    border: 1px solid var(--secondary-color);
+    border: 1px solid var(--color-secondary);
     transition: all 0.3s ease;
 }

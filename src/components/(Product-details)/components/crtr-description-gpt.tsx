@@ -5,7 +5,7 @@ export const ContainerDescriptionGPT = component$(({ props }: any) => {
   return (
     <div class="crrtr-srtrt">
       <hs-sr1>Descripcion minima</hs-sr1>
-      <p>{props.booksDescription}</p>
+      <p-sr1>{props.booksDescription}</p-sr1>
     </div>
   );
 });

@@ -11,14 +11,14 @@
 }
 
 li {
-    color: var(--black);
+    color: var(--color-black);
     max-width: 350px;
     min-width: 200px;
     display: grid;
     grid-template-columns: 120px auto;
     align-items: center;
     gap: 30px;
-    border-bottom: 1px solid var(--border-1);
+    border-bottom: 1px solid var(--border-width-1);
 }
 
 .ofrs {

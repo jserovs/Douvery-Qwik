@@ -1,7 +1,7 @@
 .crtrs-bsc {
     display: grid;
     align-items: center;
-    background-color: var(--backgroundColor);
+    background-color: var(--color-background-light);
     gap: 30px;
     padding: 10px 50px;
 }

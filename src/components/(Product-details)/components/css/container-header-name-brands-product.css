@@ -6,7 +6,7 @@
 
     border-radius: 5px;
     font-size: 19px;
-    background-color: var(--backgroundColor);
+    background-color: var(--color-background-light);
 
     padding: 5px 5px 0px 5px;
 
@@ -38,7 +38,7 @@
 
 .crt--tlr-brnd {
     padding: 0px 0px 10px 0px;
-    border-bottom: 1px solid var(--border-0);
+    border-bottom: 1px solid var(--border-width-0);
 
 }
 
@@ -75,7 +75,7 @@
 }
 
 .brt-shared-art svg {
-    fill: var(--textOpa);
+    fill: var(--color-text-opaque);
 
 }
 
@@ -99,7 +99,7 @@
     width: 30px;
     place-content: center;
     background-color: #181818;
-    color: var(--backgroundColor);
+    color: var(--color-background-light);
     font-size: 68%;
 
     border-radius: 5px;
@@ -110,7 +110,7 @@
 .di a {
     font-style: inherit;
     font-size: 68%;
-    color: var(--textOpa);
+    color: var(--color-text-opaque);
 }
 
 .brt-irft-lapto {
@@ -121,7 +121,7 @@
 
 .brt-irft-lapto h5 {
     font-size: 63%;
-    color: var(--textOpa);
+    color: var(--color-text-opaque);
     display: flex;
     gap: 5px;
     margin-right: 8PX;
@@ -131,7 +131,7 @@
 .brt-irft-lapto h4 {
     font-size: 73%;
 
-    color: var(--textOpa);
+    color: var(--color-text-opaque);
     display: flex;
     gap: 5px;
     margin-right: 8PX;
@@ -180,18 +180,18 @@
     border-radius: 5px;
     color: #4c956c;
     border: 1px solid #4c956c;
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-sm);
 }
 
 .minus-dolceid-alert-buty {
     opacity: 85%;
     padding: 0px;
     margin: 0px;
-    background-color: var(--backgroundColor);
-    color: #d30b0b;
+    background-color: var(--color-background-light);
+    color: #cd0000;
     font-weight: 400;
 
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-sm);
 }
 
 .dsier-strs-lapto div {
@@ -203,7 +203,7 @@
     display: grid;
     grid-template-rows: 1fr 1fr;
 
-    border: 1px solid var(--border-3);
+    border: 1px solid var(--border-width-1);
     border-radius: 5px;
 }
 
@@ -217,7 +217,7 @@
 
 .shrt-prd-alrt p {
     font-size: 68%;
-    color: var(--textOpa);
+    color: var(--color-text-opaque);
     display: flex;
     gap: 5px;
 
@@ -226,14 +226,14 @@
 
 .shrt-prd-alrt a {
     font-size: 68%;
-    color: var(--primary-color);
+    color: var(--color-primary);
 
 }
 
 .chg-shr-prtd {
     margin-left: 10px;
     font-size: 68%;
-    color: var(--textOpa);
+    color: var(--color-text-opaque);
 
 }
 
@@ -252,7 +252,7 @@
     justify-content: center;
     gap: 5px;
     font-size: 68%;
-    color: var(--primary-color);
+    color: var(--color-primary);
 
 }
 
@@ -263,7 +263,7 @@
     align-items: center;
     gap: 5px;
     font-size: 13px;
-    color: var(--primary-color);
+    color: var(--color-primary);
 }
 
 
@@ -297,7 +297,7 @@
     display: none;
     /* hide the review by default */
     position: absolute;
-    background-color: var(--backgroundColor);
+    background-color: var(--color-background-light);
     padding: 5px;
     border: 1px solid #d3d3d3;
     z-index: 1;
@@ -327,7 +327,7 @@
         justify-content: center;
         gap: 5px;
         font-size: 68%;
-        color: var(--primary-color);
+        color: var(--color-primary);
 
     }
 
@@ -380,8 +380,8 @@
 
         margin-top: 5PX;
         margin-bottom: 10px;
-        padding: 10px 15PX 30PX 15px;
-        background-color: var(--backgroundColor);
+        padding: 10px 20PX 30PX 20px;
+        background-color: var(--color-background-light);
     }
 
 
@@ -399,8 +399,8 @@
 
     .minus-dolceid-alert-buty {
         font-size: small;
-        color: #F55050;
-        font-weight: 500;
+        color: #cd0000;
+        font-weight: 600;
     }
 
 
