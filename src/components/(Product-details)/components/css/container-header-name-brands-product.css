@@ -88,13 +88,13 @@
     align-items: center;
     width: 57px;
     place-content: center;
-    background-color: #39A6A3;
+    background-color: #3B44F6;
+    border: 1px solid #fff;
     color: var(--color-background-light);
     font-size: 68%;
     float: left;
     border-radius: 5px;
     font-style: italic;
-    fill: cadetblue;
 }
 
 .di {
@@ -116,7 +116,6 @@
     background-color: #181818;
     color: var(--color-background-light);
     font-size: 68%;
-
     border-radius: 5px;
     font-style: italic;
 
