@@ -100,7 +100,7 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
                 )}
               />
               <a href="/">{props.category}</a>
-              {props.vrfdouvery ? (
+              {props.vrfDouvery ? (
                 <>
                   {' '}
                   <vrf-drv class="vrs-fd">
