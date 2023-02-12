@@ -82,3 +82,11 @@ th {
     background-color: var(--color-background-light);
 
 }
+
+@media only screen and (max-width: 885px) {
+    table {
+        width: 300px;
+        border-collapse: collapse;
+        margin-bottom: 10PX;
+    }
+}

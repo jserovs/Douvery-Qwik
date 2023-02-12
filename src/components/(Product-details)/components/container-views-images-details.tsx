@@ -95,10 +95,10 @@ export const ContainerViewsIMGDetails = component$(({ props }: any) => {
               <ContainerDescriptionGPT props={props} />{' '}
             </>
           ) : (
-            <>
+            <div class="crtr-desrt">
               {' '}
               <ContainerDescriptionShort props={props} />
-            </>
+            </div>
           )}
         </div>
       </div>

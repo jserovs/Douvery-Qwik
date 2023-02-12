@@ -40,7 +40,7 @@
     display: flex;
     align-items: center;
     gap: 5px;
-    background-color: #FFF;
+    background-color: var(--color-background-light);
 }
 
 .item-title {

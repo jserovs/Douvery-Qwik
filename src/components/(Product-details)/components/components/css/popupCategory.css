@@ -1,5 +1,5 @@
 .ccrt-cnst-prp {
-    background-color: bisque;
+    background-color: var(--color-background-light);
 }
 
 .crtr-ppptr {
