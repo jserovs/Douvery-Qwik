@@ -14,63 +14,59 @@
 
 
 
-  --primary-color: #0d47a1;
-  --secondary-color: #2c3e50;
+  --color-primary: #0d47a1;
+  --color-secondary: #2c3e50;
 
-  --logo-secondary-color: #0d47a1;
-  --logo-secondary-color: #FBD316;
+  --color-logo-secondary: #0d47a1;
+  --color-logo-highlight: #FBD316;
 
-  --downBackgroundColor: #f1f5f9;
-  --backgroundColor: #fcfcfc;
-  --threeBackgroundColor: #f4f4f4;
-  --backgroundCard: rgba(247, 248, 248, 0.952);
+  --color-background-down: #f1f5f9;
+  --color-background-light: #fcfcfc;
+  --color-background-lightest: #f4f4f4;
+  --color-background-card: rgba(247, 248, 248, 0.952);
 
-  --button-pay-backgroundColor: #008080;
-  --button-cart-backgroundColor: #1a49ab;
+  --color-button-pay: #008080;
+  --color-button-cart: #1a49ab;
 
-  --text0: rgba(0, 0, 0, .8);
-  --text1: rgba(0, 0, 0, .45);
-  --text2: #565959;
-  --text3: #333333;
-  --text4: #0f1111;
-
-
-  --textOpa: #3C4048;
-  --textHs-sr1: #181818;
+  --color-text-dark: rgba(0, 0, 0, .8);
+  --color-text-medium-dark: rgba(0, 0, 0, .45);
+  --color-text-medium-light: #565959;
+  --color-text-light: #333333;
+  --color-text-lightest: #0f1111;
 
 
-  --blue-clear: #2185D5;
-  --blue: #0b347b;
-  --blueVivo: #2146C7;
-  --black: #212529;
-  --white: var(--backgroundColor);
-  --grey: var(--textOpa)666;
-  --orange: #e84118;
-  --green: #38E54D;
-  --violet: #1613d3;
-  --rose: #F8485E;
-  --red: #EE2B47;
-
-  --start-color: #FF2E4C;
-  --text-actions: rgb(22, 19, 211);
+  --color-text-opaque: #3C4048;
+  --color-text-highlight-secondary: #000000;
 
 
-  --border-0: #00000008;
-  --border-1: #00000010;
-  --border-2: #00000018;
-  --border-3: #00000024;
-  --border-4: #d9d9d9;
+  --color-blue-clear: #2185D5;
+  --color-blue: #0b347b;
+  --color-blue-vibrant: #2146C7;
+  --color-black: #212529;
+  --color-white: var(--color-background-light);
+  --color-grey: var(--color-text-opaque)666;
+  --color-orange: #e84118;
+  --color-green: #38E54D;
+  --color-violet: #1613d3;
+  --color-rose: #F8485E;
+  --color-red: #EE2B47;
 
-  --font-size-s: 10px;
-  --font-size-sm: 13px;
-  --font-size-md: 15px;
-  --font-size-mdl: 17.5px;
-  --font-size-l: 18px;
+  --border-width-0: #00000008;
+  --border-width-1: #00000010;
+  --border-width-2: #00000018;
+  --border-width-3: #00000024;
+  --border-width-4: #d9d9d9;
+
+  --font-size-xxs: 10px;
+  --font-size-xs: 13px;
+  --font-size-sm: 15px;
+  --font-size-md: 17.5px;
   --font-size-lg: 18px;
+  --font-size-xl: 18px;
 
-  --font-weight-sm: 400;
-  --font-weight-m: 500;
-  --font-weight-lg: 600;
+  --font-weight-light: 400;
+  --font-weight-normal: 500;
+  --font-weight-bold: 600;
 }
 
 
@@ -121,7 +117,7 @@ main {
 
 strong {
   font-weight: 600;
-  color: var(--black);
+  color: var(--color-black);
 }
 
 html {
@@ -159,13 +155,13 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--text3);
+  color: var(--color-text-light);
   margin: 0;
 
 }
 
 p {
-  color: var(--text3);
+  color: var(--color-text-light);
   margin: 0;
 }
 
@@ -173,39 +169,39 @@ p {
 
 hs-sr1 {
   font-size: 12.92px;
-  font-weight: var(--font-weight-m);
-  color: var(--textHs-sr1);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-highlight-secondary);
 }
 
 hs-sr2 {
   font-size: 14.92px;
-  font-weight: var(--font-weight-m);
-  color: var(--textHs-sr1);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-highlight-secondary);
 }
 
 hs-sr3 {
   font-size: 20.92px;
-  font-weight: var(--font-weight-m);
-  color: var(--textHs-sr1);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-highlight-secondary);
 }
 
 /** Paragraph label */
 
 p-sr1 {
   font-size: 13.5px;
-  color: var(--textOpa);
+  color: var(--color-text-opaque);
 }
 
 p-sr2 {
   font-size: 15px;
-  color: var(--textOpa);
+  color: var(--color-text-opaque);
 }
 
 /** A label */
 
 a-sr1-info {
   font-size: 13.5px;
-  color: var(--primary-color);
+  color: var(--color-primary);
   cursor: pointer;
 }
 
@@ -215,12 +211,12 @@ a-sr1-info {
 et-sr1 {
 
   font-size: 13.5px;
-  color: var(--textOpa);
+  color: var(--color-text-opaque);
   text-align: center;
   width: 100%;
   padding: 2PX 0px 2px 0px;
   background-color: #1f3c72;
-  color: var(--white);
+  color: var(--color-white);
   position: absolute;
   top: 0;
   border-radius: 5px;
@@ -229,7 +225,7 @@ et-sr1 {
 
 f-srt1 {
   font-size: 13.5px;
-  color: var(--textOpa);
+  color: var(--color-text-opaque);
   text-align: end;
   width: 100%;
   padding: 2PX 20px 2px 20px;
@@ -244,12 +240,12 @@ f-srt1 {
 f-srt-f-r {
 
   font-size: 13.5px;
-  color: var(--textOpa);
+  color: var(--color-text-opaque);
   text-align: center;
   width: 100%;
   padding: 2PX 20px 2px 20px;
   background-color: #2B3A55;
-  color: var(--white);
+  color: var(--color-white);
   position: relative;
   bottom: 0;
   border-radius: 5px;
@@ -258,8 +254,8 @@ f-srt-f-r {
 
 srw-sr1 {
   font-size: small;
-  color: var(--blue);
-  fill: var(--black);
+  color: var(--color-blue);
+  fill: var(--color-black);
   display: flex;
   align-items: center;
   gap: 5px;
@@ -267,7 +263,7 @@ srw-sr1 {
 
 html {
   min-height: 100%;
-  background-color: var(--downBackgroundColor);
+  background-color: var(--color-background-down);
 }
 
 *,
@@ -284,9 +280,9 @@ input {
 }
 
 .envio {
-  font-size: var(--font-size-sm);
-  color: var(--blue-clear);
-  font-weight: var(--font-weight-lg);
+  font-size: var(--font-size-xs);
+  color: var(--color-blue-clear);
+  font-weight: var(--font-weight-bold);
 
 }
 
@@ -300,7 +296,7 @@ input {
 }
 
 .active-prev-view {
-  border: 1px solid var(--primary-color);
+  border: 1px solid var(--color-primary);
   border-radius: 5px;
 }
 

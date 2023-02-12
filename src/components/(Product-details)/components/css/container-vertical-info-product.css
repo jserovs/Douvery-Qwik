@@ -1,7 +1,7 @@
 .crrtr-vert-csrtre {
     Width: 300px;
     height: 600px;
-    border: 1px solid var(--border-1);
+    border: 1px solid var(--border-width-1);
     border-radius: 5px;
 
 

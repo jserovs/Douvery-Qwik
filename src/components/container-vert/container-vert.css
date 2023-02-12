@@ -1,7 +1,7 @@
 .c-vrt-usr {
 
     border-radius: 10px;
-    BACKGROUND-COLOR: var(--backgroundColor);
+    BACKGROUND-COLOR: var(--color-background-light);
 
 }
 
@@ -18,8 +18,8 @@
 
 
     width: 80%;
-    color: var(--text2);
-    font-weight: var(---font-weight-lg);
+    color: var(--color-text-medium-light);
+    font-weight: var(---font-weight-bold);
     opacity: 100%;
 
     font-size: 13px;

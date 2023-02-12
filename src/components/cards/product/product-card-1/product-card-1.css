@@ -7,7 +7,7 @@
     align-items: center;
     text-align: start;
     background-color: var(--background-color);
-    border: 1px solid var(--threeBackgroundColor);
+    border: 1px solid var(--color-background-lightest);
     padding: 10px;
 }
 
@@ -48,8 +48,8 @@
 
 .product-brand {
     font-size: small;
-    color: var(--primary-color);
-    font-weight: var(--font-weight-m);
+    color: var(--color-primary);
+    font-weight: var(--font-weight-normal);
 }
 
 .product-price {

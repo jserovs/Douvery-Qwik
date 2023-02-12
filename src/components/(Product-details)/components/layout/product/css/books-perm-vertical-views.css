@@ -21,7 +21,7 @@
     display: flex;
     width: 80%;
     height: 27.11px;
-    background-color: var(--downBackgroundColor);
+    background-color: var(--color-background-down);
     border-radius: 5px;
     justify-content: center;
     align-items: center;
@@ -38,7 +38,7 @@
 
 .book-perm-top p {
     font-size: 90%;
-    color: var(--textOpa);
+    color: var(--color-text-opaque);
 }
 
 .books-art-crtr {
@@ -68,7 +68,7 @@
 .prvd-books-arts-drs .img_wrap {
     width: 80px;
     height: 80px;
-    background-color: var(--threeBackgroundColor);
+    background-color: var(--color-background-lightest);
 
     cursor: pointer;
     display: grid;

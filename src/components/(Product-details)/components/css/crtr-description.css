@@ -1,11 +1,11 @@
 .crrtr-srtrt {
-    background-color: var(--backgroundColor);
+    background-color: var(--color-background-light);
     padding: 5px;
 }
 
 
 h5 {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xs);
     font-weight: 500;
     margin-bottom: 5px;
 }

@@ -20,12 +20,12 @@
     position: relative;
 
     align-items: center;
-    color: var(--textOpa);
+    color: var(--color-text-opaque);
     ;
 }
 
 .trl-drs svg {
-    fill: var(--textOpa);
+    fill: var(--color-text-opaque);
     width: 16px;
     height: 16px;
 }
@@ -91,7 +91,7 @@
     top: 100%;
     left: 20%;
     transform: translateX(-20%);
-    background-color: var(--backgroundColor);
+    background-color: var(--color-background-light);
     padding: 8px 0;
     border-radius: 3px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
@@ -102,7 +102,7 @@
 .tolst-tip {
 
     display: block;
-    border-bottom: 7px solid var(--backgroundColor);
+    border-bottom: 7px solid var(--color-background-light);
     border-left: 7px solid transparent;
     border-right: 7px solid transparent;
     position: absolute;

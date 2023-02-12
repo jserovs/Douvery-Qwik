@@ -6,9 +6,9 @@
     padding: 10px;
     justify-content: flex-end;
     gap: 20px;
-    background-color: var(--backgroundColor);
-    border-top: 1px solid var(--border-3);
-    border-bottom: 1px solid var(--border-3);
+    background-color: var(--color-background-light);
+    border-top: 1px solid var(--border-width-3);
+    border-bottom: 1px solid var(--border-width-3);
     ;
 }
 
@@ -54,7 +54,7 @@ span {
 span:hover {
 
 
-    color: var(--blueVivo);
+    color: var(--color-blue-vibrant);
 }
 
 

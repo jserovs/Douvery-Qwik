@@ -2,6 +2,6 @@
 
 
     height: 150px;
-    background-color: var(--backgroundColor);
+    background-color: var(--color-background-light);
     border-radius: 10px;
 }

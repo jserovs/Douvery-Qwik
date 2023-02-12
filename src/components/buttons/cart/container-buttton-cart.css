@@ -9,7 +9,7 @@ div {
 
     min-width: 150px;
     background-color: #20262E;
-    color: var(--white);
+    color: var(--color-white);
     border: none;
     border-radius: 6px;
     padding: 7px 17px 7px 17px;

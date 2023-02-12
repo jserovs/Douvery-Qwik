@@ -1,5 +1,5 @@
 .container-all {
-    background-color: var(--downBackgroundColor);
+    background-color: var(--color-background-down);
 }
 
 .container-details {
@@ -9,7 +9,7 @@
     padding: 15px;
     display: grid;
     justify-content: center;
-    background-color: var(--backgroundColor);
+    background-color: var(--color-background-light);
     border-radius: 5px;
 
 }
@@ -31,7 +31,7 @@
     margin: 5px;
     padding: 15px;
 
-    background-color: var(--backgroundColor);
+    background-color: var(--color-background-light);
 }
 
 .shr-srhd {

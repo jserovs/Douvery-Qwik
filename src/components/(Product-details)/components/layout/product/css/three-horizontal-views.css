@@ -19,7 +19,7 @@
 .ig-grid-img {
     border-radius: 5px;
     display: grid;
-    background-color: var(--threeBackgroundColor);
+    background-color: var(--color-background-lightest);
     padding: 10px;
     object-fit: contain;
     justify-content: center;
@@ -44,7 +44,7 @@
         width: 150vw;
         height: 230px;
         object-fit: contain;
-        border-bottom: 1px solid var(--downBackgroundColor);
+        border-bottom: 1px solid var(--color-background-down);
         padding: 10px;
     }
 
@@ -73,7 +73,7 @@
     .ig-grid-img {
         width: 100%;
         padding: 0px;
-        background-color: var(--threeBackgroundColor);
+        background-color: var(--color-background-lightest);
 
     }
 }

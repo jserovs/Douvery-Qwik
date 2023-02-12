@@ -42,7 +42,9 @@ export const ContainerDescriptionShort = component$(({ props }: any) => {
                 <hs-sr1>Highlights:</hs-sr1>
                 <ul class="detailed-list">
                   {props.highlights.map((val: any) => (
-                    <li>{val}</li>
+                    <li>
+                      <p-sr1>{val}</p-sr1>
+                    </li>
                   ))}
                 </ul>
               </div>

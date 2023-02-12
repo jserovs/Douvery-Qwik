@@ -8,7 +8,7 @@
     height: 250px;
     border-radius: 10px;
     padding: 1px;
-    background-color: var(--backgroundColor);
+    background-color: var(--color-background-light);
     box-shadow: rgba(0, 0, 0, 0.02) 0px 3px 5px;
 }
 
