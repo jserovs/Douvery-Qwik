@@ -1,6 +1,7 @@
 /** MODALLLLL */
 .modal {
     position: fixed;
+
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -29,10 +30,13 @@
 }
 
 .img-viws-modal-lllg {
+    display: grid;
+    justify-content: center;
     overflow: auto;
     width: 100%;
+    height: 80%;
     object-fit: contain;
-    min-height: 60rem;
+
 
 }
 
@@ -43,8 +47,7 @@
 }
 
 .modal-img_wrap {
-    width: 80px;
-    height: 80px;
+
     border: 1px solid #eee;
     cursor: pointer;
     display: flex;
@@ -54,13 +57,29 @@
     margin-left: 5px;
 }
 
+.active-prev-view {
+    border: 1px solid var(--color-primary);
+    border-radius: 5PX;
+}
 
 
 .modal-prev-img {
+    width: 290px;
+    height: 90px;
     display: flex;
     flex-direction: row;
+    object-fit: contain;
     gap: 10px;
     position: sticky;
     top: 50px;
     bottom: 50PX;
+}
+
+.modal-prev-img img {
+    width: 100%;
+    max-width: 80px;
+    min-width: 70px;
+    ;
+    height: 80px;
+    object-fit: contain;
 }

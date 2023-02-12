@@ -18,17 +18,15 @@ export type Product = {
 	description: string;
 	images: string[];
 	category: string;
-	variations: variant[];
 	productDetails: productDetails[];	
-	
+	variations: variant[];
 };
 
 
 
 export type variant = {
-	id: string;
-	variations:string;
-	productVariation:variantDate;
+	name: string;
+	variant:variantDate;
 };
 
 
