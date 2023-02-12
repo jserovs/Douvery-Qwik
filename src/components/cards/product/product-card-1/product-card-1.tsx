@@ -3,6 +3,7 @@ import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './product-card-1.css?inline';
 import { UsePrice } from '~/components/use/price/price';
 import { Link } from '@builder.io/qwik-city';
+import { DouveryIcon } from '~/components/icons/douvery';
 
 export const ContainerCardProduct1 = component$(({ product }: any) => {
   useStylesScoped$(styles);
@@ -19,6 +20,7 @@ export const ContainerCardProduct1 = component$(({ product }: any) => {
         <Link href={`/v/${product.slug}/${product.dui}`}>{product.name}</Link>
       </h2>
       <p-sr1 class="product-brand"> {product.marca}</p-sr1>
+
       <div class="crt-prc">
         {' '}
         {product.discount > 0 ? (
@@ -39,7 +41,16 @@ export const ContainerCardProduct1 = component$(({ product }: any) => {
           </>
         )}
       </div>
-
+      {product.vrfdouvery ? (
+        <>
+          {' '}
+          <et-sr2>
+            <DouveryIcon color="#FFF" /> Verified to Douvery
+          </et-sr2>
+        </>
+      ) : (
+        <></>
+      )}
       {product.sponsored ? (
         <>
           {' '}

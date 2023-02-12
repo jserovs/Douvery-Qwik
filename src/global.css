@@ -209,18 +209,54 @@ a-sr1-info {
 /** Etiq product card */
 
 et-sr1 {
+  margin: 5px 5px;
+  font-size: 12.5px;
+  color: var(--color-text-opaque);
+  text-align: center;
+  width: 30%;
+  background-color: var(--color-background-light);
+  color: #6466e8;
+  border: 1PX SOLID #6466e8;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 5px;
+}
 
-  font-size: 13.5px;
+et-sr2 {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  font-size: 12.5px;
   color: var(--color-text-opaque);
   text-align: center;
   width: 100%;
-  padding: 2PX 0px 2px 0px;
-  background-color: #1f3c72;
-  color: var(--color-white);
-  position: absolute;
-  top: 0;
+  background-color: #2940D3;
+  color: #fff;
+  border: 1PX SOLID #fff;
+  position: relative;
+
+  margin-top: 10PX;
   border-radius: 5px;
 
+}
+
+vrf-drv {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  font-size: 12.5px;
+
+  text-align: center;
+  width: 100%;
+  color: #2940D3;
+  fill: #2940D3;
+  position: relative;
+
+
+  border-radius: 5px;
 }
 
 f-srt1 {

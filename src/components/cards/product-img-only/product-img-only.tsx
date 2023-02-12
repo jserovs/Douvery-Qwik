@@ -13,7 +13,7 @@ export const CtnrCardImageOnly = component$(({ product }: any) => {
         </Link>
 
         <div class="nfo">
-          <h3>${product.price}.00</h3>
+          <hs-sr1>${product.price}.00</hs-sr1>
         </div>
       </div>
     </div>

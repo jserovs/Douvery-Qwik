@@ -1,7 +1,8 @@
 .card {
-    background-color: var(--color-background-down);
+
     width: 100%;
     text-align: center;
+
 
 }
 
@@ -11,6 +12,8 @@ img {
     object-fit: contain;
     margin: 0 auto;
 }
+
+
 
 .nfo {
     background-color: var(--color-background-light);

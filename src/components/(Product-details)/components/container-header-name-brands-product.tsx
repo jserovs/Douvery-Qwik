@@ -10,7 +10,7 @@ import sryles from './css/container-header-name-brands-product.css?inline';
 import { DouveryCheckMark } from '~/components/icons/checkMark';
 
 import { fetchSeller } from '~/services/fechSeller';
-import type { Seller } from '~/utils/types';
+import type { Product, Seller } from '~/utils/types';
 import { cleanUpParamsID } from '~/utils/cleurs';
 import { Loader } from '~/components/status/loader/loader';
 import { DouveryCircleLock } from '~/components/icons/circle-lock';
@@ -20,6 +20,8 @@ import { ContainerAlertArt } from './container-alert-art';
 import { Link } from '@builder.io/qwik-city';
 
 import { ContainerPoput } from './components/popupSHARE';
+import { DouveryIcon } from '~/components/icons/douvery';
+import { fetchProductBestInCategory } from '~/services/fechProduct';
 
 export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
   useStylesScoped$(sryles);
@@ -29,6 +31,14 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
   }>(
     {
       seller: {} as Seller,
+    },
+    { recursive: true }
+  );
+  const stateBest = useStore<{
+    product: Product;
+  }>(
+    {
+      product: {} as Product,
     },
     { recursive: true }
   );
@@ -44,6 +54,16 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
     const { id } = cleanUpParamsID({ id: props.store });
     const seller = await fetchSeller(id);
     state.seller = seller;
+
+    const product = await fetchProductBestInCategory(props.category);
+    stateBest.product = product;
+  });
+
+  const productResource = useResource$<void>(async () => {
+    const { category } = cleanUpParamsID({ category: props.category });
+    const product = await fetchProductBestInCategory(category);
+
+    stateBest.product = product;
   });
 
   return (
@@ -60,8 +80,36 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
           <p>{props.name}</p>
           <div class="crtr-di">
             <div class="di">
-              <p>De</p>
+              <Resource
+                value={productResource}
+                onPending={() => <>Cargando ...</>}
+                onRejected={(error) => <>Error: {error.message}</>}
+                onResolved={() => (
+                  <>
+                    {stateBest.product.dui === props.dui ? (
+                      <>
+                        {' '}
+                        <div class="top-1">#1 De </div>
+                      </>
+                    ) : (
+                      <>
+                        <p>De</p>
+                      </>
+                    )}
+                  </>
+                )}
+              />
               <a href="/">{props.category}</a>
+              {props.vrfdouvery ? (
+                <>
+                  {' '}
+                  <vrf-drv class="vrs-fd">
+                    <DouveryIcon color="#6466e8" /> Verified by Douvery
+                  </vrf-drv>
+                </>
+              ) : (
+                <></>
+              )}{' '}
             </div>
             <div class="brt-shared-art">
               <ContainerPoput title={'Compartir'} />

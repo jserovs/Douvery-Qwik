@@ -3,7 +3,7 @@ div {
     justify-content: center;
 }
 
-.buttonCart {
+.buttonCombined {
     display: grid;
     grid-template-columns: 100%;
 
@@ -12,7 +12,7 @@ div {
     color: var(--color-white);
     border: none;
     border-radius: 6px;
-    padding: 7px 17px 7px 17px;
+    padding: 5px 17px 5px 17px;
     text-align: center;
     text-decoration: none;
     vertical-align: middle;
@@ -20,7 +20,7 @@ div {
         border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.buttonCart:hover {
+.buttonCombined:hover {
     color: #fff;
     opacity: 90%;
     border-color: #0a58ca;
