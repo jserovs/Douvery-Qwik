@@ -197,6 +197,11 @@ p-sr2 {
   color: var(--color-text-opaque);
 }
 
+p-sr3 {
+  font-size: 18px;
+  color: var(--color-text-opaque);
+}
+
 /** A label */
 
 a-sr1-info {

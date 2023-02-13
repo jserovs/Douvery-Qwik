@@ -1,4 +1,4 @@
-.crtr-views2 {
+.ctnr-view-2 {
     display: grid;
     align-items: stretch;
     grid-template-columns: 70% 30%;
@@ -26,7 +26,7 @@
 
 
 @media only screen and (max-width: 685px) {
-    .crtr-views2 {
+    .ctnr-view-2 {
         padding: 10px;
     }
 
@@ -43,14 +43,14 @@
         padding-bottom: 20px;
     }
 
-    .crtr-views2 {
+    .ctnr-view-2 {
         grid-template-columns: auto;
     }
 
 }
 
 @media only screen and (max-width: 1098px) {
-    .crtr-views2 {
+    .ctnr-view-2 {
         display: grid;
         grid-template-columns: 100%;
     }

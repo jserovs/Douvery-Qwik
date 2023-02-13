@@ -1,0 +1,77 @@
+.ctr-ratings-bs {
+    width: 50%;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    gap: 10px;
+    background-color: aliceblue;
+    padding: 10px;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.crrtr-srtrt {
+    width: 50%;
+    display: grid;
+    gap: 10px;
+}
+
+.ctr-ratings-total {
+    display: grid;
+
+
+    background-color: aliceblue;
+}
+
+.ctr-stars {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+.ctr-total {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+.rating-progress-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.rating-progress-bar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.rating-value {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.rating-progress {
+    height: 10px;
+    width: 100%;
+    background-color: lightgray;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.rating-progress-fill {
+    height: 100%;
+    background-color: blue;
+    transition: width 0.5s ease-in-out;
+}
+
+.rating-count {
+    font-size: 14px;
+    margin-top: 5px;
+}
