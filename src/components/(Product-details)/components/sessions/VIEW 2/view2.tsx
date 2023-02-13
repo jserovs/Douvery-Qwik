@@ -8,7 +8,7 @@ export const View2 = component$(({ product }: any) => {
   useStylesScoped$(styles);
 
   return (
-    <div class="crtr-views2">
+    <div class="ctnr-view-2">
       <div class="viewleft">
         <div class="combined">
           {' '}
