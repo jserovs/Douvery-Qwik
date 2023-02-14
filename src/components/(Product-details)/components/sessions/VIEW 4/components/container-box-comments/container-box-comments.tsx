@@ -13,6 +13,12 @@ export const ContainerBoxComments = component$(() => {
       rating: 4.5,
       name: 'Juan Garcia',
       buyTime: 'May 19,2022',
+      images: [
+        'https://d500.epimg.net/cincodias/imagenes/2022/05/09/gadgets/1652093465_328420_1652093764_noticia_normal_recorte1.jpg',
+        'https://i.guim.co.uk/img/media/02133306ef973ec89cdbd4209ddf19c965aa8d82/714_651_4276_2565/master/4276.jpg?width=620&quality=85&dpr=1&s=none',
+        'https://i.blogs.es/4c6406/airpods-pro-review-xataka-3/1366_2000.jpg',
+        'https://www.infobae.com/new-resizer/FPA5NOOkfTg7Jf4JEhIvy2b0744=/992x558/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/2HCH5FW5JRAM3D4JZ4FAZOBJ5Y.jpg',
+      ],
       comment:
         'El producto es muy bueno, llegó en perfectas condiciones y cumplió con mis expectativas.',
     },
@@ -21,6 +27,7 @@ export const ContainerBoxComments = component$(() => {
       rating: 3.2,
       name: 'Perla Lopez',
       buyTime: 'June 3,2022',
+
       comment:
         'El producto es aceptable, pero no es exactamente lo que estaba buscando. El envío fue rápido y sin problemas.',
     },
@@ -49,26 +56,29 @@ export const ContainerBoxComments = component$(() => {
                 name={q.name}
                 rating={q.rating}
                 comment={q.comment}
+                images={q.images}
               />
             </>
           ))}
       </div>
-      <button
-        onClick$={() =>
-          (showAllQuestions.setShowAllQuestions =
-            !showAllQuestions.setShowAllQuestions)
-        }
-      >
-        {showAllQuestions.setShowAllQuestions ? (
-          <srw-sr1>
-            <DouveryArrowUp size="15" /> Ver menos
-          </srw-sr1>
-        ) : (
-          <srw-sr1>
-            <DouveryArrowDown size="15" /> Ver más
-          </srw-sr1>
-        )}
-      </button>
+      <div class="ctr-bts-sh">
+        <button
+          onClick$={() =>
+            (showAllQuestions.setShowAllQuestions =
+              !showAllQuestions.setShowAllQuestions)
+          }
+        >
+          {showAllQuestions.setShowAllQuestions ? (
+            <srw-sr1>
+              <DouveryArrowUp size="15" /> Ver menos
+            </srw-sr1>
+          ) : (
+            <srw-sr1>
+              <DouveryArrowDown size="15" /> Ver más
+            </srw-sr1>
+          )}
+        </button>
+      </div>
     </div>
   );
 });

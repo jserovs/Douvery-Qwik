@@ -33,6 +33,10 @@
     border-top: 1px solid var(--border-width-2);
 }
 
+.part-3 {
+    margin-top: 20px;
+}
+
 
 .crrts-title {
     display: grid;
@@ -62,5 +66,12 @@
 
     .part-1 {
         grid-template-columns: 100%;
+    }
+
+    .ctnr-view-4 {
+        display: grid;
+        gap: 10px;
+        padding: 50px 20px;
+
     }
 }
