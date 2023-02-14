@@ -1,7 +1,7 @@
 import { component$ } from '@builder.io/qwik';
 
 export const Stars = component$(({ color, rating, size }: any) => {
-  const starsColor = color || '#FF2E4C';
+  const starsColor = color || '#008080';
 
   const startNoFull = (
     // eslint-disable-next-line qwik/single-jsx-root
