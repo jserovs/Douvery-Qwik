@@ -28,13 +28,7 @@
     min-width: 652px;
 }
 
-#comment-input {
-    display: grid;
-    height: 50px;
-    display: block;
-    resize: vertical;
-    align-items: start;
-}
+
 
 .ctr-butr {
     margin-top: 10px;
