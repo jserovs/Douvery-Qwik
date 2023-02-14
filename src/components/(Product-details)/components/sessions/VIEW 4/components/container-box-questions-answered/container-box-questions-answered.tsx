@@ -14,7 +14,7 @@ export const ContainerBoxQuestionsAnswered = component$(() => {
       time: 'April 13,2021',
       question: '¿Cómo controlo la reproducción de audio con mis AirPods?',
       response: {
-        res: 'Puedes controlar la reproducción de audio con los AirPods de varias maneras:',
+        res: 'Usa los controles táctiles en los AirPods para reproducir, pausar, avanzar o retroceder una pista de audio.',
         sellerResponse: 'Apple',
         time: 'April 15,2021',
       },
