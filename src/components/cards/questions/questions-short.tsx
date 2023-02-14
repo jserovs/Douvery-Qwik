@@ -13,7 +13,9 @@ export const QuestionsShort = component$(({ question, user, time }: any) => {
           <p-sr1>{time}</p-sr1>
         </div>
       </div>
-      <div class="card-qtio-question">{question}</div>
+      <div class="card-qtio-question">
+        <h-sr1>{question}</h-sr1>
+      </div>
     </div>
   );
 });
