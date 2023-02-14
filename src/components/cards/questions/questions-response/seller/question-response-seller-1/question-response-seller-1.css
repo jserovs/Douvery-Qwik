@@ -1,0 +1,27 @@
+.crtr-resp {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.crtr-resp .rrow {
+    width: 100%;
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-response {
+    display: flex;
+    gap: 5px;
+}
+
+.name-seller {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5PX;
+}

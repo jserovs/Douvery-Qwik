@@ -76,22 +76,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  font-family: FONT-FAMILY Söhne,
+  font-family: ColfaxAI, "FONT-FAMILY Söhne",
     ui-sans-serif,
     system-ui,
     -apple-system,
     "Segoe UI",
     Roboto,
     Ubuntu,
-    Cantarell,
-    "Noto Sans",
-    sans-serif,
-    "Helvetica Neue",
-    Arial,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol",
-    "Noto Color Emoji";
+    helvetica,
+    sans-serif;
 
 }
 
@@ -199,6 +192,11 @@ p-sr2 {
 
 p-sr3 {
   font-size: 18px;
+  color: var(--color-text-opaque);
+}
+
+p-sr4 {
+  font-size: 20px;
   color: var(--color-text-opaque);
 }
 

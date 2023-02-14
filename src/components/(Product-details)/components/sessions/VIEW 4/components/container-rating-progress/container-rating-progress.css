@@ -1,9 +1,9 @@
 .ctr-ratings-bs {
-    width: 50%;
+    max-width: 550PX;
     display: grid;
     grid-template-columns: 30% 70%;
     gap: 10px;
-    background-color: aliceblue;
+    background-color: var(--color-background-light);
     padding: 10px;
     border-radius: 5px;
     align-items: center;
@@ -11,7 +11,7 @@
 }
 
 .crrtr-srtrt {
-    width: 50%;
+    width: 100%;
     display: grid;
     gap: 10px;
 }
@@ -20,7 +20,7 @@
     display: grid;
 
 
-    background-color: aliceblue;
+    background-color: var(--color-background-light);
 }
 
 .ctr-stars {
@@ -60,7 +60,7 @@
 .rating-progress {
     height: 10px;
     width: 100%;
-    background-color: lightgray;
+
     border-radius: 5px;
     overflow: hidden;
 }

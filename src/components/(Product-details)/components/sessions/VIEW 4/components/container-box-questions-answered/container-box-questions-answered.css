@@ -1,0 +1,9 @@
+.crtr-box {
+    display: grid;
+    gap: 20px;
+}
+
+.crtr-qtion-res {
+    display: grid;
+    gap: 10px;
+}
