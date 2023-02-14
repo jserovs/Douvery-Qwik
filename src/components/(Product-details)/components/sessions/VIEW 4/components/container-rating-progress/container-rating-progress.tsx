@@ -26,6 +26,12 @@ export const ContaineRatingProgress = component$(({ props }: any) => {
     const percentage = (count / totalRatings) * 100;
     bars.push({ rating, count, percentage });
   }
+
+  let ratingsProd = 0.0;
+  for (let i = 0; i < props.ratings.length; i++) {
+    ratingsProd = props.ratings[i].rating;
+  }
+
   return (
     <div>
       <hs-sr2>Ratings progress</hs-sr2>
@@ -33,7 +39,8 @@ export const ContaineRatingProgress = component$(({ props }: any) => {
         <div class="crrtr-srtrt">
           <div class="ctr-ratings-total">
             <div class="ctr-stars">
-              <p-sr3>{4.5}</p-sr3> <OneStar rating={1} size="25" />
+              <p-sr3>{ratingsProd}</p-sr3>{' '}
+              <OneStar color="#008080" rating={1} size="25" />
             </div>
             <div class="ctr-total">
               <p-sr1> {totalRatings} ratings</p-sr1>
@@ -42,11 +49,17 @@ export const ContaineRatingProgress = component$(({ props }: any) => {
         </div>
         <div class="ctr-ratings-progress">
           <div class="star-ratings">
-            {bars.map((bar) => (
-              <div class="star-ratings">
-                <ProgressBar porce={bar.percentage} />
-              </div>
-            ))}
+            <div class="star-ratings">
+              {bars.map((bar) => (
+                <div class="star-ratings">
+                  <ProgressBar
+                    rating={bar.rating}
+                    count={bar.count}
+                    porce={Math.min(100, Math.max(0, bar.percentage))}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -77,7 +77,7 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
               Visita {props.marca}
             </Link>
           </div>
-          <p>{props.name}</p>
+          <p-sr4>{props.name}</p-sr4>
           <div class="crtr-di">
             <div class="di">
               <Resource
