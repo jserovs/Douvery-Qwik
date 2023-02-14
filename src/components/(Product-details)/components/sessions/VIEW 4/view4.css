@@ -11,14 +11,12 @@
     display: grid;
     align-items: stretch;
     grid-template-columns: 70% 30%;
-
-    ;
 }
 
 .part-1 {
     display: grid;
     grid-template-columns: 50% 50%;
-    justify-content: center;
+    gap: 50PX;
     align-items: flex-start;
 }
 
@@ -40,4 +38,16 @@
 
 .srs-md {
     display: none;
+}
+
+@media only screen and (max-width: 885px) {
+
+
+    .content {
+        grid-template-columns: 100%;
+    }
+
+    .part-1 {
+        grid-template-columns: 100%;
+    }
 }
