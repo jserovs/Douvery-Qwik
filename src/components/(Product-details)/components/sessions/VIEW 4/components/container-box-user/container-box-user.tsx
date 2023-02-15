@@ -6,7 +6,7 @@ export const ContainerBoxBser = component$(() => {
   return (
     <div class="ctr-box-user">
       <div class="crtr-avatar">
-        <DouveryUser size="50" color="#424242" />
+        <DouveryUser size="35" color="#424242" />
       </div>
       <div class="ctr-name-time">
         <hs-sr1>Frederick Sansck</hs-sr1>
