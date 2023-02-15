@@ -5,11 +5,13 @@ export const ContainerBoxInputComments = component$(() => {
   useStylesScoped$(style);
   return (
     <div class="comments-box">
-      <ContainerBoxBser />
-      <input type="text" id="comment-input" />
-      <div class="ctr-butr">
-        <p-sr1>Al comentar, acepto los términos de comentarios.</p-sr1>
-        <button>Enviar</button>
+      <div>
+        <ContainerBoxBser />
+        <input type="text" id="comment-input" />
+        <div class="ctr-butr">
+          <p-sr1>Al comentar, acepto los términos de comentarios.</p-sr1>
+          <button>Enviar</button>
+        </div>
       </div>
     </div>
   );

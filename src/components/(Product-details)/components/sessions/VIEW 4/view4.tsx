@@ -30,6 +30,12 @@ export const View4 = component$(({ product }: any) => {
             <ContainerBoxQuestionsAnswered />
           </div>
           <div class="part-2">
+            <div class="crrts-title">
+              <div class="ofrs">
+                <hs-sr3>Puedes agregar un comentario</hs-sr3>
+              </div>
+              <p-sr1>Comparte y comenta tu mas sincera opinion</p-sr1>
+            </div>
             <ContainerBoxInputComments />
             <ContainerBoxComments />
           </div>

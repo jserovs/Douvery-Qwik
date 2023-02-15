@@ -13,20 +13,47 @@
     display: grid;
     justify-content: center;
     align-items: center;
-
-}
-
-.crtr-avatar img {
-
-    border-radius: 50%;
-    background-color: var(--color-background-light);
-    border: 1px solid var(--border-width-1);
     object-fit: contain;
+    background-color: var(--color-background-ligth);
 }
 
 .ctr-name-time {
     display: grid;
 
     align-items: flex-start;
+
+}
+
+@media only screen and (max-width: 885px) {
+
+    .ctr-box-user {
+        display: grid;
+        grid-template-columns: 50px auto;
+        width: 100%;
+    }
+
+    .crtr-avatar svg {
+        width: 35px;
+        height: 35px;
+    }
+
+    .crtr-avatar {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: var(--color-background-lightest);
+        border: 1px solid var(--border-width-1);
+        object-fit: contain;
+    }
+
+
+    .grap-imgs {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+        gap: 1px;
+        margin-top: 20px;
+        border-radius: 10PX;
+    }
 
 }
