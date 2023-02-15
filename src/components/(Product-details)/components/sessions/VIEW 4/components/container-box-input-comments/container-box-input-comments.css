@@ -4,11 +4,15 @@
 
     margin: 0 auto;
     display: grid;
-
+    gap: 30px;
     justify-content: center;
     align-items: center;
     padding: 50px 0;
     border-bottom: 1px solid var(--border-width-2);
+}
+
+.comments-box hs-sr3 {
+    color: var(--color-secondary);
 }
 
 .comments-box label {
@@ -18,7 +22,7 @@
 }
 
 .comments-box input[type="text"] {
-    height: 150px;
+    height: 100px;
     border: none;
     border-radius: 4px;
     background-color: var(--color-background-light);

@@ -4,6 +4,7 @@ import { Stars } from '~/components/Ratings/stars/stars';
 import { DouveryArrowUp } from '~/components/icons/arrow-up';
 import { DouveryArrowDown } from '~/components/icons/arrow-down';
 import { DouveryUser } from '~/components/icons/user';
+import { UseDropdownReport } from '~/components/use/dropdownReport/dropdownReport';
 export const CardComment1 = component$(
   ({ buyTime, name, rating, comment, timePublic, images }: any) => {
     useStylesScoped$(style);
@@ -12,17 +13,24 @@ export const CardComment1 = component$(
     return (
       <div class="ctr-box-user">
         <div class="crtr-avatar">
-          <DouveryUser size="35" color="#424242" />
+          <DouveryUser size="35" color="#000000e8" />
         </div>
         <div class="crt-ifr-crt">
           {' '}
           <div class="ctr-title">
             {' '}
             <div class="ctr-name-time">
-              <hs-sr1>{name}</hs-sr1>
-              <ctr-opa>|</ctr-opa>
-              <p-sr1>{timePublic}</p-sr1> <ctr-opa>|</ctr-opa>
-              <Stars color="#008080" rating={rating} />
+              <div>
+                {' '}
+                <hs-sr1>{name}</hs-sr1>
+                <ctr-opa>|</ctr-opa>
+                <p-sr1>{timePublic}</p-sr1> <ctr-opa>|</ctr-opa>
+                <Stars color="#008080" rating={rating} />
+              </div>
+              <div class="d-rep">
+                {' '}
+                <UseDropdownReport />
+              </div>
             </div>
             <p-sr1>Producto comprando el {buyTime}</p-sr1>
           </div>
