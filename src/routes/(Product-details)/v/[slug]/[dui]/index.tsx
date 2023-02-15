@@ -90,6 +90,7 @@ export default component$(() => {
 
               <View1 props={state.product} />
               <View2 product={state.product} />
+
               <View4 product={state.product} />
             </>
           )}

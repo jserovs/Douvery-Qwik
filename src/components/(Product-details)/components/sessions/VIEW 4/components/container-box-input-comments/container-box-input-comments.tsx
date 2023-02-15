@@ -5,7 +5,6 @@ export const ContainerBoxInputComments = component$(() => {
   useStylesScoped$(style);
   return (
     <div class="comments-box">
-      <hs-sr3>Puedes dejar un comentario</hs-sr3>
       <ContainerBoxBser />
       <input type="text" id="comment-input" />
       <div class="ctr-butr">

@@ -31,9 +31,6 @@ export const View4 = component$(({ product }: any) => {
           </div>
           <div class="part-2">
             <ContainerBoxInputComments />
-          </div>
-          <div class="part-3">
-            {' '}
             <ContainerBoxComments />
           </div>
         </div>

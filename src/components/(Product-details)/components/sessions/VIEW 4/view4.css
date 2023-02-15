@@ -10,26 +10,25 @@
 .content {
     display: grid;
     align-items: stretch;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 100%;
+    justify-content: start;
 }
 
 .part-1 {
     display: grid;
     grid-template-columns: 50% 50%;
-    gap: 50PX;
+    gap: 0PX;
     align-items: flex-start;
+
 }
 
 .part-2 {
     margin-top: 10px;
     width: 100%;
-    height: 300px;
+
     display: grid;
-    grid-template-rows: 100%;
-    gap: 10PX;
-    align-items:
-        start;
-    justify-content: start;
+    grid-template-columns: 100%;
+
     border-top: 1px solid var(--border-width-2);
 }
 
@@ -57,16 +56,20 @@
     display: none;
 }
 
+@media only screen and (max-width: 1359px) {
+
+
+    .part-1 {
+        display: grid;
+        grid-template-columns: 100%;
+        gap: 55px;
+        margin-bottom: 50px;
+    }
+}
+
 @media only screen and (max-width: 885px) {
 
 
-    .content {
-        grid-template-columns: 100%;
-    }
-
-    .part-1 {
-        grid-template-columns: 100%;
-    }
 
     .ctnr-view-4 {
         display: grid;

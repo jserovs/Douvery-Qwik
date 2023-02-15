@@ -22,8 +22,10 @@
     object-fit: contain;
 }
 
-.crtr-avatar img {
-
+.crtr-avatar {
+    display: grid;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
     background-color: var(--color-background-light);
     border: 1px solid var(--border-width-1);
@@ -40,7 +42,7 @@
 
 .grap-imgs {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     gap: 1px;
     margin-top: 20px;
     border-radius: 10PX;
@@ -95,6 +97,14 @@
     .crtr-avatar {
         width: 40px;
         height: 40px;
+    }
+
+    .grap-imgs {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+        gap: 1px;
+        margin-top: 20px;
+        border-radius: 10PX;
     }
 
 }

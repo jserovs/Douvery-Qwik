@@ -3,6 +3,7 @@ import style from './card-comment-1.css?inline';
 import { Stars } from '~/components/Ratings/stars/stars';
 import { DouveryArrowUp } from '~/components/icons/arrow-up';
 import { DouveryArrowDown } from '~/components/icons/arrow-down';
+import { DouveryUser } from '~/components/icons/user';
 export const CardComment1 = component$(
   ({ buyTime, name, rating, comment, timePublic, images }: any) => {
     useStylesScoped$(style);
@@ -11,19 +12,16 @@ export const CardComment1 = component$(
     return (
       <div class="ctr-box-user">
         <div class="crtr-avatar">
-          <img
-            src="https://www.ecured.cu/images/a/a1/Ejemplo_de_Avatar.png"
-            alt="avatar-user"
-          />
+          <DouveryUser size="35" color="#424242" />
         </div>
         <div class="crt-ifr-crt">
           {' '}
           <div class="ctr-title">
             {' '}
             <div class="ctr-name-time">
-              <p-sr1>{name}</p-sr1>
-              <div>|</div>
-              <p-sr1>{timePublic}</p-sr1> <div>|</div>
+              <hs-sr1>{name}</hs-sr1>
+              <ctr-opa>|</ctr-opa>
+              <p-sr1>{timePublic}</p-sr1> <ctr-opa>|</ctr-opa>
               <Stars color="#008080" rating={rating} />
             </div>
             <p-sr1>Producto comprando el {buyTime}</p-sr1>

@@ -245,6 +245,8 @@ et-sr2 {
 
 }
 
+/** Icon verified  brand*/
+
 vrf-drv {
   display: flex;
   gap: 5px;
@@ -304,6 +306,18 @@ html {
   min-height: 100%;
   background-color: var(--color-background-down);
 }
+
+/** Etiq texto degrad */
+
+ctr-opa {
+  color: #ececf1;
+  font-size: 15px;
+}
+
+
+/** Etiq br lvl*/
+
+
 
 *,
 button,
