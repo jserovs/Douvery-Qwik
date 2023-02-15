@@ -11,3 +11,9 @@
     padding: 20px;
     margin-bottom: 20px;
 }
+
+.ctr-comment {
+    display: grid;
+    gap: 30px;
+    padding: 50px 0px;
+}
