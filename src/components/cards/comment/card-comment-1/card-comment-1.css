@@ -41,8 +41,21 @@
 
 }
 
+.name-time {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
 .d-rep {
     display: none;
+}
+
+.ctr-str {
+    padding: 10px 0px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 
 .ctr-box-user:hover .d-rep {
@@ -55,7 +68,7 @@
 
 .grap-imgs {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
     gap: 1px;
     margin-top: 20px;
     border-radius: 10PX;
@@ -83,9 +96,10 @@
     height: 50px;
     object-fit: contain;
     border-radius: 4PX;
-    background-color: #dfdfdf;
+    background-color: var(--color-background-ligth);
     color: var(--color-text-light);
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+
+    border: 1px solid var(--border-width-1);
     display: grid;
     align-items: center;
     justify-content: center;

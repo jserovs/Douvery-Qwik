@@ -10,7 +10,11 @@ export const ContainerBoxComments = component$(() => {
   const comment = [
     {
       timePublic: 'May 21,2022',
-      rating: 4.5,
+      rating: {
+        title: 'Bueno',
+        rating: 4,
+      },
+
       name: 'Juan Garcia',
       buyTime: 'May 19,2022',
       images: [
@@ -24,7 +28,11 @@ export const ContainerBoxComments = component$(() => {
     },
     {
       timePublic: 'June 5,2022',
-      rating: 3.2,
+      rating: {
+        title: 'Regular',
+        rating: 3,
+      },
+
       name: 'Perla Lopez',
       buyTime: 'June 3,2022',
 
@@ -33,7 +41,11 @@ export const ContainerBoxComments = component$(() => {
     },
     {
       timePublic: 'July 2,2022',
-      rating: 5.0,
+      rating: {
+        title: 'Excelente',
+        rating: 5,
+      },
+
       name: 'Francisco Quintero',
       buyTime: 'June 28,2022',
       comment:
