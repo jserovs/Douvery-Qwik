@@ -20,12 +20,11 @@ export const CardComment1 = component$(
           <div class="ctr-title">
             {' '}
             <div class="ctr-name-time">
-              <div>
+              <div class="name-time">
                 {' '}
                 <hs-sr1>{name}</hs-sr1>
                 <ctr-opa>|</ctr-opa>
-                <p-sr1>{timePublic}</p-sr1> <ctr-opa>|</ctr-opa>
-                <Stars color="#008080" rating={rating} />
+                <p-sr1>{timePublic}</p-sr1>
               </div>
               <div class="d-rep">
                 {' '}
@@ -33,6 +32,12 @@ export const CardComment1 = component$(
               </div>
             </div>
             <p-sr1>Producto comprando el {buyTime}</p-sr1>
+            <div class="ctr-str">
+              {' '}
+              <p-sr1>Rating: </p-sr1>
+              <hs-sr1>{rating.title}</hs-sr1>{' '}
+              <Stars color="#008080" rating={rating.rating} />
+            </div>
           </div>
           <div class="ctr-comment">
             <hs-sr1>{comment}</hs-sr1>
