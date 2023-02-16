@@ -40,12 +40,13 @@
 
 .container-img-product img {
 
-    width: 800px;
-    height: 500px;
+
+    height: 450px;
     object-fit: contain;
     background-color: var(--color-background-light);
     padding: 10px;
     z-index: 1000;
+
 
 }
 

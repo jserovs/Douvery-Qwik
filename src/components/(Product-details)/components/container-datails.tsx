@@ -105,9 +105,16 @@ export default component$(({ props }: any) => {
           <size-w class="size-w-10" />
           <size-w class="size-w-10" />
           <size-w class="size-w-10" />
-          <div class="div-input-sertts">
-            <ContainerInputCartPay quantity={1} />
-          </div>
+          {props.quantity <= 1 ? (
+            <div class="no-stock">
+              <div class="circle"></div>
+              <h5 class="title-prtsea">Articulo agotado</h5>
+            </div>
+          ) : (
+            <div class="div-input-sertts">
+              <ContainerInputCartPay quantity={1} />
+            </div>
+          )}
           <div class="div-button">
             {' '}
             <ContainerButtonDetails props={props} />

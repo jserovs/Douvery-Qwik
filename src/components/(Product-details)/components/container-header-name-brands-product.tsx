@@ -124,7 +124,15 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
         {props.quantity <= 1 ? (
           <>
             <p class="exhausted-for ">Articulo agotado</p>
-            <button>Notificarme cuando este disponible</button>
+            <div class="bts-ds">
+              {' '}
+              <button>
+                <DouveryIcon size="20" /> Notificarme
+              </button>
+              <button>
+                <DouveryIcon size="20" /> Recomendarlo
+              </button>
+            </div>
           </>
         ) : props.quantity <= 12 ? (
           <>

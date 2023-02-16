@@ -46,10 +46,10 @@
 
 @media only screen and (max-width: 885px) {
     .crt-expectend-ship {
-        height: 80px;
-
+        height: 100px;
+        padding: 10px 0px 10px 0px;
         display: grid;
-        justify-content: center;
+        justify-content: start;
         align-items: center;
         gap: 0px;
     }
@@ -58,6 +58,12 @@
 
         color: var(--color-text-opaque);
         font-size: small;
+    }
+
+    .shrp-prsx {
+        display: grid;
+        gap: 8px;
+
     }
 
 

@@ -183,18 +183,24 @@
 
 .dsier-strs-lapto .exhausted-for {
     font-size: 68%;
-    color: #bc4b51;
+    color: #DC143C;
     opacity: 90%;
     font-weight: 500;
     margin-right: 15px;
 }
 
 .dsier-strs-lapto button {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
     padding: 5px;
     border-radius: 5px;
-    color: #4c956c;
-    border: 1px solid #4c956c;
-    font-size: var(--font-size-sm);
+    color: #Fff;
+    background-color: #362FD9;
+
+    font-size: 14px;
+    padding: 5px 10px;
 }
 
 .minus-dolceid-alert-buty {
@@ -377,6 +383,15 @@
         border-radius: 5px;
     }
 
+    .crt--tlr-brnd {
+        padding: 0px;
+    }
+
+    .di {
+        grid-template-areas: auto 150px;
+    }
+
+
     .srtrsdr {
         display: grid;
         grid-template-columns: 5% 95%;
@@ -401,8 +416,10 @@
 
     .dsier-strs-lapto {
         display: grid;
-        grid-template-columns: 100% 0%;
-        gap: 3px;
+        grid-template-columns: 100%;
+        justify-content: center;
+        align-items: center;
+
         border: 0px;
     }
 
@@ -410,6 +427,7 @@
         display: flex;
         gap: 5PX;
     }
+
 
     .minus-dolceid-alert-buty {
         font-size: small;
@@ -423,19 +441,24 @@
         width: 80%;
     }
 
+    .bts-ds {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 100%;
+    }
+
     .shrt-prd-alrt {
         display: grid;
 
         grid-template-columns: 30% 30% 40%;
-        padding: 10PX;
+        gap: 0px;
         text-align: center;
         align-items: center;
         justify-content: center;
-
+        padding: 10px 0px;
         border-top: 1px solid #e6e6e6;
         border-bottom: 1px solid #e6e6e6;
-        margin-bottom: 10px;
-        margin-top: 10px;
+
     }
 
     .shrt-prd-alrt div {
@@ -448,9 +471,26 @@
     }
 
     .crtr-di {
+        display: grid;
 
         padding-right: 0px;
     }
+
+    .crtr-di {
+        display: grid;
+        grid-template-columns: auto;
+        justify-content: center;
+        align-self: center;
+        margin: 10px 0px;
+
+    }
+
+    .brt-shared-art {
+        justify-content: flex-end;
+        margin: 10px 0px;
+    }
+
+
 }
 
 @media only screen and (max-width: 350px) {
