@@ -24,6 +24,7 @@ import { cleanUpParams } from '~/utils/cleurs';
 import { View2 } from '~/components/(Product-details)/components/sessions/VIEW 2/view2';
 import { View1 } from '~/components/(Product-details)/components/sessions/VIEW 1/view1';
 import { View4 } from '~/components/(Product-details)/components/sessions/VIEW 4/view4';
+import { View3 } from '~/components/(Product-details)/components/sessions/VIEW 3/view3';
 
 export default component$(() => {
   useStylesScoped$(styles);
@@ -90,7 +91,7 @@ export default component$(() => {
 
               <View1 props={state.product} />
               <View2 product={state.product} />
-
+              <View3 product={state.product} />
               <View4 product={state.product} />
             </>
           )}

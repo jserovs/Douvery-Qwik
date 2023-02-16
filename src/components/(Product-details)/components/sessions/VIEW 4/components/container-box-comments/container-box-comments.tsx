@@ -21,7 +21,6 @@ export const ContainerBoxComments = component$(() => {
         'https://d500.epimg.net/cincodias/imagenes/2022/05/09/gadgets/1652093465_328420_1652093764_noticia_normal_recorte1.jpg',
         'https://i.guim.co.uk/img/media/02133306ef973ec89cdbd4209ddf19c965aa8d82/714_651_4276_2565/master/4276.jpg?width=620&quality=85&dpr=1&s=none',
         'https://i.blogs.es/4c6406/airpods-pro-review-xataka-3/1366_2000.jpg',
-        'https://www.infobae.com/new-resizer/FPA5NOOkfTg7Jf4JEhIvy2b0744=/992x558/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/2HCH5FW5JRAM3D4JZ4FAZOBJ5Y.jpg',
         'https://image.cnbcfm.com/api/v1/image/107122314-1663786025857-IMG_03711.jpg?v=1672059601&w=740&h=416&ffmt=webp&vtcrop=y',
       ],
       comment:

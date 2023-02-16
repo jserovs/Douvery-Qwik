@@ -1,6 +1,5 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './product-img-only.css?inline';
-import { Link } from '@builder.io/qwik-city';
 
 export const CtnrCardImageOnly = component$(({ product }: any) => {
   useStylesScoped$(styles);
@@ -8,9 +7,9 @@ export const CtnrCardImageOnly = component$(({ product }: any) => {
   return (
     <div class="container">
       <div class="card">
-        <Link href={`/v/${product.slug}/${product.dui}`}>
+        <a href={`/v/${product.slug}/${product.dui}`}>
           <img src={product.images[0]} alt="Image" />
-        </Link>
+        </a>
 
         <div class="nfo">
           <hs-sr1>${product.price}.00</hs-sr1>
