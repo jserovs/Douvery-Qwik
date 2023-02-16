@@ -4,10 +4,16 @@ import styles from './product-card-1.css?inline';
 import { UsePrice } from '~/components/use/price/price';
 import { Link } from '@builder.io/qwik-city';
 import { DouveryIcon } from '~/components/icons/douvery';
+import { Stars } from '~/components/Ratings/stars/stars';
 
 export const ContainerCardProduct1 = component$(({ product }: any) => {
   useStylesScoped$(styles);
   const discoun = product.price - product.price * (product.discount / 100);
+
+  let totalRating = 0.0;
+  for (let i = 0; i < product.ratings.length; i++) {
+    totalRating = product.ratings[i].rating;
+  }
   return (
     <div class="product-card">
       <Link href={`/v/${product.slug}/${product.dui}`}>
@@ -19,7 +25,10 @@ export const ContainerCardProduct1 = component$(({ product }: any) => {
         {' '}
         <Link href={`/v/${product.slug}/${product.dui}`}>{product.name}</Link>
       </h2>
-      <p-sr1 class="product-brand"> {product.marca}</p-sr1>
+      <p-sr1 class="product-brand">
+        {' '}
+        <Stars size="16" rating={totalRating} /> {product.marca}
+      </p-sr1>
 
       <div class="crt-prc">
         {' '}
@@ -41,7 +50,7 @@ export const ContainerCardProduct1 = component$(({ product }: any) => {
           </>
         )}
       </div>
-      {product.vrfdouvery ? (
+      {product.vrfDouvery ? (
         <>
           {' '}
           <et-sr2>

@@ -150,6 +150,21 @@
     margin-bottom: 5px;
 }
 
+
+.no-stock {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.no-stock .circle {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #DC143C;
+}
+
 @media only screen and (max-width: 1085px) {
     .container-NavAggPayProduct-web {
         display: flex;

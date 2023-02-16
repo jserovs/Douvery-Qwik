@@ -6,13 +6,18 @@ export const LibPermVerticalViewProductIMG = component$(
     useStylesScoped$(styles);
     return (
       <div class="crtr-firx-prd-prodct">
-        <div class="book-perm-top">
-          <h5>Autor:</h5>
-          <p> {props.author}</p>
-          <h5>Genero:</h5>
+        {props.author && (
+          <>
+            {' '}
+            <div class="book-perm-top">
+              <h5>Autor:</h5>
+              <p> {props.author}</p>
+              <h5>Genero:</h5>
 
-          <p>{props.gender}</p>
-        </div>
+              <p>{props.gender}</p>
+            </div>
+          </>
+        )}
         <div class="crtr-books-aresdt">
           <div class="books-art-crtr">
             <img
@@ -20,7 +25,7 @@ export const LibPermVerticalViewProductIMG = component$(
               src={img.setImage}
               alt={props.slug}
               class="img-product-llg"
-              title="Haz click para ver la imagen en un tamaño mayor"
+              title="Ver mas"
             />
           </div>
           <div class="prvd-books-arts-drs">

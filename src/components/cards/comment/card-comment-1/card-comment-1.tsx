@@ -45,7 +45,7 @@ export const CardComment1 = component$(
           <div class="grap-imgs">
             {images &&
               images
-                ?.slice(0, showAllImg.setShowAllImg ? images.length : 2)
+                ?.slice(0, showAllImg.setShowAllImg ? images.length : 4)
                 .map((img: any) => (
                   <>
                     {' '}
@@ -55,7 +55,7 @@ export const CardComment1 = component$(
                   </>
                 ))}
           </div>
-          {images?.length > 2 ? (
+          {images?.length > 4 ? (
             <div
               class="ctrIMg"
               onClick$={() =>
@@ -68,7 +68,7 @@ export const CardComment1 = component$(
                 </div>
               ) : (
                 <div class="ttle-sh">
-                  <DouveryArrowDown size="15" /> Ver más ({images?.length - 2})
+                  <DouveryArrowDown size="15" /> Ver más ({images?.length - 4})
                 </div>
               )}
             </div>
