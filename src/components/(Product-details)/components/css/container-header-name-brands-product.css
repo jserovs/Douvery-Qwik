@@ -14,9 +14,9 @@
 
 }
 
-.container-title-product p {
+.container-title-product h4 {
     font-size: 18px;
-    font-weight: 400;
+    font-weight: var(--font-weight-normal);
     margin-bottom: 0.3em;
 }
 
