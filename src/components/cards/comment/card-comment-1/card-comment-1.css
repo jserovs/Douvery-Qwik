@@ -71,7 +71,7 @@
 
 .grap-imgs {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1px;
     margin-top: 20px;
     border-radius: 10PX;
@@ -91,6 +91,7 @@
     height: auto;
     object-fit: contain;
     border-radius: 4PX;
+    border: 1px solid #fff;
 }
 
 .ctrIMg {
@@ -124,14 +125,39 @@
         width: 100%;
     }
 
+    .ctr-box-user:hover .d-rep {
+
+
+        right: 10px;
+    }
+
+    .ctr-box-user .d-rep {
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+        right: 10px;
+    }
+
 
 
     .grap-imgs {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
         gap: 1px;
         margin-top: 20px;
         border-radius: 10PX;
+    }
+
+    .ctr-img {
+        width: 100px;
+        height: auto;
+        object-fit: contain;
+
+        border-radius: 10PX;
+
     }
 
 }

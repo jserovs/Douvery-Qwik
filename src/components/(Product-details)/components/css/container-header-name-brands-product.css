@@ -479,7 +479,7 @@
     .crtr-di {
         display: grid;
         grid-template-columns: auto;
-        justify-content: center;
+
         align-self: center;
         margin: 10px 0px;
 
