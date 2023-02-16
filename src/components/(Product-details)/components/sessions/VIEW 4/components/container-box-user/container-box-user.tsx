@@ -14,6 +14,7 @@ export const ContainerBoxBser = component$(() => {
       style={{
         fill: index < rating.setRating ? '#ff0000' : '#292D32',
         cursor: 'pointer',
+        transition: 'none',
       }}
     >
       <svg

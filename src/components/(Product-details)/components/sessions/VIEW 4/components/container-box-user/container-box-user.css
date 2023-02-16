@@ -51,6 +51,8 @@
 
 .stra {
     display: flex;
+    animation: none;
+    transition: none
 }
 
 @media only screen and (max-width: 885px) {
