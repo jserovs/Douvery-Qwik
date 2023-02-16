@@ -2,7 +2,7 @@ import { component$, useStylesScoped$ } from '@builder.io/qwik';
 
 import styles from './product-card-1.css?inline';
 import { UsePrice } from '~/components/use/price/price';
-import { Link } from '@builder.io/qwik-city';
+
 import { DouveryIcon } from '~/components/icons/douvery';
 import { Stars } from '~/components/Ratings/stars/stars';
 
@@ -16,14 +16,14 @@ export const ContainerCardProduct1 = component$(({ product }: any) => {
   }
   return (
     <div class="product-card">
-      <Link href={`/v/${product.slug}/${product.dui}`}>
+      <a href={`/v/${product.slug}/${product.dui}`}>
         {' '}
         <img src={product.images[0]} alt={product.name} class="product-image" />
-      </Link>
+      </a>
 
       <h2 class="product-name">
         {' '}
-        <Link href={`/v/${product.slug}/${product.dui}`}>{product.name}</Link>
+        <a href={`/v/${product.slug}/${product.dui}`}>{product.name}</a>
       </h2>
       <p-sr1 class="product-brand">
         {' '}
