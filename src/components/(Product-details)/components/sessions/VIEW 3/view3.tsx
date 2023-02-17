@@ -21,21 +21,6 @@ export const View3 = component$(({ product }: any) => {
       <div class="content">
         <iframe></iframe>
       </div>
-      <div class="ctr-video-360">
-        <div style={{ width: '50vw', height: '50vh' }}>
-          <a-scene embedded>
-            <a-assets>
-              <video
-                autoPlay
-                id="video"
-                src="https://res.cloudinary.com/douvery/video/upload/v1676570904/VIDEO/n5vy6hzzd6s00vifsadc.mp4"
-                loop
-              ></video>
-            </a-assets>
-            <a-videosphere src="#video"></a-videosphere>
-          </a-scene>
-        </div>
-      </div>
     </div>
   );
 });

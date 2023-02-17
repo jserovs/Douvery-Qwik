@@ -49,12 +49,8 @@ export default component$(() => {
 
   useTask$(async ({ track }) => {
     track(() => location.params.dui);
-    // will run when the component mounts and every time "store.count" changes
-
     const { dui } = cleanUpParams({ dui: location.params.dui });
-
     const product = await fetchProduct(dui);
-
     state.product = product;
   });
 
