@@ -81,11 +81,11 @@ export default component$(() => {
           onRejected={(error) => <>Error: {error.message}</>}
           onResolved={() => (
             <>
+              
+              <View1 props={state.product} />
               <div class="nd-det-1">
                 <ContainerDatails is={isOpen} props={state.product} />
               </div>
-
-              <View1 props={state.product} />
               <View2 product={state.product} />
               <View3 product={state.product} />
               <View4 product={state.product} />
