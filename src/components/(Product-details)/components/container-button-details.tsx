@@ -15,7 +15,7 @@ export const ContainerButtonDetails = component$(({ props }: any) => {
         ) : (
           <>
             <size-w class="size-w-10" />{' '}
-            <button class="buttonCart">Añadir al carrito</button>
+            <button class="buttonCart">Agregar al carrito</button>
             <size-w class="size-w-10" />{' '}
             <button class="buttonPay"> Pagar</button>
           </>

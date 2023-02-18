@@ -1,3 +1,19 @@
+.ctr-gen-img-br {
+    display: grid;
+
+    gap: 5px;
+    grid-template-rows: auto 30px;
+
+
+}
+
+.ctr-vrt-img {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
 .preview_img-vert {
     display: flex;
     flex-direction: column;
@@ -139,7 +155,7 @@
 
 
         width: 800px;
-        height: 550px;
+        height: 400px;
 
     }
 }
