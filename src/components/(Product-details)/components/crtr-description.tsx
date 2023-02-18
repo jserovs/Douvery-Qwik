@@ -22,13 +22,13 @@ export const ContainerDescription = component$(({ props }: any) => {
 
   return (
     <div class="crrtr-srtrt">
-      <hs-sr1>Descripcion</hs-sr1>
+      <strong class="hs-sr1">Descripcion</strong>
       <div class="descr">
-        <p-sr1>
+        <p class="ps-sr1">
           {showText.setShowText
             ? text
             : text.slice(0, limit) + (text.length > limit ? '...' : '')}
-        </p-sr1>
+        </p>
 
         {text.length > limit && (
           <button

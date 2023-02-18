@@ -75,15 +75,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  font-family: Roboto,
-    Ubuntu,
-    helvetica,
-    ColfaxAI,
-    FONT-FAMILY S\f6hne,
-    ui-sans-serif,
-    system-ui,
+  font-family: "Inter",
     -apple-system,
-    Segoe UI,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
     sans-serif;
 
 }
@@ -159,6 +161,11 @@ p {
 }
 
 /** Title label in different sizes */
+.hs-sr1 {
+  font-size: 12.92px;
+  font-weight: var(--font-weight-normal);
+  color: #030303;
+}
 
 hs-sr1 {
   font-size: 12.92px;
@@ -182,7 +189,12 @@ hs-sr3 {
 
 p-sr1 {
   font-size: 13.5px;
-  color: var(--color-text-opaque);
+  color: #313131;
+}
+
+.ps-sr1 {
+  font-size: 13.5px;
+  color: #313131;
 }
 
 p-sr2 {
@@ -202,7 +214,7 @@ p-sr4 {
 
 /** A label */
 
-a-sr1-info {
+.as-sr1-info {
   font-size: 13.5px;
   color: var(--color-primary);
   cursor: pointer;

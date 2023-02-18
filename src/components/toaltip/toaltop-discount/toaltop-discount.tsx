@@ -6,7 +6,7 @@ export const ToaltopDiscount = component$(({ discount }: any) => {
   return (
     <>
       {showTooltip.setShowTooltip && (
-        <div class="tooltip">
+        <div class="tooltip tooltip--appear">
           <span class="discount">{discount}% de descuento</span>
           <button
             class="close"

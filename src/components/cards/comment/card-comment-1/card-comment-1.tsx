@@ -22,25 +22,25 @@ export const CardComment1 = component$(
             <div class="ctr-name-time">
               <div class="name-time">
                 {' '}
-                <hs-sr1>{name}</hs-sr1>
+                <strong class="hs-sr1">{name}</strong>
                 <ctr-opa>|</ctr-opa>
-                <p-sr1>{timePublic}</p-sr1>
+                <p class="ps-sr1">{timePublic}</p>
               </div>
               <div class="d-rep">
                 {' '}
                 <UseDropdownReport />
               </div>
             </div>
-            <p-sr1>Producto comprando el {buyTime}</p-sr1>
+            <p class="ps-sr1">Producto comprando el {buyTime}</p>
             <div class="ctr-str">
               {' '}
-              <p-sr1>Rating: </p-sr1>
-              <hs-sr1>{rating.title}</hs-sr1>{' '}
+              <p class="ps-sr1">Rating: </p>
+              <strong class="hs-sr1">{rating.title}</strong>{' '}
               <Stars color="#008080" rating={rating.rating} />
             </div>
           </div>
           <div class="ctr-comment">
-            <hs-sr1>{comment}</hs-sr1>
+            <strong class="hs-sr1">{comment}</strong>
           </div>
           <div class="grap-imgs">
             {images &&

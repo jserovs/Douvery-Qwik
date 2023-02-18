@@ -25,28 +25,28 @@ export const ContainerCardProduct1 = component$(({ product }: any) => {
         {' '}
         <a href={`/v/${product.slug}/${product.dui}`}>{product.name}</a>
       </h2>
-      <p-sr1 class="product-brand">
+      <div class=" product-brand">
         {' '}
         <Stars size="16" rating={totalRating} /> {product.marca}
-      </p-sr1>
+      </div>
 
       <div class="crt-prc">
         {' '}
         {product.discount > 0 ? (
           <>
             {' '}
-            <hs-sr1 class="product-price">
+            <strong class="hs-sr1 product-price">
               <UsePrice price={discoun} />
-            </hs-sr1>
-            <p-sr1 class="product-price tach">
+            </strong>
+            <p class="ps-sr1 product-price tach">
               <UsePrice price={product.price} />
-            </p-sr1>
+            </p>
           </>
         ) : (
           <>
-            <hs-sr1 class="product-price">
+            <strong class="hs-sr1 product-price">
               <UsePrice price={discoun} />
-            </hs-sr1>
+            </strong>
           </>
         )}
       </div>
@@ -68,7 +68,7 @@ export const ContainerCardProduct1 = component$(({ product }: any) => {
         <>
           {' '}
           <div class="product-sponsor">
-            <p-sr1>Sponsor</p-sr1>
+            <p class="ps-sr1">Sponsor</p>
           </div>
         </>
       ) : (

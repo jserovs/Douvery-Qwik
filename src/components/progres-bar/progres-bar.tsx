@@ -13,7 +13,7 @@ export const ProgressBar = component$(({ count, rating, porce }: any) => {
     <div class="ctr-st">
       {' '}
       <div class="ctr-stars-qty">
-        <p-sr2> {rating}</p-sr2>
+        {rating}
         <OneStar color="#008080" rating={1} />
       </div>
       <div class="progress-bar">

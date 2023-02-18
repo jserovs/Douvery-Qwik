@@ -19,7 +19,7 @@ export const ContainerBoxInputComments = component$(() => {
         />
         <br></br>
         <div class="ctr-butr">
-          <p-sr1>Al comentar, acepto los términos de comentarios.</p-sr1>
+          <p class="ps-sr1">Al comentar, acepto los términos de comentarios.</p>
           <button>Enviar</button>
         </div>
       </div>

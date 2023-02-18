@@ -11,7 +11,7 @@ export default component$(({ props, imgS, imgP }: any) => {
         <div key={key} class="container-variation-product">
           <size-w class="size-w-10" />
           <div class="col-auto">
-            <hs-sr1> {val.nameVariation} :</hs-sr1>
+            <strong class="hs-sr1"> {val.nameVariation} :</strong>
             <size-w class="size-w-10" />
             <div class="container-variation-cont-most">
               {val.productVariation.map((valle: any, key: any) => (

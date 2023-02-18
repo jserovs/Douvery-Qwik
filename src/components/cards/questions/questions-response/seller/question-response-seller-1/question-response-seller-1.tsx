@@ -14,9 +14,10 @@ export const QuestionResponseSeller1 = component$(
         <div class="response">
           <div class="header-response">
             {' '}
-            <UseSellerAuthorized name={sellerResponse} /> -<p-sr1>{time}</p-sr1>
+            <UseSellerAuthorized name={sellerResponse} /> -
+            <p class="ps-sr1">{time}</p>
           </div>
-          <p-sr1>{res}</p-sr1>
+          <p class="ps-sr1">{res}</p>
         </div>
       </div>
     );

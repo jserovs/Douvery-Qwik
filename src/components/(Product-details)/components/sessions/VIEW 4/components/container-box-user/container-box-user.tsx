@@ -64,14 +64,14 @@ export const ContainerBoxBser = component$(() => {
       </div>
       <div class="ctr-name-time">
         <div class="hea">
-          <hs-sr1>Frederick Sansck</hs-sr1>
-          <p-sr1>Producto comprando el 10 dic 2022</p-sr1>
+          <strong class="hs-sr1">Frederick Sansck</strong>
+          <p class="ps-sr1">Producto comprando el 10 dic 2022</p>
         </div>
         <div class="ctr-star">
           <div class="hea-ratgi">
             {' '}
-            <p-sr1>Rating: </p-sr1>
-            <hs-sr1>{ratingText}</hs-sr1>
+            <p class="ps-sr1">Rating: </p>
+            <strong class="hs-sr1">{ratingText}</strong>
           </div>
           <div class="stra">{stars}</div>
         </div>

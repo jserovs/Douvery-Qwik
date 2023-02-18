@@ -26,7 +26,7 @@ export const ContainerButtonExtr = component$(({ props }: any) => {
       </div>
       <div class="opcs">
         {' '}
-        <p-sr1>Puede ver algunas</p-sr1>
+        <p class="ps-sr1">Puede ver algunas</p>
         <ContainerPoputCategory props={props} title="Opciones" />
       </div>
     </div>

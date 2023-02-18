@@ -11,23 +11,23 @@ export const ContainerCombinedAGG = component$(
       <div class="crtr-combined-info">
         <div class="price-conmbr">
           {' '}
-          <hs-sr1>Detalles</hs-sr1>
+          <strong class="hs-sr1">Detalles</strong>
           <div class="obts">
             <div class="dr-ls">
               {' '}
-              <p-sr1>Descuento al comprar</p-sr1>
+              <p class="ps-sr1">Descuento al comprar</p>
             </div>
             <div class="dr-ms">
               {' '}
-              <p-sr1>Descuento</p-sr1>
+              <p class="ps-sr1">Descuento</p>
             </div>
-            <hs-sr1> -{discount}% </hs-sr1>
+            <strong class="hs-sr1"> -{discount}% </strong>
           </div>{' '}
           <div class="obts">
-            <p-sr1> Total </p-sr1>
-            <hs-sr1>
+            <p class="ps-sr1"> Total </p>
+            <strong class="hs-sr1">
               <UsePrice price={totalPrice} />{' '}
-            </hs-sr1>
+            </strong>
           </div>{' '}
         </div>
         <div class="crts-bts">
