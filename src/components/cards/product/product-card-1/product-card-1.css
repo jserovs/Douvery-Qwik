@@ -66,6 +66,23 @@
     align-items: center;
 }
 
+.etq-vrs {
+    display: flex;
+    gap: 5px;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 12.5px;
+    background-color: var(--color-background-ligth);
+    text-align: start;
+    width: 100%;
+    color: #2940D3;
+    fill: #2940D3;
+    position: relative;
+
+
+    border-radius: 5px;
+}
+
 @media only screen and (max-width: 885px) {
     .product-image {
         height: 180px;

@@ -50,6 +50,10 @@ export const ContainerCardProduct1 = component$(({ product }: any) => {
           </>
         )}
       </div>
+
+      {/* <div class="etq-vrs">
+        <DouveryIcon color="#6466e8" /> Verified to Douvery
+      </div> */}
       {product.vrfDouvery ? (
         <>
           {' '}
