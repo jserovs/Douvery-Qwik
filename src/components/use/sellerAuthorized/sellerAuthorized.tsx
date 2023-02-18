@@ -7,7 +7,7 @@ export const UseSellerAuthorized = component$(({ name }: any) => {
   return (
     <div class="ctr-seller">
       {' '}
-      <hs-sr1>{name}</hs-sr1>
+      <strong class="hs-sr1">{name}</strong>
       <DouveryIconVerifyBrand size="18" color="#0071FF" />
     </div>
   );

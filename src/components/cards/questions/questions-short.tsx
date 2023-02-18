@@ -6,11 +6,11 @@ export const QuestionsShort = component$(({ question, user, time }: any) => {
     <div class="card-qtio">
       <div class="card-qtio-name-time">
         <div class="name">
-          <p-sr1>{user}</p-sr1>
+          <p class="ps-sr1">{user}</p>
         </div>{' '}
         -
         <div class="time">
-          <p-sr1>{time}</p-sr1>
+          <p class="ps-sr1">{time}</p>
         </div>
       </div>
       <div class="card-qtio-question">

@@ -15,13 +15,13 @@ export const ContainerShoppingFeacture = component$(() => {
         <div class="ofrs">
           <hs-sr3>Devolución y seguridad</hs-sr3>
           <div class="srs-v">
-            <a-sr1-info>Saber mas</a-sr1-info>
+            <a class="ps-sr1">Saber mas</a>
           </div>
         </div>
 
-        <p-sr1>Protege tu compra en Douvery</p-sr1>
+        <p class="ps-sr1">Protege tu compra en Douvery</p>
         <div class="srs-md">
-          <a-sr1-info>Saber mas</a-sr1-info>
+          <a class="ps-sr1">Saber mas</a>
         </div>
       </div>
 
@@ -30,37 +30,37 @@ export const ContainerShoppingFeacture = component$(() => {
           <ul>
             <li>
               <hs-sr2>Política de devolución:</hs-sr2>{' '}
-              <p-sr1>
+              <p class="ps-sr1">
                 45 días sin preguntas. Devuelva el producto en su paquete
                 original para recibir un reembolso completo.{' '}
-                <a-sr1-info>Saber mas</a-sr1-info>
-              </p-sr1>
+                <a class="ps-sr1">Saber mas</a>
+              </p>
             </li>
             <li>
               <hs-sr2>Compensación por daños durante el envío:</hs-sr2>{' '}
-              <p-sr1>
+              <p class="ps-sr1">
                 En caso de que un producto se dañe durante el envío, ofrecemos
                 reemplazo o reembolso completo.
-              </p-sr1>
+              </p>
             </li>
             <li>
               <hs-sr2>Opciones adicionales: </hs-sr2>{' '}
-              <p-sr1>
+              <p class="ps-sr1">
                 Para una tranquilidad adicional, tenemos planes de ampliación de
                 garantía disponibles a un precio adicional.
-                <a-sr1-info>Revisa las opciones.</a-sr1-info>
-              </p-sr1>
+                <a class="ps-sr1">Revisa las opciones.</a>
+              </p>
             </li>
           </ul>
         ) : (
           <ul>
             <li>
               <hs-sr2>Política de devolución:</hs-sr2>{' '}
-              <p-sr1>
+              <p class="ps-sr1">
                 45 días sin preguntas. Devuelva el producto en su paquete
                 original para recibir un reembolso completo.{' '}
-                <a-sr1-info>Saber mas</a-sr1-info>
-              </p-sr1>
+                <a class="ps-sr1">Saber mas</a>
+              </p>
             </li>
           </ul>
         )}

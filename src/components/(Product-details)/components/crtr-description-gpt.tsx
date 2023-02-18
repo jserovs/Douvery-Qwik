@@ -4,8 +4,8 @@ export const ContainerDescriptionGPT = component$(({ props }: any) => {
   useStylesScoped$(styles);
   return (
     <div class="crrtr-srtrt">
-      <hs-sr1>Descripcion minima</hs-sr1>
-      <p-sr1>{props.booksDescription}</p-sr1>
+      <strong class="hs-sr1">Descripcion minima</strong>
+      <p class="ps-sr1">{props.booksDescription}</p>
     </div>
   );
 });

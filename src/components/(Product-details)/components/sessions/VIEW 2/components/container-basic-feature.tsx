@@ -28,7 +28,7 @@ export const ContainerBasicFeacture = component$(({ product }: any) => {
           <hs-sr3>Detalles basicos</hs-sr3>
         </div>
 
-        <p-sr1>Lo esencial en pocas palabras</p-sr1>
+        <p class="ps-sr1">Lo esencial en pocas palabras</p>
       </div>
       <div>
         <ul>
@@ -59,19 +59,18 @@ export const ContainerBasicFeacture = component$(({ product }: any) => {
           <li>
             <strong>Vendedor:</strong>{' '}
             <div>
-              <a-sr1-info>{product.marca}</a-sr1-info>{' '}
-              <p-sr1>
+              <a class="ps-sr1">{product.marca}</a>{' '}
+              <p class="ps-sr1">
                 {' '}
                 , Seller en douvery desde 2021{' '}
                 {product.sponsored === true ? (
                   <>
-                     <a-sr1-info> +50 Opiniones</a-sr1-info>
+                    <a class="ps-sr1"> +50 Opiniones</a>
                   </>
                 ) : (
                   <></>
                 )}
-                
-              </p-sr1>
+              </p>
             </div>
           </li>
         </ul>

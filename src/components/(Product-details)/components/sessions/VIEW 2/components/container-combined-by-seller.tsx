@@ -63,13 +63,13 @@ export const ContainerCombinedBySeller = component$(({ product }: any) => {
         <div class="ofrs">
           <hs-sr3>Combinaciones por el vendedor</hs-sr3>
           <div class="srs-v">
-            <a-sr1-info>Saber mas</a-sr1-info>
+            <a class="ps-sr1">Saber mas</a>
           </div>
         </div>
 
-        <p-sr1>Ahorra dinero al comprar en conjunto</p-sr1>
+        <p class="ps-sr1">Ahorra dinero al comprar en conjunto</p>
         <div class="srs-md">
-          <a-sr1-info>Saber mas</a-sr1-info>
+          <a class="ps-sr1">Saber mas</a>
         </div>
       </div>
 

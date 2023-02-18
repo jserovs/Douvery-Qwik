@@ -24,13 +24,13 @@ export const ContainerDescriptionShort = component$(({ props }: any) => {
           <div class="srte-prdsr-isrndfotms">
             {props.vinetas && (
               <>
-                <hs-sr1>Sobre este artículo:</hs-sr1>
+                <strong class="hs-sr1">Sobre este artículo:</strong>
                 <div class="detailed-list">
                   {props.vinetas.map((val: any) => (
                     <div class="crte-crot-sart">
                       <div class="cirle-bg"></div>
                       <div class="list">
-                        <p-sr1>{val}</p-sr1>
+                        <p class="ps-sr1">{val}</p>
                       </div>
                     </div>
                   ))}
@@ -39,11 +39,11 @@ export const ContainerDescriptionShort = component$(({ props }: any) => {
             )}
             {props.highlights && (
               <div class="crets-chrlsr-hrslrs-artes">
-                <hs-sr1>Highlights:</hs-sr1>
+                <strong class="hs-sr1">Highlights:</strong>
                 <ul class="detailed-list">
                   {props.highlights.map((val: any) => (
                     <li>
-                      <p-sr1>{val}</p-sr1>
+                      <p class="ps-sr1">{val}</p>
                     </li>
                   ))}
                 </ul>
@@ -54,8 +54,8 @@ export const ContainerDescriptionShort = component$(({ props }: any) => {
       )}
       {props.tbProtein && (
         <div class="drtr-arte-ores">
-          <hs-sr1>Datos de nutrición de :</hs-sr1>
-          <p-sr1> {props.name}</p-sr1>
+          <strong class="hs-sr1">Datos de nutrición de :</strong>
+          <p class="ps-sr1"> {props.name}</p>
           <div class="srte-prdsr-isrndfotms">
             <table>
               <tr>

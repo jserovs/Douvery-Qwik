@@ -43,7 +43,7 @@ export const ContaineRatingProgress = component$(({ props }: any) => {
               <OneStar color="#008080" rating={1} size="25" />
             </div>
             <div class="ctr-total">
-              <p-sr1> {totalRatings} ratings</p-sr1>
+              <p class="ps-sr1"> {totalRatings} ratings</p>
             </div>
           </div>
         </div>

@@ -9,7 +9,7 @@ export default component$(({ valla, imgS, imgP, props }: any) => {
         <div key={key} class="container-variation-product">
           <size-w class="size-w-10" />
           <div class="col-auto">
-            <hs-sr1> {val.name} :</hs-sr1>
+            <strong class="hs-sr1"> {val.name} :</strong>
             <size-w class="size-w-10" />
             <div class="container-variation-cont-most">
               {val.dui.map((valll: any, key: any) => (
