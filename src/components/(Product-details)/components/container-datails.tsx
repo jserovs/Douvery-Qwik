@@ -4,7 +4,6 @@ import { Stars } from '~/components/Ratings/stars/stars';
 import { ContainerButtonDetails } from './container-button-details';
 import { ContainerInputCartPay } from './container-input-cart-pay';
 import numeral from 'numeral';
-import { ToaltopDiscount } from '~/components/toaltip/toaltop-discount/toaltop-discount';
 
 export default component$(({ props }: any) => {
   useStylesScoped$(styles);
@@ -82,14 +81,17 @@ export default component$(({ props }: any) => {
               </h5>
               <size-w class="size-w-10" />
               <size-w class="size-w-10" />
-              <div class="ctr-porce">
-                <h6 class="porce  ">
-                  -%
-                  {props.discount}
-                  <div class="tooltip-container">
-                    <ToaltopDiscount discount={discount} />
-                  </div>
-                </h6>
+              <div class="ctr-p-s">
+                {' '}
+                <div class="ctr-porce">
+                  <h6 class="porce  ">
+                    -%
+                    {props.discount}
+                  </h6>
+                </div>
+                <div class="ctr-save-pr">
+                  SAVE {numeral(discount).format(formCurrency)}
+                </div>
               </div>
               <size-w class="size-w-10" />
             </>
