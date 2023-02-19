@@ -27,7 +27,8 @@ export const ContainerCardProduct1 = component$(({ product }: any) => {
         <a href={`/v/${product.slug}/${product.dui}`}>{product.name}</a>
       </h2>
       <div class="ctr-stars">
-        <Stars size="16" rating={totalRating} />{' '}
+        <Stars size="16" rating={totalRating} /> ({totalRating}){' '}
+        {product.ratings.length}
         <div class="ctr-progr">
           <div class="tolst-tip"></div>
           <div class="pr-ttle">
