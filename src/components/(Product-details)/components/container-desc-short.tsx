@@ -58,19 +58,19 @@ export const ContainerDescriptionShort = component$(({ props }: any) => {
           <p class="ps-sr1"> {props.name}</p>
           <div class="srte-prdsr-isrndfotms">
             <table>
-              <tr>
+              <tbody>
                 <th>Nutriente</th>
                 <th>Cantidad por porción (30g)</th>
-              </tr>
-              {renderTbProtein('calories', 'Calories')}
-              {renderTbProtein('carbohydrates', 'Carbohidratos')}{' '}
-              {renderTbProtein('cholesteol', 'Colesterol')}
-              {renderTbProtein('dietaryFiber', 'Fibra dietética')}{' '}
-              {renderTbProtein('fat', 'Grasas')}{' '}
-              {renderTbProtein('protein', 'Proteina')}
-              {renderTbProtein('saturatedFat', 'Grasas saturada')}
-              {renderTbProtein('sodium', 'Sodio')}
-              {renderTbProtein('sugars', 'Azúcares')}
+                {renderTbProtein('calories', 'Calories')}
+                {renderTbProtein('carbohydrates', 'Carbohidratos')}{' '}
+                {renderTbProtein('cholesteol', 'Colesterol')}
+                {renderTbProtein('dietaryFiber', 'Fibra dietética')}{' '}
+                {renderTbProtein('fat', 'Grasas')}{' '}
+                {renderTbProtein('protein', 'Proteina')}
+                {renderTbProtein('saturatedFat', 'Grasas saturada')}
+                {renderTbProtein('sodium', 'Sodio')}
+                {renderTbProtein('sugars', 'Azúcares')}
+              </tbody>
             </table>
 
             <p>

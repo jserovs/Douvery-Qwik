@@ -9,6 +9,7 @@
     width: 100%;
     background-color: #ddd;
     margin: 10px 0;
+
 }
 
 .progress-bar-fill {
@@ -17,7 +18,15 @@
     border-radius: 3px;
     width: 0;
     /* agregamos un valor inicial de cero */
-    transition: width 0.8s ease-in-out;
+    animation: slide-in 0.5s ease-out;
+}
+
+@keyframes slide-in {
+    from {
+        width: 0%;
+    }
+
+
 }
 
 .ctr-stars-qty {

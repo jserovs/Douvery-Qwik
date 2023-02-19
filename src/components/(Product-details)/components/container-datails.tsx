@@ -4,6 +4,7 @@ import { Stars } from '~/components/Ratings/stars/stars';
 import { ContainerButtonDetails } from './container-button-details';
 import { ContainerInputCartPay } from './container-input-cart-pay';
 import numeral from 'numeral';
+import { ContainerProgres } from '~/components/progres-bar/container-progres/container-progres';
 
 export default component$(({ props }: any) => {
   useStylesScoped$(styles);
@@ -63,7 +64,19 @@ export default component$(({ props }: any) => {
         </div>
 
         <div class="container-NavAggPayProduct-web">
-          <Stars rating={totalRating} />{' '}
+          <div class="ctr-stars">
+            <Stars rating={totalRating} />{' '}
+            <div class="ctr-progr">
+              <div class="tolst-tip"></div>
+              <div class="pr-ttle">
+                <p class="hs-sr1">Ratings</p>
+              </div>
+              <ContainerProgres props={props} />
+              <div class="pr-qtyon">
+                <p class="ps-sr1">Sin preguntas Respondidas</p>
+              </div>
+            </div>
+          </div>
           <div class="ct-ratig">
             ({totalRating}) {props.ratings.length}
           </div>{' '}

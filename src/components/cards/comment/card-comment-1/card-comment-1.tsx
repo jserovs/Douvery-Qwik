@@ -22,10 +22,15 @@ export const CardComment1 = component$(
             <div class="ctr-name-time">
               <div class="name-time">
                 {' '}
-                <strong class="hs-sr1">{name}</strong>
+                <div class="nms-pr">
+                  {' '}
+                  <strong class="hs-sr1">{name}</strong>
+                  <div class="hover-user-inf"></div>
+                </div>
                 <ctr-opa>|</ctr-opa>
                 <p class="ps-sr1">{timePublic}</p>
               </div>
+
               <div class="d-rep">
                 {' '}
                 <UseDropdownReport />
