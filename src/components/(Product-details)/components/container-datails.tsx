@@ -89,9 +89,13 @@ export default component$(({ props }: any) => {
                     {props.discount}
                   </h6>
                 </div>
-                <div class="ctr-save-pr">
-                  SAVE {numeral(discount).format(formCurrency)}
-                </div>
+                {props.discount < 60 ? (
+                  ''
+                ) : (
+                  <div class="ctr-save-pr">
+                    SAVE {numeral(discount).format(formCurrency)}
+                  </div>
+                )}
               </div>
               <size-w class="size-w-10" />
             </>

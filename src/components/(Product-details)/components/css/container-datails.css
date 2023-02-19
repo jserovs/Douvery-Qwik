@@ -56,13 +56,14 @@
 }
 
 .ctr-p-s {
-    width: 200px;
+
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .ctr-porce {
+
     position: relative;
     display: flex;
     width: 50PX;
@@ -81,6 +82,7 @@
 }
 
 .ctr-save-pr {
+    z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -95,7 +97,7 @@
 
 @keyframes slide-in {
     from {
-        transform: translateX(-100%);
+        transform: translateX(-10%);
     }
 
     to {
@@ -205,7 +207,7 @@
     background-color: #DC143C;
 }
 
-@media only screen and (max-width: 1085px) {
+@media only screen and (max-width: 1185px) {
     .container-NavAggPayProduct-web {
         display: flex;
         padding-top: 10px;
@@ -213,6 +215,9 @@
 
     }
 
+    .ctr-porce {
+        width: 100PX;
+    }
 
     .div-button {
         display: none;
@@ -222,9 +227,6 @@
         display: none;
     }
 
-    .ctr-porce {
-        width: 5.8%;
-    }
 
 
 }
