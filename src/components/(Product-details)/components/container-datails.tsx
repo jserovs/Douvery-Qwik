@@ -83,13 +83,17 @@ export default component$(({ props }: any) => {
               <size-w class="size-w-10" />
               <div class="ctr-p-s">
                 {' '}
-                <div class="ctr-porce">
+                <div
+                  class={
+                    props.discount < 20 ? 'ctr-porce' : 'ctr-porce ctr-p-red '
+                  }
+                >
                   <h6 class="porce  ">
                     -%
                     {props.discount}
                   </h6>
                 </div>
-                {props.discount < 60 ? (
+                {props.discount < 20 ? (
                   ''
                 ) : (
                   <div class="ctr-save-pr">
