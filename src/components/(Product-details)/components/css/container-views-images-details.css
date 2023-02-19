@@ -77,35 +77,6 @@
 }
 
 
-@keyframes easeIn {
-    0% {
-        transform: translate(-50%, -50%) scale(0);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-    }
-}
-
-.modal-close {
-    animation: fadeIn 0.5s ease-in-out;
-
-}
-
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-
-    }
-
-    to {
-        opacity: 0;
-
-    }
-}
-
 .crtr-dirjfs {
     position: relative;
 }
