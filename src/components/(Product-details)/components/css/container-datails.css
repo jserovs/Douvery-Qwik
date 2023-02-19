@@ -80,10 +80,10 @@
 }
 
 .ctr-stars:hover .ctr-progr {
-    animation: appear 0.5s ease-in-out;
+    animation: appearss 0.5s ease-in-out;
 }
 
-@keyframes appear {
+@keyframes appearss {
     0% {
         opacity: 0;
         transform: translateY(5px);
@@ -164,13 +164,13 @@
 
     display: flex;
     align-items: center;
-    justify-content: center;
+
 }
 
 .ctr-porce {
     position: relative;
     display: flex;
-    width: 50PX;
+    width: 60px;
     height: 30px;
     justify-content: center;
     align-items: center;
@@ -183,6 +183,7 @@
 .ctr-p-red {
     border: 1px solid rgb(211, 11, 11);
 
+
 }
 
 .porce {
@@ -193,14 +194,14 @@
 }
 
 .ctr-save-pr {
-
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgb(211, 11, 11);
     font-size: 12px;
     color: white;
-    width: 150px;
+    width: 130px;
     height: 22px;
     animation: slide-in 0.5s ease-out;
     z-index: 1;
