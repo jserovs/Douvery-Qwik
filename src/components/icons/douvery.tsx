@@ -1,9 +1,9 @@
-export const DouveryIcon = ({ size, color }: any) => (
+export const DouveryIcon = ({ size, color, classs }: any) => (
   <svg
     width={size || '24'}
     height={size || '24'}
     viewBox="0 0 21 7"
-    fill="none"
+    class={classs || 'douvery-icon'}
     xmlns="http://www.w3.org/2000/svg"
   >
     <g filter="url(#filter0_b_15_3)">

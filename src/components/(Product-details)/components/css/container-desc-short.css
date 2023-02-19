@@ -78,7 +78,7 @@ td {
 }
 
 th {
-    text-align: center;
+    text-align: left;
     background-color: var(--color-background-light);
 
 }
