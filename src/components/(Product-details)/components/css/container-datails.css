@@ -319,6 +319,11 @@
     background-color: #DC143C;
 }
 
+.div-button {
+    width: 400PX;
+
+}
+
 @media only screen and (max-width: 1185px) {
     .container-NavAggPayProduct-web {
         display: flex;
