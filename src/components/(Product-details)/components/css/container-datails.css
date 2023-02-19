@@ -71,18 +71,20 @@
     justify-content: center;
     align-items: center;
     border: 1px solid var(--border-width-1);
+    background-color: var(--color-background-light);
     border-radius: 4px;
+    z-index: 2;
 }
 
 .porce {
-
     color: rgb(211, 11, 11);
     font-size: 100%;
     font-weight: 500;
+
 }
 
 .ctr-save-pr {
-    z-index: 1;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -92,6 +94,7 @@
     width: 150px;
     height: 20px;
     animation: slide-in 0.5s ease-out;
+    z-index: 1;
 
 }
 
@@ -154,7 +157,6 @@
 }
 
 .porce-mobiles {
-
     color: rgb(211, 11, 11);
     font-size: var(--font-size-xxs),
 }
