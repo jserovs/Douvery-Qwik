@@ -24,8 +24,6 @@ export default component$(() => {
 
         <meta name="theme-color" content="#0d47a1" />
         <link rel="manifest" href="/manifest.json" />
-        <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
-        <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v6.0.0/dist/aframe-extras.min.js"></script>
         <QwikPartytown forward={['dataLayer.push']} />
         <script
           async
