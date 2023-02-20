@@ -1,6 +1,5 @@
 .crrtr-srtrt {
     background-color: var(--color-background-light);
-    padding: 5px;
 }
 
 
@@ -26,4 +25,12 @@ h5 {
 .descr:active {
     display: block;
     cursor: pointer;
+}
+
+
+@media only screen and (max-width: 885px) {
+
+    .crrtr-srtrt {
+        padding: 5px;
+    }
 }

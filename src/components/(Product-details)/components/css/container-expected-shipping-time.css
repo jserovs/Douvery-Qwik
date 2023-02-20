@@ -18,6 +18,7 @@
 .srt-shrt-prsrd-nrms {
     display: flex;
     gap: 8px;
+    align-items: center;
 }
 
 .srt-shrt-prsrd-nrms p {
@@ -39,10 +40,11 @@
 }
 
 .tm-srh-exp {
-    font-size: 68%;
+    font-size: 15px;
     color: #256D85;
     font-weight: var(--font-weight-normal);
 }
+
 
 @media only screen and (max-width: 885px) {
     .crt-expectend-ship {

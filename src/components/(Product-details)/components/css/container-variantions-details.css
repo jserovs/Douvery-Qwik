@@ -25,6 +25,11 @@
     gap: 5px;
 }
 
+.ttle-variant {
+    display: flex;
+    gap: 10px;
+}
+
 @media only screen and (max-width: 885px) {
     .super-container-options-product {
         width: 100%;
