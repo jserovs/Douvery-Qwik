@@ -131,6 +131,7 @@
     display: flex;
     gap: 10px;
     margin-top: 5PX;
+    align-items: center;
 }
 
 .brt-irft-lapto h5 {
@@ -232,6 +233,7 @@
     justify-content: center;
     align-items: flex-end;
     gap: 10px;
+    height: 29.5px;
 }
 
 
@@ -298,6 +300,11 @@
 .review-popup {
     display: none;
     /* hide the review by default */
+}
+
+.seller {
+    display: flex;
+    align-items: center;
 }
 
 .seller:hover .review-popup {
@@ -381,6 +388,10 @@
 
         border: 1px solid transparent;
         border-radius: 5px;
+    }
+
+    .shrt-prd-alrt {
+        height: 70px;
     }
 
     .crt--tlr-brnd {

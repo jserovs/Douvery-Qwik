@@ -1,4 +1,6 @@
 .crtr-sbr-art {
+    display: grid;
+    gap: 11px;
     background-color: var(--color-background-light);
 
 }
@@ -7,7 +9,7 @@
 
     display: grid;
     gap: 15PX;
-    padding: 5px;
+    padding: 10px 0px;
 }
 
 

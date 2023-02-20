@@ -161,13 +161,13 @@ p {
 
 /** Title label in different sizes */
 .hs-sr1 {
-  font-size: 13.50px;
+  font-size: 15px;
   font-weight: var(--font-weight-normal);
   color: #030303;
 }
 
 hs-sr1 {
-  font-size: 12.92px;
+  font-size: 13.92px;
   font-weight: var(--font-weight-normal);
   color: var(--color-text-highlight-secondary);
 }
@@ -192,7 +192,7 @@ p-sr1 {
 }
 
 .ps-sr1 {
-  font-size: 13.5px;
+  font-size: 13.4PX;
   color: #313131;
 }
 
