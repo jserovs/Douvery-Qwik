@@ -74,7 +74,10 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
           {' '}
           <div class="container-brand-product">
             <Link href="/" aria-label={props.marca}>
-              <h5 class="container-brand-product"> Visita {props.marca}</h5>
+              <strong class="container-brand-product">
+                {' '}
+                Visita {props.marca}
+              </strong>
             </Link>
           </div>
           <h4>{props.name}</h4>
@@ -117,10 +120,6 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
           </div>
         </div>
       </div>
-      <div class="brt-irft-lapto">
-        <strong class="hs-sr1">Estado:</strong>{' '}
-        <p class="ps-sr1">{props.item_condition}</p>
-      </div>
       <div class="dsier-strs-lapto">
         {props.quantity <= 1 ? (
           <>
@@ -156,6 +155,11 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
           </>
         )}
       </div>
+      <div class="brt-irft-lapto">
+        <strong class="hs-sr1">Estado:</strong>{' '}
+        <p class="ps-sr1">{props.item_condition}</p>
+      </div>
+
       <div class="crtr-shr-">
         {' '}
         <div class="shrt-prd-alrt">
