@@ -28,12 +28,12 @@
     min-height: 500px;
 }
 
+.dropdown-menu {
+    animation: smoApp 0.5s ease-in-out;
+}
+
 .dropdown-menu.show {
     display: block;
-
-
-
-
 }
 
 
@@ -62,8 +62,7 @@
     min-height: 100%;
     position: absolute;
     top: 100%;
-    left: 0%;
-    transform: translateX(-48%);
+    left: -119px;
     background-color: var(--color-background-light);
     padding: 8px 0;
     border-radius: 3px;
@@ -127,8 +126,7 @@
     .dropdown-menu {
         position: absolute;
         top: 100%;
-        left: 50%;
-        transform: translateX(-90%);
+        left: -225px;
     }
 
     .tolst-tip {
