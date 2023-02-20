@@ -22,7 +22,7 @@ export const ContainerDescription = component$(({ props }: any) => {
 
   return (
     <div class="crrtr-srtrt">
-      <strong class="hs-sr1">Descripcion : </strong>
+      <strong class="hs-sr1">Descripcion</strong>
       <div class="descr">
         <p class="ps-sr1">
           {showText.setShowText
