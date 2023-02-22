@@ -134,3 +134,22 @@ export async function fetchCodePostal(
   console.log(results);
   return results;
 }
+
+export async function fetchSystemRecomendationProductU(
+  dui: string,
+  controller?: AbortController
+): Promise<any> {
+  const response = await fetch(
+    `
+   http://127.0.0.1:8000/recommend_products/${dui}`,
+    {
+      signal: controller?.signal,
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch product');
+  }
+  const results = await response.json();
+  return results;
+}
