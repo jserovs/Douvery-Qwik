@@ -1,14 +1,17 @@
 .carousel {
-    width: 80%;
+    width: 100%;
+    overflow: hidden;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 30px;
     background-color: var(--color-background-light);
-    border: 1px solid var(--border-width-3);
+    border-top: 1px solid var(--border-width-2);
+    border-bottom: 1px solid var(--border-width-2);
     border-radius: 10px;
-    padding: 10px;
+
+
 }
 
 .carousel-button-left,
@@ -31,6 +34,7 @@
     border-radius: 50%;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
     margin: 0 10px;
+    z-index: 1000;
 }
 
 .carousel-button-left {
@@ -59,9 +63,7 @@
     transition: transform 0.5s ease-in-out;
 }
 
-.carousel-item {
-    margin: 0 10px;
-}
+.carousel-item {}
 
 .carousel-item img {
     width: 300px;

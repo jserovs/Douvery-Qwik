@@ -7,7 +7,7 @@ export const Carousel1 = component$(({ product }: any) => {
   useStylesScoped$(styles);
 
   const imagenActual = useStore({ setImagenActual: 0 });
-  const limit = 5;
+  const limit = 7;
   return (
     <div class="carousel">
       <button

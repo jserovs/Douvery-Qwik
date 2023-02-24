@@ -8,9 +8,8 @@
     flex-direction: column;
     align-items: center;
     text-align: start;
-    background-color: var(--background-color);
-    border-right: 1px solid var(--color-background-lightest);
-    border-left: 1px solid var(--color-background-lightest);
+    background-color: var(--color-background-light);
+
     padding: 10px 10px;
     position: relative;
 
@@ -19,9 +18,8 @@
 
 .product-image {
     width: 100%;
-    max-width: 200px;
-    height: 100%;
-    max-height: 150px;
+    max-width: 250px;
+    height: 150px;
     object-fit: contain;
     padding: 10px 0px;
 
