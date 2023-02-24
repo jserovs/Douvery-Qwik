@@ -42,7 +42,7 @@
     align-items: center;
 }
 
-span {
+a {
     display: flex;
     gap: 5px;
     align-items: center;
@@ -51,7 +51,7 @@ span {
     cursor: pointer;
 }
 
-span:hover {
+a:hover {
 
 
     color: var(--color-blue-vibrant);
