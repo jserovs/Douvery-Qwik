@@ -41,7 +41,7 @@
   --color-blue: #0b347b;
   --color-blue-vibrant: #2146C7;
   --color-black: #212529;
-  --color-white: var(--color-background-light);
+  --color-white: #fff;
   --color-grey: var(--color-text-opaque)666;
   --color-orange: #e84118;
   --color-green: #38E54D;

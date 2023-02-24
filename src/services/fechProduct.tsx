@@ -141,7 +141,7 @@ export async function fetchSystemRecomendationProductU(
 ): Promise<any> {
   const response = await fetch(
     `
-   http://127.0.0.1:8000/recommend_products/${dui}`,
+   https://htyr.onrender.com/recommend_products/${dui}`,
     {
       signal: controller?.signal,
     }
