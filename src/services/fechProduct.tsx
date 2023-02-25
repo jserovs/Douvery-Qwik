@@ -1,10 +1,13 @@
+const urlServerNode = 'https://server-douvery.vercel.app';
+const urlServerPython = 'https://htyr.onrender.com';
+
 export async function fetchProduct(
   dui: string,
   controller?: AbortController
 ): Promise<any> {
   const response = await fetch(
     `
-    https://server-douvery.vercel.app/api/products/${dui}`,
+    ${urlServerNode}/api/products/${dui}`,
     {
       signal: controller?.signal,
     }
@@ -24,7 +27,7 @@ export async function fetchProductBestInCategory(
 ): Promise<any> {
   const response = await fetch(
     `
-    https://server-douvery.vercel.app/api/best-in-category/${category}`,
+    ${urlServerNode}/api/best-in-category/${category}`,
     {
       signal: controller?.signal,
     }
@@ -41,12 +44,9 @@ export async function fetchProductBestInCategory(
 export async function fetchProductU(
   controller?: AbortController
 ): Promise<any> {
-  const response = await fetch(
-    'https://server-douvery.vercel.app/randomProductsLimit',
-    {
-      signal: controller?.signal,
-    }
-  );
+  const response = await fetch(`${urlServerNode}/randomProductsLimit`, {
+    signal: controller?.signal,
+  });
 
   if (!response.ok) {
     throw new Error('Failed to fetch product');
@@ -62,7 +62,7 @@ export async function fetchProductCategory(
 ): Promise<any> {
   const response = await fetch(
     `
-    https://server-douvery.vercel.app/api/productsByCategory/?category=${category}&limit=2&excludeDui=${dui}`,
+   ${urlServerNode}/api/productsByCategory/?category=${category}&limit=2&excludeDui=${dui}`,
     {
       signal: controller?.signal,
     }
@@ -82,7 +82,7 @@ export async function fetchProductSubCategory(
 ): Promise<any> {
   const response = await fetch(
     `
-    https://server-douvery.vercel.app/api/productsBySubCategory/?subCategory=${subCategory}&limit=2&excludeDui=${dui}`,
+   ${urlServerNode}/api/productsBySubCategory/?subCategory=${subCategory}&limit=2&excludeDui=${dui}`,
     {
       signal: controller?.signal,
     }
@@ -101,7 +101,7 @@ export async function fetchSuggestions(
 ): Promise<any> {
   const response = await fetch(
     `
-    https://server-douvery.vercel.app/suggestions?q=${searchInput}`,
+   ${urlServerNode}/suggestions?q=${searchInput}`,
     {
       signal: controller?.signal,
     }
@@ -141,7 +141,7 @@ export async function fetchSystemRecomendationProductU(
 ): Promise<any> {
   const response = await fetch(
     `
-   https://htyr.onrender.com/recommend_products/${dui}`,
+   ${urlServerPython}/recommend_products/${dui}`,
     {
       signal: controller?.signal,
     }
