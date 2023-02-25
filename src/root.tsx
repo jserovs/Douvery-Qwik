@@ -24,12 +24,22 @@ export default component$(() => {
 
         <meta name="theme-color" content="#0d47a1" />
         <link rel="manifest" href="/manifest.json" />
+
         <QwikPartytown forward={['dataLayer.push']} />
         <script
           async
           type="text/partytown"
           src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"
         />
+        <link
+          type="text/css"
+          rel="stylesheet"
+          href="/src/magicscroll/magicscroll.css"
+        />
+        <script
+          type="text/javascript"
+          src="/src/magicscroll/magicscroll.js"
+        ></script>
 
         <RouterHead />
       </head>
