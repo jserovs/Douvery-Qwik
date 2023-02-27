@@ -7,6 +7,7 @@
     flex-direction: column;
     align-items: center;
     text-align: start;
+    justify-content: flex-start;
     background-color: var(--color-background-light);
 
     padding: 10px 10px;
@@ -198,7 +199,15 @@
     }
 
     .product-card {
+        width: 180px;
+        max-height: 550px;
+    }
 
-        min-height: 300px;
+    .etq-vrs {
+        font-size: 10px;
+    }
+
+    .ETQ- {
+        justify-content: start;
     }
 }

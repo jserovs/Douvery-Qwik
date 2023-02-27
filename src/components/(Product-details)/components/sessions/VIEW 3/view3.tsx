@@ -27,19 +27,22 @@ export const View3 = component$(({ product }: any) => {
   return (
     <div class="ctnr-view-3">
       {' '}
-      <div class="crrts-title">
-        <div class="ofrs">
-          <hs-sr3>Detalles del producto</hs-sr3>
-          <div class="srs-v">
+      <div class="content">
+        <div class="crrts-title">
+          <div class="ofrs">
+            <hs-sr3>Detalles del producto</hs-sr3>
+            <div class="srs-v">
+              <a class="ps-sr1">Saber mas</a>
+            </div>
+          </div>
+          <p class="ps-sr1">Detalles interesantes del producto</p>
+          <div class="srs-md">
             <a class="ps-sr1">Saber mas</a>
           </div>
         </div>
-        <p class="ps-sr1">Detalles interesantes del producto</p>
-        <div class="srs-md">
-          <a class="ps-sr1">Saber mas</a>
-        </div>
       </div>
-      <div class="content">
+      <div class="content-carousel">
+        <p class="ps-sr1">Recomendaciones de este producto</p>
         <Carousel1 product={state.productResults} />
       </div>
     </div>
