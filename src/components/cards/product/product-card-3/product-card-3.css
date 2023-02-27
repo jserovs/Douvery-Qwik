@@ -128,6 +128,11 @@
     justify-content: space-between;
     align-items: center;
     gap: 10px;
+    margin-top: 5px;
+}
+
+.stars {
+    display: flex;
 }
 
 .ctr-progr {
@@ -217,6 +222,29 @@
         height: 180px;
     }
 
+    .product-name {
+        width: 70%;
+    }
+
+    .et-ps {
+        display: none;
+    }
+
+    .ctr-stars {
+        height: 100%;
+        gap: 0px;
+        display: grid;
+        justify-content: start;
+    }
+
+    .product-brand {
+        display: flex;
+        justify-content: flex-start;
+        font-size: small;
+        color: var(--color-primary);
+        font-weight: var(--font-weight-normal);
+    }
+
     .product-card {
         width: 180px;
         max-height: 550px;
@@ -227,6 +255,6 @@
     }
 
     .ETQ- {
-        justify-content: start;
+        justify-content: center;
     }
 }
