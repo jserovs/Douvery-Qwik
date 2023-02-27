@@ -1,4 +1,4 @@
-.ctnr-view-3 {
+.ctnr-view-5 {
     display: grid;
     gap: 10px;
 
@@ -7,7 +7,7 @@
     background-color: var(--color-background-light);
 }
 
-.ctnr-view-3 .content {
+.ctnr-view-5 .content {
     padding: 80px 30px;
     display: grid;
     align-items: stretch;
@@ -44,15 +44,6 @@
 }
 
 
-.ctr-video-360 {
-    max-width: 650px;
-    height: 50vh;
-    background-color: #000;
-    position: relative;
-    background-color: red;
-    border-radius: 10px;
-    padding: 5px;
-}
 
 
 /* Ocultar los controles del video */
