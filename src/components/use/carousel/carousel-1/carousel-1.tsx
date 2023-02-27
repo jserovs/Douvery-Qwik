@@ -23,7 +23,7 @@ export const Carousel1 = component$(({ product }: any) => {
       <div
         class="carousel__content"
         style={{
-          transform: `translateX(-${currentIndex.setCurrentIndex * 25}%)`,
+          transform: `translateX(-${currentIndex.setCurrentIndex * 750}px)`,
         }}
       >
         {product.map((pro: any, index: any) => {
@@ -37,11 +37,11 @@ export const Carousel1 = component$(({ product }: any) => {
       <button
         class="carousel__btn carousel__btn--next"
         onClick$={() =>
-          currentIndex.setCurrentIndex === 3
+          currentIndex.setCurrentIndex * 750 === 5250
             ? ''
             : currentIndex.setCurrentIndex++
         }
-        disabled={currentIndex.setCurrentIndex == 3}
+        disabled={currentIndex.setCurrentIndex * 750 === 5250}
       >
         <DouveryRight3 size="30" />
       </button>
