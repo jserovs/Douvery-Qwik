@@ -5,7 +5,7 @@ import {
   useStore,
   useStylesScoped$,
 } from '@builder.io/qwik';
-import { Link } from '@builder.io/qwik-city';
+
 import { fetchProduct } from '~/services/fechProduct';
 
 import type { Product } from '~/utils/types';
@@ -44,7 +44,7 @@ export const CardProductVariations1 = component$(
           onRejected={(error) => <>Error: {error.message}</>}
           onResolved={() => (
             <>
-              <Link
+              <a
                 href={`/v/${state.product.slug}/${state.product.dui}`}
                 class="my-link"
               >
@@ -65,7 +65,7 @@ export const CardProductVariations1 = component$(
                     onMouseOut$={() => (imgS.setImage = imgP)}
                   />
                 </div>
-              </Link>
+              </a>
             </>
           )}
         />

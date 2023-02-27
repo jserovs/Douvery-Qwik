@@ -12,7 +12,6 @@ export async function fetchProduct(
       signal: controller?.signal,
     }
   );
-
   if (!response.ok) {
     throw new Error('Failed to fetch product');
   }
