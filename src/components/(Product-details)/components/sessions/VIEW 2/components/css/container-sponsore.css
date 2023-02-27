@@ -60,9 +60,6 @@
         overflow: scroll;
     }
 
-    .crrts-csrtos {
-        padding: 0px 10px;
-    }
 
     .crtrs-bsc {
         padding: 50px 10px;
@@ -82,4 +79,6 @@
 
         border: 1px solid var(--border-width-1);
     }
+
+
 }

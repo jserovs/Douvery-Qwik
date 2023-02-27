@@ -21,6 +21,7 @@
     align-items: stretch;
     grid-template-columns: 100%;
     justify-content: start;
+    gap: 15px;
 }
 
 .ctnr-view-3 .crrts-title {
