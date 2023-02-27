@@ -41,11 +41,15 @@ export async function fetchProductBestInCategory(
 }
 
 export async function fetchProductU(
+  limit: number,
   controller?: AbortController
 ): Promise<any> {
-  const response = await fetch(`${urlServerNode}/randomProductsLimit`, {
-    signal: controller?.signal,
-  });
+  const response = await fetch(
+    `${urlServerNode}/productsByRandom/?limit=${limit}`,
+    {
+      signal: controller?.signal,
+    }
+  );
 
   if (!response.ok) {
     throw new Error('Failed to fetch product');

@@ -3,7 +3,9 @@ import styles from './carousel-1.css?inline';
 import { ContainerCardProduct2 } from '~/components/cards/product/product-card-2/product-card-2';
 import { DouveryLeft3 } from '~/components/icons/arrow-left-3';
 import { DouveryRight3 } from '~/components/icons/arrow-right-3';
-export const Carousel1 = component$(({ product }: any) => {
+import { ContainerCardProduct3 } from '~/components/cards/product/product-card-3/product-card-3';
+import { ContainerCardProduct1 } from '~/components/cards/product/product-card-1/product-card-1';
+export const Carousel1 = component$(({ product, styleCard }: any) => {
   useStylesScoped$(styles);
   const currentIndex = useStore({ setCurrentIndex: 0 });
 
@@ -28,8 +30,10 @@ export const Carousel1 = component$(({ product }: any) => {
       >
         {product.map((pro: any, index: any) => {
           return (
-            <div key={index}>
-              <ContainerCardProduct2 product={pro} />
+            <div class="carousel_item" key={index}>
+              {styleCard == 1 ? <ContainerCardProduct1 product={pro} /> : ''}
+              {styleCard == 2 ? <ContainerCardProduct2 product={pro} /> : ''}
+              {styleCard == 3 ? <ContainerCardProduct3 product={pro} /> : ''}
             </div>
           );
         })}

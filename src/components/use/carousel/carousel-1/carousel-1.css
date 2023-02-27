@@ -14,6 +14,10 @@
     transition: transform 0.3s ease-in-out;
 }
 
+.carousel_item {
+    width: 250px;
+}
+
 .carousel__btn {
     margin: 0PX 10PX;
     background-color: var(--color-white);
