@@ -31,7 +31,7 @@ export const ContainerCardProduct3 = component$(({ product }: any) => {
             <>
               {' '}
               <strong class="hs-sr1 product-price pr-pr">
-                <p class="ps-sr1">Price:</p> <UsePrice price={discoun} />
+                <p class="ps-sr1 et-ps">Price:</p> <UsePrice price={discoun} />
               </strong>
               <p class="ps-sr1 product-price tach">
                 <UsePrice price={product.price} />
@@ -40,14 +40,16 @@ export const ContainerCardProduct3 = component$(({ product }: any) => {
           ) : (
             <>
               <strong class="hs-sr1 product-price pr-pr">
-                <p class="ps-sr1">Price:</p> <UsePrice price={discoun} />
+                <p class="ps-sr1 et-ps">Price:</p> <UsePrice price={discoun} />
               </strong>
             </>
           )}
         </div>
       </a>{' '}
       <div class="ctr-stars">
-        <Stars size="16" rating={totalRating} /> ({totalRating}){' '}
+        <div class="stars">
+          <Stars size="16" rating={totalRating} /> ({totalRating}){' '}
+        </div>
         <div class=" product-brand"> {product.marca}</div>
       </div>
       <div class="ETQ-">
