@@ -59,7 +59,9 @@ export const ContainerBasicFeacture = component$(({ product }: any) => {
           <li>
             <strong>Vendedor:</strong>{' '}
             <div>
-              <a class="ps-sr1">{product.marca}</a>{' '}
+              <a href="/" class="ps-sr1">
+                {product.marca}
+              </a>{' '}
               <p class="ps-sr1">
                 {' '}
                 , Seller en douvery desde 2021{' '}

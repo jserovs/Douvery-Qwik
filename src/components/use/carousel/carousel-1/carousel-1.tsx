@@ -12,6 +12,7 @@ export const Carousel1 = component$(({ product, styleCard }: any) => {
   return (
     <div class="carousel">
       <button
+        aria-label="btn carousel__btn--prev"
         class="carousel__btn carousel__btn--prev"
         onClick$={() =>
           currentIndex.setCurrentIndex === 0
@@ -39,6 +40,7 @@ export const Carousel1 = component$(({ product, styleCard }: any) => {
         })}
       </div>
       <button
+        aria-label="btn carousel__btn--next"
         class="carousel__btn carousel__btn--next"
         onClick$={() =>
           currentIndex.setCurrentIndex * 750 === 5250

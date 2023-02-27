@@ -74,6 +74,12 @@ button[disabled] {
 
     }
 
+    .carousel_item {
+        width: 160px;
+        margin-right: 10PX;
+        object-fit: contain;
+    }
+
     .carousel__btn {
         display: none;
     }

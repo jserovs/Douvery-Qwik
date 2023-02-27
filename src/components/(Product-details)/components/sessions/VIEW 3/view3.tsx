@@ -32,7 +32,9 @@ export const View3 = component$(({ product }: any) => {
           <div class="ofrs">
             <hs-sr3>Detalles del producto</hs-sr3>
             <div class="srs-v">
-              <a class="ps-sr1">Saber mas</a>
+              <a href="/" class="ps-sr1">
+                Saber mas
+              </a>
             </div>
           </div>
           <p class="ps-sr1">Detalles interesantes del producto</p>

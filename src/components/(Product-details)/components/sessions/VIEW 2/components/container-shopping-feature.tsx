@@ -15,7 +15,9 @@ export const ContainerShoppingFeacture = component$(() => {
         <div class="ofrs">
           <hs-sr3>Devolución y seguridad</hs-sr3>
           <div class="srs-v">
-            <a class="ps-sr1">Saber mas</a>
+            <a href="/" class="ps-sr1">
+              Saber mas
+            </a>
           </div>
         </div>
 
