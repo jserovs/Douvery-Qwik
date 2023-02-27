@@ -32,17 +32,9 @@ export default component$(() => {
 
   const state = useStore<{
     product: Product;
-    selectedVariantId: string;
-    quantity: Record<string, number>;
-    addItemToOrderError: string;
-    count: 0;
   }>(
     {
       product: {} as Product,
-      selectedVariantId: '',
-      quantity: {},
-      addItemToOrderError: '',
-      count: 0,
     },
     { recursive: true }
   );
@@ -56,9 +48,7 @@ export default component$(() => {
 
   const productResource = useResource$<void>(async () => {
     const { dui } = cleanUpParams({ dui: location.params.dui });
-
     const product = await fetchProduct(dui);
-
     state.product = product;
   });
 
@@ -77,10 +67,11 @@ export default component$(() => {
       <div>
         <Resource
           value={productResource}
-          onPending={() => <>Cargando...</>}
+          onPending={() => <></>}
           onRejected={(error) => <>Error: {error.message}</>}
           onResolved={() => (
             <>
+              {}
               <div class="nd-det-1">
                 <ContainerDatails is={isOpen} props={state.product} />
               </div>
