@@ -57,6 +57,14 @@
 
 /* Ocultar los controles del video */
 @media only screen and (max-width: 885px) {
+    .ctnr-view-3 .content {
+        padding: 80px 10px;
+        display: grid;
+        align-items: stretch;
+        grid-template-columns: 100%;
+        justify-content: start;
+    }
+
     .content-carousel {
         display: grid;
         gap: 10px;
