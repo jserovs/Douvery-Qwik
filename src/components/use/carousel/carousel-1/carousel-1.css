@@ -1,0 +1,29 @@
+.carousel {
+    padding: 10px 0px;
+    border-top: 1px solid var(--border-width-1);
+    border-bottom: 1px solid var(--border-width-1);
+}
+
+.carousel-cell {
+    width: 250px !important;
+    ;
+    height: 200px;
+    margin-right: 10px;
+    background: #8C8;
+    border-radius: 5px;
+    counter-increment: carousel-cell;
+}
+
+.carousel-cell.is-selected {
+    background: #ED2;
+}
+
+/* cell number */
+.carousel-cell:before {
+    display: block;
+    text-align: center;
+    content: counter(carousel-cell);
+    line-height: 200px;
+    font-size: 80px;
+    color: white;
+}

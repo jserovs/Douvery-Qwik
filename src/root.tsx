@@ -32,15 +32,10 @@ export default component$(() => {
           src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"
         />
         <link
-          type="text/css"
           rel="stylesheet"
-          href="/src/magicscroll/magicscroll.css"
-        />
-        <script
-          type="text/javascript"
-          src="/src/magicscroll/magicscroll.js"
-        ></script>
-
+          href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+        ></link>
+        <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
         <RouterHead />
       </head>
       <body lang="en">

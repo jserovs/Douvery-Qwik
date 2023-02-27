@@ -5,17 +5,17 @@ export const Carousel1 = component$(({ product }: any) => {
   useStylesScoped$(styles);
 
   return (
-    <div class="carousel">
-      <div class="MagicScroll" data-options="items: [[200,1],[400,2],[600,2]]">
-        {product.map((pro: any, index: any) => {
-          return (
-            <div key={index} class="ctr-prd-cr">
-              <ContainerCardProduct2 product={pro} />
-            </div>
-          );
-        })}
-        ...
-      </div>
+    <div
+      class="carousel"
+      data-flickity='{ "groupCells": true, "pageDots": false, "imagesLoaded":true }'
+    >
+      {product.map((pro: any, index: any) => {
+        return (
+          <div key={index} class="ctr-prd-cr">
+            <ContainerCardProduct2 product={pro} />
+          </div>
+        );
+      })}
     </div>
   );
 });
