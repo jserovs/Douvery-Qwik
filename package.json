@@ -25,6 +25,7 @@
     "@builder.io/qwik": "0.18.1",
     "@builder.io/qwik-city": "0.2.1",
     "@playwright/test": "^1.27.1",
+    "@splidejs/splide": "^4.1.4",
     "@types/eslint": "8.4.10",
     "@types/node": "^18.11.18",
     "@types/node-fetch": "latest",
@@ -53,6 +54,6 @@
     "dompurify": "^2.4.3",
     "numeral": "^2.0.6",
     "react-responsive-carousel": "^3.2.23",
-    "swiper": "^9.0.5"
+    "slick-carousel": "^1.8.1"
   }
 }

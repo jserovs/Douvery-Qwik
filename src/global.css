@@ -67,6 +67,10 @@
   --font-weight-bold: 600;
 }
 
+.swiper {
+  width: 600px;
+  height: 300px;
+}
 
 body {
   margin: 0 auto;
