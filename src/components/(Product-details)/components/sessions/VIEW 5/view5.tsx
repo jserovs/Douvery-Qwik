@@ -27,10 +27,14 @@ export const View5 = component$(({ product }: any) => {
   return (
     <div class="ctnr-view-5">
       {' '}
-      <div class="content-carousel">
-        <p class="ps-sr1">Puede que te interesen </p>
-        <Carousel1 styleCard={2} product={state.productResults} />
-      </div>
+      {product.sponsored === true ? (
+        <></>
+      ) : (
+        <div class="content-carousel">
+          <p class="ps-sr1">Puede que te interesen </p>
+          <Carousel1 styleCard={2} product={state.productResults} />
+        </div>
+      )}
     </div>
   );
 });

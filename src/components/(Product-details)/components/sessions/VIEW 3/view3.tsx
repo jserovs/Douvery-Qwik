@@ -43,10 +43,17 @@ export const View3 = component$(({ product }: any) => {
           </div>
         </div>
       </div>
-      <div class="content-carousel">
-        <p class="ps-sr1">Productos similares</p>
-        <Carousel1 styleCard={3} product={state.productResults} />
-      </div>
+      {product.sponsored === true ? (
+        <></>
+      ) : (
+        <>
+          {' '}
+          <div class="content-carousel">
+            <p class="ps-sr1">Productos similares</p>
+            <Carousel1 styleCard={3} product={state.productResults} />
+          </div>
+        </>
+      )}{' '}
     </div>
   );
 });
