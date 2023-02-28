@@ -6,31 +6,40 @@ export const ContainerBreadcrumbs = component$(({ product }: any) => {
   product;
   return (
     <nav aria-label="breadcrumbs">
-      <ol class="breadcrumb-container">
+      <ul class="breadcrumb-container">
         <li>
           <a href="/">Inicio</a>
         </li>
-        <div class="drs">
-          <DouveryRight3 size="12" color="#00000038" />
-        </div>
+        <li>
+          {' '}
+          <div class="drs">
+            <DouveryRight3 size="12" color="#00000038" />
+          </div>
+        </li>
         <li>
           <a href="/electronics">{product.category}</a>
         </li>
-        <div class="drs">
-          {' '}
-          <DouveryRight3 size="12" color="#00000038" />
-        </div>
+        <li>
+          <div class="drs">
+            {' '}
+            <DouveryRight3 size="12" color="#00000038" />
+          </div>
+        </li>
+
         <li>
           <a href="/electronics/headphones">{product.subCategory}</a>
         </li>
-        <div class="drs">
+        <li>
           {' '}
-          <DouveryRight3 size="12" color="#00000038" />
-        </div>
+          <div class="drs">
+            {' '}
+            <DouveryRight3 size="12" color="#00000038" />
+          </div>
+        </li>
         <li class="active" title={product.name + ' ( Viendo ahora ) '}>
           <p>{product.name}</p>
         </li>
-      </ol>
+      </ul>
     </nav>
   );
 });

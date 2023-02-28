@@ -26,6 +26,7 @@
   --color-button-cart: #1a49ab;
   --color-stars: #008080;
 
+
   --color-text-dark: rgba(0, 0, 0, .8);
   --color-text-medium-dark: rgba(0, 0, 0, .45);
   --color-text-medium-light: #565959;
@@ -45,6 +46,7 @@
   --color-grey: var(--color-text-opaque)666;
   --color-orange: #e84118;
   --color-green: #38E54D;
+  --color-green-2: #06738f;
   --color-violet: #1613d3;
   --color-rose: #F8485E;
   --color-red: #EE2B47;
@@ -426,8 +428,8 @@ input {
 
 
 .loader {
-  border: 2px solid rgba(0, 0, 0, 0.1);
-  border-top-color: #06738f;
+  border: 1.5px solid rgba(0, 0, 0, 0.1);
+  border-top-color: var(--color-primary);
   border-radius: 50%;
   width: 20px;
   height: 20px;

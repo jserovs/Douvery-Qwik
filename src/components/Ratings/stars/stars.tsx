@@ -63,7 +63,10 @@ export const Stars = component$(({ color, rating, size }: any) => {
     </svg>
   );
   return (
-    <div class={rating >= 5 ? 'flex parp' : 'flex'}>
+    <div
+      class={rating >= 5 ? 'flex parp' : 'flex'}
+      title={'Tiene una calificacion de ' + rating + ' estrellas'}
+    >
       {rating >= 1 ? startFull : rating >= 0.5 ? startMdFull : startNoFull}{' '}
       {rating >= 2 ? startFull : rating >= 1.5 ? startMdFull : startNoFull}{' '}
       {rating >= 3 ? startFull : rating >= 2.5 ? startMdFull : startNoFull}{' '}
