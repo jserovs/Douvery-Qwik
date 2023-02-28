@@ -119,7 +119,7 @@
     .container-view-product {
         display: grid;
         margin-top: 5px;
-        grid-template-columns: 35% 45% 20%;
+        grid-template-columns: 33% 42% 25%;
 
         background-color: var(--color-background-light);
     }
