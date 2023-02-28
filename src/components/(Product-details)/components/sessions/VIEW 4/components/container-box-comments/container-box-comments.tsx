@@ -3,7 +3,7 @@ import style from './container-box-comments.css?inline';
 import { CardComment1 } from '~/components/cards/comment/card-comment-1/card-comment-1';
 import { DouveryArrowUp } from '~/components/icons/arrow-up';
 import { DouveryArrowDown } from '~/components/icons/arrow-down';
-export const ContainerBoxComments = component$(() => {
+export const ContainerBoxComments = component$(({ product }: any) => {
   useStylesScoped$(style);
   const showAllQuestions = useStore({ setShowAllQuestions: false });
 
@@ -58,17 +58,17 @@ export const ContainerBoxComments = component$(() => {
       <hs-sr3>Opiniones de compradores</hs-sr3>
       <div class="ctr-comment-box">
         {' '}
-        {comment
+        {product.ratings
           .slice(0, showAllQuestions.setShowAllQuestions ? comment.length : 2)
-          .map((q) => (
+          .map((q: any) => (
             <>
               <CardComment1
                 timePublic={q.timePublic}
                 buyTime={q.buyTime}
-                name={q.name}
+                name={q.userName}
                 rating={q.rating}
-                comment={q.comment}
-                images={q.images}
+                comment={q.userComment}
+                images={q.userImagesClients}
               />
             </>
           ))}

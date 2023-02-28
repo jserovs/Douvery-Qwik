@@ -37,7 +37,14 @@ export const View4 = component$(({ product }: any) => {
               <p class="ps-sr1">Comparte y comenta tu mas sincera opinion</p>
             </div>
             <ContainerBoxInputComments />
-            <ContainerBoxComments />
+            {product.ratings == '' ? (
+              <div></div>
+            ) : (
+              <>
+                {' '}
+                <ContainerBoxComments product={product} />
+              </>
+            )}
           </div>
         </div>
         <div class="viewrigth"></div>
