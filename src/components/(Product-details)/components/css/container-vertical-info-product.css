@@ -1,5 +1,6 @@
 .crrtr-vert-csrtre {
     width: 300px;
+
     height: 600px;
     border: 1px solid var(--border-width-1);
     border-radius: 5px;
@@ -10,5 +11,11 @@
 @media only screen and (max-width: 1480px) {
     .crrtr-vert-csrtre {
         width: 90%;
+    }
+}
+
+@media only screen and (max-width: 855px) {
+    .crrtr-vert-csrtre {
+        min-width: 100%;
     }
 }

@@ -1,0 +1,73 @@
+.card-douveryextend {
+    display: grid;
+    width: 100%;
+    max-width: 250px;
+    min-width: 200px;
+    height: 225px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-background-light);
+    padding: 10px;
+    margin: 20px 0px;
+    animation: smoApp 0.5s ease-in-out;
+    border: 1px solid var(--border-width-1);
+}
+
+.ctr-ic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.ctr-ic .hs-sr2 {
+    color: #BE1B2B;
+}
+
+.ctr-tile {
+    display: flex;
+    text-align: center;
+    gap: 10px;
+    margin: 10px 0px;
+}
+
+.btt-prc {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 500;
+}
+
+.btt-prc button {
+    width: 95px;
+    height: 25px;
+    border-radius: 5px;
+    border: none;
+    background-color: #BE1B2B;
+    color: var(--color-white);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.ps-sr1 {
+    text-align: end;
+}
+
+.spr-shw {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20px;
+}
+
+.cs-sh {
+    text-align: end;
+}
+
+@media only screen and (max-width: 885px) {
+    .card-douveryextend {
+        max-width: 100%;
+
+    }
+}

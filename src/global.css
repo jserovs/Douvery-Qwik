@@ -170,8 +170,8 @@ p {
   color: #030303;
 }
 
-hs-sr1 {
-  font-size: 13.92px;
+.hs-sr2 {
+  font-size: 14.92px;
   font-weight: var(--font-weight-normal);
   color: var(--color-text-highlight-secondary);
 }
