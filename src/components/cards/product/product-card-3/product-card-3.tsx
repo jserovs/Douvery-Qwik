@@ -31,7 +31,7 @@ export const ContainerCardProduct3 = component$(({ product }: any) => {
             <>
               {' '}
               <strong class="hs-sr1 product-price pr-pr">
-                <p class="ps-sr1 et-ps">Price:</p> <UsePrice price={discoun} />
+                <UsePrice price={discoun} />
               </strong>
               <p class="ps-sr1 product-price tach">
                 <UsePrice price={product.price} />

@@ -51,6 +51,10 @@
     font-weight: 500;
 }
 
+.product-name:hover {
+    text-decoration: underline;
+}
+
 .product-brand {
     font-size: small;
     color: var(--color-primary);
