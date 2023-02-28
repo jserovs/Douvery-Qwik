@@ -21,7 +21,7 @@ export const ContainerCardProduct3 = component$(({ product }: any) => {
         <img src={product.images[0]} alt={product.name} class="product-image" />
       </a>
       <a href={`/v/${product.slug}/${product.dui}`}>
-        <h2 class="product-name">
+        <h2 class="product-name" title={product.name}>
           {' '}
           {product.name[0].toUpperCase() + product.name.substring(1)}
         </h2>
