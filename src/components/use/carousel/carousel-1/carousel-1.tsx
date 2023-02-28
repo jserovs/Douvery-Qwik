@@ -5,6 +5,7 @@ import { DouveryLeft3 } from '~/components/icons/arrow-left-3';
 import { DouveryRight3 } from '~/components/icons/arrow-right-3';
 import { ContainerCardProduct3 } from '~/components/cards/product/product-card-3/product-card-3';
 import { ContainerCardProduct1 } from '~/components/cards/product/product-card-1/product-card-1';
+import { ContainerCardProduct4 } from '~/components/cards/product/product-card-4/product-card-4';
 export const Carousel1 = component$(({ product, styleCard }: any) => {
   useStylesScoped$(styles);
   const currentIndex = useStore({ setCurrentIndex: 0 });
@@ -35,6 +36,7 @@ export const Carousel1 = component$(({ product, styleCard }: any) => {
               {styleCard == 1 ? <ContainerCardProduct1 product={pro} /> : ''}
               {styleCard == 2 ? <ContainerCardProduct2 product={pro} /> : ''}
               {styleCard == 3 ? <ContainerCardProduct3 product={pro} /> : ''}
+              {styleCard == 4 ? <ContainerCardProduct4 product={pro} /> : ''}
             </div>
           );
         })}

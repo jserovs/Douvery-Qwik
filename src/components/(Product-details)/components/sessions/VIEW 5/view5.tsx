@@ -32,7 +32,7 @@ export const View5 = component$(({ product }: any) => {
       ) : (
         <div class="content-carousel">
           <p class="ps-sr1">Puede que te interesen </p>
-          <Carousel1 styleCard={2} product={state.productResults} />
+          <Carousel1 styleCard={4} product={state.productResults} />
         </div>
       )}
     </div>
