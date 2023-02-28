@@ -20,14 +20,27 @@ export type Product = {
 	category: string;
 	productDetails: productDetails[];	
 	variations: variant[];
+	ratings:ratings[];
 };
 
+export type ratings = {
+	userId: string;
+	userName:string;
+	userImages:string;
+	userComment:string;
+};
 
+export type rating = {
+	title: string;
+	rating:string
+};
 
 export type variant = {
 	name: string;
 	variant:variantDate;
 };
+
+
 
 
 export type productDetails = {

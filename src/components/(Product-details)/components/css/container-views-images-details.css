@@ -36,12 +36,21 @@
 }
 
 .vert-right {
-    display: flex;
-    align-items: flex-start;
+    display: grid;
+    align-items: center;
     justify-content: center;
     padding: 10PX 0PX 10PX 0px;
 
 }
+
+.ctr-extend-d {
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+
 
 .buttons-mobiles {
     display: none;
@@ -129,6 +138,15 @@
 }
 
 @media only screen and (max-width: 885px) {
+
+    .vert-right {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        padding: 10PX 10PX;
+
+    }
+
     .buttons-mobiles {
         display: block;
     }

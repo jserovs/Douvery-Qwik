@@ -9,7 +9,24 @@ export const CardComment1 = component$(
   ({ buyTime, name, rating, comment, timePublic, images }: any) => {
     useStylesScoped$(style);
     const showAllImg = useStore({ setShowAllImg: false });
-
+    let ratingText;
+    switch (rating) {
+      case 1:
+        ratingText = 'Muy Malo';
+        break;
+      case 2:
+        ratingText = 'Malo';
+        break;
+      case 3:
+        ratingText = 'Regular';
+        break;
+      case 4:
+        ratingText = 'Bueno';
+        break;
+      case 5:
+        ratingText = 'Excelente';
+        break;
+    }
     return (
       <div class="ctr-box-user">
         <div class="crtr-avatar">
@@ -40,8 +57,8 @@ export const CardComment1 = component$(
             <div class="ctr-str">
               {' '}
               <p class="ps-sr1">Rating: </p>
-              <strong class="hs-sr1">{rating.title}</strong>{' '}
-              <Stars color="#008080" rating={rating.rating} />
+              <strong class="hs-sr1">{ratingText}</strong>
+              <Stars color="#008080" rating={rating} />
             </div>
           </div>
           <div class="ctr-comment">
