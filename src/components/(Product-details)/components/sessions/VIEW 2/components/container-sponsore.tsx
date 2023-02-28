@@ -32,27 +32,36 @@ export const ContainerSponsoreProduct = component$(({ product }: any) => {
   });
 
   return (
-    <div class="crtrs-bsc">
-      <div class="crrts-title">
-        <hs-sr3>Pueden ser de tu interés</hs-sr3>
-        <div class="sr-of">
-          {' '}
-          <div class="ssr-f">
-            {' '}
-            <p class="ps-sr1"> Ver mas</p>
-            <DouveryArrowRigth1 size="20" />
+    <>
+      {' '}
+      {product.sponsored === true ? (
+        <></>
+      ) : (
+        <>
+          <div class="crtrs-bsc">
+            <div class="crrts-title">
+              <hs-sr3>Pueden ser de tu interés</hs-sr3>
+              <div class="sr-of">
+                {' '}
+                <div class="ssr-f">
+                  {' '}
+                  <p class="ps-sr1"> Ver mas</p>
+                  <DouveryArrowRigth1 size="20" />
+                </div>
+              </div>
+            </div>
+            <div class="div-car">
+              {' '}
+              {state.productResults.map((val: any, key: any) => (
+                <div key={key}>
+                  <ContainerCardProduct1 product={val} />
+                </div>
+              ))}
+              <div> </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="div-car">
-        {' '}
-        {state.productResults.map((val: any, key: any) => (
-          <div key={key}>
-            <ContainerCardProduct1 product={val} />
-          </div>
-        ))}
-        <div> </div>
-      </div>
-    </div>
+        </>
+      )}
+    </>
   );
 });

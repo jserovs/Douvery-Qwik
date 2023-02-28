@@ -5,7 +5,7 @@
 
 .div-car {
     display: grid;
-    justify-content: center;
+    justify-content: end;
     padding: 20px 0px;
     gap: 10px;
 }
@@ -43,9 +43,11 @@
         padding: 0px 0px;
     }
 
-    .crtrs-bsc {
+    .div-car {
         display: grid;
-        padding: 0px 0px;
+        justify-content: center;
+        padding: 20px 0px;
+        gap: 10px;
     }
 }
 
