@@ -16,7 +16,10 @@
 }
 
 @media only screen and (max-width: 855px) {
+
     .crrtr-vert-csrtre {
-        min-width: 100%;
+        width: 100%;
+        max-width: 100%;
+        min-width: 300px;
     }
 }
