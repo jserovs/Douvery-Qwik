@@ -1,0 +1,253 @@
+.product-card {
+    width: 100%;
+    width: 250px;
+
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+
+    text-align: start;
+    justify-content: flex-start;
+    background-color: var(--color-background-light);
+
+    padding: 10px 10px;
+    position: relative;
+
+}
+
+
+.product-image {
+    width: 100%;
+    max-width: 250px;
+    height: 180px;
+    object-fit: contain;
+    padding: 10px 0px;
+
+}
+
+.product-name,
+.product-brand,
+.product-price {
+    width: 100%;
+
+}
+
+.product-sponsor {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0px;
+}
+
+.product-name {
+    margin: 10px 0;
+    font-size: small;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+}
+
+
+.product-name {
+    text-decoration: none;
+    transition: text-decoration 0.3s ease-in-out;
+    color: var(--color-black);
+}
+
+.product-name:hover {
+    text-decoration: underline;
+}
+
+
+
+.product-price {
+    font-size: 14px;
+}
+
+.pr-pr {
+    font-size: larger;
+    color: var(--color-black);
+}
+
+.crt-prc {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+
+    margin-top: 20px;
+}
+
+
+.ctr-stars {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    display: flex;
+    font-size: var(--font-size-xs);
+    color: var(--color-text-medium-light);
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.ctr-progr {
+    display: none;
+
+}
+
+.ctr-stars:hover .ctr-progr {
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: block;
+    width: 250px;
+    height: 200px;
+    justify-content: center;
+    background-color: #FFF;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    z-index: 1;
+    padding: 10PX 20px;
+    transition: opacity 5s;
+}
+
+.ctr-stars:hover .ctr-progr {
+    animation: appearss 0.5s ease-in-out;
+}
+
+@keyframes appearss {
+    0% {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    50% {
+        opacity: 0.9;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ctrros-et-che {
+    display: flex;
+    align-items: center;
+    Justify-content: space-between;
+}
+
+.sto-s {
+    margin-top: 10px;
+}
+
+
+.ctr-stock {
+    display: flex;
+    justify-content: flex-start;
+    color: var(--color-primary) !important;
+    font-size: 13px;
+    gap: 5px;
+    align-items: center;
+}
+
+.ctr-stock p {
+    color: #146614;
+    font-size: 13px;
+}
+
+.icrt-checkmark {
+    fill: #146614;
+}
+
+.tex-str {
+    margin: 0px 3px;
+}
+
+.no-stock {
+    width: 5px;
+    height: 5px;
+    background-color: #DC143C;
+    border-radius: 50%;
+}
+
+.ctr-out-of-Stocks {
+
+    display: flex;
+    justify-content: flex-start;
+    color: #DC143C !important;
+    font-weight: 400;
+    font-size: 13px;
+    gap: 5px;
+    align-items: center;
+}
+
+.stock-lst {
+    margin: 10px 0px;
+}
+
+.pr-qtyon {
+    display: grid;
+    text-align: center;
+}
+
+.minus-dolceid-alert-buty {
+    font-size: 13PX;
+    color: #332FD0;
+    font-weight: 500;
+}
+
+.tolst-tip {
+    display: block;
+    border-bottom: 7px solid #fff;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    position: absolute;
+    top: -5px;
+    left: calc(4% - 7px);
+    z-index: -1;
+
+
+}
+
+@keyframes tooltip-appear {
+    0% {
+        opacity: 0;
+        /* Ajusta la propiedad transform para mover el tooltip hacia abajo y hacia la derecha */
+        transform: translate(-0%, -10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+@media only screen and (max-width: 885px) {
+    .product-image {
+        height: 180px;
+    }
+
+    .product-card {
+        width: 180px;
+        max-height: 550px;
+    }
+
+    .etq-vrs {
+        font-size: 10px;
+    }
+
+    .ETQ- {
+        justify-content: start;
+    }
+
+    .tex-str {
+        display: none;
+    }
+}
