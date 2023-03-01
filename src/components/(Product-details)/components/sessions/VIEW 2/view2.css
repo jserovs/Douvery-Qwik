@@ -24,6 +24,12 @@
 
 }
 
+.viewrigth {
+    display: grid;
+    justify-content: end;
+    padding: 0px 30px;
+}
+
 
 @media only screen and (max-width: 685px) {
     .ctnr-view-2 {

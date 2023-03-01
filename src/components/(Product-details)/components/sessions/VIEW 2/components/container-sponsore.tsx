@@ -45,7 +45,10 @@ export const ContainerSponsoreProduct = component$(({ product }: any) => {
                 {' '}
                 <div class="ssr-f">
                   {' '}
-                  <p class="ps-sr1"> Ver mas</p>
+                  <a href="/" class="ps-sr1">
+                    {' '}
+                    Ver mas
+                  </a>
                   <DouveryArrowRigth1 size="20" />
                 </div>
               </div>
