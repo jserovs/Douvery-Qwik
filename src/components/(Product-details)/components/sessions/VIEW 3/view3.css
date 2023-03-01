@@ -22,6 +22,12 @@
     grid-template-columns: 100%;
     justify-content: start;
     gap: 15px;
+
+}
+
+.content-carousel .ps-sr1 {
+    font-size: 15px;
+    margin-left: 5px;
 }
 
 .ctnr-view-3 .crrts-title {

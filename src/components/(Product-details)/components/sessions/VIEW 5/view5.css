@@ -24,6 +24,11 @@
     gap: 15px;
 }
 
+.content-carousel .ps-sr1 {
+    font-size: 15px;
+    margin-left: 5px;
+}
+
 .ctnr-view-3 .crrts-title {
     display: grid;
     padding: 0px;
