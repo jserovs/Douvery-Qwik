@@ -75,7 +75,7 @@ export default component$(() => {
                 throw new Error(errorResponse.msg);
               }
               const data = await response.json();
-              const token = data.token;
+              const token = data;
 
               saveData(JSON.stringify(token));
               navigate('/');
