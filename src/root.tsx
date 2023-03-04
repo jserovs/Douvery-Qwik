@@ -1,4 +1,12 @@
-import { component$, useStyles$ } from '@builder.io/qwik';
+import {
+  component$,
+  createContext,
+  useBrowserVisibleTask$,
+  useContext,
+  useContextProvider,
+  useStore,
+  useStyles$,
+} from '@builder.io/qwik';
 import {
   QwikCityProvider,
   RouterOutlet,
@@ -7,6 +15,14 @@ import {
 import { RouterHead } from './components/router-head/router-head';
 import { QwikPartytown } from './components/partytown/partytown';
 import globalStyles from './global.css?inline';
+import { getData } from './services/auth/token/token';
+
+interface UserStore {
+  name: string;
+  isLogged: boolean;
+}
+export const UserInformationContext =
+  createContext<UserStore>('user-information');
 
 export default component$(() => {
   /**
@@ -15,7 +31,26 @@ export default component$(() => {
    *
    * Dont remove the `<head>` and `<body>` elements.
    */
+
+  const userStore = useStore({
+    name: '',
+    isLogged: false,
+  });
   useStyles$(globalStyles);
+
+  useContextProvider(UserInformationContext, userStore);
+
+  useBrowserVisibleTask$(() => {
+    const date = setInterval(() => {
+      const { name } = getData();
+      userStore.name = name;
+    });
+    return () => {
+      clearInterval(date);
+      const { name } = getData();
+      userStore.name = name;
+    };
+  });
 
   return (
     <QwikCityProvider>
