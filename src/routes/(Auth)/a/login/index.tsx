@@ -75,14 +75,14 @@ export default component$(() => {
                 throw new Error(errorResponse.msg);
               }
               const data = await response.json();
-              saveData(JSON.stringify(data));
+              const token = data.token;
+
+              saveData(JSON.stringify(token));
               navigate('/');
             } catch (error: any) {
               console.error(error);
               const errorMessage = document.createElement('div');
               errorMessage.textContent = 'Error: ' + error.message;
-
-              document.querySelector('.ctr-login').appendChild(errorMessage);
             }
           }}
         >

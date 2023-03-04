@@ -13,12 +13,14 @@ export const View3 = component$(({ product }: any) => {
   useStylesScoped$(style);
   const state = useStore({
     productResults: [] as Product[],
+    loader: false,
   });
 
   useTask$(async ({ track }) => {
     track(() => product.dui);
     const dui = product.dui;
     const controller = new AbortController();
+
     state.productResults = await fetchSystemRecomendationProductU(dui);
 
     return () => {
@@ -28,7 +30,9 @@ export const View3 = component$(({ product }: any) => {
   const randomNumber = randomNum();
   return (
     <div class="ctnr-view-3">
-      {' '}
+      <>
+        <div class={state.loader ? 'loader' : ''}></div>
+      </>{' '}
       <div class="content">
         <div class="crrts-title">
           <div class="ofrs">
@@ -52,6 +56,7 @@ export const View3 = component$(({ product }: any) => {
           {' '}
           <div class="content-carousel">
             <p class="ps-sr1">Productos similares</p>
+            {state.productResults ? <>HSAHDA</> : <>oK</>}{' '}
             <Carousel1
               styleCard={randomNumber}
               product={state.productResults}
