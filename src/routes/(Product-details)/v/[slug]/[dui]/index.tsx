@@ -33,9 +33,11 @@ export default component$(() => {
 
   const state = useStore<{
     product: Product;
+    loading: boolean;
   }>(
     {
       product: {} as Product,
+      loading: false,
     },
     { recursive: true }
   );
@@ -47,7 +49,10 @@ export default component$(() => {
     state.product = product;
   });
 
-  const productResource = useResource$<void>(async () => {
+  const productResource = useResource$<void>(async (ctx) => {
+    ctx.cleanup(() => {
+      state.loading = true;
+    });
     const { dui } = cleanUpParams({ dui: location.params.dui });
     const product = await fetchProduct(dui);
     state.product = product;
@@ -66,6 +71,7 @@ export default component$(() => {
   return (
     <>
       <div>
+        {state.loading ? <>HOLE</> : <></>}
         <Resource
           value={productResource}
           onPending={() => <></>}

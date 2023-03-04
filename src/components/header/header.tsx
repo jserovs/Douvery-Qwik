@@ -1,5 +1,6 @@
 import {
   component$,
+  useBrowserVisibleTask$,
   useStore,
   useStylesScoped$,
   useTask$,
@@ -12,6 +13,8 @@ import { DouveryCart } from '../icons/cart';
 import { DouveryLogo105X40PX } from '../icons/logo105X40';
 import { fetchSuggestions } from '~/services/fechProduct';
 import { IconsSearch } from '../icons/search';
+import { User, defaultUser, getData } from '~/services/auth/token/token';
+
 interface IState {
   searchInput: string;
   searchResults: string[];
@@ -43,6 +46,19 @@ export default component$(({ is }: any) => {
     };
   });
 
+  const data = useStore<User>(defaultUser);
+
+  useBrowserVisibleTask$(() => {
+    const date = setInterval(() => {
+      const { name } = getData();
+      data.name = name;
+    });
+    return () => {
+      clearInterval(date);
+      const { name } = getData();
+      data.name = name;
+    };
+  });
   return (
     <header>
       <div class="container container-cajas-header ">
@@ -129,9 +145,9 @@ export default component$(({ is }: any) => {
             </a>
             <DouveryUser />
             <div class="cuenta_botom">
-              <a class="title-desplg" href="/signin">
+              <a class="title-desplg" href="/a/login">
                 <span class="wl-hi">¡Hola! </span>
-                <h4 class="pointer">Registrate</h4>
+                <h4 class="pointer">{data.name ? data.name : '...'}</h4>
               </a>
             </div>
           </div>
