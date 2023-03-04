@@ -42,7 +42,7 @@ export async function fetchUser(
   controller?: AbortController
 ): Promise<any> {
    const response = await fetch(
-                `http://localhost:7629/api/user`,
+                `https://server-douvery.vercel.app/api/user`,
                 {
 signal: controller?.signal,
                   method: 'GET',
