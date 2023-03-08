@@ -2,7 +2,7 @@ import { component$, Slot, useStore } from '@builder.io/qwik';
 import Header from '../components/header/header';
 import Nav from '../components/nav/nav';
 import { Footer } from '~/components/footer/footer';
-import { routeLoader$, useLocation } from '@builder.io/qwik-city';
+import { routeLoader$ } from '@builder.io/qwik-city';
 
 import {
   decodeToken,
@@ -25,8 +25,7 @@ export const useGetCurrentUser = routeLoader$<UserACC | null>(
 export default component$(() => {
   const isOpen = useStore({ setIsOpen: false });
   const userCtx = useGetCurrentUser().value;
-  const loc = useLocation();
-
+ 
   return (
     <>
       <main>
