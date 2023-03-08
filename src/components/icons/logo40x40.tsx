@@ -1,6 +1,6 @@
 //TODO: Logo transpartnt background
 
-export const DouveryLogo40x40 = () => (
+export const DouveryLogo40x40 = ({ color }: any) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -44,7 +44,7 @@ export const DouveryLogo40x40 = () => (
       <g clip-path="url(#155bc35e6b)">
         <g clip-path="url(#28ccf93660)">
           <path
-            fill="#fbd316"
+            fill={color || '#fbd316'}
             d="M 24.609375 5.535156 L 28.078125 16.1875 L 5.40625 23.570312 L 1.9375 12.917969 Z M 24.609375 5.535156 "
             fill-opacity="1"
             fill-rule="nonzero"
@@ -55,7 +55,7 @@ export const DouveryLogo40x40 = () => (
     <g clip-path="url(#fedb158081)">
       <g clip-path="url(#92e784538e)">
         <path
-          fill="#fbd316"
+          fill={color || '#fbd316'}
           d="M 22.105469 14.515625 L 26.828125 14.515625 L 26.828125 18.449219 L 22.105469 18.449219 Z M 22.105469 14.515625 "
           fill-opacity="1"
           fill-rule="nonzero"

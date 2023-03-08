@@ -353,21 +353,37 @@ select,
 }
 
 
-.CJAS-DESPLEGABLE {
-  display: flex;
+
+
+.ttle-draw {
+  display: grid;
+  height: 100%;
+  text-align: start;
+  font-size: 14px;
+  padding-left: 5px;
+  color: var(--color-white);
 
 }
 
-.CJAS-DESPLEGABLE-adm {
-  display: flex;
-
+.ttle-draw strong {
+  font-weight: 600;
+  color: var(--color-white);
 }
 
-.lISTA_CJAS-DESPLEGABLE {
-  position: relative;
-  top: 30px;
-  right: 13px;
+.trl-drs strong:hover {
+  text-decoration: underline;
+}
 
+.ttle-draw {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  width: 105px;
+  height: 100%;
+  text-align: start;
+  font-size: 14px;
+  padding-left: 5px;
+  color: var(--color-white);
 }
 
 .lISTA_CJAS-DESPLEGABLE h2 {
@@ -514,6 +530,7 @@ select,
 .Cuenta-desplegable:hover .efecto-HOVER-cuentaDesplegable {
   display: block;
 }
+
 
 
 @media only screen and (max-width: 982px) {

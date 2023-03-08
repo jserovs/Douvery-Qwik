@@ -8,21 +8,21 @@ export const ContainerButtonExtr = component$(({ props }: any) => {
   return (
     <div class="crtr-brst-csr">
       <div class="q-r-pred etqsitms">
-        <a href='/'>
+        <a href="/">
           <DouveryHeart size="15px" />
           Add to Wishlist
-        </a >
+        </a>
         <div class="se-pr">|</div>
-        <a href='/'>
+        <a href="/">
           <DouveryInfo size="15px" /> Suggest information
-        </a >
+        </a>
         <div class="se-pr">|</div>
-        <a href='/'>
+        <a href="/">
           {props.ratings.length == 0 ? <>Sin</> : props.ratings.length}{' '}
           calificaciones
-        </a >
+        </a>
         <div class="se-pr">|</div>
-        <a  href='/' >Sin preguntas respondidas</a >
+        <a href="/">Sin preguntas respondidas</a>
       </div>
       <div class="opcs">
         {' '}

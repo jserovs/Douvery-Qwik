@@ -1,4 +1,4 @@
-const urlServerNode = 'https://server-douvery.vercel.app';
+export const urlServerNode = 'https://server-douvery.vercel.app';
 const urlServerPython = 'https://htyr.onrender.com';
 
 export async function fetchProduct(
@@ -16,7 +16,6 @@ export async function fetchProduct(
     throw new Error('Failed to fetch product');
   }
   const results = await response.json();
-
   return results;
 }
 
