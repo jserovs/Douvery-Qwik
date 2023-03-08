@@ -1,19 +1,9 @@
 
-import { Buffer } from 'buffer';
-import Cookies from 'universal-cookie';
- const cookies = new Cookies();
 
 
 
 
-export function saveData(data: string) {
-  localStorage.setItem('userInfo', data);
-}
 
- const valorCookie = cookies.get('TOKEN');
-  console.log(typeof valorCookie);
-
-  
  
 const OPTIONS_KEY = 'userInfo';
 
