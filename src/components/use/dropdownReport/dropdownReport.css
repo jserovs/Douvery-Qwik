@@ -9,6 +9,7 @@
     align-items: center;
     gap: 5px;
     background-color: var(--color-background-light);
+
 }
 
 .trl-drs:active {

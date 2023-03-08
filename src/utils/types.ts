@@ -76,3 +76,17 @@ export type CodePostalData = {
 	state:string;
 	
 };
+
+
+
+export type UserACC = {
+	name: string ;
+	decodedUserInfo: {
+		
+	};
+};
+
+export type decodedUserInfos = {
+	name: string;
+	
+};

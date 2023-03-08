@@ -1,6 +1,5 @@
 import {
   component$,
-  useContext,
   useStore,
   useStylesScoped$,
   useTask$,
@@ -13,7 +12,8 @@ import { DouveryCart } from '../icons/cart';
 import { DouveryLogo105X40PX } from '../icons/logo105X40';
 import { fetchSuggestions } from '~/services/fechProduct';
 import { IconsSearch } from '../icons/search';
-import { UserInformationContext } from '~/root';
+import { ProfileDropdown } from '../dropdown/header-profile-user/profile-dropdown';
+import { useNavigate } from '@builder.io/qwik-city';
 
 interface IState {
   searchInput: string;
@@ -21,8 +21,9 @@ interface IState {
   selectedValue: string;
 }
 
-export default component$(({ is }: any) => {
+export default component$(({ is, user }: any) => {
   useStylesScoped$(styles);
+  const navigate = useNavigate();
 
   const state = useStore<IState>({
     searchInput: '',
@@ -45,8 +46,6 @@ export default component$(({ is }: any) => {
       controller.abort();
     };
   });
-
-  const userStore = useContext(UserInformationContext);
 
   return (
     <header>
@@ -133,12 +132,19 @@ export default component$(({ is }: any) => {
               <div class="badget-circle">1</div>
             </a>
             <DouveryUser />
-            <div class="cuenta_botom">
-              <a class="title-desplg" href="/a/login">
-                <span class="wl-hi">¡Hola! </span>
-                <h4 class="pointer">{userStore.name}</h4>
-              </a>
-            </div>
+
+            {user ? (
+              <>
+                {' '}
+                <ProfileDropdown user={user} />
+              </>
+            ) : (
+              <button class="trl-drs" onClick$={() => navigate('/a/login')}>
+                <p class="ttle-draw">
+                  Hello, <strong> Iniciar Session</strong>
+                </p>{' '}
+              </button>
+            )}
           </div>
         </div>
       </div>

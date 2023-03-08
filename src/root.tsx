@@ -1,7 +1,6 @@
 import {
   component$,
   createContext,
-  useBrowserVisibleTask$,
   useContextProvider,
   useStore,
   useStyles$,
@@ -14,42 +13,19 @@ import {
 import { RouterHead } from './components/router-head/router-head';
 import { QwikPartytown } from './components/partytown/partytown';
 import globalStyles from './global.css?inline';
-import { getData } from './services/auth/token/token';
+import type { User } from './utils/types';
+import localForage from 'localforage';
 
-interface UserStore {
-  name: string;
-  isLogged: boolean;
-}
-export const UserInformationContext =
-  createContext<UserStore>('user-information');
+export const UserInformationContext = createContext<User>('user-information');
 
 export default component$(() => {
-  /**
-   * The root of a QwikCity site always start with the <QwikCityProvider> component,
-   * immediately followed by the document's <head> and <body>.
-   *
-   * Dont remove the `<head>` and `<body>` elements.
-   */
-
-  const userStore = useStore({
-    name: '',
-    isLogged: false,
-  });
   useStyles$(globalStyles);
-
-  useContextProvider(UserInformationContext, userStore);
-
-  useBrowserVisibleTask$(() => {
-    const date = setInterval(() => {
-      const { name } = getData();
-      userStore.name = name;
-    });
-    return () => {
-      clearInterval(date);
-      const { name } = getData();
-      userStore.name = name;
-    };
+  const userStore = useStore<{
+    user: User;
+  }>({
+    user: {} as User,
   });
+  useContextProvider(UserInformationContext, userStore.user);
 
   return (
     <QwikCityProvider>

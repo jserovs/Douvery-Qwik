@@ -382,6 +382,17 @@ input {
   z-index: 100;
 }
 
+.button-primary {
+  width: 100%;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 5px;
+  padding: 10px 30px;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
 
 .parp {
