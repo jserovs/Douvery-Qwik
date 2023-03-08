@@ -30,6 +30,7 @@ export default component$(() => {
   return (
     <>
       <main>
+         {loc.url.pathname}
         {loc.url.pathname !== '/a/login/' ? (
           <>
             <Header is={isOpen} user={userCtx} />
