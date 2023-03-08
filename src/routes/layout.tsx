@@ -30,14 +30,9 @@ export default component$(() => {
   return (
     <>
       <main>
-        {loc.url.pathname !== '/a/login/' ? (
-          <>
-            <Header is={isOpen} user={userCtx} />
-            <Nav />
-          </>
-        ) : (
-          <></>
-        )}
+        <Header is={isOpen} user={userCtx}/>
+        <Nav />
+
         <section>
           {isOpen.setIsOpen && (
             <>
@@ -51,13 +46,8 @@ export default component$(() => {
           <Slot />
         </section>
       </main>
-      {loc.url.pathname !== '/a/login/' ? (
-        <>
-          <Footer />
-        </>
-      ) : (
-        <></>
-      )}
+      <Footer />
     </>
+    
   );
 });
