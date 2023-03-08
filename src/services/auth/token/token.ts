@@ -1,10 +1,7 @@
 
+import { Base64 } from 'js-base64';
 
 
-
-
-
- 
 const OPTIONS_KEY = 'userInfo';
 
 export const isAppReady = () => {
@@ -13,7 +10,7 @@ export const isAppReady = () => {
 
  
 export function decodeToken(token:any, password:any, serverKey:any) {
-  const decodedToken = Buffer.from(token, 'base64').toString();
+  const decodedToken = Base64.decode(token);
   const userInfoString = decodedToken.slice(
     0,
     -(password.length + serverKey.length)
@@ -29,6 +26,7 @@ export function decodeToken(token:any, password:any, serverKey:any) {
   const userInfoObject = JSON.parse(userInfoString);
   return userInfoObject;
 }
+
 
 export const passwordKEY = 'password';
 export const serverKey = 'clave_secreta_del_servidor';
