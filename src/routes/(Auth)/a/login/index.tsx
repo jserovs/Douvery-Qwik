@@ -1,5 +1,6 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import { Form, globalAction$, z, zod$ } from '@builder.io/qwik-city';
+import type { DocumentHead } from '@builder.io/qwik-city';
 import type { RequestHandler } from '@builder.io/qwik-city';
 import styles from './index.css?inline';
 
@@ -142,3 +143,12 @@ export default component$(() => {
     </div>
   );
 });
+export const head: DocumentHead = {
+  title: 'Inicar Session en Douvery',
+  meta: [
+    {
+      name: 'description',
+      content: 'Inicar Session en Douvery',
+    },
+  ],
+};

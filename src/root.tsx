@@ -13,17 +13,17 @@ import {
 import { RouterHead } from './components/router-head/router-head';
 import { QwikPartytown } from './components/partytown/partytown';
 import globalStyles from './global.css?inline';
-import type { User } from './utils/types';
-import localForage from 'localforage';
+import type { UserACC } from './utils/types';
 
-export const UserInformationContext = createContext<User>('user-information');
+export const UserInformationContext =
+  createContext<UserACC>('user-information');
 
 export default component$(() => {
   useStyles$(globalStyles);
   const userStore = useStore<{
-    user: User;
+    user: UserACC;
   }>({
-    user: {} as User,
+    user: {} as UserACC,
   });
   useContextProvider(UserInformationContext, userStore.user);
 
