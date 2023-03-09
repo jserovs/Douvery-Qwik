@@ -13,7 +13,6 @@ import { DouveryLogo105X40PX } from '../icons/logo105X40';
 import { fetchSuggestions } from '~/services/fechProduct';
 import { IconsSearch } from '../icons/search';
 import { ProfileDropdown } from '../dropdown/header-profile-user/profile-dropdown';
-import { useNavigate } from '@builder.io/qwik-city';
 
 interface IState {
   searchInput: string;
@@ -23,7 +22,6 @@ interface IState {
 
 export default component$(({ is, user }: any) => {
   useStylesScoped$(styles);
-  const navigate = useNavigate();
 
   const state = useStore<IState>({
     searchInput: '',
@@ -139,11 +137,18 @@ export default component$(({ is, user }: any) => {
                 <ProfileDropdown user={user} />
               </>
             ) : (
-              <button class="trl-drs" onClick$={() => navigate('/a/login')}>
-                <p class="ttle-draw">
-                  Hello, <strong> Iniciar Session</strong>
-                </p>{' '}
-              </button>
+              <>
+                {' '}
+                <div class="ctr-session-none">
+                  {' '}
+                  <a class="trl-drs" href="/a/login">
+                    <p class="ttle-draw">
+                      <strong class="text-hello"> Hello,</strong>{' '}
+                      <strong> Iniciar Session</strong>
+                    </p>{' '}
+                  </a>
+                </div>
+              </>
             )}
           </div>
         </div>

@@ -352,20 +352,40 @@ select,
   left: 12px;
 }
 
+.ctr-session-none {
+  position: relative;
+  right: 10px;
+}
 
-
-
-.ttle-draw {
-  display: grid;
-  height: 100%;
-  text-align: start;
-  font-size: 14px;
-  padding-left: 5px;
-  color: var(--color-white);
+.trl-drs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 0px 0px 0px;
 
 }
 
+.ttle-draw {
+  position: relative;
+  display: grid;
+
+  width: 105px;
+  height: 100%;
+  text-align: start;
+  font-size: 14px;
+  color: var(--color-white);
+  padding-left: 5px;
+}
+
+
+
+.ttle-draw .text-hello {
+  font-weight: 400;
+}
+
 .ttle-draw strong {
+
+  text-align: start;
   font-weight: 600;
   color: var(--color-white);
 }
@@ -374,17 +394,9 @@ select,
   text-decoration: underline;
 }
 
-.ttle-draw {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  width: 105px;
-  height: 100%;
-  text-align: start;
-  font-size: 14px;
-  padding-left: 5px;
-  color: var(--color-white);
-}
+
+
+
 
 .lISTA_CJAS-DESPLEGABLE h2 {
   font-family: 'Open Sans', sans-serif;
@@ -537,6 +549,25 @@ select,
   .cuenta_botom {
     display: none;
   }
+
+
+
+  .ttle-draw {
+    position: relative;
+    width: 100%;
+    gap: 5px;
+  }
+
+  .ctr-session-none {
+    position: relative;
+    right: 0px;
+  }
+
+  .main a {
+    margin: 5px 10px 0px 0px;
+  }
+
+
 }
 
 @media only screen and (max-width: 1025px) {
@@ -575,6 +606,8 @@ select,
     height: 7rem;
     padding: 0px;
   }
+
+
 
   .select {
     display: none;
@@ -638,6 +671,12 @@ select,
 
   .lis-sgrs {
     font-size: small;
+
+  }
+
+  .ttle-draw {
+    display: flex;
+
 
   }
 }
