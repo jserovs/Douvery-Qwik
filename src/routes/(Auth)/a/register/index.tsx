@@ -124,7 +124,7 @@ export default component$(() => {
         <Form action={action}>
           <div class="FirstAndLastName">
             <div class="div-name">
-              <label for="name">Nombre</label>
+              <label for="name">Nombre:</label>
               <input
                 type="text"
                 id="name"
@@ -137,7 +137,7 @@ export default component$(() => {
               )}
             </div>
             <div class="div-lastName">
-              <label for="name">Apellido</label>
+              <label for="name">Apellido:</label>
               <input
                 type="text"
                 id="lastName"

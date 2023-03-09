@@ -114,10 +114,11 @@ export default component$(() => {
                   ? 'Loading...'
                   : action.value?.message
                   ? 'Error'
-                  : 'Log in'}
+                  : 'Recover'}
               </span>
             </button>
           </div>
+
           <div class="form-group need-account">
             ¿No tiene una cuenta?
             <a href="/a/register" class="forgot-new-account-link">

@@ -144,8 +144,13 @@ input[type="password"] {
 
 @media only screen and (max-width: 885px) {
     .ctr-login-douvery {
+        width: 350px;
         margin-top: 50px;
         padding: 0px 10px;
+    }
+
+    .login-container {
+        width: 350px;
     }
 
     .iteam-douvery {
