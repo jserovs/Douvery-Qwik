@@ -138,6 +138,15 @@ input[type="password"] {
         padding: 0px 10px;
     }
 
+    .ctr-login-douvery {
+        width: 350px;
+
+    }
+
+    .login-container {
+        width: 350px;
+    }
+
     .iteam-douvery {
         position: relative;
         top: 5px;
