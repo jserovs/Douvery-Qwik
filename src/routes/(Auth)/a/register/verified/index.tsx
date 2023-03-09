@@ -39,7 +39,7 @@ export const useLogin = globalAction$(
 
     if (!response.ok) {
       return fail(401, {
-        message: 'Email o password no válidos',
+        message: 'Invalid email or password',
       });
     }
 
@@ -55,9 +55,16 @@ export const useLogin = globalAction$(
       .email({
         message: 'Please enter a valid email',
       }),
-    password: z.string({
-      required_error: 'Password is required',
-    }),
+    password: z
+      .string({
+        required_error: 'Password is required',
+      })
+      .min(6, {
+        message: 'Password must be at least 6 characters',
+      })
+      .max(25, {
+        message: 'Password must be less than 25 characters',
+      }),
   })
 );
 
@@ -96,33 +103,10 @@ export default component$(() => {
               <span class="error">{action.value?.fieldErrors?.email}</span>
             )}
           </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required />
-            {action.value?.fieldErrors?.password && (
-              <span class="error">{action.value?.fieldErrors?.password}</span>
-            )}
-          </div>
 
           {action.value?.message && (
-            <div>
-              {' '}
-              <br />
-              {action.isRunning ? (
-                <span class="loa-s">Loading...</span>
-              ) : (
-                <span class="error ">{action.value?.message}</span>
-              )}
-              <div class="form-group need-account">
-                ¿Olvidaste la constraseña?
-                <a href="/a/recover-account" class="forgot-new-account-link">
-                  Recuperar
-                </a>
-              </div>{' '}
-              <br />
-            </div>
+            <span class="error">{action.value?.message}</span>
           )}
-
           <div class="form-group">
             <button class={'login-button'}>
               <span class="button-text">
