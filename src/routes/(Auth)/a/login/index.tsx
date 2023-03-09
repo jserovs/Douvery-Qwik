@@ -50,7 +50,7 @@ export const useLogin = globalAction$(
   zod$({
     email: z
       .string({
-        required_error: 'Email is required',
+        required_error: 'Email requerido',
       })
       .email({
         message: 'Please enter a valid email',

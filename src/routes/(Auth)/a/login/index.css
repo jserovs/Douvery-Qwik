@@ -86,7 +86,7 @@ input[type="password"] {
     font-size: 16px;
     color: #333;
     background-color: #f5f5f5;
-
+    border: 1px solid #66666611;
     border-radius: 5px;
     box-sizing: border-box;
 }
@@ -130,4 +130,27 @@ input[type="password"] {
 .button-error {
     transition: all 0.5s ease;
     transform: translateX(4px);
+}
+
+@media only screen and (max-width: 885px) {
+    .ctr-login-douvery {
+        margin-top: 50px;
+        padding: 0px 10px;
+    }
+
+    .iteam-douvery {
+        position: relative;
+        top: 5px;
+    }
+
+    .iteam-douvery svg {
+        width: 60px;
+        height: 60px;
+    }
+
+    .iteam-douvery span {
+        position: relative;
+        bottom: 4px;
+        font-size: 25px;
+    }
 }

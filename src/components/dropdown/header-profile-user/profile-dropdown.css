@@ -7,8 +7,11 @@
 }
 
 
+.trl-drs .lite-text {
+    font-weight: 400;
+}
 
-.ttle-draw {
+.trl-drs .ttle-draw {
     display: grid;
     justify-content: center;
     align-items: center;
@@ -116,12 +119,25 @@
 }
 
 @media only screen and (max-width: 885px) {
+    .trl-drs {
+        display: flex;
+
+        width: 100px;
+
+    }
+
+    .trl-drs .ttle-draw {
+        display: flex;
+        gap: 5px;
+    }
+
+
     .tolst-tip {
         left: calc(80% - 7px);
     }
 
     .dropdown-menu {
-        left: 45%;
-        transform: translateX(-45%);
+        left: 5%;
+        transform: translateX(-5%);
     }
 }

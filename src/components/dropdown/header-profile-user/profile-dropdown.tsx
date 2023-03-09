@@ -19,7 +19,8 @@ export const ProfileDropdown = component$(({ user }: any) => {
           onClick$={() => (isOpen.setIsOpen = !isOpen.setIsOpen)}
         >
           <p class="ttle-draw">
-            Hello, <strong>{user.name}!</strong>
+            <strong class="lite-text">Hello, </strong>{' '}
+            <strong> {user.name}!</strong>
           </p>{' '}
         </button>
         <div class="crt-drpd">
