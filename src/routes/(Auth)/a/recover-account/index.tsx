@@ -9,7 +9,9 @@ import {
   setCookiesData,
 } from '~/services/auth/login/auth-login';
 import { urlServerNode } from '~/services/fechProduct';
-import { DouveryLogo40x40 } from '~/components/icons/logo40x40';
+
+import { TermsConditions } from '~/components/(Auth)/Terms&Conditions/terms-Conditions';
+import { DouveryAuthLogo } from '~/components/(Auth)/DouveryAuthLogo/douvery-auth-logo';
 
 export interface Store {
   email: string;
@@ -76,19 +78,7 @@ export default component$(() => {
   return (
     <div class="ctr-login">
       {' '}
-      <div class="md:max-w-md lg:col-span-2 ctr-login-douvery">
-        <a
-          href="/"
-          aria-label="Go home"
-          title="Douvery"
-          class="inline-flex items-center iteam-douvery"
-        >
-          <DouveryLogo40x40 color="var(--color-primary)" />
-          <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-            Douvery
-          </span>
-        </a>
-      </div>
+      <DouveryAuthLogo />
       <div class="login-container">
         <div class="header-login">
           <div class="title-login">Recupera tu cuenta</div>{' '}
@@ -96,6 +86,10 @@ export default component$(() => {
         </div>
 
         <Form action={action}>
+          <br />
+          <div class="sub-title-login">
+            Escribe el correo electrónico asociado a tu cuenta de Douvery.
+          </div>
           <div class="form-group">
             <label for="email">Email</label>
             <input type="email" id="email" name="email" required />
@@ -103,7 +97,6 @@ export default component$(() => {
               <span class="error">{action.value?.fieldErrors?.email}</span>
             )}
           </div>
-
           {action.value?.message && (
             <span class="error">{action.value?.message}</span>
           )}
@@ -118,7 +111,6 @@ export default component$(() => {
               </span>
             </button>
           </div>
-
           <div class="form-group need-account">
             ¿No tiene una cuenta?
             <a href="/a/register" class="forgot-new-account-link">
@@ -126,12 +118,7 @@ export default component$(() => {
             </a>
           </div>
         </Form>
-        <div class="terms-and-conditions">
-          <p>
-            Al iniciar sesión, acepta nuestros{' '}
-            <a href="#">Términos y condiciones</a>.
-          </p>
-        </div>
+        <TermsConditions />
       </div>
     </div>
   );

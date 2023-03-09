@@ -7,8 +7,10 @@ import {
 } from '~/services/auth/login/auth-login';
 
 import styles from './index.css?inline';
-import { DouveryLogo40x40 } from '~/components/icons/logo40x40';
+
 import { urlServerNode } from '~/services/fechProduct';
+import { TermsConditions } from '~/components/(Auth)/Terms&Conditions/terms-Conditions';
+import { DouveryAuthLogo } from '~/components/(Auth)/DouveryAuthLogo/douvery-auth-logo';
 
 export const onGet: RequestHandler = async ({ cookie, redirect }) => {
   const acccessToken = cookie.get(DATA_ACCESS_COOKIE_NAME)?.value;
@@ -102,19 +104,7 @@ export default component$(() => {
   return (
     <div class="ctr-login">
       {' '}
-      <div class="md:max-w-md lg:col-span-2 ctr-login-douvery">
-        <a
-          href="/"
-          aria-label="Go home"
-          title="Douvery"
-          class="inline-flex items-center iteam-douvery"
-        >
-          <DouveryLogo40x40 color="var(--color-primary)" />
-          <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-            Douvery
-          </span>
-        </a>
-      </div>
+      <DouveryAuthLogo />
       <div class="login-container">
         <div class="header-login">
           <div class="title-login">Crea tu cuenta</div>{' '}
@@ -198,12 +188,7 @@ export default component$(() => {
             </a>
           </div>
         </Form>
-        <div class="terms-and-conditions">
-          <p>
-            Al Registrarte, acepta nuestros{' '}
-            <a href="#">Términos y condiciones</a>.
-          </p>
-        </div>
+        <TermsConditions />
       </div>
     </div>
   );
