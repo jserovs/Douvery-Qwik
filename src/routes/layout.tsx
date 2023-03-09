@@ -30,8 +30,9 @@ export default component$(() => {
   return (
     <>
       <main>
-      
-        {loc.url.pathname !== '/a/login/' ? (
+        {loc.url.pathname !== '/a/login/' &&
+        loc.url.pathname !== '/a/register/' &&
+        loc.url.pathname !== '/a/recover-account/' ? (
           <>
             <Header is={isOpen} user={userCtx} />
             <Nav />
@@ -52,7 +53,9 @@ export default component$(() => {
           <Slot />
         </section>
       </main>
-      {loc.url.pathname !== '/a/login/' ? (
+      {loc.url.pathname !== '/a/login/' &&
+      loc.url.pathname !== '/a/register/' &&
+      loc.url.pathname !== '/a/recover-account/' ? (
         <>
           <Footer />
         </>
