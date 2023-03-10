@@ -20,7 +20,7 @@ export const ProfileDropdown = component$(({ user }: any) => {
         >
           <p class="ttle-draw">
             <strong class="lite-text">Hello, </strong>{' '}
-            <strong> {user.name}!</strong>
+            <strong> {user.name}</strong>
           </p>{' '}
         </button>
         <div class="crt-drpd">

@@ -7,8 +7,35 @@ const OPTIONS_KEY = 'userInfo';
 export const isAppReady = () => {
   return null !== localStorage.getItem(OPTIONS_KEY);
 };
+export function generateToken(userInfo:any, password:any, serverKey:any) {
+  const userInfoString = JSON.stringify(userInfo);
+  const userInfoStringWithPasswordAndKey =
+    userInfoString + password + serverKey;
+  const encodedUserInfo = Buffer.from(
+    userInfoStringWithPasswordAndKey
+  ).toString('base64');
+  return encodedUserInfo;
+}
 
- 
+export function divideAndMultiplyToken(token:any, password:any, serverKey:any) {
+  const decodedToken = Buffer.from(token, 'base64').toString();
+  const userInfoString = decodedToken.slice(
+    0,
+    -(password.length + serverKey.length)
+  );
+  const providedPassword = decodedToken.slice(
+    -(password.length + serverKey.length),
+    -serverKey.length
+  );
+  const providedServerKey = decodedToken.slice(-serverKey.length);
+  if (providedPassword !== password || providedServerKey !== serverKey) {
+    throw new Error('Contraseña o clave del servidor incorrectas');
+  }
+  const userInfoObject = JSON.parse(userInfoString);
+
+  const newToken = generateToken(userInfoObject, password, serverKey);
+  return newToken;
+}
 export function decodeToken(token:any, password:any, serverKey:any) {
   const decodedToken = Base64.decode(token);
   const userInfoString = decodedToken.slice(

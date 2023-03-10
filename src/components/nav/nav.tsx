@@ -3,14 +3,14 @@ import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './nav.css?inline';
 import { ModalButtonCou } from '../modal/modal';
 
-export default component$(() => {
+export default component$(({ zipCode }: any) => {
   useStylesScoped$(styles);
 
   return (
     <nav>
       <ul class="container-cajas-nav">
         <li class="cajas-nav">
-          <ModalButtonCou />
+          <ModalButtonCou zipCode={zipCode} />
         </li>
         <li class="cajas-nav">
           <a href="/">Mobiles</a>
