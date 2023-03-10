@@ -33,6 +33,7 @@ export const useGetCurrentZipCode = routeLoader$<ZipCode | null>(
     return null;
   }
 );
+
 export default component$(() => {
   const isOpen = useStore({ setIsOpen: false });
   const userCtx = useGetCurrentUser().value;
