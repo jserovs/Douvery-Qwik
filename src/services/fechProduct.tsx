@@ -122,7 +122,7 @@ export async function fetchCode(
 ): Promise<any> {
   const response = await fetch(
     `
-  http://localhost:8339/geocode?q=${searchInput}`,
+ ${urlServerNode}/geocode?q=${searchInput}`,
     {
       signal: controller?.signal,
     }
