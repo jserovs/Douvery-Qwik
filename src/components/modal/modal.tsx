@@ -69,24 +69,7 @@ export const ModalButtonCou = component$(({ zipCode }: any) => {
       controller.abort();
     };
   });
-  // const state = useStore<{
-  //   code: CodePostalData;
-  // }>(
-  //   {
-  //     code: {} as CodePostalData,
-  //   },
-  //   { recursive: true }
-  // );
 
-  // const codeResource = useResource$<void>(async () => {
-  //   const { codepostal } = cleanUpParamsCodePostal({
-  //     code: '10001',
-  //   });
-
-  //   const code = await fetchCodePostal(codepostal);
-
-  //   state.code = code;
-  // });
   const action = useZipCode();
 
   return (
@@ -111,62 +94,64 @@ export const ModalButtonCou = component$(({ zipCode }: any) => {
               Cerrar modal
             </button>
             <p>Contenido del modal</p>
-            <input
-              type="text"
-              class="searchTerm"
-              placeholder="Busca tus futuros productos aquí ..."
-              onKeyUp$={(ev) =>
-                (state.searchInput = (ev.target as HTMLInputElement).value)
-              }
-            />
-            <div
-              class="butto"
-              onClick$={(ev) =>
-                (state.searchInput = (ev.target as HTMLInputElement).value)
-              }
-            >
-              <DouveryGlobalSearch size="18" />
-            </div>
-
-            <>
-              <div class="suggestions">
-                {state.searchResults?.length ? (
-                  <ul>
-                    {state.searchResults.map((suggestion) => {
-                      return (
-                        <div class="crrtrSrers">
-                          {' '}
-                          <Form action={action}>
-                            {' '}
-                            <li class="lis-sgrs">
-                              <input
-                                type="text"
-                                id="code"
-                                name="code"
-                                value={suggestion}
-                              ></input>
-
-                              {action.value?.fieldErrors?.code && (
-                                <span class="error">
-                                  {action.value?.fieldErrors?.code}
-                                </span>
-                              )}
-                            </li>
-                            <button class={'login-button'}>
-                              <span class="button-text">'Ir'</span>
-                            </button>
-                          </Form>
-                        </div>
-                      );
-                    })}
-                  </ul>
-                ) : (
-                  <></>
-                )}
+            <div class="apleada">
+              <input
+                type="text"
+                class="searchTerm"
+                placeholder="Busca tus futuros productos aquí ..."
+                onKeyUp$={(ev) =>
+                  (state.searchInput = (ev.target as HTMLInputElement).value)
+                }
+              />
+              <div
+                class="butto"
+                onClick$={(ev) =>
+                  (state.searchInput = (ev.target as HTMLInputElement).value)
+                }
+              >
+                <DouveryGlobalSearch size="18" />
               </div>
 
-              <>{state.selectedValue}</>
-            </>
+              <>
+                <div class="suggestions">
+                  {state.searchResults?.length ? (
+                    <ul>
+                      {state.searchResults.map((suggestion) => {
+                        return (
+                          <div class="crrtrSrers">
+                            {' '}
+                            <Form action={action}>
+                              {' '}
+                              <li class="lis-sgrs">
+                                <input
+                                  type="text"
+                                  id="code"
+                                  name="code"
+                                  value={suggestion}
+                                ></input>
+
+                                {action.value?.fieldErrors?.code && (
+                                  <span class="error">
+                                    {action.value?.fieldErrors?.code}
+                                  </span>
+                                )}
+                              </li>
+                              <button class={'-button'}>
+                                <span class="button-text">Agregar</span>
+                              </button>
+                            </Form>
+                          </div>
+                        );
+                      })}
+                    </ul>
+                  ) : (
+                    <></>
+                  )}
+                </div>
+
+                <>{state.selectedValue}</>
+              </>
+            </div>
 
             {/* <div class="apleada">
               {' '}
