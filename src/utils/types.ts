@@ -23,6 +23,11 @@ export type Product = {
 	ratings:ratings[];
 };
 
+export type ZipCode = {
+	info: string;
+	
+};
+
 export type ratings = {
 	userId: string;
 	userName:string;

@@ -9,8 +9,9 @@ import {
   passwordKEY,
   serverKey,
 } from '~/services/auth/token/token';
-import type { UserACC } from '~/utils/types';
+import type { UserACC, ZipCode } from '~/utils/types';
 import { DATA_ACCESS_COOKIE_NAME } from '~/services/auth/login/auth-login';
+import { DATA_ZIPCODE_COOKIE_NAME } from '~/services/auth/code/zipCode';
 
 export const useGetCurrentUser = routeLoader$<UserACC | null>(
   async ({ cookie }) => {
@@ -22,9 +23,20 @@ export const useGetCurrentUser = routeLoader$<UserACC | null>(
     return null;
   }
 );
+export const useGetCurrentZipCode = routeLoader$<ZipCode | null>(
+  async ({ cookie }: any) => {
+    const accessCookie = cookie.get(DATA_ZIPCODE_COOKIE_NAME)?.value;
+
+    if (accessCookie) {
+      return decodeToken(accessCookie, passwordKEY, serverKey);
+    }
+    return null;
+  }
+);
 export default component$(() => {
   const isOpen = useStore({ setIsOpen: false });
   const userCtx = useGetCurrentUser().value;
+  const getZipCode = useGetCurrentZipCode().value;
   const loc = useLocation();
 
   return (
@@ -35,7 +47,7 @@ export default component$(() => {
         loc.url.pathname !== '/a/recover-account/' ? (
           <>
             <Header is={isOpen} user={userCtx} />
-            <Nav />
+            <Nav zipCode={getZipCode} />
           </>
         ) : (
           <></>

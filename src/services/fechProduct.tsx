@@ -116,14 +116,34 @@ export async function fetchSuggestions(
 
   return results;
 }
+export async function fetchCode(
+  searchInput: string,
+  controller?: AbortController
+): Promise<any> {
+  const response = await fetch(
+    `
+  http://localhost:8339/geocode?q=${searchInput}`,
+    {
+      signal: controller?.signal,
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch product');
+  }
+  const results = await response.json();
+
+  return results;
+}
 
 export async function fetchCodePostal(
   codepostal: string,
   controller?: AbortController
 ): Promise<any> {
+  console.log(codepostal);
   const response = await fetch(
     `
-    http://localhost:7699/geocode?code=${codepostal}`,
+   ${urlServerNode}/q?code=${codepostal}`,
     {
       signal: controller?.signal,
     }

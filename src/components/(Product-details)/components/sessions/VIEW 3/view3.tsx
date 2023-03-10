@@ -56,11 +56,22 @@ export const View3 = component$(({ product }: any) => {
           {' '}
           <div class="content-carousel">
             <p class="ps-sr1">Productos similares</p>
-            {state.productResults ? <>HSAHDA</> : <>oK</>}{' '}
-            <Carousel1
-              styleCard={randomNumber}
-              product={state.productResults}
-            />
+            {state.productResults ? (
+              <>
+                {' '}
+                <Carousel1
+                  styleCard={randomNumber}
+                  product={state.productResults}
+                />
+              </>
+            ) : (
+              <>oK</>
+            )}{' '}
+            {state.productResults.length === 0 ? (
+              <p class="ps-sr1">No hay productos similares</p>
+            ) : (
+              <></>
+            )}{' '}
           </div>
         </>
       )}{' '}

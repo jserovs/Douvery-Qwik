@@ -1,11 +1,15 @@
 .trl-drs {
+
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 
 
 }
 
+.trl-drs {
+    width: 105px;
+}
 
 .trl-drs .lite-text {
     font-weight: 400;
@@ -13,7 +17,8 @@
 
 .trl-drs .ttle-draw {
     display: grid;
-    justify-content: center;
+    justify-content: flex-start;
+    ;
     align-items: center;
 
     height: 100%;
@@ -25,7 +30,10 @@
 }
 
 .ttle-draw strong {
-
+    width: 105px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     font-weight: 600;
     color: var(--color-white);
 }

@@ -1,7 +1,6 @@
 import type { Cookie } from '@builder.io/qwik-city';
 
 export const DATA_ACCESS_COOKIE_NAME = 'SESSION_D';
-export const DATA_REFRESH_COOKIE_NAME = 'refreshToken';
 
 // export const setCookiesData = (name: string, dataAccessCookies: string) => {
 //   const cookies = new Cookies();
@@ -53,29 +52,4 @@ export const authorizedFetch = async (url: string, options = {}) => {
   }
 
   return response;
-};
-
-export const refreshTokens = async (
-  refreshToken: string
-): Promise<{ accessToken: string; refreshToken: string }> => {
-  const res = await fetch(`http://localhost:7629/api/refresh`, {
-    method: 'POST',
-    credentials: 'include',
-    headers: {
-      cookie: `${DATA_REFRESH_COOKIE_NAME}=${refreshToken}`,
-    },
-  });
-
-  if (res.ok) {
-    const { accessToken, refreshToken } = await res.json();
-    return {
-      accessToken,
-      refreshToken,
-    };
-  }
-
-  return {
-    accessToken: '',
-    refreshToken: '',
-  };
 };
