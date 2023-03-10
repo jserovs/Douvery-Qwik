@@ -11,14 +11,12 @@ export function generateToken(userInfo:any, password:any, serverKey:any) {
   const userInfoString = JSON.stringify(userInfo);
   const userInfoStringWithPasswordAndKey =
     userInfoString + password + serverKey;
-  const encodedUserInfo = Buffer.from(
-    userInfoStringWithPasswordAndKey
-  ).toString('base64');
+  const encodedUserInfo = Base64.encode(userInfoStringWithPasswordAndKey);
   return encodedUserInfo;
 }
 
 export function divideAndMultiplyToken(token:any, password:any, serverKey:any) {
-  const decodedToken = Buffer.from(token, 'base64').toString();
+ const decodedToken = Base64.decode(token).toString();
   const userInfoString = decodedToken.slice(
     0,
     -(password.length + serverKey.length)
@@ -37,7 +35,7 @@ export function divideAndMultiplyToken(token:any, password:any, serverKey:any) {
   return newToken;
 }
 export function decodeToken(token:any, password:any, serverKey:any) {
-  const decodedToken = Base64.decode(token);
+ const decodedToken = Base64.decode(token).toString();
   const userInfoString = decodedToken.slice(
     0,
     -(password.length + serverKey.length)
