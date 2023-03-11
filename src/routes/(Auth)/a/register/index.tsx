@@ -4,7 +4,7 @@ import type { RequestHandler } from '@builder.io/qwik-city';
 import {
   DATA_ACCESS_COOKIE_NAME,
   setCookiesData,
-} from '~/services/auth/login/auth-login';
+} from '~/services/auth/login/login';
 
 import styles from './index.css?inline';
 
