@@ -7,7 +7,7 @@ import styles from './index.css?inline';
 import {
   DATA_ACCESS_COOKIE_NAME,
   setCookiesData,
-} from '~/services/auth/login/auth-login';
+} from '~/services/auth/login/login';
 import { urlServerNode } from '~/services/fechProduct';
 
 import { TermsConditions } from '~/components/(Auth)/Terms&Conditions/terms-Conditions';
