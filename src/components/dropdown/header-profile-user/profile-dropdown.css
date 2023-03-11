@@ -9,6 +9,7 @@
 
 .trl-drs {
     width: 105px;
+
 }
 
 .trl-drs .lite-text {
@@ -130,13 +131,26 @@
     .trl-drs {
         display: flex;
 
-        width: 100px;
+        width: 130px;
+        margin-right: 10px;
+        position: relative;
+        top: 5px;
+    }
 
+
+    .ttle-draw strong {
+        width: 85px;
+        margin-right: 10px;
     }
 
     .trl-drs .ttle-draw {
-        display: flex;
+        height: 100%;
+        display: grid;
+        justify-content: start;
+        align-items: end;
+        grid-template-columns: 40px 60px;
         gap: 5px;
+
     }
 
 

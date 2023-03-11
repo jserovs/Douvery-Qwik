@@ -560,7 +560,8 @@ select,
 
   .ctr-session-none {
     position: relative;
-    right: 0px;
+    left: 10px;
+
   }
 
   .main a {
@@ -640,7 +641,7 @@ select,
     position: absolute;
     display: flex;
     flex-direction: row-reverse;
-    gap: 10px;
+    gap: 15px;
     top: 15px;
     margin: 5px 8px 0px 0px;
     right: 0;
