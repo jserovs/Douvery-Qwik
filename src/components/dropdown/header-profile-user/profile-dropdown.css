@@ -132,23 +132,23 @@
         display: flex;
 
         width: 130px;
-        margin-right: 10px;
-        position: relative;
-        top: 5px;
+        margin-right: 15px;
+
     }
 
 
     .ttle-draw strong {
-        width: 85px;
+        max-width: 85px;
         margin-right: 10px;
     }
 
     .trl-drs .ttle-draw {
         height: 100%;
         display: grid;
-        justify-content: start;
+        justify-content:
+            center;
         align-items: end;
-        grid-template-columns: 40px 60px;
+        grid-template-columns: 40px auto;
         gap: 5px;
 
     }
