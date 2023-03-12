@@ -14,15 +14,18 @@ export const ProfileDropdown = component$(({ user }: any) => {
         ></div>
       )}
       <div>
-        <button
-          class="trl-drs"
-          onClick$={() => (isOpen.setIsOpen = !isOpen.setIsOpen)}
-        >
-          <p class="ttle-draw">
-            <strong class="lite-text">Hello, </strong>{' '}
-            <strong> {user.name}</strong>
-          </p>{' '}
-        </button>
+        <div class="ctr-session-none">
+          {' '}
+          <button
+            class="trl-drs"
+            onClick$={() => (isOpen.setIsOpen = !isOpen.setIsOpen)}
+          >
+            <p class="ttle-draw">
+              <strong class="text-hello"> Hello,</strong>{' '}
+              <strong>{user.name}</strong>
+            </p>{' '}
+          </button>
+        </div>{' '}
         <div class="crt-drpd">
           <ul class={`dropdown-menu ${isOpen.setIsOpen ? 'show' : ''}`}>
             <a class="dropdown-item" href="#">

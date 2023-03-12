@@ -1,42 +1,46 @@
-.trl-drs {
+.ctr-session-none {
+    position: relative;
 
+}
+
+.trl-drs {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-
-
-}
-
-.trl-drs {
-    width: 105px;
+    justify-content: center;
+    margin: 0px 0px 0px 0px;
 
 }
 
-.trl-drs .lite-text {
-    font-weight: 400;
-}
-
-.trl-drs .ttle-draw {
+.ttle-draw {
+    position: relative;
     display: grid;
-    justify-content: flex-start;
-    ;
-    align-items: center;
 
+    max-width: 155px;
     height: 100%;
     text-align: start;
     font-size: 14px;
-    padding-left: 5px;
     color: var(--color-white);
-
-}
-
-.ttle-draw strong {
-    width: 105px;
+    padding-left: 5px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+
+
+.ttle-draw .text-hello {
+    font-weight: 400;
+}
+
+.ttle-draw strong {
+
+    text-align: start;
     font-weight: 600;
     color: var(--color-white);
+}
+
+.trl-drs strong:hover {
+    text-decoration: underline;
 }
 
 .dropdown-menu {
@@ -127,32 +131,35 @@
     bottom: 100%;
 }
 
+@media only screen and (max-width: 982px) {
+
+    .ttle-draw {
+        position: relative;
+        width: 100%;
+        gap: 5px;
+    }
+
+    .ctr-session-none {
+        position: relative;
+        left: 10px;
+
+    }
+
+    .main a {
+        margin: 5px 10px 0px 0px;
+    }
+
+
+}
+
 @media only screen and (max-width: 885px) {
-    .trl-drs {
+
+
+    .ttle-draw {
         display: flex;
 
-        width: 130px;
-        margin-right: 15px;
 
     }
-
-
-    .ttle-draw strong {
-        max-width: 85px;
-        margin-right: 10px;
-    }
-
-    .trl-drs .ttle-draw {
-        height: 100%;
-        display: grid;
-        justify-content:
-            center;
-        align-items: end;
-        grid-template-columns: 40px auto;
-        gap: 5px;
-
-    }
-
 
     .tolst-tip {
         left: calc(80% - 7px);
