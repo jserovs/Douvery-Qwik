@@ -9,7 +9,13 @@ import {
 import styles from './modal.css?inline';
 import { DouveryGlobalSearch } from '../icons/global-search';
 import { fetchCode } from '~/services/fechProduct';
-import { Form, globalAction$, z, zod$ } from '@builder.io/qwik-city';
+import {
+  Form,
+  globalAction$,
+  useNavigate,
+  z,
+  zod$,
+} from '@builder.io/qwik-city';
 import { setCookiesDataZIPCODE } from '~/services/auth/code/zipCode';
 
 import {
@@ -73,7 +79,7 @@ export const ModalButtonCou = component$(({ zipCode, user }: any) => {
   });
 
   const action = useZipCode();
-
+  const nav = useNavigate();
   return (
     <div class="crt-button-modal-dr">
       <button
@@ -97,11 +103,17 @@ export const ModalButtonCou = component$(({ zipCode, user }: any) => {
                 <p>Indica dónde te encuentras</p>
               </div>{' '}
               {user ? (
-                <>
+                <div class="true-loggin">
                   <p>
                     Hello, <strong>{user.name}</strong>
                   </p>{' '}
-                </>
+                  <div class="ctr-opa">|</div>
+                  <div class="form-group need-account">
+                    <a href="/u/" class="forgot-new-account-link">
+                      Editar dirección
+                    </a>
+                  </div>
+                </div>
               ) : (
                 <div class="ctr-button-login-modal">
                   <div class="clg-pesorso-experi">
@@ -134,8 +146,10 @@ export const ModalButtonCou = component$(({ zipCode, user }: any) => {
                         />
                       </svg>
                     </div>
-                    <button>Iniciar Session</button>{' '}
                   </div>
+                  <button onClick$={() => nav('/a/login/')}>
+                    Iniciar Session
+                  </button>{' '}
                 </div>
               )}
               <div class="card">
