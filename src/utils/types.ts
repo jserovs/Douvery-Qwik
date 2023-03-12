@@ -95,3 +95,10 @@ export type decodedUserInfos = {
 	name: string;
 	
 };
+
+
+export type Search = {
+	totalProduct: number;
+	product: Product[];
+	
+};

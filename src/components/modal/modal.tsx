@@ -8,7 +8,7 @@ import {
 } from '@builder.io/qwik';
 import styles from './modal.css?inline';
 import { DouveryGlobalSearch } from '../icons/global-search';
-import { fetchCode } from '~/services/fechProduct';
+import { fetchCode, fetchIpInfo } from '~/services/fechProduct';
 import {
   Form,
   globalAction$,
@@ -16,7 +16,10 @@ import {
   z,
   zod$,
 } from '@builder.io/qwik-city';
-import { setCookiesDataZIPCODE } from '~/services/auth/code/zipCode';
+import {
+  setCookiesDataCountry,
+  setCookiesDataZIPCODE,
+} from '~/services/auth/code/zipCode';
 
 import {
   divideAndMultiplyToken,
@@ -37,6 +40,10 @@ export const useZipCode = globalAction$(
 
     setCookiesDataZIPCODE(nso, cookie);
 
+    const token2 = generateToken(await fetchIpInfo(), passwordKEY, serverKey);
+    const nso2 = divideAndMultiplyToken(token2, passwordKEY, serverKey);
+
+    setCookiesDataCountry(nso2, cookie);
     headers.set('location', '/');
   },
   zod$({
