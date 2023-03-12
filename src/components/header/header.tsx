@@ -13,6 +13,7 @@ import { DouveryLogo105X40PX } from '../icons/logo105X40';
 import { fetchSuggestions } from '~/services/fechProduct';
 import { IconsSearch } from '../icons/search';
 import { ProfileDropdown } from '../dropdown/header-profile-user/profile-dropdown';
+import { useNavigate } from '@builder.io/qwik-city';
 
 interface IState {
   searchInput: string;
@@ -20,14 +21,16 @@ interface IState {
   selectedValue: string;
 }
 
-export default component$(({ is, user }: any) => {
+export default component$(({ is, user, zipCode, userCoun }: any) => {
   useStylesScoped$(styles);
-
+  const nav = useNavigate();
   const state = useStore<IState>({
     searchInput: '',
     searchResults: [],
     selectedValue: '',
   });
+  zipCode;
+  userCoun;
 
   useTask$(async ({ track }) => {
     const searchInput = track(() => state.searchInput);
@@ -56,7 +59,7 @@ export default component$(({ is, user }: any) => {
 
         <div class="cajas">
           <div class="search">
-            <form class="searchTerm">
+            <div class="searchTerm">
               <div class="select container">
                 <select>
                   <option class="texts-opts-crt-gg" value="1">
@@ -70,15 +73,24 @@ export default component$(({ is, user }: any) => {
                   </option>
                 </select>
               </div>
+
               <input
                 type="text"
                 class="searchTerm"
-                placeholder="Busca tus futuros productos aquí ..."
+                placeholder="Busca tu producto"
                 onClick$={() => (is.setIsOpen = true)}
+                value={state.searchInput}
                 onInput$={(ev) =>
                   (state.searchInput = (ev.target as HTMLInputElement).value)
                 }
+                onKeyDown$={(ev) => {
+                  if (ev.key === 'Enter') {
+                    is.setIsOpen = false;
+                    nav('/s/?q=' + state.searchInput + '');
+                  }
+                }}
               />
+
               {is.setIsOpen && (
                 <>
                   <div class="suggestions">
@@ -86,17 +98,15 @@ export default component$(({ is, user }: any) => {
                       <ul>
                         {state.searchResults.map((suggestion) => {
                           return (
-                            <div class="crrtrSrers">
+                            <div
+                              class="crrtrSrers"
+                              onClick$={() => {
+                                state.searchInput = suggestion;
+                              }}
+                            >
                               {' '}
                               <IconsSearch />
-                              <li
-                                class="lis-sgrs"
-                                onClick$={() =>
-                                  (state.selectedValue = suggestion)
-                                }
-                              >
-                                {suggestion}
-                              </li>
+                              <li class="lis-sgrs">{suggestion}</li>
                             </div>
                           );
                         })}
@@ -110,17 +120,19 @@ export default component$(({ is, user }: any) => {
 
               <button
                 aria-label="button-search"
-                name="button-search"
                 type="submit"
-                id="button-search"
                 class="searchButton"
+                onClick$={() => {
+                  is.setIsOpen = false;
+                  nav('/s/?q=' + state.searchInput + '');
+                }}
               >
                 <div class="searc">
                   {' '}
                   <IconsSearch />
                 </div>
               </button>
-            </form>
+            </div>
           </div>
         </div>
         <div class="cajas">

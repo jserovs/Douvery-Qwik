@@ -18,3 +18,10 @@ export const cleanUpParamsCodePostal = (params: Record<string, string>) => {
 	}
 	return params;
 };
+
+export const cleanUpParamsTerm= (params: Record<string, string>) => {
+	if ('term' in params && params.term[params.term.length - 1] === '/') {
+		params.term = params.term.slice(0, params.term.length - 1);
+	}
+	return params;
+};

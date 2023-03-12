@@ -11,7 +11,10 @@ import {
 } from '~/services/auth/token/token';
 import type { UserACC, ZipCode } from '~/utils/types';
 import { DATA_ACCESS_COOKIE_NAME } from '~/services/auth/login/login';
-import { DATA_ZIPCODE_COOKIE_NAME } from '~/services/auth/code/zipCode';
+import {
+  DATA_COUNTRY_COOKIE_NAME,
+  DATA_ZIPCODE_COOKIE_NAME,
+} from '~/services/auth/code/zipCode';
 
 export const useGetCurrentUser = routeLoader$<UserACC | null>(
   async ({ cookie }) => {
@@ -33,11 +36,21 @@ export const useGetCurrentZipCode = routeLoader$<ZipCode | null>(
     return null;
   }
 );
+export const useGetCurrentCountry = routeLoader$<ZipCode | null>(
+  async ({ cookie }: any) => {
+    const accessCookie = cookie.get(DATA_COUNTRY_COOKIE_NAME)?.value;
 
+    if (accessCookie) {
+      return decodeToken(accessCookie, passwordKEY, serverKey);
+    }
+    return null;
+  }
+);
 export default component$(() => {
   const isOpen = useStore({ setIsOpen: false });
   const userCtx = useGetCurrentUser().value;
   const getZipCode = useGetCurrentZipCode().value;
+  const getCountryUser = useGetCurrentCountry().value;
   const loc = useLocation();
 
   return (
@@ -47,8 +60,17 @@ export default component$(() => {
         loc.url.pathname !== '/a/register/' &&
         loc.url.pathname !== '/a/recover-account/' ? (
           <>
-            <Header is={isOpen} user={userCtx} />
-            <Nav user={userCtx} zipCode={getZipCode} />
+            <Header
+              is={isOpen}
+              user={userCtx}
+              zipCode={getZipCode}
+              userCoun={getCountryUser}
+            />
+            <Nav
+              user={userCtx}
+              zipCode={getZipCode}
+              userCoun={getCountryUser}
+            />
           </>
         ) : (
           <></>

@@ -175,3 +175,42 @@ export async function fetchSystemRecomendationProductU(
   const results = await response.json();
   return results;
 }
+
+export async function fetchIpInfo(): Promise<any> {
+  const response = await fetch(
+    `
+  https://ipinfo.io/country?token=0d62ca75f9e230`
+  );
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch code');
+  }
+  const results = await response.text();
+  console.log(results);
+  return results;
+}
+
+export async function fetchSearchProduct(
+  category: string,
+  query: string,
+  orderPrice: string,
+  rating: string,
+  order: string,
+  page: string | 1,
+  controller?: AbortController
+): Promise<any> {
+  const response = await fetch(
+    `
+   ${urlServerNode}/apisearch/products/search?page=${page}&query=${query}&category=${category}&price=${orderPrice}&rating=${rating}&order=${order}`,
+    {
+      signal: controller?.signal,
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch characters');
+  }
+  const results = await response.json();
+
+  return results.products;
+}
