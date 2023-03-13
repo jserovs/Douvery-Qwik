@@ -25,6 +25,7 @@ export default component$(() => {
     const rating = url.searchParams.get('or-r') || 'all';
     const order = url.searchParams.get('or-or') || 'newest';
     const page = url.searchParams.get('or-p') || 1;
+
     return fetchSearchProduct(
       category,
       query,
@@ -38,7 +39,41 @@ export default component$(() => {
 
   return (
     <div class="grid-container">
-      <div class="filter-section"></div>
+      <div class="filter-section">
+        <div class="filter-section-header">
+          <h2>Filter</h2>
+          <p class="filter-button">Saber mas</p>
+        </div>
+        <div class="filter-section-body">
+          <h3>By Category</h3>
+          <label>
+            <input type="checkbox" name="category" value="electronics" />
+            Electronics
+          </label>
+          <label>
+            <input type="checkbox" name="category" value="books" />
+            Books
+          </label>
+          <label>
+            <input type="checkbox" name="category" value="clothing" />
+            Clothing
+          </label>
+          <h3>By Price Range</h3>
+          <label>
+            <input type="radio" name="price" value="low" />
+            Low ($0 - $50)
+          </label>
+          <label>
+            <input type="radio" name="price" value="medium" />
+            Medium ($50 - $100)
+          </label>
+          <label>
+            <input type="radio" name="price" value="high" />
+            High ($100+)
+          </label>
+        </div>
+      </div>
+
       <div class="product-section">
         <Resource
           value={prodcureducer}
@@ -55,7 +90,6 @@ export default component$(() => {
           )}
         />
       </div>
-      <div class="empty-section"></div>
     </div>
   );
 });
