@@ -45,6 +45,35 @@
     font-weight: var(--font-weight-normal);
 }
 
+.ctr-button-ele {
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ctr-buttom {
+    border-left: 0.5px solid rgba(204, 204, 204, 0.253);
+    font-size: 15px;
+    color: #256D85;
+    font-weight: var(--font-weight-normal);
+    cursor: pointer;
+}
+
+
+
+.ctr-buttom:hover {
+
+    text-decoration: underline;
+}
+
+.text-live {
+
+    font-size: 14px;
+    color: var(--color-text-opaque);
+    font-weight: 400;
+}
+
 
 @media only screen and (max-width: 885px) {
     .crt-expectend-ship {
@@ -69,4 +98,11 @@
     }
 
 
+}
+
+@media only screen and (max-width: 560px) {
+    .crt-expectend-ship {
+        height: 131px;
+        padding: 5px 0px 5px 0px;
+    }
 }

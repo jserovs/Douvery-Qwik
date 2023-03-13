@@ -472,14 +472,14 @@ input {
 .loaderLine::after {
   border-radius: 10px;
   content: '';
-  width: 96px;
-  height: 4px;
+  width: 206px;
+  height: 2px;
   background: var(--color-primary);
   position: absolute;
   top: 0;
   left: 0;
   box-sizing: border-box;
-  animation: hitZak 1s linear infinite alternate;
+  animation: hitZak 10s linear infinite;
 }
 
 @keyframes hitZak {
@@ -491,5 +491,15 @@ input {
   100% {
     left: 100%;
     transform: translateX(-99%);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-10%);
+  }
+
+  to {
+    transform: translateX(0);
   }
 }

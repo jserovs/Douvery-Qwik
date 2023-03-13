@@ -28,6 +28,7 @@ import {
   serverKey,
 } from '~/services/auth/token/token';
 import { DouveryArrowRigth1 } from '../icons/arrow-right-1';
+import { useGetCurrentUser, useGetCurrentZipCode } from '~/routes/layout';
 
 // import { fetchCodePostal } from '~/services/fechProduct';
 // import type { CodePostalData } from '~/utils/types';
@@ -59,10 +60,11 @@ interface IState {
   selectedValue: string;
 }
 
-export const ModalButtonCou = component$(({ zipCode, user }: any) => {
+export const ModalButtonCou = component$(() => {
   useStylesScoped$(styles);
   const isOpen = useStore({ setIsOpen: false });
-
+  const user = useGetCurrentUser().value;
+  const zipCode = useGetCurrentZipCode().value;
   const state = useStore<IState>({
     searchInput: '',
     searchResults: [],
@@ -94,7 +96,7 @@ export const ModalButtonCou = component$(({ zipCode, user }: any) => {
         class="button-mds-view"
       >
         <DouveryGlobalSearch size="18" />
-        {zipCode ? <>{zipCode}</> : <>Elige una ubicación</>}
+        {zipCode ? <>{zipCode}</> : <>Escoger una ubicación</>}
       </button>
 
       {isOpen.setIsOpen && (
@@ -163,7 +165,10 @@ export const ModalButtonCou = component$(({ zipCode, user }: any) => {
                 <div class="card-title">Información de envio</div>
                 <div class="card-text">
                   Actualmente {zipCode ? <></> : <>no</>} tienes seleccionado{' '}
-                  <span class="highlight">{zipCode && zipCode}</span>.
+                  <span class="highlight">
+                    {zipCode !== null && zipCode.toString()}
+                  </span>
+                  .
                 </div>
               </div>
               {user ? <> </> : <> </>}

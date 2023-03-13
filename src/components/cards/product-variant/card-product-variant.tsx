@@ -10,6 +10,7 @@ import { fetchProduct } from '~/services/fechProduct';
 
 import type { Product } from '~/utils/types';
 import styles from './card-product-variant.css?inline';
+import { Link } from '@builder.io/qwik-city';
 export const CardProductVariations1 = component$(
   ({ dui, slug, imgS, imgP }: any) => {
     useStylesScoped$(styles);
@@ -44,7 +45,7 @@ export const CardProductVariations1 = component$(
           onRejected={(error) => <>Error: {error.message}</>}
           onResolved={() => (
             <>
-              <a
+              <Link
                 href={`/v/${state.product.slug}/${state.product.dui}`}
                 class="my-link"
               >
@@ -65,7 +66,7 @@ export const CardProductVariations1 = component$(
                     onMouseOut$={() => (imgS.setImage = imgP)}
                   />
                 </div>
-              </a>
+              </Link>
             </>
           )}
         />

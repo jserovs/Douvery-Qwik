@@ -66,11 +66,7 @@ export default component$(() => {
               zipCode={getZipCode}
               userCoun={getCountryUser}
             />
-            <Nav
-              user={userCtx}
-              zipCode={getZipCode}
-              userCoun={getCountryUser}
-            />
+            <Nav />
           </>
         ) : (
           <></>

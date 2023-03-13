@@ -1,10 +1,17 @@
-import { Resource, component$, useResource$ } from '@builder.io/qwik';
+import {
+  Resource,
+  component$,
+  useResource$,
+  useStylesScoped$,
+} from '@builder.io/qwik';
 import { useLocation } from '@builder.io/qwik-city';
 import { fetchSearchProduct } from '~/services/fechProduct';
-
+import styles from './index.css?inline';
 import type { Product } from '~/utils/types';
+import { Card1S } from '~/components/cards/search/card-1-s/card-1-s';
 
 export default component$(() => {
+  useStylesScoped$(styles);
   const { url } = useLocation();
 
   const prodcureducer = useResource$<Product[]>(async ({ cleanup, track }) => {
@@ -30,21 +37,25 @@ export default component$(() => {
   });
 
   return (
-    <div>
-      <div class="sm:col-span-5 lg:col-span-4">
+    <div class="grid-container">
+      <div class="filter-section"></div>
+      <div class="product-section">
         <Resource
           value={prodcureducer}
-          onPending={() => <>Cargando...</>}
+          onPending={() => <div class="loader"></div>}
           onRejected={(error) => <>Error: {error.message}</>}
           onResolved={(products) => (
             <ul>
-              {products.map((user: any) => (
-                <li key={user.id}>{user.name}</li>
+              {products.map((product: any) => (
+                <li key={product.id}>
+                  <Card1S product={product} />
+                </li>
               ))}
             </ul>
           )}
         />
       </div>
+      <div class="empty-section"></div>
     </div>
   );
 });
