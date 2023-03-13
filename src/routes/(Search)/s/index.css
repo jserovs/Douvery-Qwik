@@ -1,15 +1,16 @@
 .grid-container {
     display: grid;
-    grid-template-columns: 250px auto;
+    grid-template-columns: 20% auto;
     grid-gap: 1rem;
     margin: 0rem;
     background-color: var(--color-background-white);
 }
 
 .filter-section {
-    background-color: #f5f5f5;
+    background-color: var(--color-background-white);
     padding: 1rem;
 }
+
 
 .product-section {
     background-color: var(--color-background-white);
@@ -19,6 +20,109 @@
 .empty-section {
     background-color: #f5f5f5;
     padding: 1rem;
+}
+
+
+.filter-section {
+    background-color: #fff;
+    border-radius: 10px;
+
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.filter-section-header {
+    align-items: center;
+
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.filter-section-header h2 {
+    color: #000;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.filter-button {
+
+    border: none;
+    border-radius: 5px;
+    color: #333;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 10px 20px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+
+.filter-section-body {
+    padding: 20px;
+}
+
+.filter-section-body h3 {
+
+    border-radius: 5px;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 10px 0px;
+}
+
+.filter-section-body label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.filter-section-body input[type="checkbox"] {
+    display: none;
+}
+
+.filter-section-body input[type="radio"] {
+    margin: 0px 10px;
+}
+
+.filter-section-body span {
+    color: #333;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1rem;
+    position: relative;
+    padding-left: 30px;
+}
+
+.filter-section-body span:before {
+    content: "";
+    display: block;
+    height: 20px;
+    width: 20px;
+    border: 1px solid #333;
+    border-radius: 3px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    box-sizing: border-box;
+}
+
+.filter-section-body input[type="checkbox"]:checked+span:before,
+.filter-section-body input[type="radio"]:checked+span:before {
+    background-color: #333;
+    border-color: #333;
+}
+
+.filter-section-body input[type="checkbox"]:checked+span:after {
+    content: "\f00c";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: #fff;
+    font-size: 0.8rem;
+    position: absolute;
+    left: 6px;
+    top: 3px;
 }
 
 @media only screen and (max-width: 885px) {

@@ -47,6 +47,7 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
       controller.abort();
     };
   });
+  const selectedValue = useStore({ selectedValue: 'all' });
 
   return (
     <header>
@@ -61,16 +62,18 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
           <div class="search">
             <div class="searchTerm">
               <div class="select container">
-                <select>
-                  <option class="texts-opts-crt-gg" value="1">
-                    All
+                <select
+                  value={selectedValue.selectedValue}
+                  onChange$={(event) =>
+                    (selectedValue.selectedValue = event.target.value)
+                  }
+                >
+                  <option value="all">All</option>
+                  <option value="electronic Y accesorios">
+                    Electronic Y Accesorios
                   </option>
-                  <option class="texts-opts-crt-gg" value="2">
-                    No JS
-                  </option>
-                  <option class="texts-opts-crt-gg" value="3">
-                    Nice!
-                  </option>
+                  <option value="books">Books</option>
+                  <option value="opcion3">Opción 3</option>
                 </select>
               </div>
 
@@ -86,7 +89,13 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
                 onKeyDown$={(ev) => {
                   if (ev.key === 'Enter') {
                     is.setIsOpen = false;
-                    nav('/s/?q=' + state.searchInput + '');
+                    nav(
+                      '/s/?q=' +
+                        state.searchInput +
+                        '&or-c=' +
+                        selectedValue.selectedValue +
+                        ''
+                    );
                   }
                 }}
               />
@@ -124,7 +133,13 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
                 class="searchButton"
                 onClick$={() => {
                   is.setIsOpen = false;
-                  nav('/s/?q=' + state.searchInput + '');
+                  nav(
+                    '/s/?q=' +
+                      state.searchInput +
+                      '&or-c=' +
+                      selectedValue.selectedValue +
+                      ''
+                  );
                 }}
               >
                 <div class="searc">
