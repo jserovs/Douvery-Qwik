@@ -191,15 +191,7 @@
 
 }
 
-@keyframes slide-in {
-    from {
-        transform: translateX(-10%);
-    }
 
-    to {
-        transform: translateX(0);
-    }
-}
 
 /**Tablet and Mobile */
 

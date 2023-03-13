@@ -22,6 +22,7 @@ import { Link } from '@builder.io/qwik-city';
 import { ContainerPoput } from './components/popupSHARE';
 import { DouveryIcon } from '~/components/icons/douvery';
 import { fetchProductBestInCategory } from '~/services/fechProduct';
+import { TextCL } from '~/components/use/textCL/textCL';
 
 export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
   useStylesScoped$(sryles);
@@ -80,7 +81,9 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
               </strong>
             </Link>
           </div>
-          <h4>{props.name}</h4>
+          <h4>
+            <TextCL text={props.name} />
+          </h4>
           <div class="crtr-di">
             <div class="di">
               <Resource

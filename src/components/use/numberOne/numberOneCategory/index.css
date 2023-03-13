@@ -1,0 +1,26 @@
+.ctr-1 {
+    display: flex;
+    gap: 5px;
+}
+
+.top-1 {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 57px;
+    place-content: center;
+    background-color: #3B44F6;
+    border: 1px solid #fff;
+    color: var(--color-background-light);
+    font-size: 68%;
+    float: left;
+    border-radius: 5px;
+    font-style: italic;
+}
+
+.ctr-1 p {
+    font-size: 13px;
+    color: var(--color-text-opaque);
+
+}

@@ -4,7 +4,6 @@ import {
   useResource$,
   useStore,
   useStylesScoped$,
-  useTask$,
 } from '@builder.io/qwik';
 
 import styles from './index.css?inline';
@@ -40,14 +39,8 @@ export default component$(() => {
     { recursive: true }
   );
 
-  useTask$(async ({ track }) => {
+  const productResource = useResource$<void>(async ({ track }) => {
     track(() => location.params.dui);
-    const { dui } = cleanUpParams({ dui: location.params.dui });
-    const product = await fetchProduct(dui);
-    state.product = product;
-  });
-
-  const productResource = useResource$<void>(async () => {
     const { dui } = cleanUpParams({ dui: location.params.dui });
     const product = await fetchProduct(dui);
     state.product = product;
@@ -68,7 +61,7 @@ export default component$(() => {
       <div>
         <Resource
           value={productResource}
-          onPending={() => <></>}
+          onPending={() => <div class="loader "></div>}
           onRejected={(error) => <>Error: {error.message}</>}
           onResolved={() => (
             <>
