@@ -290,6 +290,7 @@ input[type="text"][readOnly] {
     justify-content: center;
     gap: 10px;
     border: 1px solid #E8F0FE;
+    border-radius: 10px;
 }
 
 .true-loggin p {
