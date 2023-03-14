@@ -263,7 +263,7 @@ export default component$(() => {
                 <option value="newest">Llegadas más recientes</option>
                 <option value="lowest">Precio: Bajo a Alto</option>
                 <option value="highest">Precio: Alto a Bajo</option>
-                <option value="toprated">Ratings positivos</option>
+                <option value="toprated" selected>Ratings positivos</option>
               </select>
               <DouveryArrowDown size="14px" />
             </div>
