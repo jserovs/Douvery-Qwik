@@ -11,17 +11,18 @@ import styles from './index.css?inline';
 import type { Product } from '~/utils/types';
 import { Card1S } from '~/components/cards/search/card-1-s/card-1-s';
 import { Stars } from '~/components/Ratings/stars/stars';
-
+import { Button1 } from '~/components/buttons/button-1/button-1';
+import { DouveryLeft3 } from '~/components/icons/arrow-left-3';
+import { DouveryArrowUp } from '~/components/icons/arrow-up';
+import { DouveryArrowDown } from '~/components/icons/arrow-down';
 
 export default component$(() => {
   useStylesScoped$(styles);
- 
+
   const navigate = useNavigate();
-  
- 
-  
+
   const { url } = useLocation();
-  
+
   const prodcureducer = useResource$<Product[]>(async ({ cleanup, track }) => {
     track(() => url.search);
 
@@ -34,7 +35,6 @@ export default component$(() => {
     const order = url.searchParams.get('or-or') || 'newest';
     const page = url.searchParams.get('or-p') || 1;
 
-    
     return fetchSearchProduct(
       category,
       query,
@@ -97,45 +97,65 @@ export default component$(() => {
     },
   ];
 
-  const selectedValue = useStore({ selectedValue: 'all' });
-  const or_c = url.searchParams.has('or-c') ? `&or-c=${url.searchParams.get('or-c')}` : '';
-  const or_p = url.searchParams.has('or-p') ? `&or-p=${url.searchParams.get('or-p')}` : '';
-
-
+  const selectedValue = useStore({ selectedValue: '' });
+  const or_c = url.searchParams.has('or-c')
+    ? `&or-c=${url.searchParams.get('or-c')}`
+    : '';
+  const or_p = url.searchParams.has('or-p')
+    ? `&or-p=${url.searchParams.get('or-p')}`
+    : '';
 
   return (
     <div class="grid-container">
       <div class="filter-section">
         <div class="filter-section-header">
-          <h2>Filter</h2>
-          <p class="filter-button">Saber mas</p>
+          <h2>Filters</h2>
+          <div class="filter">
+            {or_c || or_p ? (
+              <Button1
+                title="Desmarcar filtros"
+                navigate={url.pathname + `?q=${url.searchParams.get('q')}`}
+              />
+            ) : (
+              <>
+                <div class="svg-left">
+                  {' '}
+                  <DouveryLeft3 size="15px" />
+                </div>{' '}
+                <div class="svg-up">
+                  {' '}
+                  <DouveryArrowUp size="15px" />
+                </div>
+                Mejora tu busqueda
+              </>
+            )}
+          </div>
         </div>
         <div class="filter-section-body">
           <h3>By Category</h3>
           {category.map((c) => (
             <div>
-              <label>
-            <input type="checkbox" name="category" value= {c.value} />
-            <Link
-                href={
-                  url.pathname +
-                  `?q=${url.searchParams.get('q')}` +
-                  `&or-c=${c.value}`+
-                  or_p
-                 
-                }
+              <label
                 class={
                   url.searchParams.get('or-c') === c.value
                     ? 'active-undeline'
                     : ''
                 }
               >
-                {c.name}
-              </Link>
-          </label>
+                <input type="checkbox" name="category" value={c.value} />
+                <Link
+                  href={
+                    url.pathname +
+                    `?q=${url.searchParams.get('q')}` +
+                    `&or-c=${c.value}` +
+                    or_p
+                  }
+                >
+                  {c.name}
+                </Link>
+              </label>
             </div>
-          )) }
-         
+          ))}
           <h3>By Price Range</h3>
           {prices.map((p) => (
             <li
@@ -150,9 +170,8 @@ export default component$(() => {
                 href={
                   url.pathname +
                   `?q=${url.searchParams.get('q')}` +
-                  or_c+
-                 `&or-p=${p.value}` 
-                 
+                  or_c +
+                  `&or-p=${p.value}`
                 }
                 class={
                   url.searchParams.get('or-p') === p.value
@@ -198,9 +217,9 @@ export default component$(() => {
                   class="linkdepart"
                   href={
                     url.pathname +
-                    `?q=${url.searchParams.get('q')}`+
-                    or_c+
-                    `&or-r=${r.rating}` 
+                    `?q=${url.searchParams.get('q')}` +
+                    or_c +
+                    `&or-r=${r.rating}`
                   }
                 >
                   <Stars caption={' & up'} rating={r.rating}></Stars>
@@ -217,27 +236,42 @@ export default component$(() => {
       </div>
 
       <div class="product-section">
-        <strong>Resultado de busqueda de : </strong> {url.searchParams.get('q')}
-        <div class="text-end">
-          Ordenar por{' '}
-          <select
-            value={selectedValue.selectedValue}
-            onChange$={(event) =>
-              navigate(
-                url.pathname +
-                  '?q=' +
-                  url.searchParams.get('q') +
-                  or_c+
-                  '&or-or=' +
-                  event.target.value
-              )
-            }
-          >
-            <option value="newest">Llegadas más recientes</option>
-            <option value="lowest">Precio: Bajo a Alto</option>
-            <option value="highest">Precio: Alto a Bajo</option>
-            <option value="toprated">Ratings positivos</option>
-          </select>
+        <div class="header-product-section">
+          <div class="container-result">
+            {' '}
+            <strong>Resultados de: </strong> {url.searchParams.get('q')}
+          </div>
+          <div class="container-select">
+            <div class="select">
+              <label class="select-label" for="slct">
+                Ordenar por:
+              </label>
+              <select
+                id="slct"
+                value={
+                  selectedValue.selectedValue
+                    ? selectedValue.selectedValue
+                    : 'toprated'
+                }
+                onChange$={(event) =>
+                  navigate(
+                    url.pathname +
+                      '?q=' +
+                      url.searchParams.get('q') +
+                      or_c +
+                      '&or-or=' +
+                      event.target.value
+                  )
+                }
+              >
+                <option value="newest">Llegadas más recientes</option>
+                <option value="lowest">Precio: Bajo a Alto</option>
+                <option value="highest">Precio: Alto a Bajo</option>
+                <option value="toprated">Ratings positivos</option>
+              </select>
+              <DouveryArrowDown size="14px" />
+            </div>
+          </div>
         </div>
         <Resource
           value={prodcureducer}
@@ -246,19 +280,33 @@ export default component$(() => {
           onResolved={(products) => (
             <ul>
               {products.length === 0 ? (
-  <p>No hay productos para mostrar.</p>
-) : (
-  <ul>
-    {products.map((product: any) => (
-      <li key={product.id}>
-        <Card1S product={product} />
-      </li>
-    ))}
-  </ul>
-)}
+                <p>No hay productos para mostrar.</p>
+              ) : (
+                <ul>
+                  {products.map((product: any) => (
+                    <l i key={product.id}>
+                      <Card1S product={product} />
+                    </l>
+                  ))}
+                </ul>
+              )}
             </ul>
           )}
         />
+
+        <div class="pagination">
+          <a href="#" class="prev">
+            &#8249; Anterior
+          </a>
+          <a href="#" class="active">
+            1
+          </a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#" class="next">
+            Siguiente &#8250;
+          </a>
+        </div>
       </div>
     </div>
   );
