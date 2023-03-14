@@ -18,9 +18,7 @@ export default component$(() => {
  
   const navigate = useNavigate();
   
-  function replaceSpacesWithHyphens({str}:any) {
-    return str.replace(/\s+/g, '-');
-  }
+ 
   
   const { url } = useLocation();
   
