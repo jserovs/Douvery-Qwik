@@ -211,6 +211,6 @@ export async function fetchSearchProduct(
     throw new Error('Failed to fetch characters');
   }
   const results = await response.json();
-
+  console.log(results);
   return results.products;
 }
