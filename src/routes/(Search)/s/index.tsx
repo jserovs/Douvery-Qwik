@@ -248,11 +248,7 @@ export default component$(() => {
               </label>
               <select
                 id="slct"
-                value={
-                  selectedValue.selectedValue
-                    ? selectedValue.selectedValue
-                    : 'toprated'
-                }
+                 value={selectedValue.selectedValue ? selectedValue.selectedValue : 'toprated'}
                 onChange$={(event) =>
                   navigate(
                     url.pathname +

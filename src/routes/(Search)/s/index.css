@@ -267,7 +267,7 @@
 
     .filter-section-header {
         display: grid;
-        padding: 20px 0px;
+        padding: 20px 20px;
     }
 }
 
