@@ -12,10 +12,18 @@ import type { Product } from '~/utils/types';
 import { Card1S } from '~/components/cards/search/card-1-s/card-1-s';
 import { Stars } from '~/components/Ratings/stars/stars';
 
+
 export default component$(() => {
   useStylesScoped$(styles);
-  const { url } = useLocation();
+ 
   const navigate = useNavigate();
+  
+  function replaceSpacesWithHyphens({str}:any) {
+    return str.replace(/\s+/g, '-');
+  }
+  
+  const { url } = useLocation();
+  
   const prodcureducer = useResource$<Product[]>(async ({ cleanup, track }) => {
     track(() => url.search);
 
@@ -28,6 +36,7 @@ export default component$(() => {
     const order = url.searchParams.get('or-or') || 'newest';
     const page = url.searchParams.get('or-p') || 1;
 
+    
     return fetchSearchProduct(
       category,
       query,
@@ -39,6 +48,20 @@ export default component$(() => {
     );
   });
 
+  const category = [
+    {
+      name: 'Books',
+      value: 'books',
+    },
+    {
+      name: 'Moda Para Hombre',
+      value: 'moda para hombre',
+    },
+    {
+      name: 'Computadoras Y Accesorios',
+      value: 'computadoras y accesorios',
+    },
+  ];
   const prices = [
     {
       name: '$1 to $50',
@@ -77,6 +100,10 @@ export default component$(() => {
   ];
 
   const selectedValue = useStore({ selectedValue: 'all' });
+  const or_c = url.searchParams.has('or-c') ? `&or-c=${url.searchParams.get('or-c')}` : '';
+  const or_p = url.searchParams.has('or-p') ? `&or-p=${url.searchParams.get('or-p')}` : '';
+
+
 
   return (
     <div class="grid-container">
@@ -87,18 +114,30 @@ export default component$(() => {
         </div>
         <div class="filter-section-body">
           <h3>By Category</h3>
-          <label>
-            <input type="checkbox" name="category" value="electronics" />
-            Electronics
+          {category.map((c) => (
+            <div>
+              <label>
+            <input type="checkbox" name="category" value= {c.value} />
+            <Link
+                href={
+                  url.pathname +
+                  `?q=${url.searchParams.get('q')}` +
+                  `&or-c=${c.value}`+
+                  or_p
+                 
+                }
+                class={
+                  url.searchParams.get('or-c') === c.value
+                    ? 'active-undeline'
+                    : ''
+                }
+              >
+                {c.name}
+              </Link>
           </label>
-          <label>
-            <input type="checkbox" name="category" value="books" />
-            Books
-          </label>
-          <label>
-            <input type="checkbox" name="category" value="clothing" />
-            Clothing
-          </label>
+            </div>
+          )) }
+         
           <h3>By Price Range</h3>
           {prices.map((p) => (
             <li
@@ -112,10 +151,10 @@ export default component$(() => {
               <Link
                 href={
                   url.pathname +
-                  '?q=' +
-                  url.searchParams.get('q') +
-                  '&or-p=' +
-                  p.value
+                  `?q=${url.searchParams.get('q')}` +
+                  or_c+
+                 `&or-p=${p.value}` 
+                 
                 }
                 class={
                   url.searchParams.get('or-p') === p.value
@@ -161,10 +200,9 @@ export default component$(() => {
                   class="linkdepart"
                   href={
                     url.pathname +
-                    '?q=' +
-                    url.searchParams.get('q') +
-                    '&or-r=' +
-                    r.rating
+                    `?q=${url.searchParams.get('q')}`+
+                    or_c+
+                    `&or-r=${r.rating}` 
                   }
                 >
                   <Stars caption={' & up'} rating={r.rating}></Stars>
@@ -191,6 +229,7 @@ export default component$(() => {
                 url.pathname +
                   '?q=' +
                   url.searchParams.get('q') +
+                  or_c+
                   '&or-or=' +
                   event.target.value
               )
@@ -208,11 +247,17 @@ export default component$(() => {
           onRejected={(error) => <>Error: {error.message}</>}
           onResolved={(products) => (
             <ul>
-              {products.map((product: any) => (
-                <li key={product.id}>
-                  <Card1S product={product} />
-                </li>
-              ))}
+              {products.length === 0 ? (
+  <p>No hay productos para mostrar.</p>
+) : (
+  <ul>
+    {products.map((product: any) => (
+      <li key={product.id}>
+        <Card1S product={product} />
+      </li>
+    ))}
+  </ul>
+)}
             </ul>
           )}
         />
