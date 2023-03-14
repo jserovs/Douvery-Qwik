@@ -132,7 +132,7 @@ export default component$(() => {
           </div>
         </div>
         <div class="filter-section-body">
-          <h3>By Category</h3>
+         <div> <h3>By Category</h3>
           {category.map((c) => (
             <div>
               <label
@@ -155,8 +155,8 @@ export default component$(() => {
                 </Link>
               </label>
             </div>
-          ))}
-          <h3>By Price Range</h3>
+          ))}</div>
+         <div> <h3>By Price Range</h3>
           {prices.map((p) => (
             <li
               class={
@@ -182,8 +182,8 @@ export default component$(() => {
                 {p.name}
               </Link>
             </li>
-          ))}{' '}
-          <h3>By Color</h3>
+          ))}{' '}</div>
+         <div> <h3>By Color</h3>
           <label>
             <input type="checkbox" name="color" value="red" />
             Red
@@ -208,8 +208,8 @@ export default component$(() => {
           <label>
             <input type="checkbox" name="size" value="large" />
             Large
-          </label>
-          <h3>By Ratings</h3>
+          </label></div>
+         <div> <h3>By Ratings</h3>
           <ul>
             {ratings.map((r) => (
               <li key={r.name}>
@@ -231,7 +231,7 @@ export default component$(() => {
                 <Stars caption={' & up'} rating={0}></Stars>
               </Link>
             </li>
-          </ul>
+          </ul></div>
         </div>
       </div>
 
