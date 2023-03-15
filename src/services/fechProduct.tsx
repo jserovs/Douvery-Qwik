@@ -203,7 +203,7 @@ export async function fetchSearchProduct(
 ): Promise<any> {
   const response = await fetch(
     `
-  http://localhost:8339/apisearch/products/search?page=${page}&query=${query}&category=${category}&subcategory=${subcategory}&price=${orderPrice}&rating=${rating}&order=${order}&brand=${brand}`,
+  ${urlServerPython}/apisearch/products/search?page=${page}&query=${query}&category=${category}&subcategory=${subcategory}&price=${orderPrice}&rating=${rating}&order=${order}&brand=${brand}`,
     {
       signal: controller?.signal,
     }
