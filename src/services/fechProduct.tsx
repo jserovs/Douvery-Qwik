@@ -192,16 +192,18 @@ export async function fetchIpInfo(): Promise<any> {
 
 export async function fetchSearchProduct(
   category: string,
+  subcategory: string,
   query: string,
   orderPrice: string,
   rating: string,
   order: string,
   page: string,
+  brand: string,
   controller?: AbortController
 ): Promise<any> {
   const response = await fetch(
     `
-   ${urlServerNode}/apisearch/products/search?page=${page}&query=${query}&category=${category}&price=${orderPrice}&rating=${rating}&order=${order}`,
+   ${urlServerNode}/apisearch/products/search?page=${page}&query=${query}&category=${category}&subcategory=${subcategory}&price=${orderPrice}&rating=${rating}&order=${order}&brand=${brand}`,
     {
       signal: controller?.signal,
     }
