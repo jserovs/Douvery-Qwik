@@ -286,7 +286,7 @@
     background-color: var(--color-background-white);
 }
 
-@media only screen and (max-width: 1355px) {
+@media only screen and (max-width: 1455px) {
     .svg-left {
         display: none;
     }
