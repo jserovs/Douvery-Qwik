@@ -16,7 +16,7 @@ import { Button1 } from '~/components/buttons/button-1/button-1';
 import { DouveryLeft3 } from '~/components/icons/arrow-left-3';
 import { DouveryArrowUp } from '~/components/icons/arrow-up';
 import { DouveryArrowDown } from '~/components/icons/arrow-down';
-import { randomNum } from '~/services/fuction';
+
 import { Carousel1 } from '~/components/use/carousel/carousel-1/carousel-1';
 
 export default component$(() => {
@@ -51,6 +51,10 @@ export default component$(() => {
   });
 
   const category = [
+    {
+      name: 'Any',
+      value: 'all',
+    },
     {
       name: 'Books',
       value: 'books',
@@ -121,7 +125,7 @@ export default component$(() => {
       </a>
     );
   }
-  const randomNumber = randomNum();
+
   const state = useStore({
     productResults: [] as Product[],
   });
@@ -383,7 +387,7 @@ export default component$(() => {
       </div>
       <div class="container-random-product">
         <p class="ps-sr1">Puede que te interesen </p>
-        <Carousel1 styleCard={randomNumber} product={state.productResults} />
+        <Carousel1 styleCard={4} product={state.productResults} />
       </div>
     </div>
   );
