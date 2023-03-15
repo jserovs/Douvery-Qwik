@@ -504,3 +504,22 @@ input {
     transform: translateX(0);
   }
 }
+
+
+.loader-snog {
+  width: 100px;
+  height: 30px;
+  background:
+    linear-gradient(0.25turn, transparent, #FFF, transparent),
+    linear-gradient(#DDD, #DDD);
+  background-repeat: no-repeat;
+  background-size: 315px 200px, 315px 130px, 100px 100px, 225px 30px;
+  background-position: -315px 0, 0 0, 15px 140px, 65px 145px;
+  animation: loading-sss 1.5s infinite;
+}
+
+@keyframes loading-sss {
+  to {
+    background-position: 315px 0, 0 0, 15px 140px, 65px 145px;
+  }
+}
