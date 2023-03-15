@@ -264,6 +264,16 @@
 }
 
 
+.container-random-product {
+    padding: 10px 30px;
+    display: grid;
+    align-items: stretch;
+    grid-template-columns: 100%;
+    justify-content: start;
+    gap: 15px;
+    background-color: var(--color-background-white);
+}
+
 @media only screen and (max-width: 1355px) {
     .svg-left {
         display: none;
