@@ -18,7 +18,28 @@ import { DouveryArrowUp } from '~/components/icons/arrow-up';
 import { DouveryArrowDown } from '~/components/icons/arrow-down';
 
 import { Carousel1 } from '~/components/use/carousel/carousel-1/carousel-1';
-
+export const category = [
+  {
+    name: 'Any',
+    value: 'all',
+  },
+  {
+    name: 'Books',
+    value: 'books',
+  },
+  {
+    name: 'Moda Para Hombre',
+    value: 'moda para hombre',
+  },
+  {
+    name: 'Computadoras  & Accesorios',
+    value: 'computadoras y accesorios',
+  },
+  {
+    name: 'Electronico & Accesorios',
+    value: 'electronic Y accesorios',
+  },
+];
 export default component$(() => {
   useStylesScoped$(styles);
   const store = useStore({ count: 1 });
@@ -50,24 +71,6 @@ export default component$(() => {
     );
   });
 
-  const category = [
-    {
-      name: 'Any',
-      value: 'all',
-    },
-    {
-      name: 'Books',
-      value: 'books',
-    },
-    {
-      name: 'Moda Para Hombre',
-      value: 'moda para hombre',
-    },
-    {
-      name: 'Computadoras Y Accesorios',
-      value: 'computadoras y accesorios',
-    },
-  ];
   const prices = [
     {
       name: '$1 to $50',

@@ -14,6 +14,7 @@ import { fetchSuggestions } from '~/services/fechProduct';
 import { IconsSearch } from '../icons/search';
 import { ProfileDropdown } from '../dropdown/header-profile-user/profile-dropdown';
 import { useNavigate } from '@builder.io/qwik-city';
+import { category } from '~/routes/(Search)/s';
 
 interface IState {
   searchInput: string;
@@ -61,19 +62,19 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
         <div class="cajas">
           <div class="search">
             <div class="searchTerm">
-              <div class="select container">
+              <div class="select ">
                 <select
                   value={selectedValue.selectedValue}
                   onChange$={(event) =>
                     (selectedValue.selectedValue = event.target.value)
                   }
                 >
-                  <option value="all">All</option>
-                  <option value="electronic Y accesorios">
-                    Electronic Y Accesorios
-                  </option>
-                  <option value="books">Books</option>
-                  <option value="opcion3">Opción 3</option>
+                  {category.map((c) => (
+                    <>
+                      {' '}
+                      <option value={c.value}>{c.name}</option>
+                    </>
+                  ))}
                 </select>
               </div>
 
