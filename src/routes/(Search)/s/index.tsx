@@ -26,6 +26,10 @@ export const category = [
   {
     name: 'Books',
     value: 'books',
+    subCategory: [
+      { name: 'Calendars', value: 'calendars' },
+      { name: 'Childrens Books', value: 'childrens books' },
+    ],
   },
   {
     name: 'Moda Para Hombre',
