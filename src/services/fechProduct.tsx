@@ -196,7 +196,7 @@ export async function fetchSearchProduct(
   orderPrice: string,
   rating: string,
   order: string,
-  page: string | 1,
+  page: string,
   controller?: AbortController
 ): Promise<any> {
   const response = await fetch(
@@ -211,6 +211,6 @@ export async function fetchSearchProduct(
     throw new Error('Failed to fetch characters');
   }
   const results = await response.json();
-  console.log(results);
+
   return results.products;
 }

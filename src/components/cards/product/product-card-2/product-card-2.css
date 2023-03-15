@@ -8,7 +8,6 @@
 
     text-align: start;
     justify-content: flex-start;
-    background-color: var(--color-background-light);
 
     padding: 10px 10px;
     position: relative;
@@ -96,7 +95,6 @@
     align-items: center;
 
     font-size: 12.5px;
-    background-color: var(--color-background-ligth);
     text-align: start;
     width: 100%;
     color: #2940D3;
@@ -132,7 +130,7 @@
     width: 250px;
     height: 200px;
     justify-content: center;
-    background-color: #FFF;
+
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     z-index: 1;
     padding: 10PX 20px;
