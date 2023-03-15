@@ -99,7 +99,7 @@ export default component$(() => {
               {' '}
               <br />
               {action.isRunning ? (
-                <span class="loa-s">Loading...</span>
+                <span class="loa-s">Verifying...</span>
               ) : (
                 <span class="error ">{action.value?.message}</span>
               )}

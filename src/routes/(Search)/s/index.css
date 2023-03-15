@@ -1,3 +1,9 @@
+.container-all {
+    display: grid;
+    padding: 0px 0px 50px 0px;
+    background-color: var(--color-background-white);
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: 20% auto;
@@ -170,7 +176,7 @@
     gap: 10px;
     position: relative;
     max-width: 500px;
-    margin: 0px 0px;
+    margin: 0px 50px;
 
 }
 
@@ -197,6 +203,7 @@
     font-family: inherit;
     font-size: 14px;
     transition: all 150ms ease;
+    color: #5b5d63;
 }
 
 .select select:required:invalid {
