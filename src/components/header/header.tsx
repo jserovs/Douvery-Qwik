@@ -95,6 +95,7 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
                         state.searchInput +
                         '&or-c=' +
                         selectedValue.selectedValue +
+                        '&or-ly=1' +
                         ''
                     );
                   }

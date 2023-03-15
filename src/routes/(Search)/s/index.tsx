@@ -20,6 +20,7 @@ import { DouveryArrowDown } from '~/components/icons/arrow-down';
 import { Carousel1 } from '~/components/use/carousel/carousel-1/carousel-1';
 import { Card2S } from '~/components/cards/search/card-2-s/card-2-s';
 import { DouveryRight3 } from '~/components/icons/arrow-right-3';
+import { Card3S } from '~/components/cards/search/card-3-s/card-3-s';
 export const category = [
   {
     name: 'Any',
@@ -56,7 +57,7 @@ export const category = [
 export default component$(() => {
   useStylesScoped$(styles);
   const store = useStore({ count: 1 });
-  const number= useStore({setNumber:1})
+  const number = useStore({ setNumber: 1 });
   const navigate = useNavigate();
 
   const { url } = useLocation();
@@ -88,8 +89,6 @@ export default component$(() => {
     );
   });
   const layout = url.searchParams.get('or-ly') || '';
-
-  
 
   const prices = [
     {
@@ -153,7 +152,7 @@ export default component$(() => {
   const or_p = url.searchParams.has('or-p')
     ? `&or-p=${url.searchParams.get('or-p')}`
     : '';
-    const or_ly = url.searchParams.has('or-ly')
+  const or_ly = url.searchParams.has('or-ly')
     ? `&or-ly=${url.searchParams.get('or-ly')}`
     : '';
 
@@ -228,7 +227,8 @@ export default component$(() => {
                         url.pathname +
                         `?q=${url.searchParams.get('q')}` +
                         `&or-c=${c.value}` +
-                        or_p+or_ly
+                        or_p +
+                        or_ly
                       }
                     >
                       {c.name}
@@ -237,10 +237,15 @@ export default component$(() => {
                   {url.searchParams.get('or-c') === c.value ? (
                     <div class="container-sub-category">
                       {c.subCategory?.map((c) => (
-                        <div class='item' >
-                          <DouveryRight3 color={  url.searchParams.get('or-sc') === c.value
+                        <div class="item">
+                          <DouveryRight3
+                            color={
+                              url.searchParams.get('or-sc') === c.value
                                 ? '#256D85'
-                                : ''} size='14px'/>
+                                : ''
+                            }
+                            size="14px"
+                          />
                           <label
                             class={
                               url.searchParams.get('or-sc') === c.value
@@ -254,7 +259,8 @@ export default component$(() => {
                                 `?q=${url.searchParams.get('q')}` +
                                 or_c +
                                 `&or-sc=${c.value}` +
-                                or_p+or_ly
+                                or_p +
+                                or_ly
                               }
                             >
                               {c.name}
@@ -286,7 +292,8 @@ export default component$(() => {
                       url.pathname +
                       `?q=${url.searchParams.get('q')}` +
                       or_c +
-                      `&or-p=${p.value}`+or_ly
+                      `&or-p=${p.value}` +
+                      or_ly
                     }
                     class={
                       url.searchParams.get('or-p') === p.value
@@ -348,7 +355,8 @@ export default component$(() => {
                         `?q=${url.searchParams.get('q')}` +
                         or_c +
                         or_p +
-                        `&or-b=${b.value}`+or_ly
+                        `&or-b=${b.value}` +
+                        or_ly
                       }
                     >
                       {b.name}
@@ -369,7 +377,8 @@ export default component$(() => {
                         url.pathname +
                         `?q=${url.searchParams.get('q')}` +
                         or_c +
-                        `&or-r=${r.rating}`+or_ly
+                        `&or-r=${r.rating}` +
+                        or_ly
                       }
                     >
                       <Stars caption={' & up'} rating={r.rating}></Stars>
@@ -412,7 +421,8 @@ export default component$(() => {
                         or_c +
                         or_sc +
                         '&or-or=' +
-                        event.target.value+or_ly
+                        event.target.value +
+                        or_ly
                     )
                   }
                 >
@@ -424,18 +434,82 @@ export default component$(() => {
                   </option>
                 </select>
                 <DouveryArrowDown size="14px" />
-                
-              </div>           <div class="container-button-view-layout">
-              
-   <button class='button-1' onClick$={()=> (navigate(url.pathname + `?q=${url.searchParams.get('q')}` + or_c +
-  or_sc + `&or-ly=${number.setNumber  }`,
-  number.setNumber == 1 ? number.setNumber = 2 : number.setNumber = 1))  }>Ver {number.setNumber} </button> 
-
-
-           </div>
-             
+              </div>{' '}
+              <div class="container-button-view-layout">
+                <button
+                  class="button-1"
+                  onClick$={() => (
+                    number.setNumber == 1
+                      ? (number.setNumber = 2)
+                      : (number.setNumber = 1),
+                    navigate(
+                      url.pathname +
+                        `?q=${url.searchParams.get('q')}` +
+                        or_c +
+                        or_sc +
+                        `&or-ly=${number.setNumber}`
+                    )
+                  )}
+                >
+                  {layout === '1' ? (
+                    <div>
+                      <svg
+                        width="15"
+                        height="15"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.2788 11.2002C17.0888 11.2002 16.8988 11.1302 16.7488 10.9802C16.4588 10.6902 16.4588 10.2102 16.7488 9.9202L19.9388 6.7302L16.7488 3.54019C16.4588 3.25019 16.4588 2.7702 16.7488 2.4802C17.0387 2.1902 17.5187 2.1902 17.8087 2.4802L21.5288 6.20023C21.6688 6.34023 21.7488 6.5302 21.7488 6.7302C21.7488 6.9302 21.6688 7.12022 21.5288 7.26022L17.8087 10.9802C17.6587 11.1202 17.4688 11.2002 17.2788 11.2002Z"
+                          fill="#292D32"
+                        />
+                        <path
+                          d="M21 7.47998H3C2.59 7.47998 2.25 7.13998 2.25 6.72998C2.25 6.31998 2.59 5.97998 3 5.97998H21C21.41 5.97998 21.75 6.31998 21.75 6.72998C21.75 7.13998 21.41 7.47998 21 7.47998Z"
+                          fill="#292D32"
+                        />
+                        <path
+                          d="M6.71997 21.75C6.52997 21.75 6.34 21.68 6.19 21.53L2.46997 17.81C2.32997 17.67 2.25 17.48 2.25 17.28C2.25 17.08 2.32997 16.89 2.46997 16.75L6.19 13.03C6.48 12.74 6.96 12.74 7.25 13.03C7.54 13.32 7.54 13.8 7.25 14.09L4.06 17.28L7.25 20.4699C7.54 20.7599 7.54 21.24 7.25 21.53C7.11 21.68 6.91997 21.75 6.71997 21.75Z"
+                          fill="#292D32"
+                        />
+                        <path
+                          d="M21 18.02H3C2.59 18.02 2.25 17.68 2.25 17.27C2.25 16.86 2.59 16.52 3 16.52H21C21.41 16.52 21.75 16.86 21.75 17.27C21.75 17.68 21.41 18.02 21 18.02Z"
+                          fill="#292D32"
+                        />
+                      </svg>
+                    </div>
+                  ) : (
+                    <div>
+                      {' '}
+                      <svg
+                        width="15"
+                        height="15"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M10.4493 7.46997C10.2593 7.46997 10.0692 7.4 9.91922 7.25L6.72922 4.06L3.53922 7.25C3.24922 7.54 2.76922 7.54 2.47922 7.25C2.18922 6.96 2.18922 6.48 2.47922 6.19L6.19925 2.46997C6.33925 2.32997 6.52922 2.25 6.72922 2.25C6.92922 2.25 7.11925 2.32997 7.25925 2.46997L10.9792 6.19C11.2692 6.48 11.2692 6.96 10.9792 7.25C10.8292 7.4 10.6392 7.46997 10.4493 7.46997Z"
+                          fill="#292D32"
+                        />
+                        <path
+                          d="M6.73047 21.75C6.32047 21.75 5.98047 21.41 5.98047 21V3C5.98047 2.59 6.32047 2.25 6.73047 2.25C7.14047 2.25 7.48047 2.59 7.48047 3V21C7.48047 21.41 7.14047 21.75 6.73047 21.75Z"
+                          fill="#292D32"
+                        />
+                        <path
+                          d="M17.28 21.7497C17.08 21.7497 16.89 21.6698 16.75 21.5298L13.03 17.8097C12.74 17.5197 12.74 17.0397 13.03 16.7497C13.32 16.4597 13.8 16.4597 14.09 16.7497L17.28 19.9397L20.4699 16.7497C20.7599 16.4597 21.24 16.4597 21.53 16.7497C21.82 17.0397 21.82 17.5197 21.53 17.8097L17.81 21.5298C17.67 21.6698 17.47 21.7497 17.28 21.7497Z"
+                          fill="#292D32"
+                        />
+                        <path
+                          d="M17.2695 21.75C16.8595 21.75 16.5195 21.41 16.5195 21V3C16.5195 2.59 16.8595 2.25 17.2695 2.25C17.6795 2.25 18.0195 2.59 18.0195 3V21C18.0195 21.41 17.6895 21.75 17.2695 21.75Z"
+                          fill="#292D32"
+                        />
+                      </svg>
+                    </div>
+                  )}
+                </button>
+              </div>
             </div>
-
           </div>
           <Resource
             value={prodcureducer}
@@ -448,12 +522,23 @@ export default component$(() => {
                   {products.length === 0 ? (
                     <p>No hay productos para mostrar.</p>
                   ) : (
-                    <ul class={layout == '2' ? 'container-product-layout-grid' : 'container-product-layout-vert'}  >
+                    <ul
+                      class={
+                        layout == '2'
+                          ? 'container-product-layout-grid'
+                          : 'container-product-layout-vert'
+                      }
+                    >
                       {products.map((product: any) => (
                         <>
-                          <li  key={product.id}>
-                            {url.searchParams.get('or-c') === 'books'
-                        ? <Card2S product={product} /> : <Card1S product={product} /> }
+                          <li key={product.id}>
+                            {url.searchParams.get('or-c') === 'books' ? (
+                              <Card2S product={product} />
+                            ) : layout == '2' ? (
+                              <Card3S product={product} />
+                            ) : (
+                              <Card1S product={product} />
+                            )}
                           </li>
                         </>
                       ))}
