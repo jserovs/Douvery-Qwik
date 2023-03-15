@@ -29,7 +29,7 @@ export const UseNumberOneCategory = component$(({ product }: any) => {
     <>
       <Resource
         value={productResource}
-        onPending={() => <>Cargando ...</>}
+        onPending={() => <div class="loader-snog "></div>}
         onRejected={(error) => <>Error: {error.message}</>}
         onResolved={() => (
           <>
