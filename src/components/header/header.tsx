@@ -13,7 +13,7 @@ import { DouveryLogo105X40PX } from '../icons/logo105X40';
 import { fetchSuggestions } from '~/services/fechProduct';
 import { IconsSearch } from '../icons/search';
 import { ProfileDropdown } from '../dropdown/header-profile-user/profile-dropdown';
-import { useNavigate } from '@builder.io/qwik-city';
+import { useLocation, useNavigate } from '@builder.io/qwik-city';
 import { category } from '~/routes/(Search)/s';
 
 interface IState {
@@ -49,7 +49,8 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
     };
   });
   const selectedValue = useStore({ selectedValue: 'all' });
-
+  const loc = useLocation();
+  console.log(loc.url)
   return (
     <header>
       <div class="container container-cajas-header ">
@@ -170,7 +171,7 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
                 {' '}
                 <div class="ctr-session-none">
                   {' '}
-                  <a class="trl-drs" href="/a/login">
+                  <a class="trl-drs" href={"/a/login?rr=" + loc.url.pathname + loc.url.search} >
                     <p class="ttle-draw">
                       <strong class="text-hello"> Hello,</strong>{' '}
                       <strong> Iniciar Session</strong>

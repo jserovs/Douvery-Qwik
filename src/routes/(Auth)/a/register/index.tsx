@@ -20,7 +20,7 @@ export const onGet: RequestHandler = async ({ cookie, redirect }) => {
 };
 
 export const useRegister = globalAction$(
-  async ({ name, lastName, email, password }, { fail, headers, cookie }) => {
+  async ({ name, lastName, email, password }, { fail, headers, cookie,url }) => {
     const data = await fetch(`${urlServerNode}/api/signup`, {
       method: 'POST',
       headers: {
@@ -48,8 +48,9 @@ export const useRegister = globalAction$(
 
     setCookiesData(dataAccess, cookie);
 
-    // Redirect using location header instead of redirect becuase we need to reload the routeLoader to get the new user data
-    headers.set('location', '/');
+    const query = url.searchParams.get('rr') || '';
+    headers.set('location', query);
+   
   },
   zod$({
     name: z

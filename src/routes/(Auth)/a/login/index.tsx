@@ -25,7 +25,7 @@ export const onGet: RequestHandler = async ({ cookie, redirect }) => {
 };
 
 export const useLogin = globalAction$(
-  async ({ email, password }, { fail, cookie, headers }) => {
+  async ({ email, password }, { fail, cookie, headers ,url }) => {
     const response = await fetch(`${urlServerNode}/api/signin`, {
       method: 'POST',
       headers: {
@@ -47,7 +47,8 @@ export const useLogin = globalAction$(
 
     setCookiesData(dataAccess, cookie);
 
-    headers.set('location', '/');
+    const query = url.searchParams.get('rr') || '';
+    headers.set('location', query);
   },
   zod$({
     email: z
