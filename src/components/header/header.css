@@ -118,7 +118,7 @@ select,
   text-align: center;
   justify-content: center;
   align-items: center;
-  width: 200px;
+  width: 100px;
   height: 100%;
   white-space: nowrap;
   overflow: hidden;
@@ -140,7 +140,7 @@ select,
 .searchTerm {
   position: relative;
   display: grid;
-  grid-template-columns: 200px auto 50px;
+  grid-template-columns: 100px auto 50px;
   width: 100%;
 
 

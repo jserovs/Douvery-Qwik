@@ -18,6 +18,8 @@ import { DouveryArrowUp } from '~/components/icons/arrow-up';
 import { DouveryArrowDown } from '~/components/icons/arrow-down';
 
 import { Carousel1 } from '~/components/use/carousel/carousel-1/carousel-1';
+import { Card2S } from '~/components/cards/search/card-2-s/card-2-s';
+import { DouveryRight3 } from '~/components/icons/arrow-right-3';
 export const category = [
   {
     name: 'Any',
@@ -54,7 +56,7 @@ export const category = [
 export default component$(() => {
   useStylesScoped$(styles);
   const store = useStore({ count: 1 });
-
+  const number= useStore({setNumber:1})
   const navigate = useNavigate();
 
   const { url } = useLocation();
@@ -85,6 +87,9 @@ export default component$(() => {
       controller
     );
   });
+  const layout = url.searchParams.get('or-ly') || '';
+
+  
 
   const prices = [
     {
@@ -147,6 +152,9 @@ export default component$(() => {
     : '';
   const or_p = url.searchParams.has('or-p')
     ? `&or-p=${url.searchParams.get('or-p')}`
+    : '';
+    const or_ly = url.searchParams.has('or-ly')
+    ? `&or-ly=${url.searchParams.get('or-ly')}`
     : '';
 
   const page = useStore({ setPage: 1 });
@@ -220,7 +228,7 @@ export default component$(() => {
                         url.pathname +
                         `?q=${url.searchParams.get('q')}` +
                         `&or-c=${c.value}` +
-                        or_p
+                        or_p+or_ly
                       }
                     >
                       {c.name}
@@ -229,7 +237,10 @@ export default component$(() => {
                   {url.searchParams.get('or-c') === c.value ? (
                     <div class="container-sub-category">
                       {c.subCategory?.map((c) => (
-                        <>
+                        <div class='item' >
+                          <DouveryRight3 color={  url.searchParams.get('or-sc') === c.value
+                                ? '#256D85'
+                                : ''} size='14px'/>
                           <label
                             class={
                               url.searchParams.get('or-sc') === c.value
@@ -243,13 +254,13 @@ export default component$(() => {
                                 `?q=${url.searchParams.get('q')}` +
                                 or_c +
                                 `&or-sc=${c.value}` +
-                                or_p
+                                or_p+or_ly
                               }
                             >
                               {c.name}
                             </Link>
                           </label>
-                        </>
+                        </div>
                       ))}
                     </div>
                   ) : (
@@ -275,7 +286,7 @@ export default component$(() => {
                       url.pathname +
                       `?q=${url.searchParams.get('q')}` +
                       or_c +
-                      `&or-p=${p.value}`
+                      `&or-p=${p.value}`+or_ly
                     }
                     class={
                       url.searchParams.get('or-p') === p.value
@@ -337,7 +348,7 @@ export default component$(() => {
                         `?q=${url.searchParams.get('q')}` +
                         or_c +
                         or_p +
-                        `&or-b=${b.value}`
+                        `&or-b=${b.value}`+or_ly
                       }
                     >
                       {b.name}
@@ -358,7 +369,7 @@ export default component$(() => {
                         url.pathname +
                         `?q=${url.searchParams.get('q')}` +
                         or_c +
-                        `&or-r=${r.rating}`
+                        `&or-r=${r.rating}`+or_ly
                       }
                     >
                       <Stars caption={' & up'} rating={r.rating}></Stars>
@@ -401,7 +412,7 @@ export default component$(() => {
                         or_c +
                         or_sc +
                         '&or-or=' +
-                        event.target.value
+                        event.target.value+or_ly
                     )
                   }
                 >
@@ -413,8 +424,18 @@ export default component$(() => {
                   </option>
                 </select>
                 <DouveryArrowDown size="14px" />
-              </div>
+                
+              </div>           <div class="container-button-view-layout">
+              
+   <button class='button-1' onClick$={()=> (navigate(url.pathname + `?q=${url.searchParams.get('q')}` + or_c +
+  or_sc + `&or-ly=${number.setNumber  }`,
+  number.setNumber == 1 ? number.setNumber = 2 : number.setNumber = 1))  }>Ver {number.setNumber} </button> 
+
+
+           </div>
+             
             </div>
+
           </div>
           <Resource
             value={prodcureducer}
@@ -427,12 +448,13 @@ export default component$(() => {
                   {products.length === 0 ? (
                     <p>No hay productos para mostrar.</p>
                   ) : (
-                    <ul>
+                    <ul class={layout == '2' ? 'container-product-layout-grid' : 'container-product-layout-vert'}  >
                       {products.map((product: any) => (
                         <>
-                          <l i key={product.id}>
-                            <Card1S product={product} />
-                          </l>
+                          <li  key={product.id}>
+                            {url.searchParams.get('or-c') === 'books'
+                        ? <Card2S product={product} /> : <Card1S product={product} /> }
+                          </li>
                         </>
                       ))}
                     </ul>
