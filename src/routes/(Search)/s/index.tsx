@@ -30,6 +30,12 @@ export const category = [
   {
     name: 'Moda Para Hombre',
     value: 'moda para hombre',
+    subCategory: [
+      { name: 'Ropa', value: 'ropa' },
+      { name: 'Calzado masculino', value: 'calzado masculino' },
+      { name: 'Deportivo', value: 'deportivo' },
+      { name: 'Tenis', value: 'tenis' },
+    ],
   },
   {
     name: 'Computadoras  & Accesorios',
@@ -40,6 +46,7 @@ export const category = [
     value: 'electronic Y accesorios',
   },
 ];
+
 export default component$(() => {
   useStylesScoped$(styles);
   const store = useStore({ count: 1 });
@@ -54,19 +61,23 @@ export default component$(() => {
     const controller = new AbortController();
     cleanup(() => controller.abort());
     const category = url.searchParams.get('or-c') || 'all';
+    const subcategory = url.searchParams.get('or-sc') || 'all';
     const query = url.searchParams.get('q') || '';
     const price = url.searchParams.get('or-p') || 'all';
     const rating = url.searchParams.get('or-r') || 'all';
     const order = url.searchParams.get('or-or') || 'newest';
     const page = url.searchParams.get('or-page') || '1';
+    const brand = url.searchParams.get('or-b') || 'all';
 
     return fetchSearchProduct(
       category,
+      subcategory,
       query,
       price,
       rating,
       order,
       page,
+      brand,
       controller
     );
   });
@@ -83,6 +94,21 @@ export default component$(() => {
     {
       name: '$201 to $1000',
       value: '201-1000',
+    },
+  ];
+
+  const brand = [
+    {
+      name: 'Douvery',
+      value: 'douvery',
+    },
+    {
+      name: 'Apple',
+      value: 'apple',
+    },
+    {
+      name: 'Under Armour',
+      value: 'under armour',
     },
   ];
 
@@ -111,6 +137,9 @@ export default component$(() => {
   const selectedValue = useStore({ selectedValue: '' });
   const or_c = url.searchParams.has('or-c')
     ? `&or-c=${url.searchParams.get('or-c')}`
+    : '';
+  const or_sc = url.searchParams.has('or-sc')
+    ? `&or-sc=${url.searchParams.get('or-sc')}`
     : '';
   const or_p = url.searchParams.has('or-p')
     ? `&or-p=${url.searchParams.get('or-p')}`
@@ -193,6 +222,35 @@ export default component$(() => {
                       {c.name}
                     </Link>
                   </label>
+                  {url.searchParams.get('or-c') === c.value ? (
+                    <div class="container-sub-category">
+                      {c.subCategory?.map((c) => (
+                        <>
+                          <label
+                            class={
+                              url.searchParams.get('or-sc') === c.value
+                                ? 'active-undeline'
+                                : ''
+                            }
+                          >
+                            <Link
+                              href={
+                                url.pathname +
+                                `?q=${url.searchParams.get('q')}` +
+                                or_c +
+                                `&or-sc=${c.value}` +
+                                or_p
+                              }
+                            >
+                              {c.name}
+                            </Link>
+                          </label>
+                        </>
+                      ))}
+                    </div>
+                  ) : (
+                    ''
+                  )}
                 </div>
               ))}
             </div>
@@ -257,6 +315,35 @@ export default component$(() => {
             </div>
             <div>
               {' '}
+              <h3>By Brands</h3>
+              <ul>
+                {brand.map((b) => (
+                  <li
+                    key={b.name}
+                    class={
+                      url.searchParams.get('or-b') === b.value
+                        ? 'active-undeline'
+                        : ''
+                    }
+                  >
+                    <Link
+                      class="linkdepart"
+                      href={
+                        url.pathname +
+                        `?q=${url.searchParams.get('q')}` +
+                        or_c +
+                        or_p +
+                        `&or-b=${b.value}`
+                      }
+                    >
+                      {b.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              {' '}
               <h3>By Ratings</h3>
               <ul>
                 {ratings.map((r) => (
@@ -308,6 +395,7 @@ export default component$(() => {
                         '?q=' +
                         url.searchParams.get('q') +
                         or_c +
+                        or_sc +
                         '&or-or=' +
                         event.target.value
                     )
