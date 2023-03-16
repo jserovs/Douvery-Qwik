@@ -5,8 +5,8 @@
 }
 
 .card {
-    display: flex;
-    align-items: flex-start;
+    display: grid;
+
     background-color: #ffffff;
     border-top: 2px solid #E8F0FE;
     gap: 10px;
@@ -43,7 +43,7 @@
 
 .product-image {
 
-    width: 250px;
+    width: 500PX;
     height: 180px;
     object-fit: contain;
     margin-right: 1rem;

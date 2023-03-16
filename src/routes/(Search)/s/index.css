@@ -27,7 +27,7 @@
 
 .container-product-layout-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 
 
@@ -125,9 +125,13 @@
 .filter-section-body label {
     display: block;
     font-size: 1rem;
-    margin-bottom: 5px;
+    margin: 2.5px 0px;
     padding: 2px;
-  
+
+}
+
+.filter-section-body label:hover {
+    text-decoration: underline;
 }
 
 .filter-section-body input[type="checkbox"] {
@@ -356,12 +360,12 @@
 }
 
 @media only screen and (max-width: 1301px) {
-   
+
     .container-product-layout-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     }
-    }
+}
 
 @media only screen and (max-width: 1455px) {
     .svg-left {
@@ -382,6 +386,7 @@
     .container-button-view-layout {
         display: none;
     }
+
     .svg-up {
         display: none;
     }

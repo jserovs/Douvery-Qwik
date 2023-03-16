@@ -34,40 +34,47 @@ export const Card3S = component$(({ product }: any) => {
               <TextCL text={product.name} />{' '}
             </h2>
           </a>
+
           <p class="product-description">{product.marca}</p>
-          <UseNumberOneCategory product={product} />
-          <div class="container-ratings">
-          <UseStarRating product={product} />
+
+          <div class="container-number-one-category">
+            <UseNumberOneCategory product={product} />
           </div>
-   
-          {product.discount < 20 ? '' :        <div class="container-label-save"><LabelSaveRed product={product} /></div>}
-          {product.price > 998 ? (
-            <div class="ctr-free-shipping">
-              <p>
-                <DouveryCheckMark size="15px" /> Disponible
-              </p>
-              <div class="ctr-opa">|</div>
-              <p>
-                {' '}
-                <DouveryCheckMark size="15px" />
-                Free shipping
-              </p>
-            </div>
-          ) : (
+          <div class="ctr-free-shipping">
+            <p>
+              <DouveryCheckMark size="15px" /> Disponible
+            </p>
+            {product.price > 998 ? (
+              <>
+                <div class="ctr-opa">|</div>
+                <p>
+                  {' '}
+                  <DouveryCheckMark size="15px" />
+                  Free shipping
+                </p>
+              </>
+            ) : (
+              ''
+            )}
+          </div>
+          <div class="container-ratings">
+            <UseStarRating product={product} />
+          </div>
+
+          {product.discount < 20 ? (
             ''
+          ) : (
+            <div class="container-label-save">
+              <LabelSaveRed product={product} />
+            </div>
           )}
+
           <div class="container-expert">
             {' '}
             {product.price > 150 ? (
               <div class="container-expert-cell">
                 {' '}
                 <div class="crt-expectend-ship">
-                  <div class="srt-shrt-prsrd-nrms">
-                    <strong class="hs-sr1">Envio: </strong>{' '}
-                    <p class="ps-sr1">
-                      Estándar gratuito en compras mayores a $23
-                    </p>
-                  </div>
                   {getZipCode ? (
                     <>
                       <div class="shrp-prsx">

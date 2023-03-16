@@ -29,9 +29,7 @@ export const category = [
   {
     name: 'Books',
     value: 'books',
-    subCategory: [
-      { name: 'Pasta blanda', value: 'pasta blanda' },
-    ],
+    subCategory: [{ name: 'Pasta blanda', value: 'pasta blanda' }],
   },
   {
     name: 'Moda Para Hombre',
@@ -46,29 +44,33 @@ export const category = [
   {
     name: 'Computadoras  & Accesorios',
     value: 'computadoras y accesorios',
-    subCategory:[
-      {name:'Monitor para videojuegos' ,value:'monitor para videojuegos'},  
-       {name:'Procesador para computadoras' ,value:'procesador para computadoras'},
-       {name:'Laptop' ,value:'laptop'},
-       {name:'Teclado' ,value:'teclado'},
-    ]
+    subCategory: [
+      { name: 'Monitor para videojuegos', value: 'monitor para videojuegos' },
+      {
+        name: 'Procesador para computadoras',
+        value: 'procesador para computadoras',
+      },
+      { name: 'Laptop', value: 'laptop' },
+      { name: 'Teclado', value: 'teclado' },
+    ],
   },
   {
     name: 'Electronico & Accesorios',
     value: 'electronic Y accesorios',
-    subCategory:[
-      {name:'Celulares' ,value:'celular'},
-      {name:'Audífonos' ,value:'audífonos'},
-      {name:'Televisores' ,value:'televisor'},
-      {name:'Reloj moderno' ,value:'reloj moderno'},
-      {name:'Volante de videojuegos' ,value:'volante de videojuegos'},
-   ]
-  }, {
+    subCategory: [
+      { name: 'Celulares', value: 'celular' },
+      { name: 'Audífonos', value: 'audífonos' },
+      { name: 'Televisores', value: 'televisor' },
+      { name: 'Reloj moderno', value: 'reloj moderno' },
+      { name: 'Volante de videojuegos', value: 'volante de videojuegos' },
+    ],
+  },
+  {
     name: 'Nutrición',
     value: 'nutrición',
-    subCategory:[
-       {name:'Nutrición deportiva' ,value:'nutrición deportiva'},
-    ]
+    subCategory: [
+      { name: 'Nutrición deportiva', value: 'nutrición deportiva' },
+    ],
   },
 ];
 
@@ -139,6 +141,10 @@ export default component$(() => {
   ];
 
   const ratings = [
+    {
+      name: '5stars & up',
+      rating: 5,
+    },
     {
       name: '4stars & up',
       rating: 4,
@@ -366,19 +372,21 @@ export default component$(() => {
                         : ''
                     }
                   >
-                    <Link
-                      class="linkdepart"
-                      href={
-                        url.pathname +
-                        `?q=${url.searchParams.get('q')}` +
-                        or_c +
-                        or_p +
-                        `&or-b=${b.value}` +
-                        or_ly
-                      }
-                    >
-                      {b.name}
-                    </Link>
+                    <label>
+                      <Link
+                        class="linkdepart"
+                        href={
+                          url.pathname +
+                          `?q=${url.searchParams.get('q')}` +
+                          or_c +
+                          or_p +
+                          `&or-b=${b.value}` +
+                          or_ly
+                        }
+                      >
+                        {b.name}
+                      </Link>
+                    </label>
                   </li>
                 ))}
               </ul>
@@ -389,18 +397,20 @@ export default component$(() => {
               <ul>
                 {ratings.map((r) => (
                   <li key={r.name}>
-                    <Link
-                      class="linkdepart"
-                      href={
-                        url.pathname +
-                        `?q=${url.searchParams.get('q')}` +
-                        or_c +
-                        `&or-r=${r.rating}` +
-                        or_ly
-                      }
-                    >
-                      <Stars caption={' & up'} rating={r.rating}></Stars>
-                    </Link>
+                    <label>
+                      <Link
+                        class="linkdepart"
+                        href={
+                          url.pathname +
+                          `?q=${url.searchParams.get('q')}` +
+                          or_c +
+                          `&or-r=${r.rating}` +
+                          or_ly
+                        }
+                      >
+                        <Stars caption={' & up'} rating={r.rating}></Stars>
+                      </Link>
+                    </label>
                   </li>
                 ))}
                 <li>
