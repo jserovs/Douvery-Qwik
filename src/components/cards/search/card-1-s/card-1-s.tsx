@@ -7,6 +7,7 @@ import { TextCL } from '~/components/use/textCL/textCL';
 import { ContainerExpectedShippingTime } from '~/components/(Product-details)/components/container-expected-shipping-time';
 import { UseNumberOneCategory } from '~/components/use/numberOne/numberOneCategory';
 import { DouveryCheckMark } from '~/components/icons/checkMark';
+import { ButtonCardHover } from '~/components/use/bropdown-button-cart-fast-pay/button-card/button-card-hover';
 export const Card1S = component$(({ product }: any) => {
   useStylesScoped$(styles);
   const discoun = product.price - product.price * (product.discount / 100);
@@ -79,7 +80,12 @@ export const Card1S = component$(({ product }: any) => {
             ''
           )}
         </div>
+        <div class="container-hover-button">
+          {' '}
+          <ButtonCardHover product={product} />
+        </div>
       </div>
+
       {is.is && (
         <>
           {' '}

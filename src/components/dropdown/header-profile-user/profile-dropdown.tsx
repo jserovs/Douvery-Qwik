@@ -1,9 +1,11 @@
 import { component$, useStore, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './profile-dropdown.css?inline';
+import { useLocation } from '@builder.io/qwik-city';
 
 export const ProfileDropdown = component$(({ user }: any) => {
   useStylesScoped$(styles);
   const isOpen = useStore({ setIsOpen: false });
+  const loc = useLocation();
   return (
     <div>
       {' '}
@@ -35,7 +37,10 @@ export const ProfileDropdown = component$(({ user }: any) => {
               Mis pedidos
             </a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="/a/logout">
+            <a
+              class="dropdown-item"
+              href={'/a/logout?rr=' + loc.url.pathname + loc.url.search}
+            >
               Cerrar sesión
             </a>
           </ul>

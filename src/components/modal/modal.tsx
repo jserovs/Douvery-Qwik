@@ -35,7 +35,7 @@ import { useGetCurrentUser, useGetCurrentZipCode } from '~/routes/layout';
 // import { cleanUpParamsCodePostal } from '~/utils/cleurs';
 
 export const useZipCode = globalAction$(
-  async ({ code }, { cookie, headers,url }) => {
+  async ({ code }, { cookie, headers }) => {
     const token = generateToken(code, passwordKEY, serverKey);
     const nso = divideAndMultiplyToken(token, passwordKEY, serverKey);
 
@@ -45,8 +45,8 @@ export const useZipCode = globalAction$(
     const nso2 = divideAndMultiplyToken(token2, passwordKEY, serverKey);
 
     setCookiesDataCountry(nso2, cookie);
-    const query = url.searchParams.get('rr') || '';
-    headers.set('location', query);
+
+    headers.set('location', '/');
   },
   zod$({
     code: z.string({
@@ -220,6 +220,7 @@ export const ModalButtonCou = component$(() => {
                                       readOnly
                                     />
                                   </div>
+
                                   {action.value?.fieldErrors?.code && (
                                     <span class="error">
                                       {action.value?.fieldErrors?.code}

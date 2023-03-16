@@ -140,7 +140,6 @@ export async function fetchCodePostal(
   codepostal: string,
   controller?: AbortController
 ): Promise<any> {
-  console.log(codepostal);
   const response = await fetch(
     `
    ${urlServerNode}/q?code=${codepostal}`,
@@ -153,7 +152,7 @@ export async function fetchCodePostal(
     throw new Error('Failed to fetch code');
   }
   const results = await response.json();
-  console.log(results);
+
   return results;
 }
 
@@ -186,7 +185,7 @@ export async function fetchIpInfo(): Promise<any> {
     throw new Error('Failed to fetch code');
   }
   const results = await response.text();
-  console.log(results);
+
   return results;
 }
 

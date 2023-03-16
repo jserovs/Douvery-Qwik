@@ -4,12 +4,13 @@
 }
 
 .card {
-    max-width: 450px;
-    min-height: 700px;
-    display: grid;
-    grid-template-rows: 185px 50px;
+
+
+    display: flex;
+
     background-color: #ffffff;
-    border: 1px solid #E8F0FE;
+    border: 1px solid var(--border-width-0);
+
     gap: 10px;
     padding: 1rem;
     margin: 0.5rem;
