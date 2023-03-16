@@ -31,7 +31,6 @@
 }
 
 
-
 .container-product-layout-vert {
     display: grid;
 
@@ -126,7 +125,9 @@
 .filter-section-body label {
     display: block;
     font-size: 1rem;
-    margin-bottom: 3px;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-bottom: 1px solid var(--border-width-0);
 }
 
 .filter-section-body input[type="checkbox"] {
@@ -354,6 +355,14 @@
     background-color: var(--color-background-white);
 }
 
+@media only screen and (max-width: 1301px) {
+   
+    .container-product-layout-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+    }
+
 @media only screen and (max-width: 1455px) {
     .svg-left {
         display: none;
@@ -370,6 +379,9 @@
 }
 
 @media only screen and (max-width: 885px) {
+    .container-button-view-layout {
+        display: none;
+    }
     .svg-up {
         display: none;
     }

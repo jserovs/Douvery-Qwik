@@ -30,8 +30,7 @@ export const category = [
     name: 'Books',
     value: 'books',
     subCategory: [
-      { name: 'Calendars', value: 'calendars' },
-      { name: 'Childrens Books', value: 'childrens books' },
+      { name: 'Pasta blanda', value: 'pasta blanda' },
     ],
   },
   {
@@ -47,10 +46,29 @@ export const category = [
   {
     name: 'Computadoras  & Accesorios',
     value: 'computadoras y accesorios',
+    subCategory:[
+      {name:'Monitor para videojuegos' ,value:'monitor para videojuegos'},  
+       {name:'Procesador para computadoras' ,value:'procesador para computadoras'},
+       {name:'Laptop' ,value:'laptop'},
+       {name:'Teclado' ,value:'teclado'},
+    ]
   },
   {
     name: 'Electronico & Accesorios',
     value: 'electronic Y accesorios',
+    subCategory:[
+      {name:'Celulares' ,value:'celular'},
+      {name:'Audífonos' ,value:'audífonos'},
+      {name:'Televisores' ,value:'televisor'},
+      {name:'Reloj moderno' ,value:'reloj moderno'},
+      {name:'Volante de videojuegos' ,value:'volante de videojuegos'},
+   ]
+  }, {
+    name: 'Nutrición',
+    value: 'nutrición',
+    subCategory:[
+       {name:'Nutrición deportiva' ,value:'nutrición deportiva'},
+    ]
   },
 ];
 

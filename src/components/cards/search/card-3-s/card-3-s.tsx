@@ -36,8 +36,11 @@ export const Card3S = component$(({ product }: any) => {
           </a>
           <p class="product-description">{product.marca}</p>
           <UseNumberOneCategory product={product} />
+          <div class="container-ratings">
           <UseStarRating product={product} />
-          {product.discount < 20 ? '' : <LabelSaveRed product={product} />}
+          </div>
+   
+          {product.discount < 20 ? '' :        <div class="container-label-save"><LabelSaveRed product={product} /></div>}
           {product.price > 998 ? (
             <div class="ctr-free-shipping">
               <p>
