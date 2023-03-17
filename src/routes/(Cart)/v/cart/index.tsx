@@ -6,8 +6,15 @@ import {
 } from '@builder.io/qwik';
 import styles from './index.css?inline';
 
-import { addToCart, getDataProductCart } from '~/services/cart/cart';
+import {
+  addToCart,
+  decreaseCartItemQuantity,
+  getDataProductCart,
+  removeCartItem,
+} from '~/services/cart/cart';
 import { Card1SCART } from '~/components/cards/cart/card-1-s/card-1-s';
+import { useLocation, useNavigate } from '@builder.io/qwik-city';
+import { ButtonCartIndex } from '~/components/(Cart)/components/buttons';
 interface IState {
   searchInput: string;
   searchResults: string[];
@@ -21,10 +28,11 @@ export default component$(() => {
     searchResults: [],
     selectedValue: '',
   });
+  const { url } = useLocation();
   const cartTotal = useStore({ setcartTotal: 0 });
 
   useVisibleTask$(async ({ track }) => {
-    track(() => cartTotal.setcartTotal);
+    track(() => url.pathname);
 
     const controller = new AbortController();
     state.searchResults = await getDataProductCart();
@@ -37,50 +45,19 @@ export default component$(() => {
   return (
     <div class="cart-container">
       <div class="cart-products">
-        {state.searchResults.map((item) => {
-          const subTotal = state.searchResults.reduce((accumulator, item) => {
-            return accumulator + item.price * item.quantity;
-          }, 0);
+        {state.searchResults.map((product) => {
+          const subTotal = state.searchResults.reduce(
+            (accumulator, product) => {
+              return accumulator + product.price * product.quantity;
+            },
+            0
+          );
           cartTotal.setcartTotal = subTotal;
           return (
             <>
               <div class="container-cart">
-                <Card1SCART product={item} />
-                <div class="buttos-cart">
-                  {item.quantity}
-                  <button
-                    onClick$={() => {
-                      addToCart({ dui: item.dui, quantity: 1 });
-                      cartTotal.setcartTotal =
-                        cartTotal.setcartTotal + product.price;
-                    }}
-                  >
-                    agregar {cartTotal.setcartTotal}
-                  </button>
-                  <button
-                  // onClick={() => {
-                  //   const newQuantity = product.quantity - 1;
-                  //   if (newQuantity >= 1) {
-                  //     updateQuantity(product.dui, newQuantity);
-                  //     setCartItemsTotal(
-                  //       (prevTotal) => prevTotal - product.price
-                  //     );
-                  //   }
-                  // }}
-                  >
-                    -
-                  </button>
-                  <button
-                  // onClick={() => {
-                  //   removeItem(product.dui);
-                  //   setCartItemsTotal(
-                  //     (prevTotal) => prevTotal - product.totalPrice
-                  //   );
-                  // }}
-                  >
-                    Eliminar
-                  </button>
-                </div>
+                <Card1SCART product={product} />
+                <ButtonCartIndex product={product} />
               </div>
             </>
           );

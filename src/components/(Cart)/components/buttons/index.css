@@ -1,0 +1,63 @@
+.buttos-cart {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 20%;
+    right: 20%;
+    gap: 30px;
+
+
+    border-radius: 5px;
+
+
+}
+
+.buttos-cart-carsh {
+    display: grid;
+
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 25px;
+    background-color: #dfdfdf;
+    border-radius: 5px;
+    border: 1px solid #eee;
+}
+
+.buttons-ca {
+    display: grid;
+    grid-template-columns: auto 30px auto;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #dfdfdf;
+    border-radius: 5px;
+    border: 1px solid #eee;
+
+}
+
+.buttons-ca button {
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: #dfdfdf;
+    border-radius: 5px;
+    width: 30px;
+    color: #fff;
+
+}
+
+.buttons-ca .quantity {
+    background-color: #fff;
+    display: grid;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons-ca .quantity p {
+    color: #000;
+}

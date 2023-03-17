@@ -2,13 +2,14 @@
     display: grid;
     gap: 5px;
     position: relative;
+    min-width: 650px;
     max-width: 850px;
 }
 
 .card {
     display: flex;
     align-items: flex-start;
-    background-color: #ffffff;
+
     border-top: 2px solid #E8F0FE;
     gap: 10px;
     padding: 1rem;
