@@ -65,7 +65,6 @@ export default component$(() => {
           onRejected={(error) => <>Error: {error.message}</>}
           onResolved={() => (
             <>
-              {}
               <div class="nd-det-1">
                 <ContainerDatails is={isOpen} props={state.product} />
               </div>

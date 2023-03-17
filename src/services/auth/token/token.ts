@@ -3,6 +3,9 @@ import { Base64 } from 'js-base64';
 
 
 const OPTIONS_KEY = 'userInfo';
+export const passwordKEY = 'password';
+export const serverKey = 'clave_secreta_del_servidor';
+
 
 export const isAppReady = () => {
   return null !== localStorage.getItem(OPTIONS_KEY);
@@ -53,11 +56,6 @@ export function decodeToken(token:any, password:any, serverKey:any) {
 }
 
 
-export const passwordKEY = 'password';
-export const serverKey = 'clave_secreta_del_servidor';
-
- 
-
 export async function fetchUser(
   token: string,
 ){
@@ -104,23 +102,3 @@ export async function getUserInfo() {
 
 
 
-
-// Llamamos a la función getUserInfo con el token de autenticación
-
-export function getData() {
-  const stored = localStorage.getItem(OPTIONS_KEY);
-  if (stored != null) {
-    try {
-      const data = JSON.parse(stored);
-       const dret = fetchUser(data);
- 
-      return dret;
-     
-    } catch (error) {
-      console.error('Error al decodificar los datos:', error);
-    }
-  } else {
-    console.warn('No se encontraron datos en localStorage');
-  }
-  
-}

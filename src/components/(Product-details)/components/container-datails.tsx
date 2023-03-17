@@ -1,13 +1,15 @@
-import { component$, useStylesScoped$ } from '@builder.io/qwik';
+import { component$, useStore, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './css/container-datails.css?inline';
 import { Stars } from '~/components/Ratings/stars/stars';
 import { ContainerButtonDetails } from './container-button-details';
-import { ContainerInputCartPay } from './container-input-cart-pay';
+
 import numeral from 'numeral';
 import { ContainerProgres } from '~/components/progres-bar/container-progres/container-progres';
 
 export default component$(({ props }: any) => {
   useStylesScoped$(styles);
+  const quantityCart = useStore({ setQuantityCart: '1' });
+
   //*MOSTRAR TOTAL DE RATING ( 5 , 1 ,2)
   let totalRating = 0.0;
   for (let i = 0; i < props.ratings.length; i++) {
@@ -20,6 +22,7 @@ export default component$(({ props }: any) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const locateCurrency = 'US';
   const formCurrency = '$0,0.00';
+
   return (
     <>
       <div class="super-container">
@@ -139,12 +142,27 @@ export default component$(({ props }: any) => {
             </div>
           ) : (
             <div class="div-input-sertts">
-              <ContainerInputCartPay quantity={1} />
+              <div class="select-input-cart">
+                <select
+                  value={quantityCart.setQuantityCart}
+                  onChange$={(event) =>
+                    (quantityCart.setQuantityCart = event.target.value)
+                  }
+                >
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
             </div>
           )}
           <div class="div-button">
             {' '}
-            <ContainerButtonDetails props={props} />
+            <ContainerButtonDetails
+              product={props}
+              quantity={quantityCart.setQuantityCart}
+            />
           </div>
         </div>
       </div>

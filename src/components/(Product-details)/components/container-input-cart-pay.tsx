@@ -3,7 +3,7 @@ import styles from './css/container-input-cart-pay.css?inline';
 export const ContainerInputCartPay = component$(({ quantity }: any) => {
   useStylesScoped$(styles);
   return (
-    <div class="caja">
+    <div class="select-input-cart">
       <select>
         <option selected value="1">
           {quantity}

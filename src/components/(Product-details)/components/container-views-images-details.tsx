@@ -19,6 +19,7 @@ import { ContainerVertInfo } from './container-vrt-brts-product';
 
 import { ContainerDescriptionGPT } from './crtr-description-gpt';
 import { CardDouveryExtend1 } from '~/components/cards/douveryExtend/card-douveryExtend-1/douveryExtend1';
+import { ContainerBreadcrumbs } from './sessions/VIEW 1/components/Breadcrumbs/container-breadcrumbs';
 
 export const ContainerViewsIMGDetails = component$(({ props }: any) => {
   useStylesScoped$(styles);
@@ -68,7 +69,9 @@ export const ContainerViewsIMGDetails = component$(({ props }: any) => {
   }
   return (
     <div class="container-view-product">
-      <div class="vert-left">{selectComponent()}</div>
+      <div class="vert-left">
+        {selectComponent()} <ContainerBreadcrumbs product={props} />
+      </div>
 
       <div class="center">
         <div class="crtr-div-ifrms-aetr">
@@ -89,7 +92,7 @@ export const ContainerViewsIMGDetails = component$(({ props }: any) => {
             <div class="div-input-sertts">
               <ContainerInputCartPay quantity={1} />
             </div>
-            <ContainerButtonDetails props={props} />
+            <ContainerButtonDetails product={props} />
           </div>
           {props.category == 'Books' ? (
             <>

@@ -49,10 +49,10 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
     };
   });
   const selectedValue = useStore({ selectedValue: 'all' });
-  const {url} = useLocation();
+  const { url } = useLocation();
   const or_ly = url.searchParams.has('or-ly')
-  ? `&or-ly=${url.searchParams.get('or-ly')}`
-  : '';
+    ? `&or-ly=${url.searchParams.get('or-ly')}`
+    : '';
   return (
     <header>
       <div class="container container-cajas-header ">
@@ -143,7 +143,8 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
                       state.searchInput +
                       '&or-c=' +
                       selectedValue.selectedValue +
-                      ''+ or_ly
+                      '' +
+                      or_ly
                   );
                 }}
               >
@@ -157,7 +158,7 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
         </div>
         <div class="cajas">
           <div class="main">
-            <a href="/cart" class="user">
+            <a href="/v/cart" class="user">
               <DouveryCart />
               <div class="badget-circle">1</div>
             </a>
