@@ -1,6 +1,7 @@
 import { component$, useStore, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './profile-dropdown.css?inline';
 import { useLocation } from '@builder.io/qwik-city';
+import { TextCL } from '~/components/use/textCL/textCL';
 
 export const ProfileDropdown = component$(({ user }: any) => {
   useStylesScoped$(styles);
@@ -24,7 +25,7 @@ export const ProfileDropdown = component$(({ user }: any) => {
           >
             <p class="ttle-draw">
               <strong class="text-hello"> Hello,</strong>{' '}
-              <strong>{user.name}</strong>
+              <strong> <TextCL text={user.name}/></strong>
             </p>{' '}
           </button>
         </div>{' '}

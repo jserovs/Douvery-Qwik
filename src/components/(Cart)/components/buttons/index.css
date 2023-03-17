@@ -3,9 +3,7 @@
     grid-template-columns: auto auto;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    bottom: 20%;
-    right: 20%;
+  
     gap: 30px;
 
 
@@ -23,7 +21,7 @@
     height: 25px;
     background-color: #dfdfdf;
     border-radius: 5px;
-    border: 1px solid #eee;
+    border:1px solid var(--border-width-1)
 }
 
 .buttons-ca {
@@ -34,7 +32,7 @@
 
     background-color: #dfdfdf;
     border-radius: 5px;
-    border: 1px solid #eee;
+    border:1px solid var(--border-width-1)
 
 }
 
@@ -61,3 +59,22 @@
 .buttons-ca .quantity p {
     color: #000;
 }
+
+
+@media only screen and (max-width: 885px) {
+    .buttos-cart {
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 10%;
+        right: 0%;
+        gap: 30px;
+    
+    
+        border-radius: 5px;
+    
+    
+    }
+ }

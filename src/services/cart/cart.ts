@@ -1,4 +1,5 @@
 import { divideAndMultiplyToken, generateToken, passwordKEY, serverKey } from "../auth/token/token";
+import { urlServerNode } from "../fechProduct";
 
 const OPTIONS_KEY_CART = 'cart';
 
@@ -83,7 +84,7 @@ export async function  getDataProductCart  () {
   try {
     const settings = JSON.parse(stored as string);
     const response = await fetch(
-  `http://localhost:8339/api/productsDui/json`,
+  ` ${urlServerNode}/api/productsDui/json`,
   {
     method: 'POST',
     body: JSON.stringify({

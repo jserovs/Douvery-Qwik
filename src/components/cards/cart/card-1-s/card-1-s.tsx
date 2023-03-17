@@ -2,6 +2,7 @@ import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './card-1-s.css?inline';
 import { TextCL } from '~/components/use/textCL/textCL';
 import { UsePrice } from '~/components/use/price/price';
+import { DouveryCheckMark } from '~/components/icons/checkMark';
 export const Card1SCART = component$(({ product }: any) => {
   useStylesScoped$(styles);
   const discoun = product.price - product.price * (product.discount / 100);
@@ -15,7 +16,26 @@ export const Card1SCART = component$(({ product }: any) => {
             <h2 class="product-title">
               <TextCL text={product.name} />{' '}
             </h2>
-          </a>
+          </a> {product.price > 998 ? (
+            <div class="ctr-free-shipping">
+              <p>
+                <DouveryCheckMark size="15px" /> Disponible
+              </p>
+              <div class="ctr-opa">|</div>
+              <p>
+                {' '}
+                <DouveryCheckMark size="15px" />
+                Free shipping
+              </p>
+            </div>
+          ) : (
+            <div class="ctr-free-shipping">
+            <p>
+              <DouveryCheckMark size="15px" /> Disponible
+            </p>
+          
+          </div>
+          )}
           <div class="product-price">
             {product.discount > 0 ? (
               <>
@@ -33,7 +53,9 @@ export const Card1SCART = component$(({ product }: any) => {
               </>
             )}{' '}
           </div>
+       
         </div>
+       
       </div>
     </div>
   );

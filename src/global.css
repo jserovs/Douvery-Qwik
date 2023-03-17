@@ -192,6 +192,11 @@ hs-sr3 {
   color: var(--color-text-highlight-secondary);
 }
 
+.hs-sr3 {
+  font-size: 20.92px;
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-highlight-secondary);
+}
 /** Paragraph label */
 
 p-sr1 {
