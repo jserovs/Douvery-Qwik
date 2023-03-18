@@ -175,4 +175,15 @@ input[type="checkbox"] {
     .card .container-expert {
         display: none;
     }
+    .gift-option {
+        display: flex;
+        align-items: flex-start;
+        opacity: 70%;
+        font-size: 13px;
+    }
+    input[type="checkbox"]{
+    
+        margin-top: 10px;
+       
+    }
 }

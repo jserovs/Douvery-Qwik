@@ -85,7 +85,8 @@ export default component$(() => {
           ) : (
             <div class="loader"></div>
           )}
-          <div class="cart-subtotal">
+       <div class="container-card-subtotal">
+       <div class="cart-subtotal">
             <ul class="container-lista-subtotal">
               <li>
                 Total producto:{' '}
@@ -101,22 +102,25 @@ export default component$(() => {
               </strong>
             </div>
           </div>
+       </div>
         </div>
-        <div>
+        <div class="container-total-cart">
           <div class="cart-total">
             <h3 class="container-titulo">Resumen de la compra</h3>
             <ul class="container-lista">
               <li>
                 Descuentos:{' '}
                 <span id="descuentos" class="container-valor">
-                  ${discount.setDiscount.toFixed(2)}
+                <UsePrice price={discount.setDiscount} />
+                 
                 </span>
               </li>
 
               <li>
                 Subtotal:{' '}
                 <span id="subtotal" class="container-valor">
-                  ${subTotal.setsubTotal.toFixed(2)}
+                <UsePrice price={subTotal.setsubTotal} />
+                           
                 </span>
               </li>
             </ul>
