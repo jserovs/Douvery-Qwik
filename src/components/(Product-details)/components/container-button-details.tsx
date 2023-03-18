@@ -11,11 +11,7 @@ export const ContainerButtonDetails = component$(
     const AddCart = $(() => {
       addToCart({
         dui: product.dui,
-        images: product.images[0],
-        name: product.name,
         quantity: quantity,
-        price: product.price,
-        stock: product.quantity == 0 ? false : true,
       });
     });
     return (

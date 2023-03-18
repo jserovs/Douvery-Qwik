@@ -7,17 +7,17 @@ import {
 import styles from './index.css?inline';
 
 import {
-  addToCart,
-  decreaseCartItemQuantity,
+ 
   getDataProductCart,
-  removeCartItem,
+ 
 } from '~/services/cart/cart';
 import { Card1SCART } from '~/components/cards/cart/card-1-s/card-1-s';
-import { useLocation, useNavigate } from '@builder.io/qwik-city';
+import { useLocation } from '@builder.io/qwik-city';
 import { ButtonCartIndex } from '~/components/(Cart)/components/buttons';
+import { Product } from '~/utils/types';
 interface IState {
   searchInput: string;
-  searchResults: string[];
+  searchResults: Product[];
   selectedValue: string;
 }
 
@@ -72,7 +72,7 @@ export default component$(() => {
               );
             })
           ) : (
-            <div class="container-no-product">No hay productos.</div>
+            <div class="loader"></div>
           )}
         </div>
         <div class="cart-total">Cart Total: {cartTotal.setcartTotal}</div>

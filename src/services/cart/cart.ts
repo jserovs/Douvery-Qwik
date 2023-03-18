@@ -1,3 +1,4 @@
+import { urlServerNode } from "../fechProduct";
 
 
 const OPTIONS_KEY_CART = 'cart';
@@ -16,7 +17,7 @@ export function getDataCart() {
   }
 }
 
-export function addToCart({dui, quantity,}: {dui: string,images:string,name:string, quantity: number,price:number, stock:boolean}) {
+export function addToCart({dui, quantity,}: {dui: string,quantity: number}) {
   console.log('Agregando al carrito:', {dui, quantity});
 
   const cart = getDataCart() || [];
@@ -83,7 +84,7 @@ export async function  getDataProductCart  () {
   try {
     const settings = JSON.parse(stored as string);
     const response = await fetch(
-  ` http://localhost:8339/api/productsDui/json`,
+  ` ${urlServerNode}/api/productsDui/json`,
   {
     method: 'POST',
     body: JSON.stringify({
