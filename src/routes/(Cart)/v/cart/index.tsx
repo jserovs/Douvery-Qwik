@@ -44,38 +44,39 @@ export default component$(() => {
 
   return (
     <div class="container-all">
-  <div class="content">
+      <div class="content">
         <div class="crrts-title">
           <div class="ofrs">
-            <div class='hs-sr3'>Bienvenido a tu carrito de compras</div>
+            <p>Bienvenido a tu carrito de compras</p>
           </div>
-         
         </div>
       </div>
       <div class="cart-container">
-     
-     <div class="cart-products">
-       {state.searchResults.map((product) => {
-         const subTotal = state.searchResults.reduce(
-           (accumulator, product) => {
-             return accumulator + product.price * product.quantity;
-           },
-           0
-         );
-         cartTotal.setcartTotal = subTotal;
-         return (
-           <>
-             <div class="container-cart">
-               <Card1SCART product={product} />
-               <ButtonCartIndex product={product} />
-             </div>
-           </>
-         );
-       })}
-     </div>
-     <div class="cart-total">Cart Total: {cartTotal.setcartTotal}</div>
-   </div>
+        <div class="cart-products">
+          {state.searchResults.length > 0 ? (
+            state.searchResults.map((product) => {
+              const subTotal = state.searchResults.reduce(
+                (accumulator, product) => {
+                  return accumulator + product.price * product.quantity;
+                },
+                0
+              );
+              cartTotal.setcartTotal = subTotal;
+              return (
+                <div class="container-cart">
+                  <Card1SCART product={product} />
+                  <div class="container-button">
+                    <ButtonCartIndex product={product} />
+                  </div>
+                </div>
+              );
+            })
+          ) : (
+            <div class="container-no-product">No hay productos.</div>
+          )}
+        </div>
+        <div class="cart-total">Cart Total: {cartTotal.setcartTotal}</div>
+      </div>
     </div>
-  
   );
 });

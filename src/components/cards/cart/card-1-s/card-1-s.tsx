@@ -16,7 +16,8 @@ export const Card1SCART = component$(({ product }: any) => {
             <h2 class="product-title">
               <TextCL text={product.name} />{' '}
             </h2>
-          </a> {product.price > 998 ? (
+          </a>{' '}
+          {product.price > 998 ? (
             <div class="ctr-free-shipping">
               <p>
                 <DouveryCheckMark size="15px" /> Disponible
@@ -30,11 +31,17 @@ export const Card1SCART = component$(({ product }: any) => {
             </div>
           ) : (
             <div class="ctr-free-shipping">
-            <p>
-              <DouveryCheckMark size="15px" /> Disponible
-            </p>
-          
-          </div>
+              <p>
+                <DouveryCheckMark size="15px" /> Disponible
+              </p>
+            </div>
+          )}
+          {product.quantity <= 5 ? (
+            <></>
+          ) : (
+            <div class="alert-art">
+              <p>¡Queda(n) muy pocos , 5 o menos!</p>
+            </div>
           )}
           <div class="product-price">
             {product.discount > 0 ? (
@@ -53,9 +60,13 @@ export const Card1SCART = component$(({ product }: any) => {
               </>
             )}{' '}
           </div>
-       
+          <div class="gift-option">
+            <input type="checkbox" id="gift-checkbox" name="gift-checkbox" />
+            <label for="gift-checkbox">
+              Marque esta casilla si desea este artículo como regalo.
+            </label>
+          </div>
         </div>
-       
       </div>
     </div>
   );

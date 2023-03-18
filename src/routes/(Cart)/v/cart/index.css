@@ -1,47 +1,103 @@
-.container-all{
-    background-color: var(--color-background-light);
+.container-all {
+    background-color: var(--color-background-white);
 }
 
 .cart-container {
     display: grid;
-    grid-template-columns: auto 300px;
-    background-color: var(--color-background-light);
+    grid-template-columns: 60% 20%;
+    background-color: var(--color-background-white);
     justify-content: center;
-    gap: 20px;
+    gap: 120px;
     min-height: 100rem;
 }
 
 .content {
-    padding: 30px 80px;
-    display: grid;
-    align-items: stretch;
-    grid-template-columns: 100%;
-    justify-content: start;
+
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    height: 140px;
+    width: 85%;
+}
+
+.crrts-title .ofrs {
+    font-size: 28px;
+    font-weight: 500;
+    margin: 0;
+    padding: 1rem;
 }
 
 .cart-total {
+    background-color: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #0f1111;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 29px;
+    padding: 0 10px 0 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: 80%;
+    height: 450px;
 
-    padding: 1rem;
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-top: 1rem;
 }
 
 .container-cart {
     position: relative;
     display: grid;
     grid-template-columns: auto auto;
-    justify-content: center;
-    align-items: center;
-    border-top: 2px solid #E8F0FE;
-    border-bottom: 2px solid #E8F0FE;
+    justify-content: space-between;
+    align-items: end;
+
+    padding: 10px 0px;
+    border-bottom: 1px solid #E8F0FE;
 }
 
+
+.container-no-product {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    align-items: end;
+
+    padding: 10px 0px;
+    border-bottom: 1px solid #E8F0FE;
+    font-size: 22px;
+}
+
+@media only screen and (max-width: 1405px) {
+    .container-cart {
+        display: grid;
+        grid-template-columns: auto;
+    }
+}
+
+
 @media only screen and (max-width: 885px) {
+
+
     .cart-container {
         display: grid;
+        grid-template-columns: auto;
         background-color: var(--color-background-light);
         justify-content: center;
-    
+    }
+
+    .container-button {
+        display: grid;
+        justify-content: center;
+        align-items: center;
     }
 }

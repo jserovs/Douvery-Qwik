@@ -1,27 +1,63 @@
 .buttos-cart {
-    display: grid;
-    grid-template-columns: auto auto;
+    display: flex;
     align-items: center;
-    justify-content: center;
-  
+    justify-content: flex-start;
     gap: 15px;
-
-
     border-radius: 5px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 
+    scroll-snap-type: x proximity;
 
+    -ms-overflow-style: none;
+
+    scrollbar-width: none;
+
+}
+
+.buttos-cart::-webkit-scrollbar {
+    display: none;
 }
 
 .buttos-cart-carsh {
     display: grid;
-
     align-items: center;
     justify-content: center;
-    width: 30px;
     height: 25px;
-    background-color: #dfdfdf;
-    border-radius: 5px;
-    border:1px solid var(--border-width-1)
+    color: #00000090;
+}
+
+.button-shared {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    color: #00000090;
+}
+
+.button-favorite {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    height: 25px;
+    color: #00000090;
+    fill: #00000090;
+}
+
+.buttos-cart-carsh:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+
+.button-favorite:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+
+.button-shared:hover {
+    color: #000000;
+    text-decoration: underline;
 }
 
 .buttons-ca {
@@ -29,15 +65,12 @@
     grid-template-columns: auto 30px auto;
     align-items: center;
     justify-content: center;
-
     background-color: #dfdfdf;
     border-radius: 5px;
-    border:1px solid var(--border-width-1)
-
+    border: 1px solid var(--border-width-1);
 }
 
 .buttons-ca button {
-
     display: grid;
     justify-content: center;
     align-items: center;
@@ -45,13 +78,11 @@
     border-radius: 5px;
     width: 30px;
     color: #fff;
-
 }
 
 .buttons-ca .quantity {
     background-color: #fff;
     display: grid;
-
     align-items: center;
     justify-content: center;
 }
@@ -60,21 +91,25 @@
     color: #000;
 }
 
+@media only screen and (max-width: 1405px) {
+    .buttos-cart {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
 
 @media only screen and (max-width: 885px) {
     .buttos-cart {
-        display: grid;
-        grid-template-columns: auto auto;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        bottom: 10%;
-        right: 0%;
-        gap: 30px;
-    
-    
-        border-radius: 5px;
-    
-    
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        gap: 10px;
+
+        width: 90%;
+        height: 3.5rem;
+
+        border-top: 2px solid var(--color-background-down);
     }
- }
+}

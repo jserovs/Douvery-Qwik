@@ -96,7 +96,6 @@ export const ModalButtonCou = component$(() => {
         onClick$={() => (isOpen.setIsOpen = true)}
         class="button-mds-view"
       >
-        <DouveryGlobalSearch size="18" />
         {zipCode ? <>{zipCode}</> : <>Escoger una ubicación</>}
       </button>
 

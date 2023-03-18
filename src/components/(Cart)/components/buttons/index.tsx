@@ -6,6 +6,7 @@ import {
   removeCartItem,
 } from '~/services/cart/cart';
 import { useNavigate } from '@builder.io/qwik-city';
+import { DouveryHeart } from '~/components/icons/heart';
 export const ButtonCartIndex = component$(({ product }: any) => {
   useStylesScoped$(styles);
   const nav = useNavigate();
@@ -82,9 +83,10 @@ export const ButtonCartIndex = component$(({ product }: any) => {
               nav('/v/cart');
             }}
           >
-            {iconBas}
+            Eliminar
           </button>
-        </div>
+        </div>{' '}
+        <div class="ctr-opa">|</div>
         <div class="buttons-ca">
           <button
             onClick$={() => {
@@ -107,6 +109,29 @@ export const ButtonCartIndex = component$(({ product }: any) => {
             }}
           >
             {iconSum}
+          </button>
+        </div>
+        <div class="ctr-opa">|</div>
+        <div class="button-shared">
+          <button
+            onClick$={() => {
+              removeCartItem({ dui: product.dui });
+              nav('/v/cart');
+            }}
+          >
+            Compartir
+          </button>
+        </div>{' '}
+        <div class="ctr-opa">|</div>
+        <div class="button-favorite">
+          <DouveryHeart size="15px" />
+          <button
+            onClick$={() => {
+              removeCartItem({ dui: product.dui });
+              nav('/v/cart');
+            }}
+          >
+            Favorito
           </button>
         </div>
       </div>
