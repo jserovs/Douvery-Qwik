@@ -14,7 +14,7 @@ import { HorizontalViewProductIMG } from './layout/product/horizontal-views';
 import { VarticalViewProductIMG } from './layout/product/vartical-views';
 import { ThreeHorizontalViewProductIMG } from './layout/product/three-horizontal-views';
 import { LibPermVerticalViewProductIMG } from './layout/product/books-perm-vertical-views';
-import { ContainerInputCartPay } from './container-input-cart-pay';
+
 import { ContainerVertInfo } from './container-vrt-brts-product';
 
 import { ContainerDescriptionGPT } from './crtr-description-gpt';
