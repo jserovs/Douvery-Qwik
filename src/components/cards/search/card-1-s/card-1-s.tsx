@@ -31,7 +31,9 @@ export const Card1S = component$(({ product }: any) => {
           </a>
           <p class="product-description">{product.marca}</p>
           <UseNumberOneCategory product={product} />
-          <UseStarRating product={product} />
+        <div class="container-ratings">
+        <UseStarRating product={product} />
+        </div>
           {product.discount < 20 ? '' : <LabelSaveRed product={product} />}
           {product.price > 998 ? (
             <div class="ctr-free-shipping">

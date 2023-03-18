@@ -5,8 +5,9 @@
 }
 
 .card {
-    display: flex;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 230px auto;
+    align-items: start;
     background-color: #ffffff;
     border-top: 2px solid #E8F0FE;
     gap: 10px;
@@ -56,12 +57,14 @@
 }
 
 .product-title {
+    width: 100%;
     font-size: 16px;
     font-weight: 500;
     margin: 0 0 0.5rem 0;
 }
 
 .product-title:hover {
+    width: 100%;
     text-decoration: underline;
 }
 
@@ -124,16 +127,17 @@
 
 @media only screen and (max-width: 885px) {
     .card {
-        display: flex;
-        align-items: flex-start;
+        grid-template-columns: 30% auto;
         background-color: #ffffff;
         border-top: 1px solid #E8F0FE;
-        gap: 3px;
+        gap: 20px;
         padding: 20px 0rem;
         margin: 0.2rem;
         position: relative;
     }
-
+.container-ratings{
+    width: 100%;
+}
     .button--show-shopping-cell {
         background-color: #fff;
         border: 1px solid #d5d9d9;
@@ -164,7 +168,7 @@
 
     .product-title {
         font-size: 14px;
-        width: 250px;
+        width: 100%;
         height: 2.4em;
 
         line-height: 1.2em;

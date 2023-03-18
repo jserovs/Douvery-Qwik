@@ -21,7 +21,7 @@
 
 .product-section {
     background-color: var(--color-background-white);
-    padding: 1rem;
+    padding: 0.7rem;
     min-height: 50rem;
 }
 
@@ -400,7 +400,9 @@
         display: grid;
         grid-template-columns: auto;
     }
-
+    .filter-section {
+        display: none;
+    }
     .filter-section-header {
         display: flex;
         padding: 20px;
