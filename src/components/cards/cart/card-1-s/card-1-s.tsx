@@ -63,7 +63,7 @@ export const Card1SCART = component$(({ product }: any) => {
           <div class="gift-option">
             <input type="checkbox" id="gift-checkbox" name="gift-checkbox" />
             <label for="gift-checkbox">
-              Marque esta casilla si desea este artículo como regalo.
+              Seleccione esta casilla si el artículo es un regalo.
             </label>
           </div>
         </div>
