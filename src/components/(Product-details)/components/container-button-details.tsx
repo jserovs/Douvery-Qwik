@@ -1,8 +1,7 @@
-import { $, component$, useStore, useStylesScoped$ } from '@builder.io/qwik';
+import { $, component$,  useStylesScoped$ } from '@builder.io/qwik';
 
 import styles from './css/container-button-details.css?inline';
 
-import { ContainerInputCartPay } from './container-input-cart-pay';
 import { addToCart } from '~/services/cart/cart';
 
 export const ContainerButtonDetails = component$(
@@ -14,8 +13,7 @@ export const ContainerButtonDetails = component$(
         quantity: quantity,
       });
     });
-    const quantityCart = useStore({ setQuantityCart: '1' });
-
+   
     return (
       <div>
         <div class="button-lapto">
