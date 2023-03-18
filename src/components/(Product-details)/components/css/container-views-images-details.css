@@ -90,6 +90,14 @@
 .crtr-dirjfs {
     position: relative;
 }
+.brt-irft{
+    background-color: var(--color-background-light);
+    padding: 15px;
+}
+
+.brt-irft .slect-qty-prt{
+    display: flex;
+}
 
 .exp-shared {
     position: absolute;
@@ -130,7 +138,7 @@
 @media only screen and (max-width: 1085px) {
     .buttons-mobiles {
         display: block;
-        padding-top: 10px;
+      
     }
 
     .div-input-sertts {
