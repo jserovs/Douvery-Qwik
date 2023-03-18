@@ -44,7 +44,7 @@ export const ContainerButtonDetails = component$(
                     <ContainerInputCartPay quantity={1} />
                   </div>
                 </div>
-                <button class="buttonCart">Agregar al carrito</button>
+                <button class="buttonCart" onClick$={AddCart}>Agregar al carrito</button>
                 <size-w class="size-w-10" />{' '}
                 <button class="buttonPay"> Pagar</button>
               </>
