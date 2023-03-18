@@ -17,8 +17,10 @@
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    height: 140px;
+    height: 100px;
     width: 85%;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--border-width-1);
 }
 
 .crrts-title .ofrs {
@@ -26,6 +28,7 @@
     font-weight: 500;
     margin: 0;
     padding: 1rem;
+   
 }
 
 .cart-total {
@@ -35,25 +38,70 @@
     box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
     box-sizing: border-box;
     color: #0f1111;
-    cursor: pointer;
+
     display: inline-block;
     font-size: 13px;
     line-height: 29px;
-    padding: 0 10px 0 11px;
+   
     position: relative;
     text-align: center;
-    text-decoration: none;
-    -moz-user-select: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: middle;
+   
     width: 80%;
     min-width: 250px;
     height: 450px;
+    margin: 20px 0px;
+    padding: 10px;
 
 }
 
+
+  
+  .container-titulo {
+    margin-top: 0;
+    text-align: start;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 20px 0px;
+  }
+  
+  .container-lista {
+    list-style: none;
+    text-align: start;
+    
+  }
+  
+  .container-valor {
+    float: right;
+  }
+  
+  .container-boton {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+   padding: 3px 0px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .container-boton:hover {
+    background-color: #3e8e41;
+  }
+  
+  .container-botones {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .container-botones button:not(:last-child) {
+    margin-right: 10px;
+  }
 .container-cart {
     position: relative;
     display: grid;

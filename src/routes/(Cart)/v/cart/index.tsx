@@ -12,7 +12,7 @@ import {
  
 } from '~/services/cart/cart';
 import { Card1SCART } from '~/components/cards/cart/card-1-s/card-1-s';
-import { useLocation } from '@builder.io/qwik-city';
+import { DocumentHead, useLocation } from '@builder.io/qwik-city';
 import { ButtonCartIndex } from '~/components/(Cart)/components/buttons';
 import { Product } from '~/utils/types';
 interface IState {
@@ -75,8 +75,24 @@ export default component$(() => {
             <div class="loader"></div>
           )}
         </div>
-        <div class="cart-total">Cart Total: {cartTotal.setcartTotal}</div>
+        <div class="cart-total"> <h3 class="container-titulo">Resumen de la compra</h3>
+  <ul class="container-lista">
+    <li>Total de la compra: <span id="total" class="container-valor">$0.00</span></li>
+    <li>ITBIS: <span id="itbis" class="container-valor">$0.00</span></li>
+    <li>Descuentos: <span id="descuentos" class="container-valor">$0.00</span></li>
+  </ul>
+  <button id="siguiente" class="container-boton">Siguiente</button>
+</div>
       </div>
     </div>
   );
 });
+export const head: DocumentHead = {
+  title: 'Douvery:  Tu carrito',
+  meta: [
+    {
+      name: 'description',
+      content: 'Qwik site description',
+    },
+  ],
+};
