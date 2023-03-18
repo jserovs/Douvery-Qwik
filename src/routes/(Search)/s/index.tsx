@@ -7,6 +7,7 @@ import {
   useTask$,
 } from '@builder.io/qwik';
 import { Link, useLocation, useNavigate } from '@builder.io/qwik-city';
+import type { DocumentHead } from '@builder.io/qwik-city';
 import { fetchProductU, fetchSearchProduct } from '~/services/fechProduct';
 import styles from './index.css?inline';
 import type { Product } from '~/utils/types';
@@ -622,3 +623,19 @@ export default component$(() => {
     </div>
   );
 });
+export const head: DocumentHead = ({ url }) => {
+  const query = url.searchParams.get('q') || '';
+  return {
+    title: `Douvery: ${query}`,
+    meta: [
+      {
+        name: 'description',
+        content: '',
+      },
+      {
+        name: 'id',
+        content: '',
+      },
+    ],
+  };
+};

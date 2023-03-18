@@ -1,7 +1,6 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './css/vartical-views.css?inline';
 import { ModalD } from '../modal/modal-de';
-import { ContainerBreadcrumbs } from '../../sessions/VIEW 1/components/Breadcrumbs/container-breadcrumbs';
 export const VarticalViewProductIMG = component$(
   ({ props, img, isOpen }: any) => {
     useStylesScoped$(styles);
@@ -63,7 +62,6 @@ export const VarticalViewProductIMG = component$(
             </div>
           </div>
         </div>
-        <ContainerBreadcrumbs product={props} />
       </div>
     );
   }

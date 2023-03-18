@@ -18,7 +18,8 @@
 
 
 .vert-left {
-    display: flex;
+    display: grid;
+    grid-template-rows: auto 20px;
     height: 100%;
     justify-content: center;
     padding-bottom: 10px;

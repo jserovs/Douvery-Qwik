@@ -1,0 +1,177 @@
+.container-all {
+    display: grid;
+    gap: 5px;
+    position: relative;
+
+    max-width: 850px;
+}
+
+.card {
+    display: flex;
+    align-items: flex-start;
+
+
+    gap: 10px;
+    padding: 1rem;
+    margin: 0.5rem;
+    position: relative;
+}
+
+.container-hover-button {
+    display: none;
+}
+
+.card:hover>.container-hover-button {
+    position: absolute;
+    width: 100%;
+
+    display: grid;
+    justify-content: end;
+    align-items: center;
+    right: 50px;
+    gap: 0px;
+    animation: carga 1s linear;
+}
+
+@keyframes carga {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.product-image {
+
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-right: 1rem;
+    border-radius: 10px;
+    background-color: var(--color-background-card);
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-title {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 0 0.5rem 0;
+}
+
+.product-title:hover {
+    text-decoration: underline;
+}
+
+.product-description {
+    font-size: 13px;
+    color: var(--color-black);
+    margin: 0 0 0.5rem 0;
+}
+
+.product-price {
+    display: flex;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 20px 0px;
+}
+
+.price-t {
+    font-weight: 400;
+    color: #5e5e5e;
+}
+
+.product-stock {
+    display: flex;
+    margin: 2px 0px;
+
+}
+
+.product-no-stock {
+    color: #332FD0;
+}
+
+
+
+.button--show-shopping-cell {
+    display: none;
+}
+
+.container-expert-cell {
+    font-size: 10px;
+    padding: 20px 0px;
+}
+
+.ctr-free-shipping {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.ctr-free-shipping p {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    fill: #008000;
+    color: #008000;
+}
+
+.gift-option {
+    display: flex;
+    align-items: center;
+    opacity: 70%;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    background-color: #008000;
+}
+
+
+.alert-art {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--color-red);
+}
+
+@media only screen and (max-width: 885px) {
+    .card {
+        display: flex;
+        align-items: flex-start;
+
+        border-top: 1px solid #E8F0FE;
+        gap: 10px;
+        padding: 20px 10px;
+        margin: 0.2rem;
+        position: relative;
+    }
+
+
+    .product-image {
+        width: 120px;
+        height: 130px;
+    }
+
+    .product-title {
+        font-size: 16px;
+
+        line-height: 1.2em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+
+    }
+
+    .card .container-expert {
+        display: none;
+    }
+}
