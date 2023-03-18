@@ -1,4 +1,4 @@
-import { $, component$, useStylesScoped$ } from '@builder.io/qwik';
+import { $, component$, useStore, useStylesScoped$ } from '@builder.io/qwik';
 
 import styles from './css/container-button-details.css?inline';
 
@@ -14,6 +14,8 @@ export const ContainerButtonDetails = component$(
         quantity: quantity,
       });
     });
+    const quantityCart = useStore({ setQuantityCart: '1' });
+
     return (
       <div>
         <div class="button-lapto">
@@ -37,13 +39,7 @@ export const ContainerButtonDetails = component$(
               <></>
             ) : (
               <>
-                <div class="brt-irft">
-                  <div class="slect-qty-prt">
-                    <p>Cantidad : </p>
-                    <size-w class="size-w-10" />
-                    <ContainerInputCartPay quantity={1} />
-                  </div>
-                </div>
+              
                 <button class="buttonCart" onClick$={AddCart}>Agregar al carrito</button>
                 <size-w class="size-w-10" />{' '}
                 <button class="buttonPay"> Pagar</button>

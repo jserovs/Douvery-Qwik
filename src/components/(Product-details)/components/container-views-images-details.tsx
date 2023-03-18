@@ -67,6 +67,9 @@ export const ContainerViewsIMGDetails = component$(({ props }: any) => {
         );
     }
   }
+
+  const quantityCart = useStore({ setQuantityCart: '1' });
+
   return (
     <div class="container-view-product">
       <div class="vert-left">
@@ -89,11 +92,27 @@ export const ContainerViewsIMGDetails = component$(({ props }: any) => {
             </div>
           )}
           <div class="buttons-mobiles">
-            <div class="div-input-sertts">
-              <ContainerInputCartPay quantity={1} />
-            </div>
-            <ContainerButtonDetails product={props} />
+          <div class="brt-irft">
+                  <div class="slect-qty-prt">
+                    <p>Cantidad : </p>
+                    <size-w class="size-w-10" />
+                    <select
+                  value={quantityCart.setQuantityCart}
+                  onChange$={(event) =>
+                    (quantityCart.setQuantityCart = event.target.value)
+                  }
+                >
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+               
+                  </div>
+                </div>
+            <ContainerButtonDetails product={props} quantity={quantityCart.setQuantityCart}/>
           </div>
+         
           {props.category == 'Books' ? (
             <>
               <ContainerDescriptionGPT props={props} />{' '}

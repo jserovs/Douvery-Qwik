@@ -107,7 +107,7 @@
         -webkit-overflow-scrolling: touch;
         gap: 10px;
         height: 3.5rem;
-
+        font-size: 13px;
         border-top: 2px solid var(--color-background-down);
     }
 }
