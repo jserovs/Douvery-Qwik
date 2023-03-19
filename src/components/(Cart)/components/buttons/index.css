@@ -91,7 +91,7 @@
     color: #000;
 }
 
-@media only screen and (max-width: 1405px) {
+@media only screen and (max-width: 1605px) {
     .buttos-cart {
         display: flex;
         justify-content: flex-end;

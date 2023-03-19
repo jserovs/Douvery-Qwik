@@ -79,6 +79,11 @@ export function removeCartItem({dui}: {dui: string}) {
   }
 }
 
+export function removeAllCartItems() {
+  localStorage.removeItem(OPTIONS_KEY_CART);
+  console.log('Todos los elementos han sido eliminados del carrito.');
+}
+
 export async function  getDataProductCart  () {
   const stored = localStorage.getItem(OPTIONS_KEY_CART);
   try {
