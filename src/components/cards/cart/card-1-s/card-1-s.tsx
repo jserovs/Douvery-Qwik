@@ -36,7 +36,7 @@ export const Card1SCART = component$(({ product }: any) => {
               </p>
             </div>
           )}
-          {product.quantity <= 5 ? (
+          {product.realQuantity >= 5 ? (
             <></>
           ) : (
             <div class="alert-art">

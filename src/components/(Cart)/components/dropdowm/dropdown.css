@@ -1,0 +1,182 @@
+/* Follow me for more pens like this! */
+
+/* Tweak to change the look and feel */
+:root {
+    --button-background: dodgerblue;
+    --button-color: white;
+
+    --dropdown-highlight: dodgerblue;
+    --dropdown-width: 160px;
+    --dropdown-background: white;
+    --dropdown-color: black;
+}
+
+
+
+
+.dropdown {
+    position: absolute;
+    display: inline-block;
+
+}
+
+.dropdown summary {
+    list-style: none;
+    list-style-type: none;
+}
+
+.dropdown>summary::-webkit-details-marker {
+    display: none;
+}
+
+.dropdown summary:focus {
+    outline: none;
+}
+
+.dropdown summary:focus {
+    outline: none;
+}
+
+.input-url-copy {
+    display: flex;
+    align-items: center;
+
+    max-width: 100%;
+    border: 1px solid var(--border-width-2);
+    border-radius: 24px;
+    overflow: hidden;
+    flex: 1;
+    font-size: 16px;
+    color: #000;
+    padding-left: 5px;
+    background-color: transparent;
+    outline: none;
+
+
+}
+
+.text-copy {
+    background-color: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #0f1111;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 29px;
+    padding: 0 10px 0 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.input-url-copy::placeholder {
+    color: #00000090;
+}
+
+.input-url-copy:hover {
+    border: 1px solid var(--border-width-3);
+}
+
+.dropdown ul strong {
+
+    font-weight: 600;
+    font-size: 20px;
+    padding: 20px 0px;
+
+
+}
+
+.dropdown ul {
+
+    position: absolute;
+    left: -20%;
+    margin: 10px 0 0 -40%;
+    transform: translateX(-30%);
+    width: var(--dropdown-width);
+    z-index: 2;
+    background-color: #fff;
+    border: 1px solid #dfe1e5;
+    box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
+    box-sizing: border-box;
+    border-radius: 6px;
+    list-style: none;
+    width: 400px;
+    padding: 10px;
+}
+
+.dropdown ul li {
+    width: 100%;
+    padding: 0px 10px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown ul li button {
+
+
+    padding: 10px 0;
+    border: none;
+    background-color: transparent;
+    color: var(--dropdown-color);
+    text-align: left;
+    text-decoration: none;
+
+}
+
+.dropdown ul li button:hover {
+
+    background-color: var(--color-background-light);
+    color: var(--dropdown-background);
+    cursor: pointer;
+}
+
+li {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.dropdown ul::before {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -10px;
+    left: 50%;
+    margin-left: -10px;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #fff transparent;
+}
+
+/* Close the dropdown with outside clicks */
+.dropdown>summary::before {
+    display: none;
+}
+
+.dropdown[open]>summary::before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.ns-a {
+    margin-top: 50px;
+}

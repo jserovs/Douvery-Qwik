@@ -14,7 +14,7 @@
     font-size: 22px;
     font-weight: 400;
     margin: 0;
-    padding: 1rem;
+    padding: 1rem 0px;
 
 }
 
@@ -44,8 +44,17 @@
 @media only screen and (max-width: 1300px) {
     .content {
         display: inline-block;
-        grid-template-columns: auto;
-        width: 90%;
+
+    }
+
+    .crrts-title .ofrs {
+        padding-left: 50px;
+    }
+
+    .container-options-cart {
+        justify-content: start;
+        font-size: 13px;
+        padding: 0px 50px;
     }
 }
 
@@ -54,7 +63,7 @@
 
     .container-option-mobiles {
         display: flex;
-        justify-content: flex-start;
+        justify-content: flex-end;
         align-items: center;
         gap: 15px;
         color: #0f111190;
@@ -67,6 +76,10 @@
         border-bottom: 0px solid var(--border-width-1);
         margin-top: 10px;
         height: 80px;
+    }
+
+    .crrts-title .ofrs {
+        padding-left: 0px;
     }
 
     .crrts-title .ofrs p {

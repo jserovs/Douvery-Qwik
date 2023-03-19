@@ -15,6 +15,8 @@ import type { Product } from '~/utils/types';
 import { HeaderCart } from '~/components/(Cart)/components/header/header-cart';
 import { CardSubtotal } from '~/components/(Cart)/components/cards/card-subtotal/card-subtotal';
 import { CardTotal } from '~/components/(Cart)/components/cards/card-total/card-total';
+import { NoProductCart } from '~/components/(Cart)/sessions/no-product-cart/no-product-cart';
+import { View5 } from '~/components/(Product-details)/components/sessions/VIEW 5/view5';
 interface IState {
   searchInput: string;
   searchResults: Product[];
@@ -31,6 +33,7 @@ export default component$(() => {
   const { url } = useLocation();
 
   const subTotal = useStore({ setsubTotal: 0 });
+  const subTotalNoDiscount = useStore({ setsubTotalNoDiscount: 0 });
   const discount = useStore({ setDiscount: 0 });
 
   useVisibleTask$(async ({ track }) => {
@@ -79,9 +82,9 @@ export default component$(() => {
                     0
                   );
 
-                  subTotal.setsubTotal = subTotalA;
+                  subTotal.setsubTotal = subTotalA - descounts;
                   discount.setDiscount = descounts;
-
+                  subTotalNoDiscount.setsubTotalNoDiscount = subTotalA;
                   return (
                     <div class="container-cart">
                       <Card1SCART product={product} />
@@ -99,7 +102,11 @@ export default component$(() => {
                 subTotal={subTotal}
               />
             </div>
-            <CardTotal subTotal={subTotal} discount={discount} />
+            <CardTotal
+              subTotal={subTotal}
+              discount={discount}
+              subTotalNoDiscount={subTotalNoDiscount.setsubTotalNoDiscount}
+            />
           </div>
         </>
       ) : (
@@ -110,7 +117,14 @@ export default component$(() => {
               <div class="loader"></div>
             </>
           ) : (
-            <HeaderCart />
+            <>
+              {' '}
+              <HeaderCart />
+              <NoProductCart />
+              <div class="container-carousel">
+                <View5 product={''} styleNumber={4} />
+              </div>
+            </>
           )}
         </>
       )}

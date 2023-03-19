@@ -73,7 +73,9 @@ export default component$(() => {
               <View2 product={state.product} />
               {/*CHARGING VERY SLOW <View3 product={state.product} /> */}
               <View4 product={state.product} />
-              <View5 product={state.product} />
+              <div class="container-views">
+                <View5 product={state.product} />
+              </div>
             </>
           )}
         />
