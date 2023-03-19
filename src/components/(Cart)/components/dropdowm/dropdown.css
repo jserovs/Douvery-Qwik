@@ -78,6 +78,18 @@
     width: 100%;
 }
 
+.green {
+    background-color: var(--color-button-pay);
+    color: #fff;
+    fill: var(--color-button-pay);
+    border: none;
+}
+
+.green-fill {
+
+    fill: var(--color-button-pay);
+}
+
 .input-url-copy::placeholder {
     color: #00000090;
 }
@@ -98,7 +110,7 @@
 .dropdown ul {
 
     position: absolute;
-    left: -20%;
+    left: 1%;
     margin: 10px 0 0 -40%;
     transform: translateX(-30%);
     width: var(--dropdown-width);
@@ -109,7 +121,7 @@
     box-sizing: border-box;
     border-radius: 6px;
     list-style: none;
-    width: 400px;
+    width: 300px;
     padding: 10px;
 }
 
@@ -119,6 +131,7 @@
     margin: 0;
     display: flex;
     align-items: center;
+    gap: 15px;
 }
 
 .dropdown ul li button {
@@ -133,9 +146,9 @@
 
 }
 
-.dropdown ul li button:hover {
+.dropdown ul li:hover {
 
-    background-color: var(--color-background-light);
+    background-color: var(--color-background-card);
     color: var(--dropdown-background);
     cursor: pointer;
 }
@@ -179,4 +192,20 @@ li {
 
 .ns-a {
     margin-top: 50px;
+}
+
+
+@media only screen and (max-width: 885px) {
+    .dropdown ul {
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 455px) {
+    .dropdown ul {
+        left: -0%;
+        margin: 10px 0 0 -40%;
+        transform: translateX(-30%);
+        width: 250px;
+    }
 }

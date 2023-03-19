@@ -122,7 +122,10 @@ export const DropdownShared = component$(({ product }: any) => {
           </li>
           <li>
             {copied.setCopied ? (
-              <DouveryCheckMark size="15px" />
+              <div class="green-fill">
+                {' '}
+                <DouveryCheckMark size="15px" />
+              </div>
             ) : (
               <DouveryCopyText size="15px" />
             )}
@@ -148,7 +151,7 @@ export const DropdownShared = component$(({ product }: any) => {
                 }, 2000);
               }}
             >
-              <div class="text-copy">
+              <div class={copied.setCopied ? 'green text-copy' : 'text-copy'}>
                 {copied.setCopied ? 'Url copiada' : 'Copiar url'}
               </div>
             </button>
