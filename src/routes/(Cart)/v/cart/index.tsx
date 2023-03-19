@@ -86,7 +86,7 @@ export default component$(() => {
                   discount.setDiscount = descounts;
                   subTotalNoDiscount.setsubTotalNoDiscount = subTotalA;
                   return (
-                    <div class="container-cart">
+                    <div class="container-cart" key={product.dui}>
                       <Card1SCART product={product} />
                       <div class="container-button">
                         <ButtonCartIndex product={product} />
