@@ -50,6 +50,15 @@ export default component$(() => {
             <p>Bienvenido a tu carrito de compras</p>
           </div>
         </div>
+        <div class="container-options-cart">
+          <div class="button-shared">
+            <button onClick$={() => {}}>Compartir carrito de compra</button>
+          </div>{' '}
+          <div class="ctr-opa">|</div>
+          <div class="button-favorite">
+            <button onClick$={() => {}}>Ultimos productos visto</button>
+          </div>
+        </div>
       </div>
       <div class="cart-container">
         <div class="cart-products">
@@ -85,24 +94,24 @@ export default component$(() => {
           ) : (
             <div class="loader"></div>
           )}
-       <div class="container-card-subtotal">
-       <div class="cart-subtotal">
-            <ul class="container-lista-subtotal">
-              <li>
-                Total producto:{' '}
-                <span id="total" class="container-valor">
-                  {state.searchResults.length}
-                </span>
-              </li>
-            </ul>
-            <div class="container-subtotal">
-              <h3 class="container-titulo-subtotal">Subtotal compra:</h3>
-              <strong class="subtotal">
-                <UsePrice price={subTotal.setsubTotal} />
-              </strong>
+          <div class="container-card-subtotal">
+            <div class="cart-subtotal">
+              <ul class="container-lista-subtotal">
+                <li>
+                  Total producto:{' '}
+                  <span id="total" class="container-valor">
+                    {state.searchResults.length}
+                  </span>
+                </li>
+              </ul>
+              <div class="container-subtotal">
+                <h3 class="container-titulo-subtotal">Subtotal compra:</h3>
+                <strong class="subtotal">
+                  <UsePrice price={subTotal.setsubTotal} />
+                </strong>
+              </div>
             </div>
           </div>
-       </div>
         </div>
         <div class="container-total-cart">
           <div class="cart-total">
@@ -111,16 +120,14 @@ export default component$(() => {
               <li>
                 Descuentos:{' '}
                 <span id="descuentos" class="container-valor">
-                <UsePrice price={discount.setDiscount} />
-                 
+                  <UsePrice price={discount.setDiscount} />
                 </span>
               </li>
 
               <li>
                 Subtotal:{' '}
                 <span id="subtotal" class="container-valor">
-                <UsePrice price={subTotal.setsubTotal} />
-                           
+                  <UsePrice price={subTotal.setsubTotal} />
                 </span>
               </li>
             </ul>

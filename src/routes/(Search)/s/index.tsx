@@ -216,7 +216,10 @@ export default component$(() => {
               {or_c || or_p ? (
                 <Button1
                   title="Desmarcar filtros"
-                  navigate={url.pathname + `?q=${url.searchParams.get('q')}`}
+                  navigate={
+                    url.pathname.replace(/ /g, '+') +
+                    `?q=${url.searchParams.get('q')}`
+                  }
                 />
               ) : (
                 <>
@@ -249,7 +252,7 @@ export default component$(() => {
                     <input type="checkbox" name="category" value={c.value} />
                     <Link
                       href={
-                        url.pathname +
+                        url.pathname.replace(/ /g, '+') +
                         `?q=${url.searchParams.get('q')}` +
                         `&or-c=${c.value}` +
                         or_p +

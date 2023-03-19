@@ -95,7 +95,7 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
                     is.setIsOpen = false;
                     nav(
                       '/s/?q=' +
-                        state.searchInput +
+                        state.searchInput.replace(/ /g, '+') +
                         '&or-c=' +
                         selectedValue.selectedValue +
                         or_ly +
@@ -140,7 +140,7 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
                   is.setIsOpen = false;
                   nav(
                     '/s/?q=' +
-                      state.searchInput +
+                      state.searchInput.replace(/ /g, '+') +
                       '&or-c=' +
                       selectedValue.selectedValue +
                       '' +

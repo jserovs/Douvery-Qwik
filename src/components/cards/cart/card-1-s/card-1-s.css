@@ -42,10 +42,11 @@
     }
 }
 
-.card img{
+.card img {
     width: 150px;
     height: 150px;
 }
+
 .product-image {
 
     width: 150px;
@@ -139,10 +140,10 @@ input[type="checkbox"] {
 }
 
 
-.alert-art {
+.alert-art p {
     font-size: 15px;
     font-weight: 500;
-    color: var(--color-red);
+    color: #d30b0b;
 }
 
 @media only screen and (max-width: 885px) {
@@ -178,15 +179,17 @@ input[type="checkbox"] {
     .card .container-expert {
         display: none;
     }
+
     .gift-option {
         display: flex;
         align-items: flex-start;
         opacity: 70%;
         font-size: 13px;
     }
-    input[type="checkbox"]{
-    
+
+    input[type="checkbox"] {
+
         margin-top: 10px;
-       
+
     }
 }
