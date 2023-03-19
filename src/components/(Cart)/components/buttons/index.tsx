@@ -17,7 +17,7 @@ export const ButtonCartIndex = component$(({ product }: any) => {
   const iconSum = (
     // eslint-disable-next-line qwik/single-jsx-root
     <svg
-      width="15"
+      width="15.1"
       height="15"
       viewBox="0 0 24 24"
       fill="none"
