@@ -60,7 +60,7 @@ export default component$(() => {
     <div class="container-all">
       {state.searchResults && state.searchResults.length > 0 ? (
         <>
-          <HeaderCart />{' '}
+          <HeaderCart stateProduct={state.searchResults} />
           <div class="cart-container">
             <div class="cart-products">
               {state.searchResults.length > 0 ? (
@@ -119,7 +119,7 @@ export default component$(() => {
           ) : (
             <>
               {' '}
-              <HeaderCart />
+              <HeaderCart stateProduct={state.searchResults} />
               <NoProductCart />
               <div class="container-carousel">
                 <View5 product={''} styleNumber={4} />

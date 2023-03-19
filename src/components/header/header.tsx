@@ -53,6 +53,7 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
   const or_ly = url.searchParams.has('or-ly')
     ? `&or-ly=${url.searchParams.get('or-ly')}`
     : '';
+
   return (
     <header>
       <div class="container container-cajas-header ">
@@ -87,7 +88,7 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
                 placeholder="Busca tu producto"
                 onClick$={() => (is.setIsOpen = true)}
                 value={state.searchInput}
-                onInput$={(ev) =>
+                onKeyUp$={(ev) =>
                   (state.searchInput = (ev.target as HTMLInputElement).value)
                 }
                 onKeyDown$={(ev) => {

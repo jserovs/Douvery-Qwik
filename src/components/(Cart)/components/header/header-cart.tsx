@@ -4,7 +4,7 @@ import { removeAllCartItems } from '~/services/cart/cart';
 import { useNavigate } from '@builder.io/qwik-city';
 import { useGetCurrentUser } from '~/routes/layout';
 import { PoputOptionsCart } from '../poput-options/poput-options';
-export const HeaderCart = component$(() => {
+export const HeaderCart = component$(({ stateProduct }: any) => {
   useStylesScoped$(styles);
   const nav = useNavigate();
   const user = useGetCurrentUser().value;
@@ -39,16 +39,23 @@ export const HeaderCart = component$(() => {
             <button onClick$={() => {}}>Ultimos productos visto</button>
           </div>
           <div class="ctr-opa">|</div>
-          <div class="button-shared">
-            <button
-              onClick$={() => {
-                removeAllCartItems();
-                nav('/v/cart');
-              }}
-            >
-              Eliminar todos los productos
-            </button>
-          </div>{' '}
+          {stateProduct.length > 0 ? (
+            <>
+              {' '}
+              <div class="button-shared">
+                <button
+                  onClick$={() => {
+                    removeAllCartItems();
+                    nav('/v/cart');
+                  }}
+                >
+                  Eliminar todos los productos
+                </button>
+              </div>{' '}
+            </>
+          ) : (
+            ''
+          )}{' '}
         </div>
       </div>
     </>
