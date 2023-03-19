@@ -27,13 +27,19 @@
 
 .container-product-layout-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 0fr));
+    align-items: stretch;
+    gap: 6px;
+    background-color: var(--color-background-down);
+    padding: 10px;
 }
 
+.input-search-realtime::placeholder {
+    color: #000;
+}
 
 .container-product-layout-vert {
     display: grid;
-
 }
 
 .header-product-section {
@@ -400,9 +406,11 @@
         display: grid;
         grid-template-columns: auto;
     }
+
     .filter-section {
         display: none;
     }
+
     .filter-section-header {
         display: flex;
         padding: 20px;

@@ -1,21 +1,21 @@
 .container-all {
     display: grid;
     gap: 5px;
+    height: 100%;
 }
 
 .card {
-
-
     display: grid;
-
     background-color: #ffffff;
-    border: 1px solid var(--border-width-1);
-    min-height: 363px;
-    gap: 10px;
-    padding: 1rem;
-    margin: 0.5rem;
+    height: 100%;
+    gap: 30px;
+    padding: 1rem 5px;
     position: relative;
     border-radius: 3px;
+    grid-auto-columns: auto;
+    grid-template-rows: 200px auto;
+    border-radius: 10px;
+    box-shadow: rgba(248, 248, 248, 0.829) 0px 0px 0px 1px;
 }
 
 .product-image img {
@@ -35,20 +35,18 @@
 .product-info {
     display: flex;
     flex-direction: column;
-    padding: 0px 25px;
+    padding: 0px 10px;
 }
 
 .product-title {
-    font-size: 16px;
+    margin-top: 10px;
+    font-size: 15px;
     font-weight: 500;
     margin: 0 0 0.5rem 0;
     height: 50px;
     display: -webkit-box;
-    /* Necesario para line-clamp */
     -webkit-box-orient: vertical;
-    /* Necesario para line-clamp */
     -webkit-line-clamp: 2;
-    /* Mostrar solo 2 líneas de texto */
     overflow: hidden;
 }
 

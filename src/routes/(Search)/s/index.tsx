@@ -74,17 +74,22 @@ export const category = [
     ],
   },
 ];
+interface IState {
+  searchInput: string;
+}
 
 export default component$(() => {
   useStylesScoped$(styles);
   const store = useStore({ count: 1 });
   const number = useStore({ setNumber: 1 });
   const navigate = useNavigate();
-
+  const input = useStore<IState>({
+    searchInput: '',
+  });
   const { url } = useLocation();
 
   const prodcureducer = useResource$<Product[]>(async ({ cleanup, track }) => {
-    track(() => url.search);
+    track(() => url.search && input.searchInput);
 
     const controller = new AbortController();
     cleanup(() => controller.abort());
@@ -206,12 +211,14 @@ export default component$(() => {
       controller.abort();
     };
   });
+
   return (
     <div class="container-all">
       <div class="grid-container">
         <div class="filter-section">
           <div class="filter-section-header">
             <h2>Filters</h2>
+
             <div class="filter">
               {or_c || or_p ? (
                 <Button1
@@ -431,7 +438,17 @@ export default component$(() => {
           <div class="header-product-section">
             <div class="container-result">
               {' '}
-              <strong>Resultados de: </strong> {url.searchParams.get('q')}
+              <strong>Resultados de: </strong>{' '}
+              <input
+                class="input-search-realtime"
+                type="text"
+                onKeyUp$={(ev) => {
+                  input.searchInput = (ev.target as HTMLInputElement).value;
+                  url.searchParams.set('q', input.searchInput);
+                }}
+                value={input.searchInput}
+                placeholder={url.searchParams.get('q') || 'Buscar'}
+              />{' '}
             </div>
             <div class="container-select">
               <div class="select">
