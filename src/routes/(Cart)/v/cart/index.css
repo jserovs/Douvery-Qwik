@@ -31,6 +31,11 @@
 
 }
 
+.container-total-cart {
+  display: grid;
+  justify-content: end;
+}
+
 .cart-subtotal {
   background-color: #fff;
   border: 1px solid #d5d9d9;
@@ -216,6 +221,16 @@
   align-items: center;
   gap: 15px;
   color: #0f111190;
+}
+
+.container-options-cart .button-shared button:hover {
+  text-decoration: underline #000;
+  color: #000;
+}
+
+.container-options-cart .button-favorite button:hover {
+  text-decoration: underline #000;
+  color: #000;
 }
 
 @media only screen and (max-width: 1491px) {

@@ -13,6 +13,7 @@ import type { DocumentHead } from '@builder.io/qwik-city';
 import { ButtonCartIndex } from '~/components/(Cart)/components/buttons';
 import type { Product } from '~/utils/types';
 import { UsePrice } from '~/components/use/price/price';
+import { useGetCurrentUser } from '~/routes/layout';
 interface IState {
   searchInput: string;
   searchResults: Product[];
@@ -41,13 +42,13 @@ export default component$(() => {
       controller.abort();
     };
   });
-
+ const user = useGetCurrentUser().value;
   return (
     <div class="container-all">
       <div class="content">
         <div class="crrts-title">
           <div class="ofrs">
-            <p>Bienvenido a tu carrito de compras</p>
+            <p>Bienvenido {user ? user.name : ''} a tu carrito de compras</p>
           </div>
         </div>
         <div class="container-options-cart">
