@@ -1,4 +1,9 @@
-import { component$, useStore, useStylesScoped$ } from '@builder.io/qwik';
+import {
+  component$,
+  useStore,
+  useStylesScoped$,
+  useVisibleTask$,
+} from '@builder.io/qwik';
 
 import styles from './douveryExtend1.css?inline';
 import { UsePrice } from '~/components/use/price/price';
@@ -7,6 +12,14 @@ export const CardDouveryExtend1 = component$(() => {
 
   const showLoader = useStore({ setShowLoader: true });
 
+  useVisibleTask$(() => {
+    const timer = setInterval(() => {
+      showLoader.setShowLoader = false;
+    }, 3000);
+    return () => {
+      clearInterval(timer);
+    };
+  });
   return (
     <>
       {showLoader.setShowLoader ? (

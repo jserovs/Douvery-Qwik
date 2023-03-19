@@ -10,8 +10,9 @@ import { DouveryHeart } from '~/components/icons/heart';
 export const ButtonCartIndex = component$(({ product }: any) => {
   useStylesScoped$(styles);
   const nav = useNavigate();
- 
+
   const iconSum = (
+    // eslint-disable-next-line qwik/single-jsx-root
     <svg
       width="15"
       height="15"
@@ -44,67 +45,65 @@ export const ButtonCartIndex = component$(({ product }: any) => {
     </svg>
   );
   return (
- 
-      <div class="buttos-cart">
-        <div class="buttos-cart-carsh">
-          <button
-            onClick$={() => {
-              removeCartItem({ dui: product.dui });
-              nav('/v/cart');
-            }}
-          >
-            Eliminar
-          </button>
-        </div>{' '}
-        <div class="ctr-opa">|</div>
-        <div class="buttons-ca">
-          <button
-            onClick$={() => {
-              decreaseCartItemQuantity({
-                dui: product.dui,
-                decreaseAmount: 1,
-              });
-              nav('/v/cart');
-            }}
-          >
-            {iconMenus}
-          </button>
-          <div class="quantity">
-            <p>{product.quantity}</p>
-          </div>
-          <button
-            onClick$={() => {
-              addToCart({ dui: product.dui, quantity: 1 });
-              nav('/v/cart');
-            }}
-          >
-            {iconSum}
-          </button>
+    <div class="buttos-cart">
+      <div class="buttos-cart-carsh">
+        <button
+          onClick$={() => {
+            removeCartItem({ dui: product.dui });
+            nav('/v/cart');
+          }}
+        >
+          Eliminar
+        </button>
+      </div>{' '}
+      <div class="ctr-opa">|</div>
+      <div class="buttons-ca">
+        <button
+          onClick$={() => {
+            decreaseCartItemQuantity({
+              dui: product.dui,
+              decreaseAmount: 1,
+            });
+            nav('/v/cart');
+          }}
+        >
+          {iconMenus}
+        </button>
+        <div class="quantity">
+          <p>{product.quantity}</p>
         </div>
-        <div class="ctr-opa">|</div>
-        <div class="button-shared">
-          <button
-            onClick$={() => {
-              removeCartItem({ dui: product.dui });
-              nav('/v/cart');
-            }}
-          >
-            Compartir
-          </button>
-        </div>{' '}
-        <div class="ctr-opa">|</div>
-        <div class="button-favorite">
-          <DouveryHeart size="15px" />
-          <button
-            onClick$={() => {
-              removeCartItem({ dui: product.dui });
-              nav('/v/cart');
-            }}
-          >
-            Favorito
-          </button>
-        </div>
+        <button
+          onClick$={() => {
+            addToCart({ dui: product.dui, quantity: 1 });
+            nav('/v/cart');
+          }}
+        >
+          {iconSum}
+        </button>
       </div>
-   
+      <div class="ctr-opa">|</div>
+      <div class="button-shared">
+        <button
+          onClick$={() => {
+            removeCartItem({ dui: product.dui });
+            nav('/v/cart');
+          }}
+        >
+          Compartir
+        </button>
+      </div>{' '}
+      <div class="ctr-opa">|</div>
+      <div class="button-favorite">
+        <DouveryHeart size="15px" />
+        <button
+          onClick$={() => {
+            removeCartItem({ dui: product.dui });
+            nav('/v/cart');
+          }}
+        >
+          Favorito
+        </button>
+      </div>
+    </div>
   );
 });

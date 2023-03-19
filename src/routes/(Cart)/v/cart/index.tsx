@@ -12,8 +12,9 @@ import { useLocation } from '@builder.io/qwik-city';
 import type { DocumentHead } from '@builder.io/qwik-city';
 import { ButtonCartIndex } from '~/components/(Cart)/components/buttons';
 import type { Product } from '~/utils/types';
-import { UsePrice } from '~/components/use/price/price';
-import { useGetCurrentUser } from '~/routes/layout';
+import { HeaderCart } from '~/components/(Cart)/components/header/header-cart';
+import { CardSubtotal } from '~/components/(Cart)/components/cards/card-subtotal/card-subtotal';
+import { CardTotal } from '~/components/(Cart)/components/cards/card-total/card-total';
 interface IState {
   searchInput: string;
   searchResults: Product[];
@@ -42,112 +43,77 @@ export default component$(() => {
       controller.abort();
     };
   });
-  const user = useGetCurrentUser().value;
+  const showLoader = useStore({ setShowLoader: true });
+
+  useVisibleTask$(() => {
+    const timer = setInterval(() => {
+      showLoader.setShowLoader = false;
+    }, 300);
+    return () => {
+      clearInterval(timer);
+    };
+  });
   return (
     <div class="container-all">
-      <div class="content">
-        <div class="crrts-title">
-          <div class="ofrs">
-            <p>
-              Bienvenido{' '}
-              {user ? (
-                <>
-                  <strong class="name-user">{user.name}</strong>
-                </>
+      {state.searchResults && state.searchResults.length > 0 ? (
+        <>
+          <HeaderCart />{' '}
+          <div class="cart-container">
+            <div class="cart-products">
+              {state.searchResults.length > 0 ? (
+                state.searchResults.map((product) => {
+                  const subTotalA = state.searchResults.reduce(
+                    (accumulator, product) => {
+                      return accumulator + product.price * product.quantity;
+                    },
+                    0
+                  );
+                  const descounts = state.searchResults.reduce(
+                    (accumulator, product) => {
+                      const discountAmount =
+                        product.price *
+                        (product.discount / 100) *
+                        product.quantity;
+                      return accumulator + discountAmount;
+                    },
+                    0
+                  );
+
+                  subTotal.setsubTotal = subTotalA;
+                  discount.setDiscount = descounts;
+
+                  return (
+                    <div class="container-cart">
+                      <Card1SCART product={product} />
+                      <div class="container-button">
+                        <ButtonCartIndex product={product} />
+                      </div>
+                    </div>
+                  );
+                })
               ) : (
-                ''
-              )}{' '}
-              a tu carrito de compras
-            </p>
-          </div>
-        </div>
-        <div class="container-options-cart">
-          <div class="button-shared">
-            <button onClick$={() => {}}>Compartir carrito de compra</button>
-          </div>{' '}
-          <div class="ctr-opa">|</div>
-          <div class="button-favorite">
-            <button onClick$={() => {}}>Ultimos productos visto</button>
-          </div>
-        </div>
-      </div>
-      <div class="cart-container">
-        <div class="cart-products">
-          {state.searchResults.length > 0 ? (
-            state.searchResults.map((product) => {
-              const subTotalA = state.searchResults.reduce(
-                (accumulator, product) => {
-                  return accumulator + product.price * product.quantity;
-                },
-                0
-              );
-              const descounts = state.searchResults.reduce(
-                (accumulator, product) => {
-                  const discountAmount =
-                    product.price * (product.discount / 100) * product.quantity;
-                  return accumulator + discountAmount;
-                },
-                0
-              );
-
-              subTotal.setsubTotal = subTotalA;
-              discount.setDiscount = descounts;
-
-              return (
-                <div class="container-cart">
-                  <Card1SCART product={product} />
-                  <div class="container-button">
-                    <ButtonCartIndex product={product} />
-                  </div>
-                </div>
-              );
-            })
-          ) : (
-            <div class="loader"></div>
-          )}
-          <div class="container-card-subtotal">
-            <div class="cart-subtotal">
-              <ul class="container-lista-subtotal">
-                <li>
-                  Total producto:{' '}
-                  <span id="total" class="container-valor">
-                    {state.searchResults.length}
-                  </span>
-                </li>
-              </ul>
-              <div class="container-subtotal">
-                <h3 class="container-titulo-subtotal">Subtotal compra:</h3>
-                <strong class="subtotal">
-                  <UsePrice price={subTotal.setsubTotal} />
-                </strong>
-              </div>
+                <div class="loader"></div>
+              )}
+              <CardSubtotal
+                state={state.searchResults.length}
+                subTotal={subTotal}
+              />
             </div>
+            <CardTotal subTotal={subTotal} discount={discount} />
           </div>
-        </div>
-        <div class="container-total-cart">
-          <div class="cart-total">
-            <h3 class="container-titulo">Resumen de la compra</h3>
-            <ul class="container-lista">
-              <li>
-                Descuentos:{' '}
-                <span id="descuentos" class="container-valor">
-                  <UsePrice price={discount.setDiscount} />
-                </span>
-              </li>
-
-              <li>
-                Subtotal:{' '}
-                <span id="subtotal" class="container-valor">
-                  <UsePrice price={subTotal.setsubTotal} />
-                </span>
-              </li>
-            </ul>
-            <button id="siguiente" class="container-boton">
-              Siguiente
-            </button>
-          </div>
-        </div>
-      </div>
+        </>
+      ) : (
+        <>
+          {showLoader.setShowLoader ? (
+            <>
+              {' '}
+              <div class="loader"></div>
+            </>
+          ) : (
+            <HeaderCart />
+          )}
+        </>
+      )}
     </div>
   );
 });
