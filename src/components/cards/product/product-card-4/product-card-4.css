@@ -19,9 +19,19 @@
 
 .product-image {
 
-    height: 170px;
+    height: 150px;
     object-fit: contain;
     padding: 10px 0px;
 
 
+}
+
+@media only screen and (max-width: 885px) {
+
+    .product-card {
+        width: 100%;
+        width: 150px;
+
+
+    }
 }

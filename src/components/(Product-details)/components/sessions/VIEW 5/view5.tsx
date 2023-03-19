@@ -9,7 +9,7 @@ import { Carousel1 } from '~/components/use/carousel/carousel-1/carousel-1';
 import type { Product } from '~/utils/types';
 import { fetchProductU } from '~/services/fechProduct';
 import { randomNum } from '~/services/fuction';
-export const View5 = component$(({ product }: any) => {
+export const View5 = component$(({ product, styleNumber }: any) => {
   useStylesScoped$(style);
   const state = useStore({
     productResults: [] as Product[],
@@ -35,7 +35,10 @@ export const View5 = component$(({ product }: any) => {
       ) : (
         <div class="content-carousel">
           <p class="ps-sr1">Puede que te interesen </p>
-          <Carousel1 styleCard={randomNumber} product={state.productResults} />
+          <Carousel1
+            styleCard={styleNumber || randomNumber}
+            product={state.productResults}
+          />
         </div>
       )}
     </div>

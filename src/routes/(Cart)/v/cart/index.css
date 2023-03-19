@@ -1,5 +1,6 @@
 .container-all {
   background-color: var(--color-background-white);
+  min-height: 100rem;
 }
 
 .cart-container {
@@ -39,7 +40,11 @@
   font-size: 22px;
 }
 
-
+.container-carousel {
+  background-color: var(--color-background-white);
+  height: 100px;
+  padding: 0px 80px;
+}
 
 
 
@@ -56,6 +61,13 @@
 @media only screen and (max-width: 885px) {
   .container-total-cart {
     padding: 10px;
+  }
+
+  .container-carousel {
+    background-color: var(--color-background-white);
+    height: 100px;
+    padding: 0px;
+    padding-left: 5px;
   }
 
   .cart-container {

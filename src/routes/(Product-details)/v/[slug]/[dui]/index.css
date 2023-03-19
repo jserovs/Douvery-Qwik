@@ -1,5 +1,6 @@
 .container-all {
     background-color: var(--color-background-down);
+
 }
 
 .container-details {
@@ -31,6 +32,10 @@
     margin: 5px;
     padding: 15px;
 
+    background-color: var(--color-background-light);
+}
+
+.container-views {
     background-color: var(--color-background-light);
 }
 

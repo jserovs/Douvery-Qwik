@@ -7,6 +7,9 @@ import {
 } from '~/services/cart/cart';
 import { useNavigate } from '@builder.io/qwik-city';
 import { DouveryHeart } from '~/components/icons/heart';
+
+import { DropdownShared } from '../dropdowm/dropdown';
+
 export const ButtonCartIndex = component$(({ product }: any) => {
   useStylesScoped$(styles);
   const nav = useNavigate();
@@ -83,14 +86,7 @@ export const ButtonCartIndex = component$(({ product }: any) => {
       </div>
       <div class="ctr-opa">|</div>
       <div class="button-shared">
-        <button
-          onClick$={() => {
-            removeCartItem({ dui: product.dui });
-            nav('/v/cart');
-          }}
-        >
-          Compartir
-        </button>
+        <DropdownShared product={product} />
       </div>{' '}
       <div class="ctr-opa">|</div>
       <div class="button-favorite">
