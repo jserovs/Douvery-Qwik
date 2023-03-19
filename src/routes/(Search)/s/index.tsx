@@ -446,8 +446,13 @@ export default component$(() => {
                   input.searchInput = (ev.target as HTMLInputElement).value;
                   url.searchParams.set('q', input.searchInput);
                 }}
+                autoCorrect="true"
+                autoCapitalize="true"
+                accept="text/html"
+                autoComplete="true"
                 value={input.searchInput}
-                placeholder={url.searchParams.get('q') || 'Buscar'}
+                lang="es"
+                placeholder={url.searchParams.get('q') || '...'}
               />{' '}
             </div>
             <div class="container-select">
