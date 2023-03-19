@@ -23,9 +23,9 @@
   border-bottom: 1px solid var(--border-width-1);
 }
 
-.crrts-title .ofrs {
-  font-size: 28px;
-  font-weight: 500;
+.crrts-title .ofrs p {
+  font-size: 22px;
+  font-weight: 400;
   margin: 0;
   padding: 1rem;
 
@@ -216,6 +216,7 @@
 
 
 .container-options-cart {
+  font-size: small;
   display: flex;
   justify-content: center;
   align-items: center;

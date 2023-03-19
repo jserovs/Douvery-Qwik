@@ -42,13 +42,23 @@ export default component$(() => {
       controller.abort();
     };
   });
- const user = useGetCurrentUser().value;
+  const user = useGetCurrentUser().value;
   return (
     <div class="container-all">
       <div class="content">
         <div class="crrts-title">
           <div class="ofrs">
-            <p>Bienvenido {user ? user.name : ''} a tu carrito de compras</p>
+            <p>
+              Bienvenido{' '}
+              {user ? (
+                <>
+                  <strong class="name-user">{user.name}</strong>
+                </>
+              ) : (
+                ''
+              )}{' '}
+              a tu carrito de compras
+            </p>
           </div>
         </div>
         <div class="container-options-cart">
