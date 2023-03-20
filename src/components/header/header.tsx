@@ -13,7 +13,7 @@ import { DouveryLogo105X40PX } from '../icons/logo105X40';
 import { fetchSuggestions } from '~/services/fechProduct';
 import { IconsSearch } from '../icons/search';
 import { ProfileDropdown } from '../dropdown/header-profile-user/profile-dropdown';
-import { useLocation, useNavigate } from '@builder.io/qwik-city';
+import { Link, useLocation, useNavigate } from '@builder.io/qwik-city';
 import { category } from '~/routes/(Search)/s';
 
 interface IState {
@@ -159,10 +159,10 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
         </div>
         <div class="cajas">
           <div class="main">
-            <a href="/v/cart" class="user">
+           <div class="container-icon-cart"> <Link href="/v/cart" class="user">
               <DouveryCart />
               <div class="badget-circle">1</div>
-            </a>
+            </Link></div>
             <DouveryUser />
 
             {user ? (

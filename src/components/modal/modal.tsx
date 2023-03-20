@@ -112,17 +112,14 @@ export const ModalButtonCou = component$(() => {
                 <p>Indica dónde te encuentras</p>
               </div>{' '}
               {user ? (
-                <div class="true-loggin">
-                  <p>
-                    Hello, <strong>{user.name}</strong>
-                  </p>{' '}
-                  <div class="ctr-opa">|</div>
-                  <div class="form-group need-account">
-                    <a href="/u/" class="forgot-new-account-link">
-                      Editar dirección
-                    </a>
-                  </div>
-                </div>
+               <div class="true-loggin">
+               
+               <div class="form-group need-account">
+                 <a href="/u/" class="forgot-new-account-link">
+                   Editar mi dirección
+                 </a>
+               </div>
+             </div>
               ) : (
                 <div class="ctr-button-login-modal">
                   <div class="clg-pesorso-experi">
@@ -239,9 +236,14 @@ export const ModalButtonCou = component$(() => {
                     )}
                   </div>
                 </>
+                {user ? (
+                ''
+              ) : <></>  }
               </div>
-            </div>{' '}
+            </div>
+           
           </div>
+          
         </>
       )}
     </div>
