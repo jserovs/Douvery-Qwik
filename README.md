@@ -24,5 +24,5 @@ If you are interested in collaborating on this project, you can contact me via e
 
 ## Qwik || Builder.io
 
-Made with ❤️ with Qwik || Builder.io
+Made with ❤️ 
 
