@@ -60,6 +60,14 @@
 
 @media only screen and (max-width: 885px) {
 
+    .content {
+        width: 100%;
+        height: 90px;
+        padding: 0px 10px;
+        border-bottom: 0px solid var(--border-width-1);
+        margin-top: 10px;
+
+    }
 
     .container-option-mobiles {
         display: flex;
@@ -68,14 +76,7 @@
         gap: 15px;
         color: #0f111190;
 
-    }
 
-    .content {
-        width: 100%;
-        padding: 13px 13px;
-        border-bottom: 0px solid var(--border-width-1);
-        margin-top: 10px;
-        height: 80px;
     }
 
     .crrts-title .ofrs {
@@ -83,7 +84,7 @@
     }
 
     .crrts-title .ofrs p {
-        font-size: 20px;
+        font-size: 24px;
         font-weight: 500;
         margin: 0;
         padding: 0px 0px;

@@ -59,9 +59,16 @@
 
 
 @media only screen and (max-width: 885px) {
+  .container-all {
+    display: grid;
+    gap: 20px;
+    padding: 20px 0px;
+  }
+
   .container-total-cart {
     padding: 10px;
   }
+
 
   .container-carousel {
     background-color: var(--color-background-white);
