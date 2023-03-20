@@ -49,6 +49,30 @@ export const ButtonCartIndex = component$(({ product }: any) => {
   );
   return (
     <div class="buttos-cart">
+           <div class="button-store-future">
+       
+        <button
+          onClick$={() => {
+            removeCartItem({ dui: product.dui });
+            nav('/v/cart');
+          }}
+        >
+         Añadir a lista de compras futuras
+        </button>
+      </div>
+       <div class="ctr-opa">|</div>
+            <div class="button-favorite">
+        <DouveryHeart size="15px" />
+        <button
+          onClick$={() => {
+            removeCartItem({ dui: product.dui });
+            nav('/v/cart');
+          }}
+        >
+          Favorito
+        </button>
+      </div>
+       <div class="ctr-opa">|</div>
       <div class="buttos-cart-carsh">
         <button
           onClick$={() => {
@@ -88,18 +112,8 @@ export const ButtonCartIndex = component$(({ product }: any) => {
       <div class="button-shared">
         <DropdownShared product={product} />
       </div>{' '}
-      <div class="ctr-opa">|</div>
-      <div class="button-favorite">
-        <DouveryHeart size="15px" />
-        <button
-          onClick$={() => {
-            removeCartItem({ dui: product.dui });
-            nav('/v/cart');
-          }}
-        >
-          Favorito
-        </button>
-      </div>
+  
+
     </div>
   );
 });
