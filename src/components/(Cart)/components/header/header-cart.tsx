@@ -4,6 +4,7 @@ import { removeAllCartItems } from '~/services/cart/cart';
 import { useNavigate } from '@builder.io/qwik-city';
 import { useGetCurrentUser } from '~/routes/layout';
 import { PoputOptionsCart } from '../poput-options/poput-options';
+import { TextCL } from '~/components/use/textCL/textCL';
 export const HeaderCart = component$(({ stateProduct }: any) => {
   useStylesScoped$(styles);
   const nav = useNavigate();
@@ -17,7 +18,9 @@ export const HeaderCart = component$(({ stateProduct }: any) => {
               Bienvenido{' '}
               {user ? (
                 <>
-                  <strong class="name-user">{user.name}</strong>
+                  <strong class="name-user">
+                    <TextCL text={user.name} />
+                  </strong>
                 </>
               ) : (
                 ''
