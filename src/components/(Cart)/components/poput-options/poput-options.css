@@ -13,16 +13,7 @@
     margin: 0 auto;
 }
 
-.ttle-draw {
 
-    text-align: center;
-    display: flex;
-    position: relative;
-
-    align-items: center;
-    color: var(--color-text-opaque);
-    ;
-}
 
 
 .crtr-brts {
@@ -36,8 +27,19 @@
     align-items: center;
     gap: 5px;
     background-color: var(--color-background-light);
+    fill: #2c3e50;
+
 }
 
+.trl-drs p {
+
+    text-align: center;
+    display: flex;
+    position: relative;
+
+    align-items: center;
+    color: #2c3e50;
+}
 
 
 .trl-drs .arrow-up {
@@ -84,7 +86,7 @@
     transform: translateX(-20%);
     background-color: var(--color-background-light);
     padding: 8px 0;
-    border-radius: 3px;
+    border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
     z-index: 1;
     margin-top: 10px;
@@ -110,7 +112,13 @@
     width: 100%;
     height: 100%;
     text-align: center;
+    margin: 10px 0px;
 
+}
+
+.list-container ul {
+    display: grid;
+    gap: 10px;
 }
 
 .item-title {
@@ -118,11 +126,14 @@
 
     justify-content: flex-start;
     align-items: center;
-    color: #0a0b0c95;
+    color: var(--color-black);
     fill: #0a0b0c95;
-    padding: 10px 5px;
+    background-color: var(--color-background-light);
+    padding: 10px 15px;
     gap: 10px;
-    border-bottom: 1px solid var(--border-width-1);
+    border-bottom: 1px solid var(--color-background-down);
+
+    font-size: 14px;
 
 
 }
@@ -147,7 +158,7 @@
 
 @media only screen and (max-width: 885px) {
     .tolst-tip {
-        left: calc(50% - 7px);
+        left: calc(85% - 7px);
     }
 
     .dropdown-menu {
@@ -158,7 +169,6 @@
     }
 
     .dropdown-menu {
-        left: 65%;
-        transform: translateX(-30%)
+        transform: translateX(-65%);
     }
 }

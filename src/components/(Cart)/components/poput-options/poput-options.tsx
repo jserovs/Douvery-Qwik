@@ -4,6 +4,8 @@ import { DouveryCategory } from '~/components/icons/category';
 import { removeAllCartItems } from '~/services/cart/cart';
 import { useNavigate } from '@builder.io/qwik-city';
 import { DouveryExportShared } from '~/components/icons/export-shared';
+import { DouveryTrash } from '~/components/icons/trash';
+import { DouveryMouseSquare } from '~/components/icons/mouse-square';
 export const PoputOptionsCart = component$(({ title }: any) => {
   useStylesScoped$(styles);
   const isOpen = useStore({ setIsOpen: false });
@@ -23,7 +25,7 @@ export const PoputOptionsCart = component$(({ title }: any) => {
           onClick$={() => (isOpen.setIsOpen = !isOpen.setIsOpen)}
         >
           <DouveryCategory size="18" />
-          <p class="ttle-draw"> {title}</p>{' '}
+          <p> {title}</p>{' '}
         </button>
         <div class="crt-drpd">
           <ul class={`dropdown-menu ${isOpen.setIsOpen ? 'show' : ''}`}>
@@ -37,11 +39,14 @@ export const PoputOptionsCart = component$(({ title }: any) => {
                   </div>
                 </li>{' '}
                 <li class="list-item">
-                  <div class="item-title">Ultimos productos visto</div>
+                  <div class="item-title">
+                    <DouveryMouseSquare size="18px" /> Ultimos productos visto
+                  </div>
                 </li>
                 <li class="list-item">
                   <div class="item-title">
                     {' '}
+                    <DouveryTrash size="18px" />
                     <button
                       onClick$={() => {
                         removeAllCartItems();

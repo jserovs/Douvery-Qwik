@@ -149,7 +149,7 @@ input[type="checkbox"] {
 @media only screen and (max-width: 885px) {
     .card {
         display: grid;
-        grid-template-columns: 100px auto;
+        grid-template-columns: 150px auto;
 
         border-top: 1px solid #E8F0FE;
         gap: 10px;
@@ -160,12 +160,12 @@ input[type="checkbox"] {
 
 
     .product-image {
-        width: 120px;
+        width: 150px;
         height: 130px;
     }
 
     .product-title {
-        font-size: 16px;
+        font-size: 14px;
 
         line-height: 1.2em;
         overflow: hidden;

@@ -76,7 +76,19 @@
         font-size: 14px;
     }
 
+    .cart-subtotal {
 
+
+        background-color: transparent;
+        border: none;
+        border-radius: none;
+        box-shadow: none;
+        box-sizing: border-box;
+        border-top: 1px solid #33333310;
+        border-bottom: 1px solid #33333310;
+
+
+    }
 
     .cart-subtotal {
         padding: 5px;
