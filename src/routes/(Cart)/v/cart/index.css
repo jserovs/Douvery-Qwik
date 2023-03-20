@@ -1,12 +1,12 @@
 .container-all {
-  background-color: var(--color-background-white);
+  background-color: var(--color-background-light);
   min-height: 100rem;
 }
 
 .cart-container {
   display: grid;
   grid-template-columns: 60% 20%;
-  background-color: var(--color-background-white);
+  background-color: var(--color-background-light);
   justify-content: center;
   gap: 120px;
   min-height: 100rem;
