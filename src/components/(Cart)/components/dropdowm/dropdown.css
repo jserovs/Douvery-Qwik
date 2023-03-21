@@ -205,7 +205,11 @@ li {
     .dropdown ul {
         left: -0%;
         margin: 10px 0 0 -40%;
-        transform: translateX(-30%);
+        transform: translateX(8%);
         width: 250px;
+    }
+
+    .dropdown ul::before {
+        left: 8%;
     }
 }

@@ -19,7 +19,7 @@
   width: 100%;
   position: relative;
   display: grid;
-  grid-template-columns: auto auto;
+
   justify-content: stretch;
   align-items: end;
 
@@ -56,6 +56,13 @@
   }
 }
 
+@media only screen and (max-width: 1250px) {
+  .cart-container {
+
+    gap: 20px;
+
+  }
+}
 
 
 @media only screen and (max-width: 885px) {
@@ -93,9 +100,19 @@
 
 
   .container-button {
+
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     display: grid;
     justify-content: center;
     align-items: center;
+  }
+
+  .container-button::-webkit-scrollbar {
+    display: none;
   }
 
 }

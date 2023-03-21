@@ -44,13 +44,12 @@
 
 .card img {
     width: 150px;
-    height: 150px;
+    height: 120px;
 }
 
 .product-image {
 
-    width: 150px;
-    height: 150px;
+
     object-fit: contain;
     margin-right: 1rem;
     padding: 5px;
@@ -84,7 +83,7 @@
     gap: 10px;
     font-size: 16px;
     font-weight: 600;
-    margin: 20px 0px;
+    margin: 10px 0px;
 }
 
 .price-t {
@@ -128,10 +127,12 @@
     color: #008000;
 }
 
+
 .gift-option {
     display: flex;
     align-items: center;
     opacity: 70%;
+    font-size: 13px;
 }
 
 input[type="checkbox"] {
