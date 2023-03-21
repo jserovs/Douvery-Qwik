@@ -67,6 +67,7 @@ export const ButtonCartIndex = component$(({ product }: any) => {
         <button
           onClick$={() => {
             removeCartItem({ dui: product.dui });
+            addToFavoriteProducts({ dui: product.dui });
             nav('/v/cart');
           }}
         >

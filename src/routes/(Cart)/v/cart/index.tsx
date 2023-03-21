@@ -104,20 +104,17 @@ export default component$(() => {
                 state={state.searchResults.length}
                 subTotal={subTotal}
               />
-              <CardShopFuture
-          
-          />
+              <CardShopFuture />
             </div>
-           <div>
-           <CardTotal
-              subTotal={subTotal}
-              discount={discount}
-              subTotalNoDiscount={subTotalNoDiscount.setsubTotalNoDiscount}
-            /> 
-            < CardFavoriteProduct/>   
-              < CardDouveryExtend1/> 
-            
-           </div>
+            <div class="container-infos">
+              <CardTotal
+                subTotal={subTotal}
+                discount={discount}
+                subTotalNoDiscount={subTotalNoDiscount.setsubTotalNoDiscount}
+              />
+              <CardFavoriteProduct />
+              <CardDouveryExtend1 />
+            </div>
           </div>
         </>
       ) : (
