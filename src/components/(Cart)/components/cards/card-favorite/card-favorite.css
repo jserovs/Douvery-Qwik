@@ -23,13 +23,29 @@
     font-size: 20px;
     padding: 0px 0px;
 }
-.container-subtitle{
+
+.container-subtitle {
     width: 100%;
     display: grid;
     justify-content: end;
 }
 
-.container-list-empty{
+.container-button-cart {
+    display: none;
+}
+
+.container-cart:hover .container-button-cart {
+    display: block;
+    background-color: var(--color-primary);
+    border: 1px solid #fff;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.container-list-empty {
     width: 100%;
     background-color: #fff;
     border: 1px solid #d5d9d9;
@@ -38,9 +54,11 @@
     box-sizing: border-box;
     color: #0f1111;
 }
-.container-list-empty:hover{
+
+.container-list-empty:hover {
     box-shadow: rgba(36, 36, 36, 0.5) 0 2px 5px 0;
 }
+
 @media only screen and (max-width: 1605px) {
     .container-cart {
         display: grid;
