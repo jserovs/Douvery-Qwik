@@ -88,9 +88,6 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
                 placeholder="Busca tu producto"
                 onClick$={() => (is.setIsOpen = true)}
                 value={state.searchInput}
-                onKeyUp$={(ev) =>
-                  (state.searchInput = (ev.target as HTMLInputElement).value)
-                }
                 onKeyDown$={(ev) => {
                   if (ev.key === 'Enter') {
                     is.setIsOpen = false;
@@ -104,6 +101,7 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
                     );
                   }
                 }}
+                autoComplete="off"
               />
 
               {is.setIsOpen && (
@@ -159,10 +157,13 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
         </div>
         <div class="cajas">
           <div class="main">
-           <div class="container-icon-cart"> <Link href="/v/cart" class="user">
-              <DouveryCart />
-              <div class="badget-circle">1</div>
-            </Link></div>
+            <div class="container-icon-cart">
+              {' '}
+              <Link href="/v/cart" class="user">
+                <DouveryCart />
+                <div class="badget-circle">1</div>
+              </Link>
+            </div>
             <DouveryUser />
 
             {user ? (
