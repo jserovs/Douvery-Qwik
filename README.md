@@ -22,7 +22,7 @@ Welcome to Douvery, a project focused on the sales environment for all audiences
 
 If you are interested in collaborating on this project, you can contact me via email or send a message through GitHub. Together, we can improve the online shopping experience for all users.
 
-## Qwik || Builder.io
+## ❤️❤️❤️ Qwik | Builder.io
 
-Made with ❤️ 
+
 
