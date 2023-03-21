@@ -88,6 +88,9 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
                 placeholder="Busca tu producto"
                 onClick$={() => (is.setIsOpen = true)}
                 value={state.searchInput}
+                onKeyUp$={(ev) =>
+                  (state.searchInput = (ev.target as HTMLInputElement).value)
+                }
                 onKeyDown$={(ev) => {
                   if (ev.key === 'Enter') {
                     is.setIsOpen = false;
@@ -101,7 +104,6 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
                     );
                   }
                 }}
-                autoComplete="off"
               />
 
               {is.setIsOpen && (
