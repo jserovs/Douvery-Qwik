@@ -1,9 +1,10 @@
 import { component$, useStore, useStylesScoped$, useVisibleTask$ } from '@builder.io/qwik';
 import styles from './card-favorite.css?inline';
-import { getDataFavoriteProduct, removeAllProductFavorite } from '~/services/cart/favorite-product';
+import {  getDataFavoriteProduct, removeAllProductFavorite } from '~/services/cart/favorite-product';
 import type{ Product } from '~/utils/types';
 import { useLocation, useNavigate } from '@builder.io/qwik-city';
 import { Card2SCART } from '~/components/cards/cart/card-2-s/card-2-s';
+import { addToCart } from '~/services/cart/cart';
 
   interface IState {
   searchInput: string;
@@ -49,9 +50,27 @@ export const CardFavoriteProduct = component$(
                     <>
                      <div class="container-cart" key={product.dui}>
                      <Card2SCART product={product}/> 
-                     
+                      <div class="container-button-cart">
+                    <button
+                     onClick$={() => {
+                      addToCart({ dui: product.dui, quantity: 1 });
+                       nav('/v/cart');
+                     }}
+                   >
+               Agregar al carrito
+                   </button>
+</div>
                     </div>
-                    <div class="container-list-empty">
+                  
+                   </>
+                   
+                  );
+                  
+                })
+              ) : (
+                <div class="loader"></div>
+              )}
+                <div class="container-list-empty">
                     <button
                      onClick$={() => {
                        removeAllProductFavorite();
@@ -61,13 +80,6 @@ export const CardFavoriteProduct = component$(
                 Limpiar lista
                    </button>
 </div>
-                   </>
-                   
-                  );
-                })
-              ) : (
-                <div class="loader"></div>
-              )}
           </ul>
          
          
