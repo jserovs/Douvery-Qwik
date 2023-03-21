@@ -128,7 +128,11 @@ export default component$(() => {
             <>
               {' '}
               <HeaderCart stateProduct={state.searchResults} />
-              <NoProductCart />
+             <div class="container-center-no-product">
+                <NoProductCart />
+                   <CardFavoriteProduct />
+             </div>
+              
               <div class="container-carousel">
                 <View5 product={''} styleNumber={4} />
               </div>

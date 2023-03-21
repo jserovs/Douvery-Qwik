@@ -9,6 +9,7 @@ import { useNavigate } from '@builder.io/qwik-city';
 import { DouveryHeart } from '~/components/icons/heart';
 
 import { DropdownShared } from '../dropdowm/dropdown';
+import { addToFavoriteProducts } from '~/services/cart/favorite-product';
 
 export const ButtonCartIndex = component$(({ product }: any) => {
   useStylesScoped$(styles);
