@@ -1,8 +1,8 @@
 import { component$, useStore, useStylesScoped$, useVisibleTask$ } from '@builder.io/qwik';
 import styles from './card-favorite.css?inline';
-import { getDataFavoriteProduct } from '~/services/cart/favorite-product';
+import { getDataFavoriteProduct, removeAllProductFavorite } from '~/services/cart/favorite-product';
 import type{ Product } from '~/utils/types';
-import { useLocation } from '@builder.io/qwik-city';
+import { useLocation, useNavigate } from '@builder.io/qwik-city';
 import { Card2SCART } from '~/components/cards/cart/card-2-s/card-2-s';
 
   interface IState {
@@ -33,6 +33,7 @@ export const CardFavoriteProduct = component$(
       controller.abort();
     };
   });
+  const nav = useNavigate();
     return (
       <>
         <div class="cart-future-shop">
@@ -45,16 +46,31 @@ export const CardFavoriteProduct = component$(
 
                  
                   return (
-                    <div class="container-cart" key={product.dui}>
+                    <>
+                     <div class="container-cart" key={product.dui}>
                      <Card2SCART product={product}/> 
                      
                     </div>
+                    <div class="container-list-empty">
+                    <button
+                     onClick$={() => {
+                       removeAllProductFavorite();
+                       nav('/v/cart');
+                     }}
+                   >
+                Limpiar lista
+                   </button>
+</div>
+                   </>
+                   
                   );
                 })
               ) : (
                 <div class="loader"></div>
               )}
           </ul>
+         
+         
         </div>
       </>
     );

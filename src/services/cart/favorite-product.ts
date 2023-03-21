@@ -52,3 +52,8 @@ export async function getDataFavoriteProduct  () {
     return 'No se encontraron datos en localStorage para la clave: ' + OPTIONS_KEY_FAVORITE_PRODUCTS;
   }
 }
+
+export function removeAllProductFavorite() {
+  localStorage.removeItem(OPTIONS_KEY_FAVORITE_PRODUCTS);
+  console.log('Todos los elementos han sido eliminados del carrito.');
+}
