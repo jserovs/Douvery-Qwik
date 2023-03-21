@@ -17,6 +17,9 @@ import { CardSubtotal } from '~/components/(Cart)/components/cards/card-subtotal
 import { CardTotal } from '~/components/(Cart)/components/cards/card-total/card-total';
 import { NoProductCart } from '~/components/(Cart)/sessions/no-product-cart/no-product-cart';
 import { View5 } from '~/components/(Product-details)/components/sessions/VIEW 5/view5';
+import { CardShopFuture } from '~/components/(Cart)/components/cards/shop-future/shop-future';
+import { CardFavoriteProduct } from '~/components/(Cart)/components/cards/card-favorite/card-favorite';
+import { CardDouveryExtend1 } from '~/components/cards/douveryExtend/card-douveryExtend-1/douveryExtend1';
 interface IState {
   searchInput: string;
   searchResults: Product[];
@@ -101,12 +104,20 @@ export default component$(() => {
                 state={state.searchResults.length}
                 subTotal={subTotal}
               />
+              <CardShopFuture
+          
+          />
             </div>
-            <CardTotal
+           <div>
+           <CardTotal
               subTotal={subTotal}
               discount={discount}
               subTotalNoDiscount={subTotalNoDiscount.setsubTotalNoDiscount}
-            />
+            /> 
+            < CardFavoriteProduct/>   
+              < CardDouveryExtend1/> 
+            
+           </div>
           </div>
         </>
       ) : (

@@ -44,7 +44,7 @@
 @media only screen and (max-width: 1300px) {
     .content {
         display: inline-block;
-
+        width: 100%;
     }
 
     .crrts-title .ofrs {
@@ -52,7 +52,7 @@
     }
 
     .container-options-cart {
-        justify-content: start;
+        justify-content: end;
         font-size: 13px;
         padding: 0px 50px;
     }

@@ -22,6 +22,8 @@
 
 .ctr-ic .hs-sr2 {
     color: #BE1B2B;
+    font-weight: 700;
+    font-size: 18px;
 }
 
 .ctr-tile {
@@ -29,6 +31,8 @@
     text-align: center;
     gap: 10px;
     margin: 10px 0px;
+    color: var(--color-text-light);
+    font-size: 14px;
 }
 
 .btt-prc {
@@ -39,16 +43,21 @@
 }
 
 .btt-prc button {
-    width: 95px;
-    height: 25px;
-    border-radius: 5px;
-    border: none;
-    background-color: #BE1B2B;
-    color: var(--color-white);
+    width: 143px;
+    height: 33px;
+    border-radius: 3px;
+
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+   
+    box-sizing: border-box;
+    color: #3e3e3e;
 }
+
 
 .ps-sr1 {
     text-align: end;
