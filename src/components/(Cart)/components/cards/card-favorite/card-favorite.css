@@ -1,9 +1,7 @@
-
-
 .cart-future-shop {
-    
+
     background-color: transparent;
-  border-top: 1px solid var(--border-width-1);
+    border-top: 1px solid var(--border-width-1);
     color: #0f1111;
     display: inline-block;
     font-size: 13px;
@@ -14,7 +12,7 @@
     min-width: 300PX;
 
     width: 100%;
-    height:100px;
+
     margin: 20px 0px;
     padding: 20px 20px;
 }
@@ -23,16 +21,12 @@
     margin-top: 0;
     text-align: start;
     font-size: 20px;
-    
+
     padding: 0px 0px;
 }
 
 
-@media only screen and (max-width: 1491px) {
-    .cart-future-shop {
-        height: 280px;
-    }
-}
+
 
 @media only screen and (max-width: 1605px) {
     .container-cart {

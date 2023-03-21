@@ -104,20 +104,17 @@ export default component$(() => {
                 state={state.searchResults.length}
                 subTotal={subTotal}
               />
-              <CardShopFuture
-          
-          />
+              <CardShopFuture />
             </div>
-           <div>
-           <CardTotal
-              subTotal={subTotal}
-              discount={discount}
-              subTotalNoDiscount={subTotalNoDiscount.setsubTotalNoDiscount}
-            /> 
-            < CardFavoriteProduct/>   
-              < CardDouveryExtend1/> 
-            
-           </div>
+            <div class="container-infos">
+              <CardTotal
+                subTotal={subTotal}
+                discount={discount}
+                subTotalNoDiscount={subTotalNoDiscount.setsubTotalNoDiscount}
+              />
+              <CardFavoriteProduct />
+              <CardDouveryExtend1 />
+            </div>
           </div>
         </>
       ) : (
@@ -131,7 +128,11 @@ export default component$(() => {
             <>
               {' '}
               <HeaderCart stateProduct={state.searchResults} />
-              <NoProductCart />
+             <div class="container-center-no-product">
+                <NoProductCart />
+                   <CardFavoriteProduct />
+             </div>
+              
               <div class="container-carousel">
                 <View5 product={''} styleNumber={4} />
               </div>

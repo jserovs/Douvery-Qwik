@@ -46,8 +46,17 @@
   padding: 0px 80px;
 }
 
+.container-infos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
+}
 
+.container-center-no-product {
+  display: flex;
+  gap: 10px;
+}
 
 @media only screen and (max-width: 1605px) {
   .container-cart {

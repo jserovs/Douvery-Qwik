@@ -21,19 +21,12 @@ export function addToCart({dui, quantity,}: {dui: string,quantity: number}) {
   console.log('Agregando al carrito:', {dui, quantity});
 
   const cart = getDataCart() || [];
-
-  // Convertir quantity a Number
   quantity = Number(quantity);
-
-  // Buscar si el artículo ya está en el carrito
   const existingItem = cart.find((item: { dui: string; }) => item.dui === dui);
 
 
   if (existingItem) {
-    // Si el artículo ya está en el carrito, sumar la cantidad
-    existingItem.quantity += quantity;
-    
-
+     existingItem.quantity += quantity;
   } else {
   
     cart.push({dui,quantity});
@@ -44,15 +37,11 @@ export function addToCart({dui, quantity,}: {dui: string,quantity: number}) {
 
 export function decreaseCartItemQuantity({dui, decreaseAmount,}: {dui: string,decreaseAmount:number}) {
   const cart = getDataCart() || [];
-
-  // Buscar el artículo en el carrito
   const existingItem = cart.find((item: { dui: string; }) => item.dui === dui);
 
   if (existingItem) {
-    // Si el artículo ya está en el carrito, disminuir la cantidad
-    existingItem.quantity -= decreaseAmount;
-    // Si la cantidad es menor o igual a cero, eliminar el artículo del carrito
-    if (existingItem.quantity <= 0) {
+     existingItem.quantity -= decreaseAmount;
+     if (existingItem.quantity <= 0) {
       const itemIndex = cart.indexOf(existingItem);
       cart.splice(itemIndex, 1);
     }
@@ -66,8 +55,7 @@ export function decreaseCartItemQuantity({dui, decreaseAmount,}: {dui: string,de
 export function removeCartItem({dui}: {dui: string}) {
   const cart = getDataCart() || [];
 
-  // Buscar el artículo en el carrito
-  const existingItem = cart.find((item: { dui: string; }) => item.dui === dui);
+   const existingItem = cart.find((item: { dui: string; }) => item.dui === dui);
 
   if (existingItem) {
     const itemIndex = cart.indexOf(existingItem);

@@ -447,7 +447,6 @@ export default component$(() => {
                   url.searchParams.set('q', input.searchInput);
                 }}
                 value={input.searchInput}
-          
                 placeholder={url.searchParams.get('q') || '...'}
               />{' '}
             </div>
