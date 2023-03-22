@@ -132,18 +132,18 @@ export const ModalFuturePurchase = component$(({product}:any) => {
              
               <div class="card">
               <Card2SCART product={product}/> 
-              
-             
-            
             </div>
-            <div class="card"><label  for="reminder-date" class="form-label">Seleccionar fecha para recordatorio:</label>
+            <div class="card">
+                <label  for="reminder-date" class="form-label">Seleccionar fecha para recordatorio:</label>
 
 <input type="date" id="reminder-date" name="reminder-date" onChange$={(e) => reminderDate.setReminderDate=e.target.value} class="form-input"/>
 
-</div><div class="card-notification">
+</div>
+<div class="card">
+    <div class="card-notification">
 <label for="notification" class="form-label">Recibir notificación:</label>
 <input type="checkbox" id="notification" name="notification" value="true" onChange$={(e) => notification.setNotification = e.target.checked} class="form-checkbox"/>
-
+</div>
 </div>
             <div class="ctr-button-modal"><button class='button-agg'
         onClick$={async () => {
@@ -159,7 +159,7 @@ export const ModalFuturePurchase = component$(({product}:any) => {
                   userId: user?.id,
                   dui:product.dui,
                   reminderDate: reminderDate.setReminderDate,
-                notification: notification.setNotification
+                    notification: notification.setNotification
                 }),
               }
             );

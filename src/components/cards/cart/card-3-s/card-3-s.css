@@ -159,6 +159,16 @@ input[type="checkbox"] {
     color: #d30b0b;
 }
 
+.date-passed {
+    color: #f00;
+    /* Color medio vivo (rojo) */
+}
+
+.date-not-passed {
+    color: #0f0;
+    /* Color opaco (verde) */
+}
+
 @media only screen and (max-width: 885px) {
     .card {
         display: grid;

@@ -11,10 +11,12 @@ import { DouveryHeart } from '~/components/icons/heart';
 import { DropdownShared } from '../dropdowm/dropdown';
 import { addToFavoriteProducts } from '~/services/cart/favorite-product';
 import { ModalFuturePurchase } from '../cards/shop-future/modal/modal-purchase';
+import { useGetCurrentUser } from '~/routes/layout';
 
 export const ButtonCartIndex = component$(({ product }: any) => {
   useStylesScoped$(styles);
   const nav = useNavigate();
+ const user = useGetCurrentUser().value;
 
   const iconSum = (
     // eslint-disable-next-line qwik/single-jsx-root
@@ -51,13 +53,14 @@ export const ButtonCartIndex = component$(({ product }: any) => {
   );
   return (
     <div class="buttos-cart">
-      <div class="no-mobiles">
+      {user ? <><div class="no-mobiles">
         <div class="button-store-future">
         <ModalFuturePurchase product={product}/>
          
         </div>
         <div class="ctr-opa">|</div>
-      </div>
+      </div></>: <></>}
+      
       <div class="button-favorite">
         <DouveryHeart size="15px" />
         <button

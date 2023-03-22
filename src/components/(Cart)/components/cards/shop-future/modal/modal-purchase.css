@@ -130,8 +130,11 @@
     padding: 10px 9px;
     margin: 10px 15px;
 }
-.card-notification{
+
+.card-notification {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     gap: 10px;
 }
 
@@ -320,20 +323,20 @@ input[type="text"][readOnly] {
     border-radius: 4px;
     font-size: 16px;
     margin-bottom: 10px;
-  }
-  
-  .form-checkbox {
+}
+
+.form-checkbox {
     margin-left: 5px;
     margin-right: 10px;
-  }
-  
-  .form-label {
+}
+
+.form-label {
     display: block;
     font-size: 14px;
     margin-bottom: 5px;
-    
-  }
-  
+
+}
+
 
 @keyframes carga {
     0% {
