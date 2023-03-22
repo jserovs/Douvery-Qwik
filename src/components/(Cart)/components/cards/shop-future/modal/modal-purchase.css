@@ -59,7 +59,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
     z-index: 1000000;
 
 }
@@ -88,7 +88,7 @@
     width: 100%;
 }
 
-.ctr-button-login-modal button {
+.ctr-button-modal button {
     font-size: 16px;
     font-weight: bold;
     padding: 5px 50px;
