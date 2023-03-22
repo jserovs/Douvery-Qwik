@@ -20,7 +20,7 @@ import { View5 } from '~/components/(Product-details)/components/sessions/VIEW 5
 import { CardShopFuture } from '~/components/(Cart)/components/cards/shop-future/shop-future';
 import { CardFavoriteProduct } from '~/components/(Cart)/components/cards/card-favorite/card-favorite';
 import { CardDouveryExtend1 } from '~/components/cards/douveryExtend/card-douveryExtend-1/douveryExtend1';
-interface IState {
+export interface IState {
   searchInput: string;
   searchResults: Product[];
   selectedValue: string;
