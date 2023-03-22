@@ -1,12 +1,10 @@
-import { component$, useStore, useStylesScoped$, useVisibleTask$ } from '@builder.io/qwik';
+import { component$, useStylesScoped$,} from '@builder.io/qwik';
 import styles from './shop-future.css?inline';
 import {  useLocation, useNavigate,  } from '@builder.io/qwik-city';
 
 import { useGetCurrentUser } from '~/routes/layout';
-import type { IState } from '~/routes/(Cart)/v/cart';
-import { getDataFuturePurchasesProduct } from '~/services/cart/future-purchases';
+import { CardShopFutureProduct } from './components/product';
 
-import { Card3SCART } from '~/components/cards/cart/card-3-s/card-3-s';
 
 
 
@@ -19,42 +17,13 @@ export const CardShopFuture = component$(
     const {url}=useLocation()
      const user = useGetCurrentUser().value;
 
-     const state = useStore<IState>({
-      searchInput: '',
-      searchResults: [],
-      selectedValue: '',
-    });
    
-  
-    useVisibleTask$(async ({ track }) => {
-      track(() => url.pathname);
-  
-      const controller = new AbortController();
-      state.searchResults = await getDataFuturePurchasesProduct(              `${user?.id}`);
-      return () => {
-        controller.abort();
-      };
-    });
     return (
       <>
         <div class="cart-future-shop">
           <h3 class="container-titulo">Lista de compras futuras
 </h3>
-{user ?<ul class="container-lista">
-{state.searchResults.length > 0 ? (
-                state.searchResults.map((product) => {
-            
-                  return (
-                    <div class="container-cart" key={product.dui}>
-                      <Card3SCART product={product} />
-                     
-                    </div>
-                  );
-                })
-              ) : (
-                <div class="loader"></div>
-              )}
-          </ul>  : <> 
+{user ? <><CardShopFutureProduct/></> : <> 
   <div class="container-alert-no-sessions">
 <p>Para poder acedear a la opcion <strong>Lista de compras futuras</strong> es necesario iniciar sesion.</p>
   <div class="ctr-opa">|</div>
