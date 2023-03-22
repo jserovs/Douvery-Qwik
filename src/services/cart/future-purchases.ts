@@ -4,7 +4,7 @@ import { urlServerNode } from "../fechProduct";
 
   export async function getDataFuturePurchasesProduct(
     id: string,
-    controller?: AbortController
+   
   ): Promise<any> {
     console.log(id)
     const response = await fetch(

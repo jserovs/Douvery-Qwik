@@ -149,7 +149,7 @@ export const ModalFuturePurchase = component$(({product}:any) => {
         onClick$={async () => {
           try {
             const response = await fetch(
-              `http://localhost:8339/api/add-future-purchase`,
+              `${urlServerNode}/api/add-future-purchase`,
               {
                 method: 'POST',
                 headers: {
