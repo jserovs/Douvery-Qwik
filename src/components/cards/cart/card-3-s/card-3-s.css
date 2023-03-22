@@ -160,12 +160,13 @@ input[type="checkbox"] {
 }
 
 .date-passed {
-    color: #f00;
+    color: rgb(95, 3, 3);
+    text-align: start;
     /* Color medio vivo (rojo) */
 }
 
 .date-not-passed {
-    color: #0f0;
+    color: rgb(5, 27, 49);
     /* Color opaco (verde) */
 }
 

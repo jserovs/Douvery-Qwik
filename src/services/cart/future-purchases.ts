@@ -13,7 +13,7 @@ import { urlServerNode } from "../fechProduct";
       {
         method: 'POST',
         body: JSON.stringify({
-            userId: id, // En lugar de enviar un objeto, envía la cadena 'id' directamente
+            userId: "62ab8396cc6a45ab9c1b3a69", // En lugar de enviar un objeto, envía la cadena 'id' directamente
           }),
         headers: {
            'Content-Type': 'application/json',

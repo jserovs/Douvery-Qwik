@@ -29,7 +29,7 @@ export const CardShopFuture = component$(
   <div class="ctr-opa">|</div>
 <button onClick$={()=> nav('/a/login/?rr=' +   url.pathname + url.search)}>INICIAR SESION </button>
 </div> </>}
-
+<CardShopFutureProduct/>
          
         </div>
       </>
