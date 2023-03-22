@@ -48,11 +48,11 @@ export const useGetCurrentCountry = routeLoader$<ZipCode | null>(
 );
 export default component$(() => {
   const isOpen = useStore({ setIsOpen: false });
-  const userCtx = useGetCurrentUser().value;
+  const userACC = useGetCurrentUser().value;
   const getZipCode = useGetCurrentZipCode().value;
   const getCountryUser = useGetCurrentCountry().value;
   const loc = useLocation();
-
+ 
   return (
     <>
       <main>
@@ -62,7 +62,7 @@ export default component$(() => {
           <>
             <Header
               is={isOpen}
-              user={userCtx}
+              user={userACC}
               zipCode={getZipCode}
               userCoun={getCountryUser}
             />

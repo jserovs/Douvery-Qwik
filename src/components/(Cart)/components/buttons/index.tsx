@@ -10,6 +10,7 @@ import { DouveryHeart } from '~/components/icons/heart';
 
 import { DropdownShared } from '../dropdowm/dropdown';
 import { addToFavoriteProducts } from '~/services/cart/favorite-product';
+import { ModalFuturePurchase } from '../cards/shop-future/modal/modal-purchase';
 
 export const ButtonCartIndex = component$(({ product }: any) => {
   useStylesScoped$(styles);
@@ -52,14 +53,8 @@ export const ButtonCartIndex = component$(({ product }: any) => {
     <div class="buttos-cart">
       <div class="no-mobiles">
         <div class="button-store-future">
-          <button
-            onClick$={() => {
-              removeCartItem({ dui: product.dui });
-              nav('/v/cart');
-            }}
-          >
-            Añadir a lista de compras futuras
-          </button>
+        <ModalFuturePurchase product={product}/>
+         
         </div>
         <div class="ctr-opa">|</div>
       </div>
