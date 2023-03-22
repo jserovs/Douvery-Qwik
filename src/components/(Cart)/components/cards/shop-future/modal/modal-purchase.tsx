@@ -15,6 +15,10 @@ import {
 
   routeAction$,
 
+  useLocation,
+
+  useNavigate,
+
   z,
   zod$,
 } from '@builder.io/qwik-city';
@@ -99,7 +103,11 @@ export const useAddFuturePurchase = globalAction$((id ,dui ) => {
 export const ModalFuturePurchase = component$(({product}:any) => {
   useStylesScoped$(styles);
   const isOpen = useStore({ setIsOpen: false });
-  
+  const reminderDate=useStore({ setReminderDate: '' });
+  const notification=useStore({ setNotification: false });
+ 
+  const {url} = useLocation();
+  const nav = useNavigate();
   const user = useGetCurrentUser().value;
  const action = useAddFuturePurchase()
  
@@ -127,11 +135,24 @@ export const ModalFuturePurchase = component$(({product}:any) => {
              
               <div class="card">
               <Card2SCART product={product}/> 
-              <div class="ctr-button-modal"><button class='button-agg'
+              
+             
+            
+            </div>
+            <div class="card"><label  for="reminder-date" class="form-label">Seleccionar fecha para recordatorio:</label>
+
+<input type="date" id="reminder-date" name="reminder-date" onChange$={(e) => reminderDate.setReminderDate=e.target.value} class="form-input"/>
+
+</div><div class="card-notification">
+<label for="notification" class="form-label">Recibir notificación:</label>
+<input type="checkbox" id="notification" name="notification" value="true" onChange$={(e) => notification.setNotification = e.target.checked} class="form-checkbox"/>
+
+</div>
+            <div class="ctr-button-modal"><button class='button-agg'
         onClick$={async () => {
           try {
             const response = await fetch(
-              `${urlServerNode}/api/add-future-purchase`,
+              `http://localhost:8339/api/add-future-purchase`,
               {
                 method: 'POST',
                 headers: {
@@ -140,7 +161,8 @@ export const ModalFuturePurchase = component$(({product}:any) => {
                 body: JSON.stringify({
                   userId: user?.id,
                   dui:product.dui,
-                  alert: false,
+                  reminderDate: reminderDate.setReminderDate,
+                notification: notification.setNotification
                 }),
               }
             );
@@ -149,8 +171,8 @@ export const ModalFuturePurchase = component$(({product}:any) => {
               const errorResponse = await response.json();
               throw new Error(errorResponse.msg);
             }
-          
-          
+          nav('/v/cart')
+          isOpen.setIsOpen = false;
           } catch (error: any) {
             console.error(error);
             const errorMessage = document.createElement('div');
@@ -162,10 +184,6 @@ export const ModalFuturePurchase = component$(({product}:any) => {
        Agregar   
       </button>
       </div>  
-      {user?.id}        
-            
-            </div>
-           
           </div>
          
           </div>

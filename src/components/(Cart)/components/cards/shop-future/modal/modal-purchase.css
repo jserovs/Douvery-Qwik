@@ -123,12 +123,16 @@
 }
 
 .card {
-
+    display: grid;
+    width: 90%;
     border: 1px solid #E8F0FE;
     border-radius: 5px;
-    padding: 10px 15px;
-    margin: 20px 15px;
-
+    padding: 10px 9px;
+    margin: 10px 15px;
+}
+.card-notification{
+    display: flex;
+    gap: 10px;
 }
 
 .card-title {
@@ -309,6 +313,27 @@ input[type="text"][readOnly] {
     text-decoration: underline;
 
 }
+
+.form-input {
+    padding: 10px;
+    border: 2px solid #dfe1e5;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .form-checkbox {
+    margin-left: 5px;
+    margin-right: 10px;
+  }
+  
+  .form-label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    
+  }
+  
 
 @keyframes carga {
     0% {
