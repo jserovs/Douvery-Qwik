@@ -10,12 +10,10 @@ import styles from './modal-purchase.css?inline';
 
 import {
 
-    Form,
+   
   globalAction$,
 
-  routeAction$,
 
-  useLocation,
 
   useNavigate,
 
@@ -106,11 +104,10 @@ export const ModalFuturePurchase = component$(({product}:any) => {
   const reminderDate=useStore({ setReminderDate: '' });
   const notification=useStore({ setNotification: false });
  
-  const {url} = useLocation();
+
   const nav = useNavigate();
   const user = useGetCurrentUser().value;
- const action = useAddFuturePurchase()
- 
+
   return (
     <div class="crt-button-modal-dr">
       <button

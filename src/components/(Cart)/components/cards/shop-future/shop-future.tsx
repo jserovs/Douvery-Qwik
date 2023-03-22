@@ -3,7 +3,7 @@ import styles from './shop-future.css?inline';
 import {  useLocation, useNavigate,  } from '@builder.io/qwik-city';
 
 import { useGetCurrentUser } from '~/routes/layout';
-import { IState } from '~/routes/(Cart)/v/cart';
+import type { IState } from '~/routes/(Cart)/v/cart';
 import { getDataFuturePurchasesProduct } from '~/services/cart/future-purchases';
 
 import { Card3SCART } from '~/components/cards/cart/card-3-s/card-3-s';
@@ -25,9 +25,6 @@ export const CardShopFuture = component$(
       selectedValue: '',
     });
    
-    const subTotal = useStore({ setsubTotal: 0 });
-    const subTotalNoDiscount = useStore({ setsubTotalNoDiscount: 0 });
-    const discount = useStore({ setDiscount: 0 });
   
     useVisibleTask$(async ({ track }) => {
       track(() => url.pathname);
