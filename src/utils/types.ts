@@ -22,6 +22,7 @@ export type Product = {
 	productDetails: productDetails[];	
 	variations: variant[];
 	ratings:ratings[];
+	
 };
 
 export type ZipCode = {

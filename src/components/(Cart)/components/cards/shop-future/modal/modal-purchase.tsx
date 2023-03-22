@@ -101,7 +101,7 @@ export const useAddFuturePurchase = globalAction$((id ,dui ) => {
 export const ModalFuturePurchase = component$(({product}:any) => {
   useStylesScoped$(styles);
   const isOpen = useStore({ setIsOpen: false });
-  const reminderDate=useStore({ setReminderDate: '' });
+  const reminderDate=useStore({ setReminderDate: 0 });
   const notification=useStore({ setNotification: false });
  
 
@@ -133,54 +133,51 @@ export const ModalFuturePurchase = component$(({product}:any) => {
               <div class="card">
               <Card2SCART product={product}/> 
             </div>
-            <div class="card">
-                <label  for="reminder-date" class="form-label">Seleccionar fecha para recordatorio:</label>
-
-<input type="date" id="reminder-date" name="reminder-date" onChange$={(e) => reminderDate.setReminderDate=e.target.value} class="form-input"/>
-
+         <div class="card">
+    <label for="reminder-date" class="form-label">Seleccionar fecha para recordatorio:</label>
+    <input type="date" id="reminder-date" name="reminder-date" onChange$={(e) => reminderDate.setReminderDate = new Date(e.target.value).getTime()} class="form-input"/>
 </div>
 <div class="card">
     <div class="card-notification">
-<label for="notification" class="form-label">Recibir notificación:</label>
-<input type="checkbox" id="notification" name="notification" value="true" onChange$={(e) => notification.setNotification = e.target.checked} class="form-checkbox"/>
+        <label for="notification" class="form-label">Recibir notificación:</label>
+        <input type="checkbox" id="notification" name="notification" value="true" onChange$={(e) => notification.setNotification = e.target.checked} class="form-checkbox"/>
+    </div>
 </div>
-</div>
-            <div class="ctr-button-modal"><button class='button-agg'
-        onClick$={async () => {
-          try {
+<div class="ctr-button-modal">
+    <button class='button-agg' onClick$={async () => {
+        try {
             const response = await fetch(
-              `${urlServerNode}/api/add-future-purchase`,
-              {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                  userId: user?.id,
-                  dui:product.dui,
-                  reminderDate: reminderDate.setReminderDate,
-                    notification: notification.setNotification
-                }),
-              }
+                `${urlServerNode}/api/add-future-purchase`,
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        userId: user?.id,
+                        dui: product.dui,
+                        reminderDate: reminderDate.setReminderDate,
+                        notification: notification.setNotification
+                    }),
+                }
             );
 
             if (response.status === 400) {
-              const errorResponse = await response.json();
-              throw new Error(errorResponse.msg);
+                const errorResponse = await response.json();
+                throw new Error(errorResponse.msg);
             }
-          nav('/v/cart')
-          isOpen.setIsOpen = false;
-          } catch (error: any) {
+            nav('/v/cart')
+            isOpen.setIsOpen = false;
+        } catch (error: any) {
             console.error(error);
             const errorMessage = document.createElement('div');
             errorMessage.textContent = 'Error: ' + error.message;
+        }
+    }}>
+        Agregar
+    </button>
+</div>
 
-          }
-        }}
-      >
-       Agregar   
-      </button>
-      </div>  
           </div>
          
           </div>

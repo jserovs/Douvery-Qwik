@@ -8,7 +8,7 @@ export const Card3SCART = component$(({ product }: any) => {
   const discoun = product.price - product.price * (product.discount / 100);
  const isDatePassed = useStore({setIsDatePassed:false})
   useVisibleTask$(() => {
-    const timer = setInterval(() => {
+    setInterval(() => {
      const today = new Date();
     const reminder = new Date(product.reminderDate);
      if (today > reminder) {
@@ -16,9 +16,10 @@ export const Card3SCART = component$(({ product }: any) => {
     }
     });
     return () => {
-      clearInterval(timer);
+    isDatePassed.setIsDatePassed;
     };
   });
+  console.log(product.reminderDate);
   return (
     <div class="container-all">
       <div class="card">
@@ -29,18 +30,19 @@ export const Card3SCART = component$(({ product }: any) => {
             <h2 class="product-title">
               <TextCL text={product.name} />{' '}
             </h2>
-          </a>{' '}
-          <div class="product-price">
-             <div class={`date ${isDatePassed.setIsDatePassed ? 'date-passed' : 'date-not-passed'}`}>
-          {product.reminderDate}
+          </a>{' '} <div class={`date ${isDatePassed ? 'date-passed' : 'date-not-passed'}`}>
+          {      product.reminderDate}
         </div>
+    
+          <div class="product-price">
+            
             {product.discount > 0 ? (
               <>
                 {' '}
                 <UsePrice price={discoun} />
                 <div class="ctr-opa">|</div>
                 <div class="price-t  tach">
-                  {' '}``
+                  {' '}
                   <UsePrice price={product.price} />
                 </div>
               </>
