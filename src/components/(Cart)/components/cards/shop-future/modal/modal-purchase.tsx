@@ -13,10 +13,14 @@ import {
     Form,
   globalAction$,
 
+  routeAction$,
+
   z,
   zod$,
 } from '@builder.io/qwik-city';
 import { urlServerNode } from '~/services/fechProduct';
+import { useGetCurrentUser } from '~/routes/layout';
+import { Card2SCART } from '~/components/cards/cart/card-2-s/card-2-s';
 
 
 
@@ -71,12 +75,33 @@ export const useActionFuturePurchase = globalAction$(
   })
 );
 
-export const ModalFuturePurchase = component$(() => {
+
+export const useAddFuturePurchase = globalAction$((id ,dui ) => { 
+  const data =  fetch(`${urlServerNode}/api/add-future-purchase`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    credentials: 'include',
+    body: JSON.stringify({
+      userId: id,
+      dui:dui,
+      alert: false,
+    }),
+  });
+  return {
+    success: true,
+    data
+  };
+});
+
+
+export const ModalFuturePurchase = component$(({product}:any) => {
   useStylesScoped$(styles);
   const isOpen = useStore({ setIsOpen: false });
   
-
- const action = useActionFuturePurchase()
+  const user = useGetCurrentUser().value;
+ const action = useAddFuturePurchase()
  
   return (
     <div class="crt-button-modal-dr">
@@ -84,7 +109,7 @@ export const ModalFuturePurchase = component$(() => {
         onClick$={() => (isOpen.setIsOpen = true)}
         class="button-mds-view"
       >
-       Abrir modal
+      Añadir a lista de compras futuras
       </button>
 
       {isOpen.setIsOpen && (
@@ -101,34 +126,48 @@ export const ModalFuturePurchase = component$(() => {
               </div>{' '}
              
               <div class="card">
-                <div class="card-title">Información de envio</div>
-                <Form
-                                action={action}
-                                class="suggestions-zip-code"
-                              >
-                                  
-                                {' '}
-                                <li class="lis-sgrs">
-                                  <div class="suge">
-                                
-                                    
-                                  </div>
+              <Card2SCART product={product}/> 
+              <div class="ctr-button-modal"><button class='button-agg'
+        onClick$={async () => {
+          try {
+            const response = await fetch(
+              `${urlServerNode}/api/add-future-purchase`,
+              {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                  userId: user?.id,
+                  dui:product.dui,
+                  alert: false,
+                }),
+              }
+            );
 
-                                  {action.value?.fieldErrors?.id && (
-                                    <span class="error">
-                                      {action.value?.fieldErrors?.id}
-                                    </span>
-                                  )}
-                                </li>
-                                <button class={'-button'}>
-                                  <span class="button-text">Agregar</span>
-                                </button>
-                              </Form>
-              </div>
-              
+            if (response.status === 400) {
+              const errorResponse = await response.json();
+              throw new Error(errorResponse.msg);
+            }
+          
+          
+          } catch (error: any) {
+            console.error(error);
+            const errorMessage = document.createElement('div');
+            errorMessage.textContent = 'Error: ' + error.message;
+
+          }
+        }}
+      >
+       Agregar   
+      </button>
+      </div>  
+      {user?.id}        
             
             </div>
            
+          </div>
+         
           </div>
           
         </>

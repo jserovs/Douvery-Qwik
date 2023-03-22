@@ -20,13 +20,14 @@ export const CardShopFuture = component$(
         <div class="cart-future-shop">
           <h3 class="container-titulo">Lista de compras futuras
 </h3>
-{user ? <div class="container-alert-no-sessions">
+{user ?<ul class="container-lista">
+            <ModalFuturePurchase/>
+          </ul>  : <> 
+  <div class="container-alert-no-sessions">
 <p>Para poder acedear a la opcion <strong>Lista de compras futuras</strong> es necesario iniciar sesion.</p>
   <div class="ctr-opa">|</div>
 <button onClick$={()=> nav('/a/login/?rr=' +   url.pathname + url.search)}>INICIAR SESION </button>
-</div> : <> <ul class="container-lista">
-            <ModalFuturePurchase/>
-          </ul></>}
+</div> </>}
 
          
         </div>
