@@ -14,8 +14,8 @@
 .container-cart {
     position: relative;
     display: grid;
-    grid-template-columns: auto 100px;
-    align-items: center;
+    grid-template-columns: auto 150px;
+    align-items: start;
 }
 
 .container-options-buttons {

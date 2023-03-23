@@ -2,18 +2,26 @@ import { component$, useStore, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './dropdown.css?inline';
 import { DouveryCheckMark } from '~/components/icons/checkMark';
 import { copyToClipboard } from '~/services/copy-text/copy-text';
-import { useLocation } from '@builder.io/qwik-city';
+import { RequestHandler, useLocation, useNavigate } from '@builder.io/qwik-city';
 import { DouveryCopyText } from '~/components/icons/copy';
+import { deleteDataFuturePurchasesProduct } from '~/services/cart/future-purchases';
+import { useGetCurrentUser } from '~/routes/layout';
+
+
 export const DropdownOptionsFuturePurchases = component$(({ product }: any) => {
   useStylesScoped$(styles);
   const copied = useStore({ setCopied: false });
   const loc = useLocation();
-
+  const user = useGetCurrentUser().value;
+const nav = useNavigate();
+const isOpen = useStore({
+  setIsOpen:false
+})
   return (
     <div>
-      <details class="dropdown">
+      <details class="dropdown" open={isOpen.setIsOpen}>
         <summary role="button">
-          <a class="button">Opciones</a>
+          <a class="button">Modificar</a>
         </summary>
 
         <ul>
@@ -28,7 +36,13 @@ export const DropdownOptionsFuturePurchases = component$(({ product }: any) => {
           <li>
            
 
-            <button>Eliminar</button>
+            <button onClick$={()=> {
+              deleteDataFuturePurchasesProduct(
+                `${user?.id}` ,product.dui
+                   );
+                 
+                 
+            }}>Eliminar</button>
           </li>
           <li>
            

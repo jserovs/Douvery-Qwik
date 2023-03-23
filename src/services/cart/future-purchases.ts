@@ -4,7 +4,6 @@ import { urlServerNode } from "../fechProduct";
 
   export async function getDataFuturePurchasesProduct(
     id: string,
-   
   ): Promise<any> {
     console.log(id)
     const response = await fetch(
@@ -28,3 +27,31 @@ import { urlServerNode } from "../fechProduct";
   
     return results;
   }
+  export async function deleteDataFuturePurchasesProduct(
+    id: string,
+    dui: string,
+  ): Promise<any> {
+    console.log(id)
+    const response = await fetch(
+      
+        `${urlServerNode}/api/remove-future-purchase`,
+      {
+        method: 'DELETE',
+        body: JSON.stringify({
+            userId: id, 
+            dui:dui,
+          }),
+        headers: {
+           'Content-Type': 'application/json',
+        },
+      });
+     
+ 
+    if (!response.ok) {
+      throw new Error('Failed to fetch product');
+    }
+    const results = await response.json();
+   console.log(results)
+    return results;
+  }
+  
