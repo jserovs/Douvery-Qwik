@@ -143,7 +143,7 @@ export const ModalFuturePurchase = component$(({product}:any) => {
   <input type="checkbox" id="notification" name="notification" value="true" onChange$={(e) => notification.setNotification = e.target.checked} checked class="form-checkbox"/>
 </div>
 </div>
-{reminderDate.setReminderDate}
+
 <div class="ctr-button-modal">
 
     <button class='button-agg' onClick$={async () => {
