@@ -7,6 +7,7 @@ import type { IState } from '~/routes/(Cart)/v/cart';
 import { getDataFuturePurchasesProduct } from '~/services/cart/future-purchases';
 
 import { Card3SCART } from '~/components/cards/cart/card-3-s/card-3-s';
+import { ButtonFuturePurchase } from '../buttons/buttons-purchases';
 
 
 
@@ -45,7 +46,9 @@ export const CardShopFutureProduct = component$(
                   return (
                     <div class="container-cart" key={product.dui}>
                       <Card3SCART product={product} />
-                     
+                    <div class="container-options-buttons">
+                         <ButtonFuturePurchase product={product}/>
+                    </div>
                     </div>
                   );
                 })

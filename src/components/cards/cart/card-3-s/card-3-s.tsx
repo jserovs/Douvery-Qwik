@@ -30,9 +30,9 @@ export const Card3SCART = component$(({ product }: any) => {
             <h2 class="product-title">
               <TextCL text={product.name} />{' '}
             </h2>
-          </a>{' '} <div class={`date ${isDatePassed ? 'date-passed' : 'date-not-passed'}`}>
-          {      product.reminderDate}
-        </div>
+          </a>{' '} {product.notification === true ?<div class="container-notification-product"> <p>Notificacion activada para: </p><div class={`date ${isDatePassed.setIsDatePassed ? 'date-passed' : 'date-not-passed'}`}>
+  {product.reminderDate !== 0 && new Date(product.reminderDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+</div></div> : "" } 
     
           <div class="product-price">
             

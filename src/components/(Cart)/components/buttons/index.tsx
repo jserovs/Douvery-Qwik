@@ -53,14 +53,14 @@ export const ButtonCartIndex = component$(({ product }: any) => {
   );
   return (
     <div class="buttos-cart">
-      {user ? <><div class="no-mobiles">
+      {user ? <>  <div class="no-mobiles">
         <div class="button-store-future">
         <ModalFuturePurchase product={product}/>
          
         </div>
         <div class="ctr-opa">|</div>
       </div></>: <></>}
-      
+    
       <div class="button-favorite">
         <DouveryHeart size="15px" />
         <button
