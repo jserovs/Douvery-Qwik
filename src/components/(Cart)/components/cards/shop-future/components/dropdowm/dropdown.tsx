@@ -4,9 +4,9 @@ import { DouveryCheckMark } from '~/components/icons/checkMark';
 import { copyToClipboard } from '~/services/copy-text/copy-text';
 import { useLocation, useNavigate } from '@builder.io/qwik-city';
 import { DouveryCopyText } from '~/components/icons/copy';
-import { deleteDataFuturePurchasesProduct } from '~/services/cart/future-purchases';
+import { deleteDataFuturePurchasesProduct, updateNotificationDataFuturePurchasesProduct } from '~/services/cart/future-purchases';
 import { useGetCurrentUser } from '~/routes/layout';
-import { urlServerLocal } from '~/services/fechProduct';
+import {  urlServerNode } from '~/services/fechProduct';
 
 
 export const DropdownOptionsFuturePurchases = component$(({ product }: any) => {
@@ -59,12 +59,22 @@ const nav= useNavigate();
           <li>
            
 
-            <button> Compra automatica</button>
+            <button> Compra automatica </button>
           </li>
           <li>
            
 
-            <button>Desactivar alerta</button>
+            <button onClick$={()=>{
+              updateNotificationDataFuturePurchasesProduct(
+                `${user?.id}`,product.dui, true,
+              ).then(() => {
+                isLoader.setIsLoader = true;
+                window.location.reload();
+              }).catch((error) => {
+                console.error("Error removing product", error);
+              });
+                 
+            }}>Desactivar alerta</button>
           </li>
           <li>
             {copied.setCopied ? (
@@ -124,7 +134,7 @@ const nav= useNavigate();
 
       try {
         const response = await fetch(
-          `${urlServerLocal}/api/update-future-purchase`,
+          `${urlServerNode}/api/update-future-purchase`,
           {
             method: 'PUT',
             headers: {

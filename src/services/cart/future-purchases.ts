@@ -18,8 +18,7 @@ import { urlServerLocal, urlServerNode } from "../fechProduct";
            'Content-Type': 'application/json',
         },
       });
-     
-   console.log(response)
+    
     if (!response.ok) {
       throw new Error('Failed to fetch product');
     }
@@ -34,7 +33,7 @@ import { urlServerLocal, urlServerNode } from "../fechProduct";
     
     const response = await fetch(
       
-        `${urlServerLocal}/api/remove-future-purchase`,
+        `${urlServerNode}/api/remove-future-purchase`,
       {
         method: 'DELETE',
         body: JSON.stringify({
@@ -49,6 +48,37 @@ import { urlServerLocal, urlServerNode } from "../fechProduct";
  
     if (!response.ok) {
       throw new Error('Failed to fetch product');
+    }
+    const results = await response.json();
+   console.log(results)
+    return results;
+  }
+  
+
+  export async function updateNotificationDataFuturePurchasesProduct(
+    id: string,
+    dui: string,
+    notification:boolean
+  ): Promise<any> {
+    
+    const response = await fetch(
+      
+        `${urlServerNode}/api/update-notification-status-future-purchase`,
+      {
+        method: 'PUT',
+        body: JSON.stringify({
+            userId: id, 
+            dui:dui,
+            notification:notification
+          }),
+        headers: {
+           'Content-Type': 'application/json',
+        },
+      });
+     
+ 
+    if (!response.ok) {
+      throw new Error('Failed to change list');
     }
     const results = await response.json();
    console.log(results)
