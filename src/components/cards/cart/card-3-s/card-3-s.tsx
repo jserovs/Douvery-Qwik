@@ -2,12 +2,15 @@ import { component$, useStore, useStylesScoped$, useVisibleTask$ } from '@builde
 import styles from './card-3-s.css?inline';
 import { TextCL } from '~/components/use/textCL/textCL';
 import { UsePrice } from '~/components/use/price/price';
+import { useLocation } from '@builder.io/qwik-city';
 
 export const Card3SCART = component$(({ product }: any) => {
   useStylesScoped$(styles);
   const discoun = product.price - product.price * (product.discount / 100);
  const isDatePassed = useStore({setIsDatePassed:false})
-  useVisibleTask$(() => {
+ const {url} = useLocation()
+  useVisibleTask$(({track}) => {
+  track(() => url.searchParams);
     setInterval(() => {
      const today = new Date();
     const reminder = new Date(product.reminderDate);
@@ -19,7 +22,7 @@ export const Card3SCART = component$(({ product }: any) => {
     isDatePassed.setIsDatePassed;
     };
   });
-  console.log(product.reminderDate);
+
   return (
     <div class="container-all">
       <div class="card">

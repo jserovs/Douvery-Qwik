@@ -194,6 +194,20 @@ li {
     margin-top: 50px;
 }
 
+.form-input {
+    padding: 10px;
+    border: 2px solid #dfe1e5;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.ctr-button-modal button {
+    background-color: red;
+    color: #fff;
+    padding: 5px 5px;
+    text-align: center;
+}
 
 @media only screen and (max-width: 885px) {
     .dropdown ul {

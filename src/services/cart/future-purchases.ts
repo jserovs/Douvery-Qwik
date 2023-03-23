@@ -1,4 +1,4 @@
-import { urlServerNode } from "../fechProduct";
+import { urlServerLocal, urlServerNode } from "../fechProduct";
 
 
 
@@ -12,7 +12,7 @@ import { urlServerNode } from "../fechProduct";
       {
         method: 'POST',
         body: JSON.stringify({
-            userId: id, 
+            userId: "62ab8396cc6a45ab9c1b3a69", 
           }),
         headers: {
            'Content-Type': 'application/json',
@@ -31,10 +31,10 @@ import { urlServerNode } from "../fechProduct";
     id: string,
     dui: string,
   ): Promise<any> {
-    console.log(id)
+    
     const response = await fetch(
       
-        `${urlServerNode}/api/remove-future-purchase`,
+        `${urlServerLocal}/api/remove-future-purchase`,
       {
         method: 'DELETE',
         body: JSON.stringify({

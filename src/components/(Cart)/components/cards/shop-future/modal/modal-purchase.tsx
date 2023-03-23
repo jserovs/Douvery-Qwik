@@ -156,7 +156,7 @@ export const ModalFuturePurchase = component$(({product}:any) => {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        userId:user?.id,
+                        userId:'62ab8396cc6a45ab9c1b3a69',
                         dui: product.dui,
                         reminderDate: reminderDate.setReminderDate,
                         notification: notification.setNotification

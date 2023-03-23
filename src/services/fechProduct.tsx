@@ -1,3 +1,4 @@
+export const urlServerLocal = 'http://localhost:8339';
 export const urlServerNode = 'https://server-douvery.vercel.app';
 const urlServerPython = 'https://htyr.onrender.com';
 

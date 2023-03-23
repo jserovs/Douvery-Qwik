@@ -28,7 +28,7 @@ export const CardShopFutureProduct = component$(
    
   
     useVisibleTask$(async ({ track }) => {
-      track(() => url.pathname);
+      track(() => url.searchParams);
   
       const controller = new AbortController();
       state.searchResults = await getDataFuturePurchasesProduct(              `${user?.id}`);
