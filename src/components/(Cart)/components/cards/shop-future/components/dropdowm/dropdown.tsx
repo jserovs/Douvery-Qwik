@@ -63,10 +63,10 @@ const nav= useNavigate();
           </li>
           <li>
            
-
+{product.notification}
             <button onClick$={()=>{
               updateNotificationDataFuturePurchasesProduct(
-                `${user?.id}`,product.dui, true,
+                `62ab8396cc6a45ab9c1b3a69`,product.dui, true,
               ).then(() => {
                 isLoader.setIsLoader = true;
                 window.location.reload();
