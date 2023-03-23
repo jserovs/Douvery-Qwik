@@ -1,0 +1,16 @@
+.buttos-cart {
+    width: 100%;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+    border-radius: 5px;
+    font-size: 13px;
+
+
+}
+
+.buttos-cart::-webkit-scrollbar {
+    display: none;
+}

@@ -102,7 +102,7 @@ export const ModalFuturePurchase = component$(({product}:any) => {
   useStylesScoped$(styles);
   const isOpen = useStore({ setIsOpen: false });
   const reminderDate=useStore({ setReminderDate: 0 });
-  const notification=useStore({ setNotification: false });
+  const notification=useStore({ setNotification: true });
  
 
   const nav = useNavigate();
@@ -133,17 +133,19 @@ export const ModalFuturePurchase = component$(({product}:any) => {
               <div class="card">
               <Card2SCART product={product}/> 
             </div>
-         <div class="card">
+        {notification.setNotification === true ?  <div class="card">
     <label for="reminder-date" class="form-label">Seleccionar fecha para recordatorio:</label>
     <input type="date" id="reminder-date" name="reminder-date" onChange$={(e) => reminderDate.setReminderDate = new Date(e.target.value).getTime()} class="form-input"/>
-</div>
+</div> :""}
 <div class="card">
-    <div class="card-notification">
-        <label for="notification" class="form-label">Recibir notificación:</label>
-        <input type="checkbox" id="notification" name="notification" value="true" onChange$={(e) => notification.setNotification = e.target.checked} class="form-checkbox"/>
-    </div>
+  <div class="card-notification">
+  <label for="notification" class="form-label">Recibir notificación:</label>
+  <input type="checkbox" id="notification" name="notification" value="true" onChange$={(e) => notification.setNotification = e.target.checked} checked class="form-checkbox"/>
 </div>
+</div>
+{reminderDate.setReminderDate}
 <div class="ctr-button-modal">
+
     <button class='button-agg' onClick$={async () => {
         try {
             const response = await fetch(
@@ -154,7 +156,7 @@ export const ModalFuturePurchase = component$(({product}:any) => {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        userId: user?.id,
+                        userId:user?.id,
                         dui: product.dui,
                         reminderDate: reminderDate.setReminderDate,
                         notification: notification.setNotification

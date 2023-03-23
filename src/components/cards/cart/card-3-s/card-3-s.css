@@ -95,7 +95,7 @@
     gap: 10px;
     font-size: 16px;
     font-weight: 600;
-    margin: 10px 0px;
+
 }
 
 .price-t {
@@ -159,15 +159,22 @@ input[type="checkbox"] {
     color: #d30b0b;
 }
 
+.container-notification-product {
+    display: flex;
+    gap: 10px;
+    text-align: start;
+}
+
 .date-passed {
-    color: rgb(95, 3, 3);
+    color: rgb(139, 7, 7);
     text-align: start;
     /* Color medio vivo (rojo) */
 }
 
 .date-not-passed {
-    color: rgb(5, 27, 49);
+    color: rgb(0, 54, 129);
     /* Color opaco (verde) */
+    text-align: start;
 }
 
 @media only screen and (max-width: 885px) {
