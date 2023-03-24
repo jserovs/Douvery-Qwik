@@ -1,25 +1,33 @@
-import { component$, useStore, useStylesScoped$, useVisibleTask$ } from '@builder.io/qwik';
+import {
+  component$,
+  useStore,
+  useStylesScoped$,
+  useVisibleTask$,
+} from '@builder.io/qwik';
 import styles from './card-3-s.css?inline';
 import { TextCL } from '~/components/use/textCL/textCL';
 import { UsePrice } from '~/components/use/price/price';
+import { useLocation } from '@builder.io/qwik-city';
 
 export const Card3SCART = component$(({ product }: any) => {
   useStylesScoped$(styles);
   const discoun = product.price - product.price * (product.discount / 100);
- const isDatePassed = useStore({setIsDatePassed:false})
-  useVisibleTask$(() => {
+  const isDatePassed = useStore({ setIsDatePassed: false });
+  const { url } = useLocation();
+  useVisibleTask$(({ track }) => {
+    track(() => url.searchParams);
     setInterval(() => {
-     const today = new Date();
-    const reminder = new Date(product.reminderDate);
-     if (today > reminder) {
-      isDatePassed.setIsDatePassed=true;
-    }
+      const today = new Date();
+      const reminder = new Date(product.reminderDate);
+      if (today > reminder) {
+        isDatePassed.setIsDatePassed = true;
+      }
     });
     return () => {
-    isDatePassed.setIsDatePassed;
+      isDatePassed.setIsDatePassed;
     };
   });
-  console.log(product.reminderDate);
+
   return (
     <div class="container-all">
       <div class="card">
@@ -28,14 +36,32 @@ export const Card3SCART = component$(({ product }: any) => {
           <a href={`/v//${product.dui}`}>
             {' '}
             <h2 class="product-title">
-              <TextCL text={product.name} />{' '}
+              <TextCL text={product.name} /> {product.notification}
             </h2>
-          </a>{' '} {product.notification === true ?<div class="container-notification-product"> <p>Notificacion activada para: </p><div class={`date ${isDatePassed.setIsDatePassed ? 'date-passed' : 'date-not-passed'}`}>
-  {product.reminderDate !== 0 && new Date(product.reminderDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-</div></div> : "" } 
-    
+          </a>{' '}
+          {product.notification === true ? (
+            <div class="container-notification-product">
+              {' '}
+              <p>Notificacion activada para: </p>
+              <div
+                class={`date ${
+                  isDatePassed.setIsDatePassed
+                    ? 'date-passed'
+                    : 'date-not-passed'
+                }`}
+              >
+                {product.reminderDate !== 0 &&
+                  new Date(product.reminderDate).toLocaleDateString('en-US', {
+                    month: 'short',
+                    day: 'numeric',
+                    year: 'numeric',
+                  })}
+              </div>
+            </div>
+          ) : (
+            ''
+          )}
           <div class="product-price">
-            
             {product.discount > 0 ? (
               <>
                 {' '}
@@ -52,8 +78,19 @@ export const Card3SCART = component$(({ product }: any) => {
               </>
             )}{' '}
           </div>
+          <div class="container-status-notification-product">
+            {product.notification === true ? <p>Notificacion activada</p> : ''}
+            {product.payAutomatic === true ? (
+              <>
+                {' '}
+                <div class="ctr-opa">|</div>
+                <p>Compra automatica activada</p>
+              </>
+            ) : (
+              ''
+            )}
+          </div>
         </div>
-        
       </div>
     </div>
   );

@@ -165,6 +165,14 @@ input[type="checkbox"] {
     text-align: start;
 }
 
+.container-status-notification-product {
+    display: flex;
+    gap: 10px;
+    text-align: start;
+    color: #333;
+    opacity: 0.8;
+}
+
 .date-passed {
     color: rgb(139, 7, 7);
     text-align: start;

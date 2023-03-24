@@ -4,35 +4,20 @@ import {
   // useResource$,
   useStore,
   useStylesScoped$,
-
 } from '@builder.io/qwik';
 import styles from './modal-purchase.css?inline';
 
-import {
-
-   
-  globalAction$,
-
-
-
-  useNavigate,
-
-  z,
-  zod$,
-} from '@builder.io/qwik-city';
+import { globalAction$, useNavigate, z, zod$ } from '@builder.io/qwik-city';
 import { urlServerNode } from '~/services/fechProduct';
 import { useGetCurrentUser } from '~/routes/layout';
 import { Card2SCART } from '~/components/cards/cart/card-2-s/card-2-s';
-
-
 
 // import { fetchCodePostal } from '~/services/fechProduct';
 // import type { CodePostalData } from '~/utils/types';
 // import { cleanUpParamsCodePostal } from '~/utils/cleurs';
 
-
 export const useActionFuturePurchase = globalAction$(
-  async ({ id,dui}, { fail, headers, url }) => {
+  async ({ id, dui }, { fail, headers, url }) => {
     const data = await fetch(`${urlServerNode}/api/add-future-purchase`, {
       method: 'POST',
       headers: {
@@ -41,7 +26,7 @@ export const useActionFuturePurchase = globalAction$(
       credentials: 'include',
       body: JSON.stringify({
         userId: id,
-        dui:dui,
+        dui: dui,
         alert: false,
       }),
     });
@@ -56,30 +41,21 @@ export const useActionFuturePurchase = globalAction$(
       });
     }
 
-    
-
     const query = url.searchParams.get('rr') || '';
     headers.set('location', query);
-   
   },
   zod$({
-    id: z
-      .string({
-        required_error: 'Full name is required',
-      })
-     ,
-      dui: z
-      .string({
-        required_error: 'Full name is required',
-      })
-     ,
-  
+    id: z.string({
+      required_error: 'Full name is required',
+    }),
+    dui: z.string({
+      required_error: 'Full name is required',
+    }),
   })
 );
 
-
-export const useAddFuturePurchase = globalAction$((id ,dui ) => { 
-  const data =  fetch(`${urlServerNode}/api/add-future-purchase`, {
+export const useAddFuturePurchase = globalAction$((id, dui) => {
+  const data = fetch(`${urlServerNode}/api/add-future-purchase`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -87,23 +63,21 @@ export const useAddFuturePurchase = globalAction$((id ,dui ) => {
     credentials: 'include',
     body: JSON.stringify({
       userId: id,
-      dui:dui,
+      dui: dui,
       alert: false,
     }),
   });
   return {
     success: true,
-    data
+    data,
   };
 });
 
-
-export const ModalFuturePurchase = component$(({product}:any) => {
+export const ModalFuturePurchase = component$(({ product }: any) => {
   useStylesScoped$(styles);
   const isOpen = useStore({ setIsOpen: false });
-  const reminderDate=useStore({ setReminderDate: 0 });
-  const notification=useStore({ setNotification: true });
- 
+  const reminderDate = useStore({ setReminderDate: 0 });
+  const notification = useStore({ setNotification: true });
 
   const nav = useNavigate();
   const user = useGetCurrentUser().value;
@@ -114,7 +88,7 @@ export const ModalFuturePurchase = component$(({product}:any) => {
         onClick$={() => (isOpen.setIsOpen = true)}
         class="button-mds-view"
       >
-      Añadir a lista de compras futuras
+        Añadir a lista de compras futuras
       </button>
 
       {isOpen.setIsOpen && (
@@ -129,61 +103,86 @@ export const ModalFuturePurchase = component$(({product}:any) => {
               <div class="ctr-title-modal">
                 <p>AGG en Lista de compras futuras</p>
               </div>{' '}
-             
               <div class="card">
-              <Card2SCART product={product}/> 
+                <Card2SCART product={product} />
+              </div>
+              {notification.setNotification === true ? (
+                <div class="card">
+                  <label for="reminder-date" class="form-label">
+                    Seleccionar fecha para recordatorio:
+                  </label>
+                  <input
+                    type="date"
+                    id="reminder-date"
+                    name="reminder-date"
+                    onChange$={(e) =>
+                      (reminderDate.setReminderDate = new Date(
+                        e.target.value
+                      ).getTime())
+                    }
+                    class="form-input"
+                  />
+                </div>
+              ) : (
+                ''
+              )}
+              <div class="card">
+                <div class="card-notification">
+                  <label for="notification" class="form-label">
+                    Recibir notificación:
+                  </label>
+                  <input
+                    type="checkbox"
+                    id="notification"
+                    name="notification"
+                    value="true"
+                    onChange$={(e) =>
+                      (notification.setNotification = e.target.checked)
+                    }
+                    checked
+                    class="form-checkbox"
+                  />
+                </div>
+              </div>
+              <div class="ctr-button-modal">
+                <button
+                  class="button-agg"
+                  onClick$={async () => {
+                    try {
+                      const response = await fetch(
+                        `${urlServerNode}/api/add-future-purchase`,
+                        {
+                          method: 'POST',
+                          headers: {
+                            'Content-Type': 'application/json',
+                          },
+                          body: JSON.stringify({
+                            userId: user?.id,
+                            dui: product.dui,
+                            reminderDate: reminderDate.setReminderDate,
+                            notification: notification.setNotification,
+                          }),
+                        }
+                      );
+
+                      if (response.status === 400) {
+                        const errorResponse = await response.json();
+                        throw new Error(errorResponse.msg);
+                      }
+                      nav('/v/cart');
+                      isOpen.setIsOpen = false;
+                    } catch (error: any) {
+                      console.error(error);
+                      const errorMessage = document.createElement('div');
+                      errorMessage.textContent = 'Error: ' + error.message;
+                    }
+                  }}
+                >
+                  Agregar
+                </button>
+              </div>
             </div>
-        {notification.setNotification === true ?  <div class="card">
-    <label for="reminder-date" class="form-label">Seleccionar fecha para recordatorio:</label>
-    <input type="date" id="reminder-date" name="reminder-date" onChange$={(e) => reminderDate.setReminderDate = new Date(e.target.value).getTime()} class="form-input"/>
-</div> :""}
-<div class="card">
-  <div class="card-notification">
-  <label for="notification" class="form-label">Recibir notificación:</label>
-  <input type="checkbox" id="notification" name="notification" value="true" onChange$={(e) => notification.setNotification = e.target.checked} checked class="form-checkbox"/>
-</div>
-</div>
-
-<div class="ctr-button-modal">
-
-    <button class='button-agg' onClick$={async () => {
-        try {
-            const response = await fetch(
-                `${urlServerNode}/api/add-future-purchase`,
-                {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        userId:user?.id,
-                        dui: product.dui,
-                        reminderDate: reminderDate.setReminderDate,
-                        notification: notification.setNotification
-                    }),
-                }
-            );
-
-            if (response.status === 400) {
-                const errorResponse = await response.json();
-                throw new Error(errorResponse.msg);
-            }
-            nav('/v/cart')
-            isOpen.setIsOpen = false;
-        } catch (error: any) {
-            console.error(error);
-            const errorMessage = document.createElement('div');
-            errorMessage.textContent = 'Error: ' + error.message;
-        }
-    }}>
-        Agregar
-    </button>
-</div>
-
           </div>
-         
-          </div>
-          
         </>
       )}
     </div>

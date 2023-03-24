@@ -23,7 +23,12 @@
 }
 
 .container-cart:hover .container-options-buttons {
-    display: block;
+    height: 100%;
+    background-color: var(--color-background-card);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    animation: smoApp 0.5s ease-in-out;
 }
 
 .cart-future-shop {
