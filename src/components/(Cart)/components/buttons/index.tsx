@@ -16,7 +16,7 @@ import { useGetCurrentUser } from '~/routes/layout';
 export const ButtonCartIndex = component$(({ product }: any) => {
   useStylesScoped$(styles);
   const nav = useNavigate();
- const user = useGetCurrentUser().value;
+  const user = useGetCurrentUser().value;
 
   const iconSum = (
     // eslint-disable-next-line qwik/single-jsx-root
@@ -53,20 +53,19 @@ export const ButtonCartIndex = component$(({ product }: any) => {
   );
   return (
     <div class="buttos-cart">
-      {user ? <>  <div class="no-mobiles">
-        <div class="button-store-future">
-        <ModalFuturePurchase product={product}/>
-         
-        </div>
-        <div class="ctr-opa">|</div>
-      </div></>: <> <div class="no-mobiles">
-        <div class="button-store-future">
-        <ModalFuturePurchase product={product}/>
-         
-        </div>
-        <div class="ctr-opa">|</div>
-      </div></>}
-    
+      {user ? (
+        <>
+          {' '}
+          <div class="no-mobiles">
+            <div class="button-store-future">
+              <ModalFuturePurchase product={product} />
+            </div>
+            <div class="ctr-opa">|</div>
+          </div>
+        </>
+      ) : (
+        <> </>
+      )}
       <div class="button-favorite">
         <DouveryHeart size="15px" />
         <button

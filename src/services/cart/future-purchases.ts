@@ -1,4 +1,4 @@
-import { urlServerLocal, urlServerNode } from "../fechProduct";
+import {  urlServerNode } from "../fechProduct";
 
 
 
