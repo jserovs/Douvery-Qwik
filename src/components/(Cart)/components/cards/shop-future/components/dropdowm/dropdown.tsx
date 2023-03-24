@@ -7,9 +7,12 @@ import { DouveryCopyText } from '~/components/icons/copy';
 import {
   deleteDataFuturePurchasesProduct,
   updateNotificationDataFuturePurchasesProduct,
+  updatePayAutomaticDataFuturePurchasesProduct,
 } from '~/services/cart/future-purchases';
 import { useGetCurrentUser } from '~/routes/layout';
 import { urlServerNode } from '~/services/fechProduct';
+
+import { DouveryArrowLeft1 } from '~/components/icons/arrow-left-1';
 
 export const DropdownOptionsFuturePurchases = component$(({ product }: any) => {
   useStylesScoped$(styles);
@@ -72,7 +75,27 @@ export const DropdownOptionsFuturePurchases = component$(({ product }: any) => {
                   </button>
                 </li>
                 <li>
-                  <button> Compra automatica </button>
+                  <button
+                    onClick$={() => {
+                      updatePayAutomaticDataFuturePurchasesProduct(
+                        `${user?.id}`,
+                        product.dui,
+                        product.payAutomatic ? false : true
+                      )
+                        .then(() => {
+                          nav('/v/cart');
+                        })
+                        .catch((error) => {
+                          console.error('Error removing product', error);
+                        });
+                    }}
+                  >
+                    {product.payAutomatic ? (
+                      <>Desactivar compra automatica</>
+                    ) : (
+                      <>Compra automatica</>
+                    )}
+                  </button>
                 </li>
                 <li>
                   {product.notification}
@@ -81,7 +104,7 @@ export const DropdownOptionsFuturePurchases = component$(({ product }: any) => {
                       updateNotificationDataFuturePurchasesProduct(
                         `${user?.id}`,
                         product.dui,
-                        true
+                        product.notification ? false : true
                       )
                         .then(() => {
                           isLoader.setIsLoader = true;
@@ -92,7 +115,11 @@ export const DropdownOptionsFuturePurchases = component$(({ product }: any) => {
                         });
                     }}
                   >
-                    Desactivar alerta
+                    {product.notification ? (
+                      <>Desactivar alerta</>
+                    ) : (
+                      <>Activar alerta</>
+                    )}
                   </button>
                 </li>
                 <li>
@@ -137,6 +164,12 @@ export const DropdownOptionsFuturePurchases = component$(({ product }: any) => {
             ) : (
               <>
                 <ul>
+                  <button
+                    class="button-tras"
+                    onClick$={() => (showDatePicker.setShowDatePicker = false)}
+                  >
+                    <DouveryArrowLeft1 size="14" /> Atras
+                  </button>
                   <li>
                     <strong>Cambiar fecha de {product.dui}</strong>
                   </li>
@@ -163,6 +196,7 @@ export const DropdownOptionsFuturePurchases = component$(({ product }: any) => {
                     <div class="ctr-button-modal">
                       <button
                         class="button-agg"
+                        disabled={!dateSelected.setDateSelected}
                         onClick$={async () => {
                           if (!dateSelected.setDateSelected) {
                             return;
@@ -199,7 +233,9 @@ export const DropdownOptionsFuturePurchases = component$(({ product }: any) => {
                           }
                         }}
                       >
-                        Cambiar
+                        {dateSelected.setDateSelected
+                          ? 'Cambiar'
+                          : 'Seleciona para cambiar'}
                       </button>
                     </div>
                   </li>

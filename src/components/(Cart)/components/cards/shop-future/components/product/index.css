@@ -28,6 +28,7 @@
     display: grid;
     justify-content: center;
     align-items: center;
+    animation: smoApp 0.5s ease-in-out;
 }
 
 .cart-future-shop {
