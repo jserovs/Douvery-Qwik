@@ -44,6 +44,9 @@ export const CardShopFutureProduct = component$(() => {
               return (
                 <div class="container-cart" key={product.dui}>
                   <Card3SCART product={product} />
+                  <div class="container-cart-buttons">
+                    <button>Agregar al carrito</button>
+                  </div>
                   <div class="container-options-buttons">
                     <ButtonFuturePurchase product={product} />
                   </div>

@@ -112,7 +112,7 @@
     position: absolute;
     left: 1%;
     margin: 10px 0 0 -40%;
-    transform: translateX(-30%);
+    transform: translateX(-35%);
     width: var(--dropdown-width);
     z-index: 2;
     background-color: #fff;
