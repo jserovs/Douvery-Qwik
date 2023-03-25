@@ -100,11 +100,14 @@ export default component$(() => {
               ) : (
                 <div class="loader"></div>
               )}
+
               <CardSubtotal
                 state={state.searchResults.length}
                 subTotal={subTotal}
               />
-              <CardShopFuture />
+              <div class="container-web-total">
+                <CardShopFuture />
+              </div>
             </div>
             <div class="container-infos">
               <CardTotal
@@ -128,11 +131,10 @@ export default component$(() => {
             <>
               {' '}
               <HeaderCart stateProduct={state.searchResults} />
-             <div class="container-center-no-product">
+              <div class="container-center-no-product">
                 <NoProductCart />
-                   <CardFavoriteProduct />
-             </div>
-              
+                <CardFavoriteProduct />
+              </div>
               <div class="container-carousel">
                 <View5 product={''} styleNumber={4} />
               </div>

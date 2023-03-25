@@ -75,6 +75,7 @@
 
 
 @media only screen and (max-width: 885px) {
+
   .container-all {
     display: grid;
 
@@ -87,6 +88,11 @@
     padding: 10px;
   }
 
+  .container-infos {
+    height: 100%;
+    position: relative;
+    padding-top: 10px;
+  }
 
   .container-carousel {
     background-color: var(--color-background-white);
@@ -104,8 +110,6 @@
     gap: 0px;
     min-height: 100rem;
   }
-
-
 
 
   .container-button {
