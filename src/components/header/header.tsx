@@ -100,7 +100,7 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
                         '&or-c=' +
                         selectedValue.selectedValue +
                         or_ly +
-                        ''
+                        '',true
                     );
                   }
                 }}
@@ -161,7 +161,7 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
           <div class="main">
             <div class="container-icon-cart">
               {' '}
-              <Link href="/v/cart" class="user">
+              <Link href="/v/cart" reload class="user">
                 <DouveryCart />
                 <div class="badget-circle">1</div>
               </Link>
