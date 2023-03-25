@@ -10,12 +10,12 @@
     display: inline-block;
     font-size: 13px;
     line-height: 29px;
- 
+
     text-align: center;
     min-width: 300PX;
 
     width: 100%;
-    height: 100px;
+    height: 100%;
     margin: 20px 0px;
     padding: 20px 20px;
 }
@@ -42,11 +42,6 @@
     text-decoration: underline;
 }
 
-@media only screen and (max-width: 1491px) {
-    .cart-future-shop {
-        height: 280px;
-    }
-}
 
 @media only screen and (max-width: 1605px) {
     .container-cart {
@@ -61,6 +56,7 @@
     .container-total-cart {
         padding: 10px;
         justify-content: center;
+
     }
 
 
@@ -73,11 +69,9 @@
         border-radius: none;
         box-shadow: none;
         box-sizing: border-box;
-        border-top: 1px solid #33333310;
-        border-bottom: 1px solid #33333310;
-        min-width: 0px;
-        max-width: 500px;
-        padding: 15px;
+
+
+
 
     }
 
