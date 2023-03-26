@@ -38,6 +38,7 @@ export default component$(() => {
   const subTotal = useStore({ setsubTotal: 0 });
   const subTotalNoDiscount = useStore({ setsubTotalNoDiscount: 0 });
   const discount = useStore({ setDiscount: 0 });
+ 
 
   useVisibleTask$(async ({ track }) => {
     track(() => url.pathname);

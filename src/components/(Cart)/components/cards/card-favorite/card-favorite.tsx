@@ -23,67 +23,74 @@ export const CardFavoriteProduct = component$(
     searchResults: [],
     selectedValue: '',
   });
+   const isLoading = useStore({ setIsLoading: true });
+
   const { url } = useLocation();
     useVisibleTask$(async ({ track }) => {
     track(() => url.pathname);
-
-    const controller = new AbortController();
+ const controller = new AbortController();
+  
+ try {
+ 
     state.searchResults = await getDataFavoriteProduct();
-
+      } catch (error) {
+        console.error(error);
+      } finally {
+        isLoading.setIsLoading = false;
+      }
     return () => {
+    
       controller.abort();
     };
-  });
+    
+  } );
   const nav = useNavigate();
     return (
       <>
-        <div class="cart-future-shop">
-          <h3 class="container-titulo">Marcados como favoritos
-</h3>
-          <ul class="container-lista">
-            {state.searchResults.length > 0 ? (
-                state.searchResults.map((product) => {
-                 
+   <div class="cart-future-shop">
+  <h3 class="container-titulo">Marcados como favoritos</h3>
+  <ul class="container-lista">
+    {isLoading.setIsLoading ? (
+      <div class="loader"></div>
+    ) : state.searchResults.length > 0 ? (
+      state.searchResults.map((product) => {
+        return (
+          <>
+            <div class="container-cart" key={product.dui}>
+              <Card2SCART product={product}/>
+              <div class="container-button-cart">
+                <button
+                  onClick$={() => {
+                    addToCart({ dui: product.dui, quantity: 1 });
+                    nav('/v/cart');
+                  }}
+                >
+                  Agregar al carrito
+                </button>
+              </div>
+            </div>
+          </>
+        );
+      })
+    ) : (
+      <div class="no-product-message">
+        <p>No hay productos en Favorito.</p>
+      </div>
+    )}
+    <div class="container-list-empty">
+      <button
+        onClick$={() => {
+          removeAllProductFavorite();
+          nav('/v/cart');
+        }}
+      >
+        Limpiar lista
+      </button>
+    </div>
+  </ul>
+</div>
 
-                 
-                  return (
-                    <>
-                     <div class="container-cart" key={product.dui}>
-                     <Card2SCART product={product}/> 
-                      <div class="container-button-cart">
-                    <button
-                     onClick$={() => {
-                      addToCart({ dui: product.dui, quantity: 1 });
-                       nav('/v/cart');
-                     }}
-                   >
-               Agregar al carrito
-                   </button>
-</div>
-                    </div>
-                  
-                   </>
-                   
-                  );
-                  
-                })
-              ) : (
-                <div class="loader"></div>
-              )}
-                <div class="container-list-empty">
-                    <button
-                     onClick$={() => {
-                       removeAllProductFavorite();
-                       nav('/v/cart');
-                     }}
-                   >
-                Limpiar lista
-                   </button>
-</div>
-          </ul>
-         
-         
-        </div>
+
       </>
     );
   }
