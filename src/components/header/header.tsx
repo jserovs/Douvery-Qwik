@@ -16,6 +16,8 @@ import { ProfileDropdown } from '../dropdown/header-profile-user/profile-dropdow
 import { Link, useLocation, useNavigate } from '@builder.io/qwik-city';
 import { category } from '~/routes/(Search)/s';
 
+import { useGetCurrentCartQuatity } from '~/routes/layout';
+
 interface IState {
   searchInput: string;
   searchResults: string[];
@@ -53,6 +55,8 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
   const or_ly = url.searchParams.has('or-ly')
     ? `&or-ly=${url.searchParams.get('or-ly')}`
     : '';
+
+  const getCartQty = useGetCurrentCartQuatity().value;
 
   return (
     <header>
@@ -165,7 +169,7 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
               {' '}
               <Link href="/v/cart" reload={true} class="user">
                 <DouveryCart />
-                <div class="badget-circle">1</div>
+                <div class="badget-circle">{getCartQty ? getCartQty : ''}</div>
               </Link>
             </div>
             <DouveryUser />

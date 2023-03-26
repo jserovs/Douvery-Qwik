@@ -15,6 +15,7 @@ import {
   DATA_COUNTRY_COOKIE_NAME,
   DATA_ZIPCODE_COOKIE_NAME,
 } from '~/services/auth/code/zipCode';
+import { CART_QUANTITY_ACCESS_COOKIE_NAME } from '~/services/cart/cart';
 
 export const useGetCurrentUser = routeLoader$<UserACC | null>(
   async ({ cookie }) => {
@@ -46,13 +47,26 @@ export const useGetCurrentCountry = routeLoader$<ZipCode | null>(
     return null;
   }
 );
+
+export const useGetCurrentCartQuatity = routeLoader$<string | null>(
+  async ({ cookie }: any) => {
+    const accessCookie = cookie.get(CART_QUANTITY_ACCESS_COOKIE_NAME)?.value;
+
+    if (accessCookie) {
+      return accessCookie;
+    }
+    return null;
+  }
+);
+
 export default component$(() => {
   const isOpen = useStore({ setIsOpen: false });
   const userACC = useGetCurrentUser().value;
   const getZipCode = useGetCurrentZipCode().value;
   const getCountryUser = useGetCurrentCountry().value;
+
   const loc = useLocation();
- 
+
   return (
     <>
       <main>
