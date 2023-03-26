@@ -1,18 +1,7 @@
-import {
-  Resource,
-  component$,
-  useResource$,
-  useStore,
-  useStylesScoped$,
-  useTask$,
-} from '@builder.io/qwik';
+import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import sryles from './css/container-header-name-brands-product.css?inline';
 import { DouveryCheckMark } from '~/components/icons/checkMark';
 
-import { fetchSeller } from '~/services/fechSeller';
-import type { Product, Seller } from '~/utils/types';
-import { cleanUpParamsID } from '~/utils/cleurs';
-import { Loader } from '~/components/status/loader/loader';
 import { DouveryCircleLock } from '~/components/icons/circle-lock';
 import { ContainerExpectedShippingTime } from './container-expected-shipping-time';
 import { Dropdown } from '~/components/dropdown/dropdown';
@@ -21,51 +10,11 @@ import { Link } from '@builder.io/qwik-city';
 
 import { ContainerPoput } from './components/popupSHARE';
 import { DouveryIcon } from '~/components/icons/douvery';
-import { fetchProductBestInCategory } from '~/services/fechProduct';
+
 import { TextCL } from '~/components/use/textCL/textCL';
 
 export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
   useStylesScoped$(sryles);
-
-  const state = useStore<{
-    seller: Seller;
-  }>(
-    {
-      seller: {} as Seller,
-    },
-    { recursive: true }
-  );
-  const stateBest = useStore<{
-    product: Product;
-  }>(
-    {
-      product: {} as Product,
-    },
-    { recursive: true }
-  );
-
-  const ageResource = useResource$<void>(async () => {
-    const { id } = cleanUpParamsID({ id: props.store });
-    const seller = await fetchSeller(id);
-    state.seller = seller;
-  });
-
-  useTask$(async ({ track }) => {
-    track(() => props.store);
-    const { id } = cleanUpParamsID({ id: props.store });
-    const seller = await fetchSeller(id);
-    state.seller = seller;
-
-    const product = await fetchProductBestInCategory(props.category);
-    stateBest.product = product;
-  });
-
-  const productResource = useResource$<void>(async () => {
-    const { category } = cleanUpParamsID({ category: props.category });
-    const product = await fetchProductBestInCategory(category);
-
-    stateBest.product = product;
-  });
 
   return (
     <div class="super-container-title-brand-product mobiles-title-brand">
@@ -86,25 +35,17 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
           </h4>
           <div class="crtr-di">
             <div class="di">
-              <Resource
-                value={productResource}
-                onPending={() => <>Cargando ...</>}
-                onRejected={(error) => <>Error: {error.message}</>}
-                onResolved={() => (
-                  <>
-                    {stateBest.product.dui === props.dui ? (
-                      <>
-                        {' '}
-                        <div class="top-1">#1 De </div>
-                      </>
-                    ) : (
-                      <>
-                        <p>De</p>
-                      </>
-                    )}
-                  </>
-                )}
-              />
+              {props.isBestInCategory ? (
+                <>
+                  {' '}
+                  <div class="top-1">#1 De </div>
+                </>
+              ) : (
+                <>
+                  {' '}
+                  <p>De</p>
+                </>
+              )}
               <a href="/">{props.category}</a>
               {props.vrfDouvery ? (
                 <>
@@ -169,26 +110,13 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
           {' '}
           <strong class="hs-sr1">Enviado & Vendido por </strong>
           <div class="sll-rps">
-            <Resource
-              value={ageResource}
-              onPending={() => <Loader />}
-              onRejected={(error) => <>Error: {error.message}</>}
-              onResolved={() => (
-                <>
-                  <div class="seller">
-                    <a href="/">
-                      {state.seller.name == undefined
-                        ? 'Vendedor no definido'
-                        : state.seller.name}
-                    </a>
-                    <a href="/">(4)185</a>
-                    <div class="review-popup">
-                      Review: This seller is reliable and always ships on time.
-                    </div>
-                  </div>
-                </>
-              )}
-            />
+            <div class="seller">
+              <a href="/">{props.storeUserName}</a>
+              <a href="/">(4)185</a>
+              <div class="review-popup">
+                Review: This seller is reliable and always ships on time.
+              </div>
+            </div>
           </div>
           <div class="chg-shr-prtd">
             <Dropdown title="Elegir otra opcion" />
