@@ -5,7 +5,7 @@ import {
   useVisibleTask$,
 } from '@builder.io/qwik';
 import styles from './index.css?inline';
-import { useLocation } from '@builder.io/qwik-city';
+import { useLocation, useNavigate } from '@builder.io/qwik-city';
 
 import { useGetCurrentUser } from '~/routes/layout';
 import type { IState } from '~/routes/(Cart)/v/cart';
@@ -13,6 +13,7 @@ import { getDataFuturePurchasesProduct } from '~/services/cart/future-purchases'
 
 import { Card3SCART } from '~/components/cards/cart/card-3-s/card-3-s';
 import { ButtonFuturePurchase } from '../buttons/buttons-purchases';
+import { addToCart } from '~/services/cart/cart';
 
 export const CardShopFutureProduct = component$(() => {
   useStylesScoped$(styles);
@@ -35,6 +36,7 @@ export const CardShopFutureProduct = component$(() => {
       controller.abort();
     };
   });
+  const nav = useNavigate();
   return (
     <>
       <div class="cart-future-shop">
@@ -45,7 +47,14 @@ export const CardShopFutureProduct = component$(() => {
                 <div class="container-cart" key={product.dui}>
                   <Card3SCART product={product} />
                   <div class="container-cart-buttons">
-                    <button>Agregar al carrito</button>
+                    <button
+                      onClick$={() => {
+                        addToCart({ dui: product.dui, quantity: 1 });
+                        nav('/v/cart');
+                      }}
+                    >
+                      Agregar al carrito
+                    </button>
                   </div>
                   <div class="container-options-buttons">
                     <ButtonFuturePurchase product={product} />
