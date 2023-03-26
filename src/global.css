@@ -169,7 +169,7 @@ p {
 
 /** Title label in different sizes */
 .hs-sr1 {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: var(--font-weight-normal);
   color: #030303;
 }
