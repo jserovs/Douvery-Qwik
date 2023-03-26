@@ -50,8 +50,8 @@ export const ContaineRatingProgress = component$(({ props }: any) => {
         <div class="ctr-ratings-progress">
           <div class="star-ratings">
             <div class="star-ratings">
-              {bars.map((bar) => (
-                <div class="star-ratings">
+              {bars.map((bar, i: number) => (
+                <div class="star-ratings" key={i}>
                   <ProgressBar
                     rating={bar.rating}
                     count={bar.count}
