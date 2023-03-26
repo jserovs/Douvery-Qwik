@@ -171,7 +171,7 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
               {' '}
               <Link href="/v/cart" reload={true} class="user">
                 <DouveryCart />
-                <div class="badget-circle">{getCartQty ? getCartQty : ''}</div>
+                <div class="badget-circle">{getCartQty ? getCartQty : 0}</div>
               </Link>
             </div>
             <DouveryUser />
