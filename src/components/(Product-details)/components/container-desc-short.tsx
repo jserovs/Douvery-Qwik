@@ -26,8 +26,8 @@ export const ContainerDescriptionShort = component$(({ props }: any) => {
               <>
                 <strong class="hs-sr1">Sobre este artículo:</strong>
                 <div class="detailed-list">
-                  {props.vinetas.map((val: any) => (
-                    <div class="crte-crot-sart">
+                  {props.vinetas.map((val: any, i: number) => (
+                    <div class="crte-crot-sart" key={i}>
                       <div class="cirle-bg"></div>
                       <div class="list">
                         <p class="ps-sr1">{val}</p>
@@ -41,8 +41,8 @@ export const ContainerDescriptionShort = component$(({ props }: any) => {
               <div class="crets-chrlsr-hrslrs-artes">
                 <strong class="hs-sr1">Highlights:</strong>
                 <ul class="detailed-list">
-                  {props.highlights.map((val: any) => (
-                    <li>
+                  {props.highlights.map((val: any, i: number) => (
+                    <li key={i}>
                       <p class="ps-sr1">{val}</p>
                     </li>
                   ))}

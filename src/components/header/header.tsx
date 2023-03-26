@@ -77,10 +77,12 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
                     (selectedValue.selectedValue = event.target.value)
                   }
                 >
-                  {category.map((c) => (
+                  {category.map((c, i) => (
                     <>
                       {' '}
-                      <option value={c.value}>{c.name}</option>
+                      <option value={c.value} key={i}>
+                        {c.name}
+                      </option>
                     </>
                   ))}
                 </select>

@@ -186,19 +186,6 @@ export default component$(() => {
     ? `&or-ly=${url.searchParams.get('or-ly')}`
     : '';
 
-  const page = useStore({ setPage: 1 });
-  const pages = useStore({ setPages: 1 });
-  const pageLinks = [];
-  for (let i = 1; i <= pages.setPages; i++) {
-    const isActive = page.setPage === i;
-    pageLinks.push(
-      // eslint-disable-next-line qwik/single-jsx-root
-      <a key={i} href="#" class={isActive ? 'active' : ''} onClick$={() => {}}>
-        {i}
-      </a>
-    );
-  }
-
   const state = useStore({
     productResults: [] as Product[],
   });
@@ -247,8 +234,8 @@ export default component$(() => {
             <div>
               {' '}
               <h3>By Category</h3>
-              {category.map((c) => (
-                <div>
+              {category.map((c, i) => (
+                <div key={i}>
                   <label
                     class={
                       url.searchParams.get('or-c') === c.value
@@ -271,8 +258,8 @@ export default component$(() => {
                   </label>
                   {url.searchParams.get('or-c') === c.value ? (
                     <div class="container-sub-category">
-                      {c.subCategory?.map((c) => (
-                        <div class="item">
+                      {c.subCategory?.map((c, i) => (
+                        <div class="item" key={i}>
                           <DouveryRight3
                             color={
                               url.searchParams.get('or-sc') === c.value
@@ -313,14 +300,14 @@ export default component$(() => {
             <div>
               {' '}
               <h3>By Price Range</h3>
-              {prices.map((p) => (
+              {prices.map((p, i) => (
                 <li
                   class={
                     url.searchParams.get('or-p') === p.value
                       ? 'active-undeline'
                       : ''
                   }
-                  key={p.value}
+                  key={i}
                 >
                   <Link
                     href={
@@ -374,9 +361,9 @@ export default component$(() => {
               {' '}
               <h3>By Brands</h3>
               <ul>
-                {brand.map((b) => (
+                {brand.map((b, i) => (
                   <li
-                    key={b.name}
+                    key={i}
                     class={
                       url.searchParams.get('or-b') === b.value
                         ? 'active-undeline'
