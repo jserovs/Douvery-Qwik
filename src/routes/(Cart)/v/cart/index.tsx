@@ -63,7 +63,9 @@ export default component$(() => {
     <div class="container-all">
       {state.searchResults && state.searchResults.length > 0 ? (
         <>
-          <HeaderCart stateProduct={state.searchResults} subTotal={subTotal} />
+         <div class="container-header">
+         <HeaderCart stateProduct={state.searchResults} subTotal={subTotal} />
+         </div>
           <div class="cart-container">
             <div class="cart-products">
               {state.searchResults.length > 0 ? (
