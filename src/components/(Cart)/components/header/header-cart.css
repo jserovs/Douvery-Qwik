@@ -76,7 +76,7 @@
     .container-movil {
         display: grid;
         align-items: center;
-        border-top: 1px solid var(--border-width-1);
+        border-top: 1px solid #E8F0FE;
         margin-top: 10px;
         padding: 10px 0PX;
     }
@@ -118,7 +118,7 @@
     }
 
     .crrts-title .ofrs p {
-        font-size: 16px;
+        font-size: 18px;
         font-weight: 400;
         margin: 0;
         padding: 0px 0px;
