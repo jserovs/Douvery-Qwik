@@ -3,7 +3,9 @@
 }
 
 .buttonCart {
-    display: grid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     min-width: 180px;
     background-color: var(--color-button-cart);
     color: var(--color-background-light);
@@ -15,6 +17,10 @@
     vertical-align: middle;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
         border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.check {
+    fill: #fff;
 }
 
 .buttonCart:hover {
