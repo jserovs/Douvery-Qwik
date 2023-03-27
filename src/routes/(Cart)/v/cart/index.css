@@ -1,6 +1,7 @@
 .container-all {
   background-color: var(--color-background-light);
   min-height: 100rem;
+ 
 }
 
 .cart-container {
@@ -56,6 +57,11 @@
 .container-center-no-product {
   display: flex;
   gap: 10px;
+}
+.container-header{
+  width: 100%;
+  display: grid;
+  justify-content: stretch;
 }
 
 
