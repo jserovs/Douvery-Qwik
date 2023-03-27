@@ -38,7 +38,6 @@ export default component$(() => {
   const subTotal = useStore({ setsubTotal: 0 });
   const subTotalNoDiscount = useStore({ setsubTotalNoDiscount: 0 });
   const discount = useStore({ setDiscount: 0 });
- 
 
   useVisibleTask$(async ({ track }) => {
     track(() => url.pathname);
@@ -64,7 +63,7 @@ export default component$(() => {
     <div class="container-all">
       {state.searchResults && state.searchResults.length > 0 ? (
         <>
-          <HeaderCart stateProduct={state.searchResults} />
+          <HeaderCart stateProduct={state.searchResults} subTotal={subTotal} />
           <div class="cart-container">
             <div class="cart-products">
               {state.searchResults.length > 0 ? (
@@ -111,11 +110,13 @@ export default component$(() => {
               </div>
             </div>
             <div class="container-infos">
-              <CardTotal
-                subTotal={subTotal}
-                discount={discount}
-                subTotalNoDiscount={subTotalNoDiscount.setsubTotalNoDiscount}
-              />
+              <div class="container-card-total">
+                <CardTotal
+                  subTotal={subTotal}
+                  discount={discount}
+                  subTotalNoDiscount={subTotalNoDiscount.setsubTotalNoDiscount}
+                />
+              </div>
               <CardFavoriteProduct />
               <CardDouveryExtend1 />
             </div>

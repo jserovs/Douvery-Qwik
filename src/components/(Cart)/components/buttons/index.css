@@ -110,8 +110,8 @@
         display: flex;
         flex-direction: row-reverse;
         gap: 13px;
-        height: 3.5rem;
-        font-size: 13px;
+
+        font-size: 11.5px;
         border-top: 2px solid var(--color-background-down);
 
         /* Oculta la barra de desplazamiento en navegadores IE y Edge */

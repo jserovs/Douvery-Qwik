@@ -5,7 +5,9 @@ import { useNavigate } from '@builder.io/qwik-city';
 import { useGetCurrentUser } from '~/routes/layout';
 import { PoputOptionsCart } from '../poput-options/poput-options';
 import { TextCL } from '~/components/use/textCL/textCL';
-export const HeaderCart = component$(({ stateProduct }: any) => {
+import { ButtonFollow } from '../buttons/button-follow/button-follow';
+import { UsePrice } from '~/components/use/price/price';
+export const HeaderCart = component$(({ stateProduct, subTotal }: any) => {
   useStylesScoped$(styles);
   const nav = useNavigate();
   const user = useGetCurrentUser().value;
@@ -59,6 +61,19 @@ export const HeaderCart = component$(({ stateProduct }: any) => {
           ) : (
             ''
           )}{' '}
+        </div>
+        <div class="container-movil">
+          <ul class="container-lista">
+            <li>
+              Subtotal:{' '}
+              <span id="subtotal" class="container-value">
+                <UsePrice price={subTotal.setsubTotal} />
+              </span>
+            </li>
+          </ul>
+          <div class="container-button-follow">
+            <ButtonFollow />
+          </div>
         </div>
       </div>
     </>
