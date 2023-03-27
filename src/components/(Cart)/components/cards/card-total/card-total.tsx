@@ -1,7 +1,7 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './card-total.css?inline';
 import { UsePrice } from '~/components/use/price/price';
-import { DouveryArrowRigth1 } from '~/components/icons/arrow-right-1';
+import { ButtonFollow } from '../../buttons/button-follow/button-follow';
 export const CardTotal = component$(
   ({ subTotal, discount, subTotalNoDiscount }: any) => {
     useStylesScoped$(styles);
@@ -37,12 +37,7 @@ export const CardTotal = component$(
               </span>
             </li>
           </ul>
-          <button id="siguiente" class="container-boton">
-            <div class="text-button">Proceder a pagar</div>
-            <div class="animation-ir">
-              Ir <DouveryArrowRigth1 size="16px" />
-            </div>
-          </button>
+          <ButtonFollow />
         </div>
       </>
     );
