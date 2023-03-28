@@ -4,11 +4,11 @@ import { DouveryArrowRigth1 } from '~/components/icons/arrow-right-1';
 import styles from './button-follow.css?inline';
 export const ButtonFollow = component$(() => {
   useStylesScoped$(styles);
-  const nav= useNavigate()
+  const nav = useNavigate();
   const process = $(() => {
-    nav('/by/segure/')
+    nav('/by/segure/address/');
   });
-  
+
   return (
     <div>
       <button id="siguiente" class="container-boton" onClick$={process}>
