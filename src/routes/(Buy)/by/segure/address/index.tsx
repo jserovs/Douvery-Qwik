@@ -5,16 +5,20 @@ export default component$(() => {
   return (
     <div class="container-all">
       <div class="container">
+        <p>
+          Selecciona o agrega una dirección de envío para continuar con tu
+          pedido.
+        </p>
         <form>
           <div class="container-content">
-            <label for="nombre">Nombre completo:</label>
+            <label for="nombre">Nombre & Apellido</label>
             <input type="text" id="nombre" name="nombre" required />
 
             <label for="direccion1">Dirección línea 1:</label>
             <input type="text" id="direccion1" name="direccion1" required />
 
             <label for="direccion2">Dirección línea 2 (opcional):</label>
-            <input type="text" id="direccion2" name="direccion2" />
+            <input type="text" id="direccion2" name="direccion2" required />
 
             <label for="ciudad">Ciudad:</label>
             <input type="text" id="ciudad" name="ciudad" required />

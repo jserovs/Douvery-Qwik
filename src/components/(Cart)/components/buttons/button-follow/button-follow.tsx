@@ -6,7 +6,7 @@ export const ButtonFollow = component$(() => {
   useStylesScoped$(styles);
   const nav = useNavigate();
   const process = $(() => {
-    nav('/by/segure/address/');
+    nav('/by/segure/address/', true);
   });
 
   return (
