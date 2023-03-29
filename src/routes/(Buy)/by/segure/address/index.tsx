@@ -5,49 +5,51 @@ export default component$(() => {
   return (
     <div class="container-all">
       <div class="container">
-       <div class="container-header">
-       <p>
-          Selecciona o agrega una dirección de envío para continuar con tu
-          pedido.
-        </p>
-        <p></p>
-       </div>
-       <div class="titulo-centrado">
-        <div class="linea"></div>
-        <p>Dirección Existente</p>
-        <div class="linea"></div>
-    </div>
- <div
-          class="container-addresses-existing"
-        >
+        <div class="container-header">
+          <p>
+            Selecciona o agrega una dirección de envío para continuar con tu
+            pedido.
+          </p>
+          <p></p>
+        </div>
+
+        <div class="container-addresses-existing">
           <p>Direcciones existentes:</p>
+          <p></p>
         </div>
         <form>
-      <div class="options">
-        <label for="calle1" class="option">
-          <input type="radio" name="direccion" id="calle1" value="calle1"/>
-          <span>Calle 1</span>
-        </label>
-        <label for="calle2" class="option">
-          <input type="radio" name="direccion" id="calle2" value="calle2"/>
-          <span>Calle 2</span>
-        </label>
-        <label for="calle3" class="option">
-          <input type="radio" name="direccion" id="calle3" value="calle3"/>
-          <span>Calle 3</span>
-        </label>
-        <label for="calle4" class="option">
-          <input type="radio" name="direccion" id="calle4" value="calle4"/>
-          <span>Calle 4</span>
-        </label>
-      </div>
-      <button type="submit">Enviar</button>
-    </form>
-    <div class="titulo-centrado">
-        <div class="linea"></div>
-        <p>Crear nueva direccion</p>
-        <div class="linea"></div>
-    </div>
+          <div class="options">
+            <label for="calle1" class="option">
+              <input type="radio" name="direccion" id="calle1" value="calle1" />
+              <span>Calle Los Almendros, 237, 4ºB 28045 Madrid, España</span>
+            </label>
+            <label for="calle2" class="option">
+              <input type="radio" name="direccion" id="calle2" value="calle2" />
+              <span>
+                Avenida de las Flores, 568, Casa 12 03410 San José, Costa Rica
+              </span>
+            </label>
+            <label for="calle3" class="option">
+              <input type="radio" name="direccion" id="calle3" value="calle3" />
+              <span>
+                Rua dos Girassóis, 179, Apt. 301 04567-010 São Paulo, Brasil
+              </span>
+            </label>
+            <label for="calle4" class="option">
+              <input type="radio" name="direccion" id="calle4" value="calle4" />
+              <span>
+                Camino del Mar, 3840, Torre B, Piso 7, Depto. 2 1102 Buenos
+                Aires, Argentina
+              </span>
+            </label>
+          </div>
+          <button type="submit">Enviar</button>
+        </form>
+        <div class="titulo-centrado">
+          <div class="linea"></div>
+          <p>Crear nueva direccion</p>
+          <div class="linea"></div>
+        </div>
         <form>
           <div class="container-content">
             <label for="nombre">Nombre & Apellido</label>

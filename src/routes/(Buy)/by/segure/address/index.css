@@ -1,39 +1,47 @@
 .container-all {
     background-color: var(--color-background-lightest);
-
+    min-height: none;
 }
 
 .container {
     padding: 50px 20px;
+    min-height: 100rem;
     background-color: #fff;
     border-top: 1px solid var(--border-width-1);
 
 }
 
-.container .container-header {
+.container-header {
     font-weight: 500;
     font-size: 18px;
-    
     height: 50px;
     line-height: 20px;
-    color: #000;
-    display: flex;
-   display: flex;
-   gap: 40px;
+    color: #f81515;
+    display: grid;
+    grid-template-columns: 813px auto;
     justify-content: space-around;
 
 }
+
+.container-header p {
+    font-weight: 500;
+    font-size: 18px;
+    height: 50px;
+    color: #000;
+
+}
+
 .container-addresses-existing {
     display: flex;
-   width: 80%;
-     justify-content: flex-start;
-     padding: 10px 22px;
+    width: 80%;
+    justify-content: flex-start;
+    padding: 10px 22px;
     margin-bottom: 20px;
-   
+
     margin: 0 auto;
-  }
-  
-  .titulo-centrado {
+}
+
+.titulo-centrado {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -45,14 +53,15 @@
 .linea {
     flex-grow: 1;
     height: 1px;
-    background-color: var(--border-width-2);
+    background-color: var(--border-width-1);
     margin: 0 20px;
 }
 
 
 form {
     display: grid;
-    grid-template-columns: 550px 100px;
+    grid-template-columns: 550px auto;
+    ;
     justify-content: space-around;
 
 }
@@ -78,6 +87,7 @@ input[type="email"],
 select {
     display: block;
     width: 100%;
+    max-width: 550PX;
     height: 40px;
     padding: 5px 10px;
     font-size: 16px;
@@ -112,9 +122,9 @@ button {
     -webkit-user-select: none;
     touch-action: manipulation;
     vertical-align: middle;
-    width: 100%;
+    width: 200px;
     border-radius: 3px;
-    
+
     overflow: hidden;
 
 }
@@ -125,15 +135,14 @@ button:hover {
 
 
 .options {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    gap: 10px;
     margin: 0;
     padding: 0;
     list-style: none;
-  }
-  
-  .option {
+}
+
+.option {
     display: flex;
     align-items: center;
     margin: 5px;
@@ -145,25 +154,40 @@ button:hover {
     color: #333;
     cursor: pointer;
     transition: background-color 0.2s ease;
-  }
-  
-  
-  .option span {
-    margin-left: 10px;
-  }
-  
-  .option input[type="radio"]:checked + span {
-    font-weight: bold;
-    color:var(--color-button-pay);
-  }
+}
 
-  .option input[type="radio"]:checked + span::before {
+
+.option span {
+    margin-left: 10px;
+}
+
+.option input[type="radio"]:checked+span {
+    font-weight: bold;
+    color: var(--color-button-pay);
+}
+
+.option input[type="radio"]:checked+span::before {
     content: "✔";
     margin-right: 5px;
-  }
+}
 
-  .option input[type="radio"]:checked ~ .option {
+.option input[type="radio"]:checked~.option {
     background-color: #2196F3;
-  }.option input[type="radio"] {
+}
+
+.option input[type="radio"] {
     display: none;
-  }
+}
+
+
+
+
+@media only screen and (max-width: 885px) {
+    form {
+        display: grid;
+        grid-template-columns: auto;
+        ;
+
+
+    }
+}

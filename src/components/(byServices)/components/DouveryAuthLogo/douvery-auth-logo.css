@@ -34,12 +34,12 @@
     font-size: 25px;
 }
 
-@media only screen and (max-width: 1285px) {
+@media only screen and (max-width: 1585px) {
     .ctr-douvery {
         display: flex;
         justify-content: space-between;
-          }
- }
+    }
+}
 
 @media only screen and (max-width: 885px) {
     .ctr-douvery {
