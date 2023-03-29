@@ -1,0 +1,67 @@
+.ctr-douvery {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 10px 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.ctr-douvery div {
+    display: flex;
+
+    align-items: center;
+    gap: 20px;
+
+}
+
+.iteam-douvery {
+    position: relative;
+
+}
+
+.iteam-douvery svg {
+    width: 60px;
+    height: 60px;
+}
+
+.iteam-douvery span {
+    position: relative;
+    bottom: 4px;
+    font-size: 25px;
+}
+
+@media only screen and (max-width: 1585px) {
+    .ctr-douvery {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media only screen and (max-width: 885px) {
+    .ctr-douvery {
+        width: 350px;
+        margin-top: 30px;
+        padding: 0px 10px;
+    }
+
+
+    .iteam-douvery {
+        position: relative;
+        top: 5px;
+    }
+
+    .iteam-douvery svg {
+        width: 60px;
+        height: 60px;
+    }
+
+    .iteam-douvery span {
+        position: relative;
+        bottom: 4px;
+        font-size: 25px;
+    }
+}

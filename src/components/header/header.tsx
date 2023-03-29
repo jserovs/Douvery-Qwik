@@ -125,6 +125,7 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
                               onClick$={() => {
                                 state.searchInput = suggestion;
                               }}
+                              key={suggestion}
                             >
                               {' '}
                               <IconsSearch />
