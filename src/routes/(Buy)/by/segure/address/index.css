@@ -10,15 +10,43 @@
 
 }
 
-.container p {
+.container .container-header {
     font-weight: 500;
     font-size: 18px;
-    text-align: justify;
-    margin-left: 180px;
+    
     height: 50px;
     line-height: 20px;
     color: #000;
+    display: flex;
+   display: flex;
+   gap: 40px;
+    justify-content: space-around;
 
+}
+.container-addresses-existing {
+    display: flex;
+   width: 80%;
+     justify-content: flex-start;
+     padding: 10px 22px;
+    margin-bottom: 20px;
+   
+    margin: 0 auto;
+  }
+  
+  .titulo-centrado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px 0;
+    margin: 50px 0px;
+}
+
+.linea {
+    flex-grow: 1;
+    height: 1px;
+    background-color: var(--border-width-2);
+    margin: 0 20px;
 }
 
 
@@ -86,7 +114,7 @@ button {
     vertical-align: middle;
     width: 100%;
     border-radius: 3px;
-    margin-top: 20px;
+    
     overflow: hidden;
 
 }
@@ -94,3 +122,48 @@ button {
 button:hover {
     background-color: #45a049;
 }
+
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .option {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  
+  .option span {
+    margin-left: 10px;
+  }
+  
+  .option input[type="radio"]:checked + span {
+    font-weight: bold;
+    color:var(--color-button-pay);
+  }
+
+  .option input[type="radio"]:checked + span::before {
+    content: "✔";
+    margin-right: 5px;
+  }
+
+  .option input[type="radio"]:checked ~ .option {
+    background-color: #2196F3;
+  }.option input[type="radio"] {
+    display: none;
+  }

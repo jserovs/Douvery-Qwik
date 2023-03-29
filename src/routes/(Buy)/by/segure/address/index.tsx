@@ -5,10 +5,49 @@ export default component$(() => {
   return (
     <div class="container-all">
       <div class="container">
-        <p>
+       <div class="container-header">
+       <p>
           Selecciona o agrega una dirección de envío para continuar con tu
           pedido.
         </p>
+        <p></p>
+       </div>
+       <div class="titulo-centrado">
+        <div class="linea"></div>
+        <p>Dirección Existente</p>
+        <div class="linea"></div>
+    </div>
+ <div
+          class="container-addresses-existing"
+        >
+          <p>Direcciones existentes:</p>
+        </div>
+        <form>
+      <div class="options">
+        <label for="calle1" class="option">
+          <input type="radio" name="direccion" id="calle1" value="calle1"/>
+          <span>Calle 1</span>
+        </label>
+        <label for="calle2" class="option">
+          <input type="radio" name="direccion" id="calle2" value="calle2"/>
+          <span>Calle 2</span>
+        </label>
+        <label for="calle3" class="option">
+          <input type="radio" name="direccion" id="calle3" value="calle3"/>
+          <span>Calle 3</span>
+        </label>
+        <label for="calle4" class="option">
+          <input type="radio" name="direccion" id="calle4" value="calle4"/>
+          <span>Calle 4</span>
+        </label>
+      </div>
+      <button type="submit">Enviar</button>
+    </form>
+    <div class="titulo-centrado">
+        <div class="linea"></div>
+        <p>Crear nueva direccion</p>
+        <div class="linea"></div>
+    </div>
         <form>
           <div class="container-content">
             <label for="nombre">Nombre & Apellido</label>

@@ -34,6 +34,13 @@
     font-size: 25px;
 }
 
+@media only screen and (max-width: 1285px) {
+    .ctr-douvery {
+        display: flex;
+        justify-content: space-between;
+          }
+ }
+
 @media only screen and (max-width: 885px) {
     .ctr-douvery {
         width: 350px;

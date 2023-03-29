@@ -112,7 +112,7 @@ export const ModalFuturePurchase = component$(({ product }: any) => {
                     Seleccionar fecha para recordatorio:
                   </label>
                   <input
-                    type="date"
+                    type="datetime-local"
                     id="reminder-date"
                     name="reminder-date"
                     onChange$={(e) =>
