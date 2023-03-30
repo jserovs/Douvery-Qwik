@@ -7,12 +7,18 @@ import {
 import styles from './index.css?inline';
 import { fetchAddressUser } from '~/services/user/address/address';
 import { useGetCurrentUser } from '~/routes/layout';
+import { ConsentLocation } from '~/components/(byServices)/components/ConsentLocation/consent-location';
 
 interface IStateResult {
   results: string[];
 }
 export default component$(() => {
   useStylesScoped$(styles);
+  const country = useStore({ setCountry: '' });
+  const addressLine1 = useStore({ setAddressLine1: '' });
+  const addressLine2 = useStore({ setAddressLine2: '' });
+  const city = useStore({ setCity: '' });
+  const postalCode = useStore({ setPostalCode: '' });
   const userACC = useGetCurrentUser().value;
   const state = useStore<IStateResult>({
     results: [],
@@ -73,19 +79,20 @@ export default component$(() => {
             <input type="text" id="nombre" name="nombre" required />
 
             <label for="direccion1">Dirección línea 1:</label>
-            <input type="text" id="direccion1" name="direccion1" required />
+            <input value={addressLine1.setAddressLine1} type="text" id="direccion1" name="direccion1" required />
 
             <label for="direccion2">Dirección línea 2 (opcional):</label>
-            <input type="text" id="direccion2" name="direccion2" required />
+            <input value={addressLine2.setAddressLine2} type="text" id="direccion2" name="direccion2" required />
 
             <label for="ciudad">Ciudad:</label>
-            <input type="text" id="ciudad" name="ciudad" required />
+            <input value={city.setCity} type="text" id="ciudad" name="ciudad" required />
 
             <label for="estado">Estado/Provincia:</label>
-            <input type="text" id="estado" name="estado" required />
+            <input value={postalCode.setPostalCode} type="text" id="estado" name="estado" required />
 
             <label for="codigo_postal">Código postal:</label>
             <input
+            value={postalCode.setPostalCode}
               type="text"
               id="codigo_postal"
               name="codigo_postal"
@@ -93,14 +100,20 @@ export default component$(() => {
             />
 
             <label for="pais">País:</label>
-            <select id="pais" name="pais" required>
+            <select value={country.setCountry} id="pais" name="pais" required>
               <option value="">Seleccionar país</option>
               <option value="es">España</option>
               <option value="mx">México</option>
               <option value="ar">Argentina</option>
+              <option value="Dominican Republic">Republica Dominicana</option>
             </select>
+            <div class="container-button-send">
+              <p>FInalizar: </p>
+              <button type="submit">Enviar</button>
+            </div>
           </div>
-          <button type="submit">Enviar</button>
+          
+          <ConsentLocation country={country}  addressLine1={addressLine1} addressLine2={addressLine2} city={city} postalCode={postalCode}  />
         </form>
       </div>
     </div>
