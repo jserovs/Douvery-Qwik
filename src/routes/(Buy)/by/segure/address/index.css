@@ -1,9 +1,12 @@
 .container-all {
+    display: flex;
+    justify-content: center;
     background-color: var(--color-background-lightest);
-    min-height: none;
+
 }
 
-.container {
+.container-address {
+    width: 80%;
     padding: 50px 20px;
     min-height: 100rem;
     background-color: #fff;
@@ -32,9 +35,9 @@
 }
 
 .container-addresses-existing {
-    display: flex;
-    width: 80%;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: 813px auto;
+    justify-content: space-around;
     padding: 10px 22px;
     margin-bottom: 20px;
 
@@ -179,15 +182,57 @@ button:hover {
     display: none;
 }
 
+@media only screen and (max-width: 1555px) {
+    .container-address {
+        width: 100%;
+    }
 
+    .container-header {
+        font-size: 17px;
+    }
+
+    .titulo-centrado {
+        font-size: 15px;
+    }
+
+    .option {
+        font-size: 14px;
+    }
+}
 
 
 @media only screen and (max-width: 885px) {
     form {
+        display: block;
+    }
+
+    .container-content {
+        margin-bottom: 25px;
+    }
+
+    .container-header {
+        display: block;
+    }
+
+    .container-addresses-existing {
+        display: block;
+    }
+
+    .container-addresses-existing {
+        padding: 10px 0px;
+    }
+
+    .option {
+        margin: 0px;
+    }
+
+    .options {
+        padding: 56px 0px;
         display: grid;
-        grid-template-columns: auto;
-        ;
+        gap: 20px;
+    }
 
-
+    button {
+        width: 100%;
     }
 }
