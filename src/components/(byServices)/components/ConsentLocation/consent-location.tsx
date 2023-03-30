@@ -19,41 +19,38 @@ export const ConsentLocation = component$(() => {
       }
     );
   });
+useTask$( () => {
+    const apiKey = '2ebef1a3ac4c44c3b629a19330701d14';
 
-  useTask$(() => {
-    const apiKey = '0d62ca75f9e230';
-
-    fetch(`https://ipinfo.io/json?token=${apiKey}`)
+    fetch(`https://api.geoapify.com/v1/ipinfo?apiKey=${apiKey}`)
       .then((response) => response.json())
       .then((data) => {
-        if (data && data.loc) {
-          const [lat, lon] = data.loc.split(',');
-          latitude.setLatitude = parseFloat(lat);
-          longitude.setLongitude = parseFloat(lon);
+        if (data && data.location) {
+          latitude.setLatitude = parseFloat(data.location.lat);
+          longitude.setLongitude = parseFloat(data.location.lng);
 
           fetch(
-            `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lon}&key=API_KEY`
-          )
-            .then((response) => response.json())
-            .then((data) => {
-              if (data.results && data.results.length > 0) {
-                address.setAddress = data.results[0].formatted_address;
-                for (const component of data.results[0].address_components) {
-                  if (component.types.includes('locality')) {
-                    city.setCity = component.long_name;
-                  }
-                  if (component.types.includes('postal_code')) {
-                    postalCode.setPostalCode = component.long_name;
-                  }
-                }
-              } else {
-                eor.setError =
-                  'No se pudo obtener la dirección a través de la API de Geocoding de Google.';
-              }
-            })
+            `https://api.geoapify.com/v1/geocode/reverse?lat=${latitude.setLatitude}&lon=${longitude.setLongitude}&apiKey=${apiKey}`
+          ).then((response) => response.json())
+           .then((data) => {
+  if (
+    data.features &&
+    data.features.length > 0 &&
+    data.features[0].properties
+  ) {
+    const properties = data.features[0].properties;
+ console.log( `fdssfs`);
+    city.setCity = properties.city || properties.hamlet;
+    postalCode.setPostalCode = properties.postcode;
+  } else {
+    eor.setError =
+      'No se pudo obtener la dirección a través de la API de Geoapify.';
+  }
+})
+
             .catch((error) => {
               eor.setError =
-                'Error al obtener la dirección a través de la API de Geocoding de Google: ' +
+                'Error al obtener la dirección a través de la API de Geoapify: ' +
                 error.message;
             });
         } else {
@@ -66,25 +63,21 @@ export const ConsentLocation = component$(() => {
           'Error al obtener la ubicación a través de la geolocalización basada en IP: ' +
           error.message;
       });
-  });
+  },);
   return (
-    <div>
-      {latitude.setLatitude && longitude.setLongitude ? (
-        <>
-          <p>Latitud: {latitude.setLatitude}</p>
-          <p>Longitud: {longitude.setLongitude}</p>
-          {address.setAddress && <p>Dirección: {address.setAddress}</p>}
-          {city.setCity && <p>Ciudad: {city.setCity}</p>}
-          {postalCode.setPostalCode && (
-            <p>Código postal: {postalCode.setPostalCode}</p>
-          )}
-        </>
-      ) : (
-        <p>{eor.setError}</p>
-      )}
-      <button onClick$={handleManualLocation}>
-        Completar ubicación manualmente
-      </button>
-    </div>
+     <div>
+    <>{
+      address.setAddress
+    }
+      <p>Latitud: {latitude.setLatitude || 'No disponible'}</p>
+      <p>Longitud: {longitude.setLongitude || 'No disponible'}</p>
+      <p>Dirección: {address.setAddress || 'No disponible'}</p>
+      <p>Ciudad: {city.setCity || 'No disponible'}</p>
+      <p>Código postal: {postalCode.setPostalCode || 'No disponible'}</p>
+    </>
+    <button onClick$={handleManualLocation}>
+      Completar ubicación manualmente
+    </button>
+  </div>
   );
 });
