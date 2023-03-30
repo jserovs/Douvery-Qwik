@@ -1,4 +1,4 @@
-import { $, component$, useStore, useTask$ } from '@builder.io/qwik';
+import { $, component$, useStore } from '@builder.io/qwik';
 
 import { fetchAddressUserIP } from '~/services/user/address/address';
 
