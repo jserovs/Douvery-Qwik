@@ -52,19 +52,26 @@ export default component$(() => {
         </div>
         <form>
           <div class="options">
-            {state.results.map((item, i) => {
-              return (
-                <label key={i} class="option">
-                  <input
-                    type="radio"
-                    name="calle"
-                    id={`calle${i}`}
-                    value={item}
-                  />
-                  <span>{item}</span>
-                </label>
-              );
-            })}
+            {state.results[0] !== '' ? (
+              state.results.map((item, i) => {
+                return (
+                  <label key={i} class="option">
+                    {i}
+                    <input
+                      type="radio"
+                      name="calle"
+                      id={`calle${i}`}
+                      value={item}
+                    />
+                    <span>{item}</span>
+                  </label>
+                );
+              })
+            ) : (
+              <p>
+                No hay <strong>Direcciones existentes</strong> disponibles
+              </p>
+            )}
           </div>
           <button type="submit">Enviar</button>
         </form>
@@ -80,20 +87,44 @@ export default component$(() => {
             <input type="text" id="nombre" name="nombre" required />
 
             <label for="direccion1">Dirección línea 1:</label>
-            <input value={addressLine1.setAddressLine1} type="text" id="direccion1" name="direccion1" required />
+            <input
+              value={addressLine1.setAddressLine1}
+              type="text"
+              id="direccion1"
+              name="direccion1"
+              required
+            />
 
             <label for="direccion2">Dirección línea 2 (opcional):</label>
-            <input value={addressLine2.setAddressLine2} type="text" id="direccion2" name="direccion2" required />
+            <input
+              value={addressLine2.setAddressLine2}
+              type="text"
+              id="direccion2"
+              name="direccion2"
+              required
+            />
 
             <label for="ciudad">Ciudad:</label>
-            <input value={city.setCity} type="text" id="ciudad" name="ciudad" required />
+            <input
+              value={city.setCity}
+              type="text"
+              id="ciudad"
+              name="ciudad"
+              required
+            />
 
             <label for="estado">Estado/Provincia:</label>
-            <input value={states.setState} type="text" id="estado" name="estado" required />
+            <input
+              value={states.setState}
+              type="text"
+              id="estado"
+              name="estado"
+              required
+            />
 
             <label for="codigo_postal">Código postal:</label>
             <input
-            value={postalCode.setPostalCode}
+              value={postalCode.setPostalCode}
               type="text"
               id="codigo_postal"
               name="codigo_postal"
@@ -113,8 +144,15 @@ export default component$(() => {
               <button type="submit">Enviar</button>
             </div>
           </div>
-          
-          <ConsentLocation country={country} states={states}  addressLine1={addressLine1} addressLine2={addressLine2} city={city} postalCode={postalCode}  />
+
+          <ConsentLocation
+            country={country}
+            states={states}
+            addressLine1={addressLine1}
+            addressLine2={addressLine2}
+            city={city}
+            postalCode={postalCode}
+          />
         </form>
       </div>
     </div>
