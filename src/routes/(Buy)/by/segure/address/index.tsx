@@ -4,7 +4,7 @@ export default component$(() => {
   useStylesScoped$(styles);
   return (
     <div class="container-all">
-      <div class="container">
+      <div class="container-address">
         <div class="container-header">
           <p>
             Selecciona o agrega una dirección de envío para continuar con tu

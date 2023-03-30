@@ -43,11 +43,16 @@
 
 @media only screen and (max-width: 885px) {
     .ctr-douvery {
-        width: 350px;
-        margin-top: 30px;
-        padding: 0px 10px;
+        display: grid;
+        justify-content: center;
+        padding: 20px 0px;
+        gap: 10px;
     }
 
+    p {
+        text-align: center;
+        font-size: 15px;
+    }
 
     .iteam-douvery {
         position: relative;
