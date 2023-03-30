@@ -39,7 +39,7 @@ export default component$(() => {
           </p>
           <p></p>
         </div>
-        < ConsentLocation/>
+
         <div class="container-addresses-existing">
           <p>Direcciones existentes:</p>
           <p></p>
@@ -100,8 +100,12 @@ export default component$(() => {
               <option value="mx">México</option>
               <option value="ar">Argentina</option>
             </select>
+            <div class="container-button-send">
+              <p>FInalizar:</p>
+              <button type="submit">Enviar</button>
+            </div>
           </div>
-          <button type="submit">Enviar</button>
+          <ConsentLocation />
         </form>
       </div>
     </div>

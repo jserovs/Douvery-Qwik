@@ -6,7 +6,7 @@
 }
 
 .container-address {
-    width: 80%;
+    width: 100%;
     padding: 50px 20px;
     min-height: 100rem;
     background-color: #fff;
@@ -21,7 +21,7 @@
     line-height: 20px;
     color: #f81515;
     display: grid;
-    grid-template-columns: 813px auto;
+    grid-template-columns: 1300px auto;
     justify-content: space-around;
 
 }
@@ -64,7 +64,7 @@
 form {
     display: grid;
     grid-template-columns: 550px auto;
-    ;
+    gap: 20px;
     justify-content: space-around;
 
 }
@@ -106,6 +106,13 @@ input[type="email"]:valid,
 select:valid {
     background-color: #e8f0fe;
 
+}
+
+.container-button-send {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 button {
