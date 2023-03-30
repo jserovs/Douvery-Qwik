@@ -7,6 +7,7 @@ import {
 import styles from './index.css?inline';
 import { fetchAddressUser } from '~/services/user/address/address';
 import { useGetCurrentUser } from '~/routes/layout';
+import { ConsentLocation } from '~/components/(byServices)/components/ConsentLocation/consent-location';
 
 interface IStateResult {
   results: string[];
@@ -38,7 +39,7 @@ export default component$(() => {
           </p>
           <p></p>
         </div>
-
+        < ConsentLocation/>
         <div class="container-addresses-existing">
           <p>Direcciones existentes:</p>
           <p></p>
