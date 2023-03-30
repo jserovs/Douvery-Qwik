@@ -15,6 +15,7 @@ interface IStateResult {
 export default component$(() => {
   useStylesScoped$(styles);
   const country = useStore({ setCountry: '' });
+  const states = useStore({ setState: '' });
   const addressLine1 = useStore({ setAddressLine1: '' });
   const addressLine2 = useStore({ setAddressLine2: '' });
   const city = useStore({ setCity: '' });
@@ -88,7 +89,7 @@ export default component$(() => {
             <input value={city.setCity} type="text" id="ciudad" name="ciudad" required />
 
             <label for="estado">Estado/Provincia:</label>
-            <input value={postalCode.setPostalCode} type="text" id="estado" name="estado" required />
+            <input value={states.setState} type="text" id="estado" name="estado" required />
 
             <label for="codigo_postal">Código postal:</label>
             <input
@@ -113,7 +114,7 @@ export default component$(() => {
             </div>
           </div>
           
-          <ConsentLocation country={country}  addressLine1={addressLine1} addressLine2={addressLine2} city={city} postalCode={postalCode}  />
+          <ConsentLocation country={country} states={states}  addressLine1={addressLine1} addressLine2={addressLine2} city={city} postalCode={postalCode}  />
         </form>
       </div>
     </div>
