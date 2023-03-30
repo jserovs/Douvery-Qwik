@@ -72,7 +72,9 @@ export default component$(() => {
       <main>
         {loc.url.pathname !== '/a/login/' &&
         loc.url.pathname !== '/a/register/' &&
-        loc.url.pathname !== '/a/recover-account/' ? (
+        loc.url.pathname !== '/a/recover-account/' &&
+        loc.url.pathname !== '/by/segure/address/' &&
+        loc.url.pathname !== '/by/segure/pay/' ? (
           <>
             <Header
               is={isOpen}
