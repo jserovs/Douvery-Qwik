@@ -2,9 +2,10 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 main {
     display: grid;
-    background-color: var(--color-background-light);
+
 }

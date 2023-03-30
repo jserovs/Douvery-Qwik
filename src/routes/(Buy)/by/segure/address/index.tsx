@@ -1,7 +1,33 @@
-import { component$, useStylesScoped$ } from '@builder.io/qwik';
+import {
+  component$,
+  useStore,
+  useStylesScoped$,
+  useTask$,
+} from '@builder.io/qwik';
 import styles from './index.css?inline';
+import { fetchAddressUser } from '~/services/user/address/address';
+import { useGetCurrentUser } from '~/routes/layout';
+
+interface IStateResult {
+  results: string[];
+}
 export default component$(() => {
   useStylesScoped$(styles);
+  const userACC = useGetCurrentUser().value;
+  const state = useStore<IStateResult>({
+    results: [],
+  });
+
+  useTask$(async ({ track }) => {
+    track(() => '');
+
+    const controller = new AbortController();
+    state.results = await fetchAddressUser(`${userACC?.id}`, controller);
+
+    return () => {
+      controller.abort();
+    };
+  });
   return (
     <div class="container-all">
       <div class="container-address">
@@ -19,32 +45,23 @@ export default component$(() => {
         </div>
         <form>
           <div class="options">
-            <label for="calle1" class="option">
-              <input type="radio" name="direccion" id="calle1" value="calle1" />
-              <span>Calle Los Almendros, 237, 4ºB 28045 Madrid, España</span>
-            </label>
-            <label for="calle2" class="option">
-              <input type="radio" name="direccion" id="calle2" value="calle2" />
-              <span>
-                Avenida de las Flores, 568, Casa 12 03410 San José, Costa Rica
-              </span>
-            </label>
-            <label for="calle3" class="option">
-              <input type="radio" name="direccion" id="calle3" value="calle3" />
-              <span>
-                Rua dos Girassóis, 179, Apt. 301 04567-010 São Paulo, Brasil
-              </span>
-            </label>
-            <label for="calle4" class="option">
-              <input type="radio" name="direccion" id="calle4" value="calle4" />
-              <span>
-                Camino del Mar, 3840, Torre B, Piso 7, Depto. 2 1102 Buenos
-                Aires, Argentina
-              </span>
-            </label>
+            {state.results.map((item, i) => {
+              return (
+                <label key={i} class="option">
+                  <input
+                    type="radio"
+                    name="calle"
+                    id={`calle${i}`}
+                    value={item}
+                  />
+                  <span>{item}</span>
+                </label>
+              );
+            })}
           </div>
           <button type="submit">Enviar</button>
         </form>
+
         <div class="titulo-centrado">
           <div class="linea"></div>
           <p>Crear nueva direccion</p>
