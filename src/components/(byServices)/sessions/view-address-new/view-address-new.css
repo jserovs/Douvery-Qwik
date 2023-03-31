@@ -1,0 +1,97 @@
+
+.form-address-new {
+    display: grid;
+    grid-template-columns: 550px auto;
+    gap: 20px;
+    justify-content: space-around;
+
+}
+
+.container-content {
+    display: grid;
+
+
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+select {
+    display: block;
+    width: 100%;
+    max-width: 550PX;
+    height: 40px;
+    padding: 5px 10px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f5f5f5;
+    border: 1px solid #66666611;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="text"]:valid,
+input[type="email"]:valid,
+select:valid {
+    background-color: #e8f0fe;
+
+}
+
+.container-button-send {
+    width: 100%;
+    margin: 30px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button-address-new {
+    background-color: var(--color-button-pay);
+    color: var(--color-white);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 500;
+    height: 40px;
+    padding: 5px 15px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: 200px;
+    border-radius: 3px;
+
+    overflow: hidden;
+
+}
+
+@media only screen and (max-width: 885px) {
+    .form-address-new {
+        display: block;
+    }
+
+    .container-content {
+        margin-bottom: 25px;
+    }
+
+    .container-button-send{
+        gap: 15px;
+    }
+
+    .button-address-new {
+        width: 100%;
+    }
+}

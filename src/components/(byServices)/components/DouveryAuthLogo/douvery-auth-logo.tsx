@@ -18,7 +18,9 @@ export const DouveryServicesLogo = component$(() => {
           </span>
         </a>
         <div class="ctr-opa">|</div>
+        <div class="text-right-title">
         <p>Segure purchase</p>
+        </div>
       </div>
       <p>Proceso de compra</p>
     </div>
