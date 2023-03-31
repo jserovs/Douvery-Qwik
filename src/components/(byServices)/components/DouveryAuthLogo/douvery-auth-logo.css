@@ -33,6 +33,10 @@
     bottom: 4px;
     font-size: 25px;
 }
+.text-right-title{
+    display: block;
+   
+}
 
 @media only screen and (max-width: 1585px) {
     .ctr-douvery {
@@ -43,10 +47,13 @@
 
 @media only screen and (max-width: 885px) {
     .ctr-douvery {
-        display: grid;
+        display: flex;
         justify-content: center;
-        padding: 20px 0px;
-        gap: 10px;
+        padding: 5px 0px;
+        gap: 1px;
+    }
+    .text-right-title p{
+        display: none;
     }
 
     p {

@@ -48,7 +48,7 @@ export const ConsentLocation = component$(
           ) : (
             <></>
           )}{' '}
-          Completar ubicación manualmente
+          Completar ubicación automatico
         </button>
         <p class="security-note"> Mas rapido ,mas eficiente</p>
       </div>
