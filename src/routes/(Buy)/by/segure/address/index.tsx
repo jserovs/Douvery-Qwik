@@ -7,7 +7,6 @@ import {
 import styles from './index.css?inline';
 import { fetchAddressUser } from '~/services/user/address/address';
 import { useGetCurrentUser } from '~/routes/layout';
-import { ConsentLocation } from '~/components/(byServices)/components/ConsentLocation/consent-location';
 import { ViewAddressNew } from '~/components/(byServices)/sessions/view-address-new/views-address-new';
 import { ViewAddressExisting } from '~/components/(byServices)/sessions/view-address-existing/view-address-existing';
 
@@ -52,20 +51,21 @@ export default component$(() => {
           <p>Direcciones existentes:</p>
           <p></p>
         </div>
-      
-        < ViewAddressExisting state={state} />
+
+        <ViewAddressExisting state={state} />
         <div class="titulo-centrado">
           <div class="linea"></div>
           <p>Crear nueva direccion</p>
           <div class="linea"></div>
         </div>
-        < ViewAddressNew 
-        country={country}
-  states={states}
-    addressLine1={addressLine1}
-    addressLine2={addressLine2}
-    city={city}
-    postalCode={postalCode}/>
+        <ViewAddressNew
+          country={country}
+          states={states}
+          addressLine1={addressLine1}
+          addressLine2={addressLine2}
+          city={city}
+          postalCode={postalCode}
+        />
       </div>
     </div>
   );
