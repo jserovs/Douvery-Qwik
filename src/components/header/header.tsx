@@ -170,7 +170,7 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
           <div class="main">
             <div class="container-icon-cart">
               {' '}
-              <Link  href="/v/cart" class="user" reload={true} prefetch={true}>
+              <Link href="/v/cart" class="user" reload={true} prefetch={true}>
                 <DouveryCart />
                 <div class="badget-circle">{getCartQty ? getCartQty : 0}</div>
               </Link>
