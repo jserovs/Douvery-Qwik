@@ -197,6 +197,7 @@ hs-sr3 {
   font-weight: var(--font-weight-normal);
   color: var(--color-text-highlight-secondary);
 }
+
 /** Paragraph label */
 
 p-sr1 {
@@ -404,6 +405,13 @@ input {
   transition: all 0.3s ease;
 }
 
+.error {
+  display: block;
+  margin-top: 5px;
+  font-size: 14px;
+  color: #c00;
+
+}
 
 .parp {
   animation: parpadeo 2.5s 2;

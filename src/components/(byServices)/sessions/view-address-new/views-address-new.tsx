@@ -1,26 +1,66 @@
-import { component$, useStylesScoped$ } from '@builder.io/qwik';
+import { component$, useStore, useStylesScoped$ } from '@builder.io/qwik';
 import { ConsentLocation } from '../../components/ConsentLocation/consent-location';
 import styles from './view-address-new.css?inline';
-import { globalAction$, z, zod$ } from '@builder.io/qwik-city';
+import { Form, globalAction$, z, zod$ } from '@builder.io/qwik-city';
+import { DATA_ACCESS_COOKIE_NAME } from '~/services/auth/login/login';
+import {
+  decodeToken,
+  passwordKEY,
+  serverKey,
+} from '~/services/auth/token/token';
 import { urlServerNode } from '~/services/fechProduct';
 
-export const useRegister = globalAction$(
+export const useAggAddress = globalAction$(
   async (
-    { name, lastName, email, password },
-    { fail, headers, cookie, url }
+    {
+      name,
+      addressLine1,
+      addressLine2,
+      street,
+      city,
+      states,
+      postalCode,
+      locationType,
+      country,
+      isPrimary,
+    },
+    { fail, headers, cookie }
   ) => {
-    const data = await fetch(`${urlServerNode}/api/signup`, {
+    const addressValues = {
+      name: name,
+      addressLine1: addressLine1,
+      addressLine2: addressLine2,
+      city: city,
+      states: states,
+      postalCode: postalCode,
+      locationType: locationType,
+      country: country,
+    };
+    console.log(addressValues);
+    const accessCookie = cookie.get(DATA_ACCESS_COOKIE_NAME)?.value;
+    const user = decodeToken(accessCookie, passwordKEY, serverKey);
+
+    const data = await fetch(`${urlServerNode}/api/save-user-address`, {
       method: 'POST',
       headers: {
+        'x-auth-token': user.token,
         'Content-Type': 'application/json',
       },
       credentials: 'include',
       body: JSON.stringify({
-        name: name,
-        lastName: lastName,
-        email: email,
-        password: password,
-        receiveGmail: false,
+        userId: user.id,
+        address: {
+          name: name,
+          addressLine1: addressLine1,
+          addressLine2: addressLine2,
+          street: street,
+          city: city,
+          state: states,
+          zip: postalCode,
+          locationType: locationType,
+          country: country,
+          isPrimary: isPrimary == 'true' ? true : false,
+        },
       }),
     });
 
@@ -34,51 +74,23 @@ export const useRegister = globalAction$(
       });
     }
 
-    const query = url.searchParams.get('rr') || '';
-    headers.set('location', query);
+    headers.set('location', '/by/segure/pay/' + dataAccess.index + '/');
   },
   zod$({
     name: z
-      .string({
-        required_error: 'Full name is required',
-      })
-      .min(4, {
-        message: 'Upps! Your name is too short',
-      })
-      .max(15, {
-        message: 'upps! Your name is too long',
-      }),
-    lastName: z
-      .string({
-        required_error: 'Full name is required',
-      })
-      .min(5, {
-        message: 'Upps! Your name is too short',
-      })
-      .max(25, {
-        message: 'upps! Your name is too long',
-      }),
-    email: z
-      .string({
-        required_error: 'Email is required',
-      })
-      .email({
-        message: 'Please enter a valid email',
-      }),
-    password: z
-      .string({
-        required_error: 'Password is required',
-      })
-      .min(6, {
-        message: 'Password must be at least 6 characters',
-      })
-      .max(25, {
-        message: 'Password must be less than 25 characters',
-      })
-      .regex(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/, {
-        message:
-          'Password must contain at least six characters, including at least 1 letter and 1 number',
-      }),
+      .string()
+      .min(4, 'Upps! Your name is too short')
+      .max(15, 'upps! Your name is too long')
+      .nonempty('Full name is required'),
+    addressLine1: z.string().nonempty('Address line 1 is required'),
+    addressLine2: z.string(),
+    city: z.string().nonempty('City is required'),
+    street: z.string().nonempty('Street is required'),
+    states: z.string().nonempty('State/Province is required'),
+    postalCode: z.string().nonempty('Postal code is required'),
+    locationType: z.string().nonempty('Location type is required'),
+    country: z.string().nonempty('Country is required'),
+    isPrimary: z.string().default('false'),
   })
 );
 
@@ -94,28 +106,37 @@ export const ViewAddressNew = component$(
     locationType,
   }: any) => {
     useStylesScoped$(styles);
+    const action = useAggAddress();
+    const isPrimary = useStore({ setIsPrimary: false });
+
     return (
       <div>
-        <form class="form-address-new">
+        <Form action={action} class="form-address-new">
           <div class="container-content">
-            <label for="nombre">Nombre & Apellido</label>
-            <input type="text" id="nombre" name="nombre" required />
-
-            <label for="direccion1">Dirección línea 1:</label>
+            <label for="name">Nombre & Apellido</label>
+            <input type="text" id="name" name="name" required />
+            {action.value?.fieldErrors?.name && (
+              <span class="error">{action.value?.fieldErrors?.name}</span>
+            )}
+            <label for="addressLine1">Dirección línea 1:</label>
             <input
               value={addressLine1.setAddressLine1}
               type="text"
-              id="direccion1"
-              name="direccion1"
+              id="addressLine1"
+              name="addressLine1"
               required
             />
-
-            <label for="direccion2">Dirección línea 2 (opcional):</label>
+            {action.value?.fieldErrors?.addressLine1 && (
+              <span class="error">
+                {action.value?.fieldErrors?.addressLine1}
+              </span>
+            )}
+            <label for="addressLine2">Dirección línea 2 (opcional):</label>
             <input
               value={addressLine2.setAddressLine2}
               type="text"
-              id="direccion2"
-              name="direccion2"
+              id="addressLine2"
+              name="addressLine2"
               required
             />
             <label for="street">Calle:</label>
@@ -126,55 +147,89 @@ export const ViewAddressNew = component$(
               name="street"
               required
             />
-
-            <label for="ciudad">Ciudad:</label>
+            {action.value?.fieldErrors?.street && (
+              <span class="error">{action.value?.fieldErrors?.street}</span>
+            )}
+            <label for="city">Ciudad:</label>
             <input
               value={city.setCity}
               type="text"
-              id="ciudad"
-              name="ciudad"
+              id="city"
+              name="city"
               required
             />
 
-            <label for="estado">Estado/Provincia:</label>
+            <label for="states">Estado/Provincia:</label>
             <input
               value={states.setState}
               type="text"
-              id="estado"
-              name="estado"
+              id="states"
+              name="states"
               required
             />
-
-            <label for="codigo_postal">Código postal:</label>
+            {action.value?.fieldErrors?.states && (
+              <span class="error">{action.value?.fieldErrors?.states}</span>
+            )}
+            <label for="postalCode">Código postal:</label>
             <input
               value={postalCode.setPostalCode}
               type="text"
-              id="codigo_postal"
-              name="codigo_postal"
+              id="postalCode"
+              name="postalCode"
               required
             />
-            <label for="pais">País:</label>
+            {action.value?.fieldErrors?.postalCode && (
+              <span class="error">{action.value?.fieldErrors?.postalCode}</span>
+            )}
+            <label for="locationType">Tipo de lugar:</label>
             <select
               value={locationType.setLocationType}
               id="locationType"
               name="locationType"
               required
             >
+              <option value="">Tipo de location</option>
+              <option value="Residential">Residential</option>
+              <option value="Business">Business</option>
+              <option value="Other">Other</option>
+            </select>
+            {action.value?.fieldErrors?.locationType && (
+              <span class="error">
+                {action.value?.fieldErrors?.locationType}
+              </span>
+            )}
+            <label for="country">País:</label>
+            <select
+              value={country.setCountry}
+              id="country"
+              name="country"
+              required
+            >
               <option value="">Seleccionar país</option>
+              <option value="us">Estados Unidos</option>
               <option value="es">España</option>
               <option value="mx">México</option>
               <option value="ar">Argentina</option>
-              <option value="Dominican Republic">Republica Dominicana</option>
+              <option value="do">Republica Dominicana</option>
             </select>
-
-            <label for="pais">País:</label>
-            <select value={country.setCountry} id="pais" name="pais" required>
-              <option value="">Seleccionar país</option>
-              <option value="es">España</option>
-              <option value="mx">México</option>
-              <option value="ar">Argentina</option>
-              <option value="Dominican Republic">Republica Dominicana</option>
-            </select>
+            {action.value?.fieldErrors?.country && (
+              <span class="error">{action.value?.fieldErrors?.country}</span>
+            )}
+            <div class="checkbox-wrapper-42">
+              <input
+                type="checkbox"
+                id="isPrimary"
+                name="isPrimary"
+                value={isPrimary.setIsPrimary ? 'true' : 'false'}
+                onClick$={() =>
+                  (isPrimary.setIsPrimary = !isPrimary.setIsPrimary)
+                }
+              />
+              <label class="cbx" for="isPrimary"></label>
+              <label class="lbl" for="isPrimary">
+                Seleccionar como dirección principal.{' '}
+              </label>
+            </div>
 
             <div class="container-button-send">
               <p>FInalizar: </p>
@@ -182,6 +237,9 @@ export const ViewAddressNew = component$(
                 Enviar
               </button>
             </div>
+            {action.isRunning && (
+              <span class="error">{action.value?.fieldErrors?.country}</span>
+            )}
           </div>
 
           <ConsentLocation
@@ -192,7 +250,7 @@ export const ViewAddressNew = component$(
             city={city}
             postalCode={postalCode}
           />
-        </form>
+        </Form>
       </div>
     );
   }

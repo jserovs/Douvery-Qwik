@@ -1,5 +1,4 @@
-
-form {
+.container-address-existing {
     display: grid;
     grid-template-columns: 550px auto;
     gap: 20px;
@@ -44,6 +43,11 @@ select:valid {
     justify-content: space-between;
 }
 
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
 button {
     background-color: var(--color-button-pay);
     color: var(--color-white);
@@ -68,9 +72,6 @@ button {
 
 }
 
-button:hover {
-    background-color: #45a049;
-}
 
 
 .options {
@@ -140,7 +141,7 @@ button:hover {
 
 
 @media only screen and (max-width: 885px) {
-    form {
+    .container-address-existing {
         display: block;
     }
 
@@ -169,7 +170,8 @@ button:hover {
         display: grid;
         gap: 20px;
     }
-    .container-button-send{
+
+    .container-button-send {
         gap: 15px;
     }
 

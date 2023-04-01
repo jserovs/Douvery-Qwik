@@ -66,7 +66,6 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
             <DouveryLogo105X40PX />
           </a>
         </div>
-
         <div class="cajas">
           <div class="search">
             <div class="searchTerm">

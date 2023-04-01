@@ -21,6 +21,8 @@ export default component$(() => {
   const addressLine2 = useStore({ setAddressLine2: '' });
   const city = useStore({ setCity: '' });
   const postalCode = useStore({ setPostalCode: '' });
+  const street = useStore({ setStreet: '' });
+  const locationType = useStore({ setLocationType: '' });
   const userACC = useGetCurrentUser().value;
   const state = useStore<IStateResult>({
     results: [],
@@ -65,6 +67,8 @@ export default component$(() => {
           addressLine2={addressLine2}
           city={city}
           postalCode={postalCode}
+          street={street}
+          locationType={locationType}
         />
       </div>
     </div>
