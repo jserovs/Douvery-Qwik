@@ -66,15 +66,14 @@ export default component$(() => {
   const getCountryUser = useGetCurrentCountry().value;
 
   const loc = useLocation();
-
+  const segureUrl = loc.url.href.match('/segure/') ? false : true;
   return (
     <>
       <main>
         {loc.url.pathname !== '/a/login/' &&
         loc.url.pathname !== '/a/register/' &&
         loc.url.pathname !== '/a/recover-account/' &&
-        loc.url.pathname !== '/by/segure/address/' &&
-        loc.url.pathname !== '/by/segure/pay/' ? (
+        segureUrl ? (
           <>
             <Header
               is={isOpen}
@@ -97,6 +96,7 @@ export default component$(() => {
               ></div>
             </>
           )}
+
           <Slot />
         </section>
       </main>
