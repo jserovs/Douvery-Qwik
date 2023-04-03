@@ -13,7 +13,7 @@ import { DouveryLogo105X40PX } from '../icons/logo105X40';
 import { fetchSuggestions } from '~/services/fechProduct';
 import { IconsSearch } from '../icons/search';
 import { ProfileDropdown } from '../dropdown/header-profile-user/profile-dropdown';
-import { Link, useLocation, useNavigate } from '@builder.io/qwik-city';
+import { useLocation, useNavigate } from '@builder.io/qwik-city';
 import { category } from '~/routes/(Search)/s';
 
 import { useGetCurrentCartQuatity } from '~/routes/layout';
@@ -169,10 +169,10 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
           <div class="main">
             <div class="container-icon-cart">
               {' '}
-              <Link href="/v/cart" class="user" reload={true} prefetch={true}>
+              <a href="/v/cart" class="user">
                 <DouveryCart />
                 <div class="badget-circle">{getCartQty ? getCartQty : 0}</div>
-              </Link>
+              </a>
             </div>
             <DouveryUser />
 

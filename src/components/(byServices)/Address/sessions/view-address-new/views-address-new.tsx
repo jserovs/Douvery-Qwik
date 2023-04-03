@@ -26,17 +26,6 @@ export const useAggAddress = globalAction$(
     },
     { fail, headers, cookie }
   ) => {
-    const addressValues = {
-      name: name,
-      addressLine1: addressLine1,
-      addressLine2: addressLine2,
-      city: city,
-      states: states,
-      postalCode: postalCode,
-      locationType: locationType,
-      country: country,
-    };
-    console.log(addressValues);
     const accessCookie = cookie.get(DATA_ACCESS_COOKIE_NAME)?.value;
     const user = decodeToken(accessCookie, passwordKEY, serverKey);
 
@@ -137,7 +126,6 @@ export const ViewAddressNew = component$(
               type="text"
               id="addressLine2"
               name="addressLine2"
-              required
             />
             <label for="street">Calle:</label>
             <input
@@ -234,9 +222,31 @@ export const ViewAddressNew = component$(
             <div class="container-button-send">
               <p>FInalizar: </p>
               <button type="submit" class="button-address-new">
-                Enviar
+                {action.isRunning
+                  ? 'Loading...'
+                  : action.value?.message
+                  ? 'Error'
+                  : 'Create address'}
               </button>
             </div>
+            {action.value?.message && (
+              <div>
+                {' '}
+                <br />
+                {action.isRunning ? (
+                  <span class="loa-s">Verifying...</span>
+                ) : (
+                  <span class="error ">{action.value?.message}</span>
+                )}
+                <div class="form-group need-account">
+                  ¿Crees que presenta un error al crear?
+                  <a href="/a/" class="forgot-new-account-link">
+                    Reportar
+                  </a>
+                </div>{' '}
+                <br />
+              </div>
+            )}
             {action.isRunning && (
               <span class="error">{action.value?.fieldErrors?.country}</span>
             )}

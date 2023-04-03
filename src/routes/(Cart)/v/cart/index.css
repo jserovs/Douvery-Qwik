@@ -1,5 +1,5 @@
 .container-all {
-  background-color: var(--color-background-light);
+  background-color: var(--color-background-white);
   min-height: 100rem;
 
 }
@@ -7,7 +7,7 @@
 .cart-container {
   display: grid;
   grid-template-columns: 60% 20%;
-  background-color: var(--color-background-light);
+  background-color: var(--color-background-white);
   justify-content: center;
   gap: 120px;
   min-height: 100rem;

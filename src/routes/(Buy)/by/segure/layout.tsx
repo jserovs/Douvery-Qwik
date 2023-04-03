@@ -1,6 +1,6 @@
 import { component$, Slot, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './layout.css?inline';
-import { DouveryServicesLogo } from '~/components/(byServices)/components/DouveryAuthLogo/douvery-auth-logo';
+import { DouveryServicesLogo } from '~/components/(byServices)/Address/components/DouveryAuthLogo/douvery-auth-logo';
 import type { RequestHandler } from '@builder.io/qwik-city';
 import { DATA_ACCESS_COOKIE_NAME } from '~/services/auth/login/login';
 
