@@ -1,0 +1,20 @@
+.container-all {
+    display: grid;
+    grid-template-columns: 85% auto;
+    padding: 20px 10px;
+    border: 1px solid var(--border-width-1);
+    border-radius: 5px;
+    align-items: center;
+}
+
+p {
+    opacity: 0.8;
+}
+
+.container-edit-address {
+    color: #2F58CD;
+}
+
+.container-edit-address:hover {
+    text-decoration: underline;
+}

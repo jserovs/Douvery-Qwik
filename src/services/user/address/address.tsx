@@ -35,7 +35,7 @@ export async function fetchIndexAddressUser(
         'x-auth-token': userToken,
         'Content-Type': 'application/json',
       },
-      credentials: 'include',
+
       body: JSON.stringify({
         userId: userID,
         index: index,

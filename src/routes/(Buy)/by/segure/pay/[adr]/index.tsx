@@ -1,40 +1,42 @@
 import {
+  Resource,
   component$,
+  useResource$,
   useStore,
   useStylesScoped$,
-  useTask$,
 } from '@builder.io/qwik';
 import styles from './index.css?inline';
-import { AddressChosenOne } from '~/components/(byServices)/Pay/sessions/address-chosen-one/address-chosen-one';
 import { fetchIndexAddressUser } from '~/services/user/address/address';
 import { useGetCurrentUser } from '~/routes/layout';
 import { useLocation } from '@builder.io/qwik-city';
+import type { Address } from '~/utils/types';
+import { AddressChosenOne } from '~/components/(byServices)/Pay/sessions/address-chosen-one/address-chosen-one';
 
-interface IStateResult {
-  results: string[];
-}
 export default component$(() => {
   useStylesScoped$(styles);
   const userACC = useGetCurrentUser().value;
-  const stateAddress = useStore<IStateResult>({
-    results: [],
-  });
+
+  const state = useStore<{
+    address: Address;
+  }>(
+    {
+      address: {} as Address,
+    },
+    { recursive: true }
+  );
+
   const loc = useLocation();
 
-  useTask$(async ({ track }) => {
+  const addressResource = useResource$<void>(async ({ track }) => {
     track(() => loc.params.adr);
-
-    const controller = new AbortController();
-    stateAddress.results = await fetchIndexAddressUser(
+    const data = await fetchIndexAddressUser(
       `${userACC?.token}`,
       `${userACC?.id}`,
       loc.params.adr
     );
-
-    return () => {
-      controller.abort();
-    };
+    state.address = data;
   });
+
   return (
     <>
       <div class="container-all">
@@ -46,9 +48,18 @@ export default component$(() => {
                 Selecciona o agrega una dirección de envío para continuar con tu
                 pedido.
               </p>
-              <p></p>
             </div>
-            <AddressChosenOne stateAddress={stateAddress} />
+
+            <Resource
+              value={addressResource}
+              onPending={() => <div class="loader"></div>}
+              onRejected={(error) => <>Error: {error.message}</>}
+              onResolved={() => (
+                <div>
+                  <AddressChosenOne state={state} />
+                </div>
+              )}
+            />
           </div>
         </div>
         <div class="container-info-pay"></div>
