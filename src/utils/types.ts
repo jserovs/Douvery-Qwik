@@ -104,3 +104,16 @@ export type Search = {
 	product: Product[];
 	
 };
+
+export type Address = {
+	addressLine1: string;
+	addressLine2: string;
+	street: string;
+	city: string;
+	state: string;
+	zip : string;
+	country: string;
+	isPrimary: boolean;
+	locationType: string;
+
+};
