@@ -60,16 +60,20 @@ export const Card1SCART = component$(({ product }: any) => {
               </>
             )}{' '}
           </div>
-          <div class="gift-option">
-            <input
-              type="checkbox"
-              id={'gift-checkbox ' + product.dui}
-              name="gift-checkbox"
-            />
-            <label for={'gift-checkbox ' + product.dui}>
-              Seleccione esta casilla si el artículo es un regalo.
-            </label>
-          </div>
+         <div class="checkbox-wrapper-42">
+              <input
+              key={product.dui}
+                type="checkbox"
+                id={"isPrimary" + product.dui}
+                name="isPrimary"
+                
+               
+              />
+              <label class="cbx" for={"isPrimary" + product.dui}></label>
+              <label class="lbl" for={"isPrimary" + product.dui}>
+                Seleccionar como dirección principal.{' '}
+              </label>
+            </div>
         </div>
       </div>
     </div>
