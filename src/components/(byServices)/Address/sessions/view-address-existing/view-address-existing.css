@@ -108,6 +108,7 @@ button {
 
 .option input[type="radio"]:checked+span::before {
     content: "✔";
+    color: var(--color-button-pay);
     margin-right: 5px;
 }
 

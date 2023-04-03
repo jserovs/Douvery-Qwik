@@ -7,14 +7,15 @@ import {
 import styles from './index.css?inline';
 import { fetchAddressUser } from '~/services/user/address/address';
 import { useGetCurrentUser } from '~/routes/layout';
-import { ViewAddressNew } from '~/components/(byServices)/sessions/view-address-new/views-address-new';
-import { ViewAddressExisting } from '~/components/(byServices)/sessions/view-address-existing/view-address-existing';
+import { ViewAddressExisting } from '~/components/(byServices)/Address/sessions/view-address-existing/view-address-existing';
+import { ViewAddressNew } from '~/components/(byServices)/Address/sessions/view-address-new/views-address-new';
 
 interface IStateResult {
   results: string[];
 }
 export default component$(() => {
   useStylesScoped$(styles);
+  const existingAddress = useStore({ setExistingAddress: '' });
   const country = useStore({ setCountry: '' });
   const states = useStore({ setState: '' });
   const addressLine1 = useStore({ setAddressLine1: '' });
@@ -38,23 +39,34 @@ export default component$(() => {
       controller.abort();
     };
   });
+
   return (
     <div class="container-all">
       <div class="container-address">
         <div class="container-header">
           <p>
-            Selecciona o agrega una dirección de envío para continuar con tu
-            pedido.
+            {state.results.length === 0 ? (
+              <>
+                {' '}
+                Tienes que crear una dirección de envío para continuar con tu
+                pedido.
+              </>
+            ) : (
+              <>
+                {' '}
+                Selecciona o agrega una dirección de envío para continuar con tu
+                pedido.
+              </>
+            )}
           </p>
           <p></p>
         </div>
-
         <div class="container-addresses-existing">
           <p>Direcciones existentes:</p>
           <p></p>
         </div>
+        <ViewAddressExisting state={state} existingAddress={existingAddress} />
 
-        <ViewAddressExisting state={state} />
         <div class="titulo-centrado">
           <div class="linea"></div>
           <p>Crear nueva direccion</p>
