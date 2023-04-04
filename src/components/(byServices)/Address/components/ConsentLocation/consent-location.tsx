@@ -25,8 +25,7 @@ export const ConsentLocation = component$(
 
     fetchAddressUserIP(latitude.setLatitude, longitude.setLongitude)
       .then((result) => {
-        addressLine1.setAddressLine1 =
-          result.features[0].properties.address_line1;
+        addressLine1.setAddressLine1 = result.features[0].properties.formatted;
         addressLine2.setAddressLine2 =
           result.features[0].properties.address_line2;
         city.setCity = result.features[0].properties.city;
