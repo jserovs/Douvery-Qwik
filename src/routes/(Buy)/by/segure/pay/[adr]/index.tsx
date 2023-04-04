@@ -11,6 +11,7 @@ import { useGetCurrentUser } from '~/routes/layout';
 import { useLocation } from '@builder.io/qwik-city';
 import type { Address } from '~/utils/types';
 import { AddressChosenOne } from '~/components/(byServices)/Pay/sessions/address-chosen-one/address-chosen-one';
+import { PaySelectCheckout } from '~/components/(byServices)/Pay/sessions/pay-select/pay-select';
 
 export default component$(() => {
   useStylesScoped$(styles);
@@ -37,6 +38,7 @@ export default component$(() => {
     state.address = data;
   });
 
+  const selectedMethod = useStore({ setSelectedMethod: '' });
   return (
     <>
       <div class="container-all">
@@ -50,6 +52,7 @@ export default component$(() => {
               </p>
             </div>
 
+            <PaySelectCheckout selectedMethod={selectedMethod} />
             <Resource
               value={addressResource}
               onPending={() => <div class="loader"></div>}

@@ -1,0 +1,59 @@
+.container-all {
+    display: grid;
+    gap: 20px;
+    padding: 20px 10px;
+    border: 1px solid var(--border-width-1);
+    border-radius: 5px;
+    align-items: center;
+}
+
+.container-title p {
+    opacity: 0.8;
+}
+
+.payment-box {
+    display: grid;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px;
+}
+
+.payment-methods {
+    display: grid;
+    padding: 10px 10px;
+    grid-gap: 15px;
+}
+
+.payment-methods div {
+    display: flex;
+    gap: 10px;
+
+}
+
+.payment-methods div:hover {
+    padding: 0px 10px;
+    background-color: var(--color-background-card);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.payment-methods-checked {
+    padding: 0px 10px;
+    background-color: var(--color-background-card);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+label {
+    margin-left: 10px;
+    display: flex;
+    gap: 10px;
+    font-size: 16px;
+    align-items: center;
+}
+
+@media only screen and (max-width: 885px) {
+    .container-all {
+        padding: 0px 5px;
+    }
+}
