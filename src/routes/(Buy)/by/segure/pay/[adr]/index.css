@@ -1,6 +1,6 @@
 .container-all {
     display: flex;
-    padding: 0PX 100PX;
+    padding: 0PX 200PX;
     background-color: var(--color-background-white);
     border-top: 1px solid var(--border-width-1);
 }
@@ -70,4 +70,13 @@ h1 {
     height: 1px;
     background-color: var(--border-width-1);
     margin: 0 20px;
+}
+
+
+
+@media only screen and (max-width: 885px) {
+    .container-all {
+        display: flex;
+        padding: 0PX 10PX;
+    }
 }
