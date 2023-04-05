@@ -10,8 +10,10 @@ export const AddressChosenOne = component$(({ state }: any) => {
         <div class="container-title">
           <p>Dirección seleccionada</p>
         </div>
-        <TextCL text={state.address.state} /> , {state.address.city} ,
-        {state.address.zip} , <TextCL text={state.address.country} />{' '}
+        <div class="container-address">
+          {state.address.addressLine1} , {state.address.state} ,{' '}
+          {state.address.zip}, <TextCL text={state.address.country} />
+        </div>
       </div>
       <div class="container-edit-address">
         {' '}

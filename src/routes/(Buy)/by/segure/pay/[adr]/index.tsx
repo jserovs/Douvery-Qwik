@@ -12,6 +12,7 @@ import { useLocation } from '@builder.io/qwik-city';
 import type { Address } from '~/utils/types';
 import { AddressChosenOne } from '~/components/(byServices)/Pay/sessions/address-chosen-one/address-chosen-one';
 import { PaySelectCheckout } from '~/components/(byServices)/Pay/sessions/pay-select/pay-select';
+import { ProductPay } from '~/components/(byServices)/Pay/sessions/product-pay/product-pay';
 
 export default component$(() => {
   useStylesScoped$(styles);
@@ -47,8 +48,7 @@ export default component$(() => {
             <div class="container-header">
               <p>
                 {' '}
-                Selecciona o agrega una dirección de envío para continuar con tu
-                pedido.
+                Selecciona o agrega un metodo de pago para realizar tu pedido.
               </p>
             </div>
 
@@ -63,6 +63,7 @@ export default component$(() => {
                 </div>
               )}
             />
+            <ProductPay />
           </div>
         </div>
         <div class="container-info-pay"></div>
