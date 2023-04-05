@@ -12,9 +12,15 @@ p {
 }
 
 .container-edit-address {
-    color: #2F58CD;
+    color: var(--color-primary);
+    text-align: center;
+    padding: 10px 0px;
 }
 
 .container-edit-address:hover {
     text-decoration: underline;
+}
+
+.container-address {
+    padding: 10px 0px;
 }

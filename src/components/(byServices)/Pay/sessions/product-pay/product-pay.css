@@ -1,0 +1,42 @@
+.container-all {
+    display: grid;
+    gap: 20px;
+    padding: 20px 10px;
+    border: 1px solid var(--border-width-1);
+    border-radius: 5px;
+    align-items: center;
+}
+
+.container-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    padding: 5px 5px;
+}
+
+.container-title p {
+    opacity: 0.8;
+}
+
+.container-cards-pay {
+    display: grid;
+    grid-template-columns: auto 40px;
+    gap: 5px;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.container-edit-cart {
+    display: grid;
+
+    justify-content: end;
+    align-items: center;
+    color: var(--color-primary);
+    padding: 0px 14px;
+}
+
+.container-edit-cart:hover {
+    text-decoration: underline;
+}
