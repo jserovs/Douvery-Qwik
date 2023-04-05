@@ -1,5 +1,6 @@
 .container-all {
-    display: flex;
+    display: grid;
+    grid-template-columns: 60% 20%;
     padding: 0PX 200PX;
     background-color: var(--color-background-white);
     border-top: 1px solid var(--border-width-1);
@@ -29,12 +30,13 @@ h1 {
 
 .container-header {
     font-weight: 500;
-    font-size: 18px;
+    font-size: 20px;
     height: 50px;
     line-height: 20px;
-    color: #f81515;
+
+
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     gap: 180px;
 
 }
@@ -86,6 +88,7 @@ h1 {
         display: flex;
         padding: 0PX 10PX;
     }
+
 
     .container-pay {
         padding: 45px 4px;

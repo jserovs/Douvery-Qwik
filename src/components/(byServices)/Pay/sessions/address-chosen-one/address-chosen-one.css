@@ -13,8 +13,8 @@ p {
 
 .container-edit-address {
     color: var(--color-primary);
-    text-align: center;
-    padding: 10px 0px;
+    text-align: end;
+    padding: 10px 14px;
 }
 
 .container-edit-address:hover {
