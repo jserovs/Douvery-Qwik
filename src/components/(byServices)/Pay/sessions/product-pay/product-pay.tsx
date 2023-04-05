@@ -99,7 +99,6 @@ export const ProductPay = component$(
           )}
           <div class="container-edit-cart">
             {' '}
-            {subTotal.setsubTotal}
             <Link href="/v/cart/">Editar</Link>
           </div>
         </div>
