@@ -1,0 +1,100 @@
+.container-all {
+    display: grid;
+
+    padding: 10px 20px;
+    border: 1px solid var(--border-width-1);
+    border-radius: 5px;
+    align-items: center;
+    margin-top: 120px;
+    max-width: 307.55;
+    min-width: 307.55;
+
+}
+
+.container-title {
+
+    padding: 10px 0px;
+    border-bottom: 1px solid var(--border-width-1);
+}
+
+.container-title p {
+    font-size: 15px;
+    color: #333333;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    font-size: 13.125px;
+    color: #212529;
+    height: 19.6875px;
+    margin-bottom: .25rem !important;
+
+}
+
+.container-discount {
+    padding: 10px 0px;
+    display: grid;
+    border-bottom: 1px solid var(--border-width-1);
+}
+
+.container-now {
+    padding: 10px 0px;
+    display: grid;
+    border-bottom: 1px solid var(--border-width-1);
+}
+
+.container-total {
+    padding: 10px 0px;
+    display: grid;
+    font-size: 15px;
+
+}
+
+.container-total strong {
+    font-size: 16px;
+    color: #333333;
+}
+
+.container-terms-services {
+    PAdding: 0px 0px;
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.terms-and-conditions p {
+    font-size: 13px;
+}
+
+.terms-and-conditions a {
+    font-size: 13px;
+    color: #0066cc;
+    text-decoration: none;
+}
+
+
+.container-buttons-pay {
+    display: block;
+
+    margin: 10px 0px;
+}
+
+.paypal-button {
+    display: inline-block;
+    background-color: #009cde;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    height: 40px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.paypal-button:hover {
+    background-color: #009cde;
+}
