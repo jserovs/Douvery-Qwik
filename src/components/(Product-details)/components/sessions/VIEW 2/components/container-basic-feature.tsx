@@ -20,7 +20,14 @@ export const ContainerBasicFeacture = component$(({ product }: any) => {
       </li>
     );
   };
-
+  const renderFeatureScreen = (key: any, label: any) => {
+    if (!product || !product.basicFeatures.screen[key]) return null;
+    return (
+      <li>
+        <strong>{label}:</strong> {product.basicFeatures.screen[key]}
+      </li>
+    );
+  };
   return (
     <div class="crtr-charac-bs">
       <div class="crrts-title">
@@ -53,6 +60,37 @@ export const ContainerBasicFeacture = component$(({ product }: any) => {
                   {renderFeatureUtil('mgCafS', 'Mg de cafeína por porción')}
                 </>
               )}
+              {product.basicFeatures.screen === undefined ? (
+                <></>
+              ) : (
+                <>
+                  {renderFeatureScreen('resolution', 'Resolución')}
+                  {renderFeatureScreen(
+                    'refreshRate',
+                    'Frecuencia de actualización'
+                  )}
+                  {renderFeatureScreen('responseTime', ' Tiempo de respuesta')}
+                </>
+              )}
+            </>
+          )}
+          {product.booksAuthor == undefined ? (
+            <></>
+          ) : (
+            <li>
+              <strong>Author:</strong> {product.booksAuthor}
+            </li>
+          )}
+
+          {product.booksGenres == undefined ? (
+            ''
+          ) : (
+            <>
+              {' '}
+              <li>
+                <strong>Generos:</strong> {product.booksGenres[0]} ,{' '}
+                {product.booksGenres[1]} , {product.booksGenres[2]}
+              </li>
             </>
           )}
 
