@@ -1,6 +1,7 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import sryles from './css/container-desc-short.css?inline';
 import { ContainerDescription } from './crtr-description';
+import { TextCL } from '~/components/use/textCL/textCL';
 export const ContainerDescriptionShort = component$(({ props }: any) => {
   useStylesScoped$(sryles);
   const renderTbProtein = (key: any, label: any) => {
@@ -30,7 +31,9 @@ export const ContainerDescriptionShort = component$(({ props }: any) => {
                     <div class="crte-crot-sart" key={i}>
                       <div class="cirle-bg"></div>
                       <div class="list">
-                        <p class="ps-sr1">{val}</p>
+                        <p class="ps-sr1">
+                          <TextCL text={val} />.
+                        </p>
                       </div>
                     </div>
                   ))}

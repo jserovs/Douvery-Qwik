@@ -561,7 +561,10 @@ select,
     display: none;
   }
 
-
+  .container-icon-cart {
+    padding: 0px 0px 0px 0px;
+    height: 20px;
+  }
 
   .ttle-draw {
     position: relative;

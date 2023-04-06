@@ -1,20 +1,23 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './css/books-perm-vertical-views.css?inline';
 import { ModalD } from '../modal/modal-de';
+import { formatGender } from '~/services/fuction';
 export const LibPermVerticalViewProductIMG = component$(
   ({ props, img, isOpen }: any) => {
     useStylesScoped$(styles);
+
+    const formattedCategories = formatGender(props.booksGenres);
     return (
       <div class="crtr-firx-prd-prodct">
-        {props.author && (
+        {props.booksAuthor && (
           <>
             {' '}
             <div class="book-perm-top">
               <h5>Autor:</h5>
-              <p> {props.author}</p>
+              <p> {props.booksAuthor}</p>
               <h5>Genero:</h5>
 
-              <p>{props.gender}</p>
+              <p>{formattedCategories}</p>
             </div>
           </>
         )}
