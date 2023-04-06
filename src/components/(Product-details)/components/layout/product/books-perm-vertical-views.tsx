@@ -4,6 +4,10 @@ import { ModalD } from '../modal/modal-de';
 export const LibPermVerticalViewProductIMG = component$(
   ({ props, img, isOpen }: any) => {
     useStylesScoped$(styles);
+    function formatGender(gender: any) {
+      return gender.toString().replace(/,/g, ' - ');
+    }
+    const formattedCategories = formatGender(props.booksGender);
     return (
       <div class="crtr-firx-prd-prodct">
         {props.author && (
@@ -11,10 +15,10 @@ export const LibPermVerticalViewProductIMG = component$(
             {' '}
             <div class="book-perm-top">
               <h5>Autor:</h5>
-              <p> {props.author}</p>
+              <p> {props.booksAuthor}</p>
               <h5>Genero:</h5>
 
-              <p>{props.gender}</p>
+              <p>{formattedCategories}</p>
             </div>
           </>
         )}

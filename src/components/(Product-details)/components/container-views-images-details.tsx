@@ -92,11 +92,11 @@ export const ContainerViewsIMGDetails = component$(({ props }: any) => {
             </div>
           )}
           <div class="buttons-mobiles">
-          <div class="brt-irft">
-                  <div class="slect-qty-prt">
-                    <p>Cantidad : </p>
-                    <size-w class="size-w-10" />
-                    <select
+            <div class="brt-irft">
+              <div class="slect-qty-prt">
+                <p>Cantidad : </p>
+                <size-w class="size-w-10" />
+                <select
                   value={quantityCart.setQuantityCart}
                   onChange$={(event) =>
                     (quantityCart.setQuantityCart = event.target.value)
@@ -107,12 +107,14 @@ export const ContainerViewsIMGDetails = component$(({ props }: any) => {
                   <option value="3">3</option>
                   <option value="4">4</option>
                 </select>
-               
-                  </div>
-                </div>
-            <ContainerButtonDetails product={props} quantity={quantityCart.setQuantityCart}/>
+              </div>
+            </div>
+            <ContainerButtonDetails
+              product={props}
+              quantity={quantityCart.setQuantityCart}
+            />
           </div>
-         
+
           {props.category == 'Books' ? (
             <>
               <ContainerDescriptionGPT props={props} />{' '}
