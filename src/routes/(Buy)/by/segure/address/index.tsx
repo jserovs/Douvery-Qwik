@@ -9,10 +9,18 @@ import { fetchAddressUser } from '~/services/user/address/address';
 import { useGetCurrentUser } from '~/routes/layout';
 import { ViewAddressExisting } from '~/components/(byServices)/Address/sessions/view-address-existing/view-address-existing';
 import { ViewAddressNew } from '~/components/(byServices)/Address/sessions/view-address-new/views-address-new';
+import type { RequestHandler } from '@builder.io/qwik-city';
+import { DATA_ACCESS_COOKIE_NAME } from '~/services/auth/login/login';
 
 interface IStateResult {
   results: string[];
 }
+export const onGet: RequestHandler = async ({ cookie, redirect }) => {
+  const acccessToken = cookie.get(DATA_ACCESS_COOKIE_NAME)?.value;
+  if (!acccessToken) {
+    throw redirect(302, '/a/login?rr=/by/segure/address/');
+  }
+};
 export default component$(() => {
   useStylesScoped$(styles);
   const existingAddress = useStore({ setExistingAddress: '' });
