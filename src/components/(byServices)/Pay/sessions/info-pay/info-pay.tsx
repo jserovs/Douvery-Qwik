@@ -3,6 +3,7 @@ import styles from './info-pay.css?inline';
 import { UsePrice } from '~/components/use/price/price';
 import { NamePaypalIcon } from '~/components/icons/paypal';
 import { useGetCurrentUser } from '~/routes/layout';
+import { urlServerLocal, urlServerNode } from '~/services/fechProduct';
 
 export const InfoPay = component$(
   ({
@@ -19,7 +20,7 @@ export const InfoPay = component$(
     useStylesScoped$(styles);
     const loader = useStore({ setLoader: false });
     const userACC = useGetCurrentUser().value;
-
+    urlServerNode;
     const createOrder = $(async () => {
       try {
         loader.setLoader = true;
@@ -33,24 +34,21 @@ export const InfoPay = component$(
           };
         });
 
-        const response = await fetch(
-          'http://localhost:9039/create-paypal-order',
-          {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              userId: userACC?.id,
-              cart: [...cartItems],
-              totalAmout: totalAmount,
-              totalTaxt: taxAmount,
-              shipping: shipping,
-              shippingAddress: address,
-              paymentMethod: 'paypal',
-            }),
-          }
-        );
+        const response = await fetch(`${urlServerLocal}/create-paypal-order`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            userId: userACC?.id,
+            cart: [...cartItems],
+            totalAmout: totalAmount,
+            totalTaxt: taxAmount,
+            shipping: shipping,
+            shippingAddress: address,
+            paymentMethod: 'paypal',
+          }),
+        });
 
         const orderData = await response.json();
 

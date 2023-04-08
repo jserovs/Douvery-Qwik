@@ -117,3 +117,12 @@ export type Address = {
 	locationType: string;
 
 };
+
+export type Order = {
+	orderId: string;
+	ordertotalItems: string;
+	orderPaymentMethod:{
+		orderInfoResource: string;
+	}
+
+};
