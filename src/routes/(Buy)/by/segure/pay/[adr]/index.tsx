@@ -8,12 +8,24 @@ import {
 import styles from './index.css?inline';
 import { fetchIndexAddressUser } from '~/services/user/address/address';
 import { useGetCurrentUser } from '~/routes/layout';
+import type { RequestHandler } from '@builder.io/qwik-city';
 import { useLocation } from '@builder.io/qwik-city';
 import type { Address } from '~/utils/types';
 import { AddressChosenOne } from '~/components/(byServices)/Pay/sessions/address-chosen-one/address-chosen-one';
 import { PaySelectCheckout } from '~/components/(byServices)/Pay/sessions/pay-select/pay-select';
-import { ProductPay } from '~/components/(byServices)/Pay/sessions/product-pay/product-pay';
+import {
+  type Icar_product,
+  ProductPay,
+} from '~/components/(byServices)/Pay/sessions/product-pay/product-pay';
 import { InfoPay } from '~/components/(byServices)/Pay/sessions/info-pay/info-pay';
+
+import { DATA_ACCESS_COOKIE_NAME } from '~/services/auth/login/login';
+export const onGet: RequestHandler = async ({ cookie, redirect }) => {
+  const acccessToken = cookie.get(DATA_ACCESS_COOKIE_NAME)?.value;
+  if (!acccessToken) {
+    throw redirect(302, '/a/login?rr=/by/segure/address/');
+  }
+};
 
 export default component$(() => {
   useStylesScoped$(styles);
@@ -27,6 +39,10 @@ export default component$(() => {
     },
     { recursive: true }
   );
+  const car_product = useStore<Icar_product>({
+    productResults: [],
+  });
+
   const taxAmount = useStore({ setTaxAmount: 0 });
   const shipping = useStore({ setShipping: 0 });
   const totalAmount = useStore({ setTotalAmount: 0 });
@@ -72,6 +88,7 @@ export default component$(() => {
             />
 
             <ProductPay
+              car_product={car_product}
               taxAmount={taxAmount}
               shipping={shipping}
               totalAmount={totalAmount}
@@ -81,14 +98,18 @@ export default component$(() => {
             />
           </div>
         </div>
+
         <div class="container-info-pay">
           <InfoPay
+            car_product={car_product}
             taxAmount={taxAmount.setTaxAmount}
+            address={state.address}
             shipping={shipping.setShipping}
             totalAmount={totalAmount.setTotalAmount}
             subTotal={subTotal.setsubTotal}
             discount={discount.setDiscount}
             subTotalNoDiscount={subTotalNoDiscount.setsubTotalNoDiscount}
+            selectedMethod={selectedMethod}
           />
         </div>
       </div>

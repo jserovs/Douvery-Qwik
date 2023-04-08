@@ -31,21 +31,15 @@ export default component$(() => {
     <QwikCityProvider>
       <head>
         <meta charSet="utf-8" />
-
         <meta name="theme-color" content="#0d47a1" />
         <link rel="manifest" href="/manifest.json" />
-
         <QwikPartytown forward={['dataLayer.push']} />
         <script
           async
           type="text/partytown"
           src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"
         />
-        <link
-          rel="stylesheet"
-          href="https://unpkg.com/flickity@2/dist/flickity.min.css"
-        ></link>
-        <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
         <RouterHead />
       </head>
       <body lang="en">

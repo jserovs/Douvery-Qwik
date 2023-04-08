@@ -1,6 +1,5 @@
 import {
   component$,
-  useStore,
   useStylesScoped$,
   useVisibleTask$,
 } from '@builder.io/qwik';
@@ -10,12 +9,13 @@ import { getDataProductCart } from '~/services/cart/cart';
 import type { Product } from '~/utils/types';
 import { Card1PRODUCTPAY } from '~/components/cards/buy/pay/card1/product-pay';
 
-export interface IState {
+export interface Icar_product {
   productResults: Product[];
 }
 
 export const ProductPay = component$(
   ({
+    car_product,
     totalAmount,
     shipping,
     taxAmount,
@@ -25,19 +25,18 @@ export const ProductPay = component$(
   }: any) => {
     useStylesScoped$(styles);
     const url = useLocation();
-    const state = useStore<IState>({
-      productResults: [],
-    });
+
     useVisibleTask$(async ({ track }) => {
       track(() => url.pathname);
 
       const controller = new AbortController();
-      state.productResults = await getDataProductCart();
+      car_product.productResults = await getDataProductCart();
 
       return () => {
         controller.abort();
       };
     });
+
     return (
       <div class="container-all">
         <div class="container-title">
@@ -45,19 +44,19 @@ export const ProductPay = component$(
           <p>Cantidad</p>
         </div>
         <div class="cart-products">
-          {state.productResults.length > 0 ? (
-            state.productResults.map((product) => {
+          {car_product.productResults.length > 0 ? (
+            car_product.productResults.map((product: any) => {
               const taxRate = 0.1; // Por ejemplo, un impuesto del 10%
               const shippingCost = 5; // Establece un costo de envío fijo, si es necesario
 
-              const subTotalA = state.productResults.reduce(
-                (accumulator, product) => {
+              const subTotalA = car_product.productResults.reduce(
+                (accumulator: any, product: any) => {
                   return accumulator + product.price * product.quantity;
                 },
                 0
               );
-              const descounts = state.productResults.reduce(
-                (accumulator, product) => {
+              const descounts = car_product.productResults.reduce(
+                (accumulator: any, product: any) => {
                   const discountAmount =
                     product.price * (product.discount / 100) * product.quantity;
                   return accumulator + discountAmount;
