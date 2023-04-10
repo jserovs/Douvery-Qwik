@@ -3,7 +3,9 @@ import styles from './info-pay.css?inline';
 import { UsePrice } from '~/components/use/price/price';
 import { NamePaypalIcon } from '~/components/icons/paypal';
 import { useGetCurrentUser } from '~/routes/layout';
-import { urlServerLocal, urlServerNode } from '~/services/fechProduct';
+import { urlServerNode } from '~/services/fechProduct';
+
+import { ButtonCreditCard } from '../../components/method-pay/credit-card/credit-card';
 
 export const InfoPay = component$(
   ({
@@ -34,10 +36,11 @@ export const InfoPay = component$(
           };
         });
 
-        const response = await fetch(`${urlServerLocal}/create-paypal-order`, {
+        const response = await fetch(`${urlServerNode}/create-paypal-order`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
+            'x-auth-token': `${userACC?.token}`,
           },
           body: JSON.stringify({
             userId: userACC?.id,
@@ -145,6 +148,21 @@ export const InfoPay = component$(
                 <NamePaypalIcon />
               )}{' '}
             </button>
+          ) : (
+            ''
+          )}{' '}
+          {selectedMethod.setSelectedMethod === 'card' ? (
+            <ButtonCreditCard
+              car_product={car_product}
+              taxAmount={taxAmount}
+              address={address}
+              shipping={shipping}
+              totalAmount={totalAmount}
+              subTotal={subTotal}
+              discount={discount}
+              subTotalNoDiscount={subTotalNoDiscount}
+              selectedMethod={selectedMethod}
+            />
           ) : (
             ''
           )}{' '}

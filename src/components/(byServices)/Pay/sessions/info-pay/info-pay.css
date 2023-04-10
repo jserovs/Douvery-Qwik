@@ -99,6 +99,8 @@ ul {
     cursor: pointer;
 }
 
+
+
 .button-paypal:focus {
     border: 2px solid #000;
 }

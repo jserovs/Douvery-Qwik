@@ -120,9 +120,14 @@ export type Address = {
 
 export type Order = {
 	orderId: string;
+	orderIsPaid: boolean;
 	ordertotalItems: string;
 	orderPaymentMethod:{
-		orderInfoResource: string;
+		method: string;
+	}
+	orderTotalAmout: number;
+	userCalification:{
+		userQualifyExperiencePurchase: string;
 	}
 
 };

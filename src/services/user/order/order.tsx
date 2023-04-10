@@ -1,4 +1,4 @@
-import { urlServerLocal } from '~/services/fechProduct';
+import { urlServerNode } from '~/services/fechProduct';
 
 export async function fetchUniqueOrderUser(
   userToken: string,
@@ -7,7 +7,7 @@ export async function fetchUniqueOrderUser(
 ): Promise<any> {
   const response = await fetch(
     `
-   ${urlServerLocal}/api/orders/`,
+   ${urlServerNode}/api/orders/`,
     {
       method: 'POST',
       signal: controller?.signal,

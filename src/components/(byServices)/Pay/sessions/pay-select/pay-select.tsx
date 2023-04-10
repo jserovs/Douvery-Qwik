@@ -9,6 +9,7 @@ export const PaySelectCheckout = component$(({ selectedMethod }: any) => {
   const handleMethodChange = $((event: any) => {
     selectedMethod.setSelectedMethod = event.target.value;
   });
+
   return (
     <div class="container-all">
       <div class="container-title">
@@ -29,19 +30,21 @@ export const PaySelectCheckout = component$(({ selectedMethod }: any) => {
             <PaypalIcon size="35px" /> PayPal
           </label>
         </div>
+
         <div>
           <input
             type="radio"
-            id="tarjeta"
+            id="card"
             name="payment-method"
-            value="tarjeta"
-            checked={selectedMethod.setSelectedMethod === 'tarjeta'}
+            value="card"
+            checked={selectedMethod.setSelectedMethod === 'card'}
             onChange$={handleMethodChange}
           />
-          <label for="tarjeta">
+          <label for="card">
             <DouveryCard /> Pagar con Tarjeta
           </label>
         </div>
+
         <div>
           <input
             type="radio"

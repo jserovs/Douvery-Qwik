@@ -1,9 +1,9 @@
-export const DouveryCard = () => (
+export const DouveryCard = ({ size }: any) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
-    width="33px"
-    height="33px"
+    width={size || '33px'}
+    height={size || '33px'}
     viewBox="0 0 58 42"
     version="1.1"
   >
