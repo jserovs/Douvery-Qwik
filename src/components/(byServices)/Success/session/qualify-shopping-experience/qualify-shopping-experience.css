@@ -1,0 +1,119 @@
+.container-title {
+
+    font-size: 14px;
+    color: #000;
+    text-align: start;
+    ;
+
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    margin: 10px 0px;
+    padding: 0px 10px;
+    height: 38px;
+    max-width: 100%;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.options {
+
+    display: grid;
+    grid-template-columns: auto auto;
+
+    justify-content: center;
+    margin: 12px 0px;
+    padding: 0;
+    list-style: none;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    padding: 5px 2px;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    background-color: #fff;
+    color: #333333;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.option span {
+    margin-left: 10px;
+}
+
+.option input[type="radio"]:checked+span {
+    font-weight: bold;
+    color: var(--color-button-pay);
+}
+
+/* Modifica este bloque para cambiar el borde del elemento '.option' */
+.option input[type="radio"]:checked~.option {
+    border-color: var(--color-button-pay);
+}
+
+/* Cambia el selector a '.option input[type="radio"]:checked + span' */
+.option input[type="radio"]:checked+span {
+    border-color: var(--color-button-pay);
+}
+
+
+.option input[type="radio"] {
+    display: none;
+}
+
+.container-exper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-view-conten {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 13px;
+    color: #333;
+}
+
+.container-send-form {
+    background-color: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #0f1111;
+    cursor: pointer;
+    display: flex;
+    font-weight: 500;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    line-height: 29px;
+    padding: 0 10px 0 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.container-send-form:hover {
+
+    font-weight: 600;
+}
+
+.container-send-form:focus {
+    border: 1px solid rgb(102, 204, 255);
+}

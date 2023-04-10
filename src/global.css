@@ -659,3 +659,87 @@ input {
     transform: scale(1, 1);
   }
 }
+
+@keyframes change-background-color-blue {
+  0% {
+    background-color: rgb(102, 204, 255);
+  }
+
+  50% {
+    background-color: rgb(51, 153, 255);
+  }
+
+  100% {
+    background-color: rgb(102, 204, 255);
+  }
+}
+
+@keyframes change-background-color-green {
+  0% {
+    background-color: rgb(102, 255, 204);
+  }
+
+  50% {
+    background-color: rgb(51, 204, 153);
+  }
+
+  100% {
+    background-color: rgb(102, 255, 204);
+  }
+}
+
+@keyframes change-background-color-violet {
+  0% {
+    background-color: rgb(204, 102, 255);
+  }
+
+  50% {
+    background-color: rgb(153, 51, 255);
+  }
+
+  100% {
+    background-color: rgb(204, 102, 255);
+  }
+}
+
+@keyframes change-background-orange {
+  0% {
+    background-color: rgb(255, 153, 102);
+  }
+
+  50% {
+    background-color: rgb(255, 102, 51);
+  }
+
+  100% {
+    background-color: rgb(255, 153, 102);
+  }
+}
+
+@keyframes change-background-color-rose {
+  0% {
+    background-color: rgb(255, 102, 204);
+  }
+
+  50% {
+    background-color: rgb(255, 51, 153);
+  }
+
+  100% {
+    background-color: rgb(255, 102, 204);
+  }
+}
+
+@keyframes change-background-color-red {
+  0% {
+    background-color: rgb(255, 102, 102);
+  }
+
+  50% {
+    background-color: rgb(255, 51, 51);
+  }
+
+  100% {
+    background-color: rgb(255, 102, 102);
+  }
+}

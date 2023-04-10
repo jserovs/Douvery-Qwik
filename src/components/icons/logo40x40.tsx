@@ -1,13 +1,13 @@
 //TODO: Logo transpartnt background
 
-export const DouveryLogo40x40 = ({ color }: any) => (
+export const DouveryLogo40x40 = ({ color, size }: any) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
-    width="40"
+    width={size || '40'}
     zoomAndPan="magnify"
     viewBox="0 0 30 30.000001"
-    height="40"
+    height={size || '40'}
     preserveAspectRatio="xMidYMid meet"
     version="1.0"
   >

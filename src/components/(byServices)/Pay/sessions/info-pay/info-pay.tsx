@@ -3,6 +3,9 @@ import styles from './info-pay.css?inline';
 import { UsePrice } from '~/components/use/price/price';
 import { NamePaypalIcon } from '~/components/icons/paypal';
 import { useGetCurrentUser } from '~/routes/layout';
+import { urlServerNode } from '~/services/fechProduct';
+
+import { ButtonCreditCard } from '../../components/method-pay/credit-card/credit-card';
 
 export const InfoPay = component$(
   ({
@@ -19,7 +22,7 @@ export const InfoPay = component$(
     useStylesScoped$(styles);
     const loader = useStore({ setLoader: false });
     const userACC = useGetCurrentUser().value;
-
+    urlServerNode;
     const createOrder = $(async () => {
       try {
         loader.setLoader = true;
@@ -33,24 +36,22 @@ export const InfoPay = component$(
           };
         });
 
-        const response = await fetch(
-          'http://localhost:9039/create-paypal-order',
-          {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              userId: userACC?.id,
-              cart: [...cartItems],
-              totalAmout: totalAmount,
-              totalTaxt: taxAmount,
-              shipping: shipping,
-              shippingAddress: address,
-              paymentMethod: 'paypal',
-            }),
-          }
-        );
+        const response = await fetch(`${urlServerNode}/create-paypal-order`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'x-auth-token': `${userACC?.token}`,
+          },
+          body: JSON.stringify({
+            userId: userACC?.id,
+            cart: [...cartItems],
+            totalAmout: totalAmount,
+            totalTaxt: taxAmount,
+            shipping: shipping,
+            shippingAddress: address,
+            paymentMethod: 'paypal',
+          }),
+        });
 
         const orderData = await response.json();
 
@@ -147,6 +148,21 @@ export const InfoPay = component$(
                 <NamePaypalIcon />
               )}{' '}
             </button>
+          ) : (
+            ''
+          )}{' '}
+          {selectedMethod.setSelectedMethod === 'card' ? (
+            <ButtonCreditCard
+              car_product={car_product}
+              taxAmount={taxAmount}
+              address={address}
+              shipping={shipping}
+              totalAmount={totalAmount}
+              subTotal={subTotal}
+              discount={discount}
+              subTotalNoDiscount={subTotalNoDiscount}
+              selectedMethod={selectedMethod}
+            />
           ) : (
             ''
           )}{' '}

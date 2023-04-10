@@ -117,3 +117,17 @@ export type Address = {
 	locationType: string;
 
 };
+
+export type Order = {
+	orderId: string;
+	orderIsPaid: boolean;
+	ordertotalItems: string;
+	orderPaymentMethod:{
+		method: string;
+	}
+	orderTotalAmout: number;
+	userCalification:{
+		userQualifyExperiencePurchase: string;
+	}
+
+};
