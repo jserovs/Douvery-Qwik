@@ -67,6 +67,7 @@
     "jwt-decode": "^3.1.2",
     "localforage": "^1.10.0",
     "numeral": "^2.0.6",
+    "print-js": "^1.6.0",
     "react-responsive-carousel": "^3.2.23",
     "slick-carousel": "^1.8.1",
     "universal-cookie": "^4.0.4"
