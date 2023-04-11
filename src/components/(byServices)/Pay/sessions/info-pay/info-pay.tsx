@@ -1,12 +1,10 @@
-import { $, component$, useStore, useStylesScoped$ } from '@builder.io/qwik';
+import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './info-pay.css?inline';
 import { UsePrice } from '~/components/use/price/price';
-import { NamePaypalIcon } from '~/components/icons/paypal';
-import { useGetCurrentUser } from '~/routes/layout';
-import { urlServerNode } from '~/services/fechProduct';
 
 import { ButtonCreditCard } from '../../components/method-pay/credit-card/credit-card';
-import { useLocation } from '@builder.io/qwik-city';
+
+import { PaypalMethod } from '../../components/paypal/paypal-method';
 
 export const InfoPay = component$(
   ({
@@ -21,63 +19,7 @@ export const InfoPay = component$(
     address,
   }: any) => {
     useStylesScoped$(styles);
-    const loader = useStore({ setLoader: false });
-    const userACC = useGetCurrentUser().value;
-    const loc = useLocation();
-    const createOrder = $(async () => {
-      try {
-        loader.setLoader = true;
-        const cartItems = car_product.productResults.map((product: any) => {
-          return {
-            name: product.name,
-            dui: product.dui,
-            price: product.price,
-            discount: product.discount,
-            quantity: product.quantity,
-          };
-        });
 
-        const response = await fetch(`${urlServerNode}/create-paypal-order`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'x-auth-token': `${userACC?.token}`,
-          },
-          body: JSON.stringify({
-            userId: userACC?.id,
-            cart: [...cartItems],
-            totalAmout: totalAmount,
-            totalTaxt: taxAmount,
-            shipping: shipping,
-            shippingAddress: address,
-            paymentMethod: 'paypal',
-            successUrl: loc.url.origin + `/by/segure/transx/paypal`,
-            cancelUrl: loc.url.origin + `/by/segure/address/`,
-          }),
-        });
-
-        const orderData = await response.json();
-
-        const approveLink = orderData.links.find(
-          (link: any) => link.rel === 'approval_url'
-        );
-
-        if (approveLink) {
-          window.location.href = approveLink.href;
-        }
-        return orderData.id;
-      } catch (error) {
-        console.error('Error al crear la orden:', error);
-      }
-    });
-
-    const handleClickPaypal = $(async () => {
-      try {
-        await createOrder();
-      } catch (error) {
-        console.error('Error en el proceso de pago:', error);
-      }
-    });
     return (
       <div class="container-all">
         {' '}
@@ -142,15 +84,17 @@ export const InfoPay = component$(
         </div>
         <div class="container-buttons-pay">
           {selectedMethod.setSelectedMethod === 'paypal' ? (
-            <button class="button-paypal" onClick$={handleClickPaypal}>
-              {loader.setLoader ? (
-                <>
-                  <div class="loader"></div>
-                </>
-              ) : (
-                <NamePaypalIcon />
-              )}{' '}
-            </button>
+            <PaypalMethod
+              car_product={car_product}
+              taxAmount={taxAmount}
+              address={address}
+              shipping={shipping}
+              totalAmount={totalAmount}
+              subTotal={subTotal}
+              discount={discount}
+              subTotalNoDiscount={subTotalNoDiscount}
+              selectedMethod={selectedMethod}
+            />
           ) : (
             ''
           )}{' '}

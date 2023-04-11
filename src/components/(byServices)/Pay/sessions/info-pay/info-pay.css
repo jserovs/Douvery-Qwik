@@ -82,25 +82,3 @@ ul {
 
     margin: 10px 0px;
 }
-
-.button-paypal {
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-    background-color: #ffc439;
-    color: #ffffff;
-
-    border-radius: 4px;
-    font-size: 16px;
-    width: 100%;
-    height: 40px;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-
-
-.button-paypal:focus {
-    border: 2px solid #000;
-}
