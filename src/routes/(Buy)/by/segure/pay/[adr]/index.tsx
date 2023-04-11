@@ -8,7 +8,7 @@ import {
 import styles from './index.css?inline';
 import { fetchIndexAddressUser } from '~/services/user/address/address';
 import { useGetCurrentUser } from '~/routes/layout';
-import type { RequestHandler } from '@builder.io/qwik-city';
+import type { DocumentHead, RequestHandler } from '@builder.io/qwik-city';
 import { useLocation } from '@builder.io/qwik-city';
 import type { Address } from '~/utils/types';
 import { AddressChosenOne } from '~/components/(byServices)/Pay/sessions/address-chosen-one/address-chosen-one';
@@ -116,3 +116,6 @@ export default component$(() => {
     </>
   );
 });
+export const head: DocumentHead = {
+  title: 'Douvery: Segure purchase - Selecciona o agrega  dirección de envio.',
+};

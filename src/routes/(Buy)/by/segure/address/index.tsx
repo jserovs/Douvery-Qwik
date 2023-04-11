@@ -9,7 +9,7 @@ import { fetchAddressUser } from '~/services/user/address/address';
 import { useGetCurrentUser } from '~/routes/layout';
 import { ViewAddressExisting } from '~/components/(byServices)/Address/sessions/view-address-existing/view-address-existing';
 import { ViewAddressNew } from '~/components/(byServices)/Address/sessions/view-address-new/views-address-new';
-import type { RequestHandler } from '@builder.io/qwik-city';
+import type { DocumentHead, RequestHandler } from '@builder.io/qwik-city';
 import { DATA_ACCESS_COOKIE_NAME } from '~/services/auth/login/login';
 
 interface IStateResult {
@@ -94,3 +94,6 @@ export default component$(() => {
     </div>
   );
 });
+export const head: DocumentHead = {
+  title: 'Douvery: Segure purchase - Selecciona o agrega metodo de pago.',
+};

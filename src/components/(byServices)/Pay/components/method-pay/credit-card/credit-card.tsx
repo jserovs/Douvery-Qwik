@@ -80,7 +80,8 @@ export const ButtonCreditCard = component$(
           ) : (
             <>
               {' '}
-              <DouveryCard size="27" /> Credit Card
+              Pay with <DouveryCard size="27" />
+              card
             </>
           )}{' '}
         </button>

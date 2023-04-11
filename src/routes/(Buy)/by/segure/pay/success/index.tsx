@@ -7,7 +7,7 @@ import {
 } from '@builder.io/qwik';
 import styles from './index.css?inline';
 import { useGetCurrentUser } from '~/routes/layout';
-import { useLocation } from '@builder.io/qwik-city';
+import { type DocumentHead, useLocation } from '@builder.io/qwik-city';
 import { fetchUniqueOrderUser } from '~/services/user/order/order';
 import type { Order } from '~/utils/types';
 import { TextCL } from '~/components/use/textCL/textCL';
@@ -147,3 +147,12 @@ export default component$(() => {
     </div>
   );
 });
+export const head: DocumentHead = {
+  title: 'Douvery',
+  meta: [
+    {
+      name: 'description',
+      content: 'Qwik site description',
+    },
+  ],
+};
