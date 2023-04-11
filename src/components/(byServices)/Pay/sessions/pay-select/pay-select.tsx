@@ -48,13 +48,13 @@ export const PaySelectCheckout = component$(({ selectedMethod }: any) => {
         <div>
           <input
             type="radio"
-            id="bitcoin"
+            id="crypto-usdt"
             name="payment-method"
-            value="bitcoin"
-            checked={selectedMethod.setSelectedMethod === 'bitcoin'}
+            value="crypto-usdt"
+            checked={selectedMethod.setSelectedMethod === 'crypto-usdt'}
             onChange$={handleMethodChange}
           />
-          <label for="bitcoin">
+          <label for="crypto-usdt">
             <DouveryUsdtIcon size="32" />
             Pagar con USDT
           </label>

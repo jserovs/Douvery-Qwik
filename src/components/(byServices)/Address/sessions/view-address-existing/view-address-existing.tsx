@@ -1,13 +1,13 @@
-import { $, component$, useStore, useStylesScoped$ } from '@builder.io/qwik';
+import { $, component$, useSignal, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './view-address-existing.css?inline';
 import { TextCL } from '~/components/use/textCL/textCL';
 import { useNavigate } from '@builder.io/qwik-city';
 export const ViewAddressExisting = component$(({ state }: any) => {
   useStylesScoped$(styles);
-  const selectIndex = useStore({ index: undefined });
+  const selectIndex = useSignal(0);
   const nav = useNavigate();
   const send = $(() => {
-    nav('/by/segure/pay/' + selectIndex.index, true);
+    nav('/by/segure/pay/' + selectIndex.value, true);
   });
 
   return (
@@ -34,7 +34,7 @@ export const ViewAddressExisting = component$(({ state }: any) => {
                         id={`calle${i}`}
                         value={item}
                         onChange$={() => {
-                          selectIndex.index = i;
+                          selectIndex.value = i.toString();
                         }}
                       />
                       <span>
@@ -55,7 +55,7 @@ export const ViewAddressExisting = component$(({ state }: any) => {
         <button
           type="submit"
           onClick$={send}
-          disabled={selectIndex.index == undefined ? true : false}
+          disabled={selectIndex.value == undefined ? true : false}
         >
           Continue
         </button>

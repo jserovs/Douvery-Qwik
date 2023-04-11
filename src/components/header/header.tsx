@@ -92,7 +92,6 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
                 class="searchTerm"
                 placeholder="Busca tu producto"
                 onClick$={() => (is.setIsOpen = true)}
-                value={state.searchInput}
                 onKeyUp$={(ev) =>
                   (state.searchInput = (ev.target as HTMLInputElement).value)
                 }
