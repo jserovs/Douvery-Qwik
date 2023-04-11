@@ -4,7 +4,8 @@ import { UsePrice } from '~/components/use/price/price';
 
 import { ButtonCreditCard } from '../../components/method-pay/credit-card/credit-card';
 
-import { PaypalMethod } from '../../components/paypal/paypal-method';
+import { PaypalMethod } from '../../components/method-pay/paypal/paypal-method';
+import { CriptoUsdtMethod } from '../../components/method-pay/cripto-usdt/cripto-usdt';
 
 export const InfoPay = component$(
   ({
@@ -110,6 +111,11 @@ export const InfoPay = component$(
               subTotalNoDiscount={subTotalNoDiscount}
               selectedMethod={selectedMethod}
             />
+          ) : (
+            ''
+          )}
+          {selectedMethod.setSelectedMethod === 'crypto-usdt' ? (
+            <CriptoUsdtMethod />
           ) : (
             ''
           )}{' '}

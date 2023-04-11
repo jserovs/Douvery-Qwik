@@ -6,6 +6,7 @@ import {
 } from '@builder.io/qwik';
 import { useLocation, useNavigate } from '@builder.io/qwik-city';
 import { useGetCurrentUser } from '~/routes/layout';
+import { removeAllCartItems } from '~/services/cart/cart';
 import { urlServerNode } from '~/services/fechProduct';
 
 export default component$(() => {
@@ -33,9 +34,10 @@ export default component$(() => {
       });
 
       const responseData = await response.json();
-      console.log(responseData);
+
       if (responseData.captureData.state === 'approved') {
         success.setSuccess = 'Payment completed';
+        removeAllCartItems();
         nav('/by/segure/pay/success?order=' + responseData.order.orderId, true);
       }
     } catch (error) {
@@ -48,24 +50,9 @@ export default component$(() => {
     }
   });
   useStylesScoped$(`
-    .container-all {
-      display: grid;
-      justify-content: center;
-      minheight: 100rem;
-      text-align: center;
- 
-    }
-    .container-loader{
-      background-color: var(--color-background-white);
-    padding: 2rem;
-    margin-top: 10px;
-    height: 850px;
-    width: 550px;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(35, 85, 161, 0.027) 0px 0px 0px 1px;
-    }
+  
     h1{
-       text-align: center;
+    text-align: center;
     font-size: 30px;
     font-weight: bold;
     margin: 0px 10px;

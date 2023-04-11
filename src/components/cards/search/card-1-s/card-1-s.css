@@ -54,13 +54,18 @@
 .product-info {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
+
 }
 
+
 .product-title {
+    display: grid;
+    align-items: end;
     width: 100%;
     font-size: 16px;
     font-weight: 500;
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 1px 0;
 }
 
 .product-title:hover {
@@ -135,9 +140,11 @@
         margin: 0.2rem;
         position: relative;
     }
-.container-ratings{
-    width: 100%;
-}
+
+    .container-ratings {
+        width: 100%;
+    }
+
     .button--show-shopping-cell {
         background-color: #fff;
         border: 1px solid #d5d9d9;

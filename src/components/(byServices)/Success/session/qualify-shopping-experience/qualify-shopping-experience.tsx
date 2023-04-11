@@ -1,6 +1,7 @@
 import {
   Resource,
   component$,
+  useSignal,
   useStore,
   useStylesScoped$,
 } from '@builder.io/qwik';
@@ -71,9 +72,7 @@ export const QualifyShoppingExperience = component$(
     const submitted = useStore({
       setSubmitted: false,
     });
-    const conten = useStore({
-      setCont: false,
-    });
+    const conten = useSignal(false);
     const state = useStore({
       select: '',
     });
@@ -107,9 +106,9 @@ export const QualifyShoppingExperience = component$(
                     <p>Califica tu experiencia de compra</p>
                     <button
                       class="container-view-conten"
-                      onClick$={() => (conten.setCont = !conten.setCont)}
+                      onClick$={() => (conten.value = !conten.value)}
                     >
-                      {conten.setCont ? (
+                      {conten.value ? (
                         <>
                           <DouveryArrowUp size="15" /> Ocultar contenido
                         </>
@@ -120,7 +119,7 @@ export const QualifyShoppingExperience = component$(
                       )}
                     </button>
                   </div>
-                  {conten.setCont && (
+                  {conten.value && (
                     <Form action={action}>
                       <div class="options">
                         {' '}
