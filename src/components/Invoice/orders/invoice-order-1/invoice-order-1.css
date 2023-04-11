@@ -184,11 +184,12 @@ h3 {
 }
 
 .box {
-    border-top: 1px solid var(--border-width-2);
+    border-top: 2px solid #000;
     display: grid;
 
-    padding-top: 10px;
-    width: 30%;
+    padding: 10px 10px;
+
+    width: 40%;
 }
 
 .total-item {

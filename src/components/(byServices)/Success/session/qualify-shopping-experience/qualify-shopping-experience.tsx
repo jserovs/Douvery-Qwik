@@ -72,7 +72,7 @@ export const QualifyShoppingExperience = component$(
       setSubmitted: false,
     });
     const conten = useStore({
-      setCont: true,
+      setCont: false,
     });
     const state = useStore({
       select: '',
@@ -87,7 +87,6 @@ export const QualifyShoppingExperience = component$(
 
     return (
       <div class="container-all">
-        {submitted.setSubmitted && <>Pepepe</>}
         {action.isRunning ? (
           submitted.setSubmitted == true
         ) : (

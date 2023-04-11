@@ -6,6 +6,7 @@ import { useGetCurrentUser } from '~/routes/layout';
 import { urlServerNode } from '~/services/fechProduct';
 
 import { ButtonCreditCard } from '../../components/method-pay/credit-card/credit-card';
+import { useLocation } from '@builder.io/qwik-city';
 
 export const InfoPay = component$(
   ({
@@ -22,7 +23,7 @@ export const InfoPay = component$(
     useStylesScoped$(styles);
     const loader = useStore({ setLoader: false });
     const userACC = useGetCurrentUser().value;
-    urlServerNode;
+    const loc = useLocation();
     const createOrder = $(async () => {
       try {
         loader.setLoader = true;
@@ -50,6 +51,8 @@ export const InfoPay = component$(
             shipping: shipping,
             shippingAddress: address,
             paymentMethod: 'paypal',
+            successUrl: loc.url.origin + `/by/segure/transx/paypal`,
+            cancelUrl: loc.url.origin + `/by/segure/address/`,
           }),
         });
 

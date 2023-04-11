@@ -4,6 +4,7 @@ import { DouveryCard } from '~/components/icons/card';
 import { useGetCurrentUser } from '~/routes/layout';
 import { urlServerNode } from '~/services/fechProduct';
 import styles from './credit-card.css?inline';
+import { useLocation } from '@builder.io/qwik-city';
 export const ButtonCreditCard = component$(
   ({
     car_product,
@@ -16,6 +17,8 @@ export const ButtonCreditCard = component$(
     useStylesScoped$(styles);
     const loader = useStore({ setLoader: false });
     const userACC = useGetCurrentUser().value;
+    const loc = useLocation();
+
     const createOrder = $(async () => {
       try {
         loader.setLoader = true;
@@ -45,8 +48,8 @@ export const ButtonCreditCard = component$(
               shipping: shipping,
               shippingAddress: address,
               paymentMethod: 'stripe - card',
-              successUrl: `https://douvery-qwik.vercel.app/by/segure/transx`,
-              cancelUrl: 'https://www.example.com/cancel',
+              successUrl: loc.url.origin + `/by/segure/transx/stripe`,
+              cancelUrl: loc.url.origin + `/by/segure/address/`,
             }),
           }
         );
@@ -73,13 +76,11 @@ export const ButtonCreditCard = component$(
       <>
         <button class="button-credit-card" onClick$={handleClickPaypal}>
           {loader.setLoader ? (
-            <>
-              <div class="loader"></div>
-            </>
+            <>Cargando...</>
           ) : (
             <>
               {' '}
-              <DouveryCard /> Pagar con Tarjeta
+              <DouveryCard size="27" /> Credit Card
             </>
           )}{' '}
         </button>
