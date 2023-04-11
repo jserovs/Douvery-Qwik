@@ -93,6 +93,10 @@ h1 {
     border: 1px solid #005ea7;
 }
 
+.container-info-pay-mobiles {
+    display: none;
+}
+
 @media only screen and (max-width: 1455px) {
     .container-all {
 
@@ -103,10 +107,18 @@ h1 {
 
 @media only screen and (max-width: 885px) {
     .container-all {
-
+        display: grid;
+        grid-template-columns: auto;
         padding: 0PX 10PX;
     }
 
+    .container-info-pay-mobiles {
+        display: block;
+    }
+
+    .container-info-pay {
+        display: none;
+    }
 
     .container-pay {
         padding: 45px 4px;

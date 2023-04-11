@@ -74,8 +74,20 @@ export default component$(() => {
                 Selecciona o agrega un metodo de pago para realizar tu pedido.
               </p>
             </div>
-
-            <PaySelectCheckout selectedMethod={selectedMethod} />
+            <PaySelectCheckout selectedMethod={selectedMethod} />{' '}
+            <div class="container-info-pay-mobiles">
+              <InfoPay
+                car_product={car_product}
+                taxAmount={taxAmount.setTaxAmount}
+                address={state.address}
+                shipping={shipping.setShipping}
+                totalAmount={totalAmount.setTotalAmount}
+                subTotal={subTotal.setsubTotal}
+                discount={discount.setDiscount}
+                subTotalNoDiscount={subTotalNoDiscount.setsubTotalNoDiscount}
+                selectedMethod={selectedMethod}
+              />
+            </div>
             <Resource
               value={addressResource}
               onPending={() => <div class="loader"></div>}
@@ -86,7 +98,6 @@ export default component$(() => {
                 </div>
               )}
             />
-
             <ProductPay
               car_product={car_product}
               taxAmount={taxAmount}
