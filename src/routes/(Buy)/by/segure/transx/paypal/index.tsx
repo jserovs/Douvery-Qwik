@@ -62,9 +62,9 @@ export default component$(() => {
     <>
       <div class="container-all">
         <div class="container-loader">
+          <h1>{success.setSuccess}</h1>
           <div class="loader"></div>
           <h1>{err.setError}</h1>
-          <h1>{success.setSuccess}</h1>
         </div>
       </div>
     </>

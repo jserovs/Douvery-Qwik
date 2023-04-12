@@ -2,6 +2,7 @@ import {
   Resource,
   component$,
   useResource$,
+  useSignal,
   useStore,
   useStylesScoped$,
 } from '@builder.io/qwik';
@@ -62,7 +63,8 @@ export default component$(() => {
     state.address = data;
   });
 
-  const selectedMethod = useStore({ setSelectedMethod: '' });
+  const selectedMethod = useSignal('');
+
   return (
     <>
       <div class="container-all">

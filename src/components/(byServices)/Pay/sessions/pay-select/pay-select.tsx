@@ -7,7 +7,7 @@ export const PaySelectCheckout = component$(({ selectedMethod }: any) => {
   useStylesScoped$(styles);
 
   const handleMethodChange = $((event: any) => {
-    selectedMethod.setSelectedMethod = event.target.value;
+    selectedMethod.value = event.target.value;
   });
 
   return (
@@ -22,7 +22,7 @@ export const PaySelectCheckout = component$(({ selectedMethod }: any) => {
             id="paypal"
             name="payment-method"
             value="paypal"
-            checked={selectedMethod.setSelectedMethod === 'paypal'}
+            checked={selectedMethod === 'paypal'}
             onChange$={handleMethodChange}
           />
 
@@ -37,7 +37,7 @@ export const PaySelectCheckout = component$(({ selectedMethod }: any) => {
             id="card"
             name="payment-method"
             value="card"
-            checked={selectedMethod.setSelectedMethod === 'card'}
+            checked={selectedMethod.value == 'card'}
             onChange$={handleMethodChange}
           />
           <label for="card">
@@ -51,7 +51,7 @@ export const PaySelectCheckout = component$(({ selectedMethod }: any) => {
             id="crypto-usdt"
             name="payment-method"
             value="crypto-usdt"
-            checked={selectedMethod.setSelectedMethod === 'crypto-usdt'}
+            checked={selectedMethod === 'crypto-usdt'}
             onChange$={handleMethodChange}
           />
           <label for="crypto-usdt">

@@ -1,4 +1,4 @@
-import { $, component$, useStylesScoped$ } from '@builder.io/qwik';
+import { $, component$, useSignal, useStylesScoped$ } from '@builder.io/qwik';
 
 import styles from './downloand-button.css?inline';
 
@@ -6,11 +6,18 @@ export const DownloadButton = component$(({ targetId, state }: any) => {
   useStylesScoped$(styles);
   targetId;
   state;
-  const handlePrint = $(async () => {});
+  const download = useSignal('');
+  const handlePrint = $(() => {
+    download.value = 'No disponible...';
+  });
   return (
     <>
       <button class="button-download" onClick$={handlePrint}>
-        Descargar factura
+        {download.value == 'No disponible...' ? (
+          download.value
+        ) : (
+          <>Descargar factura</>
+        )}{' '}
       </button>
     </>
   );

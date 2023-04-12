@@ -8,7 +8,7 @@ import {
 import styles from './qualify-shopping-experience.css?inline';
 import { Form, globalAction$, z, zod$ } from '@builder.io/qwik-city';
 import { TextCL } from '~/components/use/textCL/textCL';
-import { urlServerLocal } from '~/services/fechProduct';
+import { urlServerNode } from '~/services/fechProduct';
 import {
   decodeToken,
   passwordKEY,
@@ -24,7 +24,7 @@ export const useQualifyExperience = globalAction$(
     const user = decodeToken(accessCookie, passwordKEY, serverKey);
     const ordrId = url.searchParams.get('order') || '';
     const data = await fetch(
-      `${urlServerLocal}/api/calification-purchase-shop`,
+      `${urlServerNode}/api/calification-purchase-shop`,
       {
         method: 'POST',
         headers: {
@@ -77,10 +77,10 @@ export const QualifyShoppingExperience = component$(
       select: '',
     });
     const options = [
-      'Increíblemente rápido',
-      'Velocidad aceptable',
-      'Un poco lento, pero manejable',
-      'Demasiado lento, necesita mejorar',
+      'Servicio de pago rápido',
+      'Servicio de pago lento',
+      'Servicio de pago muy lento',
+      'Servicio de pago muy rápido',
     ];
     const action = useQualifyExperience();
 
@@ -102,12 +102,12 @@ export const QualifyShoppingExperience = component$(
                 <p>¡Gracias por calificar tu experiencia de compra!</p>
               ) : (
                 <>
-                  <div class="container-exper">
+                  <div
+                    class="container-exper"
+                    onClick$={() => (conten.value = !conten.value)}
+                  >
                     <p>Califica tu experiencia de compra</p>
-                    <button
-                      class="container-view-conten"
-                      onClick$={() => (conten.value = !conten.value)}
-                    >
+                    <button class="container-view-conten">
                       {conten.value ? (
                         <>
                           <DouveryArrowUp size="15" /> Ocultar contenido

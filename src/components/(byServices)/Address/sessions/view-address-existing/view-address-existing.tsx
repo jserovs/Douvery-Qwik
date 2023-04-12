@@ -4,7 +4,7 @@ import { TextCL } from '~/components/use/textCL/textCL';
 import { useNavigate } from '@builder.io/qwik-city';
 export const ViewAddressExisting = component$(({ state }: any) => {
   useStylesScoped$(styles);
-  const selectIndex = useSignal(0);
+  const selectIndex = useSignal(undefined);
   const nav = useNavigate();
   const send = $(() => {
     nav('/by/segure/pay/' + selectIndex.value, true);

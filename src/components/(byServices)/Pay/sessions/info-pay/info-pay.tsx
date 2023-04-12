@@ -84,7 +84,7 @@ export const InfoPay = component$(
           </div>
         </div>
         <div class="container-buttons-pay">
-          {selectedMethod.setSelectedMethod === 'paypal' ? (
+          {selectedMethod.value === 'paypal' ? (
             <PaypalMethod
               car_product={car_product}
               taxAmount={taxAmount}
@@ -99,7 +99,7 @@ export const InfoPay = component$(
           ) : (
             ''
           )}{' '}
-          {selectedMethod.setSelectedMethod === 'card' ? (
+          {selectedMethod.value === 'card' ? (
             <ButtonCreditCard
               car_product={car_product}
               taxAmount={taxAmount}
@@ -114,11 +114,7 @@ export const InfoPay = component$(
           ) : (
             ''
           )}
-          {selectedMethod.setSelectedMethod === 'crypto-usdt' ? (
-            <CriptoUsdtMethod />
-          ) : (
-            ''
-          )}{' '}
+          {selectedMethod.value === 'crypto-usdt' ? <CriptoUsdtMethod /> : ''}{' '}
         </div>
       </div>
     );
