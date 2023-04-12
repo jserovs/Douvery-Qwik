@@ -1,4 +1,5 @@
 import {
+  $,
   Resource,
   component$,
   useResource$,
@@ -7,7 +8,11 @@ import {
 } from '@builder.io/qwik';
 import styles from './index.css?inline';
 import { useGetCurrentUser } from '~/routes/layout';
-import { type DocumentHead, useLocation } from '@builder.io/qwik-city';
+import {
+  type DocumentHead,
+  useLocation,
+  useNavigate,
+} from '@builder.io/qwik-city';
 import { fetchUniqueOrderUser } from '~/services/user/order/order';
 import type { Order } from '~/utils/types';
 import { TextCL } from '~/components/use/textCL/textCL';
@@ -22,6 +27,7 @@ export default component$(() => {
   useStylesScoped$(styles);
   const userACC = useGetCurrentUser().value;
   const loc = useLocation();
+  const nav = useNavigate();
   const state = useStore<{
     order: Order;
     calification: string;
@@ -45,6 +51,9 @@ export default component$(() => {
     date: '2023-04-08',
     // ...otros datos de la factura
   };
+  const navigatorToOrderUser = $(() => {
+    nav('/a/user/my/orders/');
+  });
 
   return (
     <div class="container-all">
@@ -134,7 +143,9 @@ export default component$(() => {
             <PrintButton targetId="invoice" />
           </div>
           <div class="button-view-ordes">
-            <button class="button-view-order">Ver ordenes</button>
+            <button class="button-view-order" onClick$={navigatorToOrderUser}>
+              Ver ordenes
+            </button>
           </div>
           <div>
             <QualifyShoppingExperience
@@ -148,11 +159,12 @@ export default component$(() => {
   );
 });
 export const head: DocumentHead = {
-  title: 'Douvery',
+  title: 'Douvery: Success payment',
   meta: [
     {
       name: 'description',
-      content: 'Qwik site description',
+      content:
+        'Transacción aprobada, rápida y segura. Disfrute de la comodidad de comprar en línea con total tranquilidad. ¡Gracias por su compra!',
     },
   ],
 };

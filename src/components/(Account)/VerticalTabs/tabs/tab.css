@@ -1,0 +1,36 @@
+.container-tab {
+    background-color: var(--color-background-white);
+    height: 30px;
+    color: var(--color-black);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    padding: 0px 4px;
+}
+
+.container-tab:hover {
+    background-color: #f7f8fb;
+}
+
+.container-tab.active {
+
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+.container-subtabs {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+
+
+}
+
+.subtabs {
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+}

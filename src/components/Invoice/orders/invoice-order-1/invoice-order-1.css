@@ -19,6 +19,8 @@ h3 {
 }
 
 .container-body {
+    padding: 0px 10PX;
+    padding-top: 25px;
     min-height: 50rem;
 }
 
@@ -82,7 +84,7 @@ h3 {
 .container-number-order {
     margin-top: 20px;
     display: flex;
-
+    padding: 0px 10px;
     align-items: center;
     text-align: center;
     gap: 5px;
@@ -178,6 +180,7 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    margin-top: 10px;
     width: 100%;
 
 
@@ -187,7 +190,7 @@ h3 {
     border-top: 2px solid #000;
     display: grid;
 
-    padding: 10px 10px;
+    padding: 10px 0px;
 
     width: 40%;
 }

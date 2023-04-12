@@ -23,18 +23,19 @@
 
     display: grid;
     grid-template-columns: auto auto;
-
+    gap: 10px;
     justify-content: center;
     margin: 12px 0px;
-    padding: 0;
+    padding: 10px;
     list-style: none;
 }
 
 .option {
+    width: 100%;
     display: flex;
     align-items: center;
     margin: 5px;
-    padding: 5px 2px;
+    padding: 10px 5px;
     font-size: 13px;
     border: 1px solid #ccc;
     border-radius: 25px;
@@ -42,6 +43,15 @@
     color: #333333;
     cursor: pointer;
     transition: all 0.2s ease;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    vertical-align: middle;
 }
 
 .option span {
@@ -74,6 +84,19 @@
     align-items: center;
 }
 
+.container-exper p {
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    vertical-align: middle;
+}
+
 .container-view-conten {
     display: flex;
     gap: 10px;
@@ -89,9 +112,9 @@
     box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
     box-sizing: border-box;
     color: #0f1111;
+    font-weight: 500;
     cursor: pointer;
     display: flex;
-    font-weight: 500;
     gap: 10px;
     align-items: center;
     justify-content: center;
@@ -101,16 +124,19 @@
     position: relative;
     text-align: center;
     text-decoration: none;
-    -moz-user-select: none;
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    -moz-user-select: none;
+    -ms-user-select: none;
     vertical-align: middle;
+
     width: 100%;
 }
 
 .container-send-form:hover {
 
+    border: 1px solid #0000001a;
     font-weight: 600;
 }
 

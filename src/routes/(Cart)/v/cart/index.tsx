@@ -54,7 +54,7 @@ export default component$(() => {
   useVisibleTask$(() => {
     const timer = setInterval(() => {
       showLoader.setShowLoader = false;
-    }, 300);
+    }, 10);
     return () => {
       clearInterval(timer);
     };
@@ -63,9 +63,12 @@ export default component$(() => {
     <div class="container-all">
       {state.searchResults && state.searchResults.length > 0 ? (
         <>
-         <div class="container-header">
-         <HeaderCart stateProduct={state.searchResults} subTotal={subTotal} />
-         </div>
+          <div class="container-header">
+            <HeaderCart
+              stateProduct={state.searchResults}
+              subTotal={subTotal}
+            />
+          </div>
           <div class="cart-container">
             <div class="cart-products">
               {state.searchResults.length > 0 ? (
@@ -154,7 +157,7 @@ export const head: DocumentHead = {
   meta: [
     {
       name: 'description',
-      content: 'Qwik site description',
+      content: 'Tu carrito de compras en Douvery',
     },
   ],
 };
