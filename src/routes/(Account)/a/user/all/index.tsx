@@ -268,7 +268,7 @@ export default component$(() => {
           />
         </svg>
 
-        <div class="box-title">Mis datos</div>
+        <div class="box-title">Mi Perfil</div>
       </div>{' '}
       <div class="container-box">
         <svg

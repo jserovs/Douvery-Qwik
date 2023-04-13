@@ -22,19 +22,36 @@ export const VerticalTabs = component$(() => {
       subTabs: [{ path: '/a/user/all/', label: 'Mas usados' }],
     },
     {
+      path: '/a/user/profile/',
+      label: 'MI perfil',
+      subTabs: [
+        { path: `/a/user/profile/${userACC?.name}/`, label: userACC?.name },
+      ],
+    },
+
+    {
       path: '/a/user/my/',
-      label: 'Mi',
+      label: 'Ordenes y listas',
       subTabs: [
         { path: '/a/user/my/orders', label: 'Mi ordenes' },
-        { path: '/a/user/my/reports', label: 'Mi Lista de deseos' },
-        { path: '/a/user/my/reports', label: 'Mi Futuras compras' },
-        { path: '/a/user/my/reports', label: 'Mi Devoluciones' },
+        { path: '/a/user/my/wish-list', label: 'Mi Lista de deseos' },
+        { path: '/a/user/my/future-purchases', label: 'Mi Futuras compras' },
+        { path: '/a/user/my/returns', label: 'Mi Devoluciones' },
       ],
+    },
+    {
+      path: '/a/user/my/reviews/',
+      label: 'Reviews',
+      subTabs: [{ path: `/a/user/my/reviews/`, label: 'Mi reviews' }],
     },
     {
       path: '/a/user/verified-segure/',
       label: 'Hacer cambios',
       subTabs: [
+        {
+          path: '/a/user/verified-segure/changes/address-delivery',
+          label: 'Cambiar correo electronico',
+        },
         {
           path: '/a/user/verified-segure/changes/password',
           label: 'Cambiar contraseña',
@@ -43,6 +60,18 @@ export const VerticalTabs = component$(() => {
           path: '/a/user/verified-segure/changes/address-delivery',
           label: 'Cambiar direccion de envio',
         },
+        {
+          path: '/a/user/verified-segure/changes/address-delivery',
+          label: 'Cambiar imagen de avatar',
+        },
+      ],
+    },
+    {
+      path: '/a/user/douvery/',
+      label: 'Douvery',
+      subTabs: [
+        { path: '/a/user/douvery/last-seen', label: 'Historial items' },
+        { path: '/a/user/douvery/theme-mode', label: 'Modos de temas' },
       ],
     },
   ];
