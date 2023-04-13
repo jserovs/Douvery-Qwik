@@ -1,5 +1,6 @@
 .container-tab {
     background-color: var(--color-background-white);
+    width: 100%;
     height: 30px;
     color: var(--color-black);
     font-weight: 500;
@@ -8,6 +9,7 @@
     border-bottom: 2px solid transparent;
     cursor: pointer;
     padding: 0px 4px;
+    font-size: small;
 }
 
 .container-tab:hover {

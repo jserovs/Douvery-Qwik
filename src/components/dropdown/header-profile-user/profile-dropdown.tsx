@@ -25,13 +25,16 @@ export const ProfileDropdown = component$(({ user }: any) => {
           >
             <p class="ttle-draw">
               <strong class="text-hello"> Hello,</strong>{' '}
-              <strong> <TextCL text={user.name}/></strong>
+              <strong>
+                {' '}
+                <TextCL text={user.name} />
+              </strong>
             </p>{' '}
           </button>
         </div>{' '}
         <div class="crt-drpd">
           <ul class={`dropdown-menu ${isOpen.setIsOpen ? 'show' : ''}`}>
-            <a class="dropdown-item" href="#">
+            <a class="dropdown-item" href="/a/user/all/">
               Configuración
             </a>
             <a class="dropdown-item" href="#">

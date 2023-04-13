@@ -21,10 +21,10 @@ import {
 import { InfoPay } from '~/components/(byServices)/Pay/sessions/info-pay/info-pay';
 
 import { DATA_ACCESS_COOKIE_NAME } from '~/services/auth/login/login';
-export const onGet: RequestHandler = async ({ cookie, redirect }) => {
+export const onGet: RequestHandler = async ({ cookie, url, redirect }) => {
   const acccessToken = cookie.get(DATA_ACCESS_COOKIE_NAME)?.value;
   if (!acccessToken) {
-    throw redirect(302, '/a/login?rr=/by/segure/address/');
+    throw redirect(302, '/a/login?rr=' + url.pathname);
   }
 };
 

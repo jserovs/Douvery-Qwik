@@ -1,5 +1,4 @@
 import {
-  $,
   Resource,
   component$,
   useResource$,
@@ -8,11 +7,7 @@ import {
 } from '@builder.io/qwik';
 import styles from './index.css?inline';
 import { useGetCurrentUser } from '~/routes/layout';
-import {
-  type DocumentHead,
-  useLocation,
-  useNavigate,
-} from '@builder.io/qwik-city';
+import { type DocumentHead, useLocation, Link } from '@builder.io/qwik-city';
 import { fetchUniqueOrderUser } from '~/services/user/order/order';
 import type { Order } from '~/utils/types';
 import { TextCL } from '~/components/use/textCL/textCL';
@@ -27,7 +22,7 @@ export default component$(() => {
   useStylesScoped$(styles);
   const userACC = useGetCurrentUser().value;
   const loc = useLocation();
-  const nav = useNavigate();
+
   const state = useStore<{
     order: Order;
     calification: string;
@@ -51,9 +46,6 @@ export default component$(() => {
     date: '2023-04-08',
     // ...otros datos de la factura
   };
-  const navigatorToOrderUser = $(() => {
-    nav('/a/user/my/orders/');
-  });
 
   return (
     <div class="container-all">
@@ -142,10 +134,11 @@ export default component$(() => {
             <DownloadButton targetId="invoice" state={state} />
             <PrintButton targetId="invoice" />
           </div>
-          <div class="button-view-ordes">
-            <button class="button-view-order" onClick$={navigatorToOrderUser}>
+          <div class="button-view-order">
+            {' '}
+            <Link href={'/a/user/my/orders/'} reload={true}>
               Ver ordenes
-            </button>
+            </Link>
           </div>
           <div>
             <QualifyShoppingExperience

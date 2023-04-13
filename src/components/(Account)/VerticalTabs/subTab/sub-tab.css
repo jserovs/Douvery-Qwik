@@ -2,12 +2,13 @@
     width: 100%;
     background-color: var(--color-background-white);
     height: 30px;
-    margin: 10px 0;
+    margin: 2px 0;
     display: grid;
 
     align-items: center;
     border-bottom: 2px solid transparent;
     cursor: pointer;
+    font-size: smaller;
 }
 
 .container-tab {

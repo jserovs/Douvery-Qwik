@@ -12,9 +12,9 @@ export const SubTab = component$(({ path, currentPath, label, key }: any) => {
   });
   return (
     <div class="container-sub-tab" key={key}>
-      <div class={className}>
+      <div class={className} onClick$={onClick}>
         {' '}
-        <button onClick$={onClick}>{label}</button>
+        <button>{label}</button>
       </div>
     </div>
   );

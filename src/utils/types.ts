@@ -91,6 +91,7 @@ export type UserACC = {
 	name: string ;
 	id:string;
 	token:string;
+	avatar:string;
 };
 
 export type decodedUserInfos = {
