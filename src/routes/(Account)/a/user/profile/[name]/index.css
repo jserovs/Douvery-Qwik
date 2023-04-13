@@ -77,9 +77,8 @@
 }
 
 .container-box-content ul {
-    border: 1px solid #d5d9d9;
+    border: 1px solid #f3f3f3;
     border-radius: 8px;
-    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
     box-sizing: border-box;
     color: #0f1111;
     padding: 20px 10px;
@@ -88,9 +87,7 @@
 }
 
 .container-box-content ul li {
-    border-bottom: 1px solid #d5d9d9;
-    border-radius: 8px;
-    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+
     width: 400px;
     display: flex;
     flex-direction: row;
