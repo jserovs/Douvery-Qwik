@@ -1,0 +1,108 @@
+.container-box-avatar {
+    padding: 90px 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    border-radius: 5px;
+    gap: 10px;
+    height: 200px;
+
+}
+
+.container-box-avatar div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    border-radius: 5px;
+    gap: 10px;
+    height: 200px;
+}
+
+.container-box-avatar img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 1px solid var(--color-background-down);
+}
+
+.container-button-change-avatar form {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    background-color: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #0f1111;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 29px;
+    padding: 0 10px 0 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    min-width: 150px;
+}
+
+
+button:hover {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transform: translateY(-0.1em);
+}
+
+button:active {
+    background-color: #fff;
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+    color: rgba(0, 0, 0, 0.65);
+    transform: translateY(0);
+}
+
+#file {
+
+
+    color: rgb(15, 14, 14);
+    max-width: 330px;
+    overflow: hidden;
+    position: relative;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#file::file-selector-button {
+    margin-right: 20px;
+    border: none;
+    background: #fff;
+    ;
+    border: 1px solid rgba(8, 8, 8, 0.288);
+    padding: 2px 10px;
+    border-radius: 10px;
+    color: #333;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+}
+
+#file::file-selector-button:hover {
+    background: #0d45a5;
+}
+
+.success-message {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #008000;
+}

@@ -1,5 +1,6 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './index.css?inline';
+import { ChangeAvatar } from '~/components/(Account)/User/verified-segure/changes/change-avatar/change-avatar';
 export default component$(() => {
   useStylesScoped$(styles);
   return (
@@ -13,49 +14,109 @@ export default component$(() => {
           <div class="container-box-title"></div>
           <ul>
             <li>
-              <p>First Name:</p>
-              <p>Douvery</p>
+              <div>
+                {' '}
+                <p>You Name:</p>
+                <p>Douvery</p>
+              </div>
+              <div>
+                {' '}
+                <button>Change Name</button>
+              </div>
             </li>
             <li>
-              <p>Last Name:</p>
-              <p>Alvarez</p>
+              <div>
+                <p> You Last Name:</p>
+                <p>Alvarez</p>
+              </div>
+              <div>
+                {' '}
+                <button>Change Last Name</button>
+              </div>
             </li>
             <li>
-              <p>Email:</p>
-              <p>juanchito@gmail.com</p>
+              <div>
+                <p>Email:</p>
+                <p>juanchito@gmail.com</p>
+              </div>
+              <div>
+                {' '}
+                <button>Change Email</button>
+              </div>
             </li>
             <li>
-              <p>Phone:</p>
-              <p>+1 809-670-4346 </p>
+              <div>
+                <p>Address:</p>
+                <p> stre 1 s 2sd da 12312 </p>
+              </div>
+              <div>
+                {' '}
+                <button>Change Address</button>
+              </div>
+            </li>{' '}
+            <li>
+              <div>
+                {' '}
+                <p>Phone:</p>
+                <p>+1 809-670-4346 </p>
+              </div>
+              <div>
+                {' '}
+                <button>Change Phone</button>
+              </div>
+            </li>
+            <div class="title-centered">
+              <div class="line"></div>
+              <p>Security for the profile</p>
+              <div class="line"></div>
+            </div>
+            <li>
+              <div>
+                {' '}
+                <p>Session verification</p>
+                <p>No activate</p>
+              </div>
+              <div>
+                {' '}
+                <button>Activate verification</button>
+              </div>
             </li>
             <li>
-              <p>Address:</p>
-              <p> stre 1 s 2sd da 12312 </p>
+              <div>
+                {' '}
+                <p>VeriTool verification</p>
+                <p>No activate</p>
+              </div>
+              <div>
+                {' '}
+                <button>Activate VeriTool</button>
+              </div>
             </li>
             <li>
-              <p>City:</p>
-              <p> stre </p>
+              <div>
+                {' '}
+                <p>2-step verification</p>
+                <p>No activate</p>
+              </div>
+              <div>
+                {' '}
+                <button>Activate 2-step </button>
+              </div>
             </li>
             <li>
-              <p>State:</p>
-              <p> streJR </p>
-            </li>
-            <li>
-              <p>Zip Code:</p>
-              <p>35666 </p>
+              <div>
+                {' '}
+                <p>Notification</p>
+                <p>None </p>
+              </div>
+              <div>
+                {' '}
+                <button>Change Notification</button>
+              </div>
             </li>
           </ul>
         </div>
-        <div class="container-box-avatar">
-          <img
-            src="https://res.cloudinary.com/douvery/image/upload/v1676456401/LOGO/z7neu6qunez6ygx9xxho.webp"
-            alt="avatar"
-          />
-          <p>Cambiada por ultima vez el 7 de abril de 2022</p>
-          <div class="container-button-change-avatar">
-            <button>Change Avatar</button>
-          </div>
-        </div>
+        <ChangeAvatar />
       </div>
     </div>
   );
