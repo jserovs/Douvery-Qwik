@@ -13,7 +13,7 @@ import {
 import { useGetCurrentUser } from '~/routes/layout';
 
 export const useSubmit = globalAction$(
-  async ({ file }, { cookie, url, redirect }) => {
+  async ({ file }, { fail, cookie, url, redirect }) => {
     const serverUrl = 'https://server-douvery.vercel.app/api/user/add-avatar';
     const accessCookie = cookie.get(DATA_ACCESS_COOKIE_NAME)?.value;
     const user = decodeToken(accessCookie, passwordKEY, serverKey);
@@ -31,12 +31,19 @@ export const useSubmit = globalAction$(
 
     const uploadResult = await res.json();
 
-    if (uploadResult.success) {
-      setCookiesData(uploadResult.userData, cookie);
-      throw redirect(302, url.pathname);
-    } else {
-      throw new Error('Error al subir la imagen al servidor');
+    // Verificar el estado de la respuesta HTTP en lugar de 'response.ok'
+    if (res.status !== 200) {
+      // Utilizar el mensaje de error proporcionado por la API si está disponible
+      const errorMessage =
+        uploadResult.error ||
+        uploadResult.msg ||
+        'Hubo un error, intente de nuevo';
+      return fail(res.status, {
+        message: errorMessage,
+      });
     }
+    setCookiesData(uploadResult.userData, cookie);
+    throw redirect(302, url.pathname);
   },
 
   zod$({
@@ -95,6 +102,17 @@ export const ChangeAvatar = component$(() => {
         <div class="avatar-preview">
           <img src={preview.value} alt="avatar preview" />
           <p>{userACC?.name}</p>
+        </div>
+      )}
+      {action.value?.message && (
+        <div>
+          {' '}
+          <br />
+          {action.isRunning ? (
+            <span class="loa-s">Verifying...</span>
+          ) : (
+            <span class="error ">{action.value?.message}</span>
+          )}
         </div>
       )}
     </div>

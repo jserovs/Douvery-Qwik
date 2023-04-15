@@ -50,7 +50,7 @@ export const VerticalTabs = component$(() => {
       subTabs: [
         {
           path: '/a/user/verified-segure/changes/name-lastname',
-          label: 'Cambiar nombre & apellido',
+          label: 'Cambiar nombre or apellido',
         },
         {
           path: '/a/user/verified-segure/changes/address-delivery',
@@ -113,6 +113,8 @@ export const VerticalTabs = component$(() => {
             <div>
               <div class="container-username">
                 <TextCL text={userACC?.name ? userACC?.name : ''} />
+                <TextCL text={' '} />
+                <TextCL text={userACC?.lastname ? userACC?.lastname : ''} />
                 <div class="container-action-username"></div>
               </div>{' '}
               <p>Configuraciones de mi cuenta</p>

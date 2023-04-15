@@ -33,6 +33,7 @@
 
 .container-button-change-avatar form {
     display: flex;
+    gap: 10px;
 
 }
 
@@ -111,9 +112,9 @@ button:active {
 .avatar-preview {
     width: 100%;
     background-color: #fff;
-    border: 1px solid #d5d9d9;
+    border: 1px solid var(--border-width-2);
     border-radius: 8px;
-    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-shadow: rgba(213, 217, 217, .5) 0 1px 1px 0;
     box-sizing: border-box;
     color: #0f1111;
     justify-content: center;
