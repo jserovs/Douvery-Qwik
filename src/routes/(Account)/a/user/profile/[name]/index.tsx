@@ -1,8 +1,10 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './index.css?inline';
 import { ChangeAvatar } from '~/components/(Account)/User/verified-segure/changes/change-avatar/change-avatar';
+import { useGetCurrentUser } from '~/routes/layout';
 export default component$(() => {
   useStylesScoped$(styles);
+  const userACC = useGetCurrentUser().value;
   return (
     <div class="container-all">
       <div class="container-title">
@@ -17,7 +19,7 @@ export default component$(() => {
               <div>
                 {' '}
                 <p>You Name:</p>
-                <p>Douvery</p>
+                <p>{userACC?.name}</p>
               </div>
               <div>
                 {' '}
@@ -27,7 +29,7 @@ export default component$(() => {
             <li>
               <div>
                 <p> You Last Name:</p>
-                <p>Alvarez</p>
+                <p>{userACC?.lastname}</p>
               </div>
               <div>
                 {' '}
