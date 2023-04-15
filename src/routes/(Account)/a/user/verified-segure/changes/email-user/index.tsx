@@ -13,8 +13,7 @@ import {
 
 export const useSubmit = globalAction$(
   async ({ name, lastname, password }, { fail, cookie, url, redirect }) => {
-    const serverUrl =
-      'https://server-douvery.vercel.app/user/name/lastname/edi-user';
+    const serverUrl = 'https://server-douvery.vercel.app/user/mail/edi-user';
     const accessCookie = cookie.get(DATA_ACCESS_COOKIE_NAME)?.value;
     const user = decodeToken(accessCookie, passwordKEY, serverKey);
     console.log(name, lastname, password);
@@ -67,7 +66,7 @@ export default component$(() => {
     <div class="container-all">
       {' '}
       <div class="container-title">
-        <p>Change your name or lastname</p>
+        <p>Change your email</p>
         <h6>Personal Information</h6>
       </div>
       <Form class="form" action={action}>
@@ -76,20 +75,13 @@ export default component$(() => {
             <div>
               <label for="name" class="form__label">
                 {' '}
-                Name{' '}
-              </label>
-              <input type="text" name="name" id="name" placeholder="New name" />
-            </div>
-            <div>
-              <label for="name" class="form__label">
-                {' '}
-                Lastname{' '}
+                Email{' '}
               </label>
               <input
                 type="text"
-                name="lastname"
-                id="lastname"
-                placeholder="New lastname"
+                name="email"
+                id="email"
+                placeholder="New email"
               />
             </div>
           </div>
@@ -119,7 +111,10 @@ export default component$(() => {
             <button>{action.isRunning ? 'Loading...' : 'Change'}</button>
           </div>
           <p class="alert-segurity">
-            Para mas seguridad activa <strong>Session verification.</strong>
+            - Para mas seguridad activa <strong>Session verification.</strong>
+          </p>
+          <p class="alert-segurity">
+            - Para mas seguridad activa <strong>Pin segurity.</strong>
           </p>
           {action.value?.message && (
             <div>
