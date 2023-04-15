@@ -49,6 +49,10 @@ export const VerticalTabs = component$(() => {
       label: 'Hacer cambios',
       subTabs: [
         {
+          path: '/a/user/verified-segure/changes/name-lastname',
+          label: 'Cambiar nombre & apellido',
+        },
+        {
           path: '/a/user/verified-segure/changes/address-delivery',
           label: 'Cambiar correo electronico',
         },
@@ -60,9 +64,10 @@ export const VerticalTabs = component$(() => {
           path: '/a/user/verified-segure/changes/address-delivery',
           label: 'Cambiar direccion de envio',
         },
+
         {
           path: '/a/user/verified-segure/changes/address-delivery',
-          label: 'Cambiar imagen de avatar',
+          label: 'Cambiar numero de telefono',
         },
       ],
     },

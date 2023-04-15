@@ -1,21 +1,19 @@
-import {
-  component$,
-  useSignal,
-  useStore,
-  useStylesScoped$,
-  useVisibleTask$,
-} from '@builder.io/qwik';
+import { $, component$, useSignal, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './change-avatar.css?inline';
 import { Form, globalAction$, z, zod$ } from '@builder.io/qwik-city';
-import { DATA_ACCESS_COOKIE_NAME } from '~/services/auth/login/login';
+import {
+  DATA_ACCESS_COOKIE_NAME,
+  setCookiesData,
+} from '~/services/auth/login/login';
 import {
   decodeToken,
   passwordKEY,
   serverKey,
 } from '~/services/auth/token/token';
+import { useGetCurrentUser } from '~/routes/layout';
 
 export const useSubmit = globalAction$(
-  async ({ file }, { cookie }) => {
+  async ({ file }, { cookie, url, redirect }) => {
     const serverUrl = 'https://server-douvery.vercel.app/api/user/add-avatar';
     const accessCookie = cookie.get(DATA_ACCESS_COOKIE_NAME)?.value;
     const user = decodeToken(accessCookie, passwordKEY, serverKey);
@@ -34,9 +32,8 @@ export const useSubmit = globalAction$(
     const uploadResult = await res.json();
 
     if (uploadResult.success) {
-      return {
-        message: uploadResult.message,
-      };
+      setCookiesData(uploadResult.userData, cookie);
+      throw redirect(302, url.pathname);
     } else {
       throw new Error('Error al subir la imagen al servidor');
     }
@@ -51,65 +48,55 @@ export const ChangeAvatar = component$(() => {
   useStylesScoped$(styles);
   // const nav = useNavigate();
   const action = useSubmit();
-  const fileRef = useSignal<HTMLInputElement>();
-  const store = useStore({
-    count: 0,
+  const userACC = useGetCurrentUser().value;
+  const preview = useSignal('');
+  const handleFileChange = $((event: any) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        preview.value = reader.result as string;
+      };
+      reader.readAsDataURL(file);
+    } else {
+      preview.value = 'Error fatal';
+    }
   });
-  const task = useStore({
-    nav: false,
-  });
-
-  useVisibleTask$(({ track }) => {
-    track(() => (task.nav = true));
-    const timer = setInterval(() => {
-      store.count++;
-    }, 500);
-
-    return () => {
-      action.value?.message;
-      clearInterval(timer);
-    };
-  });
-  // if (store.count === 10) {
-  //   nav('/otro-componente');
-  // }
   return (
     <div class="container-box-avatar">
-      <div>
+      <div class="box">
         <img
           src={
-            'https://res.cloudinary.com/douvery/image/upload/v1676456401/LOGO/z7neu6qunez6ygx9xxho.webp'
+            userACC?.avatar
+              ? userACC?.avatar
+              : 'https://res.cloudinary.com/douvery/image/upload/v1676456401/LOGO/z7neu6qunez6ygx9xxho.webp'
           }
           alt="avatar"
         />
-        <p>Cambiada por ultima vez el 7 de abril de 2022</p>
-        {store.count}
+        <p>Sube o cambia tu imagen de perfil.</p>
+
         <div class="container-button-change-avatar">
           <Form action={action}>
             <input
               accept="image/*"
-              ref={fileRef}
               type="file"
               id="file"
               name="file"
+              onChange$={handleFileChange}
             />
-            <button onClick$={() => fileRef.value?.click()}>
-              Change Avatar
+            <button>
+              {' '}
+              {action.isRunning ? <div class="loader"></div> : 'Change Avatar'}
             </button>
           </Form>
         </div>
-        <p>
-          {action.value?.message && (
-            <>
-              <p class="success-message">{action.value?.message}</p>
-              <p>
-                Por motivo de seguridad debe iniar session nuevamente para
-                reflejar cambios.
-              </p>
-            </>
-          )}{' '}
-        </p>
       </div>
+      {preview.value && (
+        <div class="avatar-preview">
+          <img src={preview.value} alt="avatar preview" />
+          <p>{userACC?.name}</p>
+        </div>
+      )}
     </div>
   );
 });
