@@ -12,7 +12,7 @@ import {
 } from '~/services/auth/token/token';
 
 export const useSubmit = globalAction$(
-  async ({ name, lastname, password }, { fail, cookie, url, redirect }) => {
+  async ({ name, lastname, password }, { fail, cookie, redirect }) => {
     const serverUrl =
       'https://server-douvery.vercel.app/user/name/lastname/edi-user';
     const accessCookie = cookie.get(DATA_ACCESS_COOKIE_NAME)?.value;
@@ -46,7 +46,7 @@ export const useSubmit = globalAction$(
 
     if (response.success) {
       setCookiesData(response.userData, cookie);
-      throw redirect(302, url.pathname);
+      throw redirect(302, '/a/user/profile/' + user.name);
     } else {
       throw new Error('Error');
     }

@@ -3,6 +3,7 @@ import styles from './index.css?inline';
 import { ChangeAvatar } from '~/components/(Account)/User/verified-segure/changes/change-avatar/change-avatar';
 import { useGetCurrentUser } from '~/routes/layout';
 import { useNavigate } from '@builder.io/qwik-city';
+import { TextCL } from '~/components/use/textCL/textCL';
 export default component$(() => {
   useStylesScoped$(styles);
   const userACC = useGetCurrentUser().value;
@@ -14,9 +15,9 @@ export default component$(() => {
     }
 
     if (phones.length > 1) {
-      return `Tiene más de un teléfono: ${phones.join(', ')}`;
+      return `${phones.join(', ')}`;
     } else if (phones.length === 1) {
-      return `Teléfono: ${phones[0]}`;
+      return `${phones[0]}`;
     } else {
       return 'No se encontraron teléfonos.';
     }
@@ -34,7 +35,7 @@ export default component$(() => {
       const addresses = address
         .map((addr: any) => formatAddress(addr))
         .join('; ');
-      return `Tiene más de una Address: ${addresses}`;
+      return `${addresses}`;
     } else if (address.length === 1) {
       return `${formatAddress(address[0])}`;
     } else {
@@ -56,7 +57,9 @@ export default component$(() => {
               <div>
                 {' '}
                 <p>You Name:</p>
-                <p>{userACC?.name}</p>
+                <p>
+                  <TextCL text={userACC?.name} />
+                </p>
               </div>
               <div>
                 {' '}
@@ -72,7 +75,15 @@ export default component$(() => {
             <li>
               <div>
                 <p> You Last Name:</p>
-                <p>{userACC?.lastname}</p>
+                <p>
+                  <TextCL
+                    text={
+                      userACC?.lastname
+                        ? userACC?.lastname
+                        : 'No se encontraron lastname.'
+                    }
+                  />
+                </p>
               </div>
               <div>
                 {' '}
@@ -88,17 +99,28 @@ export default component$(() => {
             <li>
               <div>
                 <p>Email:</p>
-                <p>{userACC?.email}</p>
+                <p>
+                  <TextCL text={userACC?.email} />
+                </p>
               </div>
               <div>
                 {' '}
-                <button>Change Email</button>
+                <button
+                  onClick$={() =>
+                    nav('/a/user/verified-segure/changes/email-user/')
+                  }
+                >
+                  Change Email
+                </button>
               </div>
             </li>
             <li>
               <div>
                 <p>Address:</p>
-                <p> {renderAddress(userACC?.address[0])}</p>
+                <p>
+                  {' '}
+                  <TextCL text={renderAddress(userACC?.address[0])} />
+                </p>
               </div>
               <div>
                 {' '}
@@ -109,7 +131,9 @@ export default component$(() => {
               <div>
                 {' '}
                 <p>Phone:</p>
-                <p>{renderPhones(userACC?.phones)}</p>
+                <p>
+                  <TextCL text={renderPhones(userACC?.phones)} />
+                </p>
               </div>
               <div>
                 {' '}
@@ -126,7 +150,11 @@ export default component$(() => {
                 {' '}
                 <p>Session verification</p>
                 <p>
-                  {userACC?.sessionVerification ? 'Activada' : 'No activada'}{' '}
+                  <TextCL
+                    text={
+                      userACC?.sessionVerification ? 'Activada' : 'No activada'
+                    }
+                  />{' '}
                 </p>
               </div>
               <div>
@@ -139,7 +167,11 @@ export default component$(() => {
                 {' '}
                 <p>VeriTool verification</p>
                 <p>
-                  {userACC?.veriToolVerification ? 'Activada' : 'No activada'}{' '}
+                  <TextCL
+                    text={
+                      userACC?.veriToolVerification ? 'Activada' : 'No activada'
+                    }
+                  />{' '}
                 </p>
               </div>
               <div>
@@ -152,7 +184,11 @@ export default component$(() => {
                 {' '}
                 <p>2-step verification</p>
                 <p>
-                  {userACC?.twoStepVerification ? 'Activada' : 'No activada'}{' '}
+                  <TextCL
+                    text={
+                      userACC?.twoStepVerification ? 'Activada' : 'No activada'
+                    }
+                  />{' '}
                 </p>
               </div>
               <div>
@@ -164,7 +200,11 @@ export default component$(() => {
               <div>
                 {' '}
                 <p>Notification</p>
-                <p>{userACC?.notification ? 'Activada' : 'No activada'} </p>
+                <p>
+                  <TextCL
+                    text={userACC?.notification ? 'Activada' : 'No activada'}
+                  />{' '}
+                </p>
               </div>
               <div>
                 {' '}
