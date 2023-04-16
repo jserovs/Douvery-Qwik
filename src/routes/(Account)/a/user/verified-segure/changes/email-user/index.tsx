@@ -10,10 +10,11 @@ import {
   passwordKEY,
   serverKey,
 } from '~/services/auth/token/token';
+import { urlServerNode } from '~/services/fechProduct';
 
 export const useSubmit = globalAction$(
   async ({ email, password }, { fail, cookie, redirect }) => {
-    const serverUrl = 'http://localhost:9039/user/email/edit-user';
+    const serverUrl = `${urlServerNode}/user/email/edit-user`;
     const accessCookie = cookie.get(DATA_ACCESS_COOKIE_NAME)?.value;
     const user = decodeToken(accessCookie, passwordKEY, serverKey);
 

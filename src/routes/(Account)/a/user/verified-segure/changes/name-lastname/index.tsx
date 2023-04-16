@@ -10,11 +10,11 @@ import {
   passwordKEY,
   serverKey,
 } from '~/services/auth/token/token';
+import { urlServerNode } from '~/services/fechProduct';
 
 export const useSubmit = globalAction$(
   async ({ name, lastname, password }, { fail, cookie, redirect }) => {
-    const serverUrl =
-      'https://server-douvery.vercel.app/user/name/lastname/edi-user';
+    const serverUrl = `${urlServerNode}/user/name/lastname/edi-user`;
     const accessCookie = cookie.get(DATA_ACCESS_COOKIE_NAME)?.value;
     const user = decodeToken(accessCookie, passwordKEY, serverKey);
     console.log(name, lastname, password);
