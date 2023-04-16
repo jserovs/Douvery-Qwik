@@ -2,6 +2,7 @@ import type { Cookie } from '@builder.io/qwik-city';
 import Cookies from 'universal-cookie';
 
 export const DATA_ACCESS_COOKIE_NAME = 'SESSION_D';
+export const DATA_ACCESS_COOKIE_NAME_US = 'SESSION_US';
 
 export const setsCookiesData = (name: string, dataAccessCookies: string) => {
   const cookies = new Cookies();

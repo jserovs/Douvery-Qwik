@@ -21,7 +21,7 @@ export function addToFavoriteProducts({dui}: {dui: string}) {
   const cart = getDataFavoriteProducts() || [];
   cart.push({dui}); // Agregar el objeto que se quiere guardar a la variable cart
   localStorage.setItem(OPTIONS_KEY_FAVORITE_PRODUCTS, JSON.stringify(cart));
-  console.log('Datos guardados en localStorage para la clave:', OPTIONS_KEY_FAVORITE_PRODUCTS);
+  
 }
 
 export async function getDataFavoriteProduct  () {

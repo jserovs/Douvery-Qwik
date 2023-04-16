@@ -1,11 +1,5 @@
 
 
-export type AppState = {
-	collections: '';
-	activeOrder: '';
-	showCart: boolean;
-	customer?: '';
-};
 
 
 export type Product = {
@@ -93,11 +87,32 @@ export type UserACC = {
 	id:string;
 	token:string;
 	avatar:string;
+	email:string;
+	address:Address[];
+	phones:	string[];
+	notification: boolean;
+	sessionVerification: boolean;
+	veriToolVerification: boolean;
+	twoStepVerification: boolean;
+
 };
+
+export type notification = {
+		status: boolean;
+}
+export type sessionVerification = {
+		status: boolean;
+}
+export type veriToolVerification = {
+	status: boolean;
+};
+export type twoStepVerification = {
+	status: boolean;
+};
+
 
 export type decodedUserInfos = {
 	name: string;
-	
 };
 
 

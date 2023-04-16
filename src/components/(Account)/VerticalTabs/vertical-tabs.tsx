@@ -53,7 +53,7 @@ export const VerticalTabs = component$(() => {
           label: 'Cambiar nombre or apellido',
         },
         {
-          path: '/a/user/verified-segure/changes/address-delivery',
+          path: '/a/user/verified-segure/changes/email-user/',
           label: 'Cambiar correo electronico',
         },
         {
