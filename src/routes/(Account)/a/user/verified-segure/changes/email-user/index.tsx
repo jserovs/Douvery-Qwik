@@ -10,10 +10,11 @@ import {
   passwordKEY,
   serverKey,
 } from '~/services/auth/token/token';
+import { urlServerNode } from '~/services/fechProduct';
 
 export const useSubmit = globalAction$(
-  async ({ name, lastname, password }, { fail, cookie, url, redirect }) => {
-    const serverUrl = 'https://server-douvery.vercel.app/user/mail/edi-user';
+  async ({ email, password }, { fail, cookie, redirect }) => {
+    const serverUrl = `${urlServerNode}/user/email/edit-user`;
     const accessCookie = cookie.get(DATA_ACCESS_COOKIE_NAME)?.value;
     const user = decodeToken(accessCookie, passwordKEY, serverKey);
 
@@ -24,8 +25,7 @@ export const useSubmit = globalAction$(
         'x-auth-token': user.token,
       },
       body: JSON.stringify({
-        name: name,
-        lastname: lastname,
+        userEmail: email,
         password: password,
       }),
     });
@@ -44,15 +44,14 @@ export const useSubmit = globalAction$(
 
     if (response.success) {
       setCookiesData(response.userData, cookie);
-      throw redirect(302, url.pathname);
+      throw redirect(302, '/a/user/profile/' + user.name);
     } else {
       throw new Error('Error');
     }
   },
 
   zod$({
-    name: z.string({}),
-    lastname: z.string({}),
+    email: z.string({}),
     password: z.string({
       required_error: 'Password is required',
     }),
@@ -72,7 +71,7 @@ export default component$(() => {
         <div class="container-form">
           <div class="container-inputs">
             <div>
-              <label for="name" class="form__label">
+              <label for="email" class="form__label">
                 {' '}
                 Email{' '}
               </label>

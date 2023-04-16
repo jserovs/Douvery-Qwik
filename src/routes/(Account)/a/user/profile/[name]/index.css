@@ -108,9 +108,17 @@ li p:first-child {
 
 li p:last-child {
     font-size: 15.3px;
-    padding: 0px 180px;
+    padding: 0px 80px 0px 180px;
 
     color: #121330 !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+
+    max-width: 600px;
+    ;
 }
 
 .title-centered {
