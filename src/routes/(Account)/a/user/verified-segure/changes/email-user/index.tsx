@@ -16,7 +16,6 @@ export const useSubmit = globalAction$(
     const serverUrl = 'https://server-douvery.vercel.app/user/mail/edi-user';
     const accessCookie = cookie.get(DATA_ACCESS_COOKIE_NAME)?.value;
     const user = decodeToken(accessCookie, passwordKEY, serverKey);
-    console.log(name, lastname, password);
 
     const res = await fetch(serverUrl, {
       method: 'post',

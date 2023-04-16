@@ -32,10 +32,10 @@ export const useAggAddress = globalAction$(
     const data = await fetch(`${urlServerNode}/api/save-user-address`, {
       method: 'POST',
       headers: {
-        'x-auth-token': user.token,
         'Content-Type': 'application/json',
+        'x-auth-token': user.token,
       },
-      credentials: 'include',
+
       body: JSON.stringify({
         userId: user.id,
         address: {
@@ -59,7 +59,8 @@ export const useAggAddress = globalAction$(
       const errorMessage = 'Something went wrong. Please try again later.';
       console.error('Error:', errorMessage); // log the error to the console for debugging
       return fail(400, {
-        message: errorMessage,
+        message:
+          errorMessage || 'Something went wrong. Please try again later.',
       });
     }
 

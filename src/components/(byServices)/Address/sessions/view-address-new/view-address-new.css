@@ -79,7 +79,12 @@ select:valid {
 
 
 
-
+.forgot-new-account-link {
+    font-size: 14px;
+    color: #0066cc;
+    text-decoration: none;
+    margin: 0px 5px;
+}
 
 
 .checkbox-wrapper-42 input[type="checkbox"] {

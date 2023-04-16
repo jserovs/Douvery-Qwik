@@ -23,7 +23,7 @@ import {  urlServerNode } from "../fechProduct";
       throw new Error('Failed to fetch product');
     }
     const results = await response.json();
-    console.log(results);
+   
     return results;
   }
   export async function deleteDataFuturePurchasesProduct(
@@ -50,7 +50,7 @@ import {  urlServerNode } from "../fechProduct";
       throw new Error('Failed to fetch product');
     }
     const results = await response.json();
-   console.log(results)
+  
     return results;
   }
   

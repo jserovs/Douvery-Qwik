@@ -3,8 +3,8 @@ import { Base64 } from 'js-base64';
 
 
 const OPTIONS_KEY = 'userInfo';
-export const passwordKEY = 'password';
-export const serverKey = 'clave_secreta_del_servidor';
+export const passwordKEY = 'SARID-773CA148-8E63C189-76E912B1';
+export const serverKey = 'SARID-0B756348-92D0EF2F-542AA93A';
 
 
 export const isAppReady = () => {

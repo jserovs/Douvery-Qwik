@@ -25,7 +25,7 @@ export const onGet: RequestHandler = async ({ cookie, redirect }) => {
 };
 
 export const useLogin = globalAction$(
-  async ({ email, password }, { fail, cookie, headers ,url }) => {
+  async ({ email, password }, { fail, cookie, headers, url }) => {
     const response = await fetch(`${urlServerNode}/api/signin`, {
       method: 'POST',
       headers: {
