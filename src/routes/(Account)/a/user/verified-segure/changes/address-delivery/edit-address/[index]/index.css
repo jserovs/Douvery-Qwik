@@ -26,6 +26,11 @@
     justify-content: space-around;
 }
 
+.form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0PX 30PX;
+}
 
 
 .container-form .container-inputs {
@@ -58,12 +63,34 @@
 }
 
 label {
-    font-size: 15px;
-    font-weight: 500;
-    color: #313a46;
+    display: block;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #444;
 }
 
+input[type="text"],
+input[type="email"],
+select {
+    display: block;
+    width: 100%;
+    max-width: 550PX;
+    height: 40px;
+    padding: 5px 10px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f5f5f5;
+    border: 1px solid #66666611;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
 
+input[type="text"]:valid,
+input[type="email"]:valid,
+select:valid {
+    background-color: #e8f0fe;
+
+}
 
 button {
     background-color: #fff;
@@ -76,7 +103,7 @@ button {
     display: inline-block;
 
     font-size: 13px;
-    height: 40px;
+    line-height: 29px;
     padding: 0 10px 0 11px;
     position: relative;
     text-align: center;
@@ -88,30 +115,6 @@ button {
     width: 100%;
     max-width: 200px;
     margin-top: 30px;
-}
-
-button:disabled {
-    background-color: #fff;
-    border: 1px solid #d5d9d9;
-    border-radius: 8px;
-    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
-    box-sizing: border-box;
-    color: #0f1111;
-    display: inline-block;
-
-    font-size: 13px;
-    line-height: 35px;
-    padding: 0 10px 0 11px;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: middle;
-    width: 100%;
-    cursor: not-allowed;
-    opacity: .5;
 }
 
 .container-form-button {
@@ -147,42 +150,75 @@ button:disabled {
     margin: auto;
 }
 
-.container-address-existing {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    gap: 30px;
-    justify-content: center;
-    align-items: center;
-    margin: 50px 30px;
+.alert-segurity {
+    opacity: 0.7;
 }
 
-.options {
-    display: grid;
-    gap: 10px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-
-}
-
-.options h6 {
-    margin-bottom: 30px;
-}
-
-.option {
-    min-width: 300px;
-    display: flex;
-    gap: 40px;
-    align-items: center;
-    margin: 5px;
-    padding: 0px 20px;
-    height: 50px;
+.forgot-new-account-link {
     font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 25px;
-    background-color: #fff;
-    color: #444;
-    font-weight: 400;
+    color: #0066cc;
+    text-decoration: none;
+    margin: 0px 5px;
+}
+
+
+.checkbox-wrapper-42 input[type="checkbox"] {
+    display: none;
+    visibility: hidden;
+}
+
+.checkbox-wrapper-42 label {
+    display: inline-block;
+}
+
+.checkbox-wrapper-42 .cbx {
+    position: relative;
+    top: 1px;
+    width: 17px;
+    height: 17px;
+    border: 1px solid #c8ccd4;
+    border-radius: 3px;
+    vertical-align: middle;
+    transition: background 0.1s ease;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+}
+
+.checkbox-wrapper-42 .cbx:after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 5px;
+    width: 5px;
+    height: 11px;
+    opacity: 0;
+    transform: rotate(45deg) scale(0);
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transition: all 0.3s ease;
+    transition-delay: 0.15s;
+}
+
+.checkbox-wrapper-42 .lbl {
+    margin-left: 5px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.checkbox-wrapper-42 input[type="checkbox"]:checked~.cbx {
+    border-color: transparent;
+    background: var(--color-primary);
+    animation: animation-42 0.6s ease;
+}
+
+.checkbox-wrapper-42 input[type="checkbox"]:checked~.cbx:after {
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+}
+
+.checkbox-wrapper-42 .cntr {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    text-align: center;
 }

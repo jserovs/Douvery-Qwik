@@ -1,10 +1,11 @@
 import {
   $,
+  Resource,
   component$,
+  useResource$,
   useSignal,
   useStore,
   useStylesScoped$,
-  useTask$,
 } from '@builder.io/qwik';
 import styles from './index.css?inline';
 import { useGetCurrentUser } from '~/routes/layout';
@@ -21,21 +22,19 @@ export default component$(() => {
     results: [],
   });
 
-  useTask$(async ({ track }) => {
-    track(() => '');
-
-    const controller = new AbortController();
-    state.results = await fetchAddressUser(`${userACC?.id}`, controller);
-
-    return () => {
-      controller.abort();
-    };
+  const reduceAddress = useResource$(async () => {
+    const data = await fetchAddressUser(`${userACC?.id}`);
+    state.results = data;
   });
 
   const selectIndex = useSignal(undefined);
   const nav = useNavigate();
   const send = $(() => {
-    nav('/by/segure/pay/' + selectIndex.value, true);
+    nav(
+      '/a/user/verified-segure/changes/address-delivery/edit-address/' +
+        selectIndex.value,
+      true
+    );
   });
   return (
     <div class="container-all">
@@ -46,44 +45,72 @@ export default component$(() => {
       </div>
       <div>
         {' '}
+        <div class="separator">
+          <hr class="line" />
+          <p>Your existing addresses</p>
+          <hr class="line" />
+        </div>
         <div class="container-address-existing">
           <div class="options">
-            {state.results.length === 0 ? (
-              <>
-                {' '}
-                <p>
-                  No hay <strong>Direcciones existentes</strong> disponibles
-                </p>
-              </>
-            ) : (
-              <>
-                {state.results[0] !== '' ? (
-                  state.results.map((item: any, i: any) => {
-                    return (
-                      <label key={i} class="option">
-                        <input
-                          type="radio"
-                          name="calle"
-                          id={`calle${i}`}
-                          value={item}
-                          onChange$={() => {
-                            selectIndex.value = i.toString();
-                          }}
-                        />
-                        <span>
-                          {item.addressLine1} , {item.state} , {item.zip},{' '}
-                          <TextCL text={item.country} />
-                        </span>
-                      </label>
-                    );
-                  })
-                ) : (
-                  <p>
-                    No hay <strong>Direcciones existentes</strong> disponibles
-                  </p>
-                )}
-              </>
-            )}
+            <h6>
+              Select an existing address and then continue to be able to modify
+              it-.
+            </h6>
+            <Resource
+              value={reduceAddress}
+              onPending={() => <div class="loader"></div>}
+              onRejected={(error) => <>Error: {error.message}</>}
+              onResolved={() => (
+                <>
+                  {state.results.length === 0 ? (
+                    <>
+                      {' '}
+                      <p>
+                        No hay <strong>Direcciones existentes</strong>{' '}
+                        disponibles
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      {state.results[0] !== '' ? (
+                        state.results.map((item: any, i: any) => {
+                          return (
+                            <>
+                              {' '}
+                              <label key={i} class="option">
+                                <input
+                                  type="radio"
+                                  name="calle"
+                                  id={`calle${i}`}
+                                  value={item}
+                                  onChange$={() => {
+                                    selectIndex.value = i.toString();
+                                  }}
+                                />
+                                <span>
+                                  {item.addressLine1} , {item.state} ,{' '}
+                                  {item.zip}, <TextCL text={item.country} />
+                                </span>
+                                {item.isPrimary ? (
+                                  <p class="primary">- Primary</p>
+                                ) : (
+                                  ''
+                                )}
+                              </label>
+                            </>
+                          );
+                        })
+                      ) : (
+                        <p>
+                          No hay <strong>Direcciones existentes</strong>{' '}
+                          disponibles
+                        </p>
+                      )}
+                    </>
+                  )}
+                </>
+              )}
+            />
           </div>
           <button
             type="submit"
@@ -93,6 +120,11 @@ export default component$(() => {
             Continue
           </button>
         </div>
+      </div>
+      <div class="separator">
+        <hr class="line" />
+        <p>Create new addresses</p>
+        <hr class="line" />
       </div>
     </div>
   );
