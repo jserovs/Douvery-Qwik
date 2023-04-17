@@ -124,7 +124,13 @@ export default component$(() => {
               </div>
               <div>
                 {' '}
-                <button>Change Address</button>
+                <button
+                  onClick$={() =>
+                    nav('/a/user/verified-segure/changes/address-delivery/')
+                  }
+                >
+                  Change Address
+                </button>
               </div>
             </li>{' '}
             <li>
@@ -138,6 +144,23 @@ export default component$(() => {
               <div>
                 {' '}
                 <button>Change Phone</button>
+              </div>
+            </li>{' '}
+            <li>
+              <div>
+                {' '}
+                <p>Password:</p>
+                <p>**********</p>
+              </div>
+              <div>
+                {' '}
+                <button
+                  onClick$={() =>
+                    nav('/a/user/verified-segure/changes/password/')
+                  }
+                >
+                  Change Password
+                </button>
               </div>
             </li>
             <div class="title-centered">
