@@ -204,4 +204,8 @@ button:disabled {
     -moz-user-select: none;
     -ms-user-select: none;
     vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
 }

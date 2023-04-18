@@ -5,7 +5,7 @@ import {
   useSignal,
   useStylesScoped$,
 } from '@builder.io/qwik';
-import { useLocation } from '@builder.io/qwik-city';
+import { useLocation, useNavigate } from '@builder.io/qwik-city';
 import { Tab } from './tabs/tab';
 import styles from './vertical-tabs.css?inline';
 import { TextCL } from '~/components/use/textCL/textCL';
@@ -66,7 +66,7 @@ export const VerticalTabs = component$(() => {
         },
 
         {
-          path: '/a/user/verified-segure/changes/address-delivery',
+          path: '/a/user/verified-segure/changes/my-phone',
           label: 'Cambiar numero de telefono',
         },
       ],
@@ -94,13 +94,17 @@ export const VerticalTabs = component$(() => {
   const onClickTab = $((tab: any) => {
     activeTab.value = tab;
   });
+  const nav = useNavigate();
   return (
     <div class="container-all">
       <div class="nav">
         {' '}
         <div class="container-header-nav">
           <div class="container-init">
-            <div class="container-avatar">
+            <div
+              class="container-avatar"
+              onClick$={() => nav('/a/user/profile/' + userACC?.name)}
+            >
               <img
                 src={
                   userACC?.avatar
