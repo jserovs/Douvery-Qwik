@@ -8,8 +8,10 @@ import {
 import styles from './index.css?inline';
 import {
   Form,
+  Link,
   globalAction$,
   useLocation,
+  useNavigate,
   z,
   zod$,
 } from '@builder.io/qwik-city';
@@ -26,21 +28,53 @@ import { urlServerNode } from '~/services/fechProduct';
 import { useGetCurrentUser } from '~/routes/layout';
 import type { Address } from '~/utils/types';
 import { fetchIndexAddressUser } from '~/services/user/address/address';
+import { DouveryLeft3 } from '~/components/icons/arrow-left-3';
+import { ButtonDeleteAddress } from '~/components/(Account)/User/verified-segure/changes/address-delivery/edit-address/components/button-delete-address';
 
 export const useSubmit = globalAction$(
-  async ({ password }, { fail, cookie, redirect }) => {
-    const serverUrl = `${urlServerNode}/user/email/edit-user`;
+  async (
+    {
+      password,
+      name,
+      addressLine1,
+      addressLine2,
+      street,
+      city,
+      states,
+      postalCode,
+      locationType,
+      country,
+      isPrimary,
+    },
+    { fail, cookie, params, redirect }
+  ) => {
+    const serverUrl = `${urlServerNode}/api/update-user-address`;
     const accessCookie = cookie.get(DATA_ACCESS_COOKIE_NAME)?.value;
     const user = decodeToken(accessCookie, passwordKEY, serverKey);
 
     const res = await fetch(serverUrl, {
-      method: 'post',
+      method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
         'x-auth-token': user.token,
       },
+
       body: JSON.stringify({
         password: password,
+        userId: user.id,
+        index: params.index,
+        newAddress: {
+          name: name,
+          addressLine1: addressLine1,
+          addressLine2: addressLine2,
+          street: street,
+          city: city,
+          state: states,
+          zip: postalCode,
+          locationType: locationType,
+          country: country,
+          isPrimary: isPrimary == 'true' ? true : false,
+        },
       }),
     });
 
@@ -58,7 +92,7 @@ export const useSubmit = globalAction$(
 
     if (response.success) {
       setCookiesData(response.userData, cookie);
-      throw redirect(302, '/a/user/profile/' + user.name);
+      throw redirect(302, '/a/user/verified-segure/changes/address-delivery/');
     } else {
       throw new Error('Error');
     }
@@ -88,6 +122,7 @@ export default component$(() => {
   useStylesScoped$(styles);
   const action = useSubmit();
   const loc = useLocation();
+  const nav = useNavigate();
   const userACC = useGetCurrentUser().value;
 
   const state = useStore<{
@@ -100,7 +135,7 @@ export default component$(() => {
   );
 
   const addressResource = useResource$<void>(async ({ track }) => {
-    track(() => loc.params.adr);
+    track(() => loc.params.index);
     const data = await fetchIndexAddressUser(
       `${userACC?.token}`,
       `${userACC?.id}`,
@@ -113,8 +148,19 @@ export default component$(() => {
   return (
     <div class="container-all">
       {' '}
+      <div
+        class="container-ret"
+        onClick$={() =>
+          nav('/a/user/verified-segure/changes/address-delivery/')
+        }
+      >
+        <DouveryLeft3 />
+        <p>Volver</p>
+      </div>
       <div class="container-title">
-        <p>Change your address</p>
+        <div>
+          <p>Change your address</p>
+        </div>
         <h6>Personal Information</h6>
       </div>
       <Form class="form" action={action}>
@@ -126,7 +172,13 @@ export default component$(() => {
             <>
               <div>
                 <label for="name">Nombre & Apellido</label>
-                <input type="text" id="name" name="name" required />
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  value={state.address.name}
+                />
                 {action.value?.fieldErrors?.name && (
                   <span class="error">{action.value?.fieldErrors?.name}</span>
                 )}
@@ -218,7 +270,7 @@ export default component$(() => {
                   name="country"
                   required
                 >
-                  <option value="">Seleccionar país</option>
+                  <option value={''}>Seleccionar país</option>
                   <option value="us">Estados Unidos</option>
                   <option value="es">España</option>
                   <option value="mx">México</option>
@@ -247,6 +299,48 @@ export default component$(() => {
                     Seleccionar como dirección principal.{' '}
                   </label>
                 </div>
+
+                <div class="container-inputs-password">
+                  {action.value?.message && (
+                    <div>
+                      {' '}
+                      <br />
+                      {action.isRunning ? (
+                        <span class="loa-s">Verifying...</span>
+                      ) : (
+                        <span class="error ">{action.value?.message}</span>
+                      )}
+                      <div class="form-group need-account">
+                        ¿Crees que presenta un error al crear?
+                        <a href="/a/" class="forgot-new-account-link">
+                          Reportar
+                        </a>
+                      </div>{' '}
+                      <br />
+                    </div>
+                  )}
+                  {action.isRunning && (
+                    <span class="error">
+                      {action.value?.fieldErrors?.country}
+                    </span>
+                  )}
+                  <label for="name" class="form__label">
+                    {' '}
+                    You password{' '}
+                  </label>
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="You password"
+                    required
+                  />
+                  {action.value?.fieldErrors?.password && (
+                    <span class="error">
+                      {action.value?.fieldErrors?.password}
+                    </span>
+                  )}
+                </div>
                 <button type="submit" class="button-address-new">
                   {action.isRunning
                     ? 'Loading...'
@@ -254,32 +348,27 @@ export default component$(() => {
                     ? 'Error'
                     : 'Modify address'}
                 </button>
-              </div>
-              {action.value?.message && (
-                <div>
-                  {' '}
-                  <br />
-                  {action.isRunning ? (
-                    <span class="loa-s">Verifying...</span>
-                  ) : (
-                    <span class="error ">{action.value?.message}</span>
-                  )}
-                  <div class="form-group need-account">
-                    ¿Crees que presenta un error al crear?
-                    <a href="/a/" class="forgot-new-account-link">
-                      Reportar
-                    </a>
-                  </div>{' '}
-                  <br />
+                <div class="separator">
+                  <hr class="line" />
+                  <p>Or</p>
+                  <hr class="line" />
                 </div>
-              )}
-              {action.isRunning && (
-                <span class="error">{action.value?.fieldErrors?.country}</span>
-              )}
+                <div class="container-link-create">
+                  <Link href="/a/user/verified-segure/changes/address-delivery/new-address/">
+                    Create new address
+                  </Link>
+                </div>
+              </div>
             </>
           )}
         />
       </Form>
+      <div class="separator">
+        <hr class="line" />
+        <p>Delete address</p>
+        <hr class="line" />
+      </div>
+      <ButtonDeleteAddress />
     </div>
   );
 });

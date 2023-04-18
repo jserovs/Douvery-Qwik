@@ -1,9 +1,9 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './index.css?inline';
-import { ChangeAvatar } from '~/components/(Account)/User/verified-segure/changes/change-avatar/change-avatar';
 import { useGetCurrentUser } from '~/routes/layout';
 import { useNavigate } from '@builder.io/qwik-city';
 import { TextCL } from '~/components/use/textCL/textCL';
+import { ChangeAvatar } from '~/components/(Account)/User/verified-segure/changes/change-avatar/change-avatar';
 export default component$(() => {
   useStylesScoped$(styles);
   const userACC = useGetCurrentUser().value;

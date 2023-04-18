@@ -123,6 +123,7 @@ export type Search = {
 };
 
 export type Address = {
+	name: string;
 	addressLine1: string;
 	addressLine2: string;
 	street: string;
