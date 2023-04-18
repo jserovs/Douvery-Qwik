@@ -1,9 +1,9 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './index.css?inline';
-import { ChangeAvatar } from '~/components/(Account)/User/verified-segure/changes/change-avatar/change-avatar';
 import { useGetCurrentUser } from '~/routes/layout';
 import { useNavigate } from '@builder.io/qwik-city';
 import { TextCL } from '~/components/use/textCL/textCL';
+import { ChangeAvatar } from '~/components/(Account)/User/verified-segure/changes/change-avatar/change-avatar';
 export default component$(() => {
   useStylesScoped$(styles);
   const userACC = useGetCurrentUser().value;
@@ -124,7 +124,13 @@ export default component$(() => {
               </div>
               <div>
                 {' '}
-                <button>Change Address</button>
+                <button
+                  onClick$={() =>
+                    nav('/a/user/verified-segure/changes/address-delivery/')
+                  }
+                >
+                  Change Address
+                </button>
               </div>
             </li>{' '}
             <li>
@@ -138,6 +144,23 @@ export default component$(() => {
               <div>
                 {' '}
                 <button>Change Phone</button>
+              </div>
+            </li>{' '}
+            <li>
+              <div>
+                {' '}
+                <p>Password:</p>
+                <p>**********</p>
+              </div>
+              <div>
+                {' '}
+                <button
+                  onClick$={() =>
+                    nav('/a/user/verified-segure/changes/password/')
+                  }
+                >
+                  Change Password
+                </button>
               </div>
             </li>
             <div class="title-centered">

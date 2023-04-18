@@ -33,7 +33,7 @@
 }
 
 .tabs {
-    border-bottom: 1px solid var(--color-primary);
+    border-bottom: 1px solid #10101010;
     padding: 10px 0px;
     cursor: pointer;
 
