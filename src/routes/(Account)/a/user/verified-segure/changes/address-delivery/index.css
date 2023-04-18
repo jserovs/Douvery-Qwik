@@ -90,6 +90,10 @@ button {
     margin-top: 30px;
 }
 
+button:hover {
+    border: 1px solid #414141;
+}
+
 button:disabled {
     background-color: #fff;
     border: 1px solid #d5d9d9;
@@ -147,6 +151,10 @@ button:disabled {
     margin: auto;
 }
 
+.container-new-addresses {
+    margin: 50px 30px;
+}
+
 .container-address-existing {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -155,6 +163,8 @@ button:disabled {
     align-items: center;
     margin: 50px 30px;
 }
+
+
 
 .options {
     display: grid;
@@ -185,4 +195,13 @@ button:disabled {
     font-weight: 400;
     cursor: pointer;
     transition: background-color 0.2s ease;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    vertical-align: middle;
 }

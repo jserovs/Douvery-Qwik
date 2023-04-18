@@ -154,7 +154,7 @@ export default component$(() => {
           nav('/a/user/verified-segure/changes/address-delivery/')
         }
       >
-        <DouveryLeft3 />
+        <DouveryLeft3 size="15" />
         <p>Volver</p>
       </div>
       <div class="container-title">
