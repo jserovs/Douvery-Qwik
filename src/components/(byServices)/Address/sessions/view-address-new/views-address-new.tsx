@@ -2,7 +2,10 @@ import { component$, useStore, useStylesScoped$ } from '@builder.io/qwik';
 import { ConsentLocation } from '../../components/ConsentLocation/consent-location';
 import styles from './view-address-new.css?inline';
 import { Form, globalAction$, z, zod$ } from '@builder.io/qwik-city';
-import { DATA_ACCESS_COOKIE_NAME } from '~/services/auth/login/login';
+import {
+  DATA_ACCESS_COOKIE_NAME,
+  setCookiesData,
+} from '~/services/auth/login/login';
 import {
   decodeToken,
   passwordKEY,
@@ -53,19 +56,26 @@ export const useAggAddress = globalAction$(
       }),
     });
 
-    const dataAccess = await data.json();
+    const response = await data.json();
 
-    if (!data.ok || !dataAccess) {
-      const errorMessage = 'Something went wrong. Please try again later.';
-      console.error('Error:', errorMessage); // log the error to the console for debugging
-      return fail(400, {
-        message:
-          errorMessage || 'Something went wrong. Please try again later.',
+    // Verificar el estado de la respuesta HTTP en lugar de 'response.ok'
+    if (data.status !== 200) {
+      // Utilizar el mensaje de error proporcionado por la API si está disponible
+      const errorMessage =
+        response.error || response.msg || 'Hubo un error, intente de nuevo';
+      return fail(data.status, {
+        message: errorMessage,
       });
     }
 
-    headers.set('location', '/by/segure/pay/' + dataAccess.index + '/');
+    if (response.success) {
+      setCookiesData(response.userData, cookie);
+      headers.set('location', '/by/segure/pay/' + response.index + '/');
+    } else {
+      throw new Error('Error');
+    }
   },
+
   zod$({
     name: z
       .string()

@@ -126,6 +126,16 @@ export default component$(() => {
         <p>Create new addresses</p>
         <hr class="line" />
       </div>
+      <div class="container-new-addresses">
+        <p>New shipping address?</p>
+        <button
+          onClick$={() =>
+            nav('/a/user/verified-segure/changes/address-delivery/new-address')
+          }
+        >
+          Crear
+        </button>
+      </div>
     </div>
   );
 });
