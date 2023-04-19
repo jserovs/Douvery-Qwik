@@ -109,10 +109,10 @@ export default component$(() => {
             <button>{action.isRunning ? 'Loading...' : 'Change'}</button>
           </div>
           <p class="alert-segurity">
-            - Para mas seguridad activa <strong>Session verification.</strong>
+            Para mas seguridad activa <strong>Session verification.</strong>
           </p>
           <p class="alert-segurity">
-            - Para mas seguridad activa <strong>Pin segurity.</strong>
+            Para mas seguridad activa <strong>Pin segurity.</strong>
           </p>
           {action.value?.message && (
             <div>

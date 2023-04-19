@@ -94,11 +94,6 @@ export default component$(() => {
             </div>
           </div>
           <div class="container-accept">
-            <div class="separator">
-              <hr class="line" />
-              <p>For segurity</p>
-              <hr class="line" />
-            </div>
             <div class="container-inputs-password">
               <label for="name" class="form__label">
                 {' '}
