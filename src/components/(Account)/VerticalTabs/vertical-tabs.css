@@ -130,7 +130,7 @@
 .container-action-header .active p {
     opacity: 1;
     color: #fff;
-    background-color: royalblue;
+    background-color: #2c3e50;
     border-radius: 10px;
     padding: 3px 40px;
 }
@@ -140,4 +140,11 @@
     color: #000;
     margin: 0px;
     padding: 0px;
+}
+
+@media only screen and (max-width: 885px) {
+
+    .nav {
+        display: none;
+    }
 }

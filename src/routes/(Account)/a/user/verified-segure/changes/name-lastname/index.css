@@ -20,37 +20,36 @@
 
 .container-form {
     width: 100%;
-    display: grid;
+    display: flex;
     gap: 20px;
     padding: 30PX 0PX;
-    justify-content: space-around;
+
 }
 
 
 
 .container-form .container-inputs {
-    display: grid;
     justify-content: start;
 }
 
 .container-inputs {
     min-width: 500px;
-    display: grid;
-    grid-template-columns: auto;
+    display: flex;
+    flex-direction: column;
     gap: 10px;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 }
 
 .container-inputs div {
     display: grid;
-    grid-template-columns: 100px auto;
-    gap: 20px;
+
+    gap: 0px;
     align-items: center;
 }
 
 .container-inputs-password {
-    width: 100%;
+    width: 80%;
     display: grid;
     grid-template-columns: 100px auto;
     gap: 20px;
@@ -58,19 +57,26 @@
 }
 
 label {
+    display: block;
+    margin: 30px 0px 5px 0px;
     font-size: 14px;
-    font-weight: 500;
-    color: #313a46;
+    color: #444;
 }
 
-input {
-    max-width: 100%;
-    border: 1px solid #dfe1e5;
-    border-radius: 24px;
-    overflow: hidden;
-    padding: 10px 20px;
-    min-width: 330px;
-    max-width: 330px;
+
+input[type="text"] {
+    display: block;
+    width: 100%;
+    min-width: 400px;
+    max-width: 550PX;
+    height: 40px;
+    padding: 5px 10px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f5f5f5;
+    border: 1px solid #66666611;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 
@@ -110,7 +116,7 @@ button {
     grid-template-columns: 1fr 2fr 1fr;
     gap: 10px;
     color: #8B8E98;
-    margin: 0 10px;
+    margin: 30px 20px 0px 10px;
 }
 
 .separator>p {
@@ -134,4 +140,39 @@ button {
 
 .alert-segurity {
     opacity: 0.7;
+}
+
+.container-accept {
+    display: grid;
+
+}
+
+.container-inputs-password {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    gap: 20px;
+    align-items: center;
+}
+
+.container-inputs-password label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #313a46;
+}
+
+.container-inputs-password input {
+    max-width: 100%;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    overflow: hidden;
+    padding: 8px 20px;
+    min-width: 300px;
+    max-width: 300px;
+}
+
+.container-recomendation {
+    display: grid;
+    gap: 10px;
+    margin: 20px 0px;
 }

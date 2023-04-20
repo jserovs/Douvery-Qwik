@@ -17,7 +17,6 @@ export const useSubmit = globalAction$(
     const serverUrl = `${urlServerNode}/user/name/lastname/edi-user`;
     const accessCookie = cookie.get(DATA_ACCESS_COOKIE_NAME)?.value;
     const user = decodeToken(accessCookie, passwordKEY, serverKey);
-    console.log(name, lastname, password);
 
     const res = await fetch(serverUrl, {
       method: 'post',
@@ -81,7 +80,7 @@ export default component$(() => {
               <input type="text" name="name" id="name" placeholder="New name" />
             </div>
             <div>
-              <label for="name" class="form__label">
+              <label for="lastname" class="form__label">
                 {' '}
                 Lastname{' '}
               </label>
@@ -93,45 +92,49 @@ export default component$(() => {
               />
             </div>
           </div>
-          <div class="separator">
-            <hr class="line" />
-            <p>For segurity</p>
-            <hr class="line" />
-          </div>
-          <div class="container-inputs-password">
-            <label for="name" class="form__label">
-              {' '}
-              You password{' '}
-            </label>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Your password"
-              required
-            />
-            {action.value?.fieldErrors?.password && (
-              <span class="error">{action.value?.fieldErrors?.password}</span>
-            )}
-          </div>
-          <div class="container-form-button">
-            {action.isRunning ? <div class="loader"></div> : null}
-            <button>{action.isRunning ? 'Loading...' : 'Change'}</button>
-          </div>
-          <p class="alert-segurity">
-            Para mas seguridad activa <strong>Session verification.</strong>
-          </p>
-          {action.value?.message && (
-            <div>
-              {' '}
-              <br />
-              {action.isRunning ? (
-                <span class="loa-s">Verifying...</span>
-              ) : (
-                <span class="error ">{action.value?.message}</span>
+          <div class="container-accept">
+            <div class="container-inputs-password">
+              <label for="name" class="form__label">
+                {' '}
+                You password{' '}
+              </label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Your password"
+                required
+              />
+              {action.value?.fieldErrors?.password && (
+                <span class="error">{action.value?.fieldErrors?.password}</span>
               )}
             </div>
-          )}
+            <div class="container-form-button">
+              {action.isRunning ? <div class="loader"></div> : null}
+              <button>{action.isRunning ? 'Loading...' : 'Change'}</button>
+            </div>
+            <div class="separator">
+              <hr class="line" />
+              <p>Recomendation</p>
+              <hr class="line" />
+            </div>
+            <div class="container-recomendation">
+              <p class="alert-segurity">
+                Para mas seguridad activa <strong>Session verification.</strong>
+              </p>
+            </div>
+            {action.value?.message && (
+              <div>
+                {' '}
+                <br />
+                {action.isRunning ? (
+                  <span class="loa-s">Verifying...</span>
+                ) : (
+                  <span class="error ">{action.value?.message}</span>
+                )}
+              </div>
+            )}
+          </div>
         </div>
       </Form>
     </div>

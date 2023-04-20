@@ -1,5 +1,5 @@
 .container-all {
-    padding: 50px 20px;
+    padding: 30px 20px;
     animation: smoApp 0.6s ease;
     display: grid;
     gap: 20px;
@@ -12,28 +12,50 @@
 
 }
 
+.container-ret {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    width: 100px;
+    opacity: 0.8;
+
+
+}
+
+.container-ret p {
+    font-size: 14px;
+    margin: 0px;
+    font-weight: 400;
+    color: #555;
+}
+
+.container-ret:hover {
+    opacity: 1;
+}
+
 .container-title p {
     font-size: 20px;
     margin: 0px;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .container-form {
     width: 100%;
     display: grid;
-    grid-template-columns: auto auto;
-    gap: 80px;
-    padding: 30PX 20PX;
-    justify-content: start;
+    gap: 20px;
+    padding: 30PX 0PX;
+    justify-content: space-around;
 }
 
-.container-form div {
-    width: 100%;
+.form {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0PX 30PX;
+}
 
-    gap: 20px;
-
-
+.container-button-send {
+    max-width: 300px;
 }
 
 .container-form .container-inputs {
@@ -66,24 +88,59 @@
 }
 
 label {
+    display: block;
+    margin: 30px 0px 5px 0px;
     font-size: 14px;
-    font-weight: 500;
-    color: #313a46;
+    color: #444;
 }
 
-input {
-    max-width: 100%;
-    border: 1px solid #dfe1e5;
-    border-radius: 24px;
-    overflow: hidden;
-    padding: 10px 20px;
-    min-width: 330px;
-    max-width: 330px;
+input[type="tel"] {
+    display: block;
+    width: 100%;
+    max-width: 300PX;
+    height: 40px;
+    padding: 5px 10px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f5f5f5;
+    border: 1px solid #66666611;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
+input[type="tel"]:valid {
+    background-color: #e8f0fe;
+
+}
 
 button {
     background-color: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #110f10;
+    cursor: pointer;
+    display: inline-block;
+
+    font-size: 13px;
+    line-height: 29px;
+    padding: 0 10px 0 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: 100%;
+
+    margin-top: 30px;
+}
+
+.container-link-create {
+    background-color: #fff;
+    opacity: 0.5;
     border: 1px solid #d5d9d9;
     border-radius: 8px;
     box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
@@ -102,9 +159,12 @@ button {
     -webkit-user-select: none;
     touch-action: manipulation;
     vertical-align: middle;
-    width: 400px;
+    width: 100%;
 
-    height: 40px;
+}
+
+.container-link-create:hover {
+    opacity: 1;
 }
 
 .container-form-button {
@@ -113,12 +173,13 @@ button {
 }
 
 .separator {
+
     width: calc(100% - 20px);
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     gap: 10px;
     color: #8B8E98;
-    margin: 0 10px;
+    margin: 20px 10px;
 }
 
 .separator>p {
@@ -141,15 +202,16 @@ button {
 }
 
 .alert-segurity {
-    opacity: 0.8;
-    font-size: 14px;
+    opacity: 0.7;
 }
 
-.checkbox-wrapper-42 {
-    display: grid;
-    grid-template-columns: 10px auto;
-    height: 20px;
+.forgot-new-account-link {
+    font-size: 14px;
+    color: #0066cc;
+    text-decoration: none;
+    margin: 0px 5px;
 }
+
 
 .checkbox-wrapper-42 input[type="checkbox"] {
     display: none;
@@ -210,4 +272,28 @@ button {
     left: 0;
     width: 100%;
     text-align: center;
+}
+
+.container-inputs-password {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    gap: 20px;
+    align-items: center;
+}
+
+.container-inputs-password label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #313a46;
+}
+
+.container-inputs-password input {
+    max-width: 100%;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    overflow: hidden;
+    padding: 8px 20px;
+    min-width: 300px;
+    max-width: 300px;
 }
