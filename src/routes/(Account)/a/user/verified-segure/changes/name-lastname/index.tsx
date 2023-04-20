@@ -10,14 +10,13 @@ import {
   passwordKEY,
   serverKey,
 } from '~/services/auth/token/token';
-import { urlServerLocal } from '~/services/fechProduct';
+import { urlServerNode } from '~/services/fechProduct';
 
 export const useSubmit = globalAction$(
   async ({ name, lastname, password }, { fail, cookie, redirect }) => {
-    const serverUrl = `${urlServerLocal}/user/name/lastname/edi-user`;
+    const serverUrl = `${urlServerNode}/user/name/lastname/edi-user`;
     const accessCookie = cookie.get(DATA_ACCESS_COOKIE_NAME)?.value;
     const user = decodeToken(accessCookie, passwordKEY, serverKey);
-    console.log(name, lastname, password);
 
     const res = await fetch(serverUrl, {
       method: 'post',
@@ -81,7 +80,7 @@ export default component$(() => {
               <input type="text" name="name" id="name" placeholder="New name" />
             </div>
             <div>
-              <label for="name" class="form__label">
+              <label for="lastname" class="form__label">
                 {' '}
                 Lastname{' '}
               </label>

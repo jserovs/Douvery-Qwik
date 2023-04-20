@@ -1,6 +1,12 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './index.css?inline';
-import { Form, globalAction$, z, zod$ } from '@builder.io/qwik-city';
+import {
+  type DocumentHead,
+  Form,
+  globalAction$,
+  z,
+  zod$,
+} from '@builder.io/qwik-city';
 import {
   DATA_ACCESS_COOKIE_NAME,
   setCookiesData,
@@ -69,64 +75,80 @@ export default component$(() => {
       </div>
       <Form class="form" action={action}>
         <div class="container-form">
-          <div class="container-inputs">
-            <div>
-              <label for="email" class="form__label">
+          <div>
+            {' '}
+            <div class="container-inputs">
+              <div>
+                <label for="email" class="form__label">
+                  {' '}
+                  Email{' '}
+                </label>
+                <input
+                  type="text"
+                  name="email"
+                  id="email"
+                  placeholder="New email"
+                />
+              </div>
+            </div>
+            <div class="separator">
+              <hr class="line" />
+              <p>For segurity</p>
+              <hr class="line" />
+            </div>
+            <div class="container-inputs-password">
+              <label for="name" class="form__label">
                 {' '}
-                Email{' '}
+                You password{' '}
               </label>
               <input
-                type="text"
-                name="email"
-                id="email"
-                placeholder="New email"
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Your password"
+                required
               />
-            </div>
-          </div>
-          <div class="separator">
-            <hr class="line" />
-            <p>For segurity</p>
-            <hr class="line" />
-          </div>
-          <div class="container-inputs-password">
-            <label for="name" class="form__label">
-              {' '}
-              You password{' '}
-            </label>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Your password"
-              required
-            />
-            {action.value?.fieldErrors?.password && (
-              <span class="error">{action.value?.fieldErrors?.password}</span>
-            )}
-          </div>
-          <div class="container-form-button">
-            {action.isRunning ? <div class="loader"></div> : null}
-            <button>{action.isRunning ? 'Loading...' : 'Change'}</button>
-          </div>
-          <p class="alert-segurity">
-            Para mas seguridad activa <strong>Session verification.</strong>
-          </p>
-          <p class="alert-segurity">
-            Para mas seguridad activa <strong>Pin segurity.</strong>
-          </p>
-          {action.value?.message && (
-            <div>
-              {' '}
-              <br />
-              {action.isRunning ? (
-                <span class="loa-s">Verifying...</span>
-              ) : (
-                <span class="error ">{action.value?.message}</span>
+              {action.value?.fieldErrors?.password && (
+                <span class="error">{action.value?.fieldErrors?.password}</span>
               )}
             </div>
-          )}
+          </div>
+          <div>
+            {' '}
+            <p class="alert-segurity">
+              Para mas seguridad activa <strong>Session verification.</strong>
+            </p>
+            <p class="alert-segurity">
+              Para mas seguridad activa <strong>Pin segurity.</strong>
+            </p>
+            <div class="container-form-button">
+              {action.isRunning ? <div class="loader"></div> : null}
+              <button>{action.isRunning ? 'Loading...' : 'Change'}</button>
+            </div>
+            {action.value?.message && (
+              <div>
+                {' '}
+                <br />
+                {action.isRunning ? (
+                  <span class="loa-s">Verifying...</span>
+                ) : (
+                  <span class="error ">{action.value?.message}</span>
+                )}
+              </div>
+            )}
+          </div>
         </div>
       </Form>
     </div>
   );
 });
+
+export const head: DocumentHead = {
+  title: 'Douvery - Cambiar email',
+  meta: [
+    {
+      name: 'Douvery - Cambiar email',
+      content: 'Douvery - Cambiar email',
+    },
+  ],
+};

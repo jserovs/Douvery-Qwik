@@ -24,16 +24,16 @@ import {
   passwordKEY,
   serverKey,
 } from '~/services/auth/token/token';
-import { urlServerLocal } from '~/services/fechProduct';
+import { urlServerNode } from '~/services/fechProduct';
 import { useGetCurrentUser } from '~/routes/layout';
 
 import { DouveryLeft3 } from '~/components/icons/arrow-left-3';
-import { ButtonDeleteAddress } from '~/components/(Account)/User/verified-segure/changes/address-delivery/edit-address/components/button-delete-address';
 import { fetchIndexPhonesUser } from '~/services/user/phones/phones';
+import { ButtonDeletePhone } from '~/components/(Account)/User/verified-segure/changes/my-phone/edit/button-delete-phone';
 
 export const useSubmit = globalAction$(
   async ({ password, number }, { fail, cookie, params, redirect }) => {
-    const serverUrl = `${urlServerLocal}/api/update-user-phone`;
+    const serverUrl = `${urlServerNode}/api/update-user-phone`;
     const accessCookie = cookie.get(DATA_ACCESS_COOKIE_NAME)?.value;
     const user = decodeToken(accessCookie, passwordKEY, serverKey);
 
@@ -103,7 +103,7 @@ export default component$(() => {
     { recursive: true }
   );
 
-  const addressResource = useResource$<void>(async ({ track }) => {
+  const phonesResource = useResource$<void>(async ({ track }) => {
     track(() => loc.params.index);
     const data = await fetchIndexPhonesUser(
       `${userACC?.token}`,
@@ -132,14 +132,20 @@ export default component$(() => {
       </div>
       <Form class="form" action={action}>
         <Resource
-          value={addressResource}
+          value={phonesResource}
           onPending={() => <div class="loader"></div>}
           onRejected={(error) => <>Error: {error.message}</>}
           onResolved={() => (
             <>
               <div>
-                <label for="number">Select phone number</label>
-                <input type="tel" id="number" name="number" required />
+                <label for="number">Phone number</label>
+                <input
+                  type="tel"
+                  id="number"
+                  name="number"
+                  required
+                  value={state.phone}
+                />
                 {action.value?.fieldErrors?.number && (
                   <span class="error">{action.value?.fieldErrors?.number}</span>
                 )}
@@ -154,6 +160,7 @@ export default component$(() => {
                       (isPrimary.setIsPrimary = !isPrimary.setIsPrimary)
                     }
                   />
+
                   <label class="cbx" for="confirm"></label>
                   <label class="lbl" for="confirm">
                     Confirmo este cambio.{' '}
@@ -229,7 +236,7 @@ export default component$(() => {
         <p>Delete phone</p>
         <hr class="line" />
       </div>
-      <ButtonDeleteAddress />
+      <ButtonDeletePhone />
     </div>
   );
 });

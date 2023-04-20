@@ -64,9 +64,7 @@ label {
 }
 
 
-input[type="text"],
-input[type="email"],
-select {
+input[type="text"] {
     display: block;
     width: 100%;
     min-width: 400px;
@@ -81,12 +79,6 @@ select {
     box-sizing: border-box;
 }
 
-input[type="text"]:valid,
-input[type="email"]:valid,
-select:valid {
-    background-color: #e8f0fe;
-
-}
 
 button {
     background-color: #fff;

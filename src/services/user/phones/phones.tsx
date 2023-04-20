@@ -1,4 +1,4 @@
-import { urlServerLocal } from '~/services/fechProduct';
+import { urlServerNode } from '~/services/fechProduct';
 
 export async function fetchPhonesUser(
   userID: string,
@@ -7,7 +7,7 @@ export async function fetchPhonesUser(
 ): Promise<any> {
   const response = await fetch(
     `
-   ${urlServerLocal}/api/user-phones`,
+   ${urlServerNode}/api/user-phones`,
     {
       method: 'post',
       signal: controller?.signal,
@@ -38,7 +38,7 @@ export async function fetchIndexPhonesUser(
 ): Promise<any> {
   const response = await fetch(
     `
-   ${urlServerLocal}/api/get-index-user-phones`,
+   ${urlServerNode}/api/get-index-user-phones`,
     {
       method: 'POST',
       signal: controller?.signal,
@@ -59,5 +59,6 @@ export async function fetchIndexPhonesUser(
   }
 
   const results = await response.json();
+
   return results;
 }

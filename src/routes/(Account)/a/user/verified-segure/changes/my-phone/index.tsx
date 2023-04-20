@@ -116,11 +116,11 @@ export default component$(() => {
       </div>
       <div class="separator">
         <hr class="line" />
-        <p>Create new addresses</p>
+        <p>Create new phone number</p>
         <hr class="line" />
       </div>
       <div class="container-new-addresses">
-        <p>New shipping address?</p>
+        <p>New phone number?</p>
         <button onClick$={sendNew}>Crear</button>
       </div>
     </div>

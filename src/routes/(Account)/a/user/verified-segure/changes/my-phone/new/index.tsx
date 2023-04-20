@@ -16,13 +16,13 @@ import {
   passwordKEY,
   serverKey,
 } from '~/services/auth/token/token';
-import { urlServerLocal } from '~/services/fechProduct';
+import { urlServerNode } from '~/services/fechProduct';
 
 import { DouveryLeft3 } from '~/components/icons/arrow-left-3';
 
 export const useSubmit = globalAction$(
   async ({ number }, { fail, cookie, redirect }) => {
-    const serverUrl = `${urlServerLocal}/api/new/phone-user`;
+    const serverUrl = `${urlServerNode}/api/new/phone-user`;
     const accessCookie = cookie.get(DATA_ACCESS_COOKIE_NAME)?.value;
     const user = decodeToken(accessCookie, passwordKEY, serverKey);
 
@@ -78,9 +78,7 @@ export default component$(() => {
       {' '}
       <div
         class="container-ret"
-        onClick$={() =>
-          nav('/a/user/verified-segure/changes/address-delivery/')
-        }
+        onClick$={() => nav('/a/user/verified-segure/changes/my-phone/')}
       >
         <DouveryLeft3 size="15" />
         <p>Volver</p>

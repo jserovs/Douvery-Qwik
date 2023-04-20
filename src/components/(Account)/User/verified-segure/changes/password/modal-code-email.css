@@ -1,0 +1,219 @@
+.container-title {
+    display: flex;
+    gap: 10px;
+    padding: 0px 20px;
+}
+
+.button-address-delete {
+    cursor: pointer;
+}
+
+.container-down-modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 11100;
+    display: grid;
+    place-items: center;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    max-width: 400px;
+    max-height: 550px;
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+    color: #000;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    padding: 30px 22px;
+    overflow: auto;
+    z-index: 1000000;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    animation: easeIn 0.2s ease-in-out;
+
+}
+
+.modal {
+    animation: easeIn 0.2s ease-in-out;
+}
+
+.container-email {
+    display: grid;
+    gap: 20px;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #313a46;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 30px 0px 5px 0px;
+    font-size: 14px;
+    color: #444;
+}
+
+input[type="text"],
+input[type="email"],
+select {
+    display: block;
+    width: 100%;
+    max-width: 550PX;
+    height: 40px;
+    padding: 5px 10px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f5f5f5;
+    border: 1px solid #66666611;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="text"]:valid,
+input[type="email"]:valid,
+select:valid {
+    background-color: #e8f0fe;
+
+}
+
+.button-cancel {
+    background-color: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #000;
+    cursor: pointer;
+    display: inline-block;
+
+    font-size: 13px;
+    line-height: 40px;
+    padding: 0 10px 0 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: 100%;
+
+}
+
+.button-address-new {
+    background-color: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: var(--color-primary);
+    cursor: pointer;
+    display: inline-block;
+
+    font-size: 13px;
+    line-height: 40px;
+    padding: 0 10px 0 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: 100%;
+
+    margin-top: 30px;
+}
+
+.button-address-new:hover {
+    border: 1px solid var(--color-primary);
+    border-radius: 8px;
+    box-shadow: rgba(4, 47, 165, 0.747) 0 2px 5px 0;
+}
+
+.container-inputs-password {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    gap: 20px;
+    align-items: center;
+}
+
+.container-inputs-password label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #313a46;
+}
+
+.container-inputs-password input {
+    max-width: 100%;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    overflow: hidden;
+    padding: 8px 20px;
+    min-width: 300px;
+    max-width: 300px;
+}
+
+.separator {
+
+    width: calc(100% - 20px);
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 10px;
+    color: #8B8E98;
+    margin: 20px 10px;
+}
+
+.separator>p {
+    word-break: keep-all;
+    display: block;
+    text-align: center;
+    font-weight: 400;
+    font-size: 11px;
+    margin: auto;
+    color: #8b8b8b;
+}
+
+.separator .line {
+    display: inline-block;
+    width: 100%;
+    height: 1px;
+    border: 0;
+    background-color: #e8e8e8;
+    margin: auto;
+}
+
+.container-no-view-user {
+    display: none;
+}
+
+.forgot-new-account-link {
+    font-size: 14px;
+    color: #0066cc;
+    text-decoration: none;
+    margin: 0px 10px;
+}
+
+.line {
+    display: inline-block;
+    width: 100%;
+    height: 1px;
+    border: 0;
+    background-color: #e8e8e8;
+    margin: auto;
+}

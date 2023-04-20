@@ -143,7 +143,13 @@ export default component$(() => {
               </div>
               <div>
                 {' '}
-                <button>Change Phone</button>
+                <button
+                  onClick$={() =>
+                    nav('/a/user/verified-segure/changes/my-phone/')
+                  }
+                >
+                  Change Phone
+                </button>
               </div>
             </li>{' '}
             <li>

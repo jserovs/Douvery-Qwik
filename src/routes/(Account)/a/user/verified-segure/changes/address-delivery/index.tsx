@@ -92,7 +92,7 @@ export default component$(() => {
                                   {item.zip}, <TextCL text={item.country} />
                                 </span>
                                 {item.isPrimary ? (
-                                  <p class="primary">- Primary</p>
+                                  <p class="primary">- Main</p>
                                 ) : (
                                   ''
                                 )}
