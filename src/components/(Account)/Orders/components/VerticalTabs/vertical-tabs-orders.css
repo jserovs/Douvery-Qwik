@@ -27,7 +27,7 @@
 .separator {
     width: calc(100% - 20px);
     display: grid;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 30% 70%;
     gap: 10px;
     color: #8B8E98;
     margin: 0 10px;

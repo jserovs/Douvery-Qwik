@@ -156,5 +156,6 @@ export type UserOrders = {
 	paymentMethod: string;
 	uniqueProductImages: string[];
 	status: number;
-	createdAt: string;
+	orderedAt: string;
+	notificationEmail: boolean;
 };

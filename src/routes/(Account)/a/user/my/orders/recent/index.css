@@ -94,6 +94,14 @@ button:hover {
     border: 1px solid #414141;
 }
 
+button:active {
+    background-color: #fff;
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+    color: rgba(0, 0, 0, 0.65);
+    transform: translateY(0);
+}
+
 button:disabled {
     background-color: #fff;
     border: 1px solid #d5d9d9;
@@ -180,16 +188,16 @@ ul {
 }
 
 .container-options {
-    margin: 8px;
+
     width: 100%;
     background-color: #fff;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-    box-sizing: border-box;
+
     color: #0f1111;
     padding: 10px;
     display: grid;
     gap: 10px;
     border-radius: 10px;
+    font-size: 13px;
 }
 
 .card-options {
@@ -197,4 +205,35 @@ ul {
     flex-direction: column;
     gap: 10px;
 
+}
+
+.alert-receibe-container {
+    position: relative;
+
+    display: inline-block;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    /* Posición del tooltip encima del botón */
+    left: 20%;
+    margin-left: -60px;
+    /* Centrar el tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.alert-receibe-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+    animation: smoApp 0.6s ease;
 }

@@ -76,7 +76,7 @@ export const ChangeAvatar = component$(() => {
           src={
             userACC?.avatar
               ? userACC?.avatar
-              : 'https://res.cloudinary.com/douvery/image/upload/v1676456401/LOGO/z7neu6qunez6ygx9xxho.webp'
+              : 'https://res.cloudinary.com/douvery/image/upload/v1676456600/LOGO/vjb8xfyiiuxhgdzokfls.png'
           }
           alt="avatar"
         />
