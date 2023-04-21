@@ -1,0 +1,91 @@
+.container-all-card {
+    display: flex;
+    justify-content: flex-start;
+    gap: 100px;
+    padding: 16px;
+    margin: 8px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.order-info {
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.order-info p {
+    margin: 0;
+    padding: 4px 0;
+    font-size: 13px;
+    color: #333333;
+}
+
+.order-info p:first-child {
+    font-weight: 600;
+    font-size: 15px;
+    color: #444;
+}
+
+.images-container {
+    display: flex;
+    gap: 8px;
+}
+
+.images-container img {
+    width: 50px !important;
+    height: 50px !important;
+    height: auto;
+    border-radius: 8px;
+    object-fit: contain;
+
+}
+
+.order-status {
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+}
+
+.title-status {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333333;
+}
+
+.container-progre {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.container-line-progress {
+    width: 100%;
+    display: grid;
+    align-items: start;
+    justify-content: center;
+}
+
+.count-progress {
+    font-size: 13px;
+    color: #333333;
+    width: 150px;
+    padding-top: 5px;
+    text-align: end;
+}
+
+.created-at {
+    font-size: 13px;
+    color: #333333;
+    width: 150px;
+    padding-top: 5px;
+}
+
+.separator {
+    width: 100%;
+    height: 1px;
+    background-color: var(--border-width-1);
+    margin: 20px 0;
+}

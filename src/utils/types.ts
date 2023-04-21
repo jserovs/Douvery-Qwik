@@ -149,3 +149,12 @@ export type Order = {
 	}
 
 };
+export type UserOrders = {
+	orderId: string;
+	totalAmount: string;
+	itemCount: string;
+	paymentMethod: string;
+	uniqueProductImages: string[];
+	status: number;
+	createdAt: string;
+};

@@ -33,7 +33,7 @@ export const VerticalTabs = component$(() => {
       path: '/a/user/my/',
       label: 'Ordenes y listas',
       subTabs: [
-        { path: '/a/user/my/orders', label: 'Mi ordenes' },
+        { path: '/a/user/my/orders/recent', label: 'Mi ordenes' },
         { path: '/a/user/my/wish-list', label: 'Mi Lista de deseos' },
         { path: '/a/user/my/future-purchases', label: 'Mi Futuras compras' },
         { path: '/a/user/my/returns', label: 'Mi Devoluciones' },
