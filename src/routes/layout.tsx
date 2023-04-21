@@ -64,7 +64,7 @@ export default component$(() => {
   const userACC = useGetCurrentUser().value;
   const getZipCode = useGetCurrentZipCode().value;
   const getCountryUser = useGetCurrentCountry().value;
-
+console.log(userACC?.token)
   const loc = useLocation();
   const segureUrl = loc.url.href.match('/segure/') ? false : true;
   return (

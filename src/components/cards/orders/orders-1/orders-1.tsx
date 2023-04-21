@@ -61,7 +61,7 @@ export const CardOrdersC1 = component$(({ order }: { order: UserOrders }) => {
             </div>
 
             <div class="count-progress">
-              <p>1 / 5</p>
+              <p>{order.status} / 5</p>
             </div>
           </div>
         </div>
