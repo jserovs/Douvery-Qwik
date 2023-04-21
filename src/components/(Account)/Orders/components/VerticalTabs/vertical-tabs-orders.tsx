@@ -1,20 +1,17 @@
 import {
-  $,
   Slot,
   component$,
   useSignal,
   useStylesScoped$,
 } from '@builder.io/qwik';
-import { useLocation, useNavigate } from '@builder.io/qwik-city';
+import { useLocation } from '@builder.io/qwik-city';
 import { Tab } from './tabs/tab';
 import styles from './vertical-tabs-orders.css?inline';
-import { useGetCurrentUser } from '~/routes/layout';
-import { TextCL } from '~/components/use/textCL/textCL';
 
 export const VerticalTabsOrders = component$(() => {
   useStylesScoped$(styles);
-  const location = useLocation();
-  const userACC = useGetCurrentUser().value;
+  const loc = useLocation();
+
   const tabs = [
     {
       path: '/a/user/my/orders/recent',
@@ -43,7 +40,11 @@ export const VerticalTabsOrders = component$(() => {
         <h6>Services</h6>
       </div>{' '}
       <div class="separator">
-        <p>Pending orders</p>
+        <p>
+          {loc.url.pathname == '/a/user/my/orders/recent/' && 'Orders recent'}
+          {loc.url.pathname == '/a/user/my/orders/completed/' &&
+            'Orders completed'}
+        </p>
         <hr class="line" />
       </div>
       <div class="container-content">
@@ -55,7 +56,7 @@ export const VerticalTabsOrders = component$(() => {
                 <Tab
                   key={tab.path}
                   path={tab.path}
-                  currentPath={location.url.pathname}
+                  currentPath={loc.url.pathname}
                   label={tab.label}
                   subTabs={tab.subTabs}
                 />

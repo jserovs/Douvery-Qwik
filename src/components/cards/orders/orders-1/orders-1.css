@@ -23,9 +23,9 @@
 }
 
 .order-info p:first-child {
-    font-weight: 600;
+    font-weight: 500;
     font-size: 15px;
-    color: #444;
+    color: #333;
 }
 
 .images-container {
