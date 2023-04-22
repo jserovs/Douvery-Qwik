@@ -1,14 +1,16 @@
-import { urlServerLocal } from '~/services/fechProduct';
+import { urlServerNode } from '~/services/fechProduct';
 
 export async function fetchUniqueOrderUser(
   userToken: string,
-  orderId: string
+  orderId: string,
+  controller?: AbortController
 ): Promise<any> {
   const response = await fetch(
     `
-   ${urlServerLocal}/api/orders/`,
+   ${urlServerNode}/api/orders/`,
     {
       method: 'POST',
+      signal: controller?.signal,
       headers: {
         'x-auth-token': userToken,
         'Content-Type': 'application/json',
@@ -36,7 +38,7 @@ export async function fetchOrdesUser(
 ): Promise<any> {
   const response = await fetch(
     `
-   ${urlServerLocal}/api/user/orders`,
+   ${urlServerNode}/api/user/orders`,
     {
       method: 'POST',
       signal: controller?.signal,

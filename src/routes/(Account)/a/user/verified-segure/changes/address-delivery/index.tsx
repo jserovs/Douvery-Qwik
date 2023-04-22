@@ -59,7 +59,12 @@ export default component$(() => {
             <Resource
               value={reduceAddress}
               onPending={() => <div class="loader"></div>}
-              onRejected={(error) => <>Error: {error.message}</>}
+              onRejected={() => (
+                <>
+                  Al parecer, hay un error en la solicitud. Por favor, actualiza
+                  la página para verificar nuevamente.
+                </>
+              )}
               onResolved={() => (
                 <>
                   {state.results.length === 0 ? (

@@ -71,7 +71,7 @@ export const VerticalTabsOrders = component$(() => {
           </div>
         </div>
 
-        <div class="container-content">
+        <div>
           <Slot />
         </div>
       </div>

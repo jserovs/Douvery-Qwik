@@ -20,7 +20,7 @@ import {
 import type { UserOrders } from '~/utils/types';
 import { fetchOrdesUser } from '~/services/user/order/order';
 import { CardOrdersC1 } from '~/components/cards/orders/orders-1/orders-1';
-import { urlServerLocal } from '~/services/fechProduct';
+import { urlServerNode } from '~/services/fechProduct';
 import { DATA_ACCESS_COOKIE_NAME } from '~/services/auth/login/login';
 import {
   decodeToken,
@@ -30,7 +30,7 @@ import {
 
 export const useSubmit = globalAction$(
   async ({ orderId }, { fail, cookie, headers }) => {
-    const serverUrl = `${urlServerLocal}/api/orders/user/activate-notification/email`;
+    const serverUrl = `${urlServerNode}/api/orders/user/activate-notification/email`;
     const accessCookie = cookie.get(DATA_ACCESS_COOKIE_NAME)?.value;
     const user = decodeToken(accessCookie, passwordKEY, serverKey);
 
@@ -97,7 +97,7 @@ export default component$(() => {
   return (
     <div class="container-all">
       {' '}
-      <div>
+      <div class="container">
         {' '}
         <div class="container-existing">
           <div class="options">
@@ -105,7 +105,12 @@ export default component$(() => {
             <Resource
               value={ordersResource}
               onPending={() => <div class="loader"></div>}
-              onRejected={(error) => <>Error: {error.message}</>}
+              onRejected={() => (
+                <>
+                  Al parecer, hay un error en la solicitud. Por favor, actualiza
+                  la página para verificar nuevamente.
+                </>
+              )}
               onResolved={(orders) => (
                 <>
                   {' '}

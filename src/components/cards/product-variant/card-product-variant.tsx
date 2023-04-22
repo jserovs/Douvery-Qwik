@@ -42,7 +42,12 @@ export const CardProductVariations1 = component$(
         <Resource
           value={productResource}
           onPending={() => <>Cargando...</>}
-          onRejected={(error) => <>Error: {error.message}</>}
+          onRejected={() => (
+            <>
+              Al parecer, hay un error en la solicitud. Por favor, actualiza la
+              página para verificar nuevamente.
+            </>
+          )}
           onResolved={() => (
             <>
               <Link

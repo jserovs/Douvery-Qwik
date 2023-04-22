@@ -61,7 +61,12 @@ export default component$(() => {
           <Resource
             value={orderInfoResource}
             onPending={() => <div class="loader"></div>}
-            onRejected={(error) => <>Error: {error.message}</>}
+            onRejected={() => (
+              <>
+                Al parecer, hemos cometido un error. Por favor, actualiza la
+                página para verificar nuevamente.
+              </>
+            )}
             onResolved={() => (
               <div class="container-info-order">
                 <div class="container-invoice-print">
