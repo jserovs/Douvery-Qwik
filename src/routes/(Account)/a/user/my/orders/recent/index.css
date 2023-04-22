@@ -182,6 +182,7 @@ button:disabled {
 .container-orders {
     display: grid;
     grid-template-columns: auto 1fr;
+    margin-bottom: 50px;
 }
 
 
