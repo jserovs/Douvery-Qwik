@@ -91,7 +91,7 @@ export default component$(() => {
   });
 
   const navViewOrder = $((orderId: any) => {
-    nav('/a/user/my/orders/view/' + orderId);
+    nav('/a/user/my/orders/view/' + orderId, true);
   });
 
   return (
