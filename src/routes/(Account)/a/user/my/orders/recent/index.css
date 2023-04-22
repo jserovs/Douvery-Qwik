@@ -230,8 +230,8 @@ ul {
     z-index: 1;
     bottom: 125%;
     /* Posición del tooltip encima del botón */
-    left: 20%;
-    margin-left: -60px;
+    left: 15%;
+    margin-left: -0px;
     /* Centrar el tooltip */
     opacity: 0;
     transition: opacity 0.3s;

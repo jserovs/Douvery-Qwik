@@ -181,53 +181,55 @@ export default component$(() => {
             <span class="error">{action.value?.fieldErrors?.country}</span>
           )}
         </div>
-        <div class="container-button-send">
-          <div class="checkbox-wrapper-42">
-            <input
-              type="checkbox"
-              id="isPrimary"
-              name="isPrimary"
-              value={isPrimary.setIsPrimary ? 'true' : 'false'}
-              onClick$={() =>
-                (isPrimary.setIsPrimary = !isPrimary.setIsPrimary)
-              }
-            />
-            <label class="cbx" for="isPrimary"></label>
-            <label class="lbl" for="isPrimary">
-              Seleccionar como dirección principal.{' '}
-            </label>
-          </div>
+        <div class="container-send">
+          <div class="container-button-send">
+            <div class="checkbox-wrapper-42">
+              <input
+                type="checkbox"
+                id="isPrimary"
+                name="isPrimary"
+                value={isPrimary.setIsPrimary ? 'true' : 'false'}
+                onClick$={() =>
+                  (isPrimary.setIsPrimary = !isPrimary.setIsPrimary)
+                }
+              />
+              <label class="cbx" for="isPrimary"></label>
+              <label class="lbl" for="isPrimary">
+                Seleccionar como dirección principal.{' '}
+              </label>
+            </div>
 
-          <div class="container-inputs-password">
-            {action.value?.message && (
-              <div>
-                {' '}
-                <br />
-                {action.isRunning ? (
-                  <span class="loa-s">Verifying...</span>
-                ) : (
-                  <span class="error ">{action.value?.message}</span>
-                )}
-                <div class="form-group need-account">
-                  ¿Crees que presenta un error al crear?
-                  <a href="/a/" class="forgot-new-account-link">
-                    Reportar
-                  </a>
-                </div>{' '}
-                <br />
-              </div>
-            )}
-            {action.isRunning && (
-              <span class="error">{action.value?.fieldErrors?.country}</span>
-            )}
+            <div class="container-inputs-password">
+              {action.value?.message && (
+                <div>
+                  {' '}
+                  <br />
+                  {action.isRunning ? (
+                    <span class="loa-s">Verifying...</span>
+                  ) : (
+                    <span class="error ">{action.value?.message}</span>
+                  )}
+                  <div class="form-group need-account">
+                    ¿Crees que presenta un error al crear?
+                    <a href="/a/" class="forgot-new-account-link">
+                      Reportar
+                    </a>
+                  </div>{' '}
+                  <br />
+                </div>
+              )}
+              {action.isRunning && (
+                <span class="error">{action.value?.fieldErrors?.country}</span>
+              )}
+            </div>
+            <button type="submit" class="button-address-new">
+              {action.isRunning
+                ? 'Loading...'
+                : action.value?.message
+                ? 'Error'
+                : 'Create address'}
+            </button>
           </div>
-          <button type="submit" class="button-address-new">
-            {action.isRunning
-              ? 'Loading...'
-              : action.value?.message
-              ? 'Error'
-              : 'Create address'}
-          </button>
         </div>
       </Form>
     </div>

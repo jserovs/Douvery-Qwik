@@ -157,7 +157,7 @@ button:disabled {
 
 .container-address-existing {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 80% 20%;
     gap: 30px;
     justify-content: center;
     align-items: center;

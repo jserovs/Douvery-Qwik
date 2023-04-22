@@ -288,80 +288,82 @@ export default component$(() => {
                   </span>
                 )}
               </div>
-              <div class="container-button-send">
-                <div class="checkbox-wrapper-42">
-                  <input
-                    type="checkbox"
-                    id="isPrimary"
-                    name="isPrimary"
-                    value={isPrimary.setIsPrimary ? 'true' : 'false'}
-                    onClick$={() =>
-                      (isPrimary.setIsPrimary = !isPrimary.setIsPrimary)
-                    }
-                  />
-                  <label class="cbx" for="isPrimary"></label>
-                  <label class="lbl" for="isPrimary">
-                    Seleccionar como dirección principal.{' '}
-                  </label>
-                </div>
+              <div class="container-send">
+                <div class="container-button-send">
+                  <div class="checkbox-wrapper-42">
+                    <input
+                      type="checkbox"
+                      id="isPrimary"
+                      name="isPrimary"
+                      value={isPrimary.setIsPrimary ? 'true' : 'false'}
+                      onClick$={() =>
+                        (isPrimary.setIsPrimary = !isPrimary.setIsPrimary)
+                      }
+                    />
+                    <label class="cbx" for="isPrimary"></label>
+                    <label class="lbl" for="isPrimary">
+                      Seleccionar como dirección principal.{' '}
+                    </label>
+                  </div>
 
-                <div class="container-inputs-password">
-                  {action.value?.message && (
-                    <div>
+                  <div class="container-inputs-password">
+                    {action.value?.message && (
+                      <div>
+                        {' '}
+                        <br />
+                        {action.isRunning ? (
+                          <span class="loa-s">Verifying...</span>
+                        ) : (
+                          <span class="error ">{action.value?.message}</span>
+                        )}
+                        <div class="form-group need-account">
+                          ¿Crees que presenta un error al crear?
+                          <a href="/a/" class="forgot-new-account-link">
+                            Reportar
+                          </a>
+                        </div>{' '}
+                        <br />
+                      </div>
+                    )}
+                    {action.isRunning && (
+                      <span class="error">
+                        {action.value?.fieldErrors?.country}
+                      </span>
+                    )}
+                    <label for="name" class="form__label">
                       {' '}
-                      <br />
-                      {action.isRunning ? (
-                        <span class="loa-s">Verifying...</span>
-                      ) : (
-                        <span class="error ">{action.value?.message}</span>
-                      )}
-                      <div class="form-group need-account">
-                        ¿Crees que presenta un error al crear?
-                        <a href="/a/" class="forgot-new-account-link">
-                          Reportar
-                        </a>
-                      </div>{' '}
-                      <br />
-                    </div>
-                  )}
-                  {action.isRunning && (
-                    <span class="error">
-                      {action.value?.fieldErrors?.country}
-                    </span>
-                  )}
-                  <label for="name" class="form__label">
-                    {' '}
-                    You password{' '}
-                  </label>
-                  <input
-                    type="password"
-                    name="password"
-                    id="password"
-                    placeholder="You password"
-                    required
-                  />
-                  {action.value?.fieldErrors?.password && (
-                    <span class="error">
-                      {action.value?.fieldErrors?.password}
-                    </span>
-                  )}
-                </div>
-                <button type="submit" class="button-address-new">
-                  {action.isRunning
-                    ? 'Loading...'
-                    : action.value?.message
-                    ? 'Error'
-                    : 'Modify address'}
-                </button>
-                <div class="separator">
-                  <hr class="line" />
-                  <p>Or</p>
-                  <hr class="line" />
-                </div>
-                <div class="container-link-create">
-                  <Link href="/a/user/verified-segure/changes/address-delivery/new-address/">
-                    Create new address
-                  </Link>
+                      You password{' '}
+                    </label>
+                    <input
+                      type="password"
+                      name="password"
+                      id="password"
+                      placeholder="You password"
+                      required
+                    />
+                    {action.value?.fieldErrors?.password && (
+                      <span class="error">
+                        {action.value?.fieldErrors?.password}
+                      </span>
+                    )}
+                  </div>
+                  <button type="submit" class="button-address-new">
+                    {action.isRunning
+                      ? 'Loading...'
+                      : action.value?.message
+                      ? 'Error'
+                      : 'Modify address'}
+                  </button>
+                  <div class="separator">
+                    <hr class="line" />
+                    <p>Or</p>
+                    <hr class="line" />
+                  </div>
+                  <div class="container-link-create">
+                    <Link href="/a/user/verified-segure/changes/address-delivery/new-address/">
+                      Create new address
+                    </Link>
+                  </div>
                 </div>
               </div>
             </>
