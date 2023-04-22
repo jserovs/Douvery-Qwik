@@ -66,9 +66,9 @@ export default component$(() => {
                   <span>
                     <p>Numero de orden:</p>
                   </span>
-                  <span>
-                    <em> {state.order.orderId}</em>
-                  </span>
+                  <br />
+                  <span>{state.order.orderId}</span>
+                  <br />
                 </li>
                 <li>
                   <span>

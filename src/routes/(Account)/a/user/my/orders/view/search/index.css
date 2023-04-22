@@ -1,0 +1,32 @@
+.container-all {
+    display: grid;
+    gap: 20px;
+    padding: 10px 20px;
+}
+
+.container-title {
+
+    width: 100%;
+
+
+}
+
+.container-title p {
+    font-size: 20px;
+    margin: 0px;
+    font-weight: 500;
+}
+
+.search-input {
+    display: block;
+    width: 100%;
+    max-width: 550PX;
+    height: 40px;
+    padding: 5px 10px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f5f5f5;
+    border: 1px solid #66666611;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
