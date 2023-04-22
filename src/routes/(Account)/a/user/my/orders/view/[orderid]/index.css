@@ -84,6 +84,11 @@ strong {
     text-decoration: underline;
 }
 
+.container-qualify {
+    width: 100%;
+    max-width: 450px;
+}
+
 @media only screen and (max-width: 1305px) {
 
     .container-info-order {

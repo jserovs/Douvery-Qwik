@@ -17,6 +17,12 @@
     font-weight: 500;
 }
 
+.search-container {
+    display: flex;
+    gap: 20px;
+    padding: 10px 0px;
+}
+
 .search-input {
     display: block;
     width: 100%;
@@ -29,4 +35,103 @@
     border: 1px solid #66666611;
     border-radius: 5px;
     box-sizing: border-box;
+
+}
+
+.container-order {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    gap: 20px;
+    align-items: center;
+}
+
+.suggestions {
+    margin: 40px 0px;
+}
+
+button {
+    background-color: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #0f1111;
+    cursor: pointer;
+    display: inline-block;
+
+    font-size: 13px;
+    height: 40px;
+    padding: 0 10px 0 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: 100%;
+    min-width: 150px;
+    max-width: 250px;
+
+}
+
+button:hover {
+    border: 1px solid #414141;
+}
+
+button:active {
+    background-color: #fff;
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+    color: rgba(0, 0, 0, 0.65);
+    transform: translateY(0);
+}
+
+button:disabled {
+    background-color: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #0f1111;
+    display: inline-block;
+
+    font-size: 13px;
+    line-height: 35px;
+    padding: 0 10px 0 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: 100%;
+    cursor: not-allowed;
+    opacity: .5;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: 250px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    /* Posición del tooltip encima del botón */
+    left: 0%;
+    margin-left: -0px;
+    /* Centrar el tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.paste-button:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+    animation: smoApp 0.6s ease;
 }

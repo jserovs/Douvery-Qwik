@@ -93,6 +93,7 @@ button {
     vertical-align: middle;
     width: 100%;
     min-width: 150px;
+    max-width: 250px;
 
 }
 
@@ -230,7 +231,7 @@ ul {
     z-index: 1;
     bottom: 125%;
     /* Posición del tooltip encima del botón */
-    left: 15%;
+    left: 10%;
     margin-left: -0px;
     /* Centrar el tooltip */
     opacity: 0;
