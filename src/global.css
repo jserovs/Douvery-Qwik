@@ -465,6 +465,7 @@ input {
 }
 
 
+
 .loader {
   border: 1.5px solid rgba(0, 0, 0, 0.1);
   border-top-color: var(--color-primary);

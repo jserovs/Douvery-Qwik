@@ -33,7 +33,7 @@ export const VerticalTabs = component$(() => {
       path: '/a/user/my/',
       label: 'Ordenes y listas',
       subTabs: [
-        { path: '/a/user/my/orders', label: 'Mi ordenes' },
+        { path: '/a/user/my/orders/recent', label: 'Mi ordenes' },
         { path: '/a/user/my/wish-list', label: 'Mi Lista de deseos' },
         { path: '/a/user/my/future-purchases', label: 'Mi Futuras compras' },
         { path: '/a/user/my/returns', label: 'Mi Devoluciones' },
@@ -109,7 +109,7 @@ export const VerticalTabs = component$(() => {
                 src={
                   userACC?.avatar
                     ? userACC?.avatar
-                    : 'https://res.cloudinary.com/douvery/image/upload/v1676456401/LOGO/z7neu6qunez6ygx9xxho.webp'
+                    : 'https://res.cloudinary.com/douvery/image/upload/v1676456600/LOGO/vjb8xfyiiuxhgdzokfls.png'
                 }
                 alt="Logo-1"
               />

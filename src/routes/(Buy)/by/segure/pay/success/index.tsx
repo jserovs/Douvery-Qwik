@@ -41,6 +41,7 @@ export default component$(() => {
     );
     state.order = data;
   });
+
   const invoiceData = {
     clientName: 'Juan Pérez',
     date: '2023-04-08',
@@ -60,7 +61,12 @@ export default component$(() => {
           <Resource
             value={orderInfoResource}
             onPending={() => <div class="loader"></div>}
-            onRejected={(error) => <>Error: {error.message}</>}
+            onRejected={() => (
+              <>
+                Al parecer, hemos cometido un error. Por favor, actualiza la
+                página para verificar nuevamente.
+              </>
+            )}
             onResolved={() => (
               <div class="container-info-order">
                 <div class="container-invoice-print">

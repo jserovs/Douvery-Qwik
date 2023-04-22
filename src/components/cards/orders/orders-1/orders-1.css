@@ -1,0 +1,109 @@
+.container-all-card {
+    display: flex;
+    justify-content: flex-start;
+    gap: 100px;
+    padding: 16px;
+
+    border-radius: 8px;
+    border-bottom: 1px solid var(--border-width-1);
+}
+
+.order-info {
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.order-info p {
+    margin: 0;
+    padding: 4px 0;
+    font-size: 13px;
+    color: #333333;
+}
+
+
+.images-container {
+    width: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.images-container img {
+    width: 50px !important;
+    height: 50px !important;
+    height: auto;
+    border-radius: 8px;
+    object-fit: contain;
+
+}
+
+.order-status {
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+}
+
+.title-status {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333333;
+}
+
+.container-progre {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.container-line-progress {
+    width: 100%;
+    display: grid;
+    align-items: start;
+    justify-content: center;
+}
+
+.count-progress {
+    font-size: 13px;
+    color: #333333;
+    width: 150px;
+    padding-top: 5px;
+    text-align: end;
+}
+
+.created-at {
+    font-size: 13px;
+    color: #333333;
+    width: 150px;
+    padding-top: 5px;
+}
+
+.separator {
+    width: 100%;
+    height: 1px;
+    background-color: var(--border-width-1);
+    margin: 20px 0;
+}
+
+.show-button {
+    margin: 0px 5px;
+    font-size: 13px;
+    text-align: end;
+}
+
+.show-button:hover {
+    text-decoration: underline;
+}
+
+
+@media only screen and (max-width: 1455px) {
+    .container-all-card {
+        display: grid;
+       
+        gap: 20px;
+     
+    }
+    
+}

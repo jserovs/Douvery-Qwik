@@ -134,7 +134,12 @@ export default component$(() => {
         <Resource
           value={phonesResource}
           onPending={() => <div class="loader"></div>}
-          onRejected={(error) => <>Error: {error.message}</>}
+          onRejected={() => (
+            <>
+              Al parecer, hay un error en la solicitud. Por favor, actualiza la
+              página para verificar nuevamente.
+            </>
+          )}
           onResolved={() => (
             <>
               <div>

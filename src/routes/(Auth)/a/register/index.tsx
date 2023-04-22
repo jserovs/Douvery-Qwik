@@ -20,7 +20,10 @@ export const onGet: RequestHandler = async ({ cookie, redirect }) => {
 };
 
 export const useRegister = globalAction$(
-  async ({ name, lastName, email, password }, { fail, headers, cookie,url }) => {
+  async (
+    { name, lastName, email, password },
+    { fail, headers, cookie, url }
+  ) => {
     const data = await fetch(`${urlServerNode}/api/signup`, {
       method: 'POST',
       headers: {
@@ -50,7 +53,6 @@ export const useRegister = globalAction$(
 
     const query = url.searchParams.get('rr') || '';
     headers.set('location', query);
-   
   },
   zod$({
     name: z

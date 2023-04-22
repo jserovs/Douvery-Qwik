@@ -1,15 +1,16 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
-import styles from './card-1-s.css?inline';
+import styles from './purchase-products.css?inline';
 import { TextCL } from '~/components/use/textCL/textCL';
-import { UsePrice } from '~/components/use/price/price';
 import { DouveryCheckMark } from '~/components/icons/checkMark';
-export const Card1SCART = component$(({ product }: any) => {
+import { UsePrice } from '~/components/use/price/price';
+
+export const Card1PurchaseProductOrders = component$(({ product }: any) => {
   useStylesScoped$(styles);
   const discoun = product.price - product.price * (product.discount / 100);
   return (
     <div class="container-all">
       <div class="card">
-        <img src={product.images} alt="Product Image" class="product-image" />
+        <img src={product.image} alt="Product Image" class="product-image" />
         <div class="product-info">
           <a href={`/v/${product.slug}/${product.dui}`}>
             {' '}
@@ -36,13 +37,6 @@ export const Card1SCART = component$(({ product }: any) => {
               </p>
             </div>
           )}
-          {product.realQuantity >= 5 ? (
-            <></>
-          ) : (
-            <div class="alert-art">
-              <p>¡Queda(n) muy pocos , 5 o menos!</p>
-            </div>
-          )}
           <div class="product-price">
             {product.discount > 0 ? (
               <>
@@ -59,18 +53,6 @@ export const Card1SCART = component$(({ product }: any) => {
                 <UsePrice price={product.price} />
               </>
             )}{' '}
-          </div>
-          <div class="checkbox-wrapper-42">
-            <input
-              key={product.dui}
-              type="checkbox"
-              id={'isPrimary' + product.dui}
-              name="isPrimary"
-            />
-            <label class="cbx" for={'isPrimary' + product.dui}></label>
-            <label class="lbl" for={'isPrimary' + product.dui}>
-              Seleccionar como dirección principal.{' '}
-            </label>
           </div>
         </div>
       </div>

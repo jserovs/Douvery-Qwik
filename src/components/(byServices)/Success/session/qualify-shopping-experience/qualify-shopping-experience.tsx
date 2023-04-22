@@ -67,12 +67,12 @@ export const useQualifyExperience = globalAction$(
   })
 );
 export const QualifyShoppingExperience = component$(
-  ({ orderInfoResource, statepr }: any) => {
+  ({ orderInfoResource, statepr, coten }: any) => {
     useStylesScoped$(styles);
     const submitted = useStore({
       setSubmitted: false,
     });
-    const conten = useSignal(false);
+    const conten = useSignal(coten || false);
     const state = useStore({
       select: '',
     });
@@ -94,7 +94,12 @@ export const QualifyShoppingExperience = component$(
         <Resource
           value={orderInfoResource}
           onPending={() => <div class="loader"></div>}
-          onRejected={(error) => <>Error: {error.message}</>}
+          onRejected={() => (
+            <>
+              Al parecer, hay un error en la solicitud. Por favor, actualiza la
+              página para verificar nuevamente.
+            </>
+          )}
           onResolved={() => (
             <div class="container-title">
               {statepr?.order?.userCalification
