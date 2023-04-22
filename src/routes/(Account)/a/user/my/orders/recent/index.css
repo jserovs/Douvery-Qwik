@@ -179,9 +179,11 @@ button:disabled {
 
 .container-orders {
     display: grid;
+
     grid-template-columns: 80% 20%;
     gap: 20px;
     align-items: center;
+
 }
 
 

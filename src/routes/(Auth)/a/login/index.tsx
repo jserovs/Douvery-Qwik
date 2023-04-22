@@ -8,7 +8,7 @@ import {
   DATA_ACCESS_COOKIE_NAME,
   setCookiesData,
 } from '~/services/auth/login/login';
-import { urlServerNode } from '~/services/fechProduct';
+import { urlServerLocal } from '~/services/fechProduct';
 
 import { TermsConditions } from '~/components/(Auth)/Terms&Conditions/terms-Conditions';
 import { DouveryAuthLogo } from '~/components/(Auth)/DouveryAuthLogo/douvery-auth-logo';
@@ -26,7 +26,7 @@ export const onGet: RequestHandler = async ({ cookie, redirect }) => {
 
 export const useLogin = globalAction$(
   async ({ email, password }, { fail, cookie, headers, url }) => {
-    const response = await fetch(`${urlServerNode}/api/signin`, {
+    const response = await fetch(`${urlServerLocal}/api/signin`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
