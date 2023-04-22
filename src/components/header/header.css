@@ -9,11 +9,11 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--color-primary);
+  background: rgb(12, 68, 154);
+  background: radial-gradient(circle, rgba(12, 68, 154, 1) 100%, rgba(255, 255, 255, 1) 100%);
   padding: 28px 9.5%;
   transition: all 0.5s ease;
 }
-
 
 
 
@@ -29,7 +29,6 @@ header {
 }
 
 .cajas {
-
   margin: 10px;
   padding-top: 0px;
   justify-content: center;
