@@ -32,8 +32,6 @@
     justify-content: space-around;
 }
 
-
-
 .container-form .container-inputs {
     display: grid;
     justify-content: start;
@@ -181,15 +179,21 @@ button:disabled {
 
 .container-orders {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 80% 20%;
+    gap: 20px;
+    align-items: center;
 }
+
 
 
 ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    justify-content: start;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: flex-start;
 
 }
 
@@ -200,10 +204,11 @@ ul {
 
     color: #0f1111;
     padding: 10px;
-    display: grid;
+
     gap: 10px;
     border-radius: 10px;
     font-size: 13px;
+
 }
 
 .card-options {
@@ -242,4 +247,16 @@ ul {
     visibility: visible;
     opacity: 1;
     animation: smoApp 0.6s ease;
+}
+
+@media only screen and (max-width: 1305px) {
+    .container-orders {
+        grid-template-columns: auto;
+    }
+
+    .card-options {
+        display: flex;
+        flex-direction: row;
+
+    }
 }
