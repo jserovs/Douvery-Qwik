@@ -1,4 +1,4 @@
-import { urlServerNode } from '~/services/fechProduct';
+import { urlServerLocal, urlServerNode } from '~/services/fechProduct';
 
 export async function fetchUniqueOrderUser(
   userToken: string,
@@ -59,5 +59,31 @@ export async function fetchOrdesUser(
 
   const results = await response.json();
 
+  return results;
+}
+
+export async function fetchSearchOrder(
+  userToken: string,
+  searchInput: string,
+  userId: string,
+  controller?: AbortController
+): Promise<any> {
+  const response = await fetch(
+    `
+ ${urlServerLocal}/api/orders/search?q=${searchInput}&userId=${userId}`,
+    {
+      signal: controller?.signal,
+      headers: {
+        'x-auth-token': userToken,
+        'Content-Type': 'application/json',
+      },
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch product');
+  }
+  const results = await response.json();
+  console.log(results);
   return results;
 }

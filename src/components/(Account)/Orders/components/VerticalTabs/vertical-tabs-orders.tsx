@@ -14,9 +14,11 @@ export const VerticalTabsOrders = component$(() => {
 
   const tabs = [
     {
-      path: '/a/user/my/orders/view',
+      path: '/a/user/my/orders/view/search',
       label: 'View order',
-      subTabs: [{ path: '/a/user/my/orders/view/', label: 'View order' }],
+      subTabs: [
+        { path: '/a/user/my/orders/view/search ', label: 'View order' },
+      ],
     },
     {
       path: '/a/user/my/orders/recent',

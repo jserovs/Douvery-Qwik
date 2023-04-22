@@ -46,7 +46,7 @@ export default component$(() => {
     );
     state.order = data;
   });
-
+  console.log(`${userACC?.id}`);
   return (
     <div class="container-all">
       <div class="container">
@@ -66,9 +66,9 @@ export default component$(() => {
                   <span>
                     <p>Numero de orden:</p>
                   </span>
-                  <span>
-                    <em> {state.order.orderId}</em>
-                  </span>
+                  <br />
+                  <span>{state.order.orderId}</span>
+                  <br />
                 </li>
                 <li>
                   <span>
@@ -163,7 +163,7 @@ export default component$(() => {
           )}
         />
 
-        <div>
+        <div class="container-qualify">
           <QualifyShoppingExperience
             statepr={state}
             orderInfoResource={orderInfoResource}

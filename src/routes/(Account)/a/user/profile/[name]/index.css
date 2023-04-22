@@ -136,3 +136,12 @@ li p:last-child {
     background-color: var(--border-width-1);
     margin: 0 20px;
 }
+
+@media only screen and (max-width: 1300px) {
+    .container-box {
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto;
+
+    }
+}

@@ -68,13 +68,13 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    border: 1px solid var(--border-width-2);
+    border: 1px solid #d0d7de !important;
     background-color: var(--color-background-down);
     margin: 0px 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-
+    object-fit: cover;
     font-size: 20px;
 }
 

@@ -4,6 +4,7 @@ import type { UserOrders } from '~/utils/types';
 import { ProgressLine } from '~/components/status/line/line';
 import { UsePrice } from '~/components/use/price/price';
 import { TextCL } from '~/components/use/textCL/textCL';
+import { UseCopy } from '~/components/use/copy/copy';
 export const CardOrdersC1 = component$(({ order }: { order: UserOrders }) => {
   useStylesScoped$(styles);
   function formatDate(timestamp: any) {
@@ -58,7 +59,11 @@ export const CardOrdersC1 = component$(({ order }: { order: UserOrders }) => {
   return (
     <div class="container-all-card">
       <div class="order-info">
-        <p>Order ID: &nbsp;&nbsp;{order.orderId}</p>
+        <p>
+          Order ID: &nbsp;&nbsp;{' '}
+          <UseCopy text={order.orderId} children={order.orderId} />
+        </p>
+
         <p>
           Total Amount:&nbsp;&nbsp; <UsePrice price={order.totalAmount} />
         </p>

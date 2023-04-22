@@ -9,6 +9,7 @@ export function replaceSpacesWithHyphens({ str }: any) {
 export function formatGender(gender: any) {
   return gender.toString().replace(/,/g, ' - ');
 }
+
 export function getStatusMessage(status: any) {
   switch (status) {
     case 0:
