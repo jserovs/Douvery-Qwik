@@ -1,0 +1,92 @@
+.container-all {
+    width: 100%;
+    position: relative;
+    animation: smoApp 0.6s ease;
+    display: grid;
+    grid-template-columns: auto;
+    gap: 20px;
+}
+
+.container-title {
+    font-size: large;
+    font-weight: 500;
+}
+
+.container-info-order {
+    display: grid;
+    gap: 20px;
+}
+
+.container-info-order ul li {
+    display: grid;
+    align-items: center;
+    margin: 20px 0px;
+}
+
+span {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    font-weight: 500;
+}
+
+span p {
+    font-size: 15px;
+    margin: 0px;
+    font-weight: 400;
+    color: #333;
+}
+
+strong {
+    color: #333;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+
+.container-cards-pay {
+    display: grid;
+    grid-template-columns: auto 40px;
+    gap: 5px;
+    justify-content: start;
+    align-items: center;
+
+}
+
+.container-edit-cart {
+    display: grid;
+
+    justify-content: end;
+    align-items: center;
+    color: var(--color-primary);
+    padding: 0px 14px;
+}
+
+.container-quantity {
+    display: flex;
+    gap: 10px;
+}
+
+.container-edit-cart:hover {
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 1305px) {
+    .container {
+        display: grid;
+        grid-template-columns: auto;
+
+    }
+}

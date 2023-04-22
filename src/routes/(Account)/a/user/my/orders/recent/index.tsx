@@ -14,6 +14,7 @@ import {
   zod$,
   z,
   Form,
+  useNavigate,
 } from '@builder.io/qwik-city';
 
 import type { UserOrders } from '~/utils/types';
@@ -71,7 +72,7 @@ export const useSubmit = globalAction$(
 export default component$(() => {
   useStylesScoped$(styles);
   const userACC = useGetCurrentUser().value;
-
+  const nav = useNavigate();
   const action = useSubmit();
   const ordersResource = useResource$<UserOrders[]>(async ({ cleanup }) => {
     const controller = new AbortController();
@@ -87,6 +88,10 @@ export default component$(() => {
 
   const handleMouseLeave = $(() => {
     showTooltip.value = false;
+  });
+
+  const navViewOrder = $((orderId: any) => {
+    nav('/a/user/my/orders/view/' + orderId);
   });
 
   return (
@@ -117,7 +122,11 @@ export default component$(() => {
                             <div class="container-options">
                               Options
                               <div class="card-options">
-                                <button>View order</button>
+                                <button
+                                  onClick$={() => navViewOrder(order.orderId)}
+                                >
+                                  View order
+                                </button>
                                 <Form action={action}>
                                   <input
                                     style={{ display: 'none' }}
@@ -138,14 +147,14 @@ export default component$(() => {
                                       <>
                                         {order.notificationEmail ? (
                                           <span class="tooltip-text">
-                                            You will no longer receive
-                                            notifications when the order status
-                                            updates.
+                                            Get notified when the order status
+                                            updates, and keep yourself informed.
                                           </span>
                                         ) : (
                                           <span class="tooltip-text">
-                                            Get notified when the order status
-                                            updates, and keep yourself informed.
+                                            You will no longer receive
+                                            notifications when the order status
+                                            updates.
                                           </span>
                                         )}
                                       </>

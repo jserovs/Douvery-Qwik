@@ -8,6 +8,7 @@ import { Link, useLocation } from '@builder.io/qwik-city';
 import { getDataProductCart } from '~/services/cart/cart';
 import type { Product } from '~/utils/types';
 import { Card1PRODUCTPAY } from '~/components/cards/buy/pay/card1/product-pay';
+import { calculateCartDetails } from '~/services/fuction';
 
 export interface Icar_product {
   productResults: Product[];
@@ -46,44 +47,15 @@ export const ProductPay = component$(
         <div class="cart-products">
           {car_product.productResults.length > 0 ? (
             car_product.productResults.map((product: any) => {
-              const taxRate = 0.1; // Por ejemplo, un impuesto del 10%
-              const shippingCost = 5; // Establece un costo de envío fijo, si es necesario
+              const cartDetails = calculateCartDetails(car_product);
 
-              const subTotalA = car_product.productResults.reduce(
-                (accumulator: any, product: any) => {
-                  return accumulator + product.price * product.quantity;
-                },
-                0
-              );
-              const descounts = car_product.productResults.reduce(
-                (accumulator: any, product: any) => {
-                  const discountAmount =
-                    product.price * (product.discount / 100) * product.quantity;
-                  return accumulator + discountAmount;
-                },
-                0
-              );
+              taxAmount.setTaxAmount = cartDetails.tax;
+              shipping.setShipping = cartDetails.shippingCost;
+              totalAmount.setTotalAmount = cartDetails.total;
+              discount.setDiscount = cartDetails.descounts;
+              subTotal.setsubTotal = cartDetails.subTotal;
+              subTotalNoDiscount.setsubTotalNoDiscount = cartDetails.subTotalA;
 
-              subTotal.setsubTotal = parseFloat(
-                (subTotalA - descounts).toFixed(2)
-              );
-              discount.setDiscount = descounts;
-              subTotalNoDiscount.setsubTotalNoDiscount = subTotalA;
-
-              // Calcular el impuesto
-              const tax = parseFloat(
-                (subTotal.setsubTotal * taxRate).toFixed(2)
-              );
-
-              // Calcular el total incluyendo el impuesto y el costo de envío (si lo hay)
-              const total = parseFloat(
-                (subTotal.setsubTotal + tax + shippingCost).toFixed(2)
-              );
-
-              // Guardar el impuesto, el costo de envío y el total
-              taxAmount.setTaxAmount = tax;
-              shipping.setShipping = shippingCost;
-              totalAmount.setTotalAmount = total;
               return (
                 <>
                   <div class="container-cards-pay" key={product.dui}>

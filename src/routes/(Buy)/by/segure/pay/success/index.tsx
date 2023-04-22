@@ -41,6 +41,7 @@ export default component$(() => {
     );
     state.order = data;
   });
+
   const invoiceData = {
     clientName: 'Juan Pérez',
     date: '2023-04-08',

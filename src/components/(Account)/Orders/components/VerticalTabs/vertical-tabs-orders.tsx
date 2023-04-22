@@ -14,6 +14,11 @@ export const VerticalTabsOrders = component$(() => {
 
   const tabs = [
     {
+      path: '/a/user/my/orders/view',
+      label: 'View order',
+      subTabs: [{ path: '/a/user/my/orders/view/', label: 'View order' }],
+    },
+    {
       path: '/a/user/my/orders/recent',
       label: 'Ordenes recientes',
       subTabs: [{ path: '/a/user/my/orders/recent/', label: 'Recientes' }],
@@ -44,6 +49,7 @@ export const VerticalTabsOrders = component$(() => {
           {loc.url.pathname == '/a/user/my/orders/recent/' && 'Orders recent'}
           {loc.url.pathname == '/a/user/my/orders/completed/' &&
             'Orders completed'}
+          {loc.url.pathname.includes('/a/user/my/orders/view/') && 'View order'}
         </p>
         <hr class="line" />
       </div>

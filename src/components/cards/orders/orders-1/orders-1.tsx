@@ -37,7 +37,24 @@ export const CardOrdersC1 = component$(({ order }: { order: UserOrders }) => {
   const imagesToShow = showAll.value
     ? order.uniqueProductImages
     : order.uniqueProductImages.slice(0, 4);
-
+  function getStatusMessage(status: number) {
+    switch (status) {
+      case 0:
+        return 'Order created';
+      case 1:
+        return 'Order packed';
+      case 2:
+        return 'Order shipped';
+      case 3:
+        return 'Order in transit';
+      case 4:
+        return 'Order delivered';
+      case 5:
+        return 'Order completed';
+      default:
+        return 'Unknown status';
+    }
+  }
   return (
     <div class="container-all-card">
       <div class="order-info">
@@ -66,7 +83,7 @@ export const CardOrdersC1 = component$(({ order }: { order: UserOrders }) => {
           </div>
         </div>
         <div class="title-status">
-          <p>Confirmed & pay</p>
+          <p>{getStatusMessage(order.status)}</p>
         </div>
         <div class="separator"></div>
         <div class="images-container">

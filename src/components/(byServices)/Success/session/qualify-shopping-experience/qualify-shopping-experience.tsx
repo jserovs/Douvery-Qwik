@@ -67,12 +67,12 @@ export const useQualifyExperience = globalAction$(
   })
 );
 export const QualifyShoppingExperience = component$(
-  ({ orderInfoResource, statepr }: any) => {
+  ({ orderInfoResource, statepr, coten }: any) => {
     useStylesScoped$(styles);
     const submitted = useStore({
       setSubmitted: false,
     });
-    const conten = useSignal(false);
+    const conten = useSignal(coten || false);
     const state = useStore({
       select: '',
     });

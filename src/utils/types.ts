@@ -137,18 +137,42 @@ export type Address = {
 };
 
 export type Order = {
-	orderId: string;
-	orderIsPaid: boolean;
-	ordertotalItems: string;
-	orderPaymentMethod:{
-		method: string;
-	}
-	orderTotalAmout: number;
-	userCalification:{
-		userQualifyExperiencePurchase: string;
-	}
-
+  orderId: string;
+  orderIsPaid: boolean;
+  ordertotalItems: string;
+  orderTotalAmout: string;
+  orderPaymentMethod: {
+    method: string;
+    idMethod: string;
+  };
+  orderPaymentResult: any; 
+  orderShippingAddress: {
+    addressLine1: string;
+    addressLine2: string;
+    street: string;
+    city: string;
+    state: string;
+    zip: string;
+    country: string;
+    isPrimary: boolean;
+    locationType: string;
+  };
+  orderUserNotificationEmail: boolean;
+  orderItems: orderItems[];
+  paidAt: string;
+  createdAt: string;
+  updatedAt: string;
 };
+export type orderItems = {
+  name: string;
+  dui: string;
+  price: number;
+  discount: number;
+  quantity: number;
+  _id: string;
+  image: string;
+};
+
 export type UserOrders = {
 	orderId: string;
 	totalAmount: string;
