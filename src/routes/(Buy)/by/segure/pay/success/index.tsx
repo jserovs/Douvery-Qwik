@@ -142,7 +142,7 @@ export default component$(() => {
           </div>
           <div class="button-view-order">
             {' '}
-            <Link href={'/a/user/my/orders/'} reload={true}>
+            <Link href={'/a/user/my/orders/recent/'} reload={true}>
               Ver ordenes
             </Link>
           </div>
