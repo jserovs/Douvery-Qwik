@@ -125,7 +125,6 @@ export default component$(() => {
                               <CardOrdersC1 order={order} />
                             </li>
                             <div class="container-options">
-                              Options
                               <div class="card-options">
                                 <button
                                   onClick$={() => navViewOrder(order.orderId)}
