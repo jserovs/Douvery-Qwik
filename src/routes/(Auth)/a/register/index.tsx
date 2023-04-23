@@ -20,11 +20,8 @@ export const onGet: RequestHandler = async ({ cookie, redirect }) => {
 };
 
 export const useRegister = globalAction$(
-  async (
-    { name, lastName, email, password },
-    { fail, headers, cookie, url }
-  ) => {
-    const data = await fetch(`${urlServerNode}/api/signup`, {
+  async ({ name, lastName, email, password }, { fail, headers, cookie }) => {
+    const res = await fetch(`${urlServerNode}/api/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -39,20 +36,20 @@ export const useRegister = globalAction$(
       }),
     });
 
-    const dataAccess = await data.json();
+    const response = await res.json();
 
-    if (!data.ok || !dataAccess) {
-      const errorMessage = 'Something went wrong. Please try again later.';
-      console.error('Error:', errorMessage); // log the error to the console for debugging
-      return fail(400, {
+    if (res.status !== 200) {
+      // Utilizar el mensaje de error proporcionado por la API si está disponible
+      const errorMessage =
+        response.error || response.msg || 'Hubo un error, intente de nuevo';
+      return fail(res.status, {
         message: errorMessage,
       });
     }
 
-    setCookiesData(dataAccess, cookie);
+    setCookiesData(response, cookie);
 
-    const query = url.searchParams.get('rr') || '';
-    headers.set('location', query);
+    headers.set('location', '/a/register/verified');
   },
   zod$({
     name: z
@@ -162,17 +159,24 @@ export default component$(() => {
               autoComplete="on"
             />
           </div>
-          <div class="form-group">
+          {/* <div class="form-group">
             <label for="receiveGmail" class="receiveGmail">
               <input type="checkbox" id="receiveGmail" name="receiveGmail" />
               Recibir alerta de inicio de sesión.
             </label>
-          </div>
-
+          </div> */}
+          <TermsConditions />
           {action.value?.message && (
-            <span class="error">{action.value?.message}</span>
+            <div>
+              {' '}
+              <br />
+              {action.isRunning ? (
+                <span class="loa-s">Verifying...</span>
+              ) : (
+                <span class="error ">{action.value?.message}</span>
+              )}
+            </div>
           )}
-
           <div class="form-group">
             <button class={'login-button'}>
               <span class="button-text">
@@ -180,7 +184,7 @@ export default component$(() => {
                   ? 'Loading...'
                   : action.value?.message
                   ? 'Error'
-                  : 'Log in'}
+                  : 'Create account'}
               </span>
             </button>
           </div>
@@ -191,7 +195,6 @@ export default component$(() => {
             </a>
           </div>
         </Form>
-        <TermsConditions />
       </div>
     </div>
   );

@@ -27,7 +27,7 @@ export async function fetchUniqueOrderUser(
   }
 
   const results = await response.json();
-
+  console.log(results);
   return results;
 }
 
@@ -58,7 +58,7 @@ export async function fetchOrdesUser(
   }
 
   const results = await response.json();
-
+  console.log(results);
   return results;
 }
 

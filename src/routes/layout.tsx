@@ -71,6 +71,7 @@ export default component$(() => {
       <main>
         {loc.url.pathname !== '/a/login/' &&
         loc.url.pathname !== '/a/register/' &&
+        loc.url.pathname !== '/a/register/verified/' &&
         loc.url.pathname !== '/a/recover-account/' &&
         segureUrl ? (
           <>
