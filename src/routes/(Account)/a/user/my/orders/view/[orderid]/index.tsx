@@ -46,7 +46,7 @@ export default component$(() => {
     );
     state.order = data;
   });
-  console.log(`${userACC?.id}`);
+
   return (
     <div class="container-all">
       <div class="container">
