@@ -19,10 +19,11 @@ import { DouveryArrowDown } from '~/components/icons/arrow-down';
 import { DouveryArrowUp } from '~/components/icons/arrow-up';
 
 export const useQualifyExperience = globalAction$(
-  async ({ qualify }, { fail, headers, cookie, url }) => {
+  async ({ qualify }, { fail, headers, cookie, url, params }) => {
     const accessCookie = cookie.get(DATA_ACCESS_COOKIE_NAME)?.value;
     const user = decodeToken(accessCookie, passwordKEY, serverKey);
-    const ordrId = url.searchParams.get('order') || '';
+
+    const ordrId = url.searchParams.get('order') || params.orderid || '';
     const data = await fetch(
       `${urlServerNode}/api/calification-purchase-shop`,
       {
@@ -41,7 +42,7 @@ export const useQualifyExperience = globalAction$(
     );
 
     const dataAccess = await data.json();
-
+    console.log(dataAccess);
     if (!data.ok || !dataAccess) {
       const errorMessage = 'Something went wrong. Please try again later.';
       console.error('Error:', errorMessage); // log the error to the console for debugging

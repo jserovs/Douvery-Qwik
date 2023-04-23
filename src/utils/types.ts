@@ -94,6 +94,7 @@ export type UserACC = {
 	sessionVerification: boolean;
 	veriToolVerification: boolean;
 	twoStepVerification: boolean;
+	accountVerificationCode:boolean;
 
 };
 

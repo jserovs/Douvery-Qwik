@@ -1,7 +1,7 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import { Form, globalAction$, z, zod$ } from '@builder.io/qwik-city';
 import type { DocumentHead } from '@builder.io/qwik-city';
-import type { RequestHandler } from '@builder.io/qwik-city';
+
 import styles from './index.css?inline';
 
 import {
@@ -12,28 +12,33 @@ import { urlServerNode } from '~/services/fechProduct';
 
 import { DouveryAuthLogo } from '~/components/(Auth)/DouveryAuthLogo/douvery-auth-logo';
 import { TermsConditions } from '~/components/(Auth)/Terms&Conditions/terms-Conditions';
+import {
+  decodeToken,
+  passwordKEY,
+  serverKey,
+} from '~/services/auth/token/token';
+import { useGetCurrentUser } from '~/routes/layout';
 
 export interface Store {
   email: string;
   password: string;
 }
-export const onGet: RequestHandler = async ({ cookie, redirect }) => {
-  const acccessToken = cookie.get(DATA_ACCESS_COOKIE_NAME)?.value;
-  if (acccessToken) {
-    throw redirect(302, '/');
-  }
-};
 
 export const useLogin = globalAction$(
-  async ({ email, password }, { fail, cookie, headers }) => {
-    const response = await fetch(`${urlServerNode}/api/signin`, {
+  async ({ code }, { fail, cookie, headers }) => {
+    const serverUrl = `${urlServerNode}`;
+    const accessCookie = cookie.get(DATA_ACCESS_COOKIE_NAME)?.value;
+    const user = decodeToken(accessCookie, passwordKEY, serverKey);
+    const response = await fetch(`${serverUrl}/api/signup/verified`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'x-auth-token': user.token,
       },
+
       body: JSON.stringify({
-        email: email,
-        password: password,
+        userId: user.id,
+        code: code,
       }),
     });
 
@@ -50,29 +55,15 @@ export const useLogin = globalAction$(
     headers.set('location', '/');
   },
   zod$({
-    email: z
-      .string({
-        required_error: 'Email requerido',
-      })
-      .email({
-        message: 'Please enter a valid email',
-      }),
-    password: z
-      .string({
-        required_error: 'Password is required',
-      })
-      .min(6, {
-        message: 'Password must be at least 6 characters',
-      })
-      .max(25, {
-        message: 'Password must be less than 25 characters',
-      }),
+    code: z.string({
+      required_error: 'Code verification is required',
+    }),
   })
 );
 
 export default component$(() => {
   useStylesScoped$(styles);
-
+  const user = useGetCurrentUser().value;
   const action = useLogin();
 
   return (
@@ -81,16 +72,22 @@ export default component$(() => {
       <DouveryAuthLogo />
       <div class="login-container">
         <div class="header-login">
-          <div class="title-login">Accede a tu cuenta</div>{' '}
-          <div class="sub-title-login">Inicia session de forma segura</div>{' '}
+          <div class="title-login">Activacte you account</div>
+          <br />
+          <br />
+          <div class="sub-title-login">
+            {' '}
+            A verification code was sent to{'  '}
+            <strong>{user?.email}</strong>
+          </div>{' '}
         </div>
-
+        <br />
         <Form action={action}>
           <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required />
-            {action.value?.fieldErrors?.email && (
-              <span class="error">{action.value?.fieldErrors?.email}</span>
+            <label for="email">Code verification</label>
+            <input type="text" id="code" name="code" required />
+            {action.value?.fieldErrors?.code && (
+              <span class="error">{action.value?.fieldErrors?.code}</span>
             )}
           </div>
 
@@ -104,14 +101,14 @@ export default component$(() => {
                   ? 'Loading...'
                   : action.value?.message
                   ? 'Error'
-                  : 'Log in'}
+                  : 'Verify'}
               </span>
             </button>
           </div>
           <div class="form-group need-account">
-            ¿No tiene una cuenta?
-            <a href="/a/register" class="forgot-new-account-link">
-              Crear una
+            ¿Ya tiene una cuenta?
+            <a href="/a/login" class="forgot-new-account-link">
+              Iniciar sesión
             </a>
           </div>
         </Form>
@@ -121,11 +118,11 @@ export default component$(() => {
   );
 });
 export const head: DocumentHead = {
-  title: 'Inicar Session en Douvery',
+  title: 'Account verification | Douvery',
   meta: [
     {
-      name: 'description',
-      content: 'Inicar Session en Douvery',
+      name: 'Account verification | Douvery',
+      content: 'Account verification | Douvery',
     },
   ],
 };
