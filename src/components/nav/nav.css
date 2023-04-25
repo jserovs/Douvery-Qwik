@@ -105,7 +105,7 @@ nav a:hover {
         height: 2rem;
         justify-content: left;
         align-items: center;
-        
+
 
     }
 
@@ -139,7 +139,7 @@ nav a:hover {
     .container-cajas-nav {
 
         display: grid;
-        grid-template-columns:auto auto auto auto auto auto;
+        grid-template-columns: auto auto auto auto auto auto;
         overflow: auto;
 
 
