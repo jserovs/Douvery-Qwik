@@ -114,6 +114,12 @@ textarea {
     align-items: center;
     justify-content: center;
 }
+.container-input-title{
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    gap: 10px;
+}
 
 @media only screen and (max-width: 885px) {
     textarea {

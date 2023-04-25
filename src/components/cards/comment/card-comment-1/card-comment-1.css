@@ -272,7 +272,17 @@
     align-items: center;
     justify-content: center;
 }
-
+@media only screen and (max-width: 1405px) {
+    .reply-comment {
+        display: grid;
+        grid-template-columns: 50px auto;
+        align-items: center;
+        justify-content: start;
+    }
+    .container-all {
+        width: 80%;
+    }
+     }
 @media only screen and (max-width: 885px) {
 
     .ctr-box-user {

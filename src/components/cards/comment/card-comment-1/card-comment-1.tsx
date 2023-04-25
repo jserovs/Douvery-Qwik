@@ -19,7 +19,7 @@ import { useGetCurrentUser } from '~/routes/layout';
 import { TextCL } from '~/components/use/textCL/textCL';
 import { CommentReply } from './reply/comment-reply';
 
-export const useSubmit = globalAction$(
+export const useSubmitGlobal = globalAction$(
   async ({ reviewId, userId, review }, { fail }) => {
     const serverUrl = `${urlServerNode}/api/review/helpful-or-no`;
 
@@ -86,7 +86,7 @@ export const CardComment1 = component$(
     }
     const loc = useLocation();
     const nav = useNavigate();
-    const action = useSubmit();
+    const action = useSubmitGlobal();
     const user = useGetCurrentUser().value;
     const glbhelpfulReview = useSignal(helpful.users);
     const glbnohelpfulReview = useSignal(notHelpful.users);
@@ -104,7 +104,7 @@ export const CardComment1 = component$(
         nav('/a/login/' + '?rr=' + loc.url.pathname, true);
         return;
       }
-      const { value } = await action.submit({
+      const { value } = await action.run({
         reviewId: id,
         userId: user?.id,
         review: true,
@@ -119,7 +119,7 @@ export const CardComment1 = component$(
         nav('/a/login/' + '?rr=' + loc.url.pathname, true);
         return;
       }
-      const { value } = await action.submit({
+      const { value } = await action.run({
         reviewId: id,
         userId: user?.id,
         review: false,
@@ -132,6 +132,10 @@ export const CardComment1 = component$(
     const reply = useSignal(false);
 
     const handleReplyComment = $(() => {
+      if (!user) {
+        nav('/a/login/' + '?rr=' + loc.url.pathname, true);
+        return;
+      }
       reply.value = !reply.value;
     });
     return (

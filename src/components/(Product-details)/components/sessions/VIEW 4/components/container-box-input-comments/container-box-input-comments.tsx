@@ -90,12 +90,15 @@ export const ContainerBoxInputComments = component$(({ datePurchase }: any) => {
         <div>
           <label for="comentario">Comentario:</label>
           <ContainerBoxBser datePurchase={datePurchase} />
-          <input
+        <div class="container-input-title">
+          <strong>Title : </strong>
+        <input
             type="text"
             id="title_comment"
             name="title_comment"
             placeholder="Title comments"
           />
+        </div>
           <textarea
             id="text_comment"
             name="text_comment"

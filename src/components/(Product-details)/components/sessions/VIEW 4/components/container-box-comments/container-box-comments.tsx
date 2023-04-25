@@ -2,6 +2,7 @@ import {
   Resource,
   component$,
   useResource$,
+  useSignal,
   useStore,
   useStylesScoped$,
 } from '@builder.io/qwik';
@@ -20,7 +21,7 @@ interface IState {
 }
 export const ContainerBoxComments = component$(({ datePurchase }: any) => {
   useStylesScoped$(style);
-  const showAllQuestions = useStore({ setShowAllQuestions: false });
+  const showAllQuestions = useSignal(false);
 
   const comment = [
     {
@@ -102,9 +103,9 @@ export const ContainerBoxComments = component$(({ datePurchase }: any) => {
                     {state.reviewsProduct
                       .slice(
                         0,
-                        showAllQuestions.setShowAllQuestions
-                          ? comment.length
-                          : 8
+                        showAllQuestions.value
+                          ? state.reviewsProduct.length
+                          : 5
                       )
                       .map((review: any) => {
                         return (
@@ -139,12 +140,12 @@ export const ContainerBoxComments = component$(({ datePurchase }: any) => {
       </div>
       <div class="ctr-bts-sh">
         <button
-          onClick$={() =>
-            (showAllQuestions.setShowAllQuestions =
-              !showAllQuestions.setShowAllQuestions)
-          }
+         onClick$={() =>
+          (showAllQuestions.value =
+            !showAllQuestions.value)
+        }
         >
-          {showAllQuestions.setShowAllQuestions ? (
+          {showAllQuestions.value ? (
             <srw-sr1>
               <DouveryArrowUp size="15" /> Ver menos
             </srw-sr1>
