@@ -8,10 +8,8 @@ header {
   z-index: 1000;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background: rgb(12, 68, 154);
-  background: radial-gradient(circle, rgba(12, 68, 154, 1) 100%, rgba(255, 255, 255, 1) 100%);
 
+  background-color: #212A3E;
   transition: all 0.5s ease;
 }
 
@@ -19,9 +17,9 @@ header {
 
 .container-cajas-header {
   display: grid;
-  grid-template-columns: 0.5fr 4fr 0.5fr;
+  grid-template-columns: 150PX 1fr 200PX;
   width: 100%;
-  margin: 0 auto;
+  padding: 0PX 100PX;
   align-items: center;
   justify-content: center;
 
@@ -161,7 +159,7 @@ select,
 }
 
 .searchTerm input {
-  padding: 6px;
+  height: 38PX;
 
 }
 
@@ -194,6 +192,10 @@ select,
   justify-content: center;
   place-content: center;
 
+}
+
+.searchButton:focus {
+  padding: 10PX;
 }
 
 
@@ -568,8 +570,7 @@ select,
   }
 
   .container-icon-cart {
-    padding: 0px 0px 0px 0px;
-    height: 20px;
+    padding: 0px;
   }
 
   .ttle-draw {
@@ -591,6 +592,12 @@ select,
 
 }
 
+@media only screen and (max-width: 1355px) {
+  .container-cajas-header {
+    padding: 0px 20px;
+  }
+}
+
 @media only screen and (max-width: 1025px) {
   .efecto-HOVER-cuentaDesplegable {
     display: none;
@@ -598,6 +605,10 @@ select,
 
     left: -220px;
 
+  }
+
+  .cajas {
+    margin: 0px 5px;
   }
 
   .searchButton {
@@ -615,6 +626,11 @@ select,
     display: grid;
     justify-content: center;
     align-items: center;
+  }
+
+  .container-cajas-header {
+
+    padding: 0px 0px;
   }
 
 
@@ -663,8 +679,9 @@ select,
     flex-direction: row-reverse;
     gap: 15px;
     top: 15px;
-    margin: 5px 8px 0px 0px;
+    margin: 0px 2px 0px 0px;
     right: 0;
+    width: 100%;
   }
 
   .badget-circle {
@@ -676,6 +693,7 @@ select,
   .container-cajas-header {
     display: grid;
     grid-template-columns: 0 100% 0;
+    padding: 0px 0px;
   }
 
   .cuenta_botom {
