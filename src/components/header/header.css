@@ -1,17 +1,15 @@
 header {
   position: relative;
   width: 100%;
-  height: 5rem;
+  height: 4rem;
   top: 0;
   right: 0;
-  padding: 1rem;
+
   z-index: 1000;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background: rgb(12, 68, 154);
-  background: radial-gradient(circle, rgba(12, 68, 154, 1) 100%, rgba(255, 255, 255, 1) 100%);
-  padding: 28px 9.5%;
+
+  background-color: #212A3E;
   transition: all 0.5s ease;
 }
 
@@ -19,13 +17,12 @@ header {
 
 .container-cajas-header {
   display: grid;
-  grid-template-columns: AUTO 80% auto;
+  grid-template-columns: 150PX 1fr 200PX;
   width: 100%;
-  height: 25;
-  margin: 0 auto;
+  padding: 0PX 100PX;
   align-items: center;
   justify-content: center;
-  padding-top: 10px;
+
 }
 
 .cajas {
@@ -37,6 +34,9 @@ header {
 
 
 .container-icon-cart {
+  display: grid;
+  justify-content: center;
+  max-height: 50px;
   padding: 0px 10px;
 }
 
@@ -50,7 +50,7 @@ header {
   background-color: #e84118;
   color: #fff;
   border-radius: 100%;
-  top: 25px;
+  top: 10px;
   margin-left: 13px;
   opacity: 0.9;
   font-size: 13px;
@@ -159,7 +159,7 @@ select,
 }
 
 .searchTerm input {
-  padding: 6px;
+  height: 38PX;
 
 }
 
@@ -194,6 +194,10 @@ select,
 
 }
 
+.searchButton:focus {
+  padding: 10PX;
+}
+
 
 
 /*Resize the wrap to see the search bar change!*/
@@ -207,6 +211,7 @@ select,
 
 
 .main {
+  width: 135px;
   display: grid;
   grid-template-columns: 53px auto auto;
   align-items: center;
@@ -404,6 +409,10 @@ select,
   text-decoration: underline;
 }
 
+.logo {
+  display: grid;
+  justify-content: end;
+}
 
 
 
@@ -561,8 +570,7 @@ select,
   }
 
   .container-icon-cart {
-    padding: 0px 0px 0px 0px;
-    height: 20px;
+    padding: 0px;
   }
 
   .ttle-draw {
@@ -584,6 +592,12 @@ select,
 
 }
 
+@media only screen and (max-width: 1355px) {
+  .container-cajas-header {
+    padding: 0px 20px;
+  }
+}
+
 @media only screen and (max-width: 1025px) {
   .efecto-HOVER-cuentaDesplegable {
     display: none;
@@ -591,6 +605,10 @@ select,
 
     left: -220px;
 
+  }
+
+  .cajas {
+    margin: 0px 5px;
   }
 
   .searchButton {
@@ -608,6 +626,11 @@ select,
     display: grid;
     justify-content: center;
     align-items: center;
+  }
+
+  .container-cajas-header {
+
+    padding: 0px 0px;
   }
 
 
@@ -656,8 +679,9 @@ select,
     flex-direction: row-reverse;
     gap: 15px;
     top: 15px;
-    margin: 5px 8px 0px 0px;
+    margin: 0px 2px 0px 0px;
     right: 0;
+    width: 100%;
   }
 
   .badget-circle {
@@ -669,6 +693,7 @@ select,
   .container-cajas-header {
     display: grid;
     grid-template-columns: 0 100% 0;
+    padding: 0px 0px;
   }
 
   .cuenta_botom {

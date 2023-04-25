@@ -1,10 +1,12 @@
 import { component$, useStore, useStylesScoped$ } from '@builder.io/qwik';
 import style from './container-box-user.css?inline';
-import { DouveryUser } from '~/components/icons/user';
 
-export const ContainerBoxBser = component$(() => {
+import { useGetCurrentUser } from '~/routes/layout';
+import { formatDate } from '~/services/fuction';
+
+export const ContainerBoxBser = component$(({ datePurchase }: any) => {
   useStylesScoped$(style);
-
+  const user = useGetCurrentUser().value;
   const rating = useStore({ setRating: 0 });
 
   const stars = [...Array(5)].map((_, index) => (
@@ -56,16 +58,26 @@ export const ContainerBoxBser = component$(() => {
     default:
       ratingText = 'Sin Valorar';
   }
-
+  const date = formatDate(datePurchase);
   return (
     <div class="ctr-box-user">
-      <div class="crtr-avatar">
-        <DouveryUser size="35" color="#424242" />
-      </div>
+      <img
+        src={
+          user?.avatar
+            ? user?.avatar
+            : 'https://res.cloudinary.com/douvery/image/upload/v1676456401/LOGO/z7neu6qunez6ygx9xxho.webp'
+        }
+        class="crtr-avatar"
+      />
+
       <div class="ctr-name-time">
         <div class="hea">
-          <strong class="hs-sr1">Frederick Sansck</strong>
-          <p class="ps-sr1">Producto comprando el 10 dic 2022</p>
+          <strong class="hs-sr1">
+            {user?.name} {user?.lastname}
+          </strong>
+          <div class="container-last">
+            <p> Last purchased</p> <div class="ctr-opa">|</div> <p>{date}</p>
+          </div>
         </div>
         <div class="ctr-star">
           <div class="hea-ratgi">

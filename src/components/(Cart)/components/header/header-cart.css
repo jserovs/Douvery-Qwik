@@ -49,9 +49,10 @@
     .content {
         display: inline-block;
         width: 85%;
+        margin-top: 20px;
     }
 
-   
+
     .container-options-cart {
         justify-content: end;
         font-size: 13px;

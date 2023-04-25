@@ -17,7 +17,7 @@
     border-radius: 50%;
     background-color: var(--color-background-lightest);
     border: 1px solid var(--border-width-1);
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .ctr-star {
@@ -53,6 +53,16 @@
     display: flex;
     animation: none;
     transition: none
+}
+
+.container-last {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.container-last p {
+    font-size: 13px;
 }
 
 @media only screen and (max-width: 885px) {

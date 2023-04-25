@@ -184,3 +184,31 @@ export type UserOrders = {
 	orderedAt: string;
 	notificationEmail: boolean;
 };
+
+export type reviewsProduct = {
+  productDui: string;
+  buyerId: string;
+  date: Date;
+  rating: number;
+  title: string;
+  review?: string;
+  helpful: number;
+  notHelpful: number;
+  photos: string[];
+  comments: ReviewComment[];
+};
+
+export type ReviewComment = {
+  authorId: string;
+  date: Date;
+  content: string;
+  helpful: number;
+  notHelpful: number;
+};
+
+
+
+export type CheckComment = {
+  canComment: boolean;
+  lastPurchaseDate: number | null;
+}

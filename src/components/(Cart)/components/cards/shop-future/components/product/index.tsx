@@ -20,7 +20,7 @@ export const CardShopFutureProduct = component$(() => {
 
   const { url } = useLocation();
   const user = useGetCurrentUser().value;
- const isLoading = useStore({ setIsLoading: true });
+  const isLoading = useStore({ setIsLoading: true });
 
   const state = useStore<IState>({
     searchInput: '',
@@ -33,14 +33,14 @@ export const CardShopFutureProduct = component$(() => {
 
     const controller = new AbortController();
 
- try {
-   state.searchResults = await getDataFuturePurchasesProduct(`${user?.id}`);
-      } catch (error) {
-        console.error(error);
-      } finally {
-        isLoading.setIsLoading = false;
-      }
-    
+    try {
+      state.searchResults = await getDataFuturePurchasesProduct(`${user?.id}`);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      isLoading.setIsLoading = false;
+    }
+
     return () => {
       controller.abort();
     };
@@ -48,38 +48,38 @@ export const CardShopFutureProduct = component$(() => {
   const nav = useNavigate();
   return (
     <>
-       <div class="cart-future-shop">
-      <ul class="container-lista">
-        {isLoading.setIsLoading ? (
-          <div class="loader"></div>
-        ) : state.searchResults.length > 0 ? (
-          state.searchResults.map((product  ) => {
-            return (
-              <div class="container-cart" key={product.dui}>
-                <Card3SCART product={product} />
-                <div class="container-cart-buttons">
-                  <button
-                    onClick$={() => {
-                      addToCart({ dui: product.dui, quantity: 1 });
-                      nav('/v/cart');
-                    }}
-                  >
-                    Agregar al carrito
-                  </button>
+      <div class="cart-future-shop">
+        <ul class="container-lista">
+          {isLoading.setIsLoading ? (
+            <div class="loader"></div>
+          ) : state.searchResults.length > 0 ? (
+            state.searchResults.map((product) => {
+              return (
+                <div class="container-cart" key={product.dui}>
+                  <Card3SCART product={product} />
+                  <div class="container-cart-buttons">
+                    <button
+                      onClick$={() => {
+                        addToCart({ dui: product.dui, quantity: 1 });
+                        nav('/v/cart');
+                      }}
+                    >
+                      Agregar al carrito
+                    </button>
+                  </div>
+                  <div class="container-options-buttons">
+                    <ButtonFuturePurchase product={product} />
+                  </div>
                 </div>
-                <div class="container-options-buttons">
-                  <ButtonFuturePurchase product={product} />
-                </div>
-              </div>
-            );
-          })
-        ) : (
-          <div class="no-product-message">
-            <p>Su lista actualmente no tiene productos.</p>
-          </div>
-        )}
-      </ul>
-    </div>
+              );
+            })
+          ) : (
+            <div class="no-product-message">
+              <p>Su lista actualmente no tiene productos.</p>
+            </div>
+          )}
+        </ul>
+      </div>
     </>
   );
 });

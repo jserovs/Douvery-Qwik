@@ -1,0 +1,41 @@
+ .container {
+
+     padding: 30px 40px;
+     margin: 50px auto;
+     width: 80%;
+     max-width: 800px;
+     border-radius: 5px;
+
+ }
+
+ h1 {
+     font-size: 25px;
+     font-weight: 700;
+     margin-bottom: 20px;
+     color: #333;
+     text-align: start;
+ }
+
+ ol {
+     counter-reset: list-counter;
+     padding-left: 20px;
+ }
+
+ li {
+     font-size: 15px;
+     font-weight: 400;
+     color: #555;
+     margin-bottom: 15px;
+     position: relative;
+ }
+
+ li::before {
+     counter-increment: list-counter;
+     content: counter(list-counter);
+     position: absolute;
+     left: -30px;
+     top: 0;
+     font-size: 18px;
+     font-weight: 700;
+     color: #333;
+ }

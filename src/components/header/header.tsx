@@ -60,7 +60,7 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
 
   return (
     <header>
-      <div class="container container-cajas-header ">
+      <div class="container-cajas-header ">
         <div class="cajas">
           <a href="/" class="logo" aria-label="Douvery">
             <DouveryLogo105X40PX />

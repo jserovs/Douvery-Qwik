@@ -1,5 +1,9 @@
-.ctr-box-user {
+.container-all {
     width: 60%;
+}
+
+.ctr-box-user {
+
 
     display: grid;
     grid-template-columns: 50px auto;
@@ -8,6 +12,7 @@
     padding: 20px 0px;
 
     border-bottom: 1px solid var(--border-width-1);
+
 }
 
 .ctr-title {
@@ -19,7 +24,7 @@
 .crtr-avatar {
     width: 50px;
     height: 50px;
-    object-fit: contain;
+
 }
 
 .crtr-avatar {
@@ -29,7 +34,7 @@
     border-radius: 50%;
     background-color: var(--color-background-lightest);
     border: 1px solid var(--border-width-1);
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .ctr-name-time {
@@ -160,6 +165,66 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
+}
+
+.container-vots {
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid var(--border-width-1);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+
+}
+
+.container-helpful-nohelpful {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.button-helpful {
+    display: flex;
+    gap: 10px;
+
+    color: #0f1111;
+    cursor: pointer;
+    margin: 10px 0px;
+    font-size: 13px;
+    line-height: 29px;
+    padding: 0 10px 0 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+
+
+    align-items: center;
+    justify-content: center;
+}
+
+.button-helpful:focus {
+    border: 1px solid #0F6292;
+}
+
+.button-helpful:hover {
+    background-color: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #0F6292;
+}
+
+.button-active p {
+    color: #0F6292;
+
 }
 
 @media only screen and (max-width: 885px) {

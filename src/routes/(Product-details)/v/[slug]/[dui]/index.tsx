@@ -39,8 +39,7 @@ export default component$(() => {
     { recursive: true }
   );
 
-  const productResource = useResource$<void>(async ({ track }) => {
-    track(() => location.params.dui);
+  const productResource = useResource$<void>(async () => {
     const { dui } = cleanUpParams({ dui: location.params.dui });
     const product = await fetchProduct(dui);
     state.product = product;
