@@ -1,13 +1,13 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import style from './container-box-input-comments.css?inline';
 import { ContainerBoxBser } from '../container-box-user/container-box-user';
-export const ContainerBoxInputComments = component$(() => {
+export const ContainerBoxInputComments = component$(({ datePurchase }: any) => {
   useStylesScoped$(style);
   return (
     <div class="comments-box">
       <div>
         <label for="comentario">Comentario:</label>
-        <ContainerBoxBser />
+        <ContainerBoxBser datePurchase={datePurchase} />
 
         <textarea
           id="comentario"

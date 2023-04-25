@@ -84,6 +84,6 @@ export async function fetchSearchOrder(
     throw new Error('Failed to fetch product');
   }
   const results = await response.json();
-
+  console.log(results);
   return results;
 }
