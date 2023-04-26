@@ -82,7 +82,7 @@ export const ContainerBoxComments = component$(() => {
   });
 
   return (
-    <div class="ctr-comment">
+    <div class="ctr-comment" id="REVIEWS">
       <hs-sr3>Opiniones de compradores</hs-sr3>
       <div class="ctr-comment-box">
         <div class="suggestions">
@@ -104,7 +104,7 @@ export const ContainerBoxComments = component$(() => {
                         0,
                         showAllQuestions.setShowAllQuestions
                           ? comment.length
-                          : 2
+                          : 8
                       )
                       .map((review: any) => {
                         return (

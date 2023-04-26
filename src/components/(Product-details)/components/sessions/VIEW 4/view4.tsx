@@ -15,6 +15,7 @@ import { useGetCurrentUser } from '~/routes/layout';
 import { useLocation } from '@builder.io/qwik-city';
 import type { CheckComment } from '~/utils/types';
 import { ContainerTermsComments } from './components/container-terms-comments/container-terms-comments';
+import { cleanUpParams } from '~/utils/cleurs';
 
 interface IState {
   checkReviewsProduct: CheckComment;
@@ -29,11 +30,13 @@ export const View4 = component$(({ product }: any) => {
   useStylesScoped$(styles);
   const loc = useLocation();
   const user = useGetCurrentUser().value;
-  const checkReviewsProduct = useResource$(async () => {
-    const data = await fetchCanUserComments(loc.params.dui, `${user?.id}`);
+  const checkReviewsProduct = useResource$(async ({ track }) => {
+    track(() => state.checkReviewsProduct);
+    const { dui } = cleanUpParams({ dui: loc.params.dui });
+    const data = await fetchCanUserComments(dui, `${user?.id}`);
     state.checkReviewsProduct = data;
   });
-  console.log(state.checkReviewsProduct);
+
   return (
     <div class="ctnr-view-4">
       {' '}
@@ -50,14 +53,16 @@ export const View4 = component$(({ product }: any) => {
         </div>
       </div>
       <div class="content">
-        {' '}
         <Resource
           value={checkReviewsProduct}
           onPending={() => <div class="loader"></div>}
           onRejected={() => (
             <>
-              Al parecer, hemos cometido un error. Por favor, actualiza la
-              página para verificar nuevamente.
+              Debe iniciar sesión y comprar un producto antes de poder dejar un
+              comentario. <br />
+              <a class="link-login" href="/a/login">
+                Iniciar sesión
+              </a>
             </>
           )}
           onResolved={() => (
@@ -92,20 +97,13 @@ export const View4 = component$(({ product }: any) => {
                   ) : (
                     ''
                   )}
-
-                  {product.ratings == '' ? (
-                    <div></div>
-                  ) : (
-                    <>
-                      {' '}
-                      <ContainerBoxComments />
-                    </>
-                  )}
                 </div>
               </div>
             </>
           )}
         />
+
+        <ContainerBoxComments />
         <div class="viewrigth"></div>
       </div>
     </div>
