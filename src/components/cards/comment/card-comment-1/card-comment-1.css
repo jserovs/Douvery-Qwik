@@ -11,12 +11,12 @@
     margin-top: 10px;
     padding: 20px 0px;
 
-    border-bottom: 1px solid var(--border-width-1);
+    border-bottom: 1px solid var(--border-width-0);
 
 }
 
 .ctr-title {
-    border-bottom: 1px solid var(--border-width-1);
+    border-bottom: 1px solid var(--border-width-0);
     padding-bottom: 10px;
     margin-bottom: 10px;
 }
@@ -33,7 +33,7 @@
     align-items: center;
     border-radius: 50%;
     background-color: var(--color-background-lightest);
-    border: 1px solid var(--border-width-1);
+    border: 1px solid var(--border-width-0);
     object-fit: cover;
 }
 
@@ -127,100 +127,6 @@
     border-radius: 10PX;
 }
 
-.ctr-img {
-    width: 250px;
-    height: auto;
-    object-fit: contain;
-
-    border-radius: 10PX;
-
-}
-
-.ctr-img img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 4PX;
-    border: 1px solid #fff;
-}
-
-.ctrIMg {
-    margin-top: 10px;
-    width: 100%;
-    height: 50px;
-    object-fit: contain;
-    border-radius: 4PX;
-    background-color: var(--color-background-ligth);
-    color: var(--color-text-light);
-
-    border: 1px solid var(--border-width-1);
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-/* Contenedor de la imagen */
-.ctr-img {
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
-    cursor: pointer;
-    background: #FFF;
-}
-
-/* Estilos para la imagen */
-.ctr-img img {
-    display: block;
-    width: 100%;
-    height: auto;
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;
-}
-
-/* Estilos para el texto "Ver" */
-.ctr-img .hover-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #212A3E;
-    font-size: 1.5em;
-    font-weight: bold;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.3s;
-    pointer-events: none;
-}
-
-/* Efecto hover */
-.ctr-img:hover img {
-    opacity: 0.5;
-
-}
-
-.ctr-img:hover .hover-text {
-    opacity: 1;
-}
-
-/* Estilos para la sombra */
-.ctr-img::before {
-    content: "";
-    position: absolute;
-    top: -5px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    pointer-events: none;
-}
-
-.ctr-img:hover::before {
-    opacity: 1;
-}
-
 .ttle-sh {
     display: flex;
     align-items: center;
@@ -249,8 +155,8 @@
 .button-helpful {
     display: flex;
     gap: 10px;
-
-    color: #0f1111;
+    fill: #666;
+    color: #666;
     cursor: pointer;
     margin: 10px 0px;
     font-size: 13px;
@@ -270,22 +176,101 @@
     justify-content: center;
 }
 
+.button-helpful p {
+    color: #666;
+}
+
 .button-helpful:focus {
     border: 1px solid #0F6292;
 }
 
 .button-helpful:hover {
-    background-color: #fff;
-    border: 1px solid #d5d9d9;
-    border-radius: 8px;
-    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
-    box-sizing: border-box;
+    fill: #0F6292;
     color: #0F6292;
+}
+
+.button-helpful p:hover {
+    color: #0F6292;
+}
+
+.button-active {
+    fill: #0F6292;
+    color: #0F6292;
+
 }
 
 .button-active p {
     color: #0F6292;
+}
 
+.container-message {
+    margin: 0px 10px;
+}
+
+.container-message button {
+    fill: #666;
+    color: #666;
+    display: flex;
+    gap: 10px;
+    font-size: small;
+    align-items: center;
+}
+
+.container-message button:hover {
+    fill: #0F6292;
+    color: #0F6292;
+}
+
+.container-img-reviews {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    min-width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-img-reviews .mask {
+    display: none;
+}
+
+.container-img-reviews:hover .mask {
+    display: grid;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+}
+
+.mask p {
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.container-icon-reply {
+    height: 100%;
+    display: grid;
+    align-items: start;
+    justify-content: center;
+    padding-top: 30px;
+
+}
+
+.container-icon-reply svg {
+    fill: #212A3E;
+    color: #212A3E;
+}
+
+.reply-comment {
+    display: grid;
+    grid-template-columns: 50px auto;
+    align-items: center;
+    justify-content: center;
 }
 
 @media only screen and (max-width: 885px) {

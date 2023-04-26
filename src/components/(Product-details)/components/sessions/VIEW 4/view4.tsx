@@ -99,11 +99,13 @@ export const View4 = component$(({ product }: any) => {
                   )}
                 </div>
               </div>
+              <ContainerBoxComments
+                datePurchase={state.checkReviewsProduct.lastPurchaseDate}
+              />
             </>
           )}
         />
 
-        <ContainerBoxComments />
         <div class="viewrigth"></div>
       </div>
     </div>

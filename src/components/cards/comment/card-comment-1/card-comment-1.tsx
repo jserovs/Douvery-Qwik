@@ -16,6 +16,8 @@ import { formatDate } from '~/services/fuction';
 import { urlServerNode } from '~/services/fechProduct';
 import { globalAction$, useLocation, useNavigate } from '@builder.io/qwik-city';
 import { useGetCurrentUser } from '~/routes/layout';
+import { TextCL } from '~/components/use/textCL/textCL';
+import { CommentReply } from './reply/comment-reply';
 
 export const useSubmit = globalAction$(
   async ({ reviewId, userId, review }, { fail }) => {
@@ -60,6 +62,7 @@ export const CardComment1 = component$(
     images,
     helpful,
     notHelpful,
+    datePurchase,
   }: any) => {
     useStylesScoped$(style);
     const showAllImg = useStore({ setShowAllImg: false });
@@ -126,6 +129,11 @@ export const CardComment1 = component$(
       nohelpfulReview.value = value.notHelpful.count;
       helpfulReview.value = value.helpful.count;
     });
+    const reply = useSignal(false);
+
+    const handleReplyComment = $(() => {
+      reply.value = !reply.value;
+    });
     return (
       <div class="container-all">
         <div class="ctr-box-user">
@@ -165,10 +173,15 @@ export const CardComment1 = component$(
                 <strong class="hs-sr1">{ratingText}</strong>
                 <Stars color="#008080" rating={rating} />
               </div>
-              <strong class="hs-sr1">{title}</strong>
             </div>
             <div class="ctr-comment">
-              <p>{comment}</p>
+              <strong class="hs-sr1">
+                {' '}
+                <TextCL text={title} />
+              </strong>
+              <p>
+                <TextCL text={comment} />
+              </p>
             </div>
             <div class="grap-imgs">
               {images &&
@@ -177,9 +190,11 @@ export const CardComment1 = component$(
                   .map((img: any) => (
                     <>
                       {' '}
-                      <div class="ctr-img">
-                        <img src={img} alt="" />
-                        <div class="hover-text">Ver</div>
+                      <div class="container-img-reviews">
+                        <img src={img} />
+                        <div class="mask">
+                          <p>Ver</p>
+                        </div>
                       </div>
                     </>
                   ))}
@@ -215,6 +230,26 @@ export const CardComment1 = component$(
               <span class="error ">{action.value?.message}</span>
             </>
           )}
+          <div class="container-message">
+            <button onClick$={handleReplyComment}>
+              {' '}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 15 15"
+              >
+                <path
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  d="M12.5 3h-10A1.5 1.5 0 0 0 1 4.5v5A1.5 1.5 0 0 0 2.5 11h5a.5.5 0 0 1 .354.146L10 13.293V11.5a.5.5 0 0 1 .5-.5h2A1.5 1.5 0 0 0 14 9.5v-5A1.5 1.5 0 0 0 12.5 3Zm-10-1h10A2.5 2.5 0 0 1 15 4.5v5a2.5 2.5 0 0 1-2.5 2.5H11v2.5a.5.5 0 0 1-.854.354L7.293 12H2.5A2.5 2.5 0 0 1 0 9.5v-5A2.5 2.5 0 0 1 2.5 2Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              reply
+            </button>
+          </div>
+          <div class="ctr-opa">|</div>
           <div class="container-helpful-nohelpful">
             <button
               class={`button-helpful ${
@@ -224,13 +259,17 @@ export const CardComment1 = component$(
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 256 256"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
               >
                 <path
-                  fill="currentColor"
-                  d="M229.12 142.65a22.43 22.43 0 0 0-19.55-3.88l-4.32 1C227 119.55 238 99.51 238 80c0-25.36-20.39-46-45.46-46A45.51 45.51 0 0 0 156 52a45.51 45.51 0 0 0-36.54-18C94.39 34 74 54.64 74 80c0 11.38 3.63 22.49 11.29 34.36a29.73 29.73 0 0 0-16.56 8.43L45.52 146H16a14 14 0 0 0-14 14v40a14 14 0 0 0 14 14h104a6 6 0 0 0 1.46-.18l64-16a7.16 7.16 0 0 0 .89-.3L225.17 181l.33-.15a22.6 22.6 0 0 0 3.62-38.18ZM119.46 46a33.16 33.16 0 0 1 31 20.28a6 6 0 0 0 11.1 0a33.16 33.16 0 0 1 31-20.28C210.68 46 226 61.57 226 80c0 20.24-16.18 43-46.8 65.75l-14.87 3.42A26 26 0 0 0 140 114H99.67C90.36 101.67 86 90.81 86 80c0-18.43 15.32-34 33.46-34ZM14 200v-40a2 2 0 0 1 2-2h26v44H16a2 2 0 0 1-2-2Zm206.28-30l-38.2 16.27L119.26 202H54v-47.51l23.21-23.22A17.88 17.88 0 0 1 89.94 126H140a14 14 0 0 1 0 28h-28a6 6 0 0 0 0 12h32a6 6 0 0 0 1.34-.15l67-15.41l.24-.06a10.6 10.6 0 0 1 7.7 19.62Z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M7 10v12m8-16.12L14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h0a3.13 3.13 0 0 1 3 3.88Z"
                 />
               </svg>
               <p>{helpfulReview.value} Helpful</p>
@@ -244,6 +283,30 @@ export const CardComment1 = component$(
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 14V2M9 18.12L10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22h0a3.13 3.13 0 0 1-3-3.88Z"
+                />
+              </svg>
+
+              <p>{nohelpfulReview.value} No helpful</p>
+            </button>
+          </div>
+        </div>
+
+        {reply.value && (
+          <div class="reply-comment">
+            <div class="container-icon-reply">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
                 width="32"
                 height="32"
                 viewBox="0 0 24 24"
@@ -252,17 +315,17 @@ export const CardComment1 = component$(
                   fill="none"
                   stroke="currentColor"
                   stroke-linecap="round"
-                  stroke-width="1.5"
+                  stroke-linejoin="round"
+                  stroke-width="2"
                 >
-                  <path d="M16.472 3.5H4.1a.6.6 0 0 0-.6.6v9.8a.6.6 0 0 0 .6.6h2.768a2 2 0 0 1 1.715.971l2.71 4.517a1.631 1.631 0 0 0 2.961-1.308l-1.022-3.408a.6.6 0 0 1 .574-.772h4.575a2 2 0 0 0 1.93-2.526l-1.91-7A2 2 0 0 0 16.473 3.5Z" />
-                  <path stroke-linejoin="round" d="M7 14.5v-11" />
+                  <path d="m15 10l5 5l-5 5" />
+                  <path d="M4 4v7a4 4 0 0 0 4 4h12" />
                 </g>
               </svg>
-
-              <p>{nohelpfulReview.value} No helpful</p>
-            </button>
+            </div>
+            <CommentReply datePurchase={datePurchase} />
           </div>
-        </div>
+        )}
       </div>
     );
   }

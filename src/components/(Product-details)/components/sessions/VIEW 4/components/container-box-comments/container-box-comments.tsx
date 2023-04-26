@@ -18,7 +18,7 @@ interface IState {
   reviewsProduct: reviewsProduct[];
   selectedValue: string;
 }
-export const ContainerBoxComments = component$(() => {
+export const ContainerBoxComments = component$(({ datePurchase }: any) => {
   useStylesScoped$(style);
   const showAllQuestions = useStore({ setShowAllQuestions: false });
 
@@ -123,6 +123,7 @@ export const ContainerBoxComments = component$(() => {
                               images={review.photos}
                               helpful={review.helpful}
                               notHelpful={review.notHelpful}
+                              datePurchase={datePurchase}
                             />
                           </div>
                         );

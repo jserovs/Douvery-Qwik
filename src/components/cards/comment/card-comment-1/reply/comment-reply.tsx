@@ -1,6 +1,7 @@
-import { $, component$, useSignal, useStylesScoped$ } from '@builder.io/qwik';
-import style from './container-box-input-comments.css?inline';
-import { ContainerBoxBser } from '../container-box-user/container-box-user';
+import styles from './comment-reply.css?inline';
+
+import { component$, useStylesScoped$ } from '@builder.io/qwik';
+
 import { Form, globalAction$, z, zod$ } from '@builder.io/qwik-city';
 import { DATA_ACCESS_COOKIE_NAME } from '~/services/auth/login/login';
 import {
@@ -9,6 +10,7 @@ import {
   serverKey,
 } from '~/services/auth/token/token';
 import { urlServerNode } from '~/services/fechProduct';
+import { BoxUser } from './box-user/box-user';
 
 export const useSubmit = globalAction$(
   async (
@@ -66,36 +68,18 @@ export const useSubmit = globalAction$(
   })
 );
 
-export const ContainerBoxInputComments = component$(({ datePurchase }: any) => {
-  useStylesScoped$(style);
+export const CommentReply = component$(({ datePurchase }: any) => {
+  useStylesScoped$(styles);
 
-  const preview = useSignal('');
-  const handleFileChange = $((event: any) => {
-    const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        preview.value = reader.result as string;
-      };
-      reader.readAsDataURL(file);
-    } else {
-      preview.value = 'Error fatal';
-    }
-  });
   const action = useSubmit();
 
   return (
     <div class="comments-box">
+      <div></div>
       <Form action={action}>
         <div>
-          <label for="comentario">Comentario:</label>
-          <ContainerBoxBser datePurchase={datePurchase} />
-          <input
-            type="text"
-            id="title_comment"
-            name="title_comment"
-            placeholder="Title comments"
-          />
+          <BoxUser datePurchase={datePurchase} />
+
           <textarea
             id="text_comment"
             name="text_comment"
@@ -104,16 +88,8 @@ export const ContainerBoxInputComments = component$(({ datePurchase }: any) => {
             rows={3}
             cols={60}
           />
-          <br></br>
+          <br />
           <div class="ctr-butr">
-            <input
-              accept="image/*"
-              type="file"
-              id="file"
-              name="file"
-              onChange$={handleFileChange}
-              multiple
-            />
             <p class="ps-sr1">
               Al comentar, acepto los términos de comentarios.
             </p>
