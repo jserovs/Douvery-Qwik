@@ -4,15 +4,15 @@ export const ContainerTermsComments = component$(() => {
   useStylesScoped$(styles);
   return (
     <div class="container">
-      <h1>Reglas de Comentarios en Douvery.</h1>
+      <h1>Douvery's Code of Conduct for User Comments.</h1>
       <ol>
         <li>
-          Al dejar comentarios sobre productos o servicios, enfócate en tu
-          experiencia y evita comentarios personales. Proporciona detalles
-          específicos y constructivos, utilizando un lenguaje respetuoso y
-          amigable. Sé honesto al expresar insatisfacción, pero sin ataques
-          personales ni agresividad. Finalmente, cumple con las políticas de la
-          plataforma para mantener un ambiente seguro y respetuoso.
+          When leaving reviews on products or services, focus on your experience
+          and avoid personal remarks. Provide specific and constructive details,
+          using respectful and friendly language. Be honest when expressing
+          dissatisfaction, but without personal attacks or aggression. Lastly,
+          comply with the platform's policies to maintain a safe and respectful
+          environment.
         </li>
       </ol>
     </div>

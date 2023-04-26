@@ -22,9 +22,7 @@
 }
 
 
-textarea:focus {
-    border: 1px solid #0069d9;
-}
+
 
 textarea {
     border: none;
@@ -63,6 +61,50 @@ textarea {
     background-color: #0069d9;
 }
 
+#file {
+
+
+    color: #717181;
+    max-width: 330px;
+    overflow: hidden;
+    position: relative;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#file::file-selector-button {
+    margin-right: 20px;
+    background-color: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #333;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+}
+
+#file::file-selector-button:hover {
+    background: #0d45a5;
+}
+
+#title_comment {
+    background-color: var(--color-background-light);
+    border: 1px solid #e6e6e6;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 10px 10PX;
+    border-radius: 5px;
+    margin: 10px 0px;
+}
+
+
+#title_comment:focus {
+    border: 1px solid #0d45a5;
+}
+
+#text_comment:focus {
+    border: 1px solid #0d45a5;
+}
 
 @media only screen and (max-width: 885px) {
     textarea {

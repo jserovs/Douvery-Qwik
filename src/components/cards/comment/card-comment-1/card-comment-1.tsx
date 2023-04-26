@@ -13,13 +13,13 @@ import { DouveryArrowDown } from '~/components/icons/arrow-down';
 import { UseDropdownReport } from '~/components/use/dropdownReport/dropdownReport';
 
 import { formatDate } from '~/services/fuction';
-import { urlServerLocal } from '~/services/fechProduct';
+import { urlServerNode } from '~/services/fechProduct';
 import { globalAction$, useLocation, useNavigate } from '@builder.io/qwik-city';
 import { useGetCurrentUser } from '~/routes/layout';
 
 export const useSubmit = globalAction$(
   async ({ reviewId, userId, review }, { fail }) => {
-    const serverUrl = `${urlServerLocal}/api/review/helpful-or-no`;
+    const serverUrl = `${urlServerNode}/api/review/helpful-or-no`;
 
     const res = await fetch(serverUrl, {
       method: 'PUT',

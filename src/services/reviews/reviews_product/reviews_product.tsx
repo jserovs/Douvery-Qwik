@@ -1,13 +1,12 @@
-import { urlServerLocal } from '~/services/fechProduct';
+import { urlServerNode } from '~/services/fechProduct';
 
 export async function fetchReviewsProduct(
   productDui: string,
-
   controller?: AbortController
 ): Promise<any> {
   const response = await fetch(
     `
- ${urlServerLocal}/api/product/${productDui}/reviews`,
+ ${urlServerNode}/api/product/${productDui}/reviews`,
     {
       signal: controller?.signal,
     }
@@ -23,20 +22,24 @@ export async function fetchReviewsProduct(
 
 export async function fetchCanUserComments(
   productDui: string,
-  userId: string
+  userId: string,
+  controller?: AbortController
 ): Promise<any> {
+  if (!userId) {
+    return { canComment: false, lastPurchaseDate: null };
+  }
   const response = await fetch(
     `
-    ${urlServerLocal}/api/can-user-comment`,
+    ${urlServerNode}/api/can-user-comment`,
     {
       method: 'POST',
-
+      signal: controller?.signal,
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         productDui: productDui,
-        userId: userId,
+        userId: userId ? userId : '',
       }),
     }
   );
@@ -44,6 +47,6 @@ export async function fetchCanUserComments(
     throw new Error('Failed to fetch product');
   }
   const results = await response.json();
-  console.log(results);
+
   return results;
 }
