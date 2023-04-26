@@ -160,6 +160,67 @@
     cursor: pointer;
 }
 
+/* Contenedor de la imagen */
+.ctr-img {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    cursor: pointer;
+    background: #FFF;
+}
+
+/* Estilos para la imagen */
+.ctr-img img {
+    display: block;
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Estilos para el texto "Ver" */
+.ctr-img .hover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #212A3E;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+/* Efecto hover */
+.ctr-img:hover img {
+    opacity: 0.5;
+
+}
+
+.ctr-img:hover .hover-text {
+    opacity: 1;
+}
+
+/* Estilos para la sombra */
+.ctr-img::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.ctr-img:hover::before {
+    opacity: 1;
+}
+
 .ttle-sh {
     display: flex;
     align-items: center;
