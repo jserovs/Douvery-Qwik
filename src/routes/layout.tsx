@@ -1,9 +1,9 @@
-import { component$, Slot, useStore } from '@builder.io/qwik';
+import { component$, Slot, useStore, useVisibleTask$ } from '@builder.io/qwik';
 import Header from '../components/header/header';
 import Nav from '../components/nav/nav';
 import { Footer } from '~/components/footer/footer';
 import { routeLoader$, useLocation } from '@builder.io/qwik-city';
-
+import platform from 'platform';
 import {
   decodeToken,
   passwordKEY,
@@ -66,6 +66,13 @@ export default component$(() => {
   const getCountryUser = useGetCurrentCountry().value;
   const loc = useLocation();
   const segureUrl = loc.url.href.match('/segure/') ? false : true;
+  useVisibleTask$(() => {
+    const info = platform.parse(window.navigator.userAgent);
+    console.log('Nombre del navegador:', info.name);
+    console.log('Versión del navegador:', info.version);
+    console.log('Sistema operativo:', info.os);
+  });
+
   return (
     <>
       <main>
