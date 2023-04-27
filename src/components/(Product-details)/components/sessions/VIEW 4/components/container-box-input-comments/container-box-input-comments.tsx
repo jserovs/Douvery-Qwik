@@ -48,9 +48,8 @@ export const useSubmit = globalAction$(
       });
     }
     if (uploadResult.success) {
-      console.log(url.pathname);
-      const query = url.pathname + '/#REVIEWS';
-      console.log(query);
+      const query =
+        url.origin + '/v/' + params.slug + '/' + params.dui + '/' + '#REVIEWS';
 
       throw redirect(302, query);
     } else {
@@ -90,15 +89,15 @@ export const ContainerBoxInputComments = component$(({ datePurchase }: any) => {
         <div>
           <label for="comentario">Comentario:</label>
           <ContainerBoxBser datePurchase={datePurchase} />
-        <div class="container-input-title">
-          <strong>Title : </strong>
-        <input
-            type="text"
-            id="title_comment"
-            name="title_comment"
-            placeholder="Title comments"
-          />
-        </div>
+          <div class="container-input-title">
+            <strong>Title : </strong>
+            <input
+              type="text"
+              id="title_comment"
+              name="title_comment"
+              placeholder="Title comments"
+            />
+          </div>
           <textarea
             id="text_comment"
             name="text_comment"

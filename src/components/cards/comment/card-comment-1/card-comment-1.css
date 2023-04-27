@@ -272,6 +272,37 @@
     align-items: center;
     justify-content: center;
 }
+
+.sub-comments {
+    display: block;
+    padding: 0px 0Px 0px 10PX;
+    margin: 10px 0Px 10px 80PX;
+
+}
+
+.load-more-comments-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0px;
+}
+
+.show {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.show {
+    color: #092ac0;
+}
+
+.show p {
+    font-size: 13px;
+    color: #092ac0;
+}
+
 @media only screen and (max-width: 1405px) {
     .reply-comment {
         display: grid;
@@ -279,10 +310,12 @@
         align-items: center;
         justify-content: start;
     }
+
     .container-all {
         width: 80%;
     }
-     }
+}
+
 @media only screen and (max-width: 885px) {
 
     .ctr-box-user {

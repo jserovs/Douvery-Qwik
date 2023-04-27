@@ -33,6 +33,7 @@
     min-height: 50em;
     height: 100%;
     padding-left: 15px;
+    margin-bottom: 50px;
 
 }
 
@@ -90,12 +91,13 @@
 .crtr-dirjfs {
     position: relative;
 }
-.brt-irft{
+
+.brt-irft {
     background-color: var(--color-background-light);
     padding: 15px;
 }
 
-.brt-irft .slect-qty-prt{
+.brt-irft .slect-qty-prt {
     display: flex;
 }
 
@@ -138,7 +140,7 @@
 @media only screen and (max-width: 1085px) {
     .buttons-mobiles {
         display: block;
-      
+
     }
 
     .div-input-sertts {

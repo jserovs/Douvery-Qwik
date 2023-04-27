@@ -18,6 +18,7 @@ import { globalAction$, useLocation, useNavigate } from '@builder.io/qwik-city';
 import { useGetCurrentUser } from '~/routes/layout';
 import { TextCL } from '~/components/use/textCL/textCL';
 import { CommentReply } from './reply/comment-reply';
+import { CardSubComment } from '../sub-card-comments/sub-comment';
 
 export const useSubmitGlobal = globalAction$(
   async ({ reviewId, userId, review }, { fail }) => {
@@ -63,6 +64,9 @@ export const CardComment1 = component$(
     helpful,
     notHelpful,
     datePurchase,
+    comments,
+    initialCommentsToShow = 1,
+    commentsPerLoad = 5,
   }: any) => {
     useStylesScoped$(style);
     const showAllImg = useStore({ setShowAllImg: false });
@@ -104,7 +108,7 @@ export const CardComment1 = component$(
         nav('/a/login/' + '?rr=' + loc.url.pathname, true);
         return;
       }
-      const { value } = await action.run({
+      const { value } = await action.submit({
         reviewId: id,
         userId: user?.id,
         review: true,
@@ -119,7 +123,7 @@ export const CardComment1 = component$(
         nav('/a/login/' + '?rr=' + loc.url.pathname, true);
         return;
       }
-      const { value } = await action.run({
+      const { value } = await action.submit({
         reviewId: id,
         userId: user?.id,
         review: false,
@@ -138,8 +142,32 @@ export const CardComment1 = component$(
       }
       reply.value = !reply.value;
     });
+    const isExpanded = useSignal(false);
+    const commentsToShow = useSignal([0, 1]);
+
+    const loadMoreComments = $(() => {
+      if (!isExpanded.value || commentsToShow.value.length < comments.length) {
+        const newIndices = [...commentsToShow.value];
+        const lastIndex = newIndices[newIndices.length - 1];
+
+        for (let i = 1; i <= commentsPerLoad; i++) {
+          if (lastIndex + i < comments.length) {
+            newIndices.push(lastIndex + i);
+          }
+        }
+
+        commentsToShow.value = newIndices;
+        isExpanded.value = true;
+      } else {
+        commentsToShow.value = Array.from(
+          { length: initialCommentsToShow },
+          (_, i) => i
+        );
+        isExpanded.value = false;
+      }
+    });
     return (
-      <div class="container-all">
+      <div class="container-all" id={'review-' + id}>
         <div class="ctr-box-user">
           <img
             class="crtr-avatar"
@@ -250,7 +278,7 @@ export const CardComment1 = component$(
                   clip-rule="evenodd"
                 />
               </svg>
-              reply
+              Comment
             </button>
           </div>
           <div class="ctr-opa">|</div>
@@ -327,9 +355,69 @@ export const CardComment1 = component$(
                 </g>
               </svg>
             </div>
-            <CommentReply datePurchase={datePurchase} />
+            <CommentReply id={id} datePurchase={datePurchase} />
           </div>
         )}
+        <div class="sub-comments">
+          {comments
+            ?.filter((_: any, index: number) =>
+              commentsToShow.value.includes(index)
+            )
+            .map((comment: any) => {
+              return (
+                <div class="container-box-reviews" key={comment.id}>
+                  <CardSubComment
+                    name_lastname={
+                      comment.authorName + ' ' + comment.authorLastName
+                    }
+                    avatar={comment.authorAvatar}
+                    comment={comment.content}
+                    purchase={comment.hasPurchased}
+                    time={comment.date}
+                  />{' '}
+                </div>
+              );
+            })}
+          {comments && comments.length > 2 && (
+            <button
+              onClick$={loadMoreComments}
+              class="load-more-comments-button"
+            >
+              {isExpanded.value &&
+              commentsToShow.value.length >= comments.length ? (
+                <div class="show less">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="m16.9 13.4l-4.2-4.2c-.4-.4-1-.4-1.4 0l-4.2 4.2c-.4.4-.4 1 0 1.4s1 .4 1.4 0l3.5-3.5l3.5 3.5c.2.2.4.3.7.3c.3 0 .5-.1.7-.3c.4-.4.4-1 0-1.4z"
+                    />
+                  </svg>
+                  <p>Mostrar menos</p>
+                </div>
+              ) : (
+                <div class="show more">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M14.3 14.8L12 17.1l-2.3-2.3c-.4-.4-1-.4-1.4 0c-.4.4-.4 1 0 1.4l3 3c.2.2.4.3.7.3c.3 0 .5-.1.7-.3l3-3c.4-.4.4-1 0-1.4c-.4-.4-1-.4-1.4 0zm-4.6-4.6L12 7.9l2.3 2.3c.2.2.4.3.7.3c.3 0 .5-.1.7-.3c.4-.4.4-1 0-1.4l-3-3c-.4-.4-1-.4-1.4 0l-3 3c-.4.4-.4 1 0 1.4c.4.4 1 .4 1.4 0z"
+                    />
+                  </svg>
+                  <p>Cargar más comentarios</p>
+                </div>
+              )}
+            </button>
+          )}
+        </div>
       </div>
     );
   }
