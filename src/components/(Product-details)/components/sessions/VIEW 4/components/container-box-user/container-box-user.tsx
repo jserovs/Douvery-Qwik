@@ -91,6 +91,7 @@ export const ContainerBoxBser = component$(({ datePurchase }: any) => {
                   id="ratings"
                   name="ratings"
                   value={rating.value}
+                  required
                 />
                 <input
                   id="ratings"

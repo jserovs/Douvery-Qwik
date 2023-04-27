@@ -112,7 +112,7 @@
     .container-img-product img {
 
         width: 800px;
-        height: 400px;
+        height: 324px;
         object-fit: contain;
         background-color: var(--color-background-light);
         padding: 10px;

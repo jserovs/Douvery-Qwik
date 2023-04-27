@@ -82,14 +82,14 @@ export default component$(() => {
         <Form action={action}>
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" required />
+            <input type="email" id="email" name="email" />
             {action.value?.fieldErrors?.email && (
               <span class="error">{action.value?.fieldErrors?.email}</span>
             )}
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" required />
+            <input type="password" id="password" name="password" />
             {action.value?.fieldErrors?.password && (
               <span class="error">{action.value?.fieldErrors?.password}</span>
             )}
