@@ -9,7 +9,7 @@ export const Tab = component$(({ path, currentPath, label, subTabs }: any) => {
   const isActive = currentPath === path || currentPath.startsWith(path);
   const className = `container-tab ${isActive ? 'active' : ''}`;
   const onClick = $(() => {
-    nav(path);
+    nav(path, true);
   });
   return (
     <div>
