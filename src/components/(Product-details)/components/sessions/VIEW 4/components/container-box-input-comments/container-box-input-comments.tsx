@@ -61,7 +61,19 @@ export const useSubmit = globalAction$(
     title_comment: z.string(),
     text_comment: z.string(),
     ratings: z.string(),
-    file: z.instanceof(Blob),
+    file: z.custom((value) => {
+      if (!Array.isArray(value)) {
+        throw new Error('Expected array, received object');
+      }
+
+      for (const file of value) {
+        if (!(file instanceof Blob || file instanceof File)) {
+          throw new Error('Array contains a non-Blob/File object');
+        }
+      }
+
+      return true;
+    }),
   })
 );
 
