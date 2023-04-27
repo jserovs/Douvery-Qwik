@@ -8,14 +8,14 @@ import {
   passwordKEY,
   serverKey,
 } from '~/services/auth/token/token';
-import { urlServerNode } from '~/services/fechProduct';
+import { urlServerLocal } from '~/services/fechProduct';
 
 export const useSubmit = globalAction$(
   async (
     { title_comment, text_comment, ratings, file },
     { fail, cookie, redirect, params, url }
   ) => {
-    const serverUrl = `${urlServerNode}/api/new/review-product`;
+    const serverUrl = `${urlServerLocal}/api/new/review-product`;
     const accessCookie = cookie.get(DATA_ACCESS_COOKIE_NAME)?.value;
     const user = decodeToken(accessCookie, passwordKEY, serverKey);
     const formData = new FormData();
@@ -36,9 +36,13 @@ export const useSubmit = globalAction$(
 
     const uploadResult = await res.json();
 
-    // Verificar el estado de la respuesta HTTP en lugar de 'response.ok'
+    if (!uploadResult.ok) {
+      return fail(401, {
+        message: 'Invalid review title, text comment or rating.',
+      });
+    }
+
     if (res.status !== 200) {
-      // Utilizar el mensaje de error proporcionado por la API si está disponible
       const errorMessage =
         uploadResult.error ||
         uploadResult.msg ||
@@ -58,39 +62,37 @@ export const useSubmit = globalAction$(
   },
 
   zod$({
-    title_comment: z.string(),
-    text_comment: z.string(),
-    ratings: z.string(),
-    file: z.custom((value) => {
-      if (!Array.isArray(value)) {
-        throw new Error('Expected array, received object');
-      }
-
-      for (const file of value) {
-        if (!(file instanceof Blob || file instanceof File)) {
-          throw new Error('Array contains a non-Blob/File object');
-        }
-      }
-
-      return true;
+    title_comment: z.string({
+      required_error: 'Review title is required',
     }),
+    text_comment: z.string({
+      required_error: 'The opinion text is required',
+    }),
+    ratings: z.string({
+      required_error: 'The rating is required',
+    }),
+    file: z.instanceof(Blob),
   })
 );
 
 export const ContainerBoxInputComments = component$(({ datePurchase }: any) => {
   useStylesScoped$(style);
 
-  const preview = useSignal('');
+  const preview = useSignal([]);
   const handleFileChange = $((event: any) => {
-    const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        preview.value = reader.result as string;
-      };
-      reader.readAsDataURL(file);
+    const files = event.target.files;
+    if (files) {
+      preview.value = [];
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          preview.value.push(reader.result as never);
+        };
+        reader.readAsDataURL(file);
+      }
     } else {
-      preview.value = 'Error fatal';
+      preview.value = ['Error fatal' as never];
     }
   });
   const action = useSubmit();
@@ -101,8 +103,11 @@ export const ContainerBoxInputComments = component$(({ datePurchase }: any) => {
         <div>
           <label for="comentario">Comentario:</label>
           <ContainerBoxBser datePurchase={datePurchase} />
+          {action.value?.fieldErrors?.ratings && (
+            <span class="error">{action.value?.fieldErrors?.ratings}</span>
+          )}
           <div class="container-input-title">
-            <strong>Title : </strong>
+            <label for="title_comment">Title:</label>
             <input
               type="text"
               id="title_comment"
@@ -110,6 +115,11 @@ export const ContainerBoxInputComments = component$(({ datePurchase }: any) => {
               placeholder="Title comments"
             />
           </div>
+          {action.value?.fieldErrors?.title_comment && (
+            <span class="error">
+              {action.value?.fieldErrors?.title_comment}
+            </span>
+          )}
           <textarea
             id="text_comment"
             name="text_comment"
@@ -118,7 +128,21 @@ export const ContainerBoxInputComments = component$(({ datePurchase }: any) => {
             rows={3}
             cols={60}
           />
+          {action.value?.fieldErrors?.text_comment && (
+            <span class="error">{action.value?.fieldErrors?.text_comment}</span>
+          )}
           <br></br>
+          {preview.value && (
+            <div class="container-img-preview">
+              {preview.value.map((image: string, i) => (
+                <div class="img-preview" key={i}>
+                  <img src={image} alt="" />
+                </div>
+              ))}
+              <br></br>
+            </div>
+          )}
+
           <div class="ctr-butr">
             <input
               accept="image/*"
@@ -151,8 +175,8 @@ export const ContainerBoxInputComments = component$(({ datePurchase }: any) => {
           </div>
         </div>
 
-        {action.value?.fieldErrors?.title_comment && (
-          <> {action.value?.message}</>
+        {action.value?.failed && (
+          <p>{action.value.fieldErrors?.text_comment}</p>
         )}
         {action.value?.message && (
           <div>
