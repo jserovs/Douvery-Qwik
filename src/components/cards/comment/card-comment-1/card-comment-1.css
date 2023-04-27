@@ -1,5 +1,7 @@
 .container-all {
     width: 60%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-width-3);
 }
 
 .ctr-box-user {
@@ -137,7 +139,7 @@
 .container-vots {
     width: 100%;
     height: 40px;
-    border-bottom: 1px solid var(--border-width-1);
+    border-bottom: 1px solid var(--border-width-0);
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -228,7 +230,7 @@
     min-width: 100px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .container-img-reviews .mask {
@@ -276,7 +278,7 @@
 .sub-comments {
     display: block;
     padding: 0px 0Px 0px 10PX;
-    margin: 10px 0Px 10px 80PX;
+    margin: 10px 0Px 10px 55PX;
 
 }
 

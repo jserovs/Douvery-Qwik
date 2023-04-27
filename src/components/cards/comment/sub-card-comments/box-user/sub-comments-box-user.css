@@ -8,7 +8,7 @@
     width: 100%;
     height: 78px;
     display: flex;
-    gap: 20px;
+    gap: 10px;
     align-items: center;
     justify-content: flex-start;
 }
@@ -17,6 +17,10 @@
     display: flex;
     align-items: center;
     gap: 20px;
+}
+
+.container-name strong {
+    font-size: 13px;
 }
 
 .date {
