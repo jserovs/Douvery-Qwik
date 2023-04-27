@@ -48,9 +48,8 @@ export const useSubmit = globalAction$(
       });
     }
     if (uploadResult.success) {
-      console.log(url.pathname);
-      const query = url.pathname + '/#REVIEWS';
-      console.log(query);
+      const query =
+        url.origin + '/v/' + params.slug + '/' + params.dui + '/' + '#REVIEWS';
 
       throw redirect(302, query);
     } else {
@@ -62,7 +61,19 @@ export const useSubmit = globalAction$(
     title_comment: z.string(),
     text_comment: z.string(),
     ratings: z.string(),
-    file: z.instanceof(Blob),
+    file: z.custom((value) => {
+      if (!Array.isArray(value)) {
+        throw new Error('Expected array, received object');
+      }
+
+      for (const file of value) {
+        if (!(file instanceof Blob || file instanceof File)) {
+          throw new Error('Array contains a non-Blob/File object');
+        }
+      }
+
+      return true;
+    }),
   })
 );
 
@@ -90,12 +101,15 @@ export const ContainerBoxInputComments = component$(({ datePurchase }: any) => {
         <div>
           <label for="comentario">Comentario:</label>
           <ContainerBoxBser datePurchase={datePurchase} />
-          <input
-            type="text"
-            id="title_comment"
-            name="title_comment"
-            placeholder="Title comments"
-          />
+          <div class="container-input-title">
+            <strong>Title : </strong>
+            <input
+              type="text"
+              id="title_comment"
+              name="title_comment"
+              placeholder="Title comments"
+            />
+          </div>
           <textarea
             id="text_comment"
             name="text_comment"

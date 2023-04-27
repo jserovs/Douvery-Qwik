@@ -3,8 +3,10 @@ import styles from './css/container-hrs-butros.css?inline';
 import { DouveryHeart } from '~/components/icons/heart';
 import { DouveryInfo } from '~/components/icons/info';
 import { ContainerPoputCategory } from './components/popupCategory';
+import { useLocation } from '@builder.io/qwik-city';
 export const ContainerButtonExtr = component$(({ props }: any) => {
   useStylesScoped$(styles);
+  const loc = useLocation();
   return (
     <div class="crtr-brst-csr">
       <div class="q-r-pred etqsitms">
@@ -17,7 +19,7 @@ export const ContainerButtonExtr = component$(({ props }: any) => {
           <DouveryInfo size="15px" /> Suggest information
         </a>
         <div class="se-pr">|</div>
-        <a href="/">
+        <a href={loc.url.pathname + '#REVIEWS'}>
           {props.ratings.length == 0 ? <>Sin</> : props.ratings.length}{' '}
           calificaciones
         </a>
