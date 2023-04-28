@@ -15,7 +15,6 @@ import { useGetCurrentUser } from '~/routes/layout';
 import { useLocation } from '@builder.io/qwik-city';
 import type { CheckComment } from '~/utils/types';
 import { ContainerTermsComments } from './components/container-terms-comments/container-terms-comments';
-import { cleanUpParams } from '~/utils/cleurs';
 
 interface IState {
   checkReviewsProduct: CheckComment;
@@ -30,10 +29,8 @@ export const View4 = component$(({ product }: any) => {
   useStylesScoped$(styles);
   const loc = useLocation();
   const user = useGetCurrentUser().value;
-  const checkReviewsProduct = useResource$(async ({ track }) => {
-    track(() => state.checkReviewsProduct);
-    const { dui } = cleanUpParams({ dui: loc.params.dui });
-    const data = await fetchCanUserComments(dui, `${user?.id}`);
+  const checkReviewsProduct = useResource$(async () => {
+    const data = await fetchCanUserComments(loc.params.dui, `${user?.id}`);
     state.checkReviewsProduct = data;
   });
 
@@ -99,15 +96,14 @@ export const View4 = component$(({ product }: any) => {
                   )}
                 </div>
               </div>
-             
             </>
           )}
         />
- <ContainerBoxComments
-                datePurchase={state.checkReviewsProduct.lastPurchaseDate}
-              />
-       
+        <ContainerBoxComments
+          datePurchase={state.checkReviewsProduct.lastPurchaseDate}
+        />
       </div>
+      <div class="part-2"></div>
     </div>
   );
 });

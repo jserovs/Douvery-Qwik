@@ -17,6 +17,7 @@ import { useLocation } from '@builder.io/qwik-city';
 interface IState {
   searchInput: string;
   reviewsProduct: reviewsProduct[];
+  photos: [];
   selectedValue: string;
 }
 export const ContainerBoxComments = component$(({ datePurchase }: any) => {
@@ -26,6 +27,7 @@ export const ContainerBoxComments = component$(({ datePurchase }: any) => {
   const state = useStore<IState>({
     searchInput: '',
     reviewsProduct: {} as reviewsProduct[],
+    photos: [] as any,
     selectedValue: '',
   });
 
@@ -34,11 +36,13 @@ export const ContainerBoxComments = component$(({ datePurchase }: any) => {
   const reviewResourse = useResource$(async () => {
     const data = await fetchReviewsProduct(loc.params.dui);
     state.reviewsProduct = data.reviews;
+    state.photos = data.photos;
   });
-
+  const showAllImg = useSignal(false);
   return (
     <div class="ctr-comment" id="REVIEWS">
       <hs-sr3>Opiniones de compradores</hs-sr3>
+
       <div class="ctr-comment-box">
         <div class="suggestions">
           <Resource
@@ -52,6 +56,48 @@ export const ContainerBoxComments = component$(({ datePurchase }: any) => {
             )}
             onResolved={() => (
               <>
+                <p>
+                  Colección de imágenes de clientes que han comprado el
+                  producto.
+                </p>
+                <br />
+                <div class="ctr-images-box">
+                  <div class="grap-imgs">
+                    {state.photos &&
+                      state.photos
+                        ?.slice(0, showAllImg.value ? state.photos.length : 4)
+                        .map((img: any) => (
+                          <>
+                            {' '}
+                            <div class="container-img-reviews">
+                              <img src={img} />
+                            </div>
+                          </>
+                        ))}
+                  </div>
+                </div>
+                {state.photos?.length > 4 ? (
+                  <div
+                    class="container-show-all-imgs"
+                    onClick$={() => (showAllImg.value = !showAllImg.value)}
+                  >
+                    {showAllImg.value ? (
+                      <div class="ttle-sh">
+                        <DouveryArrowUp size="15" /> Ver menos
+                      </div>
+                    ) : (
+                      <div class="ttle-sh">
+                        <DouveryArrowDown size="15" /> Ver más (
+                        {state.photos?.length - 4}) Imagenes
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <></>
+                )}
+                <br />
+                <br />
+
                 {state.reviewsProduct.length > 0 ? (
                   <ul>
                     {state.reviewsProduct

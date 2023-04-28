@@ -8,7 +8,7 @@ export const SubTab = component$(({ path, currentPath, label, key }: any) => {
   const isActive = currentPath === path || currentPath.startsWith(path);
   const className = `container-tab ${isActive ? 'active' : ''}`;
   const onClick = $(() => {
-    nav(path);
+    nav(path, true);
   });
   return (
     <div class="container-sub-tab" key={key}>

@@ -9,7 +9,7 @@ import {
   passwordKEY,
   serverKey,
 } from '~/services/auth/token/token';
-import { urlServerLocal } from '~/services/fechProduct';
+import { urlServerNode } from '~/services/fechProduct';
 import { BoxUser } from './box-user/box-user';
 import { useGetCurrentUser } from '~/routes/layout';
 
@@ -18,7 +18,7 @@ export const useSubmit = globalAction$(
     { text_comment, reviewId },
     { fail, cookie, redirect, params, url }
   ) => {
-    const serverUrl = `${urlServerLocal}/api/new/review/comment`;
+    const serverUrl = `${urlServerNode}/api/new/review/comment`;
     const accessCookie = cookie.get(DATA_ACCESS_COOKIE_NAME)?.value;
     const user = decodeToken(accessCookie, passwordKEY, serverKey);
 

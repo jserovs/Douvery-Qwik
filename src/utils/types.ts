@@ -196,6 +196,7 @@ export type reviewsProduct = {
   notHelpful: number;
   photos: string[];
   comments: ReviewComment[];
+  
 };
 
 export type ReviewComment = {

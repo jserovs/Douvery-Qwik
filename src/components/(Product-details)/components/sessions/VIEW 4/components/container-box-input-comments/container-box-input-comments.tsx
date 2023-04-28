@@ -8,14 +8,14 @@ import {
   passwordKEY,
   serverKey,
 } from '~/services/auth/token/token';
-import { urlServerLocal } from '~/services/fechProduct';
+import { urlServerNode } from '~/services/fechProduct';
 
 export const useSubmit = globalAction$(
   async (
     { title_comment, text_comment, ratings, file },
     { fail, cookie, redirect, params, url }
   ) => {
-    const serverUrl = `${urlServerLocal}/api/new/review-product`;
+    const serverUrl = `${urlServerNode}/api/new/review-product`;
     const accessCookie = cookie.get(DATA_ACCESS_COOKIE_NAME)?.value;
     const user = decodeToken(accessCookie, passwordKEY, serverKey);
     const formData = new FormData();
