@@ -100,7 +100,7 @@ export default component$(() => {
     {
       phone: [],
     },
-    { recursive: true }
+   
   );
 
   const phonesResource = useResource$<void>(async ({ track }) => {

@@ -28,7 +28,7 @@ export const CardProductVariations1 = component$(
         addItemToOrderError: '',
         count: 0,
       },
-      { recursive: true }
+    
     );
 
     const productResource = useResource$<void>(async () => {
