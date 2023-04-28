@@ -1,8 +1,6 @@
 import {
   component$,
-  createContext,
-  useContextProvider,
-  useStore,
+ 
   useStyles$,
 } from '@builder.io/qwik';
 import {
@@ -13,19 +11,11 @@ import {
 import { RouterHead } from './components/router-head/router-head';
 import { QwikPartytown } from './components/partytown/partytown';
 import globalStyles from './global.css?inline';
-import type { UserACC } from './utils/types';
 
-export const UserInformationContext =
-  createContext<UserACC>('user-information');
 
 export default component$(() => {
   useStyles$(globalStyles);
-  const userStore = useStore<{
-    user: UserACC;
-  }>({
-    user: {} as UserACC,
-  });
-  useContextProvider(UserInformationContext, userStore.user);
+ 
 
   return (
     <QwikCityProvider>
