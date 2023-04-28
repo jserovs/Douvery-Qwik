@@ -73,7 +73,7 @@
 }
 
 .dropdown-menu li {
-    padding: 12px;
+    padding: 5px;
     cursor: pointer;
 
 }
@@ -84,20 +84,20 @@
 
 .list-container {
     margin: 16px;
+
 }
 
-.list-title {
-    margin-bottom: 8px;
-}
+
 
 .list-item {
-    margin-bottom: 8px;
+    margin-top: 10px;
     display: flex;
-    flex-direction: column;
+    gap: 10px;
+
 }
 
 .item-title {
-    font-weight: bold;
+    font-weight: 400;
 }
 
 .item-subtitle {

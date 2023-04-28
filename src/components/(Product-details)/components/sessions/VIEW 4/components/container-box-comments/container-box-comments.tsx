@@ -56,47 +56,54 @@ export const ContainerBoxComments = component$(({ datePurchase }: any) => {
             )}
             onResolved={() => (
               <>
-                <p>
-                  Colección de imágenes de clientes que han comprado el
-                  producto.
-                </p>
-                <br />
-                <div class="ctr-images-box">
-                  <div class="grap-imgs">
-                    {state.photos &&
-                      state.photos
-                        ?.slice(0, showAllImg.value ? state.photos.length : 4)
-                        .map((img: any) => (
-                          <>
-                            {' '}
-                            <div class="container-img-reviews">
-                              <img src={img} />
-                            </div>
-                          </>
-                        ))}
-                  </div>
-                </div>
-                {state.photos?.length > 4 ? (
-                  <div
-                    class="container-show-all-imgs"
-                    onClick$={() => (showAllImg.value = !showAllImg.value)}
-                  >
-                    {showAllImg.value ? (
-                      <div class="ttle-sh">
-                        <DouveryArrowUp size="15" /> Ver menos
+                {state.photos?.length > 0 && (
+                  <>
+                    <p>
+                      Colección de imágenes de clientes que han comprado el
+                      producto.
+                    </p>
+                    <br />
+                    <div class="ctr-images-box">
+                      <div class="grap-imgs">
+                        {state.photos &&
+                          state.photos
+                            ?.slice(
+                              0,
+                              showAllImg.value ? state.photos.length : 4
+                            )
+                            .map((img: any) => (
+                              <>
+                                {' '}
+                                <div class="container-img-reviews">
+                                  <img src={img} />
+                                </div>
+                              </>
+                            ))}
+                      </div>
+                    </div>
+                    {state.photos?.length > 4 ? (
+                      <div
+                        class="container-show-all-imgs"
+                        onClick$={() => (showAllImg.value = !showAllImg.value)}
+                      >
+                        {showAllImg.value ? (
+                          <div class="ttle-sh">
+                            <DouveryArrowUp size="15" /> Ver menos
+                          </div>
+                        ) : (
+                          <div class="ttle-sh">
+                            <DouveryArrowDown size="15" /> Ver más (
+                            {state.photos?.length - 4}) Imagenes
+                          </div>
+                        )}
                       </div>
                     ) : (
-                      <div class="ttle-sh">
-                        <DouveryArrowDown size="15" /> Ver más (
-                        {state.photos?.length - 4}) Imagenes
-                      </div>
+                      <></>
                     )}
-                  </div>
-                ) : (
-                  <></>
+                    <br />
+                    <br />
+                  </>
                 )}
-                <br />
-                <br />
 
                 {state.reviewsProduct.length > 0 ? (
                   <ul>

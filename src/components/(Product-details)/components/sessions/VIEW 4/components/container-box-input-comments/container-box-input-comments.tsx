@@ -36,7 +36,7 @@ export const useSubmit = globalAction$(
 
     const uploadResult = await res.json();
 
-    if (!uploadResult.ok) {
+    if (!uploadResult.success) {
       return fail(401, {
         message: 'Invalid review title, text comment or rating.',
       });
