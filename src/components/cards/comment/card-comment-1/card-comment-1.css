@@ -276,10 +276,16 @@
 }
 
 .sub-comments {
-    display: block;
+    display: flex;
     padding: 0px 0Px 0px 10PX;
     margin: 10px 0Px 10px 55PX;
 
+}
+
+.container-comments {
+    display: block;
+    padding: 0px 0Px 0px 10PX;
+    margin: 10px 0Px 10px 0PX;
 }
 
 .load-more-comments-button {

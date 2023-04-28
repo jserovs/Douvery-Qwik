@@ -8,14 +8,14 @@ import {
   passwordKEY,
   serverKey,
 } from '~/services/auth/token/token';
-import { urlServerNode } from '~/services/fechProduct';
+import { urlServerLocal } from '~/services/fechProduct';
 
 export const useSubmit = globalAction$(
   async (
     { title_comment, text_comment, ratings, file },
     { fail, cookie, redirect, params, url }
   ) => {
-    const serverUrl = `${urlServerNode}/api/new/review-product`;
+    const serverUrl = `${urlServerLocal}/api/new/review-product`;
     const accessCookie = cookie.get(DATA_ACCESS_COOKIE_NAME)?.value;
     const user = decodeToken(accessCookie, passwordKEY, serverKey);
     const formData = new FormData();
@@ -36,7 +36,7 @@ export const useSubmit = globalAction$(
 
     const uploadResult = await res.json();
 
-    if (!uploadResult.ok) {
+    if (!uploadResult.success) {
       return fail(401, {
         message: 'Invalid review title, text comment or rating.',
       });

@@ -2,6 +2,7 @@ import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import style from './sub-comments-box-user.css?inline';
 
 import { formatDate } from '~/services/fuction';
+import { DouveryIconVerifyBrand } from '~/components/icons/verify';
 
 export const SubCommentsBoxUser = component$(
   ({ name_lastname, avatar, purchase, time }: any) => {
@@ -29,7 +30,17 @@ export const SubCommentsBoxUser = component$(
           <div class="ctr-name-time">
             <div class="hea">
               <div class="container-name">
-                <strong class="hs-sr1">{name_lastname}</strong>
+                <strong class="hs-sr1">
+                  {name_lastname === 'Douvery ' ? (
+                    <div class="verify">
+                      {' '}
+                      {name_lastname}{' '}
+                      <DouveryIconVerifyBrand size="18" color="#0071FF" />
+                    </div>
+                  ) : (
+                    name_lastname
+                  )}
+                </strong>
                 <div class="date">
                   <p>{date}</p>
                   {timeInterval < 6 && <p class="recent">(Recent)</p>}
