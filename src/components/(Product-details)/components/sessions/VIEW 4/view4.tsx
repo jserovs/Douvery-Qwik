@@ -103,6 +103,7 @@ export const View4 = component$(({ product }: any) => {
           datePurchase={state.checkReviewsProduct.lastPurchaseDate}
         />
       </div>
+      <div class="part-2"></div>
     </div>
   );
 });

@@ -47,7 +47,7 @@ export const useLogin = globalAction$(
 
     setCookiesData(dataAccess, cookie);
 
-    const query = url.searchParams.get('rr') || '';
+    const query = url.searchParams.get('rr') || '/';
     headers.set('location', query);
   },
   zod$({

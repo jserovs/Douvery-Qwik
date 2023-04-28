@@ -595,7 +595,7 @@ select,
 @media only screen and (max-width: 1455px) {
   .container-cajas-header {
     display: grid;
-    grid-template-columns: 150PX 1fr 150PX;
+    grid-template-columns: 150PX 1fr 200PX;
     width: 100%;
     padding: 0PX 100PX;
     align-items: center;
