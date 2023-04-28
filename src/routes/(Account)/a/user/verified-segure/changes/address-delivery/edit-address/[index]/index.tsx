@@ -131,7 +131,7 @@ export default component$(() => {
     {
       address: {} as Address,
     },
-    { recursive: true }
+   
   );
 
   const addressResource = useResource$<void>(async ({ track }) => {

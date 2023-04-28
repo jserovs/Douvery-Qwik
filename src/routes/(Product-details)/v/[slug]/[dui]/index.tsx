@@ -36,7 +36,7 @@ export default component$(() => {
     {
       product: {} as Product,
     },
-    { recursive: true }
+ 
   );
 
   const productResource = useResource$<void>(async () => {

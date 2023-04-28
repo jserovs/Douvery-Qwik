@@ -38,7 +38,7 @@ export default component$(() => {
     {
       address: {} as Address,
     },
-    { recursive: true }
+  
   );
   const car_product = useStore<Icar_product>({
     productResults: [],

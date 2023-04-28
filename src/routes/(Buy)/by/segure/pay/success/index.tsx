@@ -31,7 +31,7 @@ export default component$(() => {
       order: {} as Order,
       calification: '',
     },
-    { recursive: true }
+  
   );
   const orderInfoResource = useResource$<void>(async ({ track }) => {
     track(() => loc.url.searchParams.get('order'));

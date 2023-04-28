@@ -25,10 +25,10 @@ export const ProductPay = component$(
     subTotalNoDiscount,
   }: any) => {
     useStylesScoped$(styles);
-    const url = useLocation();
+    const loc = useLocation();
 
     useVisibleTask$(async ({ track }) => {
-      track(() => url.pathname);
+      track(() => loc.url.pathname);
 
       const controller = new AbortController();
       car_product.productResults = await getDataProductCart();
