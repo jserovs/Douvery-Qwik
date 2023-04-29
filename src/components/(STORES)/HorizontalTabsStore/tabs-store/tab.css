@@ -1,0 +1,23 @@
+.container-tab {
+    background-color: var(--color-background-white);
+    width: 100%;
+    height: 30px;
+    color: var(--color-black);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    padding: 0px 4px;
+    font-size: 15px;
+}
+
+.container-tab:hover {
+    background-color: #f7f8fb;
+}
+
+.container-tab.active {
+
+    color: var(--color-primary);
+    font-weight: 500;
+}

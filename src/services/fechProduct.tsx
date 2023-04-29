@@ -8,7 +8,7 @@ export async function fetchProduct(
 ): Promise<any> {
   const response = await fetch(
     `
-    ${urlServerNode}/api/products/${dui}`,
+    ${urlServerLocal}/api/products/${dui}`,
     {
       signal: controller?.signal,
     }
@@ -17,6 +17,7 @@ export async function fetchProduct(
     throw new Error('Failed to fetch product');
   }
   const results = await response.json();
+
   return results;
 }
 

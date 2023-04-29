@@ -353,8 +353,9 @@ export const CardComment1 = component$(
             <CommentReply id={id} datePurchase={datePurchase} />
           </div>
         )}
-        <div class="sub-comments">
-          {comments && comments.length > 0 && (
+        {comments && comments.length > 0 && (
+          <div class="sub-comments">
+            (
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="32"
@@ -371,74 +372,74 @@ export const CardComment1 = component$(
                 <path d="M14 9L9 4L4 9" />
                 <path d="M20 20h-7a4 4 0 0 1-4-4V4" />
               </g>
-            </svg>
-          )}{' '}
-          <div class="container-comments">
-            {comments
-              ?.filter((_: any, index: number) =>
-                commentsToShow.value.includes(index)
-              )
-              .map((comment: any) => {
-                return (
-                  <div class="container-box-reviews" key={comment.id}>
-                    <CardSubComment
-                      name_lastname={
-                        comment.authorName +
-                        ' ' +
-                        (comment.authorLastName === undefined ||
-                        comment.authorLastName === 'undefined'
-                          ? ''
-                          : comment.authorLastName)
-                      }
-                      avatar={comment.authorAvatar}
-                      comment={comment.content}
-                      purchase={comment.hasPurchased}
-                      time={comment.date}
-                    />{' '}
-                  </div>
-                );
-              })}
-            {comments && comments.length > 2 && (
-              <button
-                onClick$={loadMoreComments}
-                class="load-more-comments-button"
-              >
-                {isExpanded.value &&
-                commentsToShow.value.length >= comments.length ? (
-                  <div class="show less">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="m16.9 13.4l-4.2-4.2c-.4-.4-1-.4-1.4 0l-4.2 4.2c-.4.4-.4 1 0 1.4s1 .4 1.4 0l3.5-3.5l3.5 3.5c.2.2.4.3.7.3c.3 0 .5-.1.7-.3c.4-.4.4-1 0-1.4z"
-                      />
-                    </svg>
-                    <p>Mostrar menos</p>
-                  </div>
-                ) : (
-                  <div class="show more">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M14.3 14.8L12 17.1l-2.3-2.3c-.4-.4-1-.4-1.4 0c-.4.4-.4 1 0 1.4l3 3c.2.2.4.3.7.3c.3 0 .5-.1.7-.3l3-3c.4-.4.4-1 0-1.4c-.4-.4-1-.4-1.4 0zm-4.6-4.6L12 7.9l2.3 2.3c.2.2.4.3.7.3c.3 0 .5-.1.7-.3c.4-.4.4-1 0-1.4l-3-3c-.4-.4-1-.4-1.4 0l-3 3c-.4.4-.4 1 0 1.4c.4.4 1 .4 1.4 0z"
-                      />
-                    </svg>
-                    <p>Cargar más comentarios</p>
-                  </div>
-                )}
-              </button>
-            )}
+            </svg>{' '}
+            <div class="container-comments">
+              {comments
+                ?.filter((_: any, index: number) =>
+                  commentsToShow.value.includes(index)
+                )
+                .map((comment: any) => {
+                  return (
+                    <div class="container-box-reviews" key={comment.id}>
+                      <CardSubComment
+                        name_lastname={
+                          comment.authorName +
+                          ' ' +
+                          (comment.authorLastName === undefined ||
+                          comment.authorLastName === 'undefined'
+                            ? ''
+                            : comment.authorLastName)
+                        }
+                        avatar={comment.authorAvatar}
+                        comment={comment.content}
+                        purchase={comment.hasPurchased}
+                        time={comment.date}
+                      />{' '}
+                    </div>
+                  );
+                })}
+              {comments && comments.length > 2 && (
+                <button
+                  onClick$={loadMoreComments}
+                  class="load-more-comments-button"
+                >
+                  {isExpanded.value &&
+                  commentsToShow.value.length >= comments.length ? (
+                    <div class="show less">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="m16.9 13.4l-4.2-4.2c-.4-.4-1-.4-1.4 0l-4.2 4.2c-.4.4-.4 1 0 1.4s1 .4 1.4 0l3.5-3.5l3.5 3.5c.2.2.4.3.7.3c.3 0 .5-.1.7-.3c.4-.4.4-1 0-1.4z"
+                        />
+                      </svg>
+                      <p>Mostrar menos</p>
+                    </div>
+                  ) : (
+                    <div class="show more">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M14.3 14.8L12 17.1l-2.3-2.3c-.4-.4-1-.4-1.4 0c-.4.4-.4 1 0 1.4l3 3c.2.2.4.3.7.3c.3 0 .5-.1.7-.3l3-3c.4-.4.4-1 0-1.4c-.4-.4-1-.4-1.4 0zm-4.6-4.6L12 7.9l2.3 2.3c.2.2.4.3.7.3c.3 0 .5-.1.7-.3c.4-.4.4-1 0-1.4l-3-3c-.4-.4-1-.4-1.4 0l-3 3c-.4.4-.4 1 0 1.4c.4.4 1 .4 1.4 0z"
+                        />
+                      </svg>
+                      <p>Cargar más comentarios</p>
+                    </div>
+                  )}
+                </button>
+              )}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     );
   }

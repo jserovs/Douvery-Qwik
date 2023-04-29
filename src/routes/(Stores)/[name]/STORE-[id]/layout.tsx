@@ -1,6 +1,6 @@
 import { Slot, component$, useStylesScoped$ } from '@builder.io/qwik';
 import type { RequestHandler } from '@builder.io/qwik-city';
-import { VerticalTabs } from '~/components/(Account)/VerticalTabs/vertical-tabs';
+import { HorizontalTabsStores } from '~/components/(STORES)/HorizontalTabsStore/horizontal-tabs-store';
 import { DATA_ACCESS_COOKIE_NAME } from '~/services/auth/login/login';
 export const onGet: RequestHandler = async ({ cookie, redirect, url }) => {
   const acccessToken = cookie.get(DATA_ACCESS_COOKIE_NAME)?.value;
@@ -18,9 +18,9 @@ export default component$(() => {
   `);
   return (
     <div>
-      <VerticalTabs>
+      <HorizontalTabsStores>
         <Slot />
-      </VerticalTabs>
+      </HorizontalTabsStores>
     </div>
   );
 });
