@@ -72,7 +72,7 @@ export const HorizontalTabsStores = component$(() => {
             <div class="channel-header">
               <img
                 class="channel-banner"
-                src={state.store.design.banners[0]}
+                src={state.store.design.banners[1]}
                 alt="Channel Banner"
               />
               <div class="channel-info">
