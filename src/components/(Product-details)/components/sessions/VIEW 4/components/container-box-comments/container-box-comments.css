@@ -32,7 +32,7 @@
 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 0.2fr));
-    justify-content: center;
+    justify-content: start;
     gap: 1px;
     padding: 10px;
     border-radius: 10PX;
@@ -52,11 +52,32 @@
 
 .container-show-all-imgs {
     margin-top: 10px;
+    color: var(--color-primary);
 }
 
 .ttle-sh {
     display: flex;
     gap: 10px;
     align-items: center;
+    cursor: pointer;
+}
+
+.cotainer-reviewshow {
+    margin-top: 20px;
+    width: 60%;
+    height: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.cotainer-reviewshow button {
+    width: 100px;
+    height: 30px;
+    color: var(--color-primary);
+    border-radius: 10px;
     cursor: pointer;
 }

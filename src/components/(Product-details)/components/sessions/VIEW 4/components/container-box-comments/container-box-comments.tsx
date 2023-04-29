@@ -19,16 +19,17 @@ interface IState {
   reviewsProduct: reviewsProduct[];
   photos: [];
   selectedValue: string;
+  reviewsToShow: number;
 }
 export const ContainerBoxComments = component$(({ datePurchase }: any) => {
   useStylesScoped$(style);
-  const showAllQuestions = useSignal(false);
 
   const state = useStore<IState>({
     searchInput: '',
     reviewsProduct: {} as reviewsProduct[],
     photos: [] as any,
     selectedValue: '',
+    reviewsToShow: 5,
   });
 
   const loc = useLocation();
@@ -39,6 +40,7 @@ export const ContainerBoxComments = component$(({ datePurchase }: any) => {
     state.photos = data.photos;
   });
   const showAllImg = useSignal(false);
+
   return (
     <div class="ctr-comment" id="REVIEWS">
       <hs-sr3>Opiniones de compradores</hs-sr3>
@@ -59,8 +61,8 @@ export const ContainerBoxComments = component$(({ datePurchase }: any) => {
                 {state.photos?.length > 0 && (
                   <>
                     <p>
-                      Colección de imágenes de clientes que han comprado el
-                      producto.
+                      Collection of images & videos from customers who have
+                      purchased the product.
                     </p>
                     <br />
                     <div class="ctr-images-box">
@@ -108,10 +110,7 @@ export const ContainerBoxComments = component$(({ datePurchase }: any) => {
                 {state.reviewsProduct.length > 0 ? (
                   <ul>
                     {state.reviewsProduct
-                      .slice(
-                        0,
-                        showAllQuestions.value ? state.reviewsProduct.length : 5
-                      )
+                      .slice(0, state.reviewsToShow)
                       .map((review: any) => {
                         return (
                           <div class="container-box-reviews" key={review.id}>
@@ -135,6 +134,26 @@ export const ContainerBoxComments = component$(({ datePurchase }: any) => {
                           </div>
                         );
                       })}
+                    <div class="cotainer-reviewshow">
+                      {state.reviewsProduct.length > state.reviewsToShow && (
+                        <button
+                          onClick$={() => {
+                            state.reviewsToShow += 5;
+                          }}
+                        >
+                          Ver más
+                        </button>
+                      )}
+                      {state.reviewsToShow > 5 && (
+                        <button
+                          onClick$={() => {
+                            state.reviewsToShow = 5;
+                          }}
+                        >
+                          Ver menos
+                        </button>
+                      )}
+                    </div>
                   </ul>
                 ) : (
                   <div class="no-results"> No hay resultados </div>
@@ -143,21 +162,6 @@ export const ContainerBoxComments = component$(({ datePurchase }: any) => {
             )}
           />
         </div>
-      </div>
-      <div class="ctr-bts-sh">
-        <button
-          onClick$={() => (showAllQuestions.value = !showAllQuestions.value)}
-        >
-          {showAllQuestions.value ? (
-            <srw-sr1>
-              <DouveryArrowUp size="15" /> Ver menos
-            </srw-sr1>
-          ) : (
-            <srw-sr1>
-              <DouveryArrowDown size="15" /> Ver más
-            </srw-sr1>
-          )}
-        </button>
       </div>
     </div>
   );
