@@ -38,4 +38,7 @@ export type Store = {
   updates: Update[];
   createdAt: Date;
   updatedAt: Date;
+  averageProductRating: number;
+  totalRatingsCount: number;
+  followersCount: number;
 }

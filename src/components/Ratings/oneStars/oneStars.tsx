@@ -1,7 +1,7 @@
 import { component$ } from '@builder.io/qwik';
 
 export const OneStar = component$(({ color, rating, size }: any) => {
-  const starsColor = color || '#FF2E4C';
+  const starsColor = color || '#008080';
 
   return (
     <div class="flex">

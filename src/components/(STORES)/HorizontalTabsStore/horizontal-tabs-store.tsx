@@ -15,6 +15,10 @@ import { useGetCurrentUser } from '~/routes/layout';
 import { TabStores } from './tabs-store/tab';
 import { fetchStore } from '~/services/store/store';
 import type { Store } from '~/utils/types/stores';
+import { DouveryIconVerifyBrand } from '~/components/icons/verify';
+
+import { Stars } from '~/components/Ratings/stars/stars';
+import { ButtonFollowStore } from './components/button-follow-store/button-follow-store';
 
 export const HorizontalTabsStores = component$(() => {
   useStylesScoped$(styles);
@@ -52,10 +56,13 @@ export const HorizontalTabsStores = component$(() => {
     store: {} as Store,
   });
 
+  const followers = useSignal(0);
   const storeResource = useResource$<void>(async () => {
     const data = await fetchStore(location.params.id);
     state.store = data;
+    followers.value = data.followersCount;
   });
+
   return (
     <div class="container-all">
       <Resource
@@ -69,42 +76,98 @@ export const HorizontalTabsStores = component$(() => {
         )}
         onResolved={() => (
           <>
-            <div class="channel-header">
-              <img
-                class="channel-banner"
-                src={state.store.design.banners[1]}
-                alt="Channel Banner"
-              />
-              <div class="channel-info">
-                <div class="store-info-name">
-                  <img
-                    class="channel-avatar"
-                    src={state.store.design.logo}
-                    alt="Channel Avatar"
-                  />
-                  <div class="channel-name-subscribers">
-                    <h1 class="channel-name">{state.store.name}</h1>
-                    <span class="channel-subscribers">123K subscribers</span>
-                  </div>
-                  <button class="subscribe-button">Subscribe</button>
+            <div class="store-header">
+              <nav class="navbar">
+                <div class="logo">
+                  <img src={state.store.design.logo} alt="" />
+                  <a href="#">Douvery</a>
+                  <DouveryIconVerifyBrand size="20" />
                 </div>
-                <input
-                  class="search-bar"
-                  type="search"
-                  placeholder="Search channel"
-                />
-              </div>
-              <nav class="channel-navigation">
-                <a href="#">Home</a>
-                <a href="#">Videos</a>
-                <a href="#">Playlists</a>
-                <a href="#">Community</a>
-                <a href="#">Channels</a>
-                <a href="#">About</a>
+                <ul class="nav-links">
+                  <li>
+                    <a href="#">Mobile</a>
+                  </li>
+                  <li>
+                    <a href="#">TV & AV</a>
+                  </li>
+                  <li>
+                    <a href="#">Electrodomésticos</a>
+                  </li>
+                  <li>
+                    <a href="#">Informática</a>
+                  </li>
+
+                  <li>
+                    <a href="#">SmartThings</a>
+                  </li>
+                  <li>
+                    <a href="#">Ofertas</a>
+                  </li>
+                  <li>
+                    <a href="#">Soporte</a>
+                  </li>
+                </ul>
+
+                <div class="nav-search-cart-login">
+                  <input
+                    type="text"
+                    placeholder="Búsqueda"
+                    class="nav-search"
+                  />
+                </div>
               </nav>
+              <img
+                class="store-banner"
+                src={state.store.design.banners[0]}
+                alt="STORE Banner"
+              />
+              <div class="container-tabs">
+                <ul class="tab-links">
+                  <li class="active">
+                    <a href="#tab1">Mobile</a>
+                  </li>
+                  <li>
+                    <a href="#tab2">TV & AV</a>
+                  </li>
+                  <li>
+                    <a href="#tab3">Electrodomésticos</a>
+                  </li>
+                  <li>
+                    <a href="#tab4">Informática</a>
+                  </li>
+                </ul>
+                <ul class="tab-links">
+                  <li>
+                    <p>{followers.value}</p>
+                    <p>Followers</p>
+                    <ButtonFollowStore followers={followers} />
+                  </li>
+                  <li>
+                    <a href="#tab1">About store</a>
+                  </li>
+                </ul>
+                <ul class="tab-links">
+                  <li>
+                    <a href="#tab1">
+                      <span>
+                        {' '}
+                        <Stars
+                          color="#394867"
+                          rating={state.store.averageProductRating}
+                        />{' '}
+                      </span>
+                      <p>
+                        {state.store.averageProductRating}(
+                        {state.store.totalRatingsCount})
+                      </p>
+                      <p>Calification</p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
             <div class="nav">
-              <div class="container-tabs">
+              <div class="container">
                 {(activeTab.value === 'info' ? tabs : tabsReport).map(
                   (tab, i) => (
                     <div class="tabs" key={i}>
