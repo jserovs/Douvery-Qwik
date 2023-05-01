@@ -8,7 +8,7 @@ import style from './view3.css?inline';
 import { Carousel1 } from '~/components/use/carousel/carousel-1/carousel-1';
 import type { Product } from '~/utils/types';
 import { fetchSystemRecomendationProductU } from '~/services/fechProduct';
-import { randomNum } from '~/services/fuction';
+
 export const View3 = component$(({ product }: any) => {
   useStylesScoped$(style);
   const state = useStore({
@@ -27,7 +27,7 @@ export const View3 = component$(({ product }: any) => {
       controller.abort();
     };
   });
-  const randomNumber = randomNum();
+
   return (
     <div class="ctnr-view-3">
       <>
@@ -59,10 +59,7 @@ export const View3 = component$(({ product }: any) => {
             {state.productResults ? (
               <>
                 {' '}
-                <Carousel1
-                  styleCard={randomNumber}
-                  product={state.productResults}
-                />
+                <Carousel1 styleCard={2} product={state.productResults} />
               </>
             ) : (
               <>oK</>
