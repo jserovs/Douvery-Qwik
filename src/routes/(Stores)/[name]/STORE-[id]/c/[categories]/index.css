@@ -1,0 +1,29 @@
+.container-all {
+    padding: 50px 20px;
+    animation: smoApp 0.6s ease;
+    background-color: var(--background-color-whithe);
+    display: grid;
+    justify-content: center;
+}
+
+.container-title {
+    padding-left: 80px;
+    width: 100%;
+
+
+}
+
+.container-title h1 {
+    font-size: 20px;
+    margin: 0px;
+    font-weight: 500;
+    color: #111827;
+}
+
+ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 80px;
+}

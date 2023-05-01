@@ -1,0 +1,22 @@
+.grid-container {
+    width: 100%;
+    display: grid;
+    max-width: 500px;
+    height: 200px;
+    grid-gap: 1rem;
+    padding: 1rem;
+}
+
+.grid-item {
+    background-color: #947a7a;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.grid-item img {
+    max-width: 100%;
+    height: auto;
+}

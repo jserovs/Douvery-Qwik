@@ -17,6 +17,7 @@ import { DouveryIconVerifyBrand } from '~/components/icons/verify';
 
 import { Stars } from '~/components/Ratings/stars/stars';
 import { ButtonFollowStore } from './components/button-follow-store/button-follow-store';
+import { replaceSpacesWithPlus } from '~/services/fuction';
 
 export const HorizontalTabsStores = component$(() => {
   useStylesScoped$(styles);
@@ -36,20 +37,28 @@ export const HorizontalTabsStores = component$(() => {
       label: 'Home',
     },
     {
-      path: '/a/user/profile/',
-      label: 'TV & AV',
+      path:
+        '/' +
+        loc.params.name +
+        '/' +
+        'STORE-' +
+        loc.params.id +
+        '/' +
+        'products-discounts' +
+        '/',
+      label: 'Articulos en ofertas',
     },
     {
-      path: '/a/user/profile/',
-      label: 'Mobile',
-    },
-    {
-      path: '/a/user/profile/',
-      label: 'Computing',
-    },
-    {
-      path: '/a/user/profile/',
-      label: 'Informática',
+      path:
+        '/' +
+        loc.params.name +
+        '/' +
+        'STORE-' +
+        loc.params.id +
+        '/' +
+        'products-all' +
+        '/',
+      label: 'Todos los articulos',
     },
   ];
   const tabsReport = [
@@ -90,106 +99,125 @@ export const HorizontalTabsStores = component$(() => {
         )}
         onResolved={() => (
           <>
-            <div class="store-header">
-              <nav class="navbar">
-                <div class="logo">
-                  <img src={state.store.design.logo} alt="" />
-                  <a href="#">Douvery</a>
-                  <DouveryIconVerifyBrand size="20" />
-                </div>
-                <ul class="nav-links">
-                  <li>
-                    <a href="#">Mobile</a>
-                  </li>
-                  <li>
-                    <a href="#">TV & AV</a>
-                  </li>
-                  <li>
-                    <a href="#">Electrodomésticos</a>
-                  </li>
-                  <li>
-                    <a href="#">Informática</a>
-                  </li>
-
-                  <li>
-                    <a href="#">SmartThings</a>
-                  </li>
-                  <li>
-                    <a href="#">Ofertas</a>
-                  </li>
-                  <li>
-                    <a href="#">Soporte</a>
-                  </li>
-                </ul>
-
-                <div class="nav-search-cart-login">
-                  <input
-                    type="text"
-                    placeholder="Búsqueda"
-                    class="nav-search"
-                  />
-                </div>
-              </nav>
-              <img
-                class="store-banner"
-                src={state.store.design.banners[0]}
-                alt="STORE Banner"
-              />
-              <div class="container-tabs">
-                <ul class="tab-links">
-                  {(activeTab.value === 'info' ? tabs : tabsReport).map(
-                    (tab, i) => (
+            <div class="header-tabs-wrapper">
+              <div class="store-header">
+                <nav class="navbar">
+                  <div class="logo">
+                    <img src={state.store.design.logo} alt="" />
+                    <a href="#">Douvery</a>
+                    <DouveryIconVerifyBrand size="20" />
+                  </div>
+                  <ul class="nav-links">
+                    {state.store.topSubCategories?.map((categories, i) => (
                       <li
-                        class={loc.url.pathname == tab.path ? 'active' : ''}
                         key={i}
+                        class={`tabs-nav ${
+                          replaceSpacesWithPlus(loc.url.pathname) ===
+                          '/' +
+                            loc.params.name +
+                            '/' +
+                            'STORE-' +
+                            loc.params.id +
+                            '/c' +
+                            '/' +
+                            replaceSpacesWithPlus(categories) +
+                            '/'
+                            ? 'tabs-nav-active'
+                            : ''
+                        }`}
                       >
-                        <Link href={tab.path}>{tab.label} </Link>
+                        <Link
+                          href={
+                            '/' +
+                            loc.params.name +
+                            '/' +
+                            'STORE-' +
+                            loc.params.id +
+                            '/c' +
+                            '/' +
+                            categories
+                          }
+                        >
+                          {categories}
+                        </Link>
                       </li>
-                    )
-                  )}
-                </ul>
-                <ul class="tab-links">
-                  <li>
-                    <p>{followers.value}</p>
-                    <p>Followers</p>
-                    <ButtonFollowStore followers={followers} />
-                  </li>
-                  <li class={loc.url.pathname.includes('a') ? 'active' : ''}>
-                    <Link
-                      href={
-                        '/' +
-                        loc.params.name +
-                        '/' +
-                        'STORE-' +
-                        loc.params.id +
-                        '/a'
-                      }
+                    ))}
+                  </ul>
+
+                  <div class="nav-search-cart-login">
+                    <input
+                      type="text"
+                      placeholder="Búsqueda"
+                      class="nav-search"
+                    />
+                  </div>
+                </nav>
+                <img
+                  class="store-banner"
+                  src={state.store.design.banners[0]}
+                  alt="STORE Banner"
+                />
+                <div class="container-tabs">
+                  <ul class="tab-links">
+                    {(activeTab.value === 'info' ? tabs : tabsReport).map(
+                      (tab, i) => (
+                        <li
+                          class={`tabs ${
+                            loc.url.pathname == tab.path ? 'active' : ''
+                          }`}
+                          key={i}
+                        >
+                          <Link href={tab.path}>{tab.label} </Link>
+                        </li>
+                      )
+                    )}
+                  </ul>
+                  <ul class="tab-links">
+                    <li>
+                      <p>{followers.value}</p>
+                      <p>Followers</p>
+                      <ButtonFollowStore followers={followers} />
+                    </li>
+                    <li
+                      class={`tabs ${
+                        loc.url.pathname.includes('/a/') ? 'active' : ''
+                      }`}
                     >
-                      About store
-                    </Link>
-                  </li>
-                </ul>
-                <ul class="tab-links">
-                  <li>
-                    <a href="#tab1">
-                      <span>
-                        {' '}
-                        <Stars
-                          color="#394867"
-                          rating={state.store.averageProductRating}
-                        />{' '}
-                      </span>
-                      <p>
-                        {state.store.averageProductRating}(
-                        {state.store.totalRatingsCount})
-                      </p>
-                      <p>Calification</p>
-                    </a>
-                  </li>
-                </ul>
+                      <Link
+                        href={
+                          '/' +
+                          loc.params.name +
+                          '/' +
+                          'STORE-' +
+                          loc.params.id +
+                          '/a'
+                        }
+                      >
+                        About store
+                      </Link>
+                    </li>
+                  </ul>
+                  <ul class="tab-links">
+                    <li>
+                      <a href="#tab1">
+                        <span>
+                          {' '}
+                          <Stars
+                            color="#394867"
+                            rating={state.store.averageProductRating}
+                          />{' '}
+                        </span>
+                        <p>
+                          {state.store.averageProductRating}(
+                          {state.store.totalRatingsCount})
+                        </p>
+                        <p>Calification</p>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-
             <div class="container-content">
               <Slot />
             </div>
