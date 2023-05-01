@@ -23,10 +23,13 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
         <div class="container-title-product">
           {' '}
           <div class="container-brand-product">
-            <Link href={'/' + props.marca + '/'} aria-label={props.marca}>
+            <Link
+              href={'/' + props.storeName + '/' + 'STORE-' + props.storeOspayne}
+              aria-label={props.marca}
+            >
               <strong class="container-brand-product">
                 {' '}
-                Visita {props.marca}
+                Visita {props.storeName}
               </strong>
             </Link>
           </div>
@@ -111,7 +114,7 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
           <strong class="hs-sr1">Enviado & Vendido por </strong>
           <div class="sll-rps">
             <div class="seller">
-              <a href="/">{props.storeUserName}</a>
+              <a href="/">{props.storeName}</a>
               <a href="/">(4)185</a>
               <div class="review-popup">
                 Review: This seller is reliable and always ships on time.

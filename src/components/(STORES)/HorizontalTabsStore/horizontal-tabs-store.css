@@ -1,0 +1,159 @@
+body {
+    font-family: "Poppins", sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container-all {
+    display: grid;
+    align-items: flex-start;
+    margin: 0 auto;
+
+}
+
+.container-tabs {
+    display: flex;
+    gap: 20px;
+}
+
+.store-header {
+    position: relative;
+
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.store-banner {
+    width: 100%;
+    height: 186px;
+    object-fit: cover;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    color: #000;
+    font-weight: bold;
+}
+
+.logo img {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #000;
+}
+
+.nav-links {
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+}
+
+.nav-search-cart-login {
+    display: flex;
+    align-items: center;
+}
+
+.nav-search {
+    padding: 5px 10px;
+    border: 1px solid #444;
+    border-radius: 3px;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.nav-cart,
+.nav-login {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.container-tabs {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ffffff;
+    width: 100%;
+}
+
+.tab-links {
+    display: flex;
+
+    list-style-type: none;
+
+    padding: 10px;
+
+}
+
+.tab-links li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-right: 20px;
+}
+
+.tab-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    padding: 5px 10px;
+}
+
+.tab-links li.active a {
+    background-color: #222;
+    color: #fff;
+    border-radius: 3px;
+    padding: 5px 50px;
+}
+
+.tab-content {
+    padding: 20px;
+}
+
+.tab {
+    display: none;
+}
+
+.tab.active {
+    display: block;
+}
+
+
+@media only screen and (max-width: 885px) {
+    .nav {
+        display: none;
+    }
+}

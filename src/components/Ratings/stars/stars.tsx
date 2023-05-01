@@ -5,7 +5,7 @@ export const Stars = component$(({ color, rating, size }: any) => {
 
   return (
     <div
-      class={rating >= 5 ? 'flex parp' : 'flex'}
+      class={rating >= 5 ? 'flex smoApp' : 'flex'}
       title={'Tiene una calificacion de ' + rating + ' estrellas'}
     >
       {rating >= 1 ? (
