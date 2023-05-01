@@ -133,9 +133,12 @@ body {
 }
 
 .tab-links li.active a {
-    background-color: #222;
-    color: #fff;
-    border-radius: 3px;
+    background-color: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+
+    color: #0f1111;
+    border-radius: 10px;
     padding: 5px 50px;
 }
 

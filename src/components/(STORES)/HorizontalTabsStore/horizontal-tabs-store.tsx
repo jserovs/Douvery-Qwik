@@ -11,8 +11,6 @@ import { useLocation } from '@builder.io/qwik-city';
 
 import styles from './horizontal-tabs-store.css?inline';
 
-import { useGetCurrentUser } from '~/routes/layout';
-import { TabStores } from './tabs-store/tab';
 import { fetchStore } from '~/services/store/store';
 import type { Store } from '~/utils/types/stores';
 import { DouveryIconVerifyBrand } from '~/components/icons/verify';
@@ -22,20 +20,28 @@ import { ButtonFollowStore } from './components/button-follow-store/button-follo
 
 export const HorizontalTabsStores = component$(() => {
   useStylesScoped$(styles);
-  const location = useLocation();
-  const userACC = useGetCurrentUser().value;
+  const loc = useLocation();
+
   const tabs = [
     {
-      path: '/a/user/all/',
-      label: 'HOME',
-      subTabs: [{ path: '/a/user/all/', label: 'Mas usados' }],
+      path: '/h',
+      label: 'Home',
     },
     {
       path: '/a/user/profile/',
-      label: 'MI perfil',
-      subTabs: [
-        { path: `/a/user/profile/${userACC?.name}/`, label: userACC?.name },
-      ],
+      label: 'TV & AV',
+    },
+    {
+      path: '/a/user/profile/',
+      label: 'Mobile',
+    },
+    {
+      path: '/a/user/profile/',
+      label: 'Computing',
+    },
+    {
+      path: '/a/user/profile/',
+      label: 'Informática',
     },
   ];
   const tabsReport = [
@@ -58,7 +64,7 @@ export const HorizontalTabsStores = component$(() => {
 
   const followers = useSignal(0);
   const storeResource = useResource$<void>(async () => {
-    const data = await fetchStore(location.params.id);
+    const data = await fetchStore(loc.params.id);
     state.store = data;
     followers.value = data.followersCount;
   });
@@ -123,18 +129,29 @@ export const HorizontalTabsStores = component$(() => {
               />
               <div class="container-tabs">
                 <ul class="tab-links">
-                  <li class="active">
-                    <a href="#tab1">Mobile</a>
-                  </li>
-                  <li>
-                    <a href="#tab2">TV & AV</a>
-                  </li>
-                  <li>
-                    <a href="#tab3">Electrodomésticos</a>
-                  </li>
-                  <li>
-                    <a href="#tab4">Informática</a>
-                  </li>
+                  {(activeTab.value === 'info' ? tabs : tabsReport).map(
+                    (tab, i) => (
+                      <li
+                        class={
+                          loc.url.pathname.includes(tab.path) ? 'active' : ''
+                        }
+                        key={i}
+                      >
+                        <a
+                          href={
+                            '/' +
+                            loc.params.name +
+                            '/' +
+                            'STORE-' +
+                            loc.params.id +
+                            tab.path
+                          }
+                        >
+                          {tab.label}
+                        </a>
+                      </li>
+                    )
+                  )}
                 </ul>
                 <ul class="tab-links">
                   <li>
@@ -142,8 +159,19 @@ export const HorizontalTabsStores = component$(() => {
                     <p>Followers</p>
                     <ButtonFollowStore followers={followers} />
                   </li>
-                  <li>
-                    <a href="#tab1">About store</a>
+                  <li class={loc.url.pathname.includes('a') ? 'active' : ''}>
+                    <a
+                      href={
+                        '/' +
+                        loc.params.name +
+                        '/' +
+                        'STORE-' +
+                        loc.params.id +
+                        '/a'
+                      }
+                    >
+                      About store
+                    </a>
                   </li>
                 </ul>
                 <ul class="tab-links">
@@ -164,22 +192,6 @@ export const HorizontalTabsStores = component$(() => {
                     </a>
                   </li>
                 </ul>
-              </div>
-            </div>
-            <div class="nav">
-              <div class="container">
-                {(activeTab.value === 'info' ? tabs : tabsReport).map(
-                  (tab, i) => (
-                    <div class="tabs" key={i}>
-                      <TabStores
-                        key={tab.path}
-                        path={tab.path}
-                        currentPath={location.url.pathname}
-                        label={tab.label}
-                      />
-                    </div>
-                  )
-                )}
               </div>
             </div>
 
