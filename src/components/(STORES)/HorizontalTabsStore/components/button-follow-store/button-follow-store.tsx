@@ -2,7 +2,7 @@ import { $, component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './button-follow-store.css?inline';
 import { globalAction$, useLocation, useNavigate } from '@builder.io/qwik-city';
 import { useGetCurrentUser } from '~/routes/layout';
-import { urlServerLocal } from '~/services/fechProduct';
+import { urlServerNode } from '~/services/fechProduct';
 import {
   decodeToken,
   passwordKEY,
@@ -12,7 +12,7 @@ import { DATA_ACCESS_COOKIE_NAME } from '~/services/auth/login/login';
 
 export const useSubmit = globalAction$(
   async ({ ospayneId, userId }, { fail, cookie }) => {
-    const serverUrl = `${urlServerLocal}/api/user/follow/store`;
+    const serverUrl = `${urlServerNode}/api/user/follow/store`;
     const accessCookie = cookie.get(DATA_ACCESS_COOKIE_NAME)?.value;
     const user = decodeToken(accessCookie, passwordKEY, serverKey);
     const res = await fetch(serverUrl, {
