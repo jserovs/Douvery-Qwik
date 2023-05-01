@@ -7,7 +7,7 @@ import {
   useStore,
   useStylesScoped$,
 } from '@builder.io/qwik';
-import { useLocation } from '@builder.io/qwik-city';
+import { Link, useLocation } from '@builder.io/qwik-city';
 
 import styles from './horizontal-tabs-store.css?inline';
 
@@ -24,7 +24,15 @@ export const HorizontalTabsStores = component$(() => {
 
   const tabs = [
     {
-      path: '/h',
+      path:
+        '/' +
+        loc.params.name +
+        '/' +
+        'STORE-' +
+        loc.params.id +
+        '/' +
+        'h' +
+        '/',
       label: 'Home',
     },
     {
@@ -132,23 +140,10 @@ export const HorizontalTabsStores = component$(() => {
                   {(activeTab.value === 'info' ? tabs : tabsReport).map(
                     (tab, i) => (
                       <li
-                        class={
-                          loc.url.pathname.includes(tab.path) ? 'active' : ''
-                        }
+                        class={loc.url.pathname == tab.path ? 'active' : ''}
                         key={i}
                       >
-                        <a
-                          href={
-                            '/' +
-                            loc.params.name +
-                            '/' +
-                            'STORE-' +
-                            loc.params.id +
-                            tab.path
-                          }
-                        >
-                          {tab.label}
-                        </a>
+                        <Link href={tab.path}>{tab.label} </Link>
                       </li>
                     )
                   )}
@@ -160,7 +155,7 @@ export const HorizontalTabsStores = component$(() => {
                     <ButtonFollowStore followers={followers} />
                   </li>
                   <li class={loc.url.pathname.includes('a') ? 'active' : ''}>
-                    <a
+                    <Link
                       href={
                         '/' +
                         loc.params.name +
@@ -171,7 +166,7 @@ export const HorizontalTabsStores = component$(() => {
                       }
                     >
                       About store
-                    </a>
+                    </Link>
                   </li>
                 </ul>
                 <ul class="tab-links">
