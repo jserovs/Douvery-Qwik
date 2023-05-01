@@ -51,6 +51,12 @@
     z-index: 100;
 }
 
+.description-edit {
+    background-color: var(--color-background-light);
+    padding: 20px;
+
+}
+
 @media only screen and (max-width: 885px) {
     .container-mobiles-button {
         display: flex;

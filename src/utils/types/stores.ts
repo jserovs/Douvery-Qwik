@@ -41,4 +41,5 @@ export type Store = {
   averageProductRating: number;
   totalRatingsCount: number;
   followersCount: number;
+  topSubCategories: string[];
 }
