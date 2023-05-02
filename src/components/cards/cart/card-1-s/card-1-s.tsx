@@ -69,7 +69,7 @@ export const Card1SCART = component$(({ product }: any) => {
             />
             <label class="cbx" for={'isPrimary' + product.dui}></label>
             <label class="lbl" for={'isPrimary' + product.dui}>
-              Seleccionar como dirección principal.{' '}
+              Seleccionar como regalo.{' '}
             </label>
           </div>
         </div>

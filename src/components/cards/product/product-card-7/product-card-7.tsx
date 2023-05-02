@@ -1,10 +1,16 @@
-import { component$, useStylesScoped$ } from '@builder.io/qwik';
+import { component$, useSignal, useStylesScoped$ } from '@builder.io/qwik';
 
 import styles from './product-card-7.css?inline';
 import { TextCL } from '~/components/use/textCL/textCL';
 
+import { AddCart } from '~/components/(Product-details)/components/container-button-details';
+import { DouveryCheckMark } from '~/components/icons/checkMark';
+import { ModalCartInfo } from '~/components/modal/modal-cart/modal-cart';
+
 export const ContainerCardProduct7 = component$(({ product }: any) => {
   useStylesScoped$(styles);
+
+  const isLoader = useSignal(false);
 
   return (
     <div class="product-card">
@@ -23,6 +29,7 @@ export const ContainerCardProduct7 = component$(({ product }: any) => {
           <TextCL text={product.name} />
         </h2>
       </a>
+      {isLoader.value == true && <ModalCartInfo />}
       <div class="container-buttons">
         <button
           class="button-add"
@@ -30,7 +37,14 @@ export const ContainerCardProduct7 = component$(({ product }: any) => {
             backgroundColor: '#111827',
             color: '#fff',
           }}
+          onClick$={() => AddCart({ product, quantity: 1, isLoader })}
         >
+          {isLoader.value == true && (
+            <div class="check">
+              {' '}
+              <DouveryCheckMark size="15px" />
+            </div>
+          )}{' '}
           Add to cart
         </button>
         <button

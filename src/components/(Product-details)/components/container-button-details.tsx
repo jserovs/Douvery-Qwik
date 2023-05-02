@@ -1,4 +1,4 @@
-import { $, component$, useStore, useStylesScoped$ } from '@builder.io/qwik';
+import { $, component$, useSignal, useStylesScoped$ } from '@builder.io/qwik';
 
 import styles from './css/container-button-details.css?inline';
 
@@ -6,27 +6,25 @@ import { addToCart } from '~/services/cart/cart';
 import { useNavigate } from '@builder.io/qwik-city';
 import { DouveryCheckMark } from '~/components/icons/checkMark';
 
+export const AddCart = $(({ product, quantity, nav, isLoader }: any) => {
+  const result = addToCart({
+    dui: product.dui,
+    quantity: quantity,
+  });
+  if (result.success) {
+    isLoader.value = true;
+
+    nav && nav('/v/cart/');
+  } else {
+    console.error('Error, ', result.error);
+  }
+});
+
 export const ContainerButtonDetails = component$(
   ({ product, quantity }: any) => {
     useStylesScoped$(styles);
     const nav = useNavigate();
-    const isLoader = useStore({
-      setIsLoader: false
-    })
-    const AddCart = $(() => {
-     const result = addToCart({
-        dui: product.dui,
-        quantity: quantity,
-      });
-       if (result.success) {
-        isLoader.setIsLoader = true
-        nav('/v/cart/');
-      
-      } else {
-        console.error('Error, ', result.error);
-      }
-    
-    });
+    const isLoader = useSignal(false);
 
     return (
       <div>
@@ -37,10 +35,19 @@ export const ContainerButtonDetails = component$(
           ) : (
             <>
               <size-w class="size-w-10" />{' '}
-              <button class="buttonCart" onClick$={AddCart}>
-               {isLoader.setIsLoader == true ? (
-              <div class='check' > <DouveryCheckMark size='15px' /></div>
-            ) :   <></>} Agregar al carrito
+              <button
+                class="buttonCart"
+                onClick$={() => AddCart({ product, quantity, nav, isLoader })}
+              >
+                {isLoader.value == true ? (
+                  <div class="check">
+                    {' '}
+                    <DouveryCheckMark size="15px" />
+                  </div>
+                ) : (
+                  <></>
+                )}{' '}
+                Agregar al carrito
               </button>
               <size-w class="size-w-10" />{' '}
               <button class="buttonPay"> Pagar</button>
@@ -54,9 +61,8 @@ export const ContainerButtonDetails = component$(
             ) : (
               <>
                 <button class="buttonCart" onClick$={AddCart}>
-                  {isLoader.setIsLoader == true ? (
-              <div class='loader' ></div>
-            ) :   <></>} Agregar al carrito
+                  {isLoader.value == true ? <div class="loader"></div> : <></>}{' '}
+                  Agregar al carrito
                 </button>
                 <size-w class="size-w-10" />{' '}
                 <button class="buttonPay"> Pagar</button>
