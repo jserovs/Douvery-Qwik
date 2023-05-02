@@ -174,8 +174,24 @@ export const HorizontalTabsStores = component$(() => {
                   </ul>
                   <ul class="tab-links">
                     <li>
-                      <p>{followers.value}</p>
-                      <p>Followers</p>
+                      <Link
+                        href={
+                          '/' +
+                          loc.params.name +
+                          '/' +
+                          'STORE-' +
+                          loc.params.id +
+                          '/' +
+                          'f' +
+                          '/' +
+                          'followers'
+                        }
+                      >
+                        <div class="followers">
+                          <p>{followers.value}</p>
+                          <p class="text-follow">Followers</p>
+                        </div>
+                      </Link>
                       <ButtonFollowStore followers={followers} />
                     </li>
                     <li
