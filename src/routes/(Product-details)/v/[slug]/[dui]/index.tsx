@@ -27,7 +27,7 @@ import { View1 } from '~/components/(Product-details)/components/sessions/VIEW 1
 import { View4 } from '~/components/(Product-details)/components/sessions/VIEW 4/view4';
 // import { View3 } from '~/components/(Product-details)/components/sessions/VIEW 3/view3';
 import { View5 } from '~/components/(Product-details)/components/sessions/VIEW 5/view5';
-import { View3 } from '~/components/(Product-details)/components/sessions/VIEW 3/view3';
+// import { View3 } from '~/components/(Product-details)/components/sessions/VIEW 3/view3';
 
 export default component$(() => {
   useStylesScoped$(styles);
@@ -83,7 +83,7 @@ export default component$(() => {
                 class="description-edit"
                 dangerouslySetInnerHTML={descriptionEdit.value}
               />
-              <View3 product={state.product} />
+              {/* <View3 product={state.product} /> */}
               <View4 product={state.product} />
               <div class="container-views">
                 <View5 product={state.product} />
