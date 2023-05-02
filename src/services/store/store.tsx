@@ -1,4 +1,4 @@
-import { urlServerNode } from '../fechProduct';
+import { urlServerLocal, urlServerNode } from '../fechProduct';
 
 export async function fetchStore(
   ospayne: string,
@@ -36,6 +36,32 @@ export async function fetchStoreProductBySubCategorie(
       body: JSON.stringify({
         ospayne: ospayne,
         category: category,
+      }),
+    }
+  );
+  if (!response.ok) {
+    throw new Error('Failed to fetch store');
+  }
+  const results = await response.json();
+
+  return results;
+}
+
+export async function fetchStoreFollowers(
+  ospayne: string,
+  controller?: AbortController
+): Promise<any> {
+  const response = await fetch(
+    `
+    ${urlServerLocal}/api/store/followers`,
+    {
+      method: 'POST',
+      signal: controller?.signal,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ospayne: ospayne,
       }),
     }
   );

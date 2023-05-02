@@ -91,6 +91,7 @@ export type UserACC = {
 	address:Address[];
 	phones:	string[];
 	notification: boolean;
+	private: boolean;
 	sessionVerification: boolean;
 	veriToolVerification: boolean;
 	twoStepVerification: boolean;
