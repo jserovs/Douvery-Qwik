@@ -15,7 +15,7 @@
 }
 
 .product-card:hover {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
     transition: box-shadow 0.3s ease-in-out;
 }
 
@@ -31,8 +31,7 @@
 }
 
 .product-name,
-.product-brand,
-.product-price {
+.product-brand {
     width: 100%;
 
 }
@@ -78,85 +77,49 @@
     color: #64748B;
 }
 
+
+
+
+
+
+.container-prc-info {
+    display: flex;
+
+}
+
 .product-price {
+    padding: 0px 10px;
+    font-size: 16px;
+    color: #127477;
+}
+
+
+.product-price-discount {
+    padding: 0px 10px;
     font-size: 14px;
+    color: #64748B;
 }
 
-.crt-prc {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-.ETQ- {
-    position: relative;
-    width: 100%;
-
-    display: grid;
-    justify-content: end;
-}
-
-.etq-vrs {
-    position: absolute;
-    display: flex;
-    gap: 5px;
-    justify-content: flex-start;
-    align-items: center;
-
-    font-size: 12.5px;
-    background-color: var(--color-background-ligth);
-    text-align: start;
-    width: 100%;
-    color: #2940D3;
-    fill: #2940D3;
-    position: relative;
 
 
-    border-radius: 5px;
-}
 
-.ctr-stars {
-    position: relative;
-    width: 100%;
-    height: 20px;
-    display: flex;
-    font-size: var(--font-size-xs);
-    color: var(--color-text-medium-light);
-    justify-content: flex-start;
-    align-items: center;
-}
 
 .ctr-progr {
     display: none;
 
 }
 
-.ctr-stars:hover .ctr-progr {
 
-    position: absolute;
-    top: 100%;
-    left: 0;
-    display: block;
-    width: 250px;
-    height: 200px;
-    justify-content: center;
-    background-color: #FFF;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    z-index: 1;
-    padding: 10PX 20px;
-    transition: opacity 5s;
-}
 
-.ctr-stars:hover .ctr-progr {
-    animation: appearss 0.5s ease-in-out;
-}
+
+
 
 .container-buttons {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0px 10px;
-    margin: 10px 0;
+    margin: 15px 0;
 }
 
 .container-buttons {
@@ -169,16 +132,12 @@
     fill: #fff;
 }
 
-.button-add {
-    background-color: #111827;
-    color: #fff;
-}
 
-.button-add:focus {
+.button-add-STORE:focus {
     background-color: #127477;
 }
 
-.button-add:hover {
+.button-add-STORE:hover {
     transform: scale(1.05);
     box-shadow: rgba(8, 180, 100, 0.25) 0px 6px 12px -2px, rgba(8, 180, 100, 0.25) 0px 3px 7px -3px;
 
@@ -204,6 +163,11 @@ button {
 
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
+}
+
+.button-add-STORE {
+    background-color: #212A3E;
+    color: #F8FAFC;
 }
 
 

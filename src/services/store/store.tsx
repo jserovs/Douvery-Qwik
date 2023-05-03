@@ -1,4 +1,4 @@
-import { urlServerLocal, urlServerNode } from '../fechProduct';
+import { urlServerNode } from '../fechProduct';
 
 export async function fetchStore(
   ospayne: string,
@@ -53,7 +53,7 @@ export async function fetchStoreFollowers(
 ): Promise<any> {
   const response = await fetch(
     `
-    ${urlServerLocal}/api/store/followers`,
+    ${urlServerNode}/api/store/followers`,
     {
       method: 'POST',
       signal: controller?.signal,

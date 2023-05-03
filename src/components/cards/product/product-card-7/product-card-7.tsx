@@ -6,9 +6,11 @@ import { TextCL } from '~/components/use/textCL/textCL';
 import { AddCart } from '~/components/(Product-details)/components/container-button-details';
 import { DouveryCheckMark } from '~/components/icons/checkMark';
 import { ModalCartInfo } from '~/components/modal/modal-cart/modal-cart';
+import { UsePrice } from '~/components/use/price/price';
 
 export const ContainerCardProduct7 = component$(({ product }: any) => {
   useStylesScoped$(styles);
+  const discoun = product.price - product.price * (product.discount / 100);
 
   const isLoader = useSignal(false);
 
@@ -29,14 +31,32 @@ export const ContainerCardProduct7 = component$(({ product }: any) => {
           <TextCL text={product.name} />
         </h2>
       </a>
+      <div class="container-prc-info">
+        {' '}
+        {product.discount > 0 ? (
+          <>
+            {' '}
+            <strong class="hs-sr1 product-price pr-pr">
+              <UsePrice price={discoun} />
+            </strong>
+            <p class="ps-sr1 product-price-discount tach">
+              <UsePrice price={product.price} />
+            </p>
+          </>
+        ) : (
+          <>
+            <strong class="hs-sr1 product-price  pr-pr">
+              <UsePrice price={discoun} />
+            </strong>
+          </>
+        )}
+      </div>
+
       {isLoader.value == true && <ModalCartInfo />}
       <div class="container-buttons">
         <button
-          class="button-add"
-          style={{
-            backgroundColor: '#111827',
-            color: '#fff',
-          }}
+          id="button-add-STORE"
+          class="button-add-STORE"
           onClick$={() => AddCart({ product, quantity: 1, isLoader })}
         >
           {isLoader.value == true && (
@@ -47,17 +67,7 @@ export const ContainerCardProduct7 = component$(({ product }: any) => {
           )}{' '}
           Add to cart
         </button>
-        <button
-          class="button-quick-view"
-          style={{
-            backgroundColor: '#f8fafc',
-            color: '#444',
-            boxShadow: 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px',
-            border: '1px solid #444',
-          }}
-        >
-          Quick view
-        </button>
+        <button class="button-quick-view">Quick view</button>
       </div>
     </div>
   );
