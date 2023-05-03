@@ -24,7 +24,14 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
           {' '}
           <div class="container-brand-product">
             <Link
-              href={'/' + props.storeName + '/' + 'STORE-' + props.storeOspayne}
+              href={
+                '/' +
+                props.storeName +
+                '/' +
+                'STORE-' +
+                props.storeOspayne +
+                '/h/'
+              }
               aria-label={props.marca}
             >
               <strong class="container-brand-product">

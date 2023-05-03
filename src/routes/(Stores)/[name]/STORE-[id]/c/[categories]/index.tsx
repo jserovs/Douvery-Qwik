@@ -2,6 +2,7 @@ import {
   Resource,
   component$,
   useResource$,
+  useSignal,
   useStylesScoped$,
 } from '@builder.io/qwik';
 import { useLocation } from '@builder.io/qwik-city';
@@ -9,11 +10,14 @@ import { ContainerCardProduct7 } from '~/components/cards/product/product-card-7
 import { fetchStoreProductBySubCategorie } from '~/services/store/store';
 import type { Product } from '~/utils/types';
 import styles from './index.css?inline';
+import { Paginator1 } from '~/components/use/paginator/paginator-1/paginator-1';
 export default component$(() => {
   useStylesScoped$(styles);
   const loc = useLocation();
+
+  const currentPage = useSignal(1);
   const prodcureducer = useResource$<Product[]>(async ({ cleanup, track }) => {
-    track(() => loc.params.categories);
+    track(() => loc.params.categories && currentPage.value);
 
     const controller = new AbortController();
     cleanup(() => controller.abort());
@@ -21,6 +25,7 @@ export default component$(() => {
     return fetchStoreProductBySubCategorie(
       loc.params.id,
       loc.params.categories,
+      currentPage.value,
       controller
     );
   });
@@ -62,6 +67,11 @@ export default component$(() => {
                 ))}
               </ul>
             )}
+            <Paginator1
+              currentPage={data.currentPage}
+              totalPages={data.totalPages}
+              onPageChange={currentPage}
+            />
           </>
         )}
       />

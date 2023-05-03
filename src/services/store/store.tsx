@@ -22,6 +22,7 @@ export async function fetchStore(
 export async function fetchStoreProductBySubCategorie(
   ospayne: string,
   category: string,
+  page: number,
   controller?: AbortController
 ): Promise<any> {
   const response = await fetch(
@@ -36,6 +37,7 @@ export async function fetchStoreProductBySubCategorie(
       body: JSON.stringify({
         ospayne: ospayne,
         category: category,
+        page: page,
       }),
     }
   );
