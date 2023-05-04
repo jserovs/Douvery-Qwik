@@ -8,10 +8,15 @@ export const Paginator1 = component$(
     const hasNextPage = currentPage < totalPages;
 
     const onPageChangeMinus = $(() => {
-      onPageChange.value = currentPage - 1;
+      const newPage = currentPage - 1;
+      onPageChange.value = newPage;
+      window.history.pushState(null, '', `?pg=${newPage}`);
     });
+
     const onPageChangePlus = $(() => {
-      onPageChange.value = currentPage + 1;
+      const newPage = currentPage + 1;
+      onPageChange.value = newPage;
+      window.history.pushState(null, '', `?pg=${newPage}`);
     });
     return (
       <div class="paginator">
@@ -25,6 +30,7 @@ export const Paginator1 = component$(
         <span class="paginator__info">
           Página {currentPage} de {totalPages}
         </span>
+
         <button
           class="paginator__button"
           disabled={!hasNextPage}

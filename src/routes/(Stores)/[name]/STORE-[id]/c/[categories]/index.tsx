@@ -14,8 +14,9 @@ import { Paginator1 } from '~/components/use/paginator/paginator-1/paginator-1';
 export default component$(() => {
   useStylesScoped$(styles);
   const loc = useLocation();
+  const pg = loc.url.searchParams.get('pg') || '';
 
-  const currentPage = useSignal(1);
+  const currentPage = useSignal((pg && parseInt(pg)) || 1);
   const prodcureducer = useResource$<Product[]>(async ({ cleanup, track }) => {
     track(() => loc.params.categories && currentPage.value);
 

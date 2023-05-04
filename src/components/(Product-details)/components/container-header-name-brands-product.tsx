@@ -36,7 +36,7 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
             >
               <strong class="container-brand-product">
                 {' '}
-                Visita {props.storeName}
+                Explore the {props.storeName} store
               </strong>
             </Link>
           </div>
