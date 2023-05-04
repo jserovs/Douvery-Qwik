@@ -1,28 +1,28 @@
-import { component$, useStylesScoped$ } from '@builder.io/qwik';
+import { $, component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './category-grid-1.css?inline';
-export const CategoryGrid1 = component$(({ nameCategorie }: any) => {
+import { useLocation, useNavigate } from '@builder.io/qwik-city';
+export const CategoryGrid1 = component$(({ categorie }: any) => {
   useStylesScoped$(styles);
-  const categories = [
-    {
-      name: 'Categoría 1',
-      image: 'https://example.com/image1.jpg',
-    },
-    {
-      name: 'Categoría 2',
-      image: 'https://example.com/image2.jpg',
-    },
-  ];
-
+  const nav = useNavigate();
+  const loc = useLocation();
+  const navigateTo = $((id: string) => {
+    nav(
+      '/' + loc.params.name + '/' + 'STORE-' + loc.params.id + '/c' + '/' + id
+    );
+  });
   return (
-    <div class="grid-container">
-      {categories
-        .filter((category) => category.name === nameCategorie)
-        .map((category) => (
-          <div key={category.name} class="grid-item">
-            <h3>{category.name}</h3>
-            <img src={category.image} alt={category.name} />
-          </div>
-        ))}
+    <div
+      key={categorie.name}
+      class="card-item"
+      onClick$={() => navigateTo(categorie.name)}
+    >
+      <div class="container-details">
+        <h2>{categorie.name}</h2>
+        <p>Mas de {categorie.count - 1} productos</p>
+        <button>Ver mas</button>
+      </div>
+
+      <img src={categorie.img} alt={categorie.name} />
     </div>
   );
 });
