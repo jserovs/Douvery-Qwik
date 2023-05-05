@@ -24,6 +24,6 @@ ul {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: stretch;
+    justify-content: center;
     gap: 80px;
 }

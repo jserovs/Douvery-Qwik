@@ -12,9 +12,6 @@
      height: 200px;
  }
 
- .card-item:hover {
-     border: 1px solid #111827;
- }
 
  .card-item img {
      width: 100%;
@@ -45,19 +42,23 @@
      margin: 0px;
      font-size: 12px;
      font-weight: 400;
-     color: #111827;
+     color: #64748b;
  }
 
  .container-details button {
-     margin-top: 10px;
-     padding: 5px 30px;
-     border-radius: 10px;
-     border: none;
-     background-color: #111827;
-     color: #f1f5f9;
-     font-size: 15px;
-     font-weight: 500;
-     cursor: pointer;
-     transition: all 0.3s ease;
-     max-width: 150px;
+     background-color: #fff;
+
+     border-radius: 8px;
+     color: #111827;
+     width: 150PX;
+     height: 30px;
+     margin-top: 20PX;
+     transition: background-color .3s ease-in-out;
+     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+ }
+
+ .container-details button:focus {
+     border: 1px solid #009595;
+     box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+     outline: 0;
  }

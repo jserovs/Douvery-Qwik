@@ -10,9 +10,7 @@
     padding-top: 0px;
     padding: 0px 95px;
     -webkit-overflow-scrolling: touch;
-    /* Esta propiedad habilita el desplazamiento suave en dispositivos móviles */
     scrollbar-width: none;
-    /* Ocultar la barra de desplazamiento en Firefox */
 }
 
 .container-cajas-nav::-webkit-scrollbar {
@@ -80,6 +78,5 @@ nav a:hover {
     .container-cajas-nav {
         padding: 0px 10px;
         white-space: nowrap;
-        /* Asegurar que los elementos no se ajusten al espacio disponible */
     }
 }

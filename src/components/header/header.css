@@ -215,6 +215,8 @@ select,
   display: grid;
   grid-template-columns: 53px auto auto;
   align-items: center;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
 
 .main a {
@@ -600,10 +602,18 @@ select,
     padding: 0PX 100PX;
     align-items: center;
     justify-content: center;
-    padding: 0px 40px 0px 20px;
+    padding: 0px 15px 0px 42px;
 
 
   }
+
+  .main {
+    width: 171px;
+    white-space: nowrap;
+  }
+
+
+
 
 
 }
@@ -692,6 +702,7 @@ select,
     margin: 0px 2px 0px 0px;
     right: 0;
     width: 100%;
+
   }
 
   .badget-circle {
