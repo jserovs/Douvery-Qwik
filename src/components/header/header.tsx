@@ -173,8 +173,9 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
                 <div class="badget-circle">{getCartQty ? getCartQty : 0}</div>
               </a>
             </div>
-            <DouveryUser />
-
+            <div class="icon-douvery-user">
+              <DouveryUser />
+            </div>
             {user ? (
               <>
                 {' '}
