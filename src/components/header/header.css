@@ -595,17 +595,17 @@ select,
 @media only screen and (max-width: 1455px) {
   .container-cajas-header {
     display: grid;
-    grid-template-columns: 150PX 1fr 200PX;
+    grid-template-columns: 150PX 1fr auto;
     width: 100%;
     padding: 0PX 100PX;
     align-items: center;
     justify-content: center;
+    padding: 0px 40px 0px 20px;
+
 
   }
 
-  .container-cajas-header {
-    padding: 0px 20px;
-  }
+
 }
 
 @media only screen and (max-width: 1025px) {
