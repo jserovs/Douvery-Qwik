@@ -146,6 +146,7 @@ export const HorizontalTabsStores = component$(() => {
 
                   <div class="nav-search-cart-login">
                     <input
+                      disabled
                       type="text"
                       placeholder="Búsqueda"
                       class="nav-search"
