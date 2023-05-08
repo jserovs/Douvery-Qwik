@@ -1,0 +1,65 @@
+.container-all {
+    display: grid;
+    gap: 50px;
+    margin: 0 auto;
+    padding: 20px 150px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.logo img {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #333;
+}
+
+h1 {
+    font-size: 20px;
+    margin: 0px;
+    font-weight: 500;
+    color: #111827;
+}
+
+.container-info-title {
+    display: grid;
+    max-width: 500px;
+
+    gap: 10px;
+    margin-bottom: 30px;
+
+}
+
+.information {
+    background-color: #fff;
+    border-radius: 8px;
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    padding: 2rem;
+    text-align: start;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    display: flex;
+    gap: 10px;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}

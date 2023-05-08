@@ -11,7 +11,22 @@ export type Design= {
 export type ContactInfo= {
   email: string;
   phone: string;
-  address: string;
+  address: {
+    addressLine1: string;
+    addressLine2: string;
+    coordinates: {
+      lat: number;
+      lng: number;
+    };
+    street: string;
+    city: string;
+    state: string;
+    zip: string;
+    country: string;
+    timezone: string;
+    isPrimary: boolean;
+    locationType: string;
+  };
 }
 
 export type SocialLinks= {
