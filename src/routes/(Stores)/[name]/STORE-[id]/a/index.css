@@ -33,11 +33,21 @@ h1 {
     color: #111827;
 }
 
+.container-info-title {
+    display: grid;
+    max-width: 500px;
+
+    gap: 10px;
+    margin-bottom: 30px;
+
+}
+
 .information {
     background-color: #fff;
     border-radius: 8px;
-    display: grid;
-
+    display: flex;
+    gap: 100px;
+    align-items: center;
     padding: 2rem;
     text-align: start;
 }
@@ -48,6 +58,8 @@ h2 {
 }
 
 p {
+    display: flex;
+    gap: 10px;
     font-size: 1rem;
     margin-bottom: 1.5rem;
 }
