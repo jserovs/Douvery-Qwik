@@ -104,7 +104,18 @@ export const HorizontalTabsStores = component$(() => {
                 <nav class="navbar">
                   <div class="logo">
                     <img src={state.store.design.logo} alt="" />
-                    <a href="#">Douvery</a>
+                    <a
+                      href={
+                        '/' +
+                        loc.params.name +
+                        '/' +
+                        'STORE-' +
+                        loc.params.id +
+                        '/h'
+                      }
+                    >
+                      Douvery
+                    </a>
                     <DouveryIconVerifyBrand size="20" />
                   </div>
                   <ul class="nav-links">
@@ -216,7 +227,7 @@ export const HorizontalTabsStores = component$(() => {
                   </ul>
                   <ul class="tab-links">
                     <li>
-                      <a href="#tab1">
+                      <div class="container-calification">
                         <span>
                           {' '}
                           <Stars
@@ -229,7 +240,7 @@ export const HorizontalTabsStores = component$(() => {
                           {state.store.totalRatingsCount})
                         </p>
                         <p>Calification</p>
-                      </a>
+                      </div>
                     </li>
                   </ul>
                 </div>

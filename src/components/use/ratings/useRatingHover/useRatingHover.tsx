@@ -2,7 +2,7 @@ import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './useRatingHover.css?inline';
 import { Stars } from '~/components/Ratings/stars/stars';
 import { ContainerProgres } from '~/components/progres-bar/container-progres/container-progres';
-export const UseStarRating = component$(({ product }: any) => {
+export const UseStarRating = component$(({ product, color, size }: any) => {
   useStylesScoped$(styles);
   let totalRating = 0.0;
   for (let i = 0; i < product.ratings.length; i++) {
@@ -11,7 +11,7 @@ export const UseStarRating = component$(({ product }: any) => {
   return (
     <div class="container-all">
       <div class="ctr-stars">
-        <Stars rating={totalRating} />{' '}
+        <Stars size={size} color={color} rating={totalRating} />{' '}
         <div class="ctr-progr">
           <div class="tolst-tip"></div>
           <div class="pr-ttle">

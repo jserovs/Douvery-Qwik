@@ -13,19 +13,19 @@ export default component$(() => {
           <ModalButtonCou />
         </li>
         <li class="cajas-nav">
-          <a href="/">Mobiles</a>
+          <a href="/s-categorie/books">Books</a>
         </li>
         <li class="cajas-nav">
-          <a href="/">Ropas</a>
+          <a href="/">Electronic Y Accesorios</a>
         </li>
         <li class="cajas-nav">
-          <a href="/">Hogar</a>
+          <a href="/">Moda Para Hombre</a>
         </li>
         <li class="cajas-nav">
-          <a href="/">Electronics</a>
+          <a href="/">Computadoras Y Accesorios </a>
         </li>
         <li class="cajas-nav">
-          <a href="/">Nuevo</a>
+          <a href="/">Hogar Y Entorno</a>
         </li>
       </ul>
     </nav>
