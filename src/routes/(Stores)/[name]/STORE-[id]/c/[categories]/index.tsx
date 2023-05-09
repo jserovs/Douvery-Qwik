@@ -54,6 +54,7 @@ export default component$(() => {
                   <h1>
                     Descubre y sumérgete en los articulos de {loc.params.name}
                   </h1>
+                  <p>𝆗 {loc.params.categories}</p>
                 </div>
                 {data.products.map((product: any) => (
                   <>
