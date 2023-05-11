@@ -1,7 +1,7 @@
 .filter-section {
     background-color: var(--color-background-white);
     padding: 1rem;
-    min-width: 400px;
+
 }
 
 .filter-section {
@@ -56,9 +56,10 @@
 }
 
 .filter-section-body {
-    padding: 20px;
+    padding: 0px 0px 0px 15px;
     display: grid;
     gap: 8px;
+    max-width: 250px;
 }
 
 .filter-section-body h3 {
@@ -132,8 +133,23 @@
 
 .container-sub-category {
     width: 100%;
-    padding-left: 20px;
+
     color: #000;
+
+}
+
+.container-sub-category .item {
+
+    position: relative;
+
+    gap: 5px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    font-weight: 400;
+    color: #111827;
 
 }
 
