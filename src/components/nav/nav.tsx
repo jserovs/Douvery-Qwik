@@ -5,28 +5,24 @@ import { ModalButtonCou } from '../modal/modal';
 
 export default component$(() => {
   useStylesScoped$(styles);
-
+  const categories = [
+    'Books',
+    'Electronic Y Accesorios',
+    'Moda Para Hombre',
+    'Computadoras Y Accesorios',
+    'Hogar Y Entorno',
+  ];
   return (
     <nav>
       <ul class="container-cajas-nav">
         <li class="cajas-nav">
           <ModalButtonCou />
         </li>
-        <li class="cajas-nav">
-          <a href="/s-categorie/books">Books</a>
-        </li>
-        <li class="cajas-nav">
-          <a href="/">Electronic Y Accesorios</a>
-        </li>
-        <li class="cajas-nav">
-          <a href="/">Moda Para Hombre</a>
-        </li>
-        <li class="cajas-nav">
-          <a href="/">Computadoras Y Accesorios </a>
-        </li>
-        <li class="cajas-nav">
-          <a href="/">Hogar Y Entorno</a>
-        </li>
+        {categories.map((categorie, i) => (
+          <li class="cajas-nav" key={i}>
+            <a href={'/s-categorie/' + categorie}>{categorie}</a>
+          </li>
+        ))}
       </ul>
     </nav>
   );

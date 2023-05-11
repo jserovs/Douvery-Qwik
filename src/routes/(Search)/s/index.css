@@ -29,8 +29,9 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 0fr));
     align-items: stretch;
+    justify-content: center;
     gap: 6px;
-    background-color: var(--color-background-down);
+    background-color: var(--color-background-white);
     padding: 10px;
 }
 

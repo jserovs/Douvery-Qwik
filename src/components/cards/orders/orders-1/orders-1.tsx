@@ -4,7 +4,7 @@ import type { UserOrders } from '~/utils/types';
 import { ProgressLine } from '~/components/status/line/line';
 import { UsePrice } from '~/components/use/price/price';
 import { TextCL } from '~/components/use/textCL/textCL';
-import { UseCopy } from '~/components/use/copy/copy';
+import { UseCopy } from '~/components/use/Categories/copy/copy';
 export const CardOrdersC1 = component$(({ order }: { order: UserOrders }) => {
   useStylesScoped$(styles);
   function formatDate(timestamp: any) {

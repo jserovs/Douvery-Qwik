@@ -2,6 +2,7 @@ import {
   Resource,
   component$,
   useResource$,
+  useSignal,
   useStore,
   useStylesScoped$,
   useTask$,
@@ -22,6 +23,7 @@ import { Carousel1 } from '~/components/use/carousel/carousel-1/carousel-1';
 import { Card2S } from '~/components/cards/search/card-2-s/card-2-s';
 import { DouveryRight3 } from '~/components/icons/arrow-right-3';
 import { Card3S } from '~/components/cards/search/card-3-s/card-3-s';
+import { Paginator1 } from '~/components/use/paginator/paginator-1/paginator-1';
 export const category = [
   {
     name: 'Any',
@@ -80,7 +82,9 @@ interface IState {
 
 export default component$(() => {
   useStylesScoped$(styles);
-  const store = useStore({ count: 1 });
+  const loc = useLocation();
+  const pg = loc.url.searchParams.get('pg') || '';
+  const currentPage = useSignal((pg && parseInt(pg)) || 1);
   const number = useStore({ setNumber: 1 });
   const navigate = useNavigate();
   const input = useStore<IState>({
@@ -89,7 +93,7 @@ export default component$(() => {
   const { url } = useLocation();
 
   const prodcureducer = useResource$<Product[]>(async ({ cleanup, track }) => {
-    track(() => url.search && input.searchInput);
+    track(() => currentPage.value && url.search && input.searchInput);
 
     const controller = new AbortController();
     cleanup(() => controller.abort());
@@ -99,7 +103,7 @@ export default component$(() => {
     const price = url.searchParams.get('or-p') || 'all';
     const rating = url.searchParams.get('or-r') || 'all';
     const order = url.searchParams.get('or-or') || 'newest';
-    const page = url.searchParams.get('or-page') || '1';
+
     const brand = url.searchParams.get('or-b') || 'all';
 
     return fetchSearchProduct(
@@ -109,7 +113,7 @@ export default component$(() => {
       price,
       rating,
       order,
-      page,
+      currentPage.value,
       brand,
       controller
     );
@@ -556,11 +560,11 @@ export default component$(() => {
                 la página para verificar nuevamente.
               </>
             )}
-            onResolved={(products) => (
+            onResolved={(data: any) => (
               <>
                 {' '}
                 <ul>
-                  {products.length === 0 ? (
+                  {data.products.length === 0 ? (
                     <p>No hay productos para mostrar.</p>
                   ) : (
                     <ul
@@ -570,7 +574,7 @@ export default component$(() => {
                           : 'container-product-layout-vert'
                       }
                     >
-                      {products.map((product: any) => (
+                      {data.products.map((product: any) => (
                         <>
                           <li key={product.id}>
                             {url.searchParams.get('or-c') === 'books' ? (
@@ -583,49 +587,18 @@ export default component$(() => {
                           </li>
                         </>
                       ))}
+
+                      <Paginator1
+                        currentPage={data.currentPage}
+                        totalPages={data.totalPages}
+                        onPageChange={currentPage}
+                      />
                     </ul>
                   )}
                 </ul>
               </>
             )}
           />
-
-          <div class="pagination">
-            <button
-              disabled={store.count == 1 || store.count == 0}
-              onClick$={() =>
-                navigate(
-                  url.pathname +
-                    `?q=${url.searchParams.get('q')}` +
-                    or_c +
-                    or_p +
-                    `&or-page=${store.count--}`
-                )
-              }
-              class="prev"
-            >
-              &#8249; Anterior
-            </button>
-            <a href="#" class="active">
-              {store.count}
-            </a>
-
-            <button
-              disabled={store.count === 3}
-              onClick$={() =>
-                navigate(
-                  url.pathname +
-                    `?q=${url.searchParams.get('q')}` +
-                    or_c +
-                    or_p +
-                    `&or-page=${store.count++}`
-                )
-              }
-              class="next"
-            >
-              Siguiente &#8250;
-            </button>
-          </div>
         </div>
       </div>
       <div class="container-random-product">

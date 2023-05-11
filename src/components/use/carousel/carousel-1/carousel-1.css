@@ -16,6 +16,7 @@
 
 .carousel_item {
     width: 250px;
+    margin: 10px 15px;
 }
 
 .carousel__btn {
