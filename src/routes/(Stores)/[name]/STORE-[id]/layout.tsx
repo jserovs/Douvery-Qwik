@@ -1,6 +1,6 @@
 import { Slot, component$, useStylesScoped$ } from '@builder.io/qwik';
 
-import { HorizontalTabsStores } from '~/components/(STORES)/HorizontalTabsStore/horizontal-tabs-store';
+import { HorizontalTabsStores } from '~/components/(Stores)/HorizontalTabsStore/horizontal-tabs-store';
 
 export default component$(() => {
   useStylesScoped$(`

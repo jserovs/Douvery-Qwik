@@ -11,11 +11,11 @@
     gap: 30px;
     padding: 1rem 5px;
     position: relative;
-    border-radius: 3px;
     grid-auto-columns: auto;
     grid-template-rows: 200px auto;
-    border-radius: 10px;
-    box-shadow: rgba(248, 248, 248, 0.829) 0px 0px 0px 1px;
+    /* border-radius: 10px; */
+    border-right: 1px solid var(--border-width-0);
+    /* box-shadow: rgba(248, 248, 248, 0.829) 0px 0px 0px 1px; */
 }
 
 .product-image img {

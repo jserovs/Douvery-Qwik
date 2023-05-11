@@ -8,6 +8,10 @@ import { ContainerCardProduct1 } from '~/components/cards/product/product-card-1
 import { ContainerCardProduct4 } from '~/components/cards/product/product-card-4/product-card-4';
 import { ContainerCardProduct5 } from '~/components/cards/product/product-card-5/product-card-5';
 import { ContainerCardProduct6 } from '~/components/cards/product/product-card-6/product-card-6';
+import { ContainerCardProduct7 } from '~/components/cards/product/product-card-7/product-card-7';
+import { ContainerCardProduct8 } from '~/components/cards/product/product-card-8/product-card-8';
+import { ContainerCardProduct9 } from '~/components/cards/product/product-card-9/product-card-9';
+import { ContainerCardProduct10 } from '~/components/cards/product/product-card-10/product-card-10';
 export const Carousel1 = component$(({ product, styleCard }: any) => {
   useStylesScoped$(styles);
   const currentIndex = useStore({ setCurrentIndex: 0 });
@@ -41,6 +45,10 @@ export const Carousel1 = component$(({ product, styleCard }: any) => {
               {styleCard == 4 ? <ContainerCardProduct4 product={pro} /> : ''}
               {styleCard == 5 ? <ContainerCardProduct5 product={pro} /> : ''}
               {styleCard == 6 ? <ContainerCardProduct6 product={pro} /> : ''}
+              {styleCard == 7 ? <ContainerCardProduct7 product={pro} /> : ''}
+              {styleCard == 8 ? <ContainerCardProduct8 product={pro} /> : ''}
+              {styleCard == 9 ? <ContainerCardProduct9 product={pro} /> : ''}
+              {styleCard == 10 ? <ContainerCardProduct10 product={pro} /> : ''}
             </div>
           );
         })}

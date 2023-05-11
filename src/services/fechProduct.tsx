@@ -178,7 +178,7 @@ export async function fetchSearchProduct(
   orderPrice: string,
   rating: string,
   order: string,
-  page: string,
+  page: number,
   brand: string,
   controller?: AbortController
 ): Promise<any> {
@@ -195,5 +195,5 @@ export async function fetchSearchProduct(
   }
   const results = await response.json();
 
-  return results.products;
+  return results;
 }
