@@ -12,24 +12,21 @@
 
 .container-title {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 40px;
     align-items: center;
     width: 100%;
     height: 63px;
-    padding: 0px 100px;
-    background: #00F260;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #0575E6, #00F260);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #0575E6, #00F260);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 0px 15px;
+    margin: 20px 0px;
+
 }
 
 .container-title h1 {
     font-size: 20px;
     margin: 0px;
     font-weight: 500;
-    color: #fff;
+    color: #256D85;
 }
 
 .container-body {
@@ -47,7 +44,8 @@
     flex-wrap: wrap;
     justify-content: center;
     column-gap: 60PX;
-    row-gap: 52px;
+    row-gap: 32px;
+    margin-top: 20px;
 }
 
 .container-discount-porce {
@@ -62,7 +60,7 @@
     font-weight: 500;
     margin-top: 5px;
     font-size: 14px;
-    color: #fff;
+    color: #394867;
 }
 
 .container-discount {
@@ -118,7 +116,7 @@ ul {
     flex-wrap: wrap;
 
     column-gap: 60PX;
-    row-gap: 52px;
+    row-gap: 0px;
 }
 
 .box {

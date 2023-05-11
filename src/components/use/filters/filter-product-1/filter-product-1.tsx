@@ -10,7 +10,7 @@ export const Filter_Product1 = component$(({ subCategories }: any) => {
     <>
       <div class="filter-section-body">
         <div>
-          <h3>{loc.params.categorie}</h3>
+          <h3>Sub categories</h3>
           {subCategories?.map((c: any, i: number) => (
             <div class="container-sub-category" key={i}>
               <div class="item" key={i}>

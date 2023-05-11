@@ -67,7 +67,6 @@ export default component$(() => {
               ) : (
                 <ul>
                   <div class="container-title">
-                    <h1>Immerse yourself in the {loc.params.categorie}</h1>
                     <div class="container-discount-porce">
                       <div class="container-sort">
                         <button onClick$={handleSortOrderChange}>
@@ -99,8 +98,9 @@ export default component$(() => {
                         </button>
                       </div>
                       <div class="ctr-opa">|</div>
-                      <h2>Orden</h2>{' '}
+                      <div>Or</div>{' '}
                     </div>
+                    <h1>Immerse yourself in the {loc.params.categorie}</h1>
                   </div>
                   <div class="container-body">
                     <div class="container-filters">
