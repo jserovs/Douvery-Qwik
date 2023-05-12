@@ -6,6 +6,7 @@ import {
   useStore,
   useStylesScoped$,
   useTask$,
+  useVisibleTask$,
 } from '@builder.io/qwik';
 
 import styles from './index.css?inline';
@@ -27,6 +28,7 @@ import { View1 } from '~/components/(Product-details)/components/sessions/VIEW 1
 import { View4 } from '~/components/(Product-details)/components/sessions/VIEW 4/view4';
 // import { View3 } from '~/components/(Product-details)/components/sessions/VIEW 3/view3';
 import { View5 } from '~/components/(Product-details)/components/sessions/VIEW 5/view5';
+import { addToViewedProducts } from '~/services/viewed/viewed';
 // import { View3 } from '~/components/(Product-details)/components/sessions/VIEW 3/view3';
 
 export default component$(() => {
@@ -59,7 +61,9 @@ export default component$(() => {
 
  `);
 
-  useTask$(() => {});
+  useVisibleTask$(() => {
+    addToViewedProducts({dui:location.params.dui  })
+  });
   return (
     <>
       <div>

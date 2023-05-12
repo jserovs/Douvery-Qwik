@@ -3,6 +3,7 @@ import { Card_Category_1 } from '../cards/category/category-1/category-1';
 import styles from './carousel-all.css?inline';
 import { Card_Category_Flex_1 } from '../cards/category/category-flex/category-flex-1';
 import { SearchBooksDouvery } from '../navBar/components/search/searchBook/searchBook';
+import { CardLastViewedProducts1 } from '../cards/lastViewProduct/last-viewed-products-1/last-viewed-products-1';
 
 export default component$(() => {
   useStylesScoped$(styles);
@@ -32,6 +33,7 @@ export default component$(() => {
             <SearchBooksDouvery is={isOpen} />
           </div>
         </div>
+        < CardLastViewedProducts1 />
       </div>
     </>
   );
