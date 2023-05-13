@@ -39,7 +39,8 @@ export default component$(() => {
     product: {} as Product,
   });
 
-  const productResource = useResource$<void>(async () => {
+  const productResource = useResource$<void>(async ({ track }) => {
+    track(() => location.params.dui);
     const { dui } = cleanUpParams({ dui: location.params.dui });
     const product = await fetchProduct(dui);
     state.product = product;

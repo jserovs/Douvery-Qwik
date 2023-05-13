@@ -298,6 +298,12 @@
     /* hide the review by default */
 }
 
+.link-brand {
+    color: #034cb8;
+    font-size: 12px;
+    font-weight: 500;
+}
+
 .seller {
     display: flex;
     align-items: center;
