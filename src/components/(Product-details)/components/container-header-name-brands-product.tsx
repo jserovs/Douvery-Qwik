@@ -56,7 +56,7 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
                   <p>De</p>
                 </>
               )}
-              <a href="/">{props.category}</a>
+              <a href={'/s-categorie/' + props.category}>{props.category}</a>
               {props.vrfDouvery ? (
                 <>
                   {' '}
@@ -121,11 +121,35 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
           <strong class="hs-sr1">Enviado & Vendido por </strong>
           <div class="sll-rps">
             <div class="seller">
-              <a href="/">{props.storeName}</a>
-              <a href="/">(4)185</a>
-              <div class="review-popup">
+              <a
+                href={
+                  '/' +
+                  props.storeName +
+                  '/' +
+                  'STORE-' +
+                  props.storeOspayne +
+                  '/h/'
+                }
+                aria-label={props.marca}
+              >
+                {props.storeName}
+              </a>
+              <a
+                href={
+                  '/' +
+                  props.storeName +
+                  '/' +
+                  'STORE-' +
+                  props.storeOspayne +
+                  '/h/'
+                }
+                aria-label={props.marca}
+              >
+                (4)185
+              </a>
+              {/* <div class="review-popup">
                 Review: This seller is reliable and always ships on time.
-              </div>
+              </div> */}
             </div>
           </div>
           <div class="chg-shr-prtd">

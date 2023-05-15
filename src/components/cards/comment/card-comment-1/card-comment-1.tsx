@@ -355,7 +355,6 @@ export const CardComment1 = component$(
         )}
         {comments && comments.length > 0 && (
           <div class="sub-comments">
-            (
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="32"

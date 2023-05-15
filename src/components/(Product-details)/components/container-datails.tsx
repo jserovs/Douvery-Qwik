@@ -1,20 +1,14 @@
 import { component$, useStore, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './css/container-datails.css?inline';
-import { Stars } from '~/components/Ratings/stars/stars';
+
 import { ContainerButtonDetails } from './container-button-details';
 
 import numeral from 'numeral';
-import { ContainerProgres } from '~/components/progres-bar/container-progres/container-progres';
+import { UseStarRating } from '~/components/use/ratings/useRatingHover/useRatingHover';
 
 export default component$(({ props }: any) => {
   useStylesScoped$(styles);
   const quantityCart = useStore({ setQuantityCart: '1' });
-
-  //*MOSTRAR TOTAL DE RATING ( 5 , 1 ,2)
-  let totalRating = 0.0;
-  for (let i = 0; i < props.ratings.length; i++) {
-    totalRating = props.ratings[i].rating;
-  }
 
   //*CALCULAR EL DESCUENTO
   const discount = (props.price * props.discount) / 100;
@@ -28,11 +22,9 @@ export default component$(({ props }: any) => {
       <div class="super-container">
         <div class="container-NavAggPayProduct-table-mobiles">
           <div class="rating-table-mobiles">
-            <Stars size="16" rating={totalRating} />{' '}
-            <div class="rating-ct-ratig">
-              ({totalRating}) {props.ratings.length}
-            </div>
+            <UseStarRating product={props} size="16" />
           </div>
+
           <div class="price-table-mobiles">
             <h5 class="title-prtsea">
               <>Precio :</>
@@ -67,22 +59,7 @@ export default component$(({ props }: any) => {
         </div>
 
         <div class="container-NavAggPayProduct-web">
-          <div class="ctr-stars">
-            <Stars rating={totalRating} />{' '}
-            <div class="ctr-progr">
-              <div class="tolst-tip"></div>
-              <div class="pr-ttle">
-                <p class="hs-sr1">Ratings</p>
-              </div>
-              <ContainerProgres props={props} />
-              <div class="pr-qtyon">
-                <p class="ps-sr1">Sin preguntas Respondidas</p>
-              </div>
-            </div>
-          </div>
-          <div class="ct-ratig">
-            ({totalRating}) {props.ratings.length}
-          </div>{' '}
+          <UseStarRating product={props} size="20" />
           <size-w class="size-w-10" />
           <size-w class="size-w-10" />
           {props.discount === 0 ? (
@@ -157,7 +134,6 @@ export default component$(({ props }: any) => {
               </div>
             </div>
           )}
-          
           <div class="div-button">
             {' '}
             <ContainerButtonDetails

@@ -6,9 +6,7 @@ export const Dropdown = component$(({ title }: any) => {
   useStylesScoped$(styles);
   const isOpen = useStore({ setIsOpen: false });
   const options = [
-    { name: 'Option 1', subtitle: 'Subtitle 1', time: '5min' },
-    { name: 'Option 2', subtitle: 'Subtitle 2', time: '10min' },
-    { name: 'Option 3', subtitle: 'Subtitle 3', time: '15min' },
+    { name: 'No disponible', subtitle: 'No disponible', time: 'No disponible' },
   ];
   return (
     <div>

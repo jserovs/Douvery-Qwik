@@ -6,7 +6,7 @@ import {
   useStylesScoped$,
 } from '@builder.io/qwik';
 import styles from './view4.css?inline';
-import { ContaineRatingProgress } from './components/container-rating-progress/container-rating-progress';
+import { ContaineProductReviewsRatingProgress } from './components/container-rating-progress/container-rating-progress';
 import { ContainerBoxQuestionsAnswered } from './components/container-box-questions-answered/container-box-questions-answered';
 import { ContainerBoxInputComments } from './components/container-box-input-comments/container-box-input-comments';
 import { ContainerBoxComments } from './components/container-box-comments/container-box-comments';
@@ -67,7 +67,7 @@ export const View4 = component$(({ product }: any) => {
               {state.checkReviewsProduct.canComment}
               <div class="viewleft">
                 <div class="part-1">
-                  <ContaineRatingProgress props={product} />
+                  <ContaineProductReviewsRatingProgress product={product} />
                   <ContainerBoxQuestionsAnswered />
                 </div>
                 <div class="part-2">
