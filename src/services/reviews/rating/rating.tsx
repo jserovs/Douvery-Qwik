@@ -1,4 +1,4 @@
-import { urlServerLocal } from '~/services/fechProduct';
+import { urlServerNode } from '~/services/fechProduct';
 
 export async function fetchProductRatings(
   productDui: string,
@@ -6,7 +6,7 @@ export async function fetchProductRatings(
 ): Promise<any> {
   const response = await fetch(
     `
-    ${urlServerLocal}/api/product/rating`,
+    ${urlServerNode}/api/product/rating`,
     {
       method: 'POST',
       signal: controller?.signal,
@@ -32,7 +32,7 @@ export async function fetchProductRatingsCounts(
 ): Promise<any> {
   const response = await fetch(
     `
-    ${urlServerLocal}/api/product/rating-counts`,
+    ${urlServerNode}/api/product/rating-counts`,
     {
       method: 'POST',
       signal: controller?.signal,
