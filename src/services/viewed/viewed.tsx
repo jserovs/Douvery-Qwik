@@ -1,5 +1,5 @@
 import { getCookieData } from '../auth/login/login';
-import { urlServerLocal, urlServerNode } from '../fechProduct';
+import { urlServerNode } from '../fechProduct';
 
 const OPTIONS_KEY_VIEWED_PRODUCTS = 'V_P';
 
@@ -105,11 +105,11 @@ export async function getDataViewedProduct() {
   try {
     const settings = JSON.parse(stored as string);
     const response = await fetch(
-      `${urlServerLocal}/api/viewed/productsDui/json/`,
+      `${urlServerNode}/api/viewed/productsDui/json/`,
       {
         method: 'POST',
         body: JSON.stringify({
-          limit: 4,
+          limit: 8,
           viewedData: settings,
         }),
         headers: {

@@ -49,25 +49,28 @@ export const CardLastViewedProducts1 = component$(() => {
         <div class="category-info">
           <h1>Ultimos productos vistos</h1>
         </div>
-        <div class="category-img">
-          {isLoading.setIsLoading ? (
-            <div class="loader"></div>
-          ) : state.searchResults.length > 0 ? (
-            <>
-              {state.searchResults.map((product: any, index: any) => {
-                return (
-                  <div class="image-container" key={index}>
-                    <img src={product.images[0]} alt="" />
-                  </div>
-                );
-              })}
-            </>
-          ) : (
-            <div class="no-product-message">
-              <p>No hay productos en Favorito.</p>
-            </div>
-          )}
+        <div class="scroll-container">
+          <div class="category-img">
+            {isLoading.setIsLoading ? (
+              <div class="loader"></div>
+            ) : state.searchResults.length > 0 ? (
+              <>
+                {state.searchResults.map((product: any, index: any) => {
+                  return (
+                    <div class="image-container" key={index}>
+                      <img src={product.images[0]} alt="" />
+                    </div>
+                  );
+                })}
+              </>
+            ) : (
+              <div class="no-product-message">
+                <p>No hay productos en Favorito.</p>
+              </div>
+            )}
+          </div>
         </div>
+
         <div class="show-more">
           <a href={`/s-categorie//`}> Ver todos</a>
         </div>
