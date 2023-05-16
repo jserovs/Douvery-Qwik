@@ -1,5 +1,5 @@
 import { component$, Slot, useStore, useVisibleTask$ } from '@builder.io/qwik';
-import Header from '../components/header/header';
+import Header from '../components/navBar/navBar';
 import Nav from '../components/nav/nav';
 import { Footer } from '~/components/footer/footer';
 import { routeLoader$, useLocation } from '@builder.io/qwik-city';

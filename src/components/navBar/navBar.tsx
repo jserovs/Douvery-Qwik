@@ -5,7 +5,7 @@ import {
   useTask$,
 } from '@builder.io/qwik';
 
-import styles from './header.css?inline';
+import styles from './navBar.css?inline';
 
 import { DouveryUser } from '../icons/user';
 import { DouveryCart } from '../icons/cart';

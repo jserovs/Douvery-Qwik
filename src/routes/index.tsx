@@ -12,20 +12,22 @@ import CarouselAll from '~/components/carousel-all/carousel-all';
 export default component$(() => {
   useStylesScoped$(styles);
   return (
-    <div class="container ">
-      <div class="c-c-v">
-        <CarBanner />
-        <div class="con-gnl ">
-          <div class="con-par-sld">
-            <CarouselAll />
-            <CarouselNew />
+    <div class="container-all">
+      <div class="cotent">
+        <div class="c-c-v">
+          <CarBanner />
+          <div class="con-gnl ">
+            <div class="con-par-sld">
+              <CarouselAll />
+              <CarouselNew />
+            </div>
+            <ContainerVert />
           </div>
-          <ContainerVert />
         </div>
-      </div>
 
-      <div class="container list-cont">
-        <Carousel />
+        <div class="container list-cont">
+          <Carousel />
+        </div>
       </div>
     </div>
   );
