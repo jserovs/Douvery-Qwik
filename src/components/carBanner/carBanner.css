@@ -1,8 +1,14 @@
 .cl-banner-pr {
+    display: grid;
+    align-items: start;
+}
+
+.cl-banner-pr img {
     width: 100%;
     height: 280px;
-    background-color: rgba(4, 85, 38, 0.774);
-
+    background-color: var(--color-background-white);
+    object-fit:
+        cover;
 
 }
 
