@@ -6,7 +6,7 @@ export default component$(()=> {
     return (
         <>
         <div class="cl-banner-pr">
-    
+    <img src="https://res.cloudinary.com/douvery/image/upload/v1684235006/bbl6wvi58i16ncc9nhfo.png" alt="" />
         </div>
         </>
     )});

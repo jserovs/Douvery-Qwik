@@ -1,0 +1,669 @@
+select {
+    /* Reset Select */
+    appearance: none;
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+    /* Personalize */
+    flex: 1;
+    outline: none;
+    color: var(--color-text-medium-light);
+    font-size: 14px;
+    font-weight: 400;
+
+    background-color: transparent;
+    border-right: 1px solid var(--border-width-1);
+    cursor: pointer;
+    display: grid;
+    text-align: center;
+    justify-content: center;
+}
+
+/* Remove IE arrow */
+select::-ms-expand {
+    display: none;
+}
+
+/* Custom Select wrapper */
+.select {
+
+    position: relative;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-right: 5px;
+
+}
+
+select option {
+
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+
+
+select,
+.select:after {
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+/* Transition */
+.select:hover::after {
+    color: #050007;
+}
+
+.search {
+    position: relative;
+    display: flex;
+}
+
+.searchTerm {
+    position: relative;
+    display: grid;
+    grid-template-columns: 100px auto 50px;
+    width: 100%;
+
+
+    background-color: var(--color-background-light);
+    border-right: none;
+
+    border-radius: 5px 5px 5px 5px;
+    outline: none;
+    font-size: 15px;
+    font-weight: 400;
+    padding-left: 5px;
+
+}
+
+
+.searchTerm input:focus {
+    transform: none !important;
+    -webkit-transform: none !important;
+    -ms-transform: none !important;
+    -moz-transform: none !important;
+    -o-transform: none !important;
+}
+
+::placeholder {
+    display: grid;
+    align-items: center;
+    color: #9e9e9e;
+}
+
+
+
+.searchButton {
+    border: 1px solid var(--color-background-light);
+
+    color: #fff;
+    min-width: 50px;
+    background-color: #F0F0F0;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    place-content: center;
+
+}
+
+.searchButton:focus {
+    padding: 10PX;
+}
+
+
+
+/*Resize the wrap to see the search bar change!*/
+
+/*Resize the wrap to see the search bar change!*/
+.wrap {
+    position: absolute;
+    right: 48%;
+    transform: translate(48%, -40%);
+}
+
+
+.main {
+    width: 135px;
+    display: grid;
+    grid-template-columns: 53px auto auto;
+    align-items: center;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.main a {
+    margin-right: 15px;
+    margin-left: 10px;
+    color: var(--color-white);
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.5s ease;
+}
+
+.wl-hi {
+    font-weight: 400;
+}
+
+
+
+.user i {
+    color: var(--color-white);
+    font-size: 28px;
+    margin-right: 7px;
+}
+
+.main a:hover {
+    color: var(--color-white);
+}
+
+#menu-icon {
+    font-size: 35px;
+    color: var(--color-white);
+    cursor: pointer;
+    z-index: 10001;
+    display: none;
+}
+
+
+.cuenta_botom {
+
+    width: 50px;
+    height: 50px;
+    position: relative;
+    right: 10px;
+    text-align: center;
+
+}
+
+
+
+.cuenta_botom a {
+    text-decoration: none;
+    color: #fff;
+    cursor: context-menu;
+    font-size: 14px;
+    position: relative;
+    top: 5px;
+    font-weight: 100;
+
+
+
+
+}
+
+
+.cuenta_botom h4 {
+    color: var(--color-white);
+    font-weight: var(--font-weight-light);
+    text-transform: capitalize;
+    position: absolute;
+    left: 0px;
+
+}
+
+.Cuenta-desplegable {
+    position: relative;
+    width: 0px;
+    height: 30px;
+    margin: auto;
+    bottom: 7px;
+    left: 8px;
+
+
+
+}
+
+
+.d-flex {
+    position: relative;
+    top: 2PX;
+}
+
+
+.efecto-HOVER-cuentaDesplegable {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    color: #000;
+    min-width: 300px;
+    height: 390px;
+    z-index: 100000;
+    border-radius: 3%;
+
+    top: 45px;
+    left: -100px;
+    right: -100px;
+
+
+
+}
+
+.msg-bienv {
+    margin-left: 30px;
+}
+
+
+
+.efecto-HOVER-cuentaDesplegable .titulo_cajaCuentas {
+    position: relative;
+    text-align: center;
+
+
+    left: 15px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
+    color: #0B347B;
+    font-family: 'Open Sans', sans-serif;
+    opacity: 90%;
+    letter-spacing: 0.5px;
+}
+
+
+.efecto-HOVER-cuentaDesplegable h5 {
+    position: relative;
+    width: 80%;
+    text-align: left;
+    padding: 0px 0 0px 0;
+    top: 15px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 100;
+    color: #6b7c93;
+
+
+}
+
+.efecto-HOVER-cuentaDesplegable .iconify {
+    position: relative;
+    top: 15px;
+    left: 12px;
+}
+
+.ctr-session-none {
+    position: relative;
+    right: 10px;
+}
+
+.trl-drs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 0px 0px 0px;
+
+}
+
+.ttle-draw {
+    position: relative;
+    display: grid;
+
+    width: 105px;
+    height: 100%;
+    text-align: start;
+    font-size: 14px;
+    color: var(--color-white);
+    padding-left: 5px;
+}
+
+
+
+.ttle-draw .text-hello {
+    font-weight: 400;
+}
+
+.ttle-draw strong {
+
+    text-align: start;
+    font-weight: 600;
+    color: var(--color-white);
+}
+
+.trl-drs strong:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    display: grid;
+    justify-content: end;
+}
+
+
+
+
+.lISTA_CJAS-DESPLEGABLE h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    color: #0B347B;
+    opacity: 85%;
+
+    text-align: left;
+    align-items: left;
+
+}
+
+.lISTA_CJAS-DESPLEGABLE li {
+
+    font-size: 10px;
+    font-weight: 100;
+    color: #0B347B;
+    list-style: none;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 5px;
+
+    text-align: left;
+    align-items: left;
+}
+
+.lISTA_CJAS-DESPLEGABLE li a {
+
+
+    text-decoration: none;
+    color: #6b7c93;
+    font-size: 13px;
+    font-weight: 100;
+    list-style: none;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 5px;
+
+    text-align: left;
+    align-items: left;
+}
+
+.lISTA_CJAS-DESPLEGABLE li a:hover {
+    color: #0B347B;
+}
+
+
+
+.cjas_articulosFav_MisPedidos_CerrarSension {
+    margin-top: 30px;
+    width: 100%;
+    height: 150px;
+    background-color: #f5f9f9f9;
+
+
+    border-radius: 3%;
+
+}
+
+.cjas_articulosFav_MisPedidos_CerrarSension .CAJAS_CONTENDORAS_diferente-UBI {
+    width: 100%;
+    height: 25px;
+
+    position: relative;
+    top: 15px;
+    margin-bottom: 15px;
+
+}
+
+.cjas_articulosFav_MisPedidos_CerrarSension .CAJAS_CONTENDORAS_diferente-UBI a {
+    position: relative;
+    left: 20px;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+    font-weight: 700;
+    color: #0B347B;
+    opacity: 90%;
+    width: 0px;
+}
+
+.cjas_articulosFav_MisPedidos_CerrarSension .CAJAS_CONTENDORAS_diferente-UBI a i {
+    margin-right: 10px;
+    text-align: left;
+    align-items: left;
+}
+
+
+.CAJAS_CONTENDORAS_diferente-UBI a:hover {
+    opacity: 70%;
+}
+
+
+.une {
+    text-align: left;
+    align-items: left;
+}
+
+.une:hover {
+    opacity: 90%;
+
+}
+
+.suggestions {
+    width: 100%;
+
+    display: block;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+
+    z-index: 1;
+    border-radius: 10px 10px;
+}
+
+.crrtrSrers {
+    display: flex;
+    padding-left: 10px;
+    border-radius: 10px 10px;
+}
+
+.suggestions ul {
+
+    margin: 0;
+}
+
+.lis-sgrs {
+    padding: 10px;
+    color: var(--color-text-opaque);
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #050007;
+
+}
+
+.crrtrSrers:hover {
+    background-color: rgba(241, 241, 241, 0.911);
+    transition: none;
+    cursor: default;
+}
+
+.Cuenta-desplegable:hover .efecto-HOVER-cuentaDesplegable {
+    display: block;
+}
+
+
+
+@media only screen and (max-width: 982px) {
+    .cuenta_botom {
+        display: none;
+    }
+
+    .container-icon-cart {
+        padding: 0px;
+    }
+
+    .ttle-draw {
+        position: relative;
+        width: 100%;
+        gap: 5px;
+    }
+
+    .ctr-session-none {
+        position: relative;
+        left: 10px;
+
+    }
+
+    .main a {
+        margin: 5px 10px 0px 0px;
+    }
+
+
+}
+
+@media only screen and (max-width: 1455px) {
+    .container-cajas-header {
+        display: grid;
+        grid-template-columns: 150PX 1fr auto;
+        width: 100%;
+        padding: 0PX 100PX;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 15px 0px 42px;
+
+
+    }
+
+    .main {
+        width: 171px;
+        white-space: nowrap;
+    }
+
+
+
+
+
+}
+
+@media only screen and (max-width: 1025px) {
+    .efecto-HOVER-cuentaDesplegable {
+        display: none;
+        position: absolute;
+
+        left: -220px;
+
+    }
+
+    .cajas {
+        margin: 0px 5px;
+    }
+
+    .searchButton {
+
+        width: 10%;
+        display: grid;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        background-color: #F0F0F0;
+        padding: 0px 5PX 0PX 5PX;
+    }
+
+    .searchButton svg {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container-cajas-header {
+
+        padding: 0px 0px;
+    }
+
+
+}
+
+
+
+@media only screen and (max-width: 665px) {
+    header {
+        height: 7rem;
+        padding: 0px;
+    }
+
+
+
+    .select {
+        display: none;
+    }
+
+    .logo {
+        position: absolute;
+        top: 12px;
+    }
+
+    .search {
+        height: 36PX;
+        position: relative;
+        display: grid;
+        top: 15px;
+    }
+
+    .searchButton {
+        background-color: transparent;
+    }
+
+    .searchTerm {
+
+        display: flex;
+        flex-direction: row-reverse;
+        width: 100%;
+    }
+
+    .main {
+        position: absolute;
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 15px;
+        top: 15px;
+        margin: 0px 2px 0px 0px;
+        right: 0;
+        width: 100%;
+
+    }
+
+    .badget-circle {
+        position: absolute;
+
+        top: -5px;
+    }
+
+    .container-cajas-header {
+        display: grid;
+        grid-template-columns: 0 100% 0;
+        padding: 0px 0px;
+    }
+
+    .cuenta_botom {
+        display: none;
+    }
+
+    .texts-opts-crt-gg {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        place-content: center;
+        text-align: center;
+    }
+
+    .lis-sgrs {
+        font-size: small;
+
+    }
+
+    .ttle-draw {
+        display: flex;
+
+
+    }
+}
