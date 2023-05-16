@@ -6,7 +6,7 @@ import styles from './index.css?inline';
 
 import CarouselNew from '~/components/carousel-new/carousel-new';
 import ContainerVert from '~/components/container-vert/container-vert';
-import Carousel from '~/components/carousel/carousel';
+// import Carousel from '~/components/carousel/carousel';
 import CarouselAll from '~/components/carousel-all/carousel-all';
 
 export default component$(() => {
@@ -25,9 +25,7 @@ export default component$(() => {
           </div>
         </div>
 
-        <div class="container list-cont">
-          <Carousel />
-        </div>
+        <div class="container list-cont">{/* <Carousel /> */}</div>
       </div>
     </div>
   );

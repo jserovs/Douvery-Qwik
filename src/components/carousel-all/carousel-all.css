@@ -24,3 +24,53 @@
     position: relative;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
+
+
+
+.caja {
+    width: 100%;
+    height: 150px;
+    /* Cambia a un valor de porcentaje */
+    max-width: 300px;
+    /* Establece un tamaño máximo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 12px;
+    background-color: var(--color-background-white);
+    border-radius: 5px;
+    padding: 19px;
+    position: relative;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.caja h2 {
+
+    color: inherit;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.button-signin {
+    background-color: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #0f1111;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 29px;
+    padding: 0 10px 0 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: 100%;
+}

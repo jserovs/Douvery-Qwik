@@ -33,7 +33,11 @@ export default component$(() => {
             <SearchBooksDouvery is={isOpen} />
           </div>
         </div>
-        < CardLastViewedProducts1 />
+        <CardLastViewedProducts1 />
+        <div class="caja">
+          <h2>Das la impresión de que estás preparado para disfrutar.</h2>
+          <button class="button-signin">Iniciar Session</button>
+        </div>
       </div>
     </>
   );
