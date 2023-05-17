@@ -5,7 +5,6 @@ import {
   useSignal,
   useStore,
   useStylesScoped$,
- 
   useVisibleTask$,
 } from '@builder.io/qwik';
 
@@ -62,7 +61,7 @@ export default component$(() => {
  `);
 
   useVisibleTask$(() => {
-    addToViewedProducts({dui:location.params.dui  })
+    addToViewedProducts({ dui: location.params.dui });
   });
   return (
     <>

@@ -8,6 +8,7 @@ import { CardLastViewedProducts1 } from '../cards/lastViewProduct/last-viewed-pr
 export default component$(() => {
   useStylesScoped$(styles);
   const isOpen = useStore({ setIsOpen: false });
+
   return (
     <>
       <div class="container-all">
@@ -34,9 +35,11 @@ export default component$(() => {
           </div>
         </div>
         <CardLastViewedProducts1 />
-        <div class="caja">
-          <h2>Das la impresión de que estás preparado para disfrutar.</h2>
-          <button class="button-signin">Iniciar Session</button>
+        <div class="container-accouts">
+          <div class="caja">
+            <h2>Das la impresión de que estás preparado para disfrutar.</h2>
+            <button class="button-signin">Iniciar Session</button>
+          </div>
         </div>
       </div>
     </>
