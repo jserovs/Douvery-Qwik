@@ -25,6 +25,11 @@
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
+.container-accouts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
 
 .caja {
@@ -48,8 +53,8 @@
 .caja h2 {
 
     color: inherit;
-    font-weight: 600;
-    font-size: 18px;
+    font-weight: 500;
+    font-size: 16px;
 }
 
 .button-signin {
@@ -73,4 +78,12 @@
     touch-action: manipulation;
     vertical-align: middle;
     width: 100%;
+}
+
+.button-signin:hover {
+    background-color: #f7f8f8;
+    border-color: #c1c3c3;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    color: #0f1111;
+    text-decoration: none;
 }
