@@ -102,6 +102,31 @@ export async function fetchStoreCategoriesAndImg(
 
   return results;
 }
+export async function fetchStoreCategoriesDiscounts(
+  ospayne: string,
+  controller?: AbortController
+): Promise<any> {
+  const response = await fetch(
+    `
+    ${urlServerNode}/api/store/categories-discounts`,
+    {
+      method: 'POST',
+      signal: controller?.signal,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ospayne: ospayne,
+      }),
+    }
+  );
+  if (!response.ok) {
+    throw new Error('Failed to fetch store');
+  }
+  const results = await response.json();
+
+  return results;
+}
 
 export async function fetchStoreFollowers(
   ospayne: string,

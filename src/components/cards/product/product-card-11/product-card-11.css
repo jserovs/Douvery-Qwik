@@ -7,8 +7,14 @@
     justify-content: flex-start;
     background-color: var(--color-background-light);
 
-    padding: 10px 10px;
+
     position: relative;
+
+}
+
+.product-card:hover {
+    opacity: 0.9;
+
 
 }
 

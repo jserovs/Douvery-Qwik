@@ -5,10 +5,10 @@ import {
   useStylesScoped$,
 } from '@builder.io/qwik';
 import { useLocation } from '@builder.io/qwik-city';
-import { CategoryGrid1 } from '~/components/use/Categories/CategoryGrid1/category-grid-1';
-import { fetchStoreCategoriesAndImg } from '~/services/store/store';
+import { fetchStoreCategoriesDiscounts } from '~/services/store/store';
 import type { Product } from '~/utils/types';
 import styles from './index.css?inline';
+import { CategoryGrid2 } from '~/components/use/Categories/CategoryGrid2/category-grid-2';
 export default component$(({ storeId }: any) => {
   useStylesScoped$(styles);
   const loc = useLocation();
@@ -18,7 +18,7 @@ export default component$(({ storeId }: any) => {
     const controller = new AbortController();
     cleanup(() => controller.abort());
 
-    return fetchStoreCategoriesAndImg(loc.params.id || storeId, controller);
+    return fetchStoreCategoriesDiscounts(loc.params.id || storeId, controller);
   });
 
   return (
@@ -41,11 +41,16 @@ export default component$(({ storeId }: any) => {
             ) : (
               <>
                 {' '}
+                <img
+                  class="store-banner"
+                  src={data.store.design.banners[0]}
+                  alt="STORE Banner"
+                />{' '}
                 <ul>
                   {data.categories.map((dat: any) => (
                     <>
                       <li class="box">
-                        <CategoryGrid1 categorie={dat} />
+                        <CategoryGrid2 categorie={dat} store={data.store} />
                       </li>
                     </>
                   ))}
