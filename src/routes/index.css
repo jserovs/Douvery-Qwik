@@ -29,13 +29,18 @@
     padding: 5px;
 }
 
-.container-carousel-interes {
-
+.container-carousel-interes,
+.container-card-store-categorie {
+    margin-bottom: 20px;
     background-color: var(--color-background-white);
     border-radius: 5px;
 
     position: relative;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.container-card-store-categorie {
+    padding: 19px;
 }
 
 .title-show {

@@ -5,7 +5,7 @@ import {
   useTask$,
 } from '@builder.io/qwik';
 import styles from './carousel.css?inline';
-import { Product } from '~/utils/types';
+import type { Product } from '~/utils/types';
 import { fetchProductU } from '~/services/fechProduct';
 import { useLocation } from '@builder.io/qwik-city';
 export default component$(() => {
