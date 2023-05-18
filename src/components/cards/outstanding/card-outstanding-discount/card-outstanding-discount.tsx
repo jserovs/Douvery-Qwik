@@ -4,15 +4,17 @@ export const CardOutstandingDiscount = component$(
   ({ productDiscount }: any) => {
     useStylesScoped$(styles);
     return (
-      <div class="product-card">
-        <a href={`/v/${productDiscount.slug}/${productDiscount.dui}`}>
-          {' '}
-          <img
-            src={productDiscount.images[0]}
-            alt={productDiscount.name}
-            class="product-image"
-          />
-        </a>
+      <div class="category-card">
+        <div class="category-info">
+          <h1>{productDiscount.name}</h1>
+        </div>
+
+        <div class="category-img">
+          <img src={productDiscount.images[0]} />
+        </div>
+        <div class="show-more">
+          <a href={`/s-categorie//`}> Ver todos</a>
+        </div>
       </div>
     );
   }
