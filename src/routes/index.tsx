@@ -34,6 +34,9 @@ export default component$(() => {
           <Promotion_CarouselAllInterest styleNumber={11} />
         </div>
         <div class="container-aoutandingproducts">
+          <OutstandingProductFlex1 />
+        </div>
+        <div class="container-carousel-interes">
           <div class="title-show">
             <h2>Explora algunos productos</h2>
             <div class="show-more">
@@ -41,9 +44,8 @@ export default component$(() => {
               <a href="dsaf/">Ver mas</a>
             </div>
           </div>
-          <OutstandingProductFlex1 />
+          <Promotion_CarouselAllInterest styleNumber={10} />
         </div>
-
         <div class="container-card-store-categorie">
           <br />
           <div class="title-show">

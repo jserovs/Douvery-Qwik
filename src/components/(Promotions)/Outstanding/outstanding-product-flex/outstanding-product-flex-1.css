@@ -1,5 +1,8 @@
 .container-all {
+    margin: 50PX 0PX;
     display:
-        flex;
+        grid;
+    grid-template-columns: 2FR 1FR 1FR;
+    justify-content: space-between;
     gap: 20px;
 }
