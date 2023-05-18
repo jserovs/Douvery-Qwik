@@ -30,7 +30,8 @@
 }
 
 .container-carousel-interes,
-.container-card-store-categorie {
+.container-card-store-categorie,
+.container-aoutandingproducts {
     margin-bottom: 20px;
     background-color: var(--color-background-white);
     border-radius: 5px;

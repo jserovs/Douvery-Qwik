@@ -19,7 +19,7 @@ export const OutstandingProductFlex1 = component$(() => {
     return fetchProductsOutstanding(controller);
   });
   return (
-    <div>
+    <div class="container-all">
       <Resource
         value={prodcureducer}
         onPending={() => <div class="loader"></div>}
