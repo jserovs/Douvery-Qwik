@@ -4,6 +4,8 @@ import styles from './carousel-all.css?inline';
 import { Card_Category_Flex_1 } from '../cards/category/category-flex/category-flex-1';
 import { SearchBooksDouvery } from '../navBar/components/search/searchBook/searchBook';
 import { CardLastViewedProducts1 } from '../cards/lastViewProduct/last-viewed-products-1/last-viewed-products-1';
+import Carousel from '../carousel/carousel';
+import ContainerVert from '../container-vert/container-vert';
 
 export default component$(() => {
   useStylesScoped$(styles);
@@ -41,6 +43,9 @@ export default component$(() => {
             <button class="button-signin">Iniciar Session</button>
           </div>
         </div>
+        <ContainerVert />
+
+        <Carousel />
       </div>
     </>
   );
