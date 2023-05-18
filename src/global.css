@@ -198,6 +198,10 @@ hs-sr3 {
   color: var(--color-text-highlight-secondary);
 }
 
+.agg-pd-left-10 {
+  padding-left: 10px;
+}
+
 /** Paragraph label */
 
 p-sr1 {

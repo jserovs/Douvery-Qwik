@@ -41,9 +41,6 @@ export default component$(({ storeId }: any) => {
             ) : (
               <>
                 {' '}
-                <div class="container-title">
-                  <h1>Descubre todas las categorias de {loc.params.name}</h1>
-                </div>
                 <ul>
                   {data.categories.map((dat: any) => (
                     <>
