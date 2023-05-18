@@ -6,6 +6,7 @@ import { SearchBooksDouvery } from '../navBar/components/search/searchBook/searc
 import { CardLastViewedProducts1 } from '../cards/lastViewProduct/last-viewed-products-1/last-viewed-products-1';
 import Carousel from '../carousel/carousel';
 import ContainerVert from '../container-vert/container-vert';
+import { CardGift1 } from '../cards/card-gift/card-gift-1/card-gift-1';
 
 export default component$(() => {
   useStylesScoped$(styles);
@@ -44,6 +45,7 @@ export default component$(() => {
           </div>
         </div>
         <ContainerVert />
+        <CardGift1 />
 
         <Carousel />
       </div>
