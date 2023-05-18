@@ -14,38 +14,31 @@
 
 .scroll-container {
     overflow-x: none;
-    /* Habilita el desplazamiento horizontal */
     overflow-y: auto;
-    /* Desactiva el desplazamiento vertical */
 }
 
 .scroll-container::-webkit-scrollbar {
     width: 8px;
-    /* Ancho de la barra de desplazamiento */
 }
 
 .scroll-container::-webkit-scrollbar-track {
     background: transparent;
-    /* Color de fondo de la barra de desplazamiento */
 }
 
 .scroll-container::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.2);
-    /* Color de la barra de desplazamiento */
     border-radius: 20px;
-    /* Redondea las esquinas de la barra de desplazamiento */
     border: 2px solid transparent;
-    /* Añade un borde transparente alrededor de la barra de desplazamiento */
     background-clip: padding-box;
-    /* Esto es para que el borde transparente no cubra el color de fondo de la barra de desplazamiento */
+
 }
 
 .scroll-container::-webkit-scrollbar-thumb:hover {
     background-color: rgba(0, 0, 0, 0.5);
-    /* Cambia el color de la barra de desplazamiento al pasar el mouse */
 }
 
 .category-img {
+    height: 188PX;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -55,7 +48,7 @@
 
 .category-img img {
     width: auto;
-    /* permite que la imagen mantenga su relación de aspecto */
+
     max-height: 100%;
     object-fit: contain;
     border-radius: 5px;
@@ -112,4 +105,14 @@
 .show-more a:hover {
     color: #008080;
     text-decoration: underline;
+}
+
+.no-product-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+    color: var(--color-text);
 }
