@@ -44,7 +44,7 @@ export default component$(() => {
               <a href="dsaf/">Ver mas</a>
             </div>
           </div>
-          <Promotion_CarouselAllInterest styleNumber={10} />
+          <Promotion_CarouselAllInterest styleNumber={11} />
         </div>
         <div class="container-card-store-categorie">
           <br />

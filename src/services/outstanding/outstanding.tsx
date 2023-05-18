@@ -1,11 +1,11 @@
-import { urlServerLocal } from '../fechProduct';
+import { urlServerNode } from '../fechProduct';
 
 export async function fetchProductsOutstanding(
   controller?: AbortController
 ): Promise<any> {
   const response = await fetch(
     `
-    ${urlServerLocal}/products-outstanding`,
+    ${urlServerNode}/products-outstanding`,
     {
       method: 'GET',
       signal: controller?.signal,
