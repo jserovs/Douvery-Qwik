@@ -5,15 +5,17 @@ export default component$(() => {
   return (
     <>
       <div class=" c-vrt-usr">
-        <img
-          class="gif-user"
-          src="https://res.cloudinary.com/douvery/image/upload/v1671981060/assets/uposh41ftnmctakggebx.gif"
-          alt=""
-        />
-        <div class="box-user ">
-          <p class="user-parece  ">
-            Upps... parece que no has Iniciado Session
-          </p>
+        <div class="category-info">
+          <h1>Ofertas a tiempo limitado</h1>
+        </div>
+        <div class="image-container">
+          <img
+            src="https://images.unsplash.com/photo-1595516239376-c777c32a72a4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+            alt=""
+          />
+        </div>
+        <div class="show-more">
+          <a href={`/s-categorie//`}> Ver todos</a>
         </div>
       </div>
     </>

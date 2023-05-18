@@ -2,7 +2,7 @@
     width: 100%;
     /* Cambia a un valor de porcentaje */
     max-width: 300px;
-    /* Establece un tamaño máximo */
+    height: 300px;
     display: grid;
     gap: 12px;
     background-color: var(--color-background-white);
