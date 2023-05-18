@@ -6,8 +6,9 @@
 
 .c-c-v {
     width: 100%;
-    height: 800px;
+    height: 550px;
     position: relative;
+    display: grid;
 }
 
 .con-gnl {
@@ -17,7 +18,7 @@
     justify-content: center;
 
     position: absolute;
-    margin-bottom: 550px;
+
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -26,6 +27,40 @@
 .con-par-sld {
     width: 100%;
     padding: 5px;
+}
+
+.container-carousel-interes {
+
+    background-color: var(--color-background-white);
+    border-radius: 5px;
+
+    position: relative;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.title-show {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 10px;
+
+
+}
+
+.title-show h2 {
+    color: inherit;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.show-more a {
+    color: #008080;
+    font-size: 12.5px;
+}
+
+.show-more a:hover {
+    color: #008080;
+    text-decoration: underline;
 }
 
 @media only screen and (max-width: 1025px) {

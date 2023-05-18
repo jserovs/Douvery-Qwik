@@ -10,7 +10,7 @@ export default component$(() => {
         </div>
         <div class="image-container">
           <img
-            src="https://images.unsplash.com/photo-1595516239376-c777c32a72a4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+            src="https://res.cloudinary.com/douvery/image/upload/v1684409489/fzirjr9kwhkrcxb1iubv.avif"
             alt=""
           />
         </div>

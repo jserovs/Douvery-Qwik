@@ -39,8 +39,6 @@ export async function addToViewedProducts({ dui }: { dui: string }) {
       if (!response.ok) {
         throw new Error('Error al enviar el producto a la API');
       }
-
-      console.log('Producto enviado a la API:', { dui });
     } catch (error) {
       console.error('Error al enviar el producto a la API:', error);
     }
@@ -95,7 +93,6 @@ export async function transferViewedProductsToAPI() {
       }
     }
 
-    // Borra todos los productos del almacenamiento local
     removeAllViewedProducts();
   }
 }
@@ -123,7 +120,7 @@ export async function getDataViewedProduct() {
       throw new Error(errorResponse.msg);
     }
     const data = await response.json();
-    console.log(data);
+
     return data;
   } catch (e) {
     return (
@@ -135,7 +132,4 @@ export async function getDataViewedProduct() {
 
 export function removeAllViewedProducts() {
   localStorage.removeItem(OPTIONS_KEY_VIEWED_PRODUCTS);
-  console.log(
-    'Todos los elementos han sido eliminados de la lista de productos vistos.'
-  );
 }

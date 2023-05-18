@@ -1,5 +1,13 @@
-import { component$, useStore, useStylesScoped$ } from '@builder.io/qwik';
+import {
+  component$,
+  useStore,
+  useStylesScoped$,
+  useTask$,
+} from '@builder.io/qwik';
 import styles from './carousel.css?inline';
+import { Product } from '~/utils/types';
+import { fetchProductU } from '~/services/fechProduct';
+import { useLocation } from '@builder.io/qwik-city';
 export default component$(() => {
   useStylesScoped$(styles);
   const activeIndex = useStore({ setActiveIndex: 0 });
@@ -22,6 +30,21 @@ export default component$(() => {
     },
   ];
 
+  const state = useStore({
+    productResults: [] as Product[],
+  });
+  const loc = useLocation();
+
+  useTask$(async ({ track }) => {
+    track(() => loc);
+
+    const controller = new AbortController();
+    state.productResults = await fetchProductU(25);
+
+    return () => {
+      controller.abort();
+    };
+  });
   const item = items[activeIndex.setActiveIndex];
   return (
     <>

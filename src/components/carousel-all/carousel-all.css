@@ -3,7 +3,8 @@
     flex-direction: column;
     justify-content: space-evenly;
     gap: 20px;
-    height: 300px;
+
+    margin-top: 200px;
     border-radius: 10px;
 }
 
@@ -13,7 +14,7 @@
 
     justify-content: space-evenly;
     gap: 20px;
-    height: 300px;
+
     border-radius: 10px;
 
 }

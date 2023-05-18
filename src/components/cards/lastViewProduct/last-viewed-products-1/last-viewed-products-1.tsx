@@ -7,7 +7,7 @@ import {
 import styles from './last-viewed-products-1.css?inline';
 
 import type { Product } from '~/utils/types';
-import { useLocation } from '@builder.io/qwik-city';
+import { useLocation, useNavigate } from '@builder.io/qwik-city';
 
 import { getDataViewedProduct } from '~/services/viewed/viewed';
 
@@ -43,6 +43,8 @@ export const CardLastViewedProducts1 = component$(() => {
     };
   });
 
+  const nav = useNavigate();
+
   return (
     <>
       <div class="category-card">
@@ -57,7 +59,13 @@ export const CardLastViewedProducts1 = component$(() => {
               <>
                 {state.searchResults.map((product: any, index: any) => {
                   return (
-                    <div class="image-container" key={index}>
+                    <div
+                      class="image-container"
+                      key={index}
+                      onClick$={() =>
+                        nav('/v/' + product.slug + '/' + product.dui, true)
+                      }
+                    >
                       <img src={product.images[0]} alt="" />
                     </div>
                   );
@@ -65,7 +73,7 @@ export const CardLastViewedProducts1 = component$(() => {
               </>
             ) : (
               <div class="no-product-message">
-                <p>No hay productos en Favorito.</p>
+                <p>Todavía no has explorado ningún producto.</p>
               </div>
             )}
           </div>
