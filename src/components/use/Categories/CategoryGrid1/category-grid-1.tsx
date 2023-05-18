@@ -7,7 +7,7 @@ export const CategoryGrid1 = component$(({ categorie }: any) => {
   const loc = useLocation();
   const navigateTo = $((id: string) => {
     nav(
-      '/' + loc.params.name + '/' + 'STORE-' + loc.params.id + '/c' + '/' + id
+      '/' + categorie.name + '/' + 'STORE-' + loc.params.id + '/c' + '/' + id
     );
   });
   return (

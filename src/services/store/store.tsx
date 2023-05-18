@@ -1,4 +1,4 @@
-import { urlServerNode } from '../fechProduct';
+import { urlServerLocal, urlServerNode } from '../fechProduct';
 
 export async function fetchStore(
   ospayne: string,
@@ -84,6 +84,31 @@ export async function fetchStoreCategoriesAndImg(
   const response = await fetch(
     `
     ${urlServerNode}/api/store/categories-img`,
+    {
+      method: 'POST',
+      signal: controller?.signal,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ospayne: ospayne,
+      }),
+    }
+  );
+  if (!response.ok) {
+    throw new Error('Failed to fetch store');
+  }
+  const results = await response.json();
+
+  return results;
+}
+export async function fetchStoreCategoriesDiscounts(
+  ospayne: string,
+  controller?: AbortController
+): Promise<any> {
+  const response = await fetch(
+    `
+    ${urlServerLocal}/api/store/categories-discounts`,
     {
       method: 'POST',
       signal: controller?.signal,

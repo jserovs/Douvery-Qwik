@@ -34,6 +34,7 @@ export default component$(() => {
             </div>
           </div>
           <CardLastViewedProducts1 />
+
           <div class="container-accouts">
             <div class="caja">
               <h2>Das la impresión de que estás preparado para disfrutar.</h2>

@@ -5,11 +5,11 @@ import {
   useTask$,
 } from '@builder.io/qwik';
 import style from './carousel-all-interest.css?inline';
-import { Carousel1 } from '~/components/use/carousel/carousel-1/carousel-1';
 import type { Product } from '~/utils/types';
 import { fetchProductU } from '~/services/fechProduct';
 import { randomNum } from '~/services/fuction';
 import { useLocation } from '@builder.io/qwik-city';
+import { Carousel2 } from '~/components/use/carousel/carousel-2/carousel-2';
 export const Promotion_CarouselAllInterest = component$(
   ({ styleNumber }: any) => {
     useStylesScoped$(style);
@@ -34,7 +34,7 @@ export const Promotion_CarouselAllInterest = component$(
       <div class="ctnr-view-5">
         {' '}
         <div class="content-carousel">
-          <Carousel1
+          <Carousel2
             styleCard={styleNumber || randomNumber}
             product={state.productResults}
           />

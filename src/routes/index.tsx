@@ -8,6 +8,7 @@ import CarouselAll from '~/components/carousel-all/carousel-all';
 import { Promotion_CarouselAllInterest } from '~/components/(Promotions)/carousel/carousel-all-interest/carousel-all-interest';
 
 import AllCategoryStoresId1 from '~/components/cards/category/all-category-stores-id/all-category-stores-id-1';
+import { OutstandingProductFlex1 } from '~/components/(Promotions)/Outstanding/outstanding-product-flex/outstanding-product-flex-1';
 
 export default component$(() => {
   useStylesScoped$(styles);
@@ -32,6 +33,7 @@ export default component$(() => {
           </div>
           <Promotion_CarouselAllInterest styleNumber={11} />
         </div>
+        <OutstandingProductFlex1 />
         <div class="container-card-store-categorie">
           <br />
           <div class="title-show">
