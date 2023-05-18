@@ -98,3 +98,17 @@
     color: #0f1111;
     text-decoration: none;
 }
+
+@media only screen and (max-width: 755px) {
+    .contai-fle {
+
+        display: grid;
+
+        justify-content: space-evenly;
+        gap: 20px;
+        height: 100%;
+        border-radius: 10px;
+
+    }
+
+}
