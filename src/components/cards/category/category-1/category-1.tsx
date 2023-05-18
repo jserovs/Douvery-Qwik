@@ -1,6 +1,6 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './category-1.css?inline';
-export const Card_Category_1 = component$(({ name, images }: any) => {
+export const Card_Category_1 = component$(({ name, image }: any) => {
   useStylesScoped$(styles);
   return (
     <div class="category-card">
@@ -9,9 +9,10 @@ export const Card_Category_1 = component$(({ name, images }: any) => {
       </div>
 
       <div class="category-img">
-        {images.map((image: any, index: any) => {
-          return <img src={image} key={index} />;
-        })}
+        <img src={image} />
+      </div>
+      <div class="show-more">
+        <a href={`/s-categorie//`}> Ver todos</a>
       </div>
     </div>
   );
