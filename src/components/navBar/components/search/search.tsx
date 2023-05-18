@@ -4,7 +4,6 @@ import {
   useStylesScoped$,
   useTask$,
 } from '@builder.io/qwik';
-import { useLocation, useNavigate } from '@builder.io/qwik-city';
 import { IconsSearch } from '~/components/icons/search';
 import { category } from '~/routes/(Search)/s';
 import { fetchSuggestions } from '~/services/fechProduct';
@@ -16,7 +15,7 @@ interface IState {
 }
 export const SearchDouvery = component$(({ is }: any) => {
   useStylesScoped$(styles);
-  const nav = useNavigate();
+
   const state = useStore<IState>({
     searchInput: '',
     searchResults: [],
@@ -39,17 +38,14 @@ export const SearchDouvery = component$(({ is }: any) => {
     };
   });
   const selectedValue = useStore({ selectedValue: 'all' });
-  const { url } = useLocation();
-  const or_ly = url.searchParams.has('or-ly')
-    ? `&or-ly=${url.searchParams.get('or-ly')}`
-    : '';
 
   return (
     <>
-      <div class="search">
+      <form class="search" action={'/s/'}>
         <div class="searchTerm">
           <div class="select ">
             <select
+              name="or-c"
               value={selectedValue.selectedValue}
               onChange$={(event) =>
                 (selectedValue.selectedValue = event.target.value)
@@ -69,25 +65,12 @@ export const SearchDouvery = component$(({ is }: any) => {
           <input
             type="text"
             class="searchTerm"
+            name="q"
             placeholder="Busca tu producto"
             onClick$={() => (is.setIsOpen = true)}
             onKeyUp$={(ev) =>
               (state.searchInput = (ev.target as HTMLInputElement).value)
             }
-            onKeyDown$={(ev) => {
-              if (ev.key === 'Enter') {
-                is.setIsOpen = false;
-                nav(
-                  '/s/?q=' +
-                    state.searchInput.replace(/ /g, '+') +
-                    '&or-c=' +
-                    selectedValue.selectedValue +
-                    or_ly +
-                    '',
-                  true
-                );
-              }
-            }}
           />
 
           {is.setIsOpen && (
@@ -118,30 +101,14 @@ export const SearchDouvery = component$(({ is }: any) => {
             </>
           )}
 
-          <button
-            aria-label="button-search"
-            type="submit"
-            class="searchButton"
-            onClick$={() => {
-              is.setIsOpen = false;
-              nav(
-                '/s/?q=' +
-                  state.searchInput.replace(/ /g, '+') +
-                  '&or-c=' +
-                  selectedValue.selectedValue +
-                  '' +
-                  or_ly,
-                true
-              );
-            }}
-          >
+          <button aria-label="button-search" type="submit" class="searchButton">
             <div class="searc">
               {' '}
               <IconsSearch />
             </div>
           </button>
         </div>
-      </div>
+      </form>
     </>
   );
 });
