@@ -6,6 +6,7 @@ import { UsePrice } from '~/components/use/price/price';
 import { DouveryIcon } from '~/components/icons/douvery';
 
 import { TextCL } from '~/components/use/textCL/textCL';
+import { UseStarsRatingNoHover } from '~/components/use/ratings/useRatingNoHover/useRatingNoHover';
 
 export const ContainerCardProduct1 = component$(({ product }: any) => {
   useStylesScoped$(styles);
@@ -23,7 +24,7 @@ export const ContainerCardProduct1 = component$(({ product }: any) => {
           <TextCL text={product.name} />
         </a>
       </h2>
-      .product
+      <UseStarsRatingNoHover rating={product.rating} count={product.count} />
       <div class=" product-brand"> {product.marca}</div>
       <div class="crt-prc">
         {' '}
