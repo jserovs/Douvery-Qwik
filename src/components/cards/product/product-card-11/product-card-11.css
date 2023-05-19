@@ -28,6 +28,11 @@
 
 }
 
+.product-image img {
+    height: 150px;
+
+}
+
 .product-name,
 .product-brand,
 .product-price {

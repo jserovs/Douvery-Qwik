@@ -12,8 +12,9 @@ import { useLocation } from '@builder.io/qwik-city';
 import { fetchCategoryAllProducts } from '~/services/categorie/categorie';
 import { Paginator1 } from '~/components/use/paginator/paginator-1/paginator-1';
 import { ContainerCardProduct10 } from '~/components/cards/product/product-card-10/product-card-10';
-import { Promotion_CarouselInterest } from '~/components/(Promotions)/carousel/carousel-inters/carousel-interest';
+
 import { Filter_Product1 } from '~/components/use/filters/filter-product-1/filter-product-1';
+import { Promotion_CarouselAllInterest } from '~/components/(Promotions)/carousel/carousel-all-interest/carousel-all-interest';
 export default component$(() => {
   useStylesScoped$(styles);
   const loc = useLocation();
@@ -133,7 +134,7 @@ export default component$(() => {
         />
       </div>
 
-      <Promotion_CarouselInterest styleNumber={10} />
+      <Promotion_CarouselAllInterest styleNumber={10} />
     </div>
   );
 });
