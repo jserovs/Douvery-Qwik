@@ -7,25 +7,16 @@ export function getDataViewedProducts() {
   const viewed = localStorage.getItem(OPTIONS_KEY_VIEWED_PRODUCTS);
   if (viewed != null) {
     try {
-      const data = JSON.parse(viewed);
-      return data;
+      return JSON.parse(viewed);
     } catch (error) {
-      console.error('Error al decodificar los datos:', error);
+      console.error(error);
     }
-  } else {
-    console.warn(
-      'No se encontraron datos en localStorage para la clave:',
-      OPTIONS_KEY_VIEWED_PRODUCTS
-    );
   }
 }
-export async function addToViewedProducts({ dui }: { dui: string }) {
-  console.log('Intentando agregar a la lista de productos vistos:', { dui });
 
-  // Verifica si la cookie SESSION_D existe
+export async function addToViewedProducts({ dui }: { dui: string }) {
   const sessionDExists = getCookieData('SESSION_D');
   if (sessionDExists) {
-    // Si la cookie SESSION_D existe, envía el producto a la API
     try {
       const response = await fetch(
         `${urlServerNode}/api/viewed/productsDui/json`,
@@ -37,41 +28,33 @@ export async function addToViewedProducts({ dui }: { dui: string }) {
       );
 
       if (!response.ok) {
-        throw new Error('Error al enviar el producto a la API');
+        throw new Error();
       }
     } catch (error) {
-      console.error('Error al enviar el producto a la API:', error);
+      console.error(error);
     }
   } else {
-    // Si la cookie SESSION_D no existe, guarda el producto en el almacenamiento local
     const viewed = getDataViewedProducts() || [];
-    const productExists = viewed.some(
+    const productIndex = viewed.findIndex(
       (product: { dui: string }) => product.dui === dui
     );
 
-    if (!productExists) {
-      viewed.push({ dui });
-      localStorage.setItem(OPTIONS_KEY_VIEWED_PRODUCTS, JSON.stringify(viewed));
-      console.log('Producto añadido a la lista de productos vistos:', { dui });
-    } else {
-      console.log('El producto ya existe en la lista de productos vistos:', {
-        dui,
-      });
+    if (productIndex > -1) {
+      viewed.splice(productIndex, 1);
     }
+
+    viewed.push({ dui });
+    localStorage.setItem(OPTIONS_KEY_VIEWED_PRODUCTS, JSON.stringify(viewed));
   }
 }
 
 export async function transferViewedProductsToAPI() {
-  // Verifica si la cookie SESSION_D existe
   const sessionDExists = document.cookie
     .split(';')
     .some((item) => item.trim().startsWith('SESSION_D='));
 
   if (sessionDExists) {
-    // Si la cookie SESSION_D existe, obtén los productos del almacenamiento local
     const viewed = getDataViewedProducts() || [];
-
-    // Envía cada producto a la API
     for (const product of viewed) {
       try {
         const response = await fetch(
@@ -84,12 +67,10 @@ export async function transferViewedProductsToAPI() {
         );
 
         if (!response.ok) {
-          throw new Error('Error al enviar el producto a la API');
+          throw new Error();
         }
-
-        console.log('Producto enviado a la API:', product);
       } catch (error) {
-        console.error('Error al enviar el producto a la API:', error);
+        console.error(error);
       }
     }
 
@@ -105,13 +86,8 @@ export async function getDataViewedProduct() {
       `${urlServerNode}/api/viewed/productsDui/json/`,
       {
         method: 'POST',
-        body: JSON.stringify({
-          limit: 8,
-          viewedData: settings,
-        }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        body: JSON.stringify({ limit: 8, viewedData: settings }),
+        headers: { 'Content-Type': 'application/json' },
       }
     );
 
@@ -119,10 +95,9 @@ export async function getDataViewedProduct() {
       const errorResponse = await response.json();
       throw new Error(errorResponse.msg);
     }
-    const data = await response.json();
-
-    return data;
+    return await response.json();
   } catch (e) {
+    console.error(e);
     return (
       'No se encontraron datos en localStorage para la clave: ' +
       OPTIONS_KEY_VIEWED_PRODUCTS

@@ -7,7 +7,7 @@
     justify-content: space-between;
     background-color: var(--color-background-white);
     border-radius: 5px;
-    padding: 19px;
+    gap: 20px;
     position: relative;
 
 }
@@ -28,6 +28,12 @@
     height: 100%;
     object-fit: contain;
     border-radius: 5px;
+}
+
+.image-container:hover {
+    cursor: pointer;
+    background-color: var(--color-background-card);
+
 }
 
 .category-info {

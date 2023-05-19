@@ -4,7 +4,7 @@
      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
      height: 100%;
      justify-content: center;
-     background-color: #f1f5f980;
+     background-color: #f1f5f990;
      align-items: start;
      padding: 20px;
      gap: 20px;
@@ -14,7 +14,8 @@
  }
 
 
- .card-item img {
+
+ .container-img img {
      width: 100%;
      height: 100%;
 
@@ -56,6 +57,12 @@
      margin-top: 20PX;
      transition: background-color .3s ease-in-out;
      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+ }
+
+ .container-details button:hover {
+     background-color: #009595;
+     color: #fff;
+     cursor: pointer;
  }
 
  .container-details button:focus {

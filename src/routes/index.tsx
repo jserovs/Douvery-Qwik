@@ -9,6 +9,8 @@ import { Promotion_CarouselAllInterest } from '~/components/(Promotions)/carouse
 
 import AllCategoryStoresId1 from '~/components/cards/category/all-category-stores-id/all-category-stores-id-1';
 import { OutstandingProductFlex1 } from '~/components/(Promotions)/Outstanding/outstanding-product-flex/outstanding-product-flex-1';
+import { Promotion_CarouselInterestViews } from '~/components/(Promotions)/carousel/carousel-inters/carousel-interest-view';
+import { Alert1 } from '~/components/cards/alerts/alert/alert-1/alert-1';
 
 export default component$(() => {
   useStylesScoped$(styles);
@@ -44,8 +46,14 @@ export default component$(() => {
               <a href="dsaf/">Ver mas</a>
             </div>
           </div>
-          <Promotion_CarouselAllInterest styleNumber={11} />
+          <Promotion_CarouselInterestViews styleNumber={6} />
         </div>
+        <Alert1
+          text="Nos importa lo que piensas en Douvery. Agradecemos tu opinión después de tu compra"
+          ttlHrf="Saber mas"
+          hrf="fhr/aopad"
+        />
+        <br />
         <div class="container-card-store-categorie">
           <br />
           <div class="title-show">
