@@ -46,7 +46,7 @@ export async function fetchProductCategory(
 ): Promise<any> {
   const response = await fetch(
     `
-   ${urlServerLocal}/api/productsByCategory/?category=${category}&limit=2&excludeDui=${dui}`,
+   ${urlServerNode}/api/productsByCategory/?category=${category}&limit=2&excludeDui=${dui}`,
     {
       signal: controller?.signal,
     }
