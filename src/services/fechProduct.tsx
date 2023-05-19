@@ -46,7 +46,7 @@ export async function fetchProductCategory(
 ): Promise<any> {
   const response = await fetch(
     `
-   ${urlServerNode}/api/productsByCategory/?category=${category}&limit=2&excludeDui=${dui}`,
+   ${urlServerLocal}/api/productsByCategory/?category=${category}&limit=2&excludeDui=${dui}`,
     {
       signal: controller?.signal,
     }
@@ -56,6 +56,7 @@ export async function fetchProductCategory(
     throw new Error('Failed to fetch product');
   }
   const results = await response.json();
+
   return results;
 }
 

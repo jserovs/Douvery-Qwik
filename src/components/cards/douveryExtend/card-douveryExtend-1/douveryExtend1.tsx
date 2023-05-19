@@ -41,12 +41,14 @@ export const CardDouveryExtend1 = component$(() => {
 
             <div class="btt-prc">
               {' '}
-              <UsePrice price={2.55} />
+              <UsePrice price={3.99} />
               /mo <button>Agregar</button>
             </div>
           </div>
           <div class="show-more">
-            <a href="/s/DouveryExtend">Saber mas</a>
+            <a href="https://help.douvery.com/help/Servicios/douvery-extend">
+              Saber mas
+            </a>
           </div>
         </>
       )}

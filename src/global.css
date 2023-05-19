@@ -238,6 +238,17 @@ p-sr4 {
 }
 
 
+.show-more a {
+  color: #008080;
+  font-size: 12.5px;
+}
+
+.show-more a:hover {
+  color: #008080;
+  text-decoration: underline;
+}
+
+
 /** Etiq product card */
 
 et-sr1 {

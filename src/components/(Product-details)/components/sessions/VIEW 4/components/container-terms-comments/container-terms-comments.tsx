@@ -14,6 +14,14 @@ export const ContainerTermsComments = component$(() => {
           comply with the platform's policies to maintain a safe and respectful
           environment.
         </li>
+        <div class="show-more">
+          <a
+            href={`https://help.douvery.com/help/Codigos/douvery-code-of-conduct-for-product-testimonials-and-reviews`}
+          >
+            {' '}
+            Aprender mas
+          </a>
+        </div>
       </ol>
     </div>
   );
