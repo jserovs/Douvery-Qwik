@@ -54,3 +54,11 @@ ul {
     max-width: calc(32.333% - 98px);
 
 }
+
+@media (max-width:800px) {
+    ul {
+        width: 100%;
+        display: grid;
+      justify-content: stretch;
+    }
+     }
