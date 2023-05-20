@@ -1,7 +1,7 @@
 import { getCookieData } from '../auth/login/login';
 import { urlServerNode } from '../fechProduct';
 
-const OPTIONS_KEY_VIEWED_PRODUCTS = 'V_P';
+export const OPTIONS_KEY_VIEWED_PRODUCTS = 'V_P';
 
 export function getDataViewedProducts() {
   const viewed = localStorage.getItem(OPTIONS_KEY_VIEWED_PRODUCTS);
@@ -21,7 +21,6 @@ export function getLastItemViewedDui() {
 
     // Si es un array y tiene elementos, devuelve el "dui" del último elemento
     if (Array.isArray(viewedItems) && viewedItems.length > 0) {
-      console.log(viewedItems[viewedItems.length - 1].dui);
       return viewedItems[viewedItems.length - 1].dui;
     }
   }

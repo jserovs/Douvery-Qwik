@@ -1,4 +1,9 @@
-import { component$, useStylesScoped$ } from '@builder.io/qwik';
+import {
+  component$,
+  useSignal,
+  useStylesScoped$,
+  useVisibleTask$,
+} from '@builder.io/qwik';
 import { type DocumentHead } from '@builder.io/qwik-city';
 import CarBanner from '~/components/carBanner/carBanner';
 
@@ -12,9 +17,22 @@ import { OutstandingProductFlex1 } from '~/components/(Promotions)/Outstanding/o
 import { Promotion_CarouselInterestViews } from '~/components/(Promotions)/carousel/carousel-inters/carousel-interest-view';
 import { Alert1 } from '~/components/cards/alerts/alert/alert-1/alert-1';
 import { PromotionRecomend_Carousel_LastView } from '~/components/(Promotions)/carousel/carousel-recomend-last-view-product/carousel-recomend-last-view-product';
+import { getLastItemViewedDui } from '~/services/viewed/viewed';
 
 export default component$(() => {
   useStylesScoped$(styles);
+
+  const lastViewDui = useSignal('');
+
+  useVisibleTask$(async () => {
+    const controller = new AbortController();
+    const dui = getLastItemViewedDui();
+    lastViewDui.value = dui;
+
+    return () => {
+      controller.abort();
+    };
+  });
   return (
     <div class="container-all">
       <div class="cotent">
@@ -82,16 +100,19 @@ export default component$(() => {
             store="Douvery"
           />
         </div>
-        <div class="container-carousel-interes">
-          <div class="title-show">
-            <h2>Puede que te interese</h2>
-            <div class="show-more">
-              {' '}
-              <a href="dsaf/">Ver mas</a>
+
+        {lastViewDui.value && (
+          <div class="container-carousel-interes">
+            <div class="title-show">
+              <h2>Basado en los ultimos productos visto</h2>
+              <div class="show-more">
+                {' '}
+                <a href="dsaf/">Ver mas</a>
+              </div>
             </div>
+            <PromotionRecomend_Carousel_LastView styleNumber={11} />
           </div>
-          <PromotionRecomend_Carousel_LastView styleNumber={11} />
-        </div>
+        )}
       </div>
     </div>
   );

@@ -152,9 +152,10 @@ export async function fetchSystemRecomendationProductU(
   );
 
   if (!response.ok) {
-    throw new Error('Failed to fetch product');
+    throw new Error('Error al obtener recomendaciones');
   }
   const results = await response.json();
+
   return results;
 }
 

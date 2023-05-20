@@ -18,6 +18,7 @@ export const Carousel3 = component$(({ product, styleCard }: any) => {
   useStylesScoped$(styles);
   const currentIndex = useStore({ setCurrentIndex: 0 });
   const randomNumber = randomNum();
+
   return (
     <div class="carousel" key={randomNumber}>
       <button
