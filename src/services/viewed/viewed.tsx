@@ -13,6 +13,22 @@ export function getDataViewedProducts() {
     }
   }
 }
+export function getLastItemViewedDui() {
+  const stored = localStorage.getItem(OPTIONS_KEY_VIEWED_PRODUCTS);
+
+  if (stored) {
+    const viewedItems = JSON.parse(stored);
+
+    // Si es un array y tiene elementos, devuelve el "dui" del último elemento
+    if (Array.isArray(viewedItems) && viewedItems.length > 0) {
+      console.log(viewedItems[viewedItems.length - 1].dui);
+      return viewedItems[viewedItems.length - 1].dui;
+    }
+  }
+
+  // En caso de que no haya elementos, devuelve null
+  return null;
+}
 
 export async function addToViewedProducts({ dui }: { dui: string }) {
   const sessionDExists = getCookieData('SESSION_D');

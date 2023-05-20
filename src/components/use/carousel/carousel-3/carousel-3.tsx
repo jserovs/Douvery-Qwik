@@ -1,5 +1,5 @@
 import { component$, useStore, useStylesScoped$ } from '@builder.io/qwik';
-import styles from './carousel-2.css?inline';
+import styles from './carousel-3.css?inline';
 import { ContainerCardProduct2 } from '~/components/cards/product/product-card-2/product-card-2';
 import { DouveryLeft3 } from '~/components/icons/arrow-left-3';
 import { DouveryRight3 } from '~/components/icons/arrow-right-3';
@@ -14,7 +14,7 @@ import { ContainerCardProduct9 } from '~/components/cards/product/product-card-9
 import { ContainerCardProduct10 } from '~/components/cards/product/product-card-10/product-card-10';
 import { ContainerCardProduct11 } from '~/components/cards/product/product-card-11/product-card-11';
 import { randomNum } from '~/services/fuction';
-export const Carousel2 = component$(({ product, styleCard }: any) => {
+export const Carousel3 = component$(({ product, styleCard }: any) => {
   useStylesScoped$(styles);
   const currentIndex = useStore({ setCurrentIndex: 0 });
   const randomNumber = randomNum();
