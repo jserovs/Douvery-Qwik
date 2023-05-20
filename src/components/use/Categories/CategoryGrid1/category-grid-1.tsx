@@ -17,7 +17,7 @@ export const CategoryGrid1 = component$(({ categorie }: any) => {
       onClick$={() => navigateTo(categorie.name)}
     >
       <div class="container-details">
-        <h2>{categorie.name}</h2>
+        <h2 >{categorie.name}</h2>
         <p>Mas de {categorie.count - 1} productos</p>
         <button>Ver mas</button>
       </div>

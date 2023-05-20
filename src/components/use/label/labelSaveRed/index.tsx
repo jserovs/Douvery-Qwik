@@ -7,14 +7,15 @@ export const LabelSaveRed = component$(({ product }: any) => {
   return (
     <div class="container-all">
       <div class="ctr-porce-red ">
-        <h6 class="porce  ">
+        <h1 class="porce  ">
           -%
           {product.discount}
-        </h6>
+        </h1>
       </div>
       <div class="ctr-save-pr">
         SAVE <UsePrice price={discount} />
       </div>
     </div>
+
   );
 });

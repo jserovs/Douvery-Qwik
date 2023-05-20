@@ -15,10 +15,13 @@ export default component$(() => {
     <>
       <div class="container-all">
         <div class="contai-fle">
-          <Card_Category_1
-            name="Electrónica Y Accesorios"
-            image="https://res.cloudinary.com/douvery/image/upload/v1684404810/kxy8mjnojlq1lh6sarh2.webp"
-          />
+          <div class="container-card-categories">
+            <Card_Category_1
+              name="Electrónica Y Accesorios"
+              image="https://res.cloudinary.com/douvery/image/upload/v1684404810/kxy8mjnojlq1lh6sarh2.webp"
+            />
+          </div>
+
           <div class="container-card-books">
             <Card_Category_Flex_1
               name="Books & Audible"
@@ -33,7 +36,10 @@ export default component$(() => {
               <SearchBooksDouvery is={isOpen} />
             </div>
           </div>
-          <CardLastViewedProducts1 />
+          <div class="container-card-last-view">
+            <CardLastViewedProducts1 />
+
+          </div>
 
           <div class="container-accouts">
             <div class="caja">

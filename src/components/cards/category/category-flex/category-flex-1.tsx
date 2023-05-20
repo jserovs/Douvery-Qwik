@@ -11,7 +11,7 @@ export const Card_Category_Flex_1 = component$(({ name, images }: any) => {
 
       <div class="category-img">
         {images.map((image: any, index: any) => {
-          return <img src={image} key={index} />;
+          return <img src={image} key={index} alt={'IMAGE-BANNER-LOGO-CATEGORIE-DOUVERY' + name} />;
         })}
       </div>
     </div>

@@ -42,9 +42,11 @@ export default component$(({ storeId }: any) => {
               <>
                 {' '}
                 <img
+                  width={1800}
+                  height={200}
                   class="store-banner"
                   src={data.store.design.banners[0]}
-                  alt="STORE Banner"
+                  alt="STORE BANNER IMAGE Douvery Store Banner DOUVERY AND PRODUCT"
                 />{' '}
                 <ul>
                   {data.categories.map((dat: any) => (
