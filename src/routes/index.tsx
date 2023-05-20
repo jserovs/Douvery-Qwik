@@ -28,7 +28,7 @@ export default component$(() => {
     const controller = new AbortController();
     const dui = getLastItemViewedDui();
     lastViewDui.value = dui;
-    console.log(lastViewDui.value);
+
     return () => {
       controller.abort();
     };
