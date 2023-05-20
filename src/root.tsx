@@ -1,8 +1,4 @@
-import {
-  component$,
- 
-  useStyles$,
-} from '@builder.io/qwik';
+import { component$, useStyles$ } from '@builder.io/qwik';
 import {
   QwikCityProvider,
   RouterOutlet,
@@ -12,16 +8,15 @@ import { RouterHead } from './components/router-head/router-head';
 import { QwikPartytown } from './components/partytown/partytown';
 import globalStyles from './global.css?inline';
 
-
 export default component$(() => {
   useStyles$(globalStyles);
- 
 
   return (
     <QwikCityProvider>
       <head>
         <meta charSet="utf-8" />
         <meta name="theme-color" content="#0d47a1" />
+
         <link rel="manifest" href="/manifest.json" />
         <QwikPartytown forward={['dataLayer.push']} />
         <script
