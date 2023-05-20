@@ -10,6 +10,8 @@ export default component$(() => {
         </div>
         <div class="image-container">
           <img
+            width={250}
+            height={180}
             src="https://res.cloudinary.com/douvery/image/upload/v1684409489/fzirjr9kwhkrcxb1iubv.avif"
             alt=""
           />

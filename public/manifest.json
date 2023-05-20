@@ -5,5 +5,6 @@
   "start_url": ".",
   "display": "standalone",
   "background_color": "#fff",
-  "description": "Disfruta, compra y comparte tu felicidad con nosotros, bienvenido a Douvery."
+  "description": "Disfruta, compra y comparte tu felicidad con nosotros, bienvenido a Douvery.",
+  "theme_color": "#fff"
 }

@@ -30,7 +30,7 @@ export const CardOutstandingPopular = component$(({ productPopular }: any) => {
           nav('/v/' + productPopular.slug + '/' + productPopular.dui, true)
         }
       >
-        <img src={productPopular.images[0]} />
+        <img src={productPopular.images[0]} alt={productPopular.name + 'img product'} />
       </div>
     </div>
   );

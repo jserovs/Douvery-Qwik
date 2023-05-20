@@ -26,7 +26,7 @@ export const CardOutstandingDiscount = component$(
             nav('/v/' + productDiscount.slug + '/' + productDiscount.dui, true)
           }
         >
-          <img src={productDiscount.images[0]} />
+          <img src={productDiscount.images[0]} alt={productDiscount.name + 'img product'} />
         </div>
       </div>
     );

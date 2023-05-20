@@ -9,7 +9,7 @@ export const Card_Category_1 = component$(({ name, image }: any) => {
       </div>
 
       <div class="category-img">
-        <img src={image} />
+        <img src={image} width="250" height="250" alt={"image categorie " + name} />
       </div>
       <div class="show-more">
         <a href={`/s-categorie//`}> Ver todos</a>
