@@ -1,8 +1,8 @@
 import {
   component$,
+  useSignal,
   useStore,
   useStylesScoped$,
-
   useVisibleTask$,
 } from '@builder.io/qwik';
 import style from './carousel-recomend-last-view-product.css?inline';
@@ -18,11 +18,12 @@ export const PromotionRecomend_Carousel_LastView = component$(
     const state = useStore({
       productResults: [] as Product[],
     });
+    const lastViewDui = useSignal('');
 
     useVisibleTask$(async () => {
-
       const controller = new AbortController();
       const dui = getLastItemViewedDui();
+      lastViewDui.value = dui;
       state.productResults = await fetchSystemRecomendationProductU(dui);
 
       return () => {
@@ -30,17 +31,20 @@ export const PromotionRecomend_Carousel_LastView = component$(
       };
     });
 
-
     const randomNumber = randomNum();
     return (
       <div class="ctnr-view-5" key={randomNumber}>
         {' '}
         <div class="content-carousel">
-          <Carousel3
-            key={randomNumber}
-            styleCard={styleNumber || randomNumber}
-            product={state.productResults}
-          />
+          {lastViewDui.value === null ? (
+            <></>
+          ) : (
+            <Carousel3
+              key={randomNumber}
+              styleCard={styleNumber || randomNumber}
+              product={state.productResults}
+            />
+          )}
           <br />
         </div>
       </div>
