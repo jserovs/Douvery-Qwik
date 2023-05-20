@@ -1,4 +1,4 @@
-import { component$, useStore, useStylesScoped$ } from '@builder.io/qwik';
+import { component$, useSignal, useStore, useStylesScoped$ } from '@builder.io/qwik';
 import { Card_Category_1 } from '../cards/category/category-1/category-1';
 import styles from './carousel-all.css?inline';
 import { Card_Category_Flex_1 } from '../cards/category/category-flex/category-flex-1';
@@ -11,10 +11,33 @@ export default component$(() => {
   useStylesScoped$(styles);
   const isOpen = useStore({ setIsOpen: false });
 
+  const isDown = useSignal(false);
+  const startX = useSignal(0);
+  const scrollLeft = useSignal(0);
+
+
   return (
     <>
       <div class="container-all">
-        <div class="contai-fle">
+        <div class="contai-fle" onMouseDown$={(e: any) => {
+          if (!e.currentTarget) return;
+          isDown.value = true;
+          startX.value = e.pageX - e.currentTarget.offsetLeft;
+          scrollLeft.value = e.currentTarget.scrollLeft;
+        }}
+          onMouseLeave$={() => { isDown.value = false }}
+          onMouseUp$={() => {
+            isDown.value = false;
+          }
+          }
+          onMouseMove$={(e: any) => {
+            if (!isDown || !e.currentTarget) return;
+            e.preventDefault();
+            const x = e.pageX - e.currentTarget.offsetLeft;
+            const walk = (x - startX.value) * 3; //scroll-fast/douvery/image/upload/v1666979039/Mochila fila rojo buen material/AnyConv.com__Diseño_sin_título_behrk5.webp
+            e.currentTarget.scrollLeft = scrollLeft.value - walk;
+          }
+          } >
           <div class="container-card-categories">
             <Card_Category_1
               name="Electrónica Y Accesorios"
