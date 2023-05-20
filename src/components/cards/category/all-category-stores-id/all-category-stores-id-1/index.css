@@ -58,7 +58,18 @@ ul {
 @media (max-width:800px) {
     ul {
         width: 100%;
-        display: grid;
-      justify-content: stretch;
+        display: flex;
+
+        flex-wrap: none;
+        justify-content: center;
+        column-gap: 0px;
+        row-gap: 0px;
     }
-     }
+
+    .box {
+        flex: 0;
+        /* 33.333% es un tercio del espacio disponible y 98px es el espacio entre columnas */
+        max-width: 0;
+
+    }
+}

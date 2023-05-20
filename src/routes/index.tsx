@@ -36,6 +36,13 @@ export default component$(() => {
           <Promotion_CarouselAllInterest styleNumber={11} />
         </div>
         <div class="container-aoutandingproducts">
+          <div class="title-show">
+            <h2>Lo Mejor de Douvery</h2>
+            <div class="show-more">
+              {' '}
+              <a href="dsaf/">Ver mas</a>
+            </div>
+          </div>
           <OutstandingProductFlex1 />
         </div>
         <div class="container-carousel-interes">
