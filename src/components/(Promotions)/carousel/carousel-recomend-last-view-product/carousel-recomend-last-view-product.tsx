@@ -2,39 +2,42 @@ import {
   component$,
   useStore,
   useStylesScoped$,
-  useTask$,
+
+  useVisibleTask$,
 } from '@builder.io/qwik';
-import style from './carousel-all-interest.css?inline';
+import style from './carousel-recomend-last-view-product.css?inline';
 import type { Product } from '~/utils/types';
-import { fetchProductU } from '~/services/fechProduct';
+import { fetchSystemRecomendationProductU } from '~/services/fechProduct';
 import { randomNum } from '~/services/fuction';
-import { useLocation } from '@builder.io/qwik-city';
-import { Carousel2 } from '~/components/use/carousel/carousel-2/carousel-2';
-export const Promotion_CarouselAllInterest = component$(
+
+import { getLastItemViewedDui } from '~/services/viewed/viewed';
+import { Carousel3 } from '~/components/use/carousel/carousel-3/carousel-3';
+export const PromotionRecomend_Carousel_LastView = component$(
   ({ styleNumber }: any) => {
     useStylesScoped$(style);
     const state = useStore({
       productResults: [] as Product[],
     });
-    const loc = useLocation();
 
-    useTask$(async ({ track }) => {
-      track(() => loc);
+    useVisibleTask$(async () => {
 
       const controller = new AbortController();
-      state.productResults = await fetchProductU(25);
+      const dui = getLastItemViewedDui();
+      console.log(dui);
+      state.productResults = await fetchSystemRecomendationProductU(dui);
 
       return () => {
         controller.abort();
       };
     });
 
+
     const randomNumber = randomNum();
     return (
       <div class="ctnr-view-5" key={randomNumber}>
         {' '}
         <div class="content-carousel">
-          <Carousel2
+          <Carousel3
             key={randomNumber}
             styleCard={styleNumber || randomNumber}
             product={state.productResults}

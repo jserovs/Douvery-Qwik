@@ -11,6 +11,7 @@ import AllCategoryStoresId1 from '~/components/cards/category/all-category-store
 import { OutstandingProductFlex1 } from '~/components/(Promotions)/Outstanding/outstanding-product-flex/outstanding-product-flex-1';
 import { Promotion_CarouselInterestViews } from '~/components/(Promotions)/carousel/carousel-inters/carousel-interest-view';
 import { Alert1 } from '~/components/cards/alerts/alert/alert-1/alert-1';
+import { PromotionRecomend_Carousel_LastView } from '~/components/(Promotions)/carousel/carousel-recomend-last-view-product/carousel-recomend-last-view-product';
 
 export default component$(() => {
   useStylesScoped$(styles);
@@ -80,6 +81,16 @@ export default component$(() => {
             storeId="3465460B-51D47297-87C20FED"
             store="Douvery"
           />
+        </div>
+        <div class="container-carousel-interes">
+          <div class="title-show">
+            <h2>Puede que te interese</h2>
+            <div class="show-more">
+              {' '}
+              <a href="dsaf/">Ver mas</a>
+            </div>
+          </div>
+          <PromotionRecomend_Carousel_LastView styleNumber={11} />
         </div>
       </div>
     </div>

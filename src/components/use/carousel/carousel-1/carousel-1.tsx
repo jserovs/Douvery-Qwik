@@ -13,12 +13,13 @@ import { ContainerCardProduct8 } from '~/components/cards/product/product-card-8
 import { ContainerCardProduct9 } from '~/components/cards/product/product-card-9/product-card-9';
 import { ContainerCardProduct10 } from '~/components/cards/product/product-card-10/product-card-10';
 import { ContainerCardProduct11 } from '~/components/cards/product/product-card-11/product-card-11';
+import { randomNum } from '~/services/fuction';
 export const Carousel1 = component$(({ product, styleCard }: any) => {
   useStylesScoped$(styles);
   const currentIndex = useStore({ setCurrentIndex: 0 });
-
+  const randomNumber = randomNum();
   return (
-    <div class="carousel">
+    <div class="carousel" key={randomNumber}>
       <button
         aria-label="btn carousel__btn--prev"
         class="carousel__btn carousel__btn--prev"
@@ -40,17 +41,17 @@ export const Carousel1 = component$(({ product, styleCard }: any) => {
         {product.map((pro: any, index: any) => {
           return (
             <div class="carousel_item" key={index}>
-              {styleCard == 1 ? <ContainerCardProduct1 product={pro} /> : ''}
-              {styleCard == 2 ? <ContainerCardProduct2 product={pro} /> : ''}
-              {styleCard == 3 ? <ContainerCardProduct3 product={pro} /> : ''}
-              {styleCard == 4 ? <ContainerCardProduct4 product={pro} /> : ''}
-              {styleCard == 5 ? <ContainerCardProduct5 product={pro} /> : ''}
-              {styleCard == 6 ? <ContainerCardProduct6 product={pro} /> : ''}
-              {styleCard == 7 ? <ContainerCardProduct7 product={pro} /> : ''}
-              {styleCard == 8 ? <ContainerCardProduct8 product={pro} /> : ''}
-              {styleCard == 9 ? <ContainerCardProduct9 product={pro} /> : ''}
-              {styleCard == 10 ? <ContainerCardProduct10 product={pro} /> : ''}
-              {styleCard == 11 ? <ContainerCardProduct11 product={pro} /> : ''}
+              {styleCard == 1 ? <ContainerCardProduct1 key={index} product={pro} /> : ''}
+              {styleCard == 2 ? <ContainerCardProduct2 key={index} product={pro} /> : ''}
+              {styleCard == 3 ? <ContainerCardProduct3 key={index} product={pro} /> : ''}
+              {styleCard == 4 ? <ContainerCardProduct4 key={index} product={pro} /> : ''}
+              {styleCard == 5 ? <ContainerCardProduct5 key={index} product={pro} /> : ''}
+              {styleCard == 6 ? <ContainerCardProduct6 key={index} product={pro} /> : ''}
+              {styleCard == 7 ? <ContainerCardProduct7 key={index} product={pro} /> : ''}
+              {styleCard == 8 ? <ContainerCardProduct8 key={index} product={pro} /> : ''}
+              {styleCard == 9 ? <ContainerCardProduct9 key={index} product={pro} /> : ''}
+              {styleCard == 10 ? <ContainerCardProduct10 key={index} product={pro} /> : ''}
+              {styleCard == 11 ? <ContainerCardProduct11 key={index} product={pro} /> : ''}
             </div>
           );
         })}
