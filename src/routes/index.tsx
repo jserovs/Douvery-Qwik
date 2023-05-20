@@ -104,7 +104,7 @@ export default component$(() => {
         {lastViewDui.value && (
           <div class="container-carousel-interes">
             <div class="title-show">
-              <h2>Basado en los ultimos productos visto</h2>
+              <h2>Basado en el último producto que viste</h2>
               <div class="show-more">
                 {' '}
                 <a href="dsaf/">Ver mas</a>
