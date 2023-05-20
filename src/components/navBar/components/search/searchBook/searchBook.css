@@ -603,10 +603,10 @@ select,
     }
 
     .search {
-        height: 36PX;
+
         position: relative;
         display: grid;
-        top: 15px;
+
     }
 
     .searchButton {
