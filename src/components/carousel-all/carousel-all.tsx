@@ -14,7 +14,7 @@ export default component$(() => {
   const isDown = useSignal(false);
   const startX = useSignal(0);
   const scrollLeft = useSignal(0);
-
+ 
 
   return (
     <>
@@ -70,7 +70,8 @@ export default component$(() => {
               <button class="button-signin">Iniciar Session</button>
             </div>
           </div>
-          <ContainerVert />
+          <div class="container-vert-box"> <ContainerVert /></div>
+         
         </div>
       </div>
     </>
