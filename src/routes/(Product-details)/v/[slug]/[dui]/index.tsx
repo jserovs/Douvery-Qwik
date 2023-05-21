@@ -82,6 +82,10 @@ export const head: DocumentHead = ({ resolveValue, params }) => {
         name: 'dui',
         content: params.dui,
       },
+      {
+        property: 'og:image',
+        content: product.images[0],
+      },
     ],
   };
 };
