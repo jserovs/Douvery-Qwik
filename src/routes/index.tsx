@@ -119,12 +119,13 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: 'Douvery',
+  title:
+    'Douvery - Enjoy, shop and share your happiness with us, welcome to Douvery.',
   meta: [
     {
       name: 'description',
       content:
-        'Enjoy, shop and share your happiness with us, welcome to Douvery.',
+        'Welcome to Douvery, your ultimate platform to enjoy, shop, and share your happiness. Browse through our wide selection of products, find items you love, and share your joy with us. Enjoy shopping at Douvery!',
     },
   ],
 };

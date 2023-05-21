@@ -1,4 +1,4 @@
-import { component$,  useStore, useStylesScoped$ } from '@builder.io/qwik';
+import { component$, useStore, useStylesScoped$ } from '@builder.io/qwik';
 import { Card_Category_1 } from '../cards/category/category-1/category-1';
 import styles from './carousel-all.css?inline';
 import { Card_Category_Flex_1 } from '../cards/category/category-flex/category-flex-1';
@@ -11,17 +11,14 @@ export default component$(() => {
   useStylesScoped$(styles);
   const isOpen = useStore({ setIsOpen: false });
 
-
-
   return (
     <>
       <div class="container-all">
-        <div class="contai-fle" 
-           >
+        <div class="contai-fle">
           <div class="container-card-categories">
             <Card_Category_1
               name="Electrónica Y Accesorios"
-              image="https://res.cloudinary.com/douvery/image/upload/v1684404810/kxy8mjnojlq1lh6sarh2.webp"
+              image="https://res.cloudinary.com/douvery/image/upload/v1684675125/eqmaf2xmgiubgonxx24x.webp"
             />
           </div>
 
@@ -41,7 +38,6 @@ export default component$(() => {
           </div>
           <div class="container-card-last-view">
             <CardLastViewedProducts1 />
-
           </div>
 
           <div class="container-accouts">
@@ -50,8 +46,10 @@ export default component$(() => {
               <button class="button-signin">Iniciar Session</button>
             </div>
           </div>
-          <div class="container-vert-box"> <ContainerVert /></div>
-         
+          <div class="container-vert-box">
+            {' '}
+            <ContainerVert />
+          </div>
         </div>
       </div>
     </>
