@@ -9,31 +9,34 @@ export const Filter_Product1 = component$(({ subCategories }: any) => {
   return (
     <>
       <div class="filter-section-body">
-        <div>
+        <div class="scroll-container">
           <h3>Sub categories</h3>
-          {subCategories?.map((c: any, i: number) => (
-            <div class="container-sub-category" key={i}>
-              <div class="item" key={i}>
-                <DouveryRight3
-                  color={
-                    loc.url.searchParams.get('or-sc') === c ? '#256D85' : ''
-                  }
-                  size="14px"
-                />
-                <label
-                  class={
-                    loc.url.searchParams.get('or-sc') === c
-                      ? 'active-undeline'
-                      : ''
-                  }
-                >
-                  <Link href={loc.url.pathname + `?or-sc=${c}`}>{c}</Link>
-                </label>
-              </div>
-            </div>
-          ))}
+          <div class="container-ul">
+            <ul class="sub-categories-list">
+              {subCategories?.map((c: any, i: number) => (
+                <li class="container-sub-category" key={i}>
+                  <div class="item" key={i}>
+                    <DouveryRight3
+                      color={
+                        loc.url.searchParams.get('or-sc') === c ? '#256D85' : ''
+                      }
+                      size="14px"
+                    />
+                    <label
+                      class={
+                        loc.url.searchParams.get('or-sc') === c
+                          ? 'active-underline'
+                          : ''
+                      }
+                    >
+                      <Link href={loc.url.pathname + `?or-sc=${c}`}>{c}</Link>
+                    </label>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-
         {/* Resto del código */}
       </div>
     </>

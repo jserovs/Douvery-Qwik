@@ -98,10 +98,15 @@ export default component$(() => {
                           )}
                         </button>
                       </div>
-                      <div class="ctr-opa">|</div>
-                      <div>Or</div>{' '}
+                      <div class="container-or">
+                        <div class="ctr-opa">|</div>
+                        <div>Or</div>{' '}
+                      </div>
                     </div>
-                    <h1>Immerse yourself in the {loc.params.categorie}</h1>
+                    <h1>
+                      Immerse yourself in the{' '}
+                      <span class="name-categorie">{loc.params.categorie}</span>
+                    </h1>
                   </div>
                   <div class="container-body">
                     <div class="container-filters">
@@ -132,9 +137,10 @@ export default component$(() => {
             </>
           )}
         />
+        <div class="container-carousel-recomend">
+          <Promotion_CarouselAllInterest styleNumber={11} />
+        </div>
       </div>
-
-      <Promotion_CarouselAllInterest styleNumber={10} />
     </div>
   );
 });
