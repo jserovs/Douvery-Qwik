@@ -14,6 +14,7 @@ import { ContainerCardProduct9 } from '~/components/cards/product/product-card-9
 import { ContainerCardProduct10 } from '~/components/cards/product/product-card-10/product-card-10';
 import { ContainerCardProduct11 } from '~/components/cards/product/product-card-11/product-card-11';
 import { randomNum } from '~/services/fuction';
+import { ContainerCardProduct12 } from '~/components/cards/product/product-card-12/product-card-12';
 export const Carousel2 = component$(({ product, styleCard }: any) => {
   useStylesScoped$(styles);
   const currentIndex = useStore({ setCurrentIndex: 0 });
@@ -52,6 +53,11 @@ export const Carousel2 = component$(({ product, styleCard }: any) => {
               {styleCard == 9 ? <ContainerCardProduct9 product={pro} /> : ''}
               {styleCard == 10 ? <ContainerCardProduct10 product={pro} /> : ''}
               {styleCard == 11 ? <ContainerCardProduct11 product={pro} /> : ''}
+              {styleCard == 12 ? (
+                <ContainerCardProduct12 key={index} product={pro} />
+              ) : (
+                ''
+              )}
             </div>
           );
         })}
