@@ -10,7 +10,7 @@ export const NoProductCart = component$(() => {
         <p class="description">
           Descubre nuestras increíbles ofertas y productos.
         </p>
-        <a href="productos.html" class="cta">
+        <a href="/s/?q=" class="cta">
           Explorar productos
         </a>
       </div>

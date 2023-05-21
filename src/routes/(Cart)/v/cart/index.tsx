@@ -61,7 +61,7 @@ export default component$(() => {
   });
   return (
     <div class="container-all">
-      {state.searchResults && state.searchResults.length > 0 ? (
+      {state.searchResults.length > 0 ? (
         <>
           <div class="container-header">
             <HeaderCart
@@ -137,10 +137,15 @@ export default component$(() => {
           ) : (
             <>
               {' '}
-              <HeaderCart stateProduct={state.searchResults} />
+
               <div class="container-center-no-product">
-                <NoProductCart />
-                <CardFavoriteProduct />
+                <div class="header-cart-noproduct">
+                  <HeaderCart stateProduct={state.searchResults} subTotal={0.00} />
+                </div>
+                <div class="container-noproduct-cart">
+                  <NoProductCart />
+                  <CardFavoriteProduct />
+                </div>
               </div>
               <div class="container-carousel">
                 <View5 product={''} styleNumber={4} />

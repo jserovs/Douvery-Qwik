@@ -77,7 +77,8 @@
     .cart-future-shop {
         margin: 0px 0px;
 
-
+        display: grid;
+        gap: 20px;
         background-color: transparent;
         border: none;
         border-radius: none;
@@ -86,9 +87,13 @@
         border-top: 1px solid #33333310;
         border-bottom: 1px solid #33333310;
         min-width: 0px;
-        max-width: 500px;
+        width: 100%;
         padding: 15px;
 
+    }
+
+    .container-button {
+        margin: 10px 0px;
     }
 
     .container-button {
