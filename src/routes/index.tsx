@@ -123,7 +123,8 @@ export const head: DocumentHead = {
   meta: [
     {
       name: 'description',
-      content: 'Qwik site description',
+      content:
+        'Enjoy, shop and share your happiness with us, welcome to Douvery.',
     },
   ],
 };
