@@ -27,19 +27,31 @@
 }
 
 .cta {
+  background-color: #fff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  box-sizing: border-box;
+  color: #0f1111;
+  cursor: pointer;
   display: inline-block;
-  background-color: #2940d3;
-  color: #ffffff;
+  font-size: 15px;
+  padding: 0 10px 0 11px;
+  position: relative;
+  text-align: center;
   text-decoration: none;
-  padding: 12px 24px;
-  font-size: 16px;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-  animation: fadeIn 1s ease-in;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: 100%;
+  line-height: 40px;
 }
 
 .cta:hover {
-  background-color: #2940d390;
+  border-color: #009595;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  outline: 0;
 }
 
 @keyframes fadeIn {

@@ -6,11 +6,12 @@ import { SearchBooksDouvery } from '../navBar/components/search/searchBook/searc
 import { CardLastViewedProducts1 } from '../cards/lastViewProduct/last-viewed-products-1/last-viewed-products-1';
 
 import ContainerVert from '../container-vert/container-vert';
+import { useGetCurrentUser } from '~/routes/layout';
 
 export default component$(() => {
   useStylesScoped$(styles);
   const isOpen = useStore({ setIsOpen: false });
-
+  const userAcc = useGetCurrentUser().value;
   return (
     <>
       <div class="container-all">
@@ -42,8 +43,16 @@ export default component$(() => {
 
           <div class="container-accouts">
             <div class="caja">
-              <h2>Das la impresión de que estás preparado para disfrutar.</h2>
-              <button class="button-signin">Iniciar Session</button>
+              {userAcc ? <>
+                <h2>Welcome to Douvery, {userAcc.name}!</h2>
+                <button class="button-signin">Ver mi perfil</button>
+
+              </> : <>
+                <h2>Das la impresión de que estás preparado para disfrutar.</h2>
+                <button class="button-signin">Iniciar Session</button>
+              </>}
+
+
             </div>
           </div>
           <div class="container-vert-box">
