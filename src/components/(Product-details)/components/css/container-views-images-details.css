@@ -246,6 +246,7 @@
     .center {
         background-color: var(--color-background-down);
         padding: 0px;
+        margin-bottom: 10px;
     }
 
 

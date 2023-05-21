@@ -91,4 +91,8 @@ th {
         border-collapse: collapse;
         margin-bottom: 10PX;
     }
+
+    .drtr-arte-ores {
+        padding-left: 10px;
+    }
 }

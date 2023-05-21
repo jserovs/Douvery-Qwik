@@ -169,3 +169,44 @@
     text-decoration: underline;
     color: #256D85;
 }
+
+
+
+@media (max-width: 800px) {
+    .filter-section-body h3 {
+
+        padding: 0rem;
+
+    }
+
+    .scroll-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        width: 90vw;
+    }
+
+    .container-ul {
+
+        display: flex;
+        gap: 10px;
+        white-space: nowrap;
+    }
+
+    .sub-categories-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+
+        justify-content: space-between;
+        /* Añade esta línea */
+    }
+
+    ul {
+
+        display: flex;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        gap: 10px;
+    }
+}
