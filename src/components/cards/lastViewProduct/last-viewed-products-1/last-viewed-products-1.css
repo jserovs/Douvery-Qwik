@@ -1,6 +1,6 @@
 .category-card {
-  
- 
+
+
     gap: 12px;
     background-color: var(--color-background-white);
     border-radius: 5px;
@@ -45,7 +45,7 @@
     padding: 5px;
 }
 
-.category-img img {
+.category-img a img {
     width: auto;
 
     max-height: 100%;

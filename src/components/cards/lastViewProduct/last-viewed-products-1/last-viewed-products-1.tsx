@@ -7,7 +7,7 @@ import {
 import styles from './last-viewed-products-1.css?inline';
 
 import type { Product } from '~/utils/types';
-import { useLocation, useNavigate } from '@builder.io/qwik-city';
+import { useLocation } from '@builder.io/qwik-city';
 
 import { getDataViewedProduct } from '~/services/viewed/viewed';
 
@@ -43,8 +43,6 @@ export const CardLastViewedProducts1 = component$(() => {
     };
   });
 
-  const nav = useNavigate();
-
   return (
     <>
       <div class="category-card">
@@ -59,15 +57,14 @@ export const CardLastViewedProducts1 = component$(() => {
               <>
                 {state.searchResults.map((product: any, index: any) => {
                   return (
-                    <div
-                      class="image-container"
+                    <a
+                      href={'/v/' + product.slug + '/' + product.dui}
                       key={index}
-                      onClick$={() =>
-                        nav('/v/' + product.slug + '/' + product.dui, true)
-                      }
                     >
-                      <img src={product.images[0]} alt="" />
-                    </div>
+                      <div class="image-container" key={index}>
+                        <img src={product.images[0]} alt={product.name} />
+                      </div>
+                    </a>
                   );
                 })}
               </>
