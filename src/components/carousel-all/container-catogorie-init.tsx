@@ -1,6 +1,6 @@
 import { component$, useStore, useStylesScoped$ } from '@builder.io/qwik';
 import { Card_Category_1 } from '../cards/category/category-1/category-1';
-import styles from './carousel-all.css?inline';
+import styles from './container-catogorie-init.css?inline';
 import { Card_Category_Flex_1 } from '../cards/category/category-flex/category-flex-1';
 import { SearchBooksDouvery } from '../navBar/components/search/searchBook/searchBook';
 import { CardLastViewedProducts1 } from '../cards/lastViewProduct/last-viewed-products-1/last-viewed-products-1';
@@ -48,7 +48,10 @@ export default component$(() => {
           </div>
           <div class="container-vert-box">
             {' '}
-            <ContainerVert />
+            <ContainerVert
+              title="Ofertas a tiempo limitado"
+              image="https://res.cloudinary.com/douvery/image/upload/v1684678322/xize217nmf1lmum2dkyp.webp"
+            />
           </div>
         </div>
       </div>
