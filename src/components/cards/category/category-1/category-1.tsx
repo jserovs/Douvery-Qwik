@@ -19,8 +19,8 @@ export const Card_Category_1 = component$(({ name, image }: any) => {
       <div class="category-img">
         <img
           src={image}
-          width="250"
-          height="250"
+          width="100%"
+          height="200"
           alt={'image categorie ' + name}
         />
       </div>

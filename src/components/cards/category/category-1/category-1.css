@@ -1,5 +1,5 @@
 .category-card {
-  
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -36,11 +36,9 @@
     text-decoration: underline;
 }
 
-.category-img .img {
+.category-img img {
     width: 100%;
-    height: auto;
-    object-fit: cover;
+    height: 200px;
+    object-fit: contain;
     border-radius: 5px;
 }
-
-
