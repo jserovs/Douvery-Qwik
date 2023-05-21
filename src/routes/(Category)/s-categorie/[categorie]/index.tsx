@@ -8,7 +8,7 @@ import {
 } from '@builder.io/qwik';
 import styles from './index.css?inline';
 import type { Product } from '~/utils/types';
-import { useLocation } from '@builder.io/qwik-city';
+import { type DocumentHead, useLocation } from '@builder.io/qwik-city';
 import { fetchCategoryAllProducts } from '~/services/categorie/categorie';
 import { Paginator1 } from '~/components/use/paginator/paginator-1/paginator-1';
 import { ContainerCardProduct10 } from '~/components/cards/product/product-card-10/product-card-10';
@@ -21,6 +21,7 @@ export default component$(() => {
   const pg = loc.url.searchParams.get('pg') || '';
   const sortOrder = useSignal('asc');
   const currentPage = useSignal((pg && parseInt(pg)) || 1);
+
   const prodcureducer = useResource$<Product[]>(async ({ cleanup, track }) => {
     track(
       () =>
@@ -144,3 +145,15 @@ export default component$(() => {
     </div>
   );
 });
+
+export const head: DocumentHead = () => {
+  return {
+    title: `Categoria en Douvery`,
+    meta: [
+      {
+        name: 'description',
+        content: 'Busca y encuentra los mejores productos en Douvery',
+      },
+    ],
+  };
+};

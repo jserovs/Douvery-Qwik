@@ -145,7 +145,7 @@ select,
     display: grid;
     grid-template-columns: 100px auto 50px;
     width: 100%;
-
+    height: 38px;
 
     background-color: var(--color-background-light);
     border-right: none;
@@ -158,10 +158,6 @@ select,
 
 }
 
-.searchTerm input {
-    height: 38PX;
-
-}
 
 .searchTerm input:focus {
     transform: none !important;

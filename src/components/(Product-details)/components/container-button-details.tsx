@@ -60,7 +60,10 @@ export const ContainerButtonDetails = component$(
               <></>
             ) : (
               <>
-                <button class="buttonCart" onClick$={AddCart}>
+                <button
+                  class="buttonCart"
+                  onClick$={() => AddCart({ product, quantity, nav, isLoader })}
+                >
                   {isLoader.value == true ? <div class="loader"></div> : <></>}{' '}
                   Agregar al carrito
                 </button>
