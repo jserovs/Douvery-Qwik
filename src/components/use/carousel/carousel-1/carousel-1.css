@@ -10,14 +10,11 @@
 
 .carousel__content {
     display: flex;
+    gap: 10px;
     flex-wrap: nowrap;
     transition: transform 0.3s ease-in-out;
 }
 
-.carousel_item {
-    width: 250px;
-    margin: 10px 15px;
-}
 
 .carousel__btn {
     margin: 0PX 10PX;
@@ -75,11 +72,6 @@ button[disabled] {
 
     }
 
-    .carousel_item {
-        width: 160px;
-        margin-right: 10PX;
-        object-fit: contain;
-    }
 
     .carousel__btn {
         display: none;
