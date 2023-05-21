@@ -1,5 +1,5 @@
 import { component$, useStore, useStylesScoped$ } from '@builder.io/qwik';
-import styles from './card-1-s.css?inline';
+import styles from './card-4-s.css?inline';
 import { UsePrice } from '~/components/use/price/price';
 import { UseStarRating } from '~/components/use/ratings/useRatingHover/useRatingHover';
 import { LabelSaveRed } from '~/components/use/label/labelSaveRed';
