@@ -21,7 +21,7 @@ export const CardDouveryExtend1 = component$(() => {
     };
   });
   return (
-    <>
+    <div class="container-all">
       {showLoader.setShowLoader ? (
         <>
           {' '}
@@ -52,6 +52,6 @@ export const CardDouveryExtend1 = component$(() => {
           </div>
         </>
       )}
-    </>
+    </div>
   );
 });
