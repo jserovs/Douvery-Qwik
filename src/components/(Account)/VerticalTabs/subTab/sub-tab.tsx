@@ -9,10 +9,12 @@ export const SubTab = component$(({ path, currentPath, label, key }: any) => {
 
   return (
     <div class="container-sub-tab" key={key}>
-      <div class={className} >
-        {' '}
-        <a href={path} aria-label={'subtab'}>{label}</a>
-      </div>
+      <a href={path}>
+        <div class={className} >
+          {' '}
+          <span>{label}</span>
+        </div>
+      </a>
     </div>
   );
 });
