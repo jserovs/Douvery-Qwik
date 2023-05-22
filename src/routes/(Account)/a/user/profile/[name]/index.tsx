@@ -1,7 +1,7 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './index.css?inline';
 import { useGetCurrentUser } from '~/routes/layout';
-import { useNavigate } from '@builder.io/qwik-city';
+import { DocumentHead, useNavigate } from '@builder.io/qwik-city';
 import { TextCL } from '~/components/use/textCL/textCL';
 import { ChangeAvatar } from '~/components/(Account)/User/verified-segure/changes/change-avatar/change-avatar';
 export default component$(() => {
@@ -61,7 +61,7 @@ export default component$(() => {
                   <TextCL text={userACC?.name} />
                 </p>
               </div>
-              <div>
+              <div class='container-button-change'>
                 {' '}
                 <button
                   onClick$={() =>
@@ -85,7 +85,7 @@ export default component$(() => {
                   />
                 </p>
               </div>
-              <div>
+              <div class='container-button-change'>
                 {' '}
                 <button
                   onClick$={() =>
@@ -103,7 +103,7 @@ export default component$(() => {
                   <TextCL text={userACC?.email} />
                 </p>
               </div>
-              <div>
+              <div class='container-button-change'>
                 {' '}
                 <button
                   onClick$={() =>
@@ -122,7 +122,7 @@ export default component$(() => {
                   <TextCL text={renderAddress(userACC?.address[0])} />
                 </p>
               </div>
-              <div>
+              <div class='container-button-change'>
                 {' '}
                 <button
                   onClick$={() =>
@@ -141,7 +141,7 @@ export default component$(() => {
                   <TextCL text={renderPhones(userACC?.phones)} />
                 </p>
               </div>
-              <div>
+              <div class='container-button-change'>
                 {' '}
                 <button
                   onClick$={() =>
@@ -158,7 +158,7 @@ export default component$(() => {
                 <p>Password:</p>
                 <p>**********</p>
               </div>
-              <div>
+              <div class='container-button-change'>
                 {' '}
                 <button
                   onClick$={() =>
@@ -186,7 +186,7 @@ export default component$(() => {
                   />{' '}
                 </p>
               </div>
-              <div>
+              <div class='container-button-change'>
                 {' '}
                 <button>Activate verification</button>
               </div>
@@ -203,7 +203,7 @@ export default component$(() => {
                   />{' '}
                 </p>
               </div>
-              <div>
+              <div class='container-button-change'>
                 {' '}
                 <button>Activate VeriTool</button>
               </div>
@@ -220,7 +220,7 @@ export default component$(() => {
                   />{' '}
                 </p>
               </div>
-              <div>
+              <div class='container-button-change'>
                 {' '}
                 <button>Activate 2-step </button>
               </div>
@@ -235,7 +235,7 @@ export default component$(() => {
                   />{' '}
                 </p>
               </div>
-              <div>
+              <div class='container-button-change'>
                 {' '}
                 <button>Change Notification</button>
               </div>
@@ -247,3 +247,13 @@ export default component$(() => {
     </div>
   );
 });
+
+export const head: DocumentHead = {
+  title: 'Mi Perfil - Douvery',
+  meta: [
+    {
+      name: 'description',
+      content: 'Visualiza y gestiona tu perfil en Douvery. Actualiza tus datos, revisa tu historial de compras y personaliza tus preferencias para una experiencia de compra optimizada.',
+    },
+  ],
+};

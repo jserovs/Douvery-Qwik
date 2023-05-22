@@ -110,3 +110,12 @@
     }
 
 }
+
+@media only screen and (max-width: 768px) {
+    .container-all-card {
+        padding: 10px 0px;
+        justify-content: center;
+
+    }
+
+}

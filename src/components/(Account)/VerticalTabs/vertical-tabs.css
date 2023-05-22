@@ -146,4 +146,8 @@
     .container-all {
         display: grid;
     }
+
+    .container-content {
+        padding: 0 5px;
+    }
 }

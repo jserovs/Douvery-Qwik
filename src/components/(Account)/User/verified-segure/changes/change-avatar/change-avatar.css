@@ -128,3 +128,21 @@ button:active {
 .box p {
     color: #717181
 }
+
+@media only screen and (max-width: 768px) {
+    #file {
+        max-width: 100%;
+    }
+
+    .container-box-avatar {
+        padding: 0px 10px;
+        margin-bottom: 50px;
+    }
+
+    .container-button-change-avatar form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+    }
+}

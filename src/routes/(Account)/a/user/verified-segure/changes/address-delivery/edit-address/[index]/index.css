@@ -307,3 +307,30 @@ button {
     min-width: 300px;
     max-width: 300px;
 }
+
+
+@media only screen and (max-width: 768px) {
+    .container-all {
+        padding: 20px 10px;
+    }
+
+    .form {
+        padding: 0px;
+        grid-template-columns: auto;
+    }
+
+    .container-send {
+        justify-content: stretch;
+    }
+
+    .container-button-send {
+        max-width: none !important;
+        ;
+    }
+
+    button {
+        width: 100%;
+        height: 41px;
+        min-width: 100%;
+    }
+}
