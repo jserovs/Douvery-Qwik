@@ -209,3 +209,18 @@ button:disabled {
     text-overflow: ellipsis;
 
 }
+
+@media only screen and (max-width: 768px) {
+    .container-all {
+        padding: 20px 10px;
+    }
+
+    button {
+        max-width: 100%;
+    }
+
+    .container-address-existing {
+        margin: 0px;
+        grid-template-columns: auto;
+    }
+}

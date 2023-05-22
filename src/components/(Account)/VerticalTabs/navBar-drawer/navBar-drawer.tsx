@@ -54,19 +54,24 @@ export const NavBarDrawer = component$(() => {
               <DouveryMenuHamb />
               Ver Menú
             </button>
+            <p>Configuracion de cuenta</p>
           </div>
         ) : (
           ''
         )}
 
         {store.isNavOpen && store.windowWidth <= 768 ? (
-          <button
-            class="nav-close"
-            aria-label="Close Menu"
-            onClick$={handleToggle}
-          >
-            cerrar
-          </button>
+          <div id="nav-container">
+            <button
+              class="nav-open"
+              aria-label="Open Menu"
+              onClick$={handleToggle}
+            >
+              <DouveryMenuHamb />
+              Ver Menú
+            </button>
+            <p>Configuracion de cuenta</p>
+          </div>
         ) : (
           ''
         )}

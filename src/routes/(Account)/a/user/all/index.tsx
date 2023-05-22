@@ -1,5 +1,6 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './index.css?inline';
+import { DocumentHead } from '@builder.io/qwik-city';
 export default component$(() => {
   useStylesScoped$(styles);
   return (
@@ -299,3 +300,13 @@ export default component$(() => {
     </div>
   );
 });
+
+export const head: DocumentHead = {
+  title: 'Configuración de Cuenta - Douvery',
+  meta: [
+    {
+      name: 'description',
+      content: 'Administra tu cuenta en Douvery. Configura tus preferencias, actualiza tu información y gestiona tus compras de manera segura y confiable.',
+    },
+  ],
+};

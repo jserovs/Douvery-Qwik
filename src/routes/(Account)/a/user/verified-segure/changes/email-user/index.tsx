@@ -142,13 +142,12 @@ export default component$(() => {
     </div>
   );
 });
-
 export const head: DocumentHead = {
-  title: 'Douvery - Cambiar email',
+  title: 'Cambiar Email - Configuración de Cuenta - Douvery',
   meta: [
     {
-      name: 'Douvery - Cambiar email',
-      content: 'Douvery - Cambiar email',
+      name: 'description',
+      content: 'Modifica tu email en Douvery de manera fácil y segura. Mantén tus datos actualizados y sigue disfrutando de una experiencia de compra online confiable.',
     },
   ],
 };

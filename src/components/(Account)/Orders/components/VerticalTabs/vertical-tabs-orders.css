@@ -58,3 +58,27 @@
         grid-template-columns: 150px auto;
     }
 }
+
+@media only screen and (max-width: 768px) {
+    .container-all {
+        padding: 10px 5px;
+    }
+
+    .container-content {
+        margin-top: 5px;
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .container-tabs {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .conatainer-slot {
+        padding: 0px;
+    }
+}

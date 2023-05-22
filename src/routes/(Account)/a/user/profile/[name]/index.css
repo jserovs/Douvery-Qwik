@@ -38,7 +38,6 @@ button {
     font-size: 13px;
     line-height: 29px;
     padding: 0 10px 0 11px;
-    position: relative;
     text-align: center;
     text-decoration: none;
     -moz-user-select: none;
@@ -108,7 +107,7 @@ li p:first-child {
 
 li p:last-child {
     font-size: 15.3px;
-    padding: 0px 80px 0px 180px;
+
 
     color: #121330 !important;
     overflow: hidden;
@@ -143,5 +142,53 @@ li p:last-child {
         display: grid;
         grid-template-columns: auto;
 
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .container-all {
+
+        padding: 10px 0px;
+    }
+
+    .container-title p,
+    .container-title h6 {
+        font-size: 18px;
+    }
+
+    .container-title h6 {
+        color: #717181;
+    }
+
+    .container-box {
+        grid-template-columns: auto;
+    }
+
+    .container-box-content {
+        width: 100%;
+        padding: 0px 0px;
+    }
+
+    .container-box-content ul li {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 5px 10px;
+    }
+
+    .container-box-content ul li p {
+        margin-bottom: 5px;
+    }
+
+    .container-box-content ul li button {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .container-button-change {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
     }
 }

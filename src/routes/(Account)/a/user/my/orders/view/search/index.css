@@ -62,7 +62,7 @@ button {
     font-size: 13px;
     height: 40px;
     padding: 0 10px 0 11px;
-    position: relative;
+
     text-align: center;
     text-decoration: none;
     user-select: none;
@@ -99,7 +99,7 @@ button:disabled {
     font-size: 13px;
     line-height: 35px;
     padding: 0 10px 0 11px;
-    position: relative;
+
     text-align: center;
     text-decoration: none;
     user-select: none;
