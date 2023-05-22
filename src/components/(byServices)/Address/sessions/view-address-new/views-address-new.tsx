@@ -186,6 +186,7 @@ export const ViewAddressNew = component$(
               id="locationType"
               name="locationType"
               required
+
             >
               <option value="">Tipo de location</option>
               <option value="Residential">Residential</option>
@@ -205,11 +206,12 @@ export const ViewAddressNew = component$(
               required
             >
               <option value="">Seleccionar país</option>
+              <option value="do">Republica Dominicana</option>
               <option value="us">Estados Unidos</option>
               <option value="es">España</option>
               <option value="mx">México</option>
               <option value="ar">Argentina</option>
-              <option value="do">Republica Dominicana</option>
+
             </select>
             {action.value?.fieldErrors?.country && (
               <span class="error">{action.value?.fieldErrors?.country}</span>
@@ -236,8 +238,8 @@ export const ViewAddressNew = component$(
                 {action.isRunning
                   ? 'Loading...'
                   : action.value?.message
-                  ? 'Error'
-                  : 'Create address'}
+                    ? 'Error'
+                    : 'Create address'}
               </button>
             </div>
             {action.value?.message && (
