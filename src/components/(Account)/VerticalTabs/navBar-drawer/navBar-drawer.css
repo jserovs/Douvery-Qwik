@@ -41,3 +41,42 @@
     visibility: visible;
     opacity: 1;
 }
+
+#nav-container {
+    display: grid;
+    align-items: center;
+    position: relative;
+    height: 50px;
+    width: 100%;
+    background: #f8f9fa;
+}
+
+.nav-open {
+    display: flex;
+    gap: 20px;
+}
+
+
+#nav-drawer {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 250px;
+    background: #fff;
+    border-right: 1px solid #ddd;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-closed {
+    transform: translateX(-100%);
+}
+
+.nav-open {
+    transform: translateX(0);
+}
+
+@media screen and (max-width: 768px) {
+    .container-no-navbar-page-laptop {
+        display: none;
+    }
+}
