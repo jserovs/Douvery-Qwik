@@ -16,6 +16,7 @@ export const Tab = component$(({ path, currentPath, label, subTabs }: any) => {
       <div class="container-tab-primary">
         <div class={className} onClick$={onClick}>
           <button>{label}</button>
+
         </div>
       </div>
 
