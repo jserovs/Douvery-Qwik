@@ -175,15 +175,15 @@ body {
 
     .abount {
 
-        color: #999;
+        color: #526D82;
         display: flex;
         gap: 5px;
         align-items: center;
     }
 
     .abount p {
-        font-size: 14px;
-        color: #999;
+        font-size: 13px;
+        color: #526D82;
     }
 
     .abount:hover {
