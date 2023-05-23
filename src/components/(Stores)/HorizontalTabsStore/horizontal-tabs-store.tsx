@@ -13,11 +13,12 @@ import styles from './horizontal-tabs-store.css?inline';
 
 import { fetchStore } from '~/services/store/store';
 import type { Store } from '~/utils/types/stores';
-import { DouveryIconVerifyBrand } from '~/components/icons/verify';
 
 import { Stars } from '~/components/Ratings/stars/stars';
 import { ButtonFollowStore } from './components/button-follow-store/button-follow-store';
-import { replaceSpacesWithPlus } from '~/services/fuction';
+
+import { NavBarDrawerStore } from './navbar-drawer-store/navbar-drawer-store';
+import { LogoNameStore } from './components/logo-name-store/logo-name-store';
 
 export const HorizontalTabsStores = component$(() => {
   useStylesScoped$(styles);
@@ -101,82 +102,25 @@ export const HorizontalTabsStores = component$(() => {
           <>
             <div class="header-tabs-wrapper">
               <div class="store-header">
-                <nav class="navbar">
-                  <div class="logo">
-                    <img src={state.store.design.logo} alt="" />
-                    <a
-                      href={
-                        '/' +
-                        loc.params.name +
-                        '/' +
-                        'STORE-' +
-                        loc.params.id +
-                        '/h'
-                      }
-                    >
-                      Douvery
-                    </a>
-                    <DouveryIconVerifyBrand size="20" />
-                  </div>
-                  <ul class="nav-links">
-                    {state.store.topSubCategories?.map((categories, i) => (
-                      <li
-                        key={i}
-                        class={`tabs-nav ${
-                          replaceSpacesWithPlus(loc.url.pathname) ===
-                          '/' +
-                            loc.params.name +
-                            '/' +
-                            'STORE-' +
-                            loc.params.id +
-                            '/c' +
-                            '/' +
-                            replaceSpacesWithPlus(categories) +
-                            '/'
-                            ? 'tabs-nav-active'
-                            : ''
-                        }`}
-                      >
-                        <Link
-                          href={
-                            '/' +
-                            loc.params.name +
-                            '/' +
-                            'STORE-' +
-                            loc.params.id +
-                            '/c' +
-                            '/' +
-                            categories
-                          }
-                        >
-                          {categories}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
+                <div class="nav">
 
-                  <div class="nav-search-cart-login">
-                    <input
-                      disabled
-                      type="text"
-                      placeholder="Búsqueda"
-                      class="nav-search"
-                    />
+                  < NavBarDrawerStore state={state} />
+                  <div class="lgo-movl">
+                    <LogoNameStore state={state} />
                   </div>
-                </nav>
+                </div>
                 <img
                   class="store-banner"
                   src={state.store.design.banners[0]}
                   alt="STORE Banner"
                 />
                 <div class="container-tabs">
-                  <ul class="tab-links">
+                  <ul class="tab-links tabs">
                     {(activeTab.value === 'info' ? tabs : tabsReport).map(
                       (tab, i) => (
                         <li
-                          class={`tabs ${
-                            loc.url.pathname == tab.path ? 'active' : ''
-                          }`}
+                          class={`tabs ${loc.url.pathname == tab.path ? 'active' : ''
+                            }`}
                           key={i}
                         >
                           <Link href={tab.path}>{tab.label} </Link>
@@ -184,7 +128,7 @@ export const HorizontalTabsStores = component$(() => {
                       )
                     )}
                   </ul>
-                  <ul class="tab-links">
+                  <ul class="tab-links follow">
                     <li>
                       <Link
                         href={
@@ -207,9 +151,8 @@ export const HorizontalTabsStores = component$(() => {
                       <ButtonFollowStore followers={followers} />
                     </li>
                     <li
-                      class={`tabs ${
-                        loc.url.pathname.includes('/a/') ? 'active' : ''
-                      }`}
+                      class={`tabs  ${loc.url.pathname.includes('/a/') ? 'active' : ''
+                        }`}
                     >
                       <Link
                         href={

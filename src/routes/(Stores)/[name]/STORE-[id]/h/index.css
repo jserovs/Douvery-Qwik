@@ -30,7 +30,22 @@ ul {
 
 .box {
     flex: 1 0 calc(100.333% - 98px);
-    /* 33.333% es un tercio del espacio disponible y 98px es el espacio entre columnas */
     max-width: calc(32.333% - 98px);
 
+}
+
+@media (max-width: 800px) {
+    .box {
+        flex: none;
+        max-width: none;
+
+    }
+
+    ul {
+        justify-content: center;
+        overflow: hidden;
+        column-gap: 20px;
+        row-gap: 20px;
+        padding: 0 20px;
+    }
 }
