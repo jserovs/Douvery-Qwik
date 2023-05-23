@@ -7,7 +7,6 @@ import {
   useStore,
   useStylesScoped$,
 } from '@builder.io/qwik';
-import { Link, useLocation } from '@builder.io/qwik-city';
 
 import styles from './horizontal-tabs-store.css?inline';
 
@@ -19,6 +18,7 @@ import { ButtonFollowStore } from './components/button-follow-store/button-follo
 
 import { NavBarDrawerStore } from './navbar-drawer-store/navbar-drawer-store';
 import { LogoNameStore } from './components/logo-name-store/logo-name-store';
+import { Link, useLocation } from '@builder.io/qwik-city';
 
 export const HorizontalTabsStores = component$(() => {
   useStylesScoped$(styles);
@@ -198,3 +198,4 @@ export const HorizontalTabsStores = component$(() => {
     </div>
   );
 });
+

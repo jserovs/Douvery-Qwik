@@ -42,7 +42,7 @@
 }
 
 #nav-container {
-    display: flex;
+    display: none !important;
     justify-content: space-between;
     align-items: center;
     position: relative;
@@ -79,6 +79,10 @@
 }
 
 @media screen and (max-width: 768px) {
+    #nav-container {
+        display: flex !important;
+    }
+
     .container-no-navbar-page-laptop {
         display: none;
     }
