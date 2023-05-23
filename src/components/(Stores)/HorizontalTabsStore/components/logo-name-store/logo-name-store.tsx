@@ -20,5 +20,6 @@ export const LogoNameStore = component$(({ state }: any) => {
             Douvery
         </a>
         <DouveryIconVerifyBrand size="20" />
+
     </div>
 });

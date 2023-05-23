@@ -45,6 +45,7 @@ export const NavbarStore = component$(({ state }: any) => {
             ))}
         </ul>
 
+
         <div class="nav-search-cart-login">
             <input
                 disabled
