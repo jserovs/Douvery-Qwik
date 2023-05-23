@@ -42,10 +42,15 @@ ul {
     }
 
     ul {
+        flex-direction: column;
         justify-content: center;
         overflow: hidden;
         column-gap: 20px;
         row-gap: 20px;
         padding: 0 20px;
+    }
+
+    .container-title {
+        padding: 0px 0 0 15px;
     }
 }

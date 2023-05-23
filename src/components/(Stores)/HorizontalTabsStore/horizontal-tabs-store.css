@@ -65,10 +65,7 @@ body {
 
 }
 
-.tabs:hover {
-    border-bottom: 1px solid #8f8f8f;
 
-}
 
 .tabs-nav {
     text-decoration: none;
@@ -158,13 +155,19 @@ body {
 
 
 @media only screen and (max-width: 768px) {
+    .store-banner {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
     .lgo-movl {
         display: block;
     }
 
     .nav {
         padding: 0 10px;
-        height: 80px;
+        height: 63px;
         display: flex;
         gap: 10px;
         align-items: center;

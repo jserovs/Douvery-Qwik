@@ -45,37 +45,19 @@ export const NavBarDrawerStore = component$(({ state }: any) => {
     return (
         <>
             <nav>
-                {!store.isNavOpen && store.windowWidth <= 768 ? (
-                    <div id="nav-container">
-                        <button
-                            class="nav-open"
-                            aria-label="Open Menu"
-                            onClick$={handleToggle}
-                        >
-                            <DouveryMenuHamb />
+                <div id="nav-container">
+                    <button
+                        class="nav-open"
+                        aria-label="Open Menu"
+                        onClick$={handleToggle}
+                    >
+                        <DouveryMenuHamb />
 
-                        </button>
+                    </button>
 
-                    </div>
-                ) : (
-                    ''
-                )}
+                </div>
 
-                {store.isNavOpen && store.windowWidth <= 768 ? (
-                    <div id="nav-container">
-                        <button
-                            class="nav-open"
-                            aria-label="Open Menu"
-                            onClick$={handleToggle}
-                        >
-                            <DouveryMenuHamb />
 
-                        </button>
-
-                    </div>
-                ) : (
-                    ''
-                )}
             </nav>
             <div class={`sidebar ${store.isOpen ? 'open' : ''}`}>
                 {store.isOpen && store.windowWidth <= 768 ? (

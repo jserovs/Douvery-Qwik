@@ -66,7 +66,7 @@
     font-size: 13px;
     line-height: 29px;
     padding: 0 10px 0 11px;
-    position: relative;
+
     text-align: center;
     text-decoration: none;
     user-select: none;
@@ -97,4 +97,32 @@ ul {
     /* 33.333% es un tercio del espacio disponible y 98px es el espacio entre columnas */
     max-width: calc(32.333% - 98px);
 
+}
+
+@media (max-width: 800px) {
+    .box {
+        flex: none;
+        max-width: none;
+
+    }
+
+    ul {
+
+        column-gap: 10px;
+        padding: 0 0px;
+    }
+
+    .container-title {
+        display: FLEX;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0px 12px;
+    }
+
+    .container-sort {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
 }

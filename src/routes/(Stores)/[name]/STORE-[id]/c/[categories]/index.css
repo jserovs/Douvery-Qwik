@@ -27,3 +27,28 @@ ul {
     justify-content: center;
     gap: 80px;
 }
+
+@media (max-width: 800px) {
+    .box {
+        flex: none;
+        max-width: none;
+
+    }
+
+    .container-all {
+
+
+        padding: 20px 0px;
+    }
+
+    ul {
+        column-gap: 8px;
+    }
+
+    .container-title {
+        display: FLEX;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0px 12px;
+    }
+}
