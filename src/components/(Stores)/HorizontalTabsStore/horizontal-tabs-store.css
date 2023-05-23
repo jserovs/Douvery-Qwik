@@ -209,7 +209,7 @@ body {
     }
 
     .tabs {
-        justify-content: space-between;
+        justify-content: start;
     }
 
 }
