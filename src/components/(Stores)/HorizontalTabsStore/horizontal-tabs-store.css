@@ -153,8 +153,13 @@ body {
     display: none;
 }
 
+.text-about {
+    display: block;
+}
 
 @media only screen and (max-width: 768px) {
+
+
     .store-banner {
         width: 100%;
         height: auto;
@@ -162,7 +167,31 @@ body {
     }
 
     .lgo-movl {
-        display: block;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .abount {
+
+        color: #999;
+        display: flex;
+        gap: 5px;
+        align-items: center;
+    }
+
+    .abount p {
+        font-size: 14px;
+        color: #999;
+    }
+
+    .abount:hover {
+        color: #000;
+    }
+
+    .abount p:hover {
+        color: #000;
     }
 
     .nav {
@@ -210,6 +239,10 @@ body {
 
     .tabs {
         justify-content: center;
+    }
+
+    .text-about {
+        display: none;
     }
 
 }
