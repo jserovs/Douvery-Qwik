@@ -19,7 +19,7 @@ export default component$(() => {
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <link rel="canonical" href="https://www.douvery.com/" />
 
-        <link rel="manifest" href="/manifest.json" />*
+        <link rel="manifest" href="/manifest.json" />
         <QwikPartytown forward={['dataLayer.push']} />
         <script
           async
