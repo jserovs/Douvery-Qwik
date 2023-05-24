@@ -15,9 +15,11 @@ export default component$(() => {
     <QwikCityProvider>
       <head>
         <meta charSet="utf-8" />
-        <meta name="theme-color" content="#0d47a1" />
+        <meta name="theme-color" content="#fff" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <link rel="canonical" href="https://www.douvery.com/" />
 
-        <link rel="manifest" href="/manifest.json" />
+        <link rel="manifest" href="/manifest.json" />*
         <QwikPartytown forward={['dataLayer.push']} />
         <script
           async
