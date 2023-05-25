@@ -76,7 +76,7 @@ export const View4 = component$(({ product }: any) => {
                       {' '}
                       <div class="crrts-title">
                         <div class="ofrs">
-                          <hs-sr3>Puedes agregar un comentario</hs-sr3>
+                          <hs-sr3>Puedes agregar tu opinión</hs-sr3>
                         </div>
                         <p class="ps-sr1">
                           Comparte y comenta tu mas sincera opinion

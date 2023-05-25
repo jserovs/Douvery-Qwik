@@ -90,6 +90,16 @@ textarea {
 @media only screen and (max-width: 885px) {
     textarea {
 
-        min-width: 152px;
+        min-width: 100%;
+    }
+
+    .ctr-butr {
+        display: grid;
+        justify-content: stretch;
+    }
+
+    .comments-box button {
+        width: 100%;
+        height: 38px;
     }
 }

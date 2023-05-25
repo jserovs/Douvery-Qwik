@@ -15,6 +15,10 @@ export function getDataFavoriteProducts() {
     console.warn('No se encontraron datos en localStorage para la clave:', OPTIONS_KEY_FAVORITE_PRODUCTS);
   }
 }
+export function isFavorite({dui}: {dui: string}) {
+  const favorites = getDataFavoriteProducts();
+  return favorites?.some((favorite: {dui: string}) => favorite.dui === dui) || false;
+}
 
 export function addToFavoriteProducts({dui}: {dui: string}) {
   console.log('Agregando a la lista de Favorito:', {dui});
@@ -23,6 +27,14 @@ export function addToFavoriteProducts({dui}: {dui: string}) {
   localStorage.setItem(OPTIONS_KEY_FAVORITE_PRODUCTS, JSON.stringify(cart));
   
 }
+export function removeFromFavoriteProducts({dui}: {dui: string}) {
+  console.log('Removiendo de la lista de Favorito:', {dui});
+  let favorites = getDataFavoriteProducts() || [];
+  favorites = favorites.filter((favorite: {dui: string}) => favorite.dui !== dui);
+  localStorage.setItem(OPTIONS_KEY_FAVORITE_PRODUCTS, JSON.stringify(favorites));
+}
+
+
 
 export async function getDataFavoriteProduct  () {
   const stored = localStorage.getItem(OPTIONS_KEY_FAVORITE_PRODUCTS);
