@@ -82,7 +82,9 @@
     box-sizing: border-box;
     color: #0f1111;
     cursor: pointer;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 13px;
     height: 30px;
     padding: 0 10px 0 11px;
