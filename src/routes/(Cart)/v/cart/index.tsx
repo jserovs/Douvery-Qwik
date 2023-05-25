@@ -137,10 +137,12 @@ export default component$(() => {
           ) : (
             <>
               {' '}
-
               <div class="container-center-no-product">
                 <div class="header-cart-noproduct">
-                  <HeaderCart stateProduct={state.searchResults} subTotal={0.00} />
+                  <HeaderCart
+                    stateProduct={state.searchResults}
+                    subTotal={0.0}
+                  />
                 </div>
                 <div class="container-noproduct-cart">
                   <NoProductCart />
@@ -158,11 +160,12 @@ export default component$(() => {
   );
 });
 export const head: DocumentHead = {
-  title: 'Douvery:  Tu carrito',
+  title: 'Carrito de compra - Douvery',
   meta: [
     {
       name: 'description',
-      content: 'Tu carrito de compras en Douvery',
+      content:
+        'Explora tu carrito de compras en Douvery. Descubre los productos únicos que has seleccionado para ti y realiza tus compras de forma segura y eficiente.',
     },
   ],
 };
