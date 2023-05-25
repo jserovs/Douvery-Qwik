@@ -8,8 +8,8 @@
 
     padding: 10px;
     box-sizing: border-box;
-    width: 500px;
-    max-width: 500px;
+
+
     margin: 0 auto;
 }
 
@@ -85,7 +85,7 @@
 }
 
 .dropdown-menu {
-    width: 100%;
+    width: 300px;
     min-height: 100%;
     position: absolute;
     top: 100%;

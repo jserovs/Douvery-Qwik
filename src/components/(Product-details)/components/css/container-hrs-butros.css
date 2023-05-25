@@ -51,12 +51,43 @@ a {
     cursor: pointer;
 }
 
+button {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    font-size: 13px;
+    color: #333333;
+    cursor: pointer;
+}
+
 a:hover {
 
 
     color: var(--color-blue-vibrant);
 }
 
+.check-s svg {
+    fill: #408E91;
+    animation: pulse 0.5s;
+}
+
+.favorite {
+    color: #408E91;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
 
 @media only screen and (max-width: 885px) {
     .q-r-pred {

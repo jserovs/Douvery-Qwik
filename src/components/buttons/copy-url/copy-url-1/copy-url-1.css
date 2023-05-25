@@ -1,0 +1,97 @@
+.input-url-copy {
+    display: flex;
+    align-items: center;
+
+    max-width: 100%;
+    border: 1px solid var(--border-width-2);
+    border-radius: 24px;
+    overflow: hidden;
+    flex: 1;
+    font-size: 16px;
+    color: #000;
+    padding-left: 5px;
+    background-color: transparent;
+    outline: none;
+
+
+}
+
+.text-copy {
+    background-color: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #0f1111;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 29px;
+    padding: 0 10px 0 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.green {
+    background-color: var(--color-button-pay);
+    color: #fff;
+    fill: var(--color-button-pay);
+    border: none;
+}
+
+.green-fill {
+
+    fill: var(--color-button-pay);
+}
+
+.input-url-copy::placeholder {
+    color: #00000090;
+}
+
+.input-url-copy:hover {
+    border: 1px solid var(--border-width-3);
+}
+
+
+
+.dropdown ul li {
+    width: 100%;
+    padding: 0px 10px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+
+.dropdown ul li:hover {
+
+    background-color: var(--color-background-card);
+    color: var(--dropdown-background);
+    cursor: pointer;
+}
+
+li {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.dropd li .ctr-button-modal[disabled] {
+    background-color: var(--color-background-down);
+    opacity: 0.1;
+}
+
+li .ctr-button-modal:active {
+    background-color: var(--color-background-down);
+    opacity: 0.5;
+}

@@ -325,6 +325,9 @@
 }
 
 @media only screen and (max-width: 885px) {
+    .container-all {
+        width: 100%;
+    }
 
     .ctr-box-user {
         display: grid;
@@ -364,6 +367,14 @@
         object-fit: contain;
 
         border-radius: 10PX;
+
+    }
+
+    .sub-comments {
+        display: grid;
+        grid-template-columns: 30px auto;
+        padding: 0px 0Px 0px 10PX;
+        margin: 10px 0Px 10px 0PX;
 
     }
 

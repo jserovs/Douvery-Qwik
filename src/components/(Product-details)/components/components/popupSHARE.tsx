@@ -1,7 +1,8 @@
 import { component$, useStore, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './css/popupSHARE.css?inline';
+import { CopyUrl1 } from '~/components/buttons/copy-url/copy-url-1/copy-url-1';
 
-export const ContainerPoput = component$(({ title }: any) => {
+export const ContainerPoput = component$(({ title, product }: any) => {
   useStylesScoped$(styles);
   const isOpen = useStore({ setIsOpen: false });
 
@@ -35,12 +36,7 @@ export const ContainerPoput = component$(({ title }: any) => {
         <div class="crt-drpd">
           <ul class={`dropdown-menu ${isOpen.setIsOpen ? 'show' : ''}`}>
             <div class="list-container">
-              <div class="tolst-tip"></div>
-              <ul>
-                <li class="list-item">
-                  <div class="item-title">Instagram</div>
-                </li>
-              </ul>
+              <CopyUrl1 product={product} />
             </div>
           </ul>
         </div>

@@ -69,7 +69,7 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
               )}{' '}
             </div>
             <div class="brt-shared-art">
-              <ContainerPoput title={'Compartir'} />
+              <ContainerPoput product={props} title={'Compartir'} />
             </div>
           </div>
         </div>

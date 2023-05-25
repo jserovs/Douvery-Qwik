@@ -95,4 +95,19 @@ textarea {
 
         min-width: 152px;
     }
+
+    .ctr-butr {
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+
+        gap: 10px;
+    }
+
+    .comments-box button {
+        width: 100%;
+        height: 38px;
+    }
 }

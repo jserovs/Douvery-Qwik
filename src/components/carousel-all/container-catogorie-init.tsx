@@ -43,16 +43,26 @@ export default component$(() => {
 
           <div class="container-accouts">
             <div class="caja">
-              {userAcc ? <>
-                <h2>Welcome to Douvery, {userAcc.name}!</h2>
-                <button class="button-signin">Ver mi perfil</button>
-
-              </> : <>
-                <h2>Das la impresión de que estás preparado para disfrutar.</h2>
-                <button class="button-signin">Iniciar Session</button>
-              </>}
-
-
+              {userAcc ? (
+                <>
+                  <h2>Welcome to Douvery, {userAcc.name}!</h2>
+                  <a
+                    href={'/a/user/profile/' + userAcc.name}
+                    class="button-signin"
+                  >
+                    Ver mi perfil
+                  </a>
+                </>
+              ) : (
+                <>
+                  <h2>
+                    Das la impresión de que estás preparado para disfrutar.
+                  </h2>
+                  <a href="/a/login/?rr=/" class="button-signin">
+                    Iniciar Session
+                  </a>
+                </>
+              )}
             </div>
           </div>
           <div class="container-vert-box">

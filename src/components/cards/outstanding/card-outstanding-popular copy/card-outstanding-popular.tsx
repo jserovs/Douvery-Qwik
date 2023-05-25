@@ -1,10 +1,10 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './card-outstanding-popular.css?inline';
 import { Stars } from '~/components/Ratings/stars/stars';
-import { useNavigate } from '@builder.io/qwik-city';
+
 export const CardOutstandingPopular = component$(({ productPopular }: any) => {
   useStylesScoped$(styles);
-  const nav = useNavigate();
+
   return (
     <div class="category-card">
       <div class="container-a">
@@ -24,14 +24,17 @@ export const CardOutstandingPopular = component$(({ productPopular }: any) => {
         </div>
       </div>
 
-      <div
-        class="image-container"
-        onClick$={() =>
-          nav('/v/' + productPopular.slug + '/' + productPopular.dui, true)
-        }
+      <a
+        href={'/v/' + productPopular.slug + '/' + productPopular.dui}
+        aria-label={productPopular.slug}
       >
-        <img src={productPopular.images[0]} alt={productPopular.name + 'img product'} />
-      </div>
+        <div class="image-container">
+          <img
+            src={productPopular.images[0]}
+            alt={productPopular.name + 'img product'}
+          />
+        </div>
+      </a>
     </div>
   );
 });
