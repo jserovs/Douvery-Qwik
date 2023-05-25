@@ -86,6 +86,10 @@ export const head: DocumentHead = ({ resolveValue, params }) => {
         property: 'og:image',
         content: product.images[0],
       },
+      {
+        name: 'keywords',
+        content: product.keywords,
+      },
     ],
   };
 };
