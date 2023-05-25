@@ -17,11 +17,15 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: 'Error 404- Douvery',
+  title: 'Error 404 - Douvery',
   meta: [
     {
       name: 'description',
-      content: 'Error 404- Douvery',
+      content: 'Error 404 - Douvery',
+    },
+    {
+      name: 'keywords',
+      content: '404 douve, douvery 404, 404, error 404, error douvery 404',
     },
   ],
 };
