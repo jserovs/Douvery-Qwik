@@ -164,9 +164,7 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
               Esta compra está protegida por <strong>Douvery</strong>, puedes
               comprar con total confianza.
             </p>
-            <a href="" class="show-more-a">
-              Aprender mas
-            </a>
+          
           </div>
         </div>
       </div>
