@@ -16,9 +16,12 @@ export default component$(() => {
       <head>
         <meta charSet="utf-8" />
         <meta name="theme-color" content="#fff" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1"
+        />
         <link rel="canonical" href="https://www.douvery.com/" />
-
+        <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
         <link rel="manifest" href="/manifest.json" />
         <QwikPartytown forward={['dataLayer.push']} />
         <script
