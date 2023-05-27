@@ -21,7 +21,7 @@ export default component$(() => {
           content="width=device-width, initial-scale=1, maximum-scale=1"
         />
         <link rel="canonical" href="https://www.douvery.com/" />
-        <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" />
         <link rel="manifest" href="/manifest.json" />
         <QwikPartytown forward={['dataLayer.push']} />
         <script
