@@ -15,7 +15,10 @@ export const ContainerShoppingFeacture = component$(() => {
         <div class="ofrs">
           <hs-sr3>Devolución y seguridad</hs-sr3>
           <div class="srs-v">
-            <a href="/" class="ps-sr1">
+            <a
+              href="https://help.douvery.com/help/Pol%C3%ADticas/warranty-policy"
+              class="ps-sr1"
+            >
               Saber mas
             </a>
           </div>
@@ -23,7 +26,12 @@ export const ContainerShoppingFeacture = component$(() => {
 
         <p class="ps-sr1">Protege tu compra en Douvery</p>
         <div class="srs-md">
-          <a class="ps-sr1">Saber mas</a>
+          <a
+            href="https://help.douvery.com/help/Pol%C3%ADticas/warranty-policy"
+            class="ps-sr1 show-more-a"
+          >
+            Saber mas
+          </a>
         </div>
       </div>
 
@@ -33,9 +41,14 @@ export const ContainerShoppingFeacture = component$(() => {
             <li>
               <hs-sr2>Política de devolución:</hs-sr2>{' '}
               <p class="ps-sr1">
-                45 días sin preguntas. Devuelva el producto en su paquete
+                40 días sin preguntas. Devuelva el producto en su paquete
                 original para recibir un reembolso completo.{' '}
-                <a class="ps-sr1">Saber mas</a>
+                <a
+                  href="https://help.douvery.com/help/Pol%C3%ADticas/warranty-policy"
+                  class="ps-sr1 show-more-a"
+                >
+                  Saber mas
+                </a>
               </p>
             </li>
             <li>
@@ -59,9 +72,14 @@ export const ContainerShoppingFeacture = component$(() => {
             <li>
               <hs-sr2>Política de devolución:</hs-sr2>{' '}
               <p class="ps-sr1">
-                45 días sin preguntas. Devuelva el producto en su paquete
+                40 días sin preguntas. Devuelva el producto en su paquete
                 original para recibir un reembolso completo.{' '}
-                <a class="ps-sr1">Saber mas</a>
+                <a
+                  href="https://help.douvery.com/help/Pol%C3%ADticas/warranty-policy"
+                  class="ps-sr1 show-more-a"
+                >
+                  Saber mas
+                </a>
               </p>
             </li>
           </ul>
