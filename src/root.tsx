@@ -21,7 +21,30 @@ export default component$(() => {
           content="width=device-width, initial-scale=1, maximum-scale=1"
         />
         <link rel="canonical" href="https://www.douvery.com/" />
-        <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="icon"
+          type="image/x-icon"
+          sizes="16x16"
+          href="../public/ico/favicon-16x16.ico"
+        />
+        <link
+          rel="icon"
+          type="image/x-icon"
+          sizes="32x32"
+          href="../public/ico/favicon-32x32.ico"
+        />
+        <link
+          rel="icon"
+          type="image/x-icon"
+          sizes="48x48"
+          href="../public/ico/favicon-48x48.ico"
+        />{' '}
+        <link
+          rel="icon"
+          type="image/x-icon"
+          sizes="180x180"
+          href="../public/ico/favicon-180x180.ico"
+        />{' '}
         <link rel="manifest" href="/manifest.json" />
         <QwikPartytown forward={['dataLayer.push']} />
         <script
@@ -29,7 +52,6 @@ export default component$(() => {
           type="text/partytown"
           src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"
         />
-
         <RouterHead />
       </head>
       <body lang="es">
