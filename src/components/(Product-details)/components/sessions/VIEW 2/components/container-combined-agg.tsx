@@ -2,7 +2,8 @@ import { component$, useStylesScoped$ } from '@builder.io/qwik';
 
 import styles from './css/container-combined-agg.css?inline';
 import { UsePrice } from '~/components/use/price/price';
-import { ContainerButtonCombined } from '~/components/buttons/cart/container-buttton-combined';
+//import { ContainerButtonCombined } from '~/components/buttons/cart/container-buttton-combined';
+import { BottonDisable } from '~/components/buttons/botton-disable/botton-disable';
 
 export const ContainerCombinedAGG = component$(
   ({ totalPrice, discount }: any) => {
@@ -32,7 +33,8 @@ export const ContainerCombinedAGG = component$(
         </div>
         <div class="crts-bts">
           {' '}
-          <ContainerButtonCombined />
+          <BottonDisable />
+          {/* <ContainerButtonCombined /> */}
         </div>
       </div>
     );
