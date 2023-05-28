@@ -35,12 +35,12 @@ export const BannerCarouselHome = component$(()=> {
         <>
     
          <div class='carousel'>
-              <button   class="carousel__btn carousel__btn--prev" onClick$={()=>{  currentIndex.value = (currentIndex.value + 1) % images.length;
-  }}>  <DouveryLeft3 size="30" /></button>
+              <button   class="carousel__btn carousel__btn--prev" onClick$={()=>  {prevImage}}>  <DouveryLeft3 size="30" /></button>
     
       <div class='carousel__image-container'>
        <img
-       key={currentIndex.value}
+       width={1800}
+       height={280}
           class="carousel__image"
           src={images[currentIndex.value].imageUrl}
           alt="Imagen del carrusel"
