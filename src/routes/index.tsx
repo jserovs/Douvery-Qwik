@@ -5,7 +5,6 @@ import {
   useVisibleTask$,
 } from '@builder.io/qwik';
 import { type DocumentHead } from '@builder.io/qwik-city';
-import CarBanner from '~/components/carBanner/carBanner';
 
 import styles from './index.css?inline';
 // import Carousel from '~/components/carousel/carousel';
@@ -19,6 +18,7 @@ import { Alert1 } from '~/components/cards/alerts/alert/alert-1/alert-1';
 import { PromotionRecomend_Carousel_LastView } from '~/components/(Promotions)/carousel/carousel-recomend-last-view-product/carousel-recomend-last-view-product';
 import { getLastItemViewedDui } from '~/services/viewed/viewed';
 import ContainerCatogorieInit from '~/components/carousel-all/container-catogorie-init';
+import { BannerCarouselHome } from '~/components/carBanner/carBanner';
 
 export default component$(() => {
   useStylesScoped$(styles);
@@ -39,7 +39,7 @@ export default component$(() => {
     <div class="container-all">
       <div class="cotent">
         <div class="c-c-v">
-          <CarBanner />
+          <BannerCarouselHome />
           <div class="con-gnl ">
             <div class="con-par-sld">
               <ContainerCatogorieInit />
