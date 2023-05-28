@@ -35,7 +35,7 @@ export const BannerCarouselHome = component$(()=> {
         <>
     
          <div class='carousel'>
-              <button   class="carousel__btn carousel__btn--prev" onClick$={()=>  {prevImage}}>  <DouveryLeft3 size="30" /></button>
+              <button   class="carousel__btn carousel__btn--prev" onClick$={prevImage}>  <DouveryLeft3 size="30" /></button>
     
       <div class='carousel__image-container'>
        <img
