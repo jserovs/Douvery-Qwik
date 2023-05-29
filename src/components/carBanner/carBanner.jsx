@@ -70,7 +70,7 @@ export const BannerCarouselHome = component$(() => {
               class="carousel__image"
               src={
                 isMobile
-                  ? images[currentIndex.value].mobileImageUrl
+                  ? images[currentIndex.value].desktopImageUrl
                   : images[currentIndex.value].desktopImageUrl
               }
               alt="Imagen del carrusel"
