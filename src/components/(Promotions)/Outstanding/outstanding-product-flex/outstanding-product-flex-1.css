@@ -4,11 +4,7 @@
     grid-template-columns: 1FR 1FR 1FR;
     justify-content: space-between;
     gap: 50px;
-    background-color: var(--color-background-white);
-    padding: 20px 50px;
-    box-shadow: rgba(230, 234, 238, 0.2) 0px 8px 24px;
-    border-top: 1px solid var(--border-width-1);
-    border-bottom: 1px solid var(--border-width-1);
+
 }
 
 @media (max-width:800px) {

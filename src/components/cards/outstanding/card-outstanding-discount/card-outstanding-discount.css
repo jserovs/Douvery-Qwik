@@ -1,15 +1,17 @@
 .category-card {
-
-
+    width: 100%;
+    padding: 30px;
     display: flex;
-    gap: 50px;
     align-items: center;
     justify-content: space-between;
     background-color: var(--color-background-white);
-    border-radius: 5px;
+    border-radius: 10px;
+    height: 300px;
     gap: 20px;
     position: relative;
-
+    box-shadow: rgba(230, 234, 238, 0.2) 0px 8px 24px;
+    border-top: 1px solid var(--border-width-1);
+    border-bottom: 1px solid var(--border-width-1);
 }
 
 .container-a {
@@ -29,6 +31,7 @@
     height: 100%;
     object-fit: contain;
     border-radius: 5px;
+    padding: 20px;
 }
 
 .image-container:hover {
