@@ -8,7 +8,7 @@
 }
 
 .contai-fle {
-
+    height: 300px;
     display: grid;
     grid-template-columns: 1fr 1.7fr 1fr 1fr 1fr;
     gap: 20px;
@@ -81,8 +81,9 @@
     box-sizing: border-box;
     color: #0f1111;
     cursor: pointer;
-    display: inline-block;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 13px;
     height: 30px;
     padding: 0 10px 0 11px;
@@ -123,7 +124,7 @@
     .contai-fle {
         padding: 0px 0px 0px 5px;
         display: grid;
-        grid-template-columns: auto 400px auto auto;
+        grid-template-columns: 255px 400px auto auto;
     }
 
     .container-vert-box {
