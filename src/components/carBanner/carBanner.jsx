@@ -21,8 +21,9 @@ export const BannerCarouselHome = component$(() => {
     })
   );
 
-  const images = [
+  const contents = [
     {
+      type: 'image',
       desktopImageUrl:
         'https://res.cloudinary.com/douvery/image/upload/v1685304113/eqqjyggjmogzbfny0rgu.webp',
       mobileImageUrl:
@@ -31,6 +32,7 @@ export const BannerCarouselHome = component$(() => {
       alt: 'Hogar dulce hogar CAREGORIA DOouvery img-douvery ',
     },
     {
+      type: 'image',
       desktopImageUrl:
         'https://res.cloudinary.com/douvery/image/upload/v1684406805/dd30bir4sqyimtnkbhb1.webp',
       mobileImageUrl:
@@ -38,17 +40,25 @@ export const BannerCarouselHome = component$(() => {
       linkUrl: 'url-a-la-que-redirigir-1',
       alt: 'Texto alternativo para la imagen 1',
     },
-
+    {
+      type: 'video',
+      desktopVideoUrl:
+        'https://res.cloudinary.com/douvery/video/upload/v1685469644/lj4zepeo4a3geadmqucw.mp4',
+      mobileVideoUrl:
+        'https://res.cloudinary.com/douvery/video/upload/v1685469644/lj4zepeo4a3geadmqucw.mp4',
+      linkUrl: 'url-a-la-que-redirigir-1',
+      alt: 'Texto alternativo para el video 1',
+    },
     // agrega todos los objetos de imagen, URL y texto alternativo que necesites
   ];
 
-  const nextImage = $(() => {
-    if (currentIndex.SetCurrentIndex < images.length - 1) {
+  const nextContent = $(() => {
+    if (currentIndex.SetCurrentIndex < contents.length - 1) {
       currentIndex.SetCurrentIndex = currentIndex.SetCurrentIndex + 1;
     }
   });
 
-  const prevImage = $(() => {
+  const prevContent = $(() => {
     if (currentIndex.SetCurrentIndex > 0) {
       currentIndex.SetCurrentIndex = currentIndex.SetCurrentIndex - 1;
     }
@@ -62,7 +72,7 @@ export const BannerCarouselHome = component$(() => {
         <div class="content">
           <button
             class="carousel__btn carousel__btn--prev"
-            onClick$={prevImage}
+            onClick$={prevContent}
             disabled={currentIndex.SetCurrentIndex === 0} // Desactivar si es el primer índice
           >
             {' '}
@@ -70,19 +80,32 @@ export const BannerCarouselHome = component$(() => {
           </button>
 
           <div class="carousel__image-container">
-            <img
-              width={1800}
-              height={280}
-              class="carousel__image"
-              src={images[currentIndex.SetCurrentIndex].desktopImageUrl}
-              alt="Imagen del carrusel"
-            />{' '}
+            {contents[currentIndex.SetCurrentIndex].type === 'image' ? (
+              <img
+                width={1800}
+                height={280}
+                class="carousel__image"
+                src={contents[currentIndex.SetCurrentIndex].desktopImageUrl}
+                alt="Imagen del carrusel"
+              />
+            ) : (
+              <video
+                width={1800}
+                height={280}
+                class="carousel__video"
+                src={contents[currentIndex.SetCurrentIndex].desktopVideoUrl}
+                autoPlay
+              >
+                Tu navegador no soporta el elemento de video.
+              </video>
+            )}
             <button class="carousel__button carousel__button--link"></button>
           </div>
+
           <button
             class="carousel__btn carousel__btn--next"
-            onClick$={nextImage}
-            disabled={currentIndex.SetCurrentIndex === images.length - 1} // Desactivar si es el último índice
+            onClick$={nextContent}
+            disabled={currentIndex.SetCurrentIndex === contents.length - 1} // Desactivar si es el último índice
           >
             {' '}
             <DouveryRight3 size="30" />
