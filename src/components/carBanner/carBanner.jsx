@@ -2,7 +2,6 @@ import {
   $,
   component$,
   useOnWindow,
-  useSignal,
   useStore,
   useStylesScoped$,
 } from '@builder.io/qwik';
@@ -12,7 +11,7 @@ import { DouveryRight3 } from '../icons/arrow-right-3';
 
 export const BannerCarouselHome = component$(() => {
   useStylesScoped$(styles);
-  const currentIndex = useSignal(0);
+  const currentIndex = useStore({ SetCurrentIndex: 0 });
   const store = useStore({ windowWidth: 0 });
 
   useOnWindow(
@@ -44,13 +43,16 @@ export const BannerCarouselHome = component$(() => {
   ];
 
   const nextImage = $(() => {
-    currentIndex.value = (currentIndex.value + 1) % images.length;
+    currentIndex.SetCurrentIndex =
+      (currentIndex.SetCurrentIndex + 1) % images.length;
   });
   const prevImage = $(() => {
-    currentIndex.value = (currentIndex.value - 1) % images.length;
+    currentIndex.SetCurrentIndex =
+      (currentIndex.SetCurrentIndex - 1) % images.length;
   });
 
   const isMobile = store.windowWidth <= 800;
+  isMobile;
   return (
     <>
       <div class="carousel">
@@ -68,11 +70,7 @@ export const BannerCarouselHome = component$(() => {
               width={1800}
               height={280}
               class="carousel__image"
-              src={
-                isMobile
-                  ? images[currentIndex.value].desktopImageUrl
-                  : images[currentIndex.value].desktopImageUrl
-              }
+              src={images[currentIndex.SetCurrentIndex].desktopImageUrl}
               alt="Imagen del carrusel"
             />{' '}
             <button class="carousel__button carousel__button--link"></button>
