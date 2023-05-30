@@ -30,14 +30,19 @@ export const CardLastViewedProducts1 = component$(() => {
   useVisibleTask$(async ({ track }) => {
     track(() => url.pathname);
     const controller = new AbortController();
-
     try {
-      state.searchResults = await getDataViewedProduct();
+      const results = await getDataViewedProduct();
+      if (!Array.isArray(results)) {
+        console.error('getDataViewedProduct did not return an array:', results);
+        state.searchResults = [];
+      } else {
+        state.searchResults = results;
+      }
     } catch (error) {
-      console.error(error);
-    } finally {
-      isLoading.setIsLoading = false;
+      console.error('Error getting data:', error);
+      state.searchResults = [];
     }
+    isLoading.setIsLoading = false;
     return () => {
       controller.abort();
     };
@@ -53,7 +58,7 @@ export const CardLastViewedProducts1 = component$(() => {
           <div class="category-img">
             {isLoading.setIsLoading ? (
               <div class="loader"></div>
-            ) : state.searchResults.length > 0 ? (
+            ) : state.searchResults.length != 0 ? (
               <>
                 {state.searchResults.map((product: any, index: any) => {
                   return (
@@ -62,7 +67,12 @@ export const CardLastViewedProducts1 = component$(() => {
                       key={index}
                     >
                       <div class="image-container" key={index}>
-                        <img src={product.images[0]} alt={product.name} />
+                        <img
+                          width={100}
+                          height={70}
+                          src={product.images[0]}
+                          alt={product.name}
+                        />
                       </div>
                     </a>
                   );
