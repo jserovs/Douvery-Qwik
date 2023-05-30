@@ -16,6 +16,7 @@
     height: 280px;
     background-color: var(--color-background-white);
     object-fit: cover;
+
 }
 
 .carousel__btn {
@@ -27,11 +28,14 @@
     border-radius: 10PX;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
     transition: opacity 0.6s ease;
-
 }
 
-.content:hover .carousel__btn {
+.content:hover .carousel__btn:not([disabled]) {
     opacity: 1;
+}
+
+.content:hover .carousel__btn[disabled] {
+    opacity: 0.5;
 }
 
 .carousel__btn--prev,
@@ -52,16 +56,10 @@
 }
 
 .carousel__btn:active {
-
     border: 1px solid var(--color-primary);
 }
 
-.carousel__btn--disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
-button[disabled] {
-    opacity: 0.5;
+.carousel__btn[disabled] {
+    opacity: 0;
     cursor: default;
 }

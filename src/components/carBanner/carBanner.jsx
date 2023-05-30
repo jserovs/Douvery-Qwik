@@ -43,12 +43,15 @@ export const BannerCarouselHome = component$(() => {
   ];
 
   const nextImage = $(() => {
-    currentIndex.SetCurrentIndex =
-      (currentIndex.SetCurrentIndex + 1) % images.length;
+    if (currentIndex.SetCurrentIndex < images.length - 1) {
+      currentIndex.SetCurrentIndex = currentIndex.SetCurrentIndex + 1;
+    }
   });
+
   const prevImage = $(() => {
-    currentIndex.SetCurrentIndex =
-      (currentIndex.SetCurrentIndex - 1) % images.length;
+    if (currentIndex.SetCurrentIndex > 0) {
+      currentIndex.SetCurrentIndex = currentIndex.SetCurrentIndex - 1;
+    }
   });
 
   const isMobile = store.windowWidth <= 800;
@@ -60,6 +63,7 @@ export const BannerCarouselHome = component$(() => {
           <button
             class="carousel__btn carousel__btn--prev"
             onClick$={prevImage}
+            disabled={currentIndex.SetCurrentIndex === 0} // Desactivar si es el primer índice
           >
             {' '}
             <DouveryLeft3 size="30" />
@@ -78,6 +82,7 @@ export const BannerCarouselHome = component$(() => {
           <button
             class="carousel__btn carousel__btn--next"
             onClick$={nextImage}
+            disabled={currentIndex.SetCurrentIndex === images.length - 1} // Desactivar si es el último índice
           >
             {' '}
             <DouveryRight3 size="30" />
