@@ -26,12 +26,9 @@ export default component$(() => {
           <div class="container-card-books">
             <Card_Category_Flex_1
               name="Books & Audible"
-              images={[
-                'https://res.cloudinary.com/douvery/image/upload/v1671729503/Ask%20Again%20Yes/bb0uqik8etmjo46rzj3h.webp',
-
-                'https://res.cloudinary.com/douvery/image/upload/v1671730656/What%20Every%20Body%20Is%20Saying/awvwhrvka2uioiljmecq.webp',
-                'https://res.cloudinary.com/douvery/image/upload/v1671729811/Call%20an%20/wodasrjiw4g3mcs4qwvr.webp',
-              ]}
+              img1="https://res.cloudinary.com/douvery/image/upload/v1671729503/Ask%20Again%20Yes/bb0uqik8etmjo46rzj3h.webp"
+              img2="https://res.cloudinary.com/douvery/image/upload/v1671730656/What%20Every%20Body%20Is%20Saying/awvwhrvka2uioiljmecq.webp"
+              img3="https://res.cloudinary.com/douvery/image/upload/v1671729811/Call%20an%20/wodasrjiw4g3mcs4qwvr.webp"
             />
             <div class="card-searh-books">
               <SearchBooksDouvery is={isOpen} />
