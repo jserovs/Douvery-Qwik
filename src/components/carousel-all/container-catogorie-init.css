@@ -123,11 +123,11 @@
 
 
 
-@media only screen and (max-width: 1350px) {
+@media only screen and (max-width: 1705px) {
     .contai-fle {
         padding: 0px 0px 0px 5px;
         display: grid;
-        grid-template-columns: 255px 400px auto auto;
+        grid-template-columns: 300px 500px 1fr 1fr;
     }
 
     .container-vert-box {
@@ -137,7 +137,7 @@
 
 
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1300px) {
     .contai-fle {
         padding: 0px 0px 0px 5px;
         display: grid;
