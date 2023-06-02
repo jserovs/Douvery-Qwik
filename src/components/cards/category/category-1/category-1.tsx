@@ -1,6 +1,8 @@
 import { $, component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './category-1.css?inline';
 import { useNavigate } from '@builder.io/qwik-city';
+import { Image } from '@unpic/qwik';
+
 export const Card_Category_1 = component$(({ name, image }: any) => {
   useStylesScoped$(styles);
   const nav = useNavigate();
@@ -17,11 +19,12 @@ export const Card_Category_1 = component$(({ name, image }: any) => {
       </div>
 
       <div class="category-img">
-        <img
+        <Image
           src={image}
-          width="100%"
-          height="200"
-          alt={'image categorie ' + name}
+          layout="constrained"
+          width={300}
+          height={250}
+          alt={name}
         />
       </div>
       <div class="show-more">
