@@ -1,6 +1,7 @@
 import { $, component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './category-flex-1.css?inline';
 import { useNavigate } from '@builder.io/qwik-city';
+import { Image } from '@unpic/qwik';
 export const Card_Category_Flex_1 = component$(
   ({ name, img1, img2, img3 }: any) => {
     useStylesScoped$(styles);
@@ -19,9 +20,30 @@ export const Card_Category_Flex_1 = component$(
         </div>
 
         <div class="category-img">
-          <img src={img1} alt={'IMAGE-BANNER-LOGO-CATEGORIE-DOUVERY' + name} />{' '}
-          <img src={img2} alt={'IMAGE-BANNER-LOGO-CATEGORIE-DOUVERY' + name} />
-          <img src={img3} alt={'IMAGE-BANNER-LOGO-CATEGORIE-DOUVERY' + name} />
+          <Image
+            src={img1}
+            layout="constrained"
+            width={100}
+            height={150}
+            alt={'IMAGE-BANNER-LOGO-CATEGORIE-DOUVERY' + name}
+            style={{ borderRadius: '5px' }}
+          />{' '}
+          <Image
+            src={img2}
+            layout="constrained"
+            width={100}
+            height={150}
+            alt={'IMAGE-BANNER-LOGO-CATEGORIE-DOUVERY' + name}
+            style={{ borderRadius: '5px' }}
+          />{' '}
+          <Image
+            src={img3}
+            layout="constrained"
+            width={100}
+            height={150}
+            alt={'IMAGE-BANNER-LOGO-CATEGORIE-DOUVERY' + name}
+            style={{ borderRadius: '5px' }}
+          />
         </div>
       </div>
     );
