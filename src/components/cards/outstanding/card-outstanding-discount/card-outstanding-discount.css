@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: space-between;
     background-color: var(--color-background-white);
-    border-radius: 10px;
+
     height: 300px;
     gap: 20px;
     position: relative;

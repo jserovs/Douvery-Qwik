@@ -3,13 +3,13 @@
         grid;
     grid-template-columns: 1FR 1FR 1FR;
     justify-content: space-between;
-    gap: 50px;
+    gap: 0px;
 
 }
 
 @media (max-width:800px) {
     .container-all {
-        padding: 20px 30px;
+        padding: 0px 0px;
         overflow-x: scroll;
     }
 }
