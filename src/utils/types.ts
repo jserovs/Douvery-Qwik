@@ -96,7 +96,6 @@ export type UserACC = {
 	veriToolVerification: boolean;
 	twoStepVerification: boolean;
 	accountVerificationCode:boolean;
-
 };
 
 export type notification = {

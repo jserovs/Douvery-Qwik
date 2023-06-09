@@ -10,6 +10,7 @@ export const serverKey = 'SARID-0B756348-92D0EF2F-542AA93A';
 export const isAppReady = () => {
   return null !== localStorage.getItem(OPTIONS_KEY);
 };
+
 export function generateToken(userInfo:any, password:any, serverKey:any) {
   const userInfoString = JSON.stringify(userInfo);
   const userInfoStringWithPasswordAndKey =
