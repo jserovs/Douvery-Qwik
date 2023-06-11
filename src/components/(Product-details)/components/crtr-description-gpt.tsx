@@ -1,6 +1,6 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './css/crtr-description-gpt.css?inline';
-export const ContainerDescriptionGPT = component$(({ props }: any) => {
+export const BookDescriptionContainer = component$(({ props }: any) => {
   useStylesScoped$(styles);
   return (
     <div class="crrtr-srtrt">

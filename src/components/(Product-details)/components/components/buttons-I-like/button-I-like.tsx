@@ -14,7 +14,7 @@ import {
   productUserLikeDislike,
 } from '~/services/userlike-dislike/productUserLikeDislike';
 
-export const ButtonILike = component$(({ product }: any) => {
+export const LikeButtons = component$(({ product }: any) => {
   useStylesScoped$(styles);
   const likeStatus = useStore({ setLikeStatus: null });
   const user = useGetCurrentUser().value;

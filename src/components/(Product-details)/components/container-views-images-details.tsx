@@ -5,23 +5,14 @@ import {
   useTask$,
 } from '@builder.io/qwik';
 import styles from './css/container-views-images-details.css?inline';
-import ContainerVariantionsDetails from './container-variantions-details';
-import { ContainerHeaderNameBrandProduct } from './container-header-name-brands-product';
-import { ContainerButtonDetails } from './container-button-details';
-import { ContainerDescriptionShort } from './container-desc-short';
 
 import { HorizontalViewProductIMG } from './layout/product/horizontal-views';
 import { VarticalViewProductIMG } from './layout/product/vartical-views';
 import { ThreeHorizontalViewProductIMG } from './layout/product/three-horizontal-views';
 import { LibPermVerticalViewProductIMG } from './layout/product/books-perm-vertical-views';
-
-import { ContainerDescriptionGPT } from './crtr-description-gpt';
-import { CardDouveryExtend1 } from '~/components/cards/douveryExtend/card-douveryExtend-1/douveryExtend1';
 import { ContainerBreadcrumbs } from './sessions/VIEW 1/components/Breadcrumbs/container-breadcrumbs';
-import { ContainerSponsoreProductVert1 } from './sessions/VIEW 2/components/container-sponsore-vert';
-import { ButtonILike } from './components/buttons-I-like/button-I-like';
 
-export const ContainerViewsIMGDetails = component$(({ props }: any) => {
+export const ImageDetailContainer = component$(({ props }: any) => {
   useStylesScoped$(styles);
 
   const img = useStore({ setImage: props.images[0] });
@@ -68,81 +59,9 @@ export const ContainerViewsIMGDetails = component$(({ props }: any) => {
     }
   }
 
-  const quantityCart = useStore({ setQuantityCart: '1' });
-
   return (
-    <div class="container-view-product">
-      <div class="vert-left">
-        {selectComponent()} <ContainerBreadcrumbs product={props} />
-      </div>
-
-      <div class="center">
-        <div class="crtr-div-ifrms-aetr">
-          <size-w class="size-w-10" />
-          <ContainerHeaderNameBrandProduct props={props} />
-          {props.variations == 0 ? (
-            <> </>
-          ) : (
-            <div class="crt-variations">
-              <ContainerVariantionsDetails
-                imgS={img}
-                imgP={props.images[0]}
-                props={props}
-              />
-            </div>
-          )}
-          <div class="buttons-mobiles">
-            <div class="brt-irft">
-              <div class="slect-qty-prt">
-                <p>Cantidad : </p>
-                <size-w class="size-w-10" />
-                <select
-                  value={quantityCart.setQuantityCart}
-                  onChange$={(event) =>
-                    (quantityCart.setQuantityCart = event.target.value)
-                  }
-                >
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-              </div>
-            </div>
-            <ContainerButtonDetails
-              product={props}
-              quantity={quantityCart.setQuantityCart}
-            />
-          </div>
-
-          {props.category == 'Books' ? (
-            <>
-              <ContainerDescriptionGPT props={props} />{' '}
-            </>
-          ) : (
-            <div class="crtr-desrt">
-              {' '}
-              <ContainerDescriptionShort props={props} />
-            </div>
-          )}
-        </div>
-      </div>
-
-      <div class="vert-right">
-        <div class="ctr-extend-d">
-          {' '}
-          <CardDouveryExtend1 />
-          <div class="separator-border" />
-          <div class="title-subtitle">
-            <p class="ps-sr1">Mejora tus recomendaciones</p>
-          </div>
-          <div class="review-product">
-            <ButtonILike product={props} />
-          </div>
-          <div class="separator-border" />
-          <ContainerSponsoreProductVert1 product={props} />
-        </div>
-      </div>
-    </div>
+    <>
+      {selectComponent()} <ContainerBreadcrumbs product={props} />
+    </>
   );
 });

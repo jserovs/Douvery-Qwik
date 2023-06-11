@@ -1,18 +1,12 @@
-import {
-  component$,
-  useStore,
-  useStylesScoped$,
-
-} from '@builder.io/qwik';
+import { component$, useStore, useStylesScoped$ } from '@builder.io/qwik';
 
 import styles from './douveryExtend1.css?inline';
 import { UsePrice } from '~/components/use/price/price';
-export const CardDouveryExtend1 = component$(() => {
+export const ExtendedCardDouvery = component$(() => {
   useStylesScoped$(styles);
 
   const showLoader = useStore({ setShowLoader: false });
 
- 
   return (
     <div class="container-all">
       {showLoader.setShowLoader ? (
@@ -28,8 +22,8 @@ export const CardDouveryExtend1 = component$(() => {
           </div>
           <div class="card-douveryextend">
             <img
-            width={300}
-            height={300}
+              width={300}
+              height={300}
               src="https://res.cloudinary.com/douvery/image/upload/v1684492886/buwaumgmxfc1uz43jcux.png"
               alt=""
             />
