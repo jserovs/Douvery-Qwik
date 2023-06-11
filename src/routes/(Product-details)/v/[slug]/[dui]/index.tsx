@@ -1,7 +1,6 @@
 import {
   component$,
   useSignal,
-  useStore,
   useStylesScoped$,
   useVisibleTask$,
 } from '@builder.io/qwik';
@@ -18,7 +17,6 @@ import { fetchProduct } from '~/services/fechProduct';
 import type { DocumentHead } from '@builder.io/qwik-city';
 
 import { routeLoader$, useLocation } from '@builder.io/qwik-city';
-import ContainerDatails from '~/components/(Product-details)/components/container-datails';
 
 import { View2 } from '~/components/(Product-details)/components/sessions/VIEW 2/view2';
 import { View1 } from '~/components/(Product-details)/components/sessions/VIEW 1/view1';
@@ -39,7 +37,6 @@ export default component$(() => {
 
   const productData = useProductInfo();
 
-  const isOpen = useStore({ setIsOpen: false });
   const descriptionEdit = useSignal(`
 
  `);
@@ -50,10 +47,6 @@ export default component$(() => {
   return (
     <>
       <div>
-        <div class="nd-det-1">
-          <ContainerDatails is={isOpen} props={productData.value} />
-        </div>
-
         <View1 props={productData.value} />
         <View2 product={productData.value} />
         <div

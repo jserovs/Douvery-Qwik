@@ -2,7 +2,7 @@ import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import sryles from './css/container-desc-short.css?inline';
 import { ContainerDescription } from './crtr-description';
 import { TextCL } from '~/components/use/textCL/textCL';
-export const ContainerDescriptionShort = component$(({ props }: any) => {
+export const ShortDescriptionContainer = component$(({ props }: any) => {
   useStylesScoped$(sryles);
   const renderTbProtein = (key: any, label: any) => {
     if (!props || !props.tbProtein[key]) return null;

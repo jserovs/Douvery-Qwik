@@ -8,10 +8,10 @@ import {
 import styles from './css/container-sponsore.css?inline';
 
 import type { Product } from '~/utils/types';
-import {  fetchSystemRecomendationProductU } from '~/services/fechProduct';
+import { fetchSystemRecomendationProductU } from '~/services/fechProduct';
 import { ContainerCardProduct9 } from '~/components/cards/product/product-card-9/product-card-9';
 
-export const ContainerSponsoreProductVert1 = component$(({ product }: any) => {
+export const SponsoredProductContainer = component$(({ product }: any) => {
   useStylesScoped$(styles);
 
   const state = useStore({
@@ -20,10 +20,10 @@ export const ContainerSponsoreProductVert1 = component$(({ product }: any) => {
 
   useTask$(async ({ track }) => {
     track(() => product.dui);
-  
+
     const dui = product.dui;
     const controller = new AbortController();
-    state.productResults = await fetchSystemRecomendationProductU( dui,1);
+    state.productResults = await fetchSystemRecomendationProductU(dui, 1);
 
     return () => {
       controller.abort();
@@ -38,7 +38,6 @@ export const ContainerSponsoreProductVert1 = component$(({ product }: any) => {
       ) : (
         <>
           <div class="crtrs-bsc">
-           
             <div class="div-car">
               {' '}
               {state.productResults.map((val: any, key: any) => (

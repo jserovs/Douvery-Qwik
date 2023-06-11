@@ -17,7 +17,7 @@ import {
 } from '~/services/cart/favorite-product';
 
 import { DouveryCheckMark } from '~/components/icons/checkMark';
-export const ContainerButtonExtr = component$(({ props }: any) => {
+export const ExtraButtonContainer = component$(({ props }: any) => {
   useStylesScoped$(styles);
   const loc = useLocation();
   const isFav = useStore({ setFav: false });

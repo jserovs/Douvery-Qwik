@@ -1,12 +1,12 @@
 import { component$, useStore, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './css/container-datails.css?inline';
 
-import { ContainerButtonDetails } from './container-button-details';
+import { ButtonDetailContainer } from './container-button-details';
 
 import numeral from 'numeral';
 import { UseStarRating } from '~/components/use/ratings/useRatingHover/useRatingHover';
 
-export default component$(({ props }: any) => {
+export const DetailContainer = component$(({ props }: any) => {
   useStylesScoped$(styles);
   const quantityCart = useStore({ setQuantityCart: '1' });
 
@@ -136,7 +136,7 @@ export default component$(({ props }: any) => {
           )}
           <div class="div-button">
             {' '}
-            <ContainerButtonDetails
+            <ButtonDetailContainer
               product={props}
               quantity={quantityCart.setQuantityCart}
             />

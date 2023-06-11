@@ -1,0 +1,126 @@
+.buttonCart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--color-button-cart);
+    color: var(--color-background-light);
+    border: none;
+    border-radius: 6px;
+    padding: 7px 15px 7px 15px;
+    gap: 5px;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.check {
+    fill: #fff;
+}
+
+.buttonCart:hover {
+    color: #fff;
+    opacity: 90%;
+    border-color: #0a58ca;
+}
+
+.buttonPay {
+    display: grid;
+    width: 100%;
+    background-color: var(--color-button-pay);
+    color: var(--color-background-light);
+    border: none;
+    border-radius: 6px;
+    padding: 7px 15px 7px 15px;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.buttonPay:hover {
+    color: #fff;
+    opacity: 90%;
+    border-color: #0a58ca;
+}
+
+.crt-button-mobiles {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.slect-qty-prt {
+    display: flex;
+
+}
+
+.brt-irft {
+    padding: 10px 10px 10px 10px;
+}
+
+
+
+
+.crt-button-mobiles {
+    width: 100%;
+    display: grid;
+    gap: 10px;
+    background-color: var(--color-background-light);
+}
+
+.brt-irft h5 {
+    font-size: 13px;
+    padding-bottom: 10px;
+
+    color: #606d80;
+    display: flex;
+    gap: 5px;
+}
+
+.button-mobiles {
+    width: 100%;
+    margin-top: 5px;
+
+    display: grid;
+    text-align: center;
+    align-items: center;
+    position: relative;
+    background-color: var(--color-background-light);
+}
+
+
+.buttonCart,
+.buttonPay {
+    min-width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    text-align: center;
+
+
+}
+
+
+
+
+
+.buttonCart:hover {
+    color: #fff;
+    opacity: 90%;
+
+    border: 1px solid #394867;
+}
+
+.buttonPay:hover {
+    color: #fff;
+    opacity: 90%;
+
+    border: 1px solid #394867;
+}

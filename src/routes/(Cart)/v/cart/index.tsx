@@ -19,7 +19,7 @@ import { NoProductCart } from '~/components/(Cart)/sessions/no-product-cart/no-p
 import { View5 } from '~/components/(Product-details)/components/sessions/VIEW 5/view5';
 import { CardShopFuture } from '~/components/(Cart)/components/cards/shop-future/shop-future';
 import { CardFavoriteProduct } from '~/components/(Cart)/components/cards/card-favorite/card-favorite';
-import { CardDouveryExtend1 } from '~/components/cards/douveryExtend/card-douveryExtend-1/douveryExtend1';
+import { ExtendedCardDouvery } from '~/components/cards/douveryExtend/card-douveryExtend-1/douveryExtend1';
 export interface IState {
   searchInput: string;
   searchResults: Product[];
@@ -123,7 +123,7 @@ export default component$(() => {
                 />
               </div>
               <CardFavoriteProduct />
-              <CardDouveryExtend1 />
+              <ExtendedCardDouvery />
             </div>
           </div>
         </>

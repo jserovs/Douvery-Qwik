@@ -13,7 +13,7 @@ import { DouveryIcon } from '~/components/icons/douvery';
 
 import { TextCL } from '~/components/use/textCL/textCL';
 
-export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
+export const ProductNameHeaderContainer = component$(({ props }: any) => {
   useStylesScoped$(sryles);
 
   return (
@@ -164,7 +164,6 @@ export const ContainerHeaderNameBrandProduct = component$(({ props }: any) => {
               Esta compra está protegida por <strong>Douvery</strong>, puedes
               comprar con total confianza.
             </p>
-          
           </div>
         </div>
       </div>

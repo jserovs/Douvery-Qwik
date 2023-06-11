@@ -20,7 +20,7 @@ export const AddCart = $(({ product, quantity, nav, isLoader }: any) => {
   }
 });
 
-export const ContainerButtonDetails = component$(
+export const ButtonDetailContainer = component$(
   ({ product, quantity }: any) => {
     useStylesScoped$(styles);
     const nav = useNavigate();
@@ -54,6 +54,7 @@ export const ContainerButtonDetails = component$(
             </>
           )}
         </div>
+
         <div class="crt-button-mobiles">
           <div class="button-mobiles">
             {product.quantity <= 1 ? (
