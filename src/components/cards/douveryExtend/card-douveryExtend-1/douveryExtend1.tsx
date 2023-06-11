@@ -2,7 +2,7 @@ import {
   component$,
   useStore,
   useStylesScoped$,
-  useVisibleTask$,
+
 } from '@builder.io/qwik';
 
 import styles from './douveryExtend1.css?inline';
@@ -10,16 +10,9 @@ import { UsePrice } from '~/components/use/price/price';
 export const CardDouveryExtend1 = component$(() => {
   useStylesScoped$(styles);
 
-  const showLoader = useStore({ setShowLoader: true });
+  const showLoader = useStore({ setShowLoader: false });
 
-  useVisibleTask$(() => {
-    const timer = setInterval(() => {
-      showLoader.setShowLoader = false;
-    },1);
-    return () => {
-      clearInterval(timer);
-    };
-  });
+ 
   return (
     <div class="container-all">
       {showLoader.setShowLoader ? (
@@ -31,7 +24,7 @@ export const CardDouveryExtend1 = component$(() => {
         <>
           <br />
           <div class="container-interes">
-            <p class="ps-sr1">Puede que te interese </p>
+            <p class="ps-sr1">Extiende la garantía</p>
           </div>
           <div class="card-douveryextend">
             <img

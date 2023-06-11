@@ -24,7 +24,7 @@ export const PromotionRecomend_Carousel_LastView = component$(
       const controller = new AbortController();
       const dui = getLastItemViewedDui();
       lastViewDui.value = dui;
-      state.productResults = await fetchSystemRecomendationProductU(dui);
+      state.productResults = await fetchSystemRecomendationProductU(dui,25);
 
       return () => {
         controller.abort();

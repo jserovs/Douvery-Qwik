@@ -21,7 +21,7 @@ export const View3 = component$(({ product }: any) => {
     const dui = product.dui;
     const controller = new AbortController();
 
-    state.productResults = await fetchSystemRecomendationProductU(dui);
+    state.productResults = await fetchSystemRecomendationProductU(dui,25);
 
     return () => {
       controller.abort();

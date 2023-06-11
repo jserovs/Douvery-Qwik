@@ -6,13 +6,12 @@ import {
 } from '@builder.io/qwik';
 
 import styles from './css/container-sponsore.css?inline';
-import { ContainerCardProduct1 } from '~/components/cards/product/product-card-1/product-card-1';
-import { DouveryArrowRigth1 } from '~/components/icons/arrow-right-1';
 
 import type { Product } from '~/utils/types';
-import { fetchProductCategory } from '~/services/fechProduct';
+import {  fetchSystemRecomendationProductU } from '~/services/fechProduct';
+import { ContainerCardProduct9 } from '~/components/cards/product/product-card-9/product-card-9';
 
-export const ContainerSponsoreProduct = component$(({ product }: any) => {
+export const ContainerSponsoreProductVert1 = component$(({ product }: any) => {
   useStylesScoped$(styles);
 
   const state = useStore({
@@ -21,10 +20,10 @@ export const ContainerSponsoreProduct = component$(({ product }: any) => {
 
   useTask$(async ({ track }) => {
     track(() => product.dui);
-    const category = product.category;
+  
     const dui = product.dui;
     const controller = new AbortController();
-    state.productResults = await fetchProductCategory(category, dui, 2);
+    state.productResults = await fetchSystemRecomendationProductU( dui,1);
 
     return () => {
       controller.abort();
@@ -39,25 +38,12 @@ export const ContainerSponsoreProduct = component$(({ product }: any) => {
       ) : (
         <>
           <div class="crtrs-bsc">
-            <div class="crrts-title">
-              <hs-sr3>Pueden ser de tu interés</hs-sr3>
-              <div class="sr-of">
-                {' '}
-                <div class="ssr-f">
-                  {' '}
-                  <a href="/" class="ps-sr1">
-                    {' '}
-                    Ver mas
-                  </a>
-                  <DouveryArrowRigth1 size="20" />
-                </div>
-              </div>
-            </div>
+           
             <div class="div-car">
               {' '}
               {state.productResults.map((val: any, key: any) => (
                 <div key={key}>
-                  <ContainerCardProduct1 product={val} />
+                  <ContainerCardProduct9 product={val} />
                 </div>
               ))}
               <div> </div>

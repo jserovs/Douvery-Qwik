@@ -42,11 +42,12 @@ export async function fetchProductU(
 export async function fetchProductCategory(
   category: string,
   dui: string,
+  numlimit: number,
   controller?: AbortController
 ): Promise<any> {
   const response = await fetch(
     `
-   ${urlServerNode}/api/productsByCategory/?category=${category}&limit=2&excludeDui=${dui}`,
+   ${urlServerNode}/api/productsByCategory/?category=${category}&limit=${numlimit}&excludeDui=${dui}`,
     {
       signal: controller?.signal,
     }
@@ -141,11 +142,12 @@ export async function fetchCodePostal(
 
 export async function fetchSystemRecomendationProductU(
   dui: string,
+  numlimit: number,
   controller?: AbortController
 ): Promise<any> {
   const response = await fetch(
     `
-   ${urlServerPython}/recommend_products/${dui}`,
+   ${urlServerPython}/recommend_products/${dui}?limit=${numlimit}`,
     {
       signal: controller?.signal,
     }

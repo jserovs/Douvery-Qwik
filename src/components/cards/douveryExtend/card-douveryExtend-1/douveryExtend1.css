@@ -5,8 +5,7 @@
 
 .container-all {
     display: grid;
-    position: sticky;
-    top: 0;
+
 }
 
 .card-douveryextend {
