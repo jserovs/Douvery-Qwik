@@ -6,12 +6,13 @@ import {
   useVisibleTask$,
 } from '@builder.io/qwik';
 import styles from './button-I-like.css?inline';
+
+import { useGetCurrentUser } from '~/routes/layout';
+import { useLocation, useNavigate } from '@builder.io/qwik-city';
 import {
   getProductLikeStatus,
   productUserLikeDislike,
-} from '~/services/viewed/viewed';
-import { useGetCurrentUser } from '~/routes/layout';
-import { useLocation, useNavigate } from '@builder.io/qwik-city';
+} from '~/services/userlike-dislike/productUserLikeDislike';
 
 export const ButtonILike = component$(({ product }: any) => {
   useStylesScoped$(styles);
