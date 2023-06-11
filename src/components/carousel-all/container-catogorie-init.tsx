@@ -56,7 +56,7 @@ export default component$(() => {
                     Das la impresión de que estás preparado para disfrutar.
                   </h2>
                   <a href="/a/login/?rr=/" class="button-signin">
-                    Iniciar Session
+                    Iniciar Sesión
                   </a>
                 </>
               )}
