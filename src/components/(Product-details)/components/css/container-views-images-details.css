@@ -124,27 +124,6 @@
     background-color: #eee;
 }
 
-.review-product {
-    display: flex;
-    gap: 20px;
-    width: 100%;
-    max-width: 250px;
-    min-width: 200px;
-    height: 55px;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--color-background-light);
-    padding: 10px;
-    animation: smoApp 0.5s ease-in-out;
-    border: 1px solid var(--border-width-1);
-}
-
-.review-product button {
-    display: flex;
-    gap: 10px;
-    font-size: smaller;
-    color: #2c3333;
-}
 
 .title-subtitle {
     margin-bottom: 10px;

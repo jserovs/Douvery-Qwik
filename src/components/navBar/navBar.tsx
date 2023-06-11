@@ -92,7 +92,7 @@ export default component$(({ is, user, zipCode, userCoun }: any) => {
                   >
                     <p class="ttle-draw">
                       <strong class="text-hello"> Hello,</strong>{' '}
-                      <strong> Iniciar Session</strong>
+                      <strong> Iniciar Sesión</strong>
                     </p>{' '}
                   </a>
                 </div>

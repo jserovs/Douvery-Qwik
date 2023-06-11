@@ -170,6 +170,8 @@ export const CardComment1 = component$(
       <div class="container-all" id={'review-' + id}>
         <div class="ctr-box-user">
           <img
+            width={50}
+            height={50}
             class="crtr-avatar"
             src={
               avatar
@@ -223,7 +225,7 @@ export const CardComment1 = component$(
                     <>
                       {' '}
                       <div class="container-img-reviews">
-                        <img src={img} />
+                        <img width={50} height={50} src={img} />
                       </div>
                     </>
                   ))}

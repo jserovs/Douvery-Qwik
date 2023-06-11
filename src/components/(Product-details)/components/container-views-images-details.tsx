@@ -15,12 +15,11 @@ import { VarticalViewProductIMG } from './layout/product/vartical-views';
 import { ThreeHorizontalViewProductIMG } from './layout/product/three-horizontal-views';
 import { LibPermVerticalViewProductIMG } from './layout/product/books-perm-vertical-views';
 
-
-
 import { ContainerDescriptionGPT } from './crtr-description-gpt';
 import { CardDouveryExtend1 } from '~/components/cards/douveryExtend/card-douveryExtend-1/douveryExtend1';
 import { ContainerBreadcrumbs } from './sessions/VIEW 1/components/Breadcrumbs/container-breadcrumbs';
 import { ContainerSponsoreProductVert1 } from './sessions/VIEW 2/components/container-sponsore-vert';
+import { ButtonILike } from './components/buttons-I-like/button-I-like';
 
 export const ContainerViewsIMGDetails = component$(({ props }: any) => {
   useStylesScoped$(styles);
@@ -130,65 +129,18 @@ export const ContainerViewsIMGDetails = component$(({ props }: any) => {
       </div>
 
       <div class="vert-right">
-        
         <div class="ctr-extend-d">
           {' '}
           <CardDouveryExtend1 />
-          <div class="separator-border"/> 
-<div class="title-subtitle">
-     <p class="ps-sr1">Mejora tus recomendaciones</p>
-</div>
- 
+          <div class="separator-border" />
+          <div class="title-subtitle">
+            <p class="ps-sr1">Mejora tus recomendaciones</p>
+          </div>
           <div class="review-product">
-
-            <button
-              class={`button-helpful 
-              }`}
-             
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M7 10v12m8-16.12L14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h0a3.13 3.13 0 0 1 3 3.88Z"
-                />
-              </svg>
-              <p> Me gusta</p>
-            </button>
-
-            <button
-              class={`button-helpful 
-              } `}
-             
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M17 14V2M9 18.12L10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22h0a3.13 3.13 0 0 1-3-3.88Z"
-                />
-              </svg>
-
-              <p>No me gusta</p>
-            </button>
-          </div><div class="separator-border"/> 
-         <ContainerSponsoreProductVert1 product={props} />
+            <ButtonILike product={props} />
+          </div>
+          <div class="separator-border" />
+          <ContainerSponsoreProductVert1 product={props} />
         </div>
       </div>
     </div>

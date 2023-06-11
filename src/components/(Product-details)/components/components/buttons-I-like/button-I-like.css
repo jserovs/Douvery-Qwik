@@ -1,0 +1,60 @@
+.review-product {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    max-width: 250px;
+    min-width: 200px;
+    height: 55px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-background-light);
+    padding: 10px;
+    animation: smoApp 0.5s ease-in-out;
+    border: 1px solid var(--border-width-1);
+}
+
+.review-product button {
+    display: flex;
+    gap: 10px;
+    font-size: smaller;
+    color: #2c3333;
+}
+
+.review-product button:hover {
+    color: var(--color-stars)
+}
+
+.review-product p:hover {
+    color: var(--color-stars)
+}
+
+.liked {
+    color: var(--color-stars)
+}
+
+.liked p {
+    color: var(--color-stars)
+}
+
+.disliked {
+    color: var(--color-stars)
+}
+
+.disliked p {
+    color: var(--color-stars)
+}
+
+.container-login {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.container-login a {
+    text-decoration: underline;
+    color: var(--color-stars);
+}

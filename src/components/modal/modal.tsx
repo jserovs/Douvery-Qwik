@@ -156,7 +156,7 @@ export const ModalButtonCou = component$(() => {
                     </div>
                   </div>
                   <button onClick$={() => nav('/a/login/')}>
-                    Iniciar Session
+                    Iniciar Sesión
                   </button>{' '}
                 </div>
               )}
