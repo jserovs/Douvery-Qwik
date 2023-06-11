@@ -15,7 +15,7 @@ import { VarticalViewProductIMG } from './layout/product/vartical-views';
 import { ThreeHorizontalViewProductIMG } from './layout/product/three-horizontal-views';
 import { LibPermVerticalViewProductIMG } from './layout/product/books-perm-vertical-views';
 
-import { ContainerVertInfo } from './container-vrt-brts-product';
+
 
 import { ContainerDescriptionGPT } from './crtr-description-gpt';
 import { CardDouveryExtend1 } from '~/components/cards/douveryExtend/card-douveryExtend-1/douveryExtend1';
@@ -129,7 +129,7 @@ export const ContainerViewsIMGDetails = component$(({ props }: any) => {
       </div>
 
       <div class="vert-right">
-        <ContainerVertInfo />
+        
         <div class="ctr-extend-d">
           {' '}
           <CardDouveryExtend1 />
