@@ -138,11 +138,11 @@ export default component$(() => {
   );
 });
 export const head: DocumentHead = {
-  title: 'Inicar Session en Douvery',
+  title: 'Iniciar Session en Douvery',
   meta: [
     {
       name: 'description',
-      content: 'Inicar Session en Douvery',
+      content: 'Iniciar Session en Douvery',
     },
   ],
 };
