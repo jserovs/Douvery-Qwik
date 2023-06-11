@@ -15,7 +15,7 @@ export const CardDouveryExtend1 = component$(() => {
   useVisibleTask$(() => {
     const timer = setInterval(() => {
       showLoader.setShowLoader = false;
-    }, 3000);
+    },1);
     return () => {
       clearInterval(timer);
     };
@@ -35,6 +35,8 @@ export const CardDouveryExtend1 = component$(() => {
           </div>
           <div class="card-douveryextend">
             <img
+            width={300}
+            height={300}
               src="https://res.cloudinary.com/douvery/image/upload/v1684492886/buwaumgmxfc1uz43jcux.png"
               alt=""
             />

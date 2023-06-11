@@ -39,7 +39,7 @@
 
 .vert-right {
     display: grid;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     padding: 10PX 0PX 10PX 0px;
 
