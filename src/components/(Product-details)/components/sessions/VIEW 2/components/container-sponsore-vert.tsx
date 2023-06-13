@@ -1,8 +1,8 @@
 import {
+  Resource,
   component$,
-  useStore,
+  useResource$,
   useStylesScoped$,
-  useTask$,
 } from '@builder.io/qwik';
 
 import styles from './css/container-sponsore.css?inline';
@@ -14,20 +14,12 @@ import { ContainerCardProduct9 } from '~/components/cards/product/product-card-9
 export const SponsoredProductContainer = component$(({ product }: any) => {
   useStylesScoped$(styles);
 
-  const state = useStore({
-    productResults: [] as Product[],
-  });
-
-  useTask$(async ({ track }) => {
+  const productReducer = useResource$<Product[]>(async ({ cleanup, track }) => {
     track(() => product.dui);
-
-    const dui = product.dui;
     const controller = new AbortController();
-    state.productResults = await fetchSystemRecomendationProductU(dui, 1);
-
-    return () => {
-      controller.abort();
-    };
+    cleanup(() => controller.abort());
+    const dui = product.dui;
+    return fetchSystemRecomendationProductU(dui, 1);
   });
 
   return (
@@ -40,11 +32,31 @@ export const SponsoredProductContainer = component$(({ product }: any) => {
           <div class="crtrs-bsc">
             <div class="div-car">
               {' '}
-              {state.productResults.map((val: any, key: any) => (
-                <div key={key}>
-                  <ContainerCardProduct9 product={val} />
-                </div>
-              ))}
+              <Resource
+                value={productReducer}
+                onPending={() => <div class="loader"></div>}
+                onRejected={() => (
+                  <>
+                    Al parecer, hay un error en la solicitud. Por favor,
+                    actualiza la página para verificar nuevamente.
+                  </>
+                )}
+                onResolved={(data: any) => (
+                  <>
+                    {data.length === 0 ? (
+                      <p>No hay productos para mostrar.</p>
+                    ) : (
+                      <>
+                        {data.map((val: any, key: any) => (
+                          <div key={key}>
+                            <ContainerCardProduct9 product={val} />
+                          </div>
+                        ))}
+                      </>
+                    )}
+                  </>
+                )}
+              />
               <div> </div>
             </div>
           </div>
