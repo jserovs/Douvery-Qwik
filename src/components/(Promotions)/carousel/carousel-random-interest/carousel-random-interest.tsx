@@ -4,15 +4,16 @@ import {
   useResource$,
   useStylesScoped$,
 } from '@builder.io/qwik';
-import style from './carousel-all-interest.css?inline';
+import style from './carousel-random-interest.css?inline';
 import type { Product } from '~/utils/types';
 import { fetchProductU } from '~/services/fechProduct';
 import { randomNum } from '~/services/fuction';
 
 import { Carousel2 } from '~/components/use/carousel/carousel-2/carousel-2';
-export const Promotion_CarouselAllInterest = component$(
+export const Promotion_CarouselRandomInterest = component$(
   ({ styleNumber }: any) => {
     useStylesScoped$(style);
+
     const productReducer = useResource$<Product[]>(async ({ cleanup }) => {
       const controller = new AbortController();
       cleanup(() => controller.abort());
@@ -22,7 +23,7 @@ export const Promotion_CarouselAllInterest = component$(
 
     const randomNumber = randomNum();
     return (
-      <div class="ctnr-view-5" key={randomNumber}>
+      <div class="ctnr-view-5">
         {' '}
         <div class="content-carousel">
           <Resource
@@ -51,6 +52,7 @@ export const Promotion_CarouselAllInterest = component$(
               </>
             )}
           />
+
           <br />
         </div>
       </div>
