@@ -4,13 +4,11 @@
     padding-top: 30px;
     padding-bottom: 80px;
     margin-bottom: 50px;
-    border-bottom: 1px solid var(--border-width-1);
-    border: 1px solid var(--border-width-2);
+    border: 1px solid var(--border-width-1);
     border-radius: 4px;
     padding: 30px 21px;
     z-index: 1000;
-    /* box-shadow: 0 2px 5px #00000015;
-        box-shadow: 0 2px 5px #00000015; */
+
 }
 
 .product-details-mobile {

@@ -1,8 +1,9 @@
 import {
+  Resource,
   component$,
+  useResource$,
   useStore,
   useStylesScoped$,
-  useTask$,
 } from '@builder.io/qwik';
 
 import styles from './css/container-combined-by-seller.css?inline';
@@ -29,12 +30,13 @@ export const ContainerCombinedBySeller = component$(({ product }: any) => {
   });
   const discount = 10;
 
-  useTask$(async ({ track }) => {
+  const productReducer = useResource$<Product[]>(async ({ cleanup, track }) => {
     track(() => product.dui);
+    const controller = new AbortController();
     const subCategory = product.subCategory;
     const dui = product.dui;
-    const controller = new AbortController();
-    state.productResults = await fetchProductSubCategory(subCategory, dui);
+    const result = await fetchProductSubCategory(subCategory, dui);
+    state.productResults = result;
     let total = 0;
     for (let i = 0; i < state.productResults.length; i++) {
       total += state.productResults[i].price;
@@ -52,9 +54,9 @@ export const ContainerCombinedBySeller = component$(({ product }: any) => {
 
     totalAll.setTotalAl = totalP;
 
-    return () => {
-      controller.abort();
-    };
+    cleanup(() => controller.abort());
+
+    return result;
   });
 
   return (
@@ -81,16 +83,37 @@ export const ContainerCombinedBySeller = component$(({ product }: any) => {
           <>
             <CtnrCardImageOnly product={product} />
           </>
-          {state.productResults.map((val: any, key: any) => (
-            <>
-              {key !== val.length - 1 && (
-                <div class="slxr">
-                  <DouveryAdd />
-                </div>
-              )}
-              <CtnrCardImageOnly product={val} key={key} />
-            </>
-          ))}
+          <Resource
+            value={productReducer}
+            onPending={() => <div class="loader"></div>}
+            onRejected={() => (
+              <>
+                Al parecer, hay un error en la solicitud. Por favor, actualiza
+                la página para verificar nuevamente.
+              </>
+            )}
+            onResolved={(data: any) => (
+              <>
+                {data.length === 0 ? (
+                  <p>No hay productos para mostrar.</p>
+                ) : (
+                  <>
+                    {' '}
+                    {data.map((val: any, key: any) => (
+                      <>
+                        {key !== val.length - 1 && (
+                          <div class="slxr">
+                            <DouveryAdd />
+                          </div>
+                        )}
+                        <CtnrCardImageOnly product={val} key={key} />
+                      </>
+                    ))}
+                  </>
+                )}
+              </>
+            )}
+          />
 
           <div class="srtr-eqs">
             {' '}

@@ -20,7 +20,7 @@ export const Carousel2 = component$(({ product, styleCard }: any) => {
   const currentIndex = useStore({ setCurrentIndex: 0 });
   const randomNumber = randomNum();
   return (
-    <div class="carousel" key={randomNumber}>
+    <div class="carousel " key={randomNumber}>
       <button
         aria-label="btn carousel__btn--prev"
         class="carousel__btn carousel__btn--prev"

@@ -41,7 +41,6 @@ export const Promotion_CarouselRandomInterest = component$(
                   <p>No hay productos para mostrar.</p>
                 ) : (
                   <>
-                    {' '}
                     <Carousel2
                       key={randomNumber}
                       styleCard={styleNumber || randomNumber}
