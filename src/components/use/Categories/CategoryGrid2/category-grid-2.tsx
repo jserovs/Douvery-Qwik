@@ -20,7 +20,12 @@ export const CategoryGrid2 = component$(({ categorie, store }: any) => {
       </div>
 
       <div class="container-img">
-        <img src={categorie.img} alt={categorie.name} />
+        <img
+          width={200}
+          height={200}
+          src={categorie.img}
+          alt={categorie.name}
+        />
       </div>
     </div>
   );

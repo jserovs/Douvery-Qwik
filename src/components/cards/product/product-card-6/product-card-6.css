@@ -5,7 +5,6 @@
     flex-direction: column;
     text-align: start;
     justify-content: flex-start;
-    background-color: var(--color-background-light);
 
     padding: 10px 10px;
     position: relative;
@@ -22,12 +21,7 @@
 
 }
 
-.product-name,
-.product-brand,
-.product-price {
-    width: 100%;
 
-}
 
 .product-sponsor {
     width: 100%;
@@ -39,6 +33,10 @@
 }
 
 .product-name {
+    background-color: var(--color-background-light);
+    width: 100%;
+    padding: 0px 10px;
+    height: 40px;
     margin: 10px 0;
     font-size: small;
     text-overflow: ellipsis;

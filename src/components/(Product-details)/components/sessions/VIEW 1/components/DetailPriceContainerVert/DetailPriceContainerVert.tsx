@@ -3,8 +3,8 @@ import styles from './DetailPriceContainerVert.css?inline';
 
 import numeral from 'numeral';
 
-import { ButtonDetailVerticalContainer } from '../buttons-cart/buttons-cart';
 import { UseStarRating } from '~/components/use/ratings/useRatingHover/useRatingHover';
+import { ButtonDetailVerticalContainer } from '~/components/(Product-details)/components/components/buttons-cart/buttons-cart';
 
 export const DetailPriceContainerVert = component$(({ props }: any) => {
   useStylesScoped$(styles);

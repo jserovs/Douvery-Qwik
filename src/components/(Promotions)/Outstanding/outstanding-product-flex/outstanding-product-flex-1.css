@@ -1,9 +1,10 @@
 .container-all {
     display:
         grid;
-    grid-template-columns: 1FR 1FR 1FR;
+    grid-template-columns: 1FR 1FR;
     justify-content: space-between;
-    gap: 0px;
+    gap: 20px;
+    background-color: var(--color-background-white);
 
 }
 
