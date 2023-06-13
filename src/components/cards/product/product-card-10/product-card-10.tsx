@@ -7,19 +7,25 @@ import { UsePrice } from '~/components/use/price/price';
 export const ContainerCardProduct10 = component$(({ product }: any) => {
   useStylesScoped$(styles);
   const discoun = product.price - product.price * (product.discount / 100);
-
+  const urlLink = `/v/${product.slug}/${product.dui}/?ss_v=A591A6D40BF420404A011733CFB7B190D62C65BF0BCDA32B57B277D9AD9F146E`;
   return (
     <div class="product-card">
-      <a href={`/v/${product.slug}/${product.dui}`}>
+      <a href={urlLink}>
         {' '}
-        <img src={product.images[0]} alt={product.name} class="product-image" />
+        <img
+          width={200}
+          height={300}
+          src={product.images[0]}
+          alt={product.name}
+          class="product-image"
+        />
       </a>
-      <a href={`/v/${product.slug}/${product.dui}`}>
+      <a href={urlLink}>
         <h2 class="product-brand">
           <TextCL text={product.marca} />{' '}
         </h2>
       </a>
-      <a href={`/v/${product.slug}/${product.dui}`}>
+      <a href={urlLink}>
         <h2 class="product-name">
           {' '}
           <TextCL text={product.name} />
