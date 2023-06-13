@@ -21,6 +21,7 @@ import { LikeButtons } from '../../components/buttons-I-like/button-I-like';
 import { SponsoredProductContainer } from '../VIEW 2/components/container-sponsore-vert';
 import { useLocation } from '@builder.io/qwik-city';
 import { DetailPriceContainerVert } from './components/DetailPriceContainerVert/DetailPriceContainerVert';
+import { DetailPriceContainerHoriz2 } from './components/DetailPriceContainerHoriz2/DetailPriceContainerHoriz2';
 
 // Main component
 export const View1 = component$(({ props }: any) => {
@@ -84,7 +85,7 @@ const ProductCenter = ({ props, loc, img, quantityCart, isOpen }: any) => {
     view ===
     'A591A6D40BF420404A011733CFB7B190D62C65BF0BCDA32B57B277D9AD9F146E' ? (
       <div class="detail-view-horiz2">
-        <DetailContainer isOpen={isOpen} props={props} />
+        <DetailPriceContainerHoriz2 isOpen={isOpen} props={props} />
       </div>
     ) : (
       ''

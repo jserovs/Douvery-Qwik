@@ -28,6 +28,7 @@ import { addToViewedProducts } from '~/services/viewed/viewed';
 export const useProductInfo = routeLoader$(async (requestEvent) => {
   const dui = requestEvent.params.dui;
   const product = await fetchProduct(dui);
+
   return product;
 });
 
@@ -37,9 +38,7 @@ export default component$(() => {
 
   const productData = useProductInfo();
 
-  const descriptionEdit = useSignal(`
-
- `);
+  const descriptionEdit = useSignal(``);
 
   useVisibleTask$(() => {
     addToViewedProducts({ dui: location.params.dui });

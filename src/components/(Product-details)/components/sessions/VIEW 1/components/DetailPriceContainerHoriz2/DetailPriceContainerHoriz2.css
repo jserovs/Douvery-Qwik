@@ -11,7 +11,9 @@
     padding-top: 10px;
     background-color: var(--color-background-light);
     display: flex;
-
+    flex-wrap: wrap;
+    row-gap: 20px;
+    column-gap: 5px;
     align-items: center;
     justify-content: center;
 
@@ -296,8 +298,12 @@
 }
 
 .div-button {
-    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 420px;
     height: 36.5px;
+
 
 }
 
@@ -363,6 +369,8 @@ select option {
     right: 0px;
     pointer-events: none;
 }
+
+
 
 @media only screen and (max-width: 1185px) {
     .container-NavAggPayProduct-web {

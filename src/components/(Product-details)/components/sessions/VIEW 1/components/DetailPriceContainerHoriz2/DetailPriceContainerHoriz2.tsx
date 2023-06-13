@@ -2,85 +2,119 @@ import { component$, useStore, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './DetailPriceContainerHoriz2.css?inline';
 
 import numeral from 'numeral';
-
-import { ButtonDetailVerticalContainer } from '../../../../components/buttons-cart/buttons-cart';
 import { UseStarRating } from '~/components/use/ratings/useRatingHover/useRatingHover';
+import { ButtonDetailContainer } from '~/components/(Product-details)/components/container-button-details';
 
 export const DetailPriceContainerHoriz2 = component$(({ props }: any) => {
   useStylesScoped$(styles);
-
   const quantityCart = useStore({ setQuantityCart: '1' });
 
   //*CALCULAR EL DESCUENTO
   const discount = (props.price * props.discount) / 100;
-  const discountedPrice = props.price - discount;
-  const currencyFormat = '$0,0.00';
+  const price_discount = props.price - discount;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const locateCurrency = 'US';
+  const formCurrency = '$0,0.00';
 
   return (
     <>
-      <div class="product-container">
-        <div class="product-details-mobile">
-          <div class="container-price-discount">
-            {props.discount === 0 ? (
-              ''
-            ) : (
-              <>
-                <h5 class="tach price-tach ">
-                  {' '}
-                  {numeral(props.price).format(currencyFormat)}
-                </h5>
+      <div class="super-container">
+        <div class="container-NavAggPayProduct-table-mobiles">
+          <div class="rating-table-mobiles">
+            <UseStarRating product={props} size="16" />
+          </div>
 
-                {props.discount < 20 ? (
-                  ''
-                ) : (
-                  <div class="ctr-save-pr">
-                    SAVE {numeral(discount).format(currencyFormat)}
-                  </div>
-                )}
-              </>
-            )}
-            <div class="product-price-mobile">
-              <div class="price-value-mobile">
-                <h4 class="price-text-mobile">
-                  {' '}
-                  {props.discount === 0 ? (
-                    <>{numeral(props.price).format(currencyFormat)}</>
-                  ) : (
-                    <>{numeral(discountedPrice).format(currencyFormat)}</>
-                  )}
-                </h4>
-              </div>
-            </div>
-            {props.discount === 0 ? (
-              <div class="free-shipping-notice">Envio gratis</div>
-            ) : (
-              <div class="discount-notice-mobile">
-                <div class="discount-value-mobile">
-                  <h6 class="discount-text-mobile">
+          <div class="price-table-mobiles">
+            <h5 class="title-prtsea">
+              <>Precio :</>
+            </h5>
+            <size-w class="size-w-10" />
+            <h4 class="font-price-mobiles">
+              {' '}
+              {props.discount === 0 ? (
+                <>{numeral(props.price).format(formCurrency)}</>
+              ) : (
+                <>{numeral(price_discount).format(formCurrency)}</>
+              )}
+            </h4>
+          </div>
+          {props.discount === 0 ? (
+            <>
+              {' '}
+              <div class="shw-free">Envio gratis</div>
+            </>
+          ) : (
+            <>
+              <div class="price-descount-table-mobiles">
+                <div class="ctr-porce-mobiles">
+                  <h6 class="porce-mobiles  ">
                     -%
                     {props.discount}
                   </h6>
                 </div>
               </div>
-            )}
-          </div>
+            </>
+          )}
         </div>
-        <div class="separator-border" />
 
-        <div class="separator-border" />
-
-        <div class="product-details-web">
-          {props.quantity <= 1 ? (
-            <div class="no-stock">
-              <div class="circle"></div>
-              <h5 class="title-prtsea">Articulo agotado</h5>
-            </div>
+        <div class="container-NavAggPayProduct-web">
+          <UseStarRating product={props} size="20" />
+          <size-w class="size-w-10" />
+          {props.discount === 0 ? (
+            ''
           ) : (
             <>
-              <div class="select-container">
-                <div class="product-rating-mobile">
-                  <p>Ratings: </p> <UseStarRating product={props} size="20" />
+              <div class="titles-of"> Antes: </div>
+              <size-w class="size-w-10" />{' '}
+              <h5 class="tach price-tach ">
+                {' '}
+                {numeral(props.price).format(formCurrency)}
+              </h5>
+              <size-w class="size-w-10" />
+              <size-w class="size-w-10" />
+              <div class="ctr-p-s">
+                {' '}
+                <div
+                  class={
+                    props.discount < 20 ? 'ctr-porce' : 'ctr-porce ctr-p-red '
+                  }
+                >
+                  <h6 class="porce  ">
+                    -%
+                    {props.discount}
+                  </h6>
                 </div>
+                {props.discount < 20 ? (
+                  ''
+                ) : (
+                  <div class="ctr-save-pr">
+                    SAVE {numeral(discount).format(formCurrency)}
+                  </div>
+                )}
+              </div>
+              <size-w class="size-w-10" />
+            </>
+          )}
+          <size-w class="size-w-10" />
+          <div class="titles-of">Precio :</div>
+          <h4 class="font-price ">
+            {props.discount === 0 ? (
+              <>{numeral(props.price).format(formCurrency)}</>
+            ) : (
+              <div>{numeral(price_discount).format(formCurrency)}</div>
+            )}
+          </h4>{' '}
+          <size-w class="size-w-10" />
+          <size-w class="size-w-10" />
+          <div class="div-button">
+            {' '}
+            {props.quantity <= 1 ? (
+              <div class="no-stock">
+                <div class="circle"></div>
+                <h5 class="title-prtsea">Articulo agotado</h5>
+              </div>
+            ) : (
+              <div class="div-input-sertts">
                 <div class="select-input-cart">
                   <select
                     value={quantityCart.setQuantityCart}
@@ -95,16 +129,12 @@ export const DetailPriceContainerHoriz2 = component$(({ props }: any) => {
                   </select>
                 </div>
               </div>
-              <div class="container-buttons">
-                {' '}
-                <ButtonDetailVerticalContainer
-                  style="vertical"
-                  product={props}
-                  quantity={quantityCart.setQuantityCart}
-                />
-              </div>
-            </>
-          )}
+            )}
+            <ButtonDetailContainer
+              product={props}
+              quantity={quantityCart.setQuantityCart}
+            />
+          </div>
         </div>
       </div>
     </>
