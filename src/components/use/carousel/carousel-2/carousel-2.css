@@ -2,6 +2,7 @@
     position: relative;
     display: flex;
     width: 100%;
+
     overflow: hidden;
     padding: 10px 0px;
     border-top: 1px solid var(--border-width-1);

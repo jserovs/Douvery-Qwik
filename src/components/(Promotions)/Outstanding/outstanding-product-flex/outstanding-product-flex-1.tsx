@@ -9,7 +9,6 @@ import { CardOutstandingDiscount } from '~/components/cards/outstanding/card-out
 import type { Product } from '~/utils/types';
 import { fetchProductsOutstanding } from '~/services/outstanding/outstanding';
 import { CardOutstandingPopular } from '~/components/cards/outstanding/card-outstanding-popular copy/card-outstanding-popular';
-import { CardOutstandingRecents } from '~/components/cards/outstanding/card-outstanding-recets/card-outstanding-recets';
 
 export const OutstandingProductFlex1 = component$(() => {
   useStylesScoped$(styles);
@@ -43,9 +42,6 @@ export const OutstandingProductFlex1 = component$(() => {
                 <CardOutstandingDiscount
                   productDiscount={data.mostDiscountedProduct}
                 />{' '}
-                <CardOutstandingRecents
-                  productPopular={data.mostRecentProduct}
-                />
               </>
             )}
           </>

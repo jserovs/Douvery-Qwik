@@ -19,8 +19,8 @@ import { ShortDescriptionContainer } from '../../container-desc-short';
 import { ExtendedCardDouvery } from '~/components/cards/douveryExtend/card-douveryExtend-1/douveryExtend1';
 import { LikeButtons } from '../../components/buttons-I-like/button-I-like';
 import { SponsoredProductContainer } from '../VIEW 2/components/container-sponsore-vert';
-import { DetailPriceContainerVert } from '../../components/DetailPriceContainerVert/DetailPriceContainerVert';
 import { useLocation } from '@builder.io/qwik-city';
+import { DetailPriceContainerVert } from './components/DetailPriceContainerVert/DetailPriceContainerVert';
 
 // Main component
 export const View1 = component$(({ props }: any) => {
@@ -47,6 +47,7 @@ export const View1 = component$(({ props }: any) => {
         props={props}
         img={img}
         quantityCart={quantityCart}
+        isOpen={isOpen}
       />
       <ExtraButtonContainer props={props} />
     </div>
@@ -54,14 +55,20 @@ export const View1 = component$(({ props }: any) => {
 });
 
 // Subcomponents
-const ProductView = ({ loc, props, img, quantityCart }: any) => (
+const ProductView = ({ loc, props, img, quantityCart, isOpen }: any) => (
   <div class="container-view-product">
     <div class="vert-left">
       <ImageDetailContainer props={props} />
     </div>
 
     <div class="center">
-      <ProductCenter props={props} img={img} quantityCart={quantityCart} />
+      <ProductCenter
+        props={props}
+        loc={loc}
+        img={img}
+        quantityCart={quantityCart}
+        isOpen={isOpen}
+      />
     </div>
 
     <div class="vert-right">
@@ -70,35 +77,50 @@ const ProductView = ({ loc, props, img, quantityCart }: any) => (
   </div>
 );
 
-const ProductCenter = ({ props, img, quantityCart }: any) => (
-  <div class="crtr-div-ifrms-aetr">
-    <size-w class="size-w-10" />
-    <ProductNameHeaderContainer props={props} />
-    {props.variations !== 0 && (
-      <div class="crt-variations">
-        <VariationsDetailContainer
-          imgS={img}
-          imgP={props.images[0]}
-          props={props}
+const ProductCenter = ({ props, loc, img, quantityCart, isOpen }: any) => {
+  const view = loc.url.searchParams.get('ss_v');
+
+  const DetailViewHoriz =
+    view ===
+    'A591A6D40BF420404A011733CFB7B190D62C65BF0BCDA32B57B277D9AD9F146E' ? (
+      <div class="detail-view-horiz2">
+        <DetailContainer isOpen={isOpen} props={props} />
+      </div>
+    ) : (
+      ''
+    );
+  return (
+    <div class="crtr-div-ifrms-aetr">
+      <size-w class="size-w-10" />
+      <ProductNameHeaderContainer props={props} />
+      {DetailViewHoriz}
+      {props.variations !== 0 && (
+        <div class="crt-variations">
+          <VariationsDetailContainer
+            imgS={img}
+            imgP={props.images[0]}
+            props={props}
+          />
+        </div>
+      )}
+
+      <div class="buttons-mobiles">
+        <div class="brt-irft">
+          <div class="slect-qty-prt">
+            <p>Cantidad : </p>
+            <size-w class="size-w-10" />
+            <QuantitySelector quantityCart={quantityCart} />
+          </div>
+        </div>
+        <ButtonDetailContainer
+          product={props}
+          quantity={quantityCart.setQuantityCart}
         />
       </div>
-    )}
-    <div class="buttons-mobiles">
-      <div class="brt-irft">
-        <div class="slect-qty-prt">
-          <p>Cantidad : </p>
-          <size-w class="size-w-10" />
-          <QuantitySelector quantityCart={quantityCart} />
-        </div>
-      </div>
-      <ButtonDetailContainer
-        product={props}
-        quantity={quantityCart.setQuantityCart}
-      />
+      <Description props={props} />
     </div>
-    <Description props={props} />
-  </div>
-);
+  );
+};
 
 const QuantitySelector = ({ quantityCart }: any) => (
   <select

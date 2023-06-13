@@ -1,8 +1,8 @@
 import {
+  Resource,
   component$,
-  useStore,
+  useResource$,
   useStylesScoped$,
-  useTask$,
 } from '@builder.io/qwik';
 
 import styles from './css/container-sponsore.css?inline';
@@ -15,22 +15,15 @@ import { fetchProductCategory } from '~/services/fechProduct';
 export const ContainerSponsoreProduct = component$(({ product }: any) => {
   useStylesScoped$(styles);
 
-  const state = useStore({
-    productResults: [] as Product[],
-  });
-
-  useTask$(async ({ track }) => {
+  const productReducer = useResource$<Product[]>(async ({ cleanup, track }) => {
     track(() => product.dui);
     const category = product.category;
     const dui = product.dui;
     const controller = new AbortController();
-    state.productResults = await fetchProductCategory(category, dui, 2);
+    cleanup(() => controller.abort());
 
-    return () => {
-      controller.abort();
-    };
+    return await fetchProductCategory(category, dui, 2);
   });
-
   return (
     <>
       {' '}
@@ -55,11 +48,32 @@ export const ContainerSponsoreProduct = component$(({ product }: any) => {
             </div>
             <div class="div-car">
               {' '}
-              {state.productResults.map((val: any, key: any) => (
-                <div key={key}>
-                  <ContainerCardProduct1 product={val} />
-                </div>
-              ))}
+              <Resource
+                value={productReducer}
+                onPending={() => <div class="loader"></div>}
+                onRejected={() => (
+                  <>
+                    Al parecer, hay un error en la solicitud. Por favor,
+                    actualiza la página para verificar nuevamente.
+                  </>
+                )}
+                onResolved={(data: any) => (
+                  <>
+                    {data.length === 0 ? (
+                      <p>No hay productos para mostrar.</p>
+                    ) : (
+                      <>
+                        {' '}
+                        {data.map((val: any, key: any) => (
+                          <div key={key}>
+                            <ContainerCardProduct1 product={val} />
+                          </div>
+                        ))}
+                      </>
+                    )}
+                  </>
+                )}
+              />
               <div> </div>
             </div>
           </div>
