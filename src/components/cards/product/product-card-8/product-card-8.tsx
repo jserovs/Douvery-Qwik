@@ -1,4 +1,5 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
+import { UseProductDetailsLink } from '~/services/fuction';
 
 import styles from './product-card-8.css?inline';
 import { TextCL } from '~/components/use/textCL/textCL';
@@ -12,7 +13,7 @@ export const ContainerCardProduct8 = component$(({ product }: any) => {
 
   return (
     <div class="product-card">
-      <a href={`/v/${product.slug}/${product.dui}`}>
+     <a href={UseProductDetailsLink(product)}>
         {' '}
         <img
           width={200}

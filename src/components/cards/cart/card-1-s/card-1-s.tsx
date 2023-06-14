@@ -3,6 +3,7 @@ import styles from './card-1-s.css?inline';
 import { TextCL } from '~/components/use/textCL/textCL';
 import { UsePrice } from '~/components/use/price/price';
 import { DouveryCheckMark } from '~/components/icons/checkMark';
+import { UseProductDetailsLink } from '~/services/fuction';
 export const Card1SCART = component$(({ product }: any) => {
   useStylesScoped$(styles);
   const discoun = product.price - product.price * (product.discount / 100);
@@ -11,7 +12,7 @@ export const Card1SCART = component$(({ product }: any) => {
       <div class="card">
         <img src={product.images} alt="Product Image" class="product-image" />
         <div class="product-info">
-          <a href={`/v/${product.slug}/${product.dui}`}>
+         <a href={UseProductDetailsLink(product)}>
             {' '}
             <h2 class="product-title">
               <TextCL text={product.name} />{' '}

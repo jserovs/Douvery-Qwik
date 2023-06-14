@@ -3,6 +3,7 @@ import styles from './purchase-products.css?inline';
 import { TextCL } from '~/components/use/textCL/textCL';
 import { DouveryCheckMark } from '~/components/icons/checkMark';
 import { UsePrice } from '~/components/use/price/price';
+import { UseProductDetailsLink } from '~/services/fuction';
 
 export const Card1PurchaseProductOrders = component$(({ product }: any) => {
   useStylesScoped$(styles);
@@ -12,7 +13,7 @@ export const Card1PurchaseProductOrders = component$(({ product }: any) => {
       <div class="card">
         <img src={product.image} alt="Product Image" class="product-image" />
         <div class="product-info">
-          <a href={`/v/${product.slug}/${product.dui}`}>
+         <a href={UseProductDetailsLink(product)}>
             {' '}
             <h2 class="product-title">
               <TextCL text={product.name} />{' '}

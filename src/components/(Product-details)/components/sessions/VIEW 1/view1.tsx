@@ -23,6 +23,8 @@ import { useLocation } from '@builder.io/qwik-city';
 import { DetailPriceContainerVert } from './components/DetailPriceContainerVert/DetailPriceContainerVert';
 import { DetailPriceContainerHoriz2 } from './components/DetailPriceContainerHoriz2/DetailPriceContainerHoriz2';
 
+import { HashProductDetailsPriceCenter, HashProductDetailsPriceRightTop, HashProductDetailsPriceTopCenter } from '~/services/hash/hash';
+
 // Main component
 export const View1 = component$(({ props }: any) => {
   useStylesScoped$(styles);
@@ -38,7 +40,7 @@ export const View1 = component$(({ props }: any) => {
   const loc = useLocation();
   const view = loc.url.searchParams.get('ss_v');
   const DetailView =
-    view === null ? <DetailContainer isOpen={isOpen} props={props} /> : '';
+    view ===  HashProductDetailsPriceTopCenter || null  ? <DetailContainer isOpen={isOpen} props={props} /> : '';
 
   return (
     <div>
@@ -81,9 +83,9 @@ const ProductView = ({ loc, props, img, quantityCart, isOpen }: any) => (
 const ProductCenter = ({ props, loc, img, quantityCart, isOpen }: any) => {
   const view = loc.url.searchParams.get('ss_v');
 
-  const DetailViewHoriz =
+  const DetailViewHoriz=
     view ===
-    'A591A6D40BF420404A011733CFB7B190D62C65BF0BCDA32B57B277D9AD9F146E' ? (
+  HashProductDetailsPriceCenter ? (
       <div class="detail-view-horiz2">
         <DetailPriceContainerHoriz2 isOpen={isOpen} props={props} />
       </div>
@@ -148,7 +150,7 @@ const ProductRight = ({ props, loc }: any) => {
   const view = loc.url.searchParams.get('ss_v');
   const DetailView =
     view ===
-    'A5B7FA5814DC8F44C4105D46F2835AD9F3F6FC7BD5893405A92F546D2079395F' ? (
+    HashProductDetailsPriceRightTop ? (
       <DetailPriceContainerVert props={props} />
     ) : (
       ''

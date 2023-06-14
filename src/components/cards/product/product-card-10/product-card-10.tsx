@@ -3,14 +3,15 @@ import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './product-card-10.css?inline';
 import { TextCL } from '~/components/use/textCL/textCL';
 import { UsePrice } from '~/components/use/price/price';
+import { UseProductDetailsLink } from '~/services/fuction';
 
 export const ContainerCardProduct10 = component$(({ product }: any) => {
   useStylesScoped$(styles);
   const discoun = product.price - product.price * (product.discount / 100);
-  const urlLink = `/v/${product.slug}/${product.dui}/?ss_v=A591A6D40BF420404A011733CFB7B190D62C65BF0BCDA32B57B277D9AD9F146E`;
+  const urlLink = UseProductDetailsLink(product as any );
   return (
     <div class="product-card">
-      <a href={urlLink}>
+      <a href={urlLink as any}>
         {' '}
         <img
           width={200}
@@ -20,12 +21,12 @@ export const ContainerCardProduct10 = component$(({ product }: any) => {
           class="product-image"
         />
       </a>
-      <a href={urlLink}>
+      <a href={urlLink as any}>
         <h2 class="product-brand">
           <TextCL text={product.marca} />{' '}
         </h2>
       </a>
-      <a href={urlLink}>
+      <a href={urlLink as any}>
         <h2 class="product-name">
           {' '}
           <TextCL text={product.name} />

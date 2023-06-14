@@ -9,6 +9,7 @@ import { UseNumberOneCategory } from '~/components/use/numberOne/numberOneCatego
 import { DouveryCheckMark } from '~/components/icons/checkMark';
 import { useGetCurrentZipCode } from '~/routes/layout';
 import { ModalButtonCou } from '~/components/modal/modal';
+import { UseProductDetailsLink } from '~/services/fuction';
 export const Card3S = component$(({ product }: any) => {
   useStylesScoped$(styles);
   const discoun = product.price - product.price * (product.discount / 100);
@@ -23,12 +24,14 @@ export const Card3S = component$(({ product }: any) => {
     <div class="container-all">
       <div class="card">
         <img
+        width={200}
+        height={200}
           src={product.images[0]}
           alt="Product Image"
           class="product-image"
         />
         <div class="product-info">
-          <a href={`/v/${product.slug}/${product.dui}`}>
+         <a href={UseProductDetailsLink(product)}>
             {' '}
             <h2 class="product-title">
               <TextCL text={product.name} />{' '}
