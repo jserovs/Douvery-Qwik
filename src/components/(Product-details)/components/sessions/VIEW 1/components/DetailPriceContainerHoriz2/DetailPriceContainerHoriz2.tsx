@@ -18,6 +18,58 @@ export const DetailPriceContainerHoriz2 = component$(({ props }: any) => {
 
   return (
     <>
+      <div class="container__lastprice__porce">
+        <div class="container__ratings">
+          <UseStarRating product={props} size="20" />
+        </div>
+        <div class="ctr-opa"> |</div>
+        {props.discount === 0 ? (
+          ''
+        ) : (
+          <>
+            <div class="last__price">
+              <div class="titles-of"> Antes: </div>
+
+              <h5 class="tach price-tach ">
+                {' '}
+                {numeral(props.price).format(formCurrency)}
+              </h5>
+            </div>
+            <div class="ctr-opa"> |</div>
+            <div class="ctr-p-s">
+              {' '}
+              <div
+                class={
+                  props.discount < 20 ? 'ctr-porce' : 'ctr-porce ctr-p-red '
+                }
+              >
+                <h6 class="porce  ">
+                  -%
+                  {props.discount}
+                </h6>
+              </div>
+              {props.discount < 20 ? (
+                ''
+              ) : (
+                <div class="ctr-save-pr">
+                  SAVE {numeral(discount).format(formCurrency)}
+                </div>
+              )}
+            </div>
+            <div class="ctr-opa"> |</div>
+          </>
+        )}
+        <div class="price">
+          <div class="titles-of">Precio :</div>
+          <h4 class="font-price ">
+            {props.discount === 0 ? (
+              <>{numeral(props.price).format(formCurrency)}</>
+            ) : (
+              <div>{numeral(price_discount).format(formCurrency)}</div>
+            )}
+          </h4>{' '}
+        </div>
+      </div>
       <div class="super-container">
         <div class="container-NavAggPayProduct-table-mobiles">
           <div class="rating-table-mobiles">
@@ -58,53 +110,6 @@ export const DetailPriceContainerHoriz2 = component$(({ props }: any) => {
         </div>
 
         <div class="container-NavAggPayProduct-web">
-          <UseStarRating product={props} size="20" />
-          <size-w class="size-w-10" />
-          {props.discount === 0 ? (
-            ''
-          ) : (
-            <>
-              <div class="titles-of"> Antes: </div>
-              <size-w class="size-w-10" />{' '}
-              <h5 class="tach price-tach ">
-                {' '}
-                {numeral(props.price).format(formCurrency)}
-              </h5>
-              <size-w class="size-w-10" />
-              <size-w class="size-w-10" />
-              <div class="ctr-p-s">
-                {' '}
-                <div
-                  class={
-                    props.discount < 20 ? 'ctr-porce' : 'ctr-porce ctr-p-red '
-                  }
-                >
-                  <h6 class="porce  ">
-                    -%
-                    {props.discount}
-                  </h6>
-                </div>
-                {props.discount < 20 ? (
-                  ''
-                ) : (
-                  <div class="ctr-save-pr">
-                    SAVE {numeral(discount).format(formCurrency)}
-                  </div>
-                )}
-              </div>
-              <size-w class="size-w-10" />
-            </>
-          )}
-          <size-w class="size-w-10" />
-          <div class="titles-of">Precio :</div>
-          <h4 class="font-price ">
-            {props.discount === 0 ? (
-              <>{numeral(props.price).format(formCurrency)}</>
-            ) : (
-              <div>{numeral(price_discount).format(formCurrency)}</div>
-            )}
-          </h4>{' '}
-          <size-w class="size-w-10" />
           <size-w class="size-w-10" />
           <div class="div-button">
             {' '}

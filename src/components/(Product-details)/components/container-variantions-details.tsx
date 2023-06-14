@@ -7,32 +7,39 @@ export const VariationsDetailContainer = component$(
     useStylesScoped$(styles);
 
     return (
-      <div class="super-container-options-product">
-        {props.variations.map((val: any, key: any) => (
-          <div key={key} class="container-variation-product">
-            <size-w class="size-w-10" />
-            <div class="col-auto">
-              <div class="ttle-variant">
-                {' '}
-                <strong class="hs-sr1">{val.nameVariation}:</strong>
-                <p class="ps-sr1">Prox ...</p>
-              </div>
-              <size-w class="size-w-10" />
-              <div class="container-variation-cont-most">
-                {val.productVariation.map((valle: any, key: any) => (
-                  <CardProductVariations1
-                    key={key}
-                    imgS={imgS}
-                    imgP={imgP}
-                    dui={valle}
-                    slug={props}
-                  />
-                ))}
-              </div>
+      <>
+        {' '}
+        {props.variations.length > 0 && (
+          <>
+            <div class="super-container-options-product">
+              {props.variations.map((val: any, key: any) => (
+                <div key={key} class="container-variation-product">
+                  <size-w class="size-w-10" />
+                  <div class="col-auto">
+                    <div class="ttle-variant">
+                      {' '}
+                      <strong class="hs-sr1">{val.nameVariation}:</strong>
+                      <p class="ps-sr1">Prox ...</p>
+                    </div>
+                    <size-w class="size-w-10" />
+                    <div class="container-variation-cont-most">
+                      {val.productVariation.map((valle: any, key: any) => (
+                        <CardProductVariations1
+                          key={key}
+                          imgS={imgS}
+                          imgP={imgP}
+                          dui={valle}
+                          slug={props}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-          </div>
-        ))}
-      </div>
+          </>
+        )}{' '}
+      </>
     );
   }
 );
