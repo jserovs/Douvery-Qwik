@@ -34,7 +34,6 @@ export const CardProductVariations1 = component$(
       state.product = product;
     });
 
-    console.log(imgS.setImage);
     return (
       <div class="crtr-product-image">
         <Resource

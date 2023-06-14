@@ -22,10 +22,11 @@
     width: 100%;
     width: 276px;
     height: 201px;
-    padding: 0PX 20PX;
+    padding: 10PX 20PX;
     object-fit: contain;
     border-radius: 10px;
-    background-color: #F8FAFC;
+    background-color: var(--color-background-card);
+
 
 }
 
@@ -170,19 +171,22 @@ button {
 }
 
 .product-discount-porc {
-    padding: 0px 10px;
+    width: 45%;
+    padding: 0px 5px;
     margin: 10px 0px;
     display: grid;
     grid-template-columns: auto auto;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     gap: 5px;
-
+    background-color: var(--red-save);
+    border-radius: 5px;
 }
 
 .product-discount-porc p {
     font-size: 14px;
-    color: #c00;
+    font-weight: 500;
+    color: #fff;
 }
 
 @keyframes appearss {

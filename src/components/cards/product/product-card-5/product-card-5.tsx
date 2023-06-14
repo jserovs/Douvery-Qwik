@@ -19,7 +19,13 @@ export const ContainerCardProduct5 = component$(({ product }: any) => {
     <div class="product-card">
       <a href={`/v/${product.slug}/${product.dui}`}>
         {' '}
-        <img src={product.images[0]} alt={product.name} class="product-image" />
+        <img
+          width={200}
+          height={200}
+          src={product.images[0]}
+          alt={product.name}
+          class="product-image"
+        />
       </a>
       <a href={`/v/${product.slug}/${product.dui}`}>
         <h2 class="product-name">
