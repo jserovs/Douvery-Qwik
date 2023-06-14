@@ -10,7 +10,7 @@ import { fetchProduct } from '~/services/fechProduct';
 
 import type { Product } from '~/utils/types';
 import styles from './card-product-variant.css?inline';
-import { Link } from '@builder.io/qwik-city';
+
 export const CardProductVariations1 = component$(
   ({ dui, slug, imgS, imgP }: any) => {
     useStylesScoped$(styles);
@@ -20,16 +20,13 @@ export const CardProductVariations1 = component$(
       quantity: Record<string, number>;
       addItemToOrderError: string;
       count: 0;
-    }>(
-      {
-        product: {} as Product,
-        selectedVariantId: '',
-        quantity: {},
-        addItemToOrderError: '',
-        count: 0,
-      },
-    
-    );
+    }>({
+      product: {} as Product,
+      selectedVariantId: '',
+      quantity: {},
+      addItemToOrderError: '',
+      count: 0,
+    });
 
     const productResource = useResource$<void>(async () => {
       const product = await fetchProduct(dui);
@@ -37,6 +34,7 @@ export const CardProductVariations1 = component$(
       state.product = product;
     });
 
+    console.log(imgS.setImage);
     return (
       <div class="crtr-product-image">
         <Resource
@@ -50,7 +48,7 @@ export const CardProductVariations1 = component$(
           )}
           onResolved={() => (
             <>
-              <Link
+              <a
                 href={`/v/${state.product.slug}/${state.product.dui}`}
                 class="my-link"
               >
@@ -62,6 +60,8 @@ export const CardProductVariations1 = component$(
                   }
                 >
                   <img
+                    width={100}
+                    height={100}
                     class="product-image-car"
                     src={state.product.images?.[0]}
                     alt={state.product.name}
@@ -71,7 +71,7 @@ export const CardProductVariations1 = component$(
                     onMouseOut$={() => (imgS.setImage = imgP)}
                   />
                 </div>
-              </Link>
+              </a>
             </>
           )}
         />
