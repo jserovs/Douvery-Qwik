@@ -1,5 +1,6 @@
 export const urlServerLocal = 'http://localhost:9039';
-export const urlServerNode = 'https://server-douvery.onrender.com';
+export const urlServerNode = 'https://server-douvery.vercel.app';
+// export const urlServerNode = 'https://server-douvery.onrender.com';
 const urlServerPython = 'https://htyr.onrender.com';
 
 export async function fetchProduct(

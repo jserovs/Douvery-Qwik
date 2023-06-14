@@ -13,8 +13,6 @@ export const LibPermVerticalViewProductIMG = component$(
           <>
             {' '}
             <div class="book-perm-top">
-              <h5>Autor:</h5>
-              <p> {props.booksAuthor}</p>
               <h5>Genero:</h5>
 
               <p>{formattedCategories}</p>
@@ -24,6 +22,8 @@ export const LibPermVerticalViewProductIMG = component$(
         <div class="crtr-books-aresdt">
           <div class="books-art-crtr">
             <img
+              width={200}
+              height={300}
               onClick$={() => (isOpen.setIsOpen = true)}
               src={img.setImage}
               alt={props.slug}
@@ -47,6 +47,8 @@ export const LibPermVerticalViewProductIMG = component$(
                   }}
                 >
                   <img
+                    width={200}
+                    height={300}
                     src={image}
                     onMouseOver$={() => (img.setImage = image)}
                     onMouseOut$={() => (img.setImage = image)}

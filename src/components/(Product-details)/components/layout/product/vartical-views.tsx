@@ -25,6 +25,8 @@ export const VarticalViewProductIMG = component$(
                   }}
                 >
                   <img
+                    width={400}
+                    height={400}
                     src={image}
                     onMouseOver$={() => (img.setImage = image)}
                     onMouseOut$={() => (img.setImage = image)}
@@ -43,6 +45,8 @@ export const VarticalViewProductIMG = component$(
           <size-w class="size-w-10" />
           <div class="img-vertical-mobiles-prev">
             <img
+              width={400}
+              height={400}
               onClick$={() => (isOpen.setIsOpen = true)}
               src={img.setImage}
               alt={props.slug}
@@ -53,6 +57,8 @@ export const VarticalViewProductIMG = component$(
           <div class="crtr-dirjfs">
             <div class="container-img-product">
               <img
+                width={400}
+                height={400}
                 onClick$={() => (isOpen.setIsOpen = true)}
                 src={img.setImage}
                 alt={props.slug}

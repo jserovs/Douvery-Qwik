@@ -22,6 +22,8 @@ export const ThreeHorizontalViewProductIMG = component$(
                 }}
               >
                 <img
+                  width={400}
+                  height={400}
                   onClick$={() => (isOpen.setIsOpen = true)}
                   src={image}
                   onMouseOver$={() => (img.setImage = image)}
