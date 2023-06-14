@@ -59,7 +59,7 @@ export const View1 = component$(({ props }: any) => {
 const ProductView = ({ loc, props, img, quantityCart, isOpen }: any) => (
   <div class="container-view-product">
     <div class="vert-left">
-      <ImageDetailContainer props={props} />
+      <ImageDetailContainer props={props} img={img} isOpen={isOpen} />
     </div>
 
     <div class="center">

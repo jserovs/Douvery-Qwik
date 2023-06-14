@@ -51,7 +51,7 @@ export const VarticalViewProductIMG = component$(
               src={img.setImage}
               alt={props.slug}
               class="img-product-llg"
-              title="Haz click para ver la imagen en un tamaño mayor"
+              title="Aumentar tamaño de imagen"
             />
           </div>
           <div class="crtr-dirjfs">

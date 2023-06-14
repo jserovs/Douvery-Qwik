@@ -11,10 +11,11 @@ import type { Product } from '~/utils/types';
 import { type DocumentHead, useLocation } from '@builder.io/qwik-city';
 import { fetchCategoryAllProducts } from '~/services/categorie/categorie';
 import { Paginator1 } from '~/components/use/paginator/paginator-1/paginator-1';
-import { ContainerCardProduct10 } from '~/components/cards/product/product-card-10/product-card-10';
 
 import { Filter_Product1 } from '~/components/use/filters/filter-product-1/filter-product-1';
 import { Promotion_CarouselAllInterest } from '~/components/(Promotions)/carousel/carousel-all-interest/carousel-all-interest';
+import { ContainerCardProduct8 } from '~/components/cards/product/product-card-8/product-card-8';
+import { ContainerCardProduct5 } from '~/components/cards/product/product-card-5/product-card-5';
 export default component$(() => {
   useStylesScoped$(styles);
   const loc = useLocation();
@@ -105,7 +106,7 @@ export default component$(() => {
                       </div>
                     </div>
                     <h1>
-                      Immerse yourself in the{' '}
+                      Sumérgete en{' '}
                       <span class="name-categorie">{loc.params.categorie}</span>
                     </h1>
                   </div>
@@ -114,18 +115,30 @@ export default component$(() => {
                       <Filter_Product1 subCategories={data.subCategories} />
                     </div>
                     <div class="container-product">
-                      {' '}
-                      {data.products.map((product: any) => (
-                        <>
-                          <li key={product.id}>
-                            <ContainerCardProduct10
+                      {data.products.map((product: any) => {
+                        let CardComponent;
+
+                        // Decide qué componente usar según el descuento
+                        if (product.discount >= 8) {
+                          CardComponent = (
+                            <ContainerCardProduct8
                               product={product}
                               primaryColor={data.primaryColor}
                               secondaryColor={data.secondaryColor}
                             />
-                          </li>
-                        </>
-                      ))}
+                          );
+                        } else {
+                          CardComponent = (
+                            <ContainerCardProduct5
+                              product={product}
+                              primaryColor={data.primaryColor}
+                              secondaryColor={data.secondaryColor}
+                            />
+                          );
+                        }
+
+                        return <li key={product.id}>{CardComponent}</li>;
+                      })}
                     </div>
                   </div>
                 </ul>

@@ -2,6 +2,7 @@
     padding: 20px;
     animation: smoApp 0.6s ease;
     background-color: #fff;
+
 }
 
 .container-product-categorie {
@@ -35,23 +36,23 @@
     font-size: 20px;
     margin: 0px;
     font-weight: 500;
-    color: #3E54AC;
+    color: #111827;
 }
 
 .container-body {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 200px 1fr;
     gap: 20px;
     align-items: start;
     justify-content: center;
-    min-height: 30rem;
+    min-height: 40rem;
 }
 
 .container-product {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     column-gap: 60px;
     row-gap: 32px;
     margin-top: 20px;

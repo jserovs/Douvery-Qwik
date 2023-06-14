@@ -8,12 +8,19 @@ import { UsePrice } from '~/components/use/price/price';
 export const ContainerCardProduct8 = component$(({ product }: any) => {
   useStylesScoped$(styles);
   const discoun = product.price - product.price * (product.discount / 100);
+  const discountInMoney = product.price * (product.discount / 100);
 
   return (
     <div class="product-card">
       <a href={`/v/${product.slug}/${product.dui}`}>
         {' '}
-        <img src={product.images[0]} alt={product.name} class="product-image" />
+        <img
+          width={200}
+          height={200}
+          src={product.images[0]}
+          alt={product.name}
+          class="product-image"
+        />
       </a>
 
       <a href={`/v/${product.slug}/${product.dui}`}>
@@ -28,8 +35,10 @@ export const ContainerCardProduct8 = component$(({ product }: any) => {
         </h2>
       </a>
       <div class="product-discount-porc">
-        <p>- {product.discount}%</p>
-        <p>discount</p>
+        <p>SAVE</p>
+        <p>
+          - <UsePrice price={discountInMoney} />
+        </p>
       </div>
       <div class="container-prc-info">
         {' '}

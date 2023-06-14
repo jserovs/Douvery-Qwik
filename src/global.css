@@ -53,6 +53,9 @@
   --color-rose: #F8485E;
   --color-red: #EE2B47;
 
+  --red-save: rgb(211, 11, 11);
+
+
   --border-width-0: #00000008;
   --border-width-1: #00000010;
   --border-width-2: #00000018;
@@ -133,8 +136,7 @@ html {
 
 button:active {
 
-  border-color: rgba(0, 0, 0, 0.15);
-  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+
 
   transform: translateY(-0.1em);
 }

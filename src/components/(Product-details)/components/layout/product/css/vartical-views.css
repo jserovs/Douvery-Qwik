@@ -59,7 +59,7 @@
 
     height: 450px;
     object-fit: contain;
-    background-color: var(--color-background-light);
+    background-color: var(--color-background-card);
     padding: 10px;
     z-index: 1000;
 
@@ -136,14 +136,11 @@
 
 
 @media only screen and (max-width: 885px) {
-    .ctr-vrt-img {
-        display: flex;
-        flex-direction: column-reverse;
-        height: 100%;
-    }
+
 
     .preview_img-vert {
         display: flex;
+        height: auto;
     }
 
     .img_wrap {
@@ -152,8 +149,7 @@
     }
 
     .preview_img-vert {
-        width: 60px;
-        height: 50px;
+        width: auto;
     }
 
     .preview_img-vert img {
