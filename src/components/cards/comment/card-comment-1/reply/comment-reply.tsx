@@ -72,7 +72,7 @@ export const CommentReply = component$(({ id, datePurchase }: any) => {
       nav('/a/login/' + '?rr=' + loc.url.pathname, true);
       return;
     }
-    const { value } = await action.submit({
+   await action.submit({
       reviewId: id,
       text_comment: text_comment.value,
     });
