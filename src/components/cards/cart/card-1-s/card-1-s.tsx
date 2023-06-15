@@ -7,12 +7,19 @@ import { UseProductDetailsLink } from '~/services/fuction';
 export const Card1SCART = component$(({ product }: any) => {
   useStylesScoped$(styles);
   const discoun = product.price - product.price * (product.discount / 100);
+
   return (
     <div class="container-all">
       <div class="card">
-        <img src={product.images} alt="Product Image" class="product-image" />
+        <img
+          width={100}
+          height={100}
+          src={product.images}
+          alt="Product Image"
+          class="product-image"
+        />
         <div class="product-info">
-         <a href={UseProductDetailsLink(product)}>
+          <a href={UseProductDetailsLink(product)}>
             {' '}
             <h2 class="product-title">
               <TextCL text={product.name} />{' '}

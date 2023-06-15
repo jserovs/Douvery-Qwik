@@ -15,8 +15,7 @@ export const OutstandingProductFlex1 = component$(() => {
   const prodcureducer = useResource$<Product[]>(async ({ cleanup }) => {
     const controller = new AbortController();
     cleanup(() => controller.abort());
-
-    return fetchProductsOutstanding(controller);
+    return fetchProductsOutstanding();
   });
   return (
     <div class="container-all">
