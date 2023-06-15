@@ -25,6 +25,15 @@ export const BannerCarouselHome = component$(() => {
     {
       type: 'image',
       desktopImageUrl:
+        'https://res.cloudinary.com/douvery/image/upload/v1686857803/hmscw968yfiwbkhgjbjy.webp',
+      mobileImageUrl:
+        'https://res.cloudinary.com/douvery/image/upload/v1686857803/hmscw968yfiwbkhgjbjy.webp',
+      linkUrl: 'url-a-la-que-redirigir-1',
+      alt: 'Hogar dulce hogar CAREGORIA DOouvery img-douvery ',
+    },
+    {
+      type: 'image',
+      desktopImageUrl:
         'https://res.cloudinary.com/douvery/image/upload/v1685304113/eqqjyggjmogzbfny0rgu.webp',
       mobileImageUrl:
         'https://res.cloudinary.com/douvery/image/upload/v1685361847/xuqgkyzgkzhtwe1cvzqt.webp',
