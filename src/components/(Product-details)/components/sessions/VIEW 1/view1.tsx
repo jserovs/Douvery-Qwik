@@ -23,7 +23,11 @@ import { useLocation } from '@builder.io/qwik-city';
 import { DetailPriceContainerVert } from './components/DetailPriceContainerVert/DetailPriceContainerVert';
 import { DetailPriceContainerHoriz2 } from './components/DetailPriceContainerHoriz2/DetailPriceContainerHoriz2';
 
-import { HashProductDetailsPriceCenter, HashProductDetailsPriceRightTop, HashProductDetailsPriceTopCenter } from '~/services/hash/hash';
+import {
+  HashProductDetailsPriceCenter,
+  HashProductDetailsPriceRightTop,
+  HashProductDetailsPriceTopCenter,
+} from '~/services/hash/hash';
 
 // Main component
 export const View1 = component$(({ props }: any) => {
@@ -40,7 +44,11 @@ export const View1 = component$(({ props }: any) => {
   const loc = useLocation();
   const view = loc.url.searchParams.get('ss_v');
   const DetailView =
-    view ===  HashProductDetailsPriceTopCenter || null  ? <DetailContainer isOpen={isOpen} props={props} /> : '';
+    view === HashProductDetailsPriceTopCenter || view === null ? (
+      <DetailContainer isOpen={isOpen} props={props} />
+    ) : (
+      ''
+    );
 
   return (
     <div>
@@ -83,9 +91,8 @@ const ProductView = ({ loc, props, img, quantityCart, isOpen }: any) => (
 const ProductCenter = ({ props, loc, img, quantityCart, isOpen }: any) => {
   const view = loc.url.searchParams.get('ss_v');
 
-  const DetailViewHoriz=
-    view ===
-  HashProductDetailsPriceCenter ? (
+  const DetailViewHoriz =
+    view === HashProductDetailsPriceCenter ? (
       <div class="detail-view-horiz2">
         <DetailPriceContainerHoriz2 isOpen={isOpen} props={props} />
       </div>
@@ -149,8 +156,7 @@ const Description = ({ props }: any) =>
 const ProductRight = ({ props, loc }: any) => {
   const view = loc.url.searchParams.get('ss_v');
   const DetailView =
-    view ===
-    HashProductDetailsPriceRightTop ? (
+    view === HashProductDetailsPriceRightTop ? (
       <DetailPriceContainerVert props={props} />
     ) : (
       ''

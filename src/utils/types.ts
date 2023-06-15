@@ -13,7 +13,10 @@ export type Product = {
 	quantity:number;
 	images: string[];
 	category: string;
-	productDetails: productDetails[];	
+	productDetails:{
+		detailsPriceAndButton :string;
+		
+	};	
 	variations: variant[];
 	ratings:ratings[];
 	
@@ -46,6 +49,7 @@ export type variant = {
 
 
 export type productDetails = {
+	detailsPriceAndButton :string;	
 	basicFeatures: basicFeatures[];
 }
 

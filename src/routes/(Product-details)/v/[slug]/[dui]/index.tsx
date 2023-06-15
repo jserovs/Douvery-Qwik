@@ -24,6 +24,8 @@ import { View4 } from '~/components/(Product-details)/components/sessions/VIEW 4
 
 import { View5 } from '~/components/(Product-details)/components/sessions/VIEW 5/view5';
 import { addToViewedProducts } from '~/services/viewed/viewed';
+import { sendUserTimestamp } from '~/services/userTimestamp/userTimestamp';
+import { useGetCurrentUser } from '~/routes/layout';
 
 export const useProductInfo = routeLoader$(async (requestEvent) => {
   const dui = requestEvent.params.dui;
@@ -35,14 +37,19 @@ export const useProductInfo = routeLoader$(async (requestEvent) => {
 export default component$(() => {
   useStylesScoped$(styles);
   const location = useLocation();
-
+  const user = useGetCurrentUser().value;
   const productData = useProductInfo();
 
   const descriptionEdit = useSignal(``);
 
   useVisibleTask$(() => {
     addToViewedProducts({ dui: location.params.dui });
+    sendUserTimestamp({
+      productDui: location.params.dui,
+      userId: user?.id as any,
+    });
   });
+
   return (
     <>
       <div>
