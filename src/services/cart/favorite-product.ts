@@ -1,4 +1,4 @@
-import { urlServerLocal,  } from "../fechProduct";
+import {urlServerNode,  } from "../fechProduct";
 
 const OPTIONS_KEY_FAVORITE_PRODUCTS = 'F_P';
 
@@ -41,7 +41,7 @@ export async function getDataFavoriteProduct  () {
   try {
     const settings = JSON.parse(stored as string);
     const response = await fetch(
-  `${urlServerLocal}/api/favorite/productsDui/json`,
+  `${urlServerNode}/api/favorite/productsDui/json`,
   {
     method: 'POST',
     body: JSON.stringify({

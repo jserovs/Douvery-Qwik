@@ -1,6 +1,6 @@
 
 import Cookies from 'js-cookie';
-import { urlServerLocal } from "../fechProduct";
+import { urlServerNode } from "../fechProduct";
 
 export const COOKIE_EXPIRATION_MS = 30 * 24 * 60 * 60 * 1000;
 export const CART_QUANTITY_ACCESS_COOKIE_NAME = 'cvt';
@@ -125,7 +125,7 @@ export async function getDataProductCart() {
   try {
     const settings = JSON.parse(stored as string);
     const response = await fetch(
-      ` ${urlServerLocal}/api/productsDui/json`,
+      ` ${urlServerNode}/api/productsDui/json`,
       {
         method: 'POST',
         body: JSON.stringify({
