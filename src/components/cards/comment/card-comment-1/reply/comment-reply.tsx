@@ -76,7 +76,7 @@ export const CommentReply = component$(({ id, datePurchase }: any) => {
       reviewId: id,
       text_comment: text_comment.value,
     });
-    console.log(value);
+    
   });
 
   return (

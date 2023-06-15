@@ -68,9 +68,7 @@ export default component$(() => {
   const segureUrl = loc.url.href.match('/segure/') ? false : true;
   useVisibleTask$(() => {
     const info = platform.parse(window.navigator.userAgent);
-    console.log('Nombre del navegador:', info.name);
-    console.log('Versión del navegador:', info.version);
-    console.log('Sistema operativo:', info.os);
+   info
   });
 
   return (
