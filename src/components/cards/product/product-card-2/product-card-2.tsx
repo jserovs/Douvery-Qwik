@@ -5,6 +5,7 @@ import { UsePrice } from '~/components/use/price/price';
 
 import { Stars } from '~/components/Ratings/stars/stars';
 import { DouveryIcon } from '~/components/icons/douvery';
+import { UseProductDetailsLink } from '~/services/fuction';
 
 export const ContainerCardProduct2 = component$(({ product }: any) => {
   useStylesScoped$(styles);
@@ -16,11 +17,11 @@ export const ContainerCardProduct2 = component$(({ product }: any) => {
   }
   return (
     <div class="product-card">
-      <a href={`/v/${product.slug}/${product.dui}`}>
+     <a href={UseProductDetailsLink(product)}>
         {' '}
         <img src={product.images[0]} alt={product.name} class="product-image" />
       </a>
-      <a href={`/v/${product.slug}/${product.dui}`}>
+     <a href={UseProductDetailsLink(product)}>
         <h2 class="product-name">
           {' '}
           {product.name[0].toUpperCase() + product.name.substring(1)}

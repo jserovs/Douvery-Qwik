@@ -114,7 +114,7 @@
         width: 800px;
         height: 424px;
         object-fit: contain;
-        background-color: var(--color-background-light);
+        background-color: var(--color-background-card);
         padding: 10px;
         z-index: 1000;
 
@@ -150,6 +150,7 @@
 
     .preview_img-vert {
         width: auto;
+        height: 400PX;
     }
 
     .preview_img-vert img {
@@ -161,7 +162,7 @@
 
 
         width: 800px;
-        height: 400px;
+        height: 500px;
 
     }
 }

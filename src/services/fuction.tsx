@@ -1,3 +1,9 @@
+import {
+  HashProductDetailsPriceCenter,
+  HashProductDetailsPriceRightTop,
+  HashProductDetailsPriceTopCenter,
+} from './hash/hash';
+
 export function randomNum() {
   return Math.floor(Math.random() * 6) + 1;
 }
@@ -88,6 +94,23 @@ export function formatDate(isoDate: any) {
   const year = date.getFullYear();
 
   return `${month} ${day}, ${year}`;
+}
+
+export function UseProductDetailsLink(product: any) {
+  function getStatusMessage() {
+    switch (product.productDetails.pd_detailsBuyBox) {
+      case HashProductDetailsPriceRightTop:
+        return HashProductDetailsPriceRightTop;
+      case HashProductDetailsPriceCenter:
+        return HashProductDetailsPriceCenter;
+      case HashProductDetailsPriceTopCenter:
+        return HashProductDetailsPriceTopCenter;
+      default:
+        return HashProductDetailsPriceTopCenter;
+    }
+  }
+
+  return `/v/${product.slug}/${product.dui}/?ss_v=${getStatusMessage()} `;
 }
 
 export function calculateCartDetails(car_product: any) {

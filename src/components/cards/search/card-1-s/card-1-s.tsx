@@ -7,6 +7,8 @@ import { TextCL } from '~/components/use/textCL/textCL';
 import { ContainerExpectedShippingTime } from '~/components/(Product-details)/components/container-expected-shipping-time';
 import { UseNumberOneCategory } from '~/components/use/numberOne/numberOneCategory';
 import { DouveryCheckMark } from '~/components/icons/checkMark';
+import { UseProductDetailsLink } from '~/services/fuction';
+
 // import { ButtonCardHover } from '~/components/use/bropdown-button-cart-fast-pay/button-card/button-card-hover';
 export const Card1S = component$(({ product }: any) => {
   useStylesScoped$(styles);
@@ -18,12 +20,14 @@ export const Card1S = component$(({ product }: any) => {
     <div class="container-all">
       <div class="card">
         <img
+        width={200}
+        height={200}
           src={product.images[0]}
           alt="Product Image"
           class="product-image"
         />
         <div class="product-info">
-          <a href={`/v/${product.slug}/${product.dui}`}>
+          <a href={UseProductDetailsLink(product)} >
             {' '}
             <h2 class="product-title">
               <TextCL text={product.name} />{' '}

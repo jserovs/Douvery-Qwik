@@ -7,6 +7,7 @@ import { TextCL } from '~/components/use/textCL/textCL';
 import { ContainerExpectedShippingTime } from '~/components/(Product-details)/components/container-expected-shipping-time';
 import { UseNumberOneCategory } from '~/components/use/numberOne/numberOneCategory';
 import { DouveryCheckMark } from '~/components/icons/checkMark';
+import { UseProductDetailsLink } from '~/services/fuction';
 export const Card2S = component$(({ product }: any) => {
   useStylesScoped$(styles);
   const discoun = product.price - product.price * (product.discount / 100);
@@ -22,7 +23,7 @@ export const Card2S = component$(({ product }: any) => {
           class="product-image"
         />
         <div class="product-info">
-          <a href={`/v/${product.slug}/${product.dui}`}>
+         <a href={UseProductDetailsLink(product)}>
             {' '}
             <h2 class="product-title">
               <TextCL text={product.name} />{' '}

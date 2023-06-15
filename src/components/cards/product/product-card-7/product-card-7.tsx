@@ -7,6 +7,7 @@ import { AddCart } from '~/components/(Product-details)/components/container-but
 import { DouveryCheckMark } from '~/components/icons/checkMark';
 import { ModalCartInfo } from '~/components/modal/modal-cart/modal-cart';
 import { UsePrice } from '~/components/use/price/price';
+import { UseProductDetailsLink } from '~/services/fuction';
 
 export const ContainerCardProduct7 = component$(({ product }: any) => {
   useStylesScoped$(styles);
@@ -16,16 +17,16 @@ export const ContainerCardProduct7 = component$(({ product }: any) => {
 
   return (
     <div class="product-card">
-      <a href={`/v/${product.slug}/${product.dui}`}>
+     <a href={UseProductDetailsLink(product)}>
         {' '}
         <img src={product.images[0]} alt={product.name} class="product-image" />
       </a>
-      <a href={`/v/${product.slug}/${product.dui}`}>
+     <a href={UseProductDetailsLink(product)}>
         <h2 class="product-brand">
           <TextCL text={product.marca} />{' '}
         </h2>
       </a>
-      <a href={`/v/${product.slug}/${product.dui}`}>
+     <a href={UseProductDetailsLink(product)}>
         <h2 class="product-name">
           {' '}
           <TextCL text={product.name} />

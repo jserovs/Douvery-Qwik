@@ -10,6 +10,7 @@ import { fetchProduct } from '~/services/fechProduct';
 
 import type { Product } from '~/utils/types';
 import styles from './card-product-variant.css?inline';
+import { UseProductDetailsLink } from '~/services/fuction';
 
 export const CardProductVariations1 = component$(
   ({ dui, slug, imgS, imgP }: any) => {
@@ -47,8 +48,7 @@ export const CardProductVariations1 = component$(
           )}
           onResolved={() => (
             <>
-              <a
-                href={`/v/${state.product.slug}/${state.product.dui}`}
+             <a href={UseProductDetailsLink(state.product) as any}
                 class="my-link"
               >
                 <div

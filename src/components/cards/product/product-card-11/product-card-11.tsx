@@ -1,13 +1,14 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 
 import styles from './product-card-11.css?inline';
+import { UseProductDetailsLink } from '~/services/fuction';
 
 export const ContainerCardProduct11 = component$(({ product }: any) => {
   useStylesScoped$(styles);
-
+  const urlLink=UseProductDetailsLink(product)
   return (
     <div class="product-card">
-      <a href={`/v/${product.slug}/${product.dui}`}>
+     <a href={urlLink}>
         {' '}
         <img
           width={200}

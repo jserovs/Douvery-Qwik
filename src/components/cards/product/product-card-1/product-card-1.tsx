@@ -4,6 +4,7 @@ import styles from './product-card-1.css?inline';
 import { UsePrice } from '~/components/use/price/price';
 
 import { DouveryIcon } from '~/components/icons/douvery';
+import { UseProductDetailsLink } from '~/services/fuction';
 
 import { TextCL } from '~/components/use/textCL/textCL';
 import { UseStarsRatingNoHover } from '~/components/use/ratings/useRatingNoHover/useRatingNoHover';
@@ -14,13 +15,13 @@ export const ContainerCardProduct1 = component$(({ product }: any) => {
 
   return (
     <div class="product-card">
-      <a href={`/v/${product.slug}/${product.dui}`}>
+     <a href={UseProductDetailsLink(product)}>
         {' '}
         <img src={product.images[0]} alt={product.name} class="product-image" />
       </a>
       <h2 class="product-name">
         {' '}
-        <a href={`/v/${product.slug}/${product.dui}`}>
+       <a href={UseProductDetailsLink(product)}>
           <TextCL text={product.name} />
         </a>
       </h2>
