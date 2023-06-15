@@ -49,7 +49,7 @@ export const CardFavoriteProduct = component$(() => {
   return (
     <>
       <div class="cart-future-shop">
-        <h3 class="container-titulo">Marcados como favoritos</h3>
+        <h3 class="container-titulo">Tus favoritos</h3>
         <ul class="container-lista">
           {isLoading.setIsLoading ? (
             <div class="loader"></div>
