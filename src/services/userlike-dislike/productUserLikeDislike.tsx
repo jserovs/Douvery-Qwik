@@ -27,7 +27,7 @@ export async function productUserLikeDislike(
     throw new Error('Failed to fetch product');
   }
   const results = await response.json();
-  console.log(results);
+
   return results;
 }
 
@@ -52,6 +52,6 @@ export async function getProductLikeStatus(
     throw new Error('Failed to fetch product');
   }
   const results = await response.json();
-  console.log(results);
+ 
   return results;
 }
