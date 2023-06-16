@@ -48,8 +48,33 @@
 .container-aoutandingproducts {
 
     position: relative;
-    margin-bottom: 20px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin-bottom: 25px;
+
+
+}
+
+.container-aoutandingproducts .title-show {
+    background-color: var(--color-background-white);
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 2px 5px;
+}
+
+.container-aoutandingproducts .title-show h2 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #000;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.container-aoutandingproducts .title-show h2 svg {
+    position: relative;
+    top: 8px;
 
 }
 
