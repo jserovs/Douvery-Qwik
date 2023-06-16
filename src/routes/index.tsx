@@ -57,7 +57,7 @@ export default component$(() => {
         </div>
         <div class="container-aoutandingproducts">
           <div class="title-show">
-            <h2>Lo Mejor de Douvery</h2>
+            <h2>Explora lo mejor de Douvery </h2>
             <div class="show-more">
               {' '}
               <a href="dsaf/">Ver mas</a>

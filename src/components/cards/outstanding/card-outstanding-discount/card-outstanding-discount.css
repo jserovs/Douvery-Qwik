@@ -5,13 +5,12 @@
     align-items: center;
     justify-content: space-evenly;
     background-color: var(--color-background-white);
-
+    flex-direction: row-reverse;
     height: 300px;
-    gap: 20px;
+    gap: 0px;
+    border-radius: 10px;
     position: relative;
-    box-shadow: rgba(230, 234, 238, 0.2) 0px 8px 24px;
-    border-top: 1px solid var(--border-width-1);
-    border-bottom: 1px solid var(--border-width-1);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .container-a {
