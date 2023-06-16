@@ -40,6 +40,24 @@ export async function fetchProductU(
   return results;
 }
 
+export async function fetchAllPopularProducts(
+  limit: number,
+  controller?: AbortController
+): Promise<any> {
+  const response = await fetch(
+    `${urlServerNode}/api/products/all-popular-products`,
+    {
+      signal: controller?.signal,
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch product');
+  }
+  const results = await response.json();
+  return results;
+}
+
 export async function fetchProductCategory(
   category: string,
   dui: string,

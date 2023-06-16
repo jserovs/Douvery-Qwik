@@ -26,6 +26,7 @@ import { View5 } from '~/components/(Product-details)/components/sessions/VIEW 5
 import { addToViewedProducts } from '~/services/viewed/viewed';
 import { sendUserTimestamp } from '~/services/userTimestamp/userTimestamp';
 import { useGetCurrentUser } from '~/routes/layout';
+import { UseProductDetailsLink } from '~/services/fuction';
 
 export const useProductInfo = routeLoader$(async (requestEvent) => {
   const dui = requestEvent.params.dui;
@@ -71,6 +72,8 @@ export default component$(() => {
 });
 export const head: DocumentHead = ({ resolveValue, params }) => {
   const product = resolveValue(useProductInfo);
+  const urkProduct = UseProductDetailsLink(product);
+
   return {
     title: `${product.name} - Douvery`,
     meta: [
@@ -89,6 +92,35 @@ export const head: DocumentHead = ({ resolveValue, params }) => {
       {
         name: 'keywords',
         content: product.keywords,
+      },
+    ],
+    script: [
+      {
+        type: 'application/ld+json',
+        json: {
+          '@context': 'https://schema.org/',
+          '@type': 'Product',
+          name: product.name,
+          image: product.images[0],
+          description: product.description,
+          sku: product.dui,
+          mpn: product.dc,
+          brand: {
+            '@type': 'Brand',
+            name: product.marca,
+          },
+          offers: {
+            '@type': 'Offer',
+            url: urkProduct,
+            priceCurrency: 'USD',
+            price: product.price,
+            availability: product.quantity > 0 ? 'InStock' : 'OutOfStock',
+            seller: {
+              '@type': 'Organization',
+              name: 'Douvery',
+            },
+          },
+        },
       },
     ],
   };

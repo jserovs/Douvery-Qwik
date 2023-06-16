@@ -1,10 +1,11 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './card-outstanding-popular.css?inline';
 import { Stars } from '~/components/Ratings/stars/stars';
+import { truncarDecimales } from '~/services/fuction';
 
 export const CardOutstandingPopular = component$(({ productPopular }: any) => {
   useStylesScoped$(styles);
-
+  const rate = truncarDecimales(productPopular.ratingInfo.rating, 1);
   return (
     <div class="category-card">
       <div class="container-a">
@@ -15,8 +16,7 @@ export const CardOutstandingPopular = component$(({ productPopular }: any) => {
         <div class="container-stars">
           <Stars rating={productPopular.ratingInfo.rating} />
           <p>
-            ({productPopular.ratingInfo.rating})
-            {productPopular.ratingInfo.count}
+            ({rate}){productPopular.ratingInfo.count}
           </p>
         </div>
         <div class="show-more">
@@ -30,6 +30,8 @@ export const CardOutstandingPopular = component$(({ productPopular }: any) => {
       >
         <div class="image-container">
           <img
+            width={200}
+            height={200}
             src={productPopular.images[0]}
             alt={productPopular.name + 'img product'}
           />
