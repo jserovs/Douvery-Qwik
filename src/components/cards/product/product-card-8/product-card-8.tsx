@@ -13,7 +13,7 @@ export const ContainerCardProduct8 = component$(({ product }: any) => {
 
   return (
     <div class="product-card">
-     <a href={UseProductDetailsLink(product)}>
+      <a href={UseProductDetailsLink(product)}>
         {' '}
         <img
           width={200}
