@@ -44,12 +44,13 @@ export default component$(() => {
 
   useVisibleTask$(() => {
     addToViewedProducts({ dui: location.params.dui });
+  });
+  useVisibleTask$(() => {
     sendUserTimestamp({
       productDui: location.params.dui,
       userId: user?.id as any,
     });
   });
-
   return (
     <>
       <div>

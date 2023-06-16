@@ -40,6 +40,9 @@ export const LikeButtons = component$(({ product }: any) => {
 
   useVisibleTask$(async ({ track }) => {
     track(() => product.dui || product.name);
+    if (!user) {
+      return;
+    }
     try {
       const response = await getProductLikeStatus(user?.id as any, product.dui);
 
