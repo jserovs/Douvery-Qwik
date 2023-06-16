@@ -42,3 +42,7 @@
     object-fit: contain;
     border-radius: 5px;
 }
+@media (max-width:800px) {.category-card {
+
+   height: 300px;
+} }

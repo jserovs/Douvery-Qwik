@@ -75,11 +75,7 @@ export default component$(() => {
           </div>
           <Promotion_CarouselInterestViews styleNumber={6} />
         </div>
-        <Alert1
-          text="Nos importa lo que piensas en Douvery. Agradecemos tu opinión después de tu compra"
-          ttlHrf="Saber mas"
-          hrf="fhr/aopad"
-        />
+       
         <br />
         <div class="container-card-store-categorie">
           <br />
@@ -103,6 +99,7 @@ export default component$(() => {
         </div>
 
         {lastViewDui.value && (
+          <> <br />
           <div class="container-carousel-interes">
             <div class="title-show">
               <h2>Basado en el último producto que viste</h2>
@@ -112,7 +109,9 @@ export default component$(() => {
               </div>
             </div>
             <PromotionRecomend_Carousel_LastView styleNumber={11} />
-          </div>
+          </div><br />
+          </>
+         
         )}
       </div>
     </div>

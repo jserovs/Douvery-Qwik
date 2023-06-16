@@ -41,13 +41,16 @@ export async function fetchProductU(
 }
 
 export async function fetchAllPopularProducts(
-  limit: number,
   controller?: AbortController
 ): Promise<any> {
   const response = await fetch(
     `${urlServerNode}/api/products/all-popular-products`,
     {
+      method: 'GET',
       signal: controller?.signal,
+      headers: {
+        'Content-Type': 'application/json',
+      },
     }
   );
 

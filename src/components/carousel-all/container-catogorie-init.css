@@ -133,6 +133,9 @@
     .container-vert-box {
         display: none;
     }
+    .container-card-categories{
+        height: 300px;
+    }
 }
 
 
@@ -141,12 +144,19 @@
     .contai-fle {
         padding: 0px 0px 0px 5px;
         display: grid;
-        grid-template-columns: 1fr 1.7fr 1fr;
+        grid-template-columns: 300px 1.7fr 1fr;
     }
 
     .container-accouts {
         display: none;
     }
+    .container-all {
+       
+        flex-direction: row;
+        align-items: center;
+       
+    }
+    
 
 }
 
