@@ -93,5 +93,6 @@
     .category-card {
         flex-direction: row;
         border-radius: 0;
+        padding: 10px;
     }
 }
