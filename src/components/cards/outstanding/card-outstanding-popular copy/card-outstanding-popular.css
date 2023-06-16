@@ -74,13 +74,7 @@
 }
 
 @media only screen and (max-width: 1600px) {
-    .category-img {
-        min-width: 150px;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
-        overflow: hidden;
-    }
+    
 
 
 }
@@ -92,8 +86,12 @@
         font-size: 16px;
     }
 
-    .image-container {
-        height: 150px;
-    }
+   
 
+}
+@media (max-width:800px) {
+    .category-card {
+        flex-direction: row;
+        border-radius: 0;
+    }
 }

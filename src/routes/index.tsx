@@ -12,7 +12,7 @@ import styles from './index.css?inline';
 import AllCategoryStoresId1 from '~/components/cards/category/all-category-stores-id/all-category-stores-id-1';
 import { OutstandingProductFlex1 } from '~/components/(Promotions)/Outstanding/outstanding-product-flex/outstanding-product-flex-1';
 import { Promotion_CarouselInterestViews } from '~/components/(Promotions)/carousel/carousel-inters/carousel-interest-view';
-import { Alert1 } from '~/components/cards/alerts/alert/alert-1/alert-1';
+
 import { PromotionRecomend_Carousel_LastView } from '~/components/(Promotions)/carousel/carousel-recomend-last-view-product/carousel-recomend-last-view-product';
 import { getLastItemViewedDui } from '~/services/viewed/viewed';
 import ContainerCatogorieInit from '~/components/carousel-all/container-catogorie-init';
@@ -75,11 +75,7 @@ export default component$(() => {
           </div>
           <Promotion_CarouselInterestViews styleNumber={6} />
         </div>
-        <Alert1
-          text="Nos importa lo que piensas en Douvery. Agradecemos tu opinión después de tu compra"
-          ttlHrf="Saber mas"
-          hrf="fhr/aopad"
-        />
+       
         <br />
         <div class="container-card-store-categorie">
           <br />
@@ -103,6 +99,7 @@ export default component$(() => {
         </div>
 
         {lastViewDui.value && (
+          <> <br />
           <div class="container-carousel-interes">
             <div class="title-show">
               <h2>Basado en el último producto que viste</h2>
@@ -112,7 +109,9 @@ export default component$(() => {
               </div>
             </div>
             <PromotionRecomend_Carousel_LastView styleNumber={11} />
-          </div>
+          </div><br />
+          </>
+         
         )}
       </div>
     </div>

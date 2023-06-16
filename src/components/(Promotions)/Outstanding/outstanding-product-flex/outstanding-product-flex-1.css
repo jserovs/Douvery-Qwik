@@ -12,6 +12,7 @@
 @media (max-width:800px) {
     .container-all {
         padding: 0px 0px;
+        grid-template-columns:  500px 500px;
         overflow-x: scroll;
     }
 }
