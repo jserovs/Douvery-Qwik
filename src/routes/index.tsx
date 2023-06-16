@@ -17,7 +17,7 @@ import { PromotionRecomend_Carousel_LastView } from '~/components/(Promotions)/c
 import { getLastItemViewedDui } from '~/services/viewed/viewed';
 import ContainerCatogorieInit from '~/components/carousel-all/container-catogorie-init';
 import { BannerCarouselHome } from '~/components/carBanner/carBanner';
-import { Promotion_CarouselRandomInterest } from '~/components/(Promotions)/carousel/carousel-random-interest/carousel-random-interest';
+import { Promotion_Carousel__PopularProductsAll } from '~/components/(Promotions)/carousel/carousel-pupular-products-all/carousel-pupular-products-all';
 
 export default component$(() => {
   useStylesScoped$(styles);
@@ -47,13 +47,13 @@ export default component$(() => {
         </div>
         <div class="container-carousel-interes">
           <div class="title-show">
-            <h2>Explora algunos productos</h2>
+            <h2>Explora productos populares</h2>
             <div class="show-more">
               {' '}
               <a href="dsaf/">Ver mas</a>
             </div>
           </div>
-          <Promotion_CarouselRandomInterest styleNumber={11} />
+          <Promotion_Carousel__PopularProductsAll styleNumber={11} />
         </div>
         <div class="container-aoutandingproducts">
           <div class="title-show">

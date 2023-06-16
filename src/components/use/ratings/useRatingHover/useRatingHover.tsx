@@ -8,6 +8,7 @@ import styles from './useRatingHover.css?inline';
 import { Stars } from '~/components/Ratings/stars/stars';
 import { ContainerProgres } from '~/components/progres-bar/container-progres/container-progres';
 import { fetchProductRatings } from '~/services/reviews/rating/rating';
+import { truncarDecimales } from '~/services/fuction';
 interface Rating {
   rating: number;
   count: number;
@@ -24,6 +25,7 @@ export const UseStarRating = component$(({ product, color, size }: any) => {
     rating.rating = response.rating as any;
     rating.count = response.count as any;
   });
+  const rate = truncarDecimales(rating.rating, 1);
   return (
     <div class="container-all">
       <div class="ctr-stars">
@@ -40,7 +42,7 @@ export const UseStarRating = component$(({ product, color, size }: any) => {
         </div>
       </div>
       <div class="ct-ratig">
-        ({rating.rating}) {rating.count}
+        ({rate}) {rating.count}
       </div>
     </div>
   );
