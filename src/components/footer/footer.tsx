@@ -1,43 +1,65 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
-import { DouveryLogo40x40 } from '../icons/logo40x40';
+
 import styles from './footer.css?inline';
-import { AlertProcesProyect } from '../alert/process/process';
+import { DouveryLogo40x40Cuadre } from '../icons/logo40x40Cuadre';
+
 export const Footer = component$(() => {
   useStylesScoped$(styles);
   return (
     <footer class="bg-white ">
-      <AlertProcesProyect />
+
       <div class="bg-white px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div class="grid gap-16 row-gap-10 mb-8 lg:grid-cols-6">
           <div class="md:max-w-md lg:col-span-2">
+           
+           
             <a
               href="/"
               aria-label="Go home"
               title="Douvery"
               class="inline-flex items-center"
             >
-              <DouveryLogo40x40 />
+              <DouveryLogo40x40Cuadre />
               <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
                 Douvery
               </span>
             </a>
             <div class="mt-4 lg:max-w-sm">
               <p class="text-sm text-gray-800">
-                Disfruta, compra y comparte tu felicidad con nosotros,
+                Disfruta, compra y comparte tu felicidad con nosotros ,
                 bienvenido a Douvery.
+              </p>
+              <br />
+              <a href="">Ir a Douvery</a>
+            </div>
+            <br /> <a
+              href="/"
+              aria-label="Go home"
+              title="Douvery"
+              class="inline-flex items-center"
+            >
+              <DouveryLogo40x40Cuadre />
+              <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
+                Douvery Stores
+              </span>
+            </a>
+            <div class="mt-4 lg:max-w-sm">
+              <p class="text-sm text-gray-800">
+                Recursos infinitos para tu tienda, vende con facilidad en
+                Douvery.
               </p>
             </div>
           </div>
           <div class="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4">
             <div>
-              <p class="font-semibold tracking-wide text-gray-800">Category</p>
+              <p class="font-semibold tracking-wide text-gray-800">Sesiones</p>
               <ul class="mt-2 space-y-2">
                 <li>
                   <a
                     href="/"
                     class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
-                    News
+                    Iniciar Sesion
                   </a>
                 </li>
                 <li>
@@ -45,7 +67,7 @@ export const Footer = component$(() => {
                     href="/"
                     class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
-                    World
+                    Registrarse
                   </a>
                 </li>
                 <li>
@@ -53,7 +75,7 @@ export const Footer = component$(() => {
                     href="/"
                     class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
-                    Games
+                    Ultimas Novedades
                   </a>
                 </li>
                 <li>
@@ -61,20 +83,20 @@ export const Footer = component$(() => {
                     href="/"
                     class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
-                    References
+                    Precios y Planes
                   </a>
                 </li>
               </ul>
             </div>
             <div>
-              <p class="font-semibold tracking-wide text-gray-800">Business</p>
+              <p class="font-semibold tracking-wide text-gray-800">Douvery</p>
               <ul class="mt-2 space-y-2">
                 <li>
                   <a
                     href="/"
                     class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
-                    Web
+                    Sobre Nosotros
                   </a>
                 </li>
                 <li>
@@ -82,7 +104,7 @@ export const Footer = component$(() => {
                     href="/"
                     class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
-                    eCommerce
+                    Contactanos
                   </a>
                 </li>
                 <li>
@@ -90,7 +112,7 @@ export const Footer = component$(() => {
                     href="/"
                     class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
-                    Business
+                    Terminos y Condiciones
                   </a>
                 </li>
                 <li>
@@ -98,7 +120,7 @@ export const Footer = component$(() => {
                     href="/"
                     class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
-                    Entertainment
+                    Politicas de Privacidad
                   </a>
                 </li>
                 <li>
@@ -106,20 +128,20 @@ export const Footer = component$(() => {
                     href="/"
                     class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
-                    Portfolio
+                    Politicas de Devolucion
                   </a>
                 </li>
               </ul>
             </div>
             <div>
-              <p class="font-semibold tracking-wide text-gray-800">Apples</p>
+              <p class="font-semibold tracking-wide text-gray-800">Ayuda</p>
               <ul class="mt-2 space-y-2">
                 <li>
                   <a
                     href="/"
                     class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
-                    Media
+                    Contacto de Soporte
                   </a>
                 </li>
                 <li>
@@ -127,7 +149,7 @@ export const Footer = component$(() => {
                     href="/"
                     class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
-                    Brochure
+                    Preguntas Frecuentes
                   </a>
                 </li>
                 <li>
@@ -135,7 +157,7 @@ export const Footer = component$(() => {
                     href="/"
                     class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
-                    Nonprofit
+                    Tutoriales
                   </a>
                 </li>
                 <li>
@@ -143,7 +165,7 @@ export const Footer = component$(() => {
                     href="/"
                     class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
-                    Educational
+                    Seguridad y Privacidad
                   </a>
                 </li>
                 <li>
@@ -151,20 +173,20 @@ export const Footer = component$(() => {
                     href="/"
                     class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
-                    Projects
+                    Reportar un Problema
                   </a>
                 </li>
               </ul>
             </div>
             <div>
-              <p class="font-semibold tracking-wide text-gray-800">Cherry</p>
+              <p class="font-semibold tracking-wide text-gray-800">Noticias </p>
               <ul class="mt-2 space-y-2">
                 <li>
                   <a
                     href="/"
                     class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
-                    Infopreneur
+                    Blog
                   </a>
                 </li>
                 <li>
@@ -172,7 +194,7 @@ export const Footer = component$(() => {
                     href="/"
                     class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
-                    Personal
+                    Comunidad
                   </a>
                 </li>
                 <li>
@@ -180,7 +202,7 @@ export const Footer = component$(() => {
                     href="/"
                     class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
-                    Wiki
+                    Eventos
                   </a>
                 </li>
                 <li>
@@ -188,7 +210,7 @@ export const Footer = component$(() => {
                     href="/"
                     class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                   >
-                    Forum
+                    Podcasts
                   </a>
                 </li>
               </ul>
