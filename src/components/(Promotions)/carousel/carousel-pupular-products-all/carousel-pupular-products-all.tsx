@@ -14,13 +14,12 @@ export const Promotion_Carousel__PopularProductsAll = component$(
   ({ styleNumber }: any) => {
     useStylesScoped$(style);
 
-      const productReducer = useResource$<Product[]>(async ({ cleanup, track }) => {
-        track(
-          () =>styleNumber );
+    const productReducer = useResource$<Product[]>(async ({ cleanup }) => {
       const controller = new AbortController();
       cleanup(() => controller.abort());
 
-      return fetchAllPopularProducts(controller);
+      const data = await fetchAllPopularProducts(controller);
+      return data;
     });
 
     const randomNumber = randomNum();
@@ -30,11 +29,7 @@ export const Promotion_Carousel__PopularProductsAll = component$(
         <div class="content-carousel">
           <Resource
             value={productReducer}
-            onPending={() => (
-              <div class="container-body">
-                <div class="loader"></div>
-              </div>
-            )}
+            onPending={() => <div class="loader"></div>}
             onRejected={() => (
               <>
                 Al parecer, hay un error en la solicitud. Por favor, actualiza
