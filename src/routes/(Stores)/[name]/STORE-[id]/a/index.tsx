@@ -43,6 +43,8 @@ export default component$(() => {
               <div class="container-info-title">
                 <div class="logo">
                   <img
+                    width={60}
+                    height={60}
                     src={state.store.design.logo}
                     alt={state.store.name + 'logo'}
                   />
