@@ -25,8 +25,10 @@ export const VarticalViewProductIMG = component$(
                   }}
                 >
                   <img
-                    width={400}
-                    height={400}
+                    width={60}
+                    height={60}
+                    loading="lazy"
+                    lang="en"
                     src={image}
                     onMouseOver$={() => (img.setImage = image)}
                     onMouseOut$={() => (img.setImage = image)}
@@ -59,11 +61,13 @@ export const VarticalViewProductIMG = component$(
               <img
                 width={400}
                 height={400}
+                loading="lazy"
+                lang="en"
                 onClick$={() => (isOpen.setIsOpen = true)}
                 src={img.setImage}
                 alt={props.slug}
                 class="img-product-llg"
-                title="Haz click para ver la imagen en un tamaño mayor"
+                title="Aumentar tamaño de imagen"
               />
             </div>
           </div>
