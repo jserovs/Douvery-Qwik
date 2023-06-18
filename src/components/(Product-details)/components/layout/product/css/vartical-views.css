@@ -32,6 +32,7 @@
     object-fit: contain;
 
 
+
 }
 
 .img_wrap {
@@ -59,6 +60,7 @@
 
     height: 450px;
     object-fit: contain;
+
     background-color: var(--color-background-card);
     padding: 10px;
     z-index: 1000;
@@ -117,6 +119,7 @@
         width: 800px;
         height: 424px;
         object-fit: contain;
+        object-position: top;
         background-color: var(--color-background-card);
         padding: 10px;
         z-index: 1000;
@@ -163,7 +166,7 @@
 
     .container-img-product img {
 
-
+        object-position: top;
         width: 800px;
         height: 500px;
 
