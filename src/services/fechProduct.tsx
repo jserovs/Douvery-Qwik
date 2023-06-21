@@ -206,18 +206,22 @@ export async function fetchSearchProduct(
   order: string,
   page: number,
   brand: string,
+  user: string | null,
   controller?: AbortController
 ): Promise<any> {
   const response = await fetch(
     `
-  ${urlServerNode}/apisearch/products/search?page=${page}&query=${query}&category=${category}&subcategory=${subcategory}&price=${orderPrice}&rating=${rating}&order=${order}&brand=${brand}`,
+  ${urlServerLocal}/apisearch/products/search?page=${page}&query=${query}&category=${category}&subcategory=${subcategory}&price=${orderPrice}&rating=${rating}&order=${order}&brand=${brand}`,
     {
       signal: controller?.signal,
+      headers: {
+        Authorization: user ? `x-auth-token ${user}` : '',
+      },
     }
   );
 
   if (!response.ok) {
-    throw new Error('Failed to fetch characters');
+    throw new Error('Failed to fetch products search');
   }
   const results = await response.json();
 
