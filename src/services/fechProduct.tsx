@@ -211,7 +211,7 @@ export async function fetchSearchProduct(
 ): Promise<any> {
   const response = await fetch(
     `
-  ${urlServerLocal}/apisearch/products/search?page=${page}&query=${query}&category=${category}&subcategory=${subcategory}&price=${orderPrice}&rating=${rating}&order=${order}&brand=${brand}`,
+  ${urlServerNode}/apisearch/products/search?page=${page}&query=${query}&category=${category}&subcategory=${subcategory}&price=${orderPrice}&rating=${rating}&order=${order}&brand=${brand}`,
     {
       signal: controller?.signal,
       headers: {
