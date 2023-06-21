@@ -24,6 +24,8 @@ import { Card2S } from '~/components/cards/search/card-2-s/card-2-s';
 import { DouveryRight3 } from '~/components/icons/arrow-right-3';
 import { Card3S } from '~/components/cards/search/card-3-s/card-3-s';
 import { Paginator1 } from '~/components/use/paginator/paginator-1/paginator-1';
+import { useGetCurrentUser } from '~/routes/layout';
+
 export const category = [
   {
     name: 'Any',
@@ -91,7 +93,7 @@ export default component$(() => {
     searchInput: '',
   });
   const { url } = useLocation();
-
+  const user = useGetCurrentUser().value;
   const prodcureducer = useResource$<Product[]>(async ({ cleanup, track }) => {
     track(() => currentPage.value && url.search && input.searchInput);
 
@@ -115,6 +117,7 @@ export default component$(() => {
       order,
       currentPage.value,
       brand,
+      user?.token || null,
       controller
     );
   });

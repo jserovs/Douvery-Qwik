@@ -73,6 +73,8 @@ export const ChangeAvatar = component$(() => {
     <div class="container-box-avatar">
       <div class="box">
         <img
+          width={60}
+          height={60}
           src={
             userACC?.avatar
               ? userACC?.avatar
