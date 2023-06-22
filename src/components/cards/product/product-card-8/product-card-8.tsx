@@ -36,10 +36,10 @@ export const ContainerCardProduct8 = component$(({ product, ref }: any) => {
         </h2>
       </a>
       <div class="product-discount-porc">
-        <p>SAVE</p>
-        <p>
+        <p class="discount-qty">
           - <UsePrice price={discountInMoney} />
         </p>
+        <p class="save">SAVE TODAY</p>
       </div>
       <div class="container-prc-info">
         {' '}

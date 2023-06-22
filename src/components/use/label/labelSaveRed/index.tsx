@@ -16,6 +16,5 @@ export const LabelSaveRed = component$(({ product }: any) => {
         SAVE <UsePrice price={discount} />
       </div>
     </div>
-
   );
 });

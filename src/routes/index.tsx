@@ -20,6 +20,8 @@ import ContainerCatogorieInit from '~/components/carousel-all/container-catogori
 import { Promotion_Carousel__PopularProductsAll } from '~/components/(Promotions)/carousel/carousel-pupular-products-all/carousel-pupular-products-all';
 import { fuctionRef } from '~/fuctions/fuctionRef';
 import { BannerCarouselHome } from '~/components/carBanner/carBanner';
+import { PromotionRecomend_Carousel_5LastView } from '~/components/(Promotions)/carousel/carousel-recomend-5last-view-product/carousel-recomend-5last-view-product ';
+import { useGetCurrentUser } from './layout';
 
 export default component$(() => {
   useStylesScoped$(styles);
@@ -35,6 +37,8 @@ export default component$(() => {
       controller.abort();
     };
   });
+
+  const user = useGetCurrentUser().value;
 
   function ref(index: Number) {
     const fuction = fuctionRef(
@@ -53,6 +57,7 @@ export default component$(() => {
             </div>
           </div>
         </div>
+
         <div class="container-carousel-interes">
           <div class="title-show">
             <h2>Explora productos populares</h2>
@@ -89,7 +94,24 @@ export default component$(() => {
 
         <br />
         <div class="container-card-store-categorie">
-          <br />
+          {user?.id && (
+            <>
+              {' '}
+              <div class="title-show">
+                <h2> Basado en tus productos vistos.</h2>
+                <div class="show-more">
+                  {' '}
+                  <a href="dsaf/">Ver mas</a>
+                </div>
+              </div>
+              <br />
+              <PromotionRecomend_Carousel_5LastView
+                ref={ref(4)}
+                styleNumber={11}
+              />
+              <br />
+            </>
+          )}
           <div class="title-show">
             <h2>
               {' '}

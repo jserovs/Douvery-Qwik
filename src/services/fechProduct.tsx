@@ -183,6 +183,27 @@ export async function fetchSystemRecomendationProductU(
   return results;
 }
 
+export async function fetchSystemRecomendation_5lastViewedProducts(
+  userId: string,
+  numlimit: number,
+  controller?: AbortController
+): Promise<any> {
+  const response = await fetch(
+    `
+  https://sytm-nn-12.onrender.com/recommend_products_based_on_last_viewed/${userId}?limit=${numlimit}`,
+    {
+      signal: controller?.signal,
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error('Error al obtener recomendaciones');
+  }
+  const results = await response.json();
+
+  return results;
+}
+
 export async function fetchIpInfo(): Promise<any> {
   const response = await fetch(
     `
