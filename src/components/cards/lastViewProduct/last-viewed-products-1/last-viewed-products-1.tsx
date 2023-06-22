@@ -10,6 +10,7 @@ import type { Product } from '~/utils/types';
 import { useLocation } from '@builder.io/qwik-city';
 
 import { getDataViewedProduct } from '~/services/viewed/viewed';
+import { UseProductDetailsLink } from '~/services/fuction';
 
 interface IState {
   searchInput: string;
@@ -17,7 +18,7 @@ interface IState {
   selectedValue: string;
 }
 
-export const CardLastViewedProducts1 = component$(() => {
+export const CardLastViewedProducts1 = component$(({ ref }: any) => {
   useStylesScoped$(styles);
   const state = useStore<IState>({
     searchInput: '',
@@ -62,10 +63,7 @@ export const CardLastViewedProducts1 = component$(() => {
               <>
                 {state.searchResults.map((product: any, index: any) => {
                   return (
-                    <a
-                      href={'/v/' + product.slug + '/' + product.dui}
-                      key={index}
-                    >
+                    <a href={UseProductDetailsLink(product, ref)} key={index}>
                       <div class="image-container" key={index}>
                         <img
                           width={100}

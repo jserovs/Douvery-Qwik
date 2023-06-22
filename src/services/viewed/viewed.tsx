@@ -29,7 +29,13 @@ export function getLastItemViewedDui() {
   return null;
 }
 
-export async function addToViewedProducts({ dui }: { dui: string }) {
+export async function addToViewedProducts({
+  dui,
+  ref,
+}: {
+  dui: string;
+  ref: string;
+}) {
   const sessionDExists = getCookieData('SESSION_D');
   if (sessionDExists) {
     try {
@@ -37,7 +43,7 @@ export async function addToViewedProducts({ dui }: { dui: string }) {
         `${urlServerNode}/api/viewed/productsDui/json`,
         {
           method: 'POST',
-          body: JSON.stringify({ dui }),
+          body: JSON.stringify({ dui, ref }),
           headers: { 'Content-Type': 'application/json' },
         }
       );

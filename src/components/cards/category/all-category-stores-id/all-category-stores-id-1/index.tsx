@@ -9,7 +9,7 @@ import { fetchStoreCategoriesDiscounts } from '~/services/store/store';
 import type { Product } from '~/utils/types';
 import styles from './index.css?inline';
 import { CategoryGrid2 } from '~/components/use/Categories/CategoryGrid2/category-grid-2';
-export default component$(({ storeId }: any) => {
+export default component$(({ storeId, ref }: any) => {
   useStylesScoped$(styles);
   const loc = useLocation();
   const prodcureducer = useResource$<Product[]>(async ({ cleanup, track }) => {
@@ -52,7 +52,11 @@ export default component$(({ storeId }: any) => {
                   {data.categories.map((dat: any) => (
                     <>
                       <li class="box">
-                        <CategoryGrid2 categorie={dat} store={data.store} />
+                        <CategoryGrid2
+                          ref={ref}
+                          categorie={dat}
+                          store={data.store}
+                        />
                       </li>
                     </>
                   ))}

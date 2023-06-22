@@ -30,6 +30,7 @@ import {
   fetchSearchHistoryUser,
   fetchSearchProduct,
 } from '~/services/search/searh-product';
+import { fuctionRef } from '~/fuctions/fuctionRef';
 
 export const category = [
   {
@@ -228,7 +229,13 @@ export default component$(() => {
       controller.abort();
     };
   });
-
+  const ref = fuctionRef(
+    'search/' +
+      'search_page_products=' +
+      url.searchParams.get('q') +
+      '&pg=' +
+      currentPage.value
+  );
   return (
     <div class="container-all">
       <div class="grid-container">
@@ -604,11 +611,11 @@ export default component$(() => {
                         <>
                           <li key={product.id}>
                             {url.searchParams.get('or-c') === 'books' ? (
-                              <Card2S product={product} />
+                              <Card2S product={product} ref={ref} />
                             ) : layout == '2' ? (
-                              <Card3S product={product} />
+                              <Card3S product={product} ref={ref} />
                             ) : (
-                              <Card1S product={product} />
+                              <Card1S product={product} ref={ref} />
                             )}
                           </li>
                         </>

@@ -5,10 +5,10 @@ import { TextCL } from '~/components/use/textCL/textCL';
 import { UsePrice } from '~/components/use/price/price';
 import { UseProductDetailsLink } from '~/services/fuction';
 
-export const ContainerCardProduct10 = component$(({ product }: any) => {
+export const ContainerCardProduct10 = component$(({ product, ref }: any) => {
   useStylesScoped$(styles);
   const discoun = product.price - product.price * (product.discount / 100);
-  const urlLink = UseProductDetailsLink(product as any );
+  const urlLink = UseProductDetailsLink(product as any, ref);
   return (
     <div class="product-card">
       <a href={urlLink as any}>

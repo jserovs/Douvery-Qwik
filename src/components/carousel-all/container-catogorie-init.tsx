@@ -8,7 +8,7 @@ import { CardLastViewedProducts1 } from '../cards/lastViewProduct/last-viewed-pr
 import ContainerVert from '../container-vert/container-vert';
 import { useGetCurrentUser } from '~/routes/layout';
 
-export default component$(() => {
+export default component$(({ ref }: any) => {
   useStylesScoped$(styles);
   const isOpen = useStore({ setIsOpen: false });
   const userAcc = useGetCurrentUser().value;
@@ -35,7 +35,7 @@ export default component$(() => {
             </div>
           </div>
           <div class="container-card-last-view">
-            <CardLastViewedProducts1 />
+            <CardLastViewedProducts1 ref={ref} />
           </div>
 
           <div class="container-accouts">

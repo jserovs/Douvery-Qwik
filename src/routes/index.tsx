@@ -16,8 +16,10 @@ import { Promotion_CarouselInterestViews } from '~/components/(Promotions)/carou
 import { PromotionRecomend_Carousel_LastView } from '~/components/(Promotions)/carousel/carousel-recomend-last-view-product/carousel-recomend-last-view-product';
 import { getLastItemViewedDui } from '~/services/viewed/viewed';
 import ContainerCatogorieInit from '~/components/carousel-all/container-catogorie-init';
-import { BannerCarouselHome } from '~/components/carBanner/carBanner';
+
 import { Promotion_Carousel__PopularProductsAll } from '~/components/(Promotions)/carousel/carousel-pupular-products-all/carousel-pupular-products-all';
+import { fuctionRef } from '~/fuctions/fuctionRef';
+import { BannerCarouselHome } from '~/components/carBanner/carBanner';
 
 export default component$(() => {
   useStylesScoped$(styles);
@@ -34,14 +36,20 @@ export default component$(() => {
     };
   });
 
+  function ref(index: Number) {
+    const fuction = fuctionRef(
+      'center/' + 'center_page/' + 'center_index_page=' + index
+    );
+    return fuction;
+  }
   return (
     <div class="container-all">
       <div class="cotent">
         <div class="c-c-v">
-          <BannerCarouselHome />
+          <BannerCarouselHome ref={ref(0)} />
           <div class="con-gnl ">
             <div class="con-par-sld">
-              <ContainerCatogorieInit />
+              <ContainerCatogorieInit ref={ref(1)} />
             </div>
           </div>
         </div>
@@ -53,7 +61,10 @@ export default component$(() => {
               <a href="dsaf/">Ver mas</a>
             </div>
           </div>
-          <Promotion_Carousel__PopularProductsAll styleNumber={11} />
+          <Promotion_Carousel__PopularProductsAll
+            ref={ref(2)}
+            styleNumber={11}
+          />
         </div>
         <div class="container-aoutandingproducts">
           <div class="title-show">
@@ -73,9 +84,9 @@ export default component$(() => {
               <a href="dsaf/">Ver mas</a>
             </div>
           </div>
-          <Promotion_CarouselInterestViews styleNumber={6} />
+          <Promotion_CarouselInterestViews ref={ref(3)} styleNumber={6} />
         </div>
-       
+
         <br />
         <div class="container-card-store-categorie">
           <br />
@@ -93,25 +104,31 @@ export default component$(() => {
           <br />
 
           <AllCategoryStoresId1
+            ref={ref(4)}
             storeId="3465460B-51D47297-87C20FED"
             store="Douvery"
           />
         </div>
 
         {lastViewDui.value && (
-          <> <br />
-          <div class="container-carousel-interes">
-            <div class="title-show">
-              <h2>Basado en el último producto que viste</h2>
-              <div class="show-more">
-                {' '}
-                <a href="dsaf/">Ver mas</a>
+          <>
+            {' '}
+            <br />
+            <div class="container-carousel-interes">
+              <div class="title-show">
+                <h2>Basado en el último producto que viste</h2>
+                <div class="show-more">
+                  {' '}
+                  <a href="dsaf/">Ver mas</a>
+                </div>
               </div>
+              <PromotionRecomend_Carousel_LastView
+                ref={ref(5)}
+                styleNumber={11}
+              />
             </div>
-            <PromotionRecomend_Carousel_LastView styleNumber={11} />
-          </div><br />
+            <br />
           </>
-         
         )}
       </div>
     </div>

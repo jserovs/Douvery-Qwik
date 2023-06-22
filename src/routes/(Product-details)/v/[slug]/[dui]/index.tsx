@@ -45,7 +45,10 @@ export default component$(() => {
   const descriptionEdit = useSignal(``);
 
   useVisibleTask$(() => {
-    addToViewedProducts({ dui: location.params.dui });
+    addToViewedProducts({
+      dui: location.params.dui,
+      ref: location.url.searchParams.get('ref') as any,
+    });
   });
   useVisibleTask$(() => {
     sendUserTimestamp({
@@ -53,6 +56,7 @@ export default component$(() => {
       userId: user?.id as any,
     });
   });
+  console.log(location.url.searchParams.get('ref'));
   return (
     <>
       <div>
@@ -73,7 +77,7 @@ export default component$(() => {
 });
 export const head: DocumentHead = ({ resolveValue, params }) => {
   const product = resolveValue(useProductInfo);
-  const urkProduct = UseProductDetailsLink(product);
+  const urkProduct = UseProductDetailsLink(product, '');
 
   return {
     title: `${product.name} - Douvery`,

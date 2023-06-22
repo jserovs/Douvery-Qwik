@@ -13,7 +13,7 @@ import { randomNum } from '~/services/fuction';
 import { getLastItemViewedDui } from '~/services/viewed/viewed';
 import { Carousel3 } from '~/components/use/carousel/carousel-3/carousel-3';
 export const PromotionRecomend_Carousel_LastView = component$(
-  ({ styleNumber }: any) => {
+  ({ styleNumber, ref }: any) => {
     useStylesScoped$(style);
     const state = useStore({
       productResults: [] as Product[],
@@ -24,7 +24,7 @@ export const PromotionRecomend_Carousel_LastView = component$(
       const controller = new AbortController();
       const dui = getLastItemViewedDui();
       lastViewDui.value = dui;
-      state.productResults = await fetchSystemRecomendationProductU(dui,25);
+      state.productResults = await fetchSystemRecomendationProductU(dui, 25);
 
       return () => {
         controller.abort();
@@ -40,6 +40,7 @@ export const PromotionRecomend_Carousel_LastView = component$(
             <></>
           ) : (
             <Carousel3
+              ref={ref}
               key={randomNumber}
               styleCard={styleNumber || randomNumber}
               product={state.productResults}

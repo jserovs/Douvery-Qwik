@@ -6,14 +6,14 @@ import { TextCL } from '~/components/use/textCL/textCL';
 
 import { UsePrice } from '~/components/use/price/price';
 
-export const ContainerCardProduct8 = component$(({ product }: any) => {
+export const ContainerCardProduct8 = component$(({ product, ref }: any) => {
   useStylesScoped$(styles);
   const discoun = product.price - product.price * (product.discount / 100);
   const discountInMoney = product.price * (product.discount / 100);
 
   return (
     <div class="product-card">
-      <a href={UseProductDetailsLink(product)}>
+      <a href={UseProductDetailsLink(product, ref)}>
         {' '}
         <img
           width={200}

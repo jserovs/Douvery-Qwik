@@ -4,17 +4,17 @@ import styles from './product-card-9.css?inline';
 import { UsePrice } from '~/components/use/price/price';
 import { UseProductDetailsLink } from '~/services/fuction';
 
-export const ContainerCardProduct9 = component$(({ product }: any) => {
+export const ContainerCardProduct9 = component$(({ product, ref }: any) => {
   useStylesScoped$(styles);
   const discoun = product.price - product.price * (product.discount / 100);
 
   return (
     <div class="product-card">
-     <a href={UseProductDetailsLink(product)}>
+      <a href={UseProductDetailsLink(product, ref)}>
         {' '}
         <img src={product.images[0]} alt={product.name} class="product-image" />
       </a>
-     <a href={UseProductDetailsLink(product)}>
+      <a href={UseProductDetailsLink(product, ref)}>
         <h2 class="product-name">
           {' '}
           {product.name[0].toUpperCase() + product.name.substring(1)}

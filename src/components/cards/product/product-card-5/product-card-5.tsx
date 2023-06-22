@@ -8,7 +8,7 @@ import { Stars } from '~/components/Ratings/stars/stars';
 import { DouveryCheckMark } from '~/components/icons/checkMark';
 import { UseProductDetailsLink } from '~/services/fuction';
 
-export const ContainerCardProduct5 = component$(({ product }: any) => {
+export const ContainerCardProduct5 = component$(({ product, ref }: any) => {
   useStylesScoped$(styles);
   const discoun = product.price - product.price * (product.discount / 100);
 
@@ -18,7 +18,7 @@ export const ContainerCardProduct5 = component$(({ product }: any) => {
   }
   return (
     <div class="product-card">
-     <a href={UseProductDetailsLink(product)}>
+      <a href={UseProductDetailsLink(product, ref)}>
         {' '}
         <img
           width={200}
@@ -28,7 +28,7 @@ export const ContainerCardProduct5 = component$(({ product }: any) => {
           class="product-image"
         />
       </a>
-     <a href={UseProductDetailsLink(product)}>
+      <a href={UseProductDetailsLink(product, ref)}>
         <h2 class="product-name">
           {' '}
           {product.name[0].toUpperCase() + product.name.substring(1)}

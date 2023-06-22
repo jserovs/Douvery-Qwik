@@ -9,7 +9,7 @@ import { ModalCartInfo } from '~/components/modal/modal-cart/modal-cart';
 import { UsePrice } from '~/components/use/price/price';
 import { UseProductDetailsLink } from '~/services/fuction';
 
-export const ContainerCardProduct7 = component$(({ product }: any) => {
+export const ContainerCardProduct7 = component$(({ product, ref }: any) => {
   useStylesScoped$(styles);
   const discoun = product.price - product.price * (product.discount / 100);
 
@@ -17,16 +17,16 @@ export const ContainerCardProduct7 = component$(({ product }: any) => {
 
   return (
     <div class="product-card">
-     <a href={UseProductDetailsLink(product)}>
+      <a href={UseProductDetailsLink(product, ref)}>
         {' '}
         <img src={product.images[0]} alt={product.name} class="product-image" />
       </a>
-     <a href={UseProductDetailsLink(product)}>
+      <a href={UseProductDetailsLink(product, ref)}>
         <h2 class="product-brand">
           <TextCL text={product.marca} />{' '}
         </h2>
       </a>
-     <a href={UseProductDetailsLink(product)}>
+      <a href={UseProductDetailsLink(product, ref)}>
         <h2 class="product-name">
           {' '}
           <TextCL text={product.name} />
