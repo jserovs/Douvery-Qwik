@@ -171,20 +171,35 @@ button {
 }
 
 .product-discount-porc {
-    width: 45%;
-    padding: 0px 5px;
+    padding: 0 10px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 5px;
+    align-items: center;
+}
+
+.product-discount-porc .save {
+    font-size: 12px;
+    font-weight: 500;
+    color: #000;
+}
+
+.discount-qty {
+
+    padding: 2px 5px;
     margin: 10px 0px;
     display: grid;
     grid-template-columns: auto auto;
     justify-content: center;
     align-items: center;
     gap: 5px;
-    background-color: #e84118;
+    background-color: #DF2E38;
     border-radius: 5px;
+
 }
 
 .product-discount-porc p {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
     color: #fff;
 }
