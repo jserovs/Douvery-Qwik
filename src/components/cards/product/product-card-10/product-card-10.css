@@ -1,6 +1,6 @@
 .product-card {
     width: 100%;
-    width: 276px;
+    width: 200pxpx;
     min-height: 300px;
     display: flex;
     flex-direction: column;
@@ -18,7 +18,7 @@
 
 .product-image {
     width: 100%;
-    width: 276px;
+
     height: 201px;
     padding: 10px 20PX;
     object-fit: contain;
