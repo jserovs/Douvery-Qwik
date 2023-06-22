@@ -97,19 +97,10 @@ export default component$(() => {
           {user?.id && (
             <>
               {' '}
-              <div class="title-show">
-                <h2> Basado en tus productos vistos.</h2>
-                <div class="show-more">
-                  {' '}
-                  <a href="dsaf/">Ver mas</a>
-                </div>
-              </div>
-              <br />
               <PromotionRecomend_Carousel_5LastView
                 ref={ref(4)}
                 styleNumber={11}
               />
-              <br />
             </>
           )}
           <div class="title-show">

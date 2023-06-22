@@ -1,15 +1,14 @@
 import {
+  Resource,
   component$,
-  useSignal,
+  useResource$,
   useStore,
   useStylesScoped$,
-  useVisibleTask$,
 } from '@builder.io/qwik';
 import style from './carousel-recomend-5last-view-product.css?inline';
 import type { Product } from '~/utils/types';
 import { randomNum } from '~/services/fuction';
 
-import { getLastItemViewedDui } from '~/services/viewed/viewed';
 import { Carousel3 } from '~/components/use/carousel/carousel-3/carousel-3';
 import { useGetCurrentUser } from '~/routes/layout';
 import { fetchSystemRecomendation_5lastViewedProducts } from '~/services/fechProduct';
@@ -19,40 +18,60 @@ export const PromotionRecomend_Carousel_5LastView = component$(
     const state = useStore({
       productResults: [] as Product[],
     });
-    const lastViewDui = useSignal('');
+
     const user = useGetCurrentUser().value;
-    useVisibleTask$(async () => {
+
+    const productReducer = useResource$<Product[]>(async ({ cleanup }) => {
       const controller = new AbortController();
-      const dui = getLastItemViewedDui();
-      lastViewDui.value = dui;
-      state.productResults = await fetchSystemRecomendation_5lastViewedProducts(
+      cleanup(() => controller.abort());
+
+      const data = await fetchSystemRecomendation_5lastViewedProducts(
         user?.id || '',
         25
       );
+      state.productResults = data;
 
-      return () => {
-        controller.abort();
-      };
+      return data;
     });
 
     const randomNumber = randomNum();
+    console.log(state.productResults);
     return (
-      <div class="ctnr-view-5" key={randomNumber}>
+      <>
         {' '}
-        <div class="content-carousel">
-          {lastViewDui.value === null ? (
-            <></>
-          ) : (
-            <Carousel3
-              ref={ref}
-              key={randomNumber}
-              styleCard={styleNumber || randomNumber}
-              product={state.productResults}
-            />
+        <Resource
+          value={productReducer}
+          onPending={() => <div class="loader"></div>}
+          onRejected={() => <></>}
+          onResolved={(data: any) => (
+            <>
+              {data.length === 0 ? (
+                <></>
+              ) : (
+                <>
+                  {' '}
+                  <br />
+                  <div class="title-show">
+                    <h2> Basado en tus productos vistos.</h2>
+                    <div class="show-more">
+                      {' '}
+                      <a href="dsaf/">Ver mas</a>
+                    </div>
+                  </div>
+                  <Carousel3
+                    ref={ref}
+                    key={randomNumber}
+                    styleCard={styleNumber || randomNumber}
+                    product={data}
+                  />
+                  <br />
+                </>
+              )}
+            </>
           )}
-          <br />
-        </div>
-      </div>
+        />
+        <br />
+      </>
     );
   }
 );
