@@ -12,17 +12,20 @@ export async function sendUserTimestamp({
   const timestamp = getCurrentTimestamp();
 
   try {
-    const response = await fetch(`${urlServerNode}/api/product/userTimestamp`, {
-      method: 'POST',
-      body: JSON.stringify({
-        userId,
-        productDui,
-        timestamp,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+    const response = await fetch(
+      `${urlServerNode}/api/product/view-product-page/user-timestamp`,
+      {
+        method: 'POST',
+        body: JSON.stringify({
+          userId,
+          productDui,
+          timestamp,
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+    );
 
     if (!response.ok) {
       throw new Error();

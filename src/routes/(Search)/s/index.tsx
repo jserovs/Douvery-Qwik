@@ -10,11 +10,7 @@ import {
 } from '@builder.io/qwik';
 import { Link, useLocation, useNavigate } from '@builder.io/qwik-city';
 import type { DocumentHead } from '@builder.io/qwik-city';
-import {
-  fetchProductU,
-  fetchSearchHistoryUser,
-  fetchSearchProduct,
-} from '~/services/fechProduct';
+import { fetchProductU } from '~/services/fechProduct';
 import styles from './index.css?inline';
 import type { Product } from '~/utils/types';
 import { Card1S } from '~/components/cards/search/card-1-s/card-1-s';
@@ -30,6 +26,10 @@ import { DouveryRight3 } from '~/components/icons/arrow-right-3';
 import { Card3S } from '~/components/cards/search/card-3-s/card-3-s';
 import { Paginator1 } from '~/components/use/paginator/paginator-1/paginator-1';
 import { useGetCurrentUser } from '~/routes/layout';
+import {
+  fetchSearchHistoryUser,
+  fetchSearchProduct,
+} from '~/services/search/searh-product';
 
 export const category = [
   {
