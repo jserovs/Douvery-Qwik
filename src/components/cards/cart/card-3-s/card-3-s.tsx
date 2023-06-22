@@ -31,7 +31,13 @@ export const Card3SCART = component$(({ product }: any) => {
   return (
     <div class="container-all">
       <div class="card">
-        <img src={product.images} alt="Product Image" class="product-image" />
+        <img
+          width={200}
+          height={200}
+          src={product.images}
+          alt="Product Image"
+          class="product-image"
+        />
         <div class="product-info">
           <a href={`/v//${product.dui}`}>
             {' '}

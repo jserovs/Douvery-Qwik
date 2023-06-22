@@ -227,3 +227,33 @@ export async function fetchSearchProduct(
 
   return results;
 }
+
+export async function fetchSearchHistoryUser(
+  user: string | null,
+  itemsReturned: Array<string>,
+  searchTerm: string,
+  controller?: AbortController
+): Promise<any> {
+  const response = await fetch(
+    `
+  ${urlServerNode}/apisearch/users-history`,
+    {
+      method: 'POST',
+      signal: controller?.signal,
+
+      body: JSON.stringify({ itemsReturned, searchTerm }),
+      headers: {
+        'Content-Type': 'application/json',
+
+        Authorization: `x-auth-token ${user}`,
+      },
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error('Failed to SEARCH HISTORY USER');
+  }
+  const results = await response.json();
+
+  return results;
+}

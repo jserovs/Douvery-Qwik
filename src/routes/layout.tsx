@@ -68,7 +68,7 @@ export default component$(() => {
   const segureUrl = loc.url.href.match('/segure/') ? false : true;
   useVisibleTask$(() => {
     const info = platform.parse(window.navigator.userAgent);
-   info
+    info;
   });
 
   return (
