@@ -21,7 +21,7 @@ export const BannerCarouselHome = component$(({ ref }: any) => {
     })
   );
 
-  const contents = [
+  let contents = [
     {
       type: 'image',
       desktopImageUrl:
@@ -60,6 +60,7 @@ export const BannerCarouselHome = component$(({ ref }: any) => {
     },
     // agrega todos los objetos de imagen, URL y texto alternativo que necesites
   ];
+  contents = contents.sort(() => Math.random() - 0.5);
 
   const nextContent = $(() => {
     if (currentIndex.SetCurrentIndex < contents.length - 1) {
