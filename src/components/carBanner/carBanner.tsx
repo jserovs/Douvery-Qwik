@@ -9,7 +9,7 @@ import styles from './carBanner.css?inline';
 import { DouveryLeft3 } from '../icons/arrow-left-3';
 import { DouveryRight3 } from '../icons/arrow-right-3';
 
-export const BannerCarouselHome = component$(() => {
+export const BannerCarouselHome = component$(({ ref }: any) => {
   useStylesScoped$(styles);
   const currentIndex = useStore({ SetCurrentIndex: 0 });
   const store = useStore({ windowWidth: 0 });
@@ -28,7 +28,7 @@ export const BannerCarouselHome = component$(() => {
         'https://res.cloudinary.com/douvery/image/upload/v1686858193/aoy0brpbrrupoon9jakh.webp',
       mobileImageUrl:
         'https://res.cloudinary.com/douvery/image/upload/v1686858193/aoy0brpbrrupoon9jakh.webp',
-      linkUrl: 'url-a-la-que-redirigir-1',
+      linkUrl: 'url-a-la-que-redirigir-1' + ref,
       alt: 'Hogar dulce hogar CAREGORIA DOouvery img-douvery ',
     },
     {
@@ -37,7 +37,7 @@ export const BannerCarouselHome = component$(() => {
         'https://res.cloudinary.com/douvery/image/upload/v1685304113/eqqjyggjmogzbfny0rgu.webp',
       mobileImageUrl:
         'https://res.cloudinary.com/douvery/image/upload/v1685361847/xuqgkyzgkzhtwe1cvzqt.webp',
-      linkUrl: 'url-a-la-que-redirigir-1',
+      linkUrl: 'url-a-la-que-redirigir-1' + ref,
       alt: 'Hogar dulce hogar CAREGORIA DOouvery img-douvery ',
     },
     {
@@ -46,7 +46,7 @@ export const BannerCarouselHome = component$(() => {
         'https://res.cloudinary.com/douvery/image/upload/v1684406805/dd30bir4sqyimtnkbhb1.webp',
       mobileImageUrl:
         'https://res.cloudinary.com/douvery/image/upload/v1685361844/g5cmkukrjubj4wxpnnld.webp',
-      linkUrl: 'url-a-la-que-redirigir-1',
+      linkUrl: 'url-a-la-que-redirigir-1' + ref,
       alt: 'Texto alternativo para la imagen 1',
     },
     {
@@ -55,7 +55,7 @@ export const BannerCarouselHome = component$(() => {
         'https://res.cloudinary.com/douvery/video/upload/v1685469644/lj4zepeo4a3geadmqucw.mp4',
       mobileVideoUrl:
         'https://res.cloudinary.com/douvery/video/upload/v1685469644/lj4zepeo4a3geadmqucw.mp4',
-      linkUrl: 'url-a-la-que-redirigir-1',
+      linkUrl: 'url-a-la-que-redirigir-1' + ref,
       alt: 'Texto alternativo para el video 1',
     },
     // agrega todos los objetos de imagen, URL y texto alternativo que necesites

@@ -9,7 +9,7 @@ import { UseNumberOneCategory } from '~/components/use/numberOne/numberOneCatego
 import { DouveryCheckMark } from '~/components/icons/checkMark';
 import { ButtonCardHover } from '~/components/use/bropdown-button-cart-fast-pay/button-card/button-card-hover';
 import { UseProductDetailsLink } from '~/services/fuction';
-export const Card4S = component$(({ product }: any) => {
+export const Card4S = component$(({ product, ref }: any) => {
   useStylesScoped$(styles);
   const discoun = product.price - product.price * (product.discount / 100);
   const is = useStore({
@@ -19,15 +19,14 @@ export const Card4S = component$(({ product }: any) => {
     <div class="container-all">
       <div class="card">
         <img
-
-        width={200}
-        height={200}
+          width={200}
+          height={200}
           src={product.images[0]}
           alt="Product Image"
           class="product-image"
         />
         <div class="product-info">
-         <a href={UseProductDetailsLink(product)}>
+          <a href={UseProductDetailsLink(product, ref)}>
             {' '}
             <h2 class="product-title">
               <TextCL text={product.name} />{' '}

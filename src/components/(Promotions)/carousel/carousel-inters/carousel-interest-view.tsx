@@ -11,7 +11,7 @@ import { fetchProductU } from '~/services/fechProduct';
 import { randomNum } from '~/services/fuction';
 import { useLocation } from '@builder.io/qwik-city';
 export const Promotion_CarouselInterestViews = component$(
-  ({ styleNumber }: any) => {
+  ({ styleNumber, ref }: any) => {
     useStylesScoped$(style);
     const state = useStore({
       productResults: [] as Product[],
@@ -34,6 +34,7 @@ export const Promotion_CarouselInterestViews = component$(
       <div class="ctnr-view-5">
         {' '}
         <Carousel1
+          ref={ref}
           styleCard={styleNumber || randomNumber}
           product={state.productResults}
         />

@@ -100,7 +100,7 @@ export function formatDate(isoDate: any) {
   return `${month} ${day}, ${year}`;
 }
 
-export function UseProductDetailsLink(product: any) {
+export function UseProductDetailsLink(product: any, ref: any) {
   function getStatusMessage() {
     switch (product.productDetails.pd_detailsBuyBox) {
       case HashProductDetailsPriceRightTop:
@@ -114,7 +114,11 @@ export function UseProductDetailsLink(product: any) {
     }
   }
 
-  return `/v/${product.slug}/${product.dui}/?ss_v=${getStatusMessage()} `;
+  const refValue = ref === undefined ? 'dawno' : ref;
+
+  return `/v/${product.slug}/${
+    product.dui
+  }/?ss_v=${getStatusMessage()}&ref=${refValue}`;
 }
 
 export function calculateCartDetails(car_product: any) {

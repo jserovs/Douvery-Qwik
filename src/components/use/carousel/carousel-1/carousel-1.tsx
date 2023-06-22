@@ -15,7 +15,7 @@ import { ContainerCardProduct10 } from '~/components/cards/product/product-card-
 import { ContainerCardProduct11 } from '~/components/cards/product/product-card-11/product-card-11';
 import { randomNum } from '~/services/fuction';
 import { ContainerCardProduct12 } from '~/components/cards/product/product-card-12/product-card-12';
-export const Carousel1 = component$(({ product, styleCard }: any) => {
+export const Carousel1 = component$(({ product, styleCard, ref }: any) => {
   useStylesScoped$(styles);
   const currentIndex = useStore({ setCurrentIndex: 0 });
   const randomNumber = randomNum();
@@ -43,62 +43,62 @@ export const Carousel1 = component$(({ product, styleCard }: any) => {
           return (
             <div class="carousel_item" key={index}>
               {styleCard == 1 ? (
-                <ContainerCardProduct1 key={index} product={pro} />
+                <ContainerCardProduct1 key={index} ref={ref} product={pro} />
               ) : (
                 ''
               )}
               {styleCard == 2 ? (
-                <ContainerCardProduct2 key={index} product={pro} />
+                <ContainerCardProduct2 key={index} ref={ref} product={pro} />
               ) : (
                 ''
               )}
               {styleCard == 3 ? (
-                <ContainerCardProduct3 key={index} product={pro} />
+                <ContainerCardProduct3 key={index} ref={ref} product={pro} />
               ) : (
                 ''
               )}
               {styleCard == 4 ? (
-                <ContainerCardProduct4 key={index} product={pro} />
+                <ContainerCardProduct4 key={index} ref={ref} product={pro} />
               ) : (
                 ''
               )}
               {styleCard == 5 ? (
-                <ContainerCardProduct5 key={index} product={pro} />
+                <ContainerCardProduct5 key={index} ref={ref} product={pro} />
               ) : (
                 ''
               )}
               {styleCard == 6 ? (
-                <ContainerCardProduct6 key={index} product={pro} />
+                <ContainerCardProduct6 key={index} ref={ref} product={pro} />
               ) : (
                 ''
               )}
               {styleCard == 7 ? (
-                <ContainerCardProduct7 key={index} product={pro} />
+                <ContainerCardProduct7 key={index} ref={ref} product={pro} />
               ) : (
                 ''
               )}
               {styleCard == 8 ? (
-                <ContainerCardProduct8 key={index} product={pro} />
+                <ContainerCardProduct8 key={index} ref={ref} product={pro} />
               ) : (
                 ''
               )}
               {styleCard == 9 ? (
-                <ContainerCardProduct9 key={index} product={pro} />
+                <ContainerCardProduct9 key={index} ref={ref} product={pro} />
               ) : (
                 ''
               )}
               {styleCard == 10 ? (
-                <ContainerCardProduct10 key={index} product={pro} />
+                <ContainerCardProduct10 key={index} ref={ref} product={pro} />
               ) : (
                 ''
               )}
               {styleCard == 11 ? (
-                <ContainerCardProduct11 key={index} product={pro} />
+                <ContainerCardProduct11 key={index} ref={ref} product={pro} />
               ) : (
                 ''
               )}
               {styleCard == 12 ? (
-                <ContainerCardProduct12 key={index} product={pro} />
+                <ContainerCardProduct12 key={index} ref={ref} product={pro} />
               ) : (
                 ''
               )}

@@ -1,13 +1,15 @@
 import {
+  Resource,
   component$,
+  useResource$,
   useStore,
   useStylesScoped$,
-  useTask$,
 } from '@builder.io/qwik';
 import style from './view3.css?inline';
-import { Carousel1 } from '~/components/use/carousel/carousel-1/carousel-1';
 import type { Product } from '~/utils/types';
 import { fetchSystemRecomendationProductU } from '~/services/fechProduct';
+import { Carousel2 } from '~/components/use/carousel/carousel-2/carousel-2';
+import { randomNum } from '~/services/fuction';
 
 export const View3 = component$(({ product }: any) => {
   useStylesScoped$(style);
@@ -16,18 +18,15 @@ export const View3 = component$(({ product }: any) => {
     loader: false,
   });
 
-  useTask$(async ({ track }) => {
-    track(() => product.dui);
-    const dui = product.dui;
+  const productReducer = useResource$<Product[]>(async ({ cleanup }) => {
     const controller = new AbortController();
-
-    state.productResults = await fetchSystemRecomendationProductU(dui,25);
-
-    return () => {
-      controller.abort();
-    };
+    cleanup(() => controller.abort());
+    const dui = product.dui;
+    const data = await fetchSystemRecomendationProductU(dui, 25, controller);
+    return data;
   });
 
+  const randomNumber = randomNum();
   return (
     <div class="ctnr-view-3">
       <>
@@ -56,19 +55,31 @@ export const View3 = component$(({ product }: any) => {
           {' '}
           <div class="content-carousel">
             <p class="ps-sr1">Productos similares</p>
-            {state.productResults ? (
-              <>
-                {' '}
-                <Carousel1 styleCard={2} product={state.productResults} />
-              </>
-            ) : (
-              <>oK</>
-            )}{' '}
-            {state.productResults.length === 0 ? (
-              <p class="ps-sr1">No hay productos similares</p>
-            ) : (
-              <></>
-            )}{' '}
+            <Resource
+              value={productReducer}
+              onPending={() => <div class="loader"></div>}
+              onRejected={() => (
+                <>
+                  Al parecer, hay un error en la solicitud. Por favor, actualiza
+                  la página para verificar nuevamente.
+                </>
+              )}
+              onResolved={(data: any) => (
+                <>
+                  {data.length === 0 ? (
+                    <p>No hay productos para mostrar.</p>
+                  ) : (
+                    <>
+                      <Carousel2
+                        key={randomNumber}
+                        styleCard={10}
+                        product={data}
+                      />
+                    </>
+                  )}
+                </>
+              )}
+            />
           </div>
         </>
       )}{' '}

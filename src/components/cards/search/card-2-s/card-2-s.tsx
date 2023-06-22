@@ -8,7 +8,7 @@ import { ContainerExpectedShippingTime } from '~/components/(Product-details)/co
 import { UseNumberOneCategory } from '~/components/use/numberOne/numberOneCategory';
 import { DouveryCheckMark } from '~/components/icons/checkMark';
 import { UseProductDetailsLink } from '~/services/fuction';
-export const Card2S = component$(({ product }: any) => {
+export const Card2S = component$(({ product, ref }: any) => {
   useStylesScoped$(styles);
   const discoun = product.price - product.price * (product.discount / 100);
   const is = useStore({
@@ -23,7 +23,7 @@ export const Card2S = component$(({ product }: any) => {
           class="product-image"
         />
         <div class="product-info">
-         <a href={UseProductDetailsLink(product)}>
+          <a href={UseProductDetailsLink(product, ref)}>
             {' '}
             <h2 class="product-title">
               <TextCL text={product.name} />{' '}

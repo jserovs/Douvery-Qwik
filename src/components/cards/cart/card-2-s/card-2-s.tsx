@@ -4,16 +4,16 @@ import { TextCL } from '~/components/use/textCL/textCL';
 import { UsePrice } from '~/components/use/price/price';
 import { UseProductDetailsLink } from '~/services/fuction';
 
-export const Card2SCART = component$(({ product }: any) => {
+export const Card2SCART = component$(({ product, ref }: any) => {
   useStylesScoped$(styles);
   const discoun = product.price - product.price * (product.discount / 100);
- 
+
   return (
     <div class="container-all">
       <div class="card">
         <img src={product.images} alt="Product Image" class="product-image" />
         <div class="product-info">
-         <a href={UseProductDetailsLink(product)}>
+          <a href={UseProductDetailsLink(product, ref)}>
             {' '}
             <h2 class="product-title">
               <TextCL text={product.name} />{' '}
@@ -37,7 +37,6 @@ export const Card2SCART = component$(({ product }: any) => {
             )}{' '}
           </div>
         </div>
-        
       </div>
     </div>
   );

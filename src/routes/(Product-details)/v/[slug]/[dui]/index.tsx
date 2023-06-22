@@ -27,6 +27,7 @@ import { addToViewedProducts } from '~/services/viewed/viewed';
 import { sendUserTimestamp } from '~/services/userTimestamp/userTimestamp';
 import { useGetCurrentUser } from '~/routes/layout';
 import { UseProductDetailsLink } from '~/services/fuction';
+import { View3 } from '~/components/(Product-details)/components/sessions/VIEW 3/view3';
 
 export const useProductInfo = routeLoader$(async (requestEvent) => {
   const dui = requestEvent.params.dui;
@@ -44,7 +45,10 @@ export default component$(() => {
   const descriptionEdit = useSignal(``);
 
   useVisibleTask$(() => {
-    addToViewedProducts({ dui: location.params.dui });
+    addToViewedProducts({
+      dui: location.params.dui,
+      ref: location.url.searchParams.get('ref') as any,
+    });
   });
   useVisibleTask$(() => {
     sendUserTimestamp({
@@ -52,6 +56,7 @@ export default component$(() => {
       userId: user?.id as any,
     });
   });
+
   return (
     <>
       <div>
@@ -61,7 +66,7 @@ export default component$(() => {
           class="description-edit"
           dangerouslySetInnerHTML={descriptionEdit.value}
         />
-        {/* <View3 product={state.product} /> */}
+        <View3 product={productData.value} />
         <View4 product={productData.value} />
         <div class="container-views">
           <View5 product={productData.value} />
@@ -72,7 +77,7 @@ export default component$(() => {
 });
 export const head: DocumentHead = ({ resolveValue, params }) => {
   const product = resolveValue(useProductInfo);
-  const urkProduct = UseProductDetailsLink(product);
+  const urkProduct = UseProductDetailsLink(product, '');
 
   return {
     title: `${product.name} - Douvery`,

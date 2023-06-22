@@ -11,7 +11,7 @@ import { randomNum } from '~/services/fuction';
 
 import { Carousel2 } from '~/components/use/carousel/carousel-2/carousel-2';
 export const Promotion_Carousel__PopularProductsAll = component$(
-  ({ styleNumber }: any) => {
+  ({ styleNumber, ref }: any) => {
     useStylesScoped$(style);
 
     const productReducer = useResource$<Product[]>(async ({ cleanup }) => {
@@ -43,6 +43,7 @@ export const Promotion_Carousel__PopularProductsAll = component$(
                 ) : (
                   <>
                     <Carousel2
+                      ref={ref}
                       key={randomNumber}
                       styleCard={styleNumber || randomNumber}
                       product={data}

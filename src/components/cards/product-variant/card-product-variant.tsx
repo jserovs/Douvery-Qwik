@@ -13,7 +13,7 @@ import styles from './card-product-variant.css?inline';
 import { UseProductDetailsLink } from '~/services/fuction';
 
 export const CardProductVariations1 = component$(
-  ({ dui, slug, imgS, imgP }: any) => {
+  ({ dui, slug, imgS, imgP, ref }: any) => {
     useStylesScoped$(styles);
     const state = useStore<{
       product: Product;
@@ -48,7 +48,8 @@ export const CardProductVariations1 = component$(
           )}
           onResolved={() => (
             <>
-             <a href={UseProductDetailsLink(state.product) as any}
+              <a
+                href={UseProductDetailsLink(state.product, ref) as any}
                 class="my-link"
               >
                 <div

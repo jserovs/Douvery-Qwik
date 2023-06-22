@@ -9,19 +9,19 @@ import { UseProductDetailsLink } from '~/services/fuction';
 import { TextCL } from '~/components/use/textCL/textCL';
 import { UseStarsRatingNoHover } from '~/components/use/ratings/useRatingNoHover/useRatingNoHover';
 
-export const ContainerCardProduct1 = component$(({ product }: any) => {
+export const ContainerCardProduct1 = component$(({ product, ref }: any) => {
   useStylesScoped$(styles);
   const discoun = product.price - product.price * (product.discount / 100);
 
   return (
     <div class="product-card">
-     <a href={UseProductDetailsLink(product)}>
+      <a href={UseProductDetailsLink(product, ref)}>
         {' '}
         <img src={product.images[0]} alt={product.name} class="product-image" />
       </a>
       <h2 class="product-name">
         {' '}
-       <a href={UseProductDetailsLink(product)}>
+        <a href={UseProductDetailsLink(product, ref)}>
           <TextCL text={product.name} />
         </a>
       </h2>
