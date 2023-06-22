@@ -56,7 +56,7 @@ export default component$(() => {
       userId: user?.id as any,
     });
   });
-  console.log(location.url.searchParams.get('ref'));
+
   return (
     <>
       <div>
