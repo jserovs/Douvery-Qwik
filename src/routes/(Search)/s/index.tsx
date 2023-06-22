@@ -6,10 +6,15 @@ import {
   useStore,
   useStylesScoped$,
   useTask$,
+  useVisibleTask$,
 } from '@builder.io/qwik';
 import { Link, useLocation, useNavigate } from '@builder.io/qwik-city';
 import type { DocumentHead } from '@builder.io/qwik-city';
-import { fetchProductU, fetchSearchProduct } from '~/services/fechProduct';
+import {
+  fetchProductU,
+  fetchSearchHistoryUser,
+  fetchSearchProduct,
+} from '~/services/fechProduct';
 import styles from './index.css?inline';
 import type { Product } from '~/utils/types';
 import { Card1S } from '~/components/cards/search/card-1-s/card-1-s';
@@ -92,6 +97,12 @@ export default component$(() => {
   const input = useStore<IState>({
     searchInput: '',
   });
+  const state = useStore({
+    productResults: [] as Product[],
+  });
+  const item = useStore({
+    itemsReturned: [] as any,
+  });
   const { url } = useLocation();
   const user = useGetCurrentUser().value;
   const prodcureducer = useResource$<Product[]>(async ({ cleanup, track }) => {
@@ -107,8 +118,7 @@ export default component$(() => {
     const order = url.searchParams.get('or-or') || 'newest';
 
     const brand = url.searchParams.get('or-b') || 'all';
-
-    return fetchSearchProduct(
+    item.itemsReturned = await fetchSearchProduct(
       category,
       subcategory,
       query,
@@ -120,7 +130,10 @@ export default component$(() => {
       user?.token || null,
       controller
     );
+
+    return item.itemsReturned;
   });
+
   const layout = url.searchParams.get('or-ly') || '';
 
   const prices = [
@@ -193,14 +206,24 @@ export default component$(() => {
     ? `&or-ly=${url.searchParams.get('or-ly')}`
     : '';
 
-  const state = useStore({
-    productResults: [] as Product[],
-  });
-
   useTask$(async () => {
     const controller = new AbortController();
     state.productResults = await fetchProductU(25);
 
+    return () => {
+      controller.abort();
+    };
+  });
+
+  useVisibleTask$(async () => {
+    const controller = new AbortController();
+
+    const ids = item.itemsReturned.products.map(
+      (product: Product) => product.dui
+    );
+
+    const query = url.searchParams.get('q') || '';
+    await fetchSearchHistoryUser(user?.token || null, ids, query, controller);
     return () => {
       controller.abort();
     };
