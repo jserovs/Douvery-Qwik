@@ -13,8 +13,9 @@ export const ImageDetailContainer = component$(
 
     function selectComponent() {
       const { productDetails } = props;
-      const { styleImg = '' } = productDetails[0] || {};
-      switch (styleImg) {
+
+      const { pd_detailImgBox = '' } = productDetails || {};
+      switch (pd_detailImgBox) {
         case 'style3':
           return (
             <ThreeHorizontalViewProductIMG
@@ -23,7 +24,7 @@ export const ImageDetailContainer = component$(
               props={props}
             />
           );
-        case 'style2':
+        case 'horizontal_view':
           return (
             <HorizontalViewProductIMG img={img} isOpen={isOpen} props={props} />
           );

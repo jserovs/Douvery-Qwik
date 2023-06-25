@@ -1,6 +1,6 @@
 .crtr-img-hr-prs {
     display: grid;
-    grid-template-rows: 10% 80%;
+    grid-template-rows: 60px 500px;
     margin-bottom: 50px;
 }
 
@@ -12,7 +12,8 @@
     flex-direction: row;
     gap: 10px;
     align-items: center;
-
+    height: 50px;
+    background-color: var(--color-background-card);
 
 }
 
@@ -41,12 +42,13 @@
 .container-img-product img {
     position: sticky;
     top: 3px;
-    width: 800px;
-    height: 550px;
+    width: 100%;
+    height: 500px;
     object-fit: contain;
-    background-color: var(--color-background-light);
+    object-position: top;
+    background-color: var(--color-background-card);
     padding: 10px;
-    z-index: 1000;
+
 
 
 }
