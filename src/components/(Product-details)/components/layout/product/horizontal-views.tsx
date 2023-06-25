@@ -20,6 +20,8 @@ export const HorizontalViewProductIMG = component$(
                 }}
               >
                 <img
+                  width={60}
+                  height={60}
                   src={image}
                   onMouseOver$={() => (img.setImage = image)}
                   onMouseOut$={() => (img.setImage = image)}
@@ -39,11 +41,13 @@ export const HorizontalViewProductIMG = component$(
         <div class="crtr-dirjfs">
           <div class="container-img-product">
             <img
+              width={400}
+              height={400}
               onClick$={() => (isOpen.setIsOpen = true)}
               src={img.setImage}
               alt={props.slug}
               class="img-product-llg"
-              title="Haz click para ver la imagen en un tamaño mayor"
+              title="Aumentar tamaño de imagen"
             />
           </div>
         </div>
