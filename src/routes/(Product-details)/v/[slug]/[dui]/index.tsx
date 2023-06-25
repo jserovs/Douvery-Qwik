@@ -42,7 +42,9 @@ export default component$(() => {
   const user = useGetCurrentUser().value;
   const productData = useProductInfo();
 
-  const descriptionEdit = useSignal(``);
+  const descriptionEdit = useSignal(
+    `${productData.value.productDetails.pd_detailsDescriptionBox}`
+  );
 
   useVisibleTask$(() => {
     addToViewedProducts({
@@ -62,10 +64,17 @@ export default component$(() => {
       <div>
         <View1 props={productData.value} />
         <View2 product={productData.value} />
-        <div
-          class="description-edit"
-          dangerouslySetInnerHTML={descriptionEdit.value}
-        />
+        {descriptionEdit.value === 'undefined' ? (
+          ''
+        ) : (
+          <div class="description__product__details">
+            <div
+              class="content_description_pers"
+              dangerouslySetInnerHTML={descriptionEdit.value}
+            />
+          </div>
+        )}
+
         <View3 product={productData.value} />
         <View4 product={productData.value} />
         <div class="container-views">

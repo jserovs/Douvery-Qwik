@@ -122,7 +122,7 @@ main {
 
 strong {
   font-weight: 600;
-  color: var(--color-black);
+
 }
 
 html {
@@ -135,9 +135,6 @@ html {
 }
 
 button:active {
-
-
-
   transform: translateY(-0.1em);
 }
 
