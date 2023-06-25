@@ -78,10 +78,9 @@ export default component$(() => {
 export const head: DocumentHead = ({ resolveValue, params }) => {
   const product = resolveValue(useProductInfo);
   const urkProduct = UseProductDetailsLink(product, '');
-  const title_product =
-    product.name.charAt(0).toUpperCase() + product.name.slice(1);
+
   return {
-    title: `${title_product} - Douvery`,
+    title: `${product.name} - Douvery`,
     meta: [
       {
         name: 'description',
@@ -106,7 +105,7 @@ export const head: DocumentHead = ({ resolveValue, params }) => {
         json: {
           '@context': 'https://schema.org/',
           '@type': 'Product',
-          name: title_product,
+          name: product.name,
           image: product.images[0],
           description: product.description,
           sku: product.dui,
