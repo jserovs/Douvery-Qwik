@@ -51,11 +51,21 @@
     z-index: 100;
 }
 
-.description-edit {
+.description__product__details {
+    width: 100%;
     background-color: var(--color-background-light);
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
 }
+
+.content_description_per {
+    max-width: 1000px;
+}
+
 
 @media only screen and (max-width: 885px) {
     .container-mobiles-button {
