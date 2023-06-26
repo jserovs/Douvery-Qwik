@@ -53,7 +53,7 @@ export const CardFavoriteProduct = component$(() => {
         <ul class="container-lista">
           {isLoading.setIsLoading ? (
             <div class="loader"></div>
-          ) : state.searchResults.length > 0 ? (
+          ) : state.searchResults?.length > 0 ? (
             state.searchResults.map((product) => {
               return (
                 <>
