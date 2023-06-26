@@ -28,6 +28,7 @@
 .iteam-douvery svg {
     width: 30px;
     height: 30px;
+    border-radius: 5px;
 }
 
 .iteam-douvery span {
