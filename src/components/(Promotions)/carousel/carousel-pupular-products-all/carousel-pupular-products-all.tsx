@@ -2,6 +2,7 @@ import {
   Resource,
   component$,
   useResource$,
+  useStore,
   useStylesScoped$,
 } from '@builder.io/qwik';
 import style from './carousel-pupular-products-all.css?inline';
@@ -13,12 +14,18 @@ import { Carousel2 } from '~/components/use/carousel/carousel-2/carousel-2';
 export const Promotion_Carousel__PopularProductsAll = component$(
   ({ styleNumber, ref }: any) => {
     useStylesScoped$(style);
+    const state = useStore({
+      loader: true,
+      product: [] as Product[],
+    });
 
     const productReducer = useResource$<Product[]>(async ({ cleanup }) => {
       const controller = new AbortController();
       cleanup(() => controller.abort());
 
       const data = await fetchAllPopularProducts(controller);
+      state.product = data;
+      state.loader = false;
       return data;
     });
 
@@ -36,20 +43,14 @@ export const Promotion_Carousel__PopularProductsAll = component$(
                 la página para verificar nuevamente.
               </>
             )}
-            onResolved={(data: any) => (
+            onResolved={() => (
               <>
-                {data.length === 0 ? (
-                  <p>No hay productos para mostrar.</p>
-                ) : (
-                  <>
-                    <Carousel2
-                      ref={ref}
-                      key={randomNumber}
-                      styleCard={styleNumber || randomNumber}
-                      product={data}
-                    />
-                  </>
-                )}
+                <Carousel2
+                  ref={ref}
+                  key={randomNumber}
+                  styleCard={styleNumber || randomNumber}
+                  product={state.product}
+                />
               </>
             )}
           />
