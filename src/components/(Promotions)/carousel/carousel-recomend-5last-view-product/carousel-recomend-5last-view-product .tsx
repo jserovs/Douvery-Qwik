@@ -35,7 +35,7 @@ export const PromotionRecomend_Carousel_5LastView = component$(
     });
 
     const randomNumber = randomNum();
-    console.log(state.productResults);
+
     return (
       <>
         {' '}

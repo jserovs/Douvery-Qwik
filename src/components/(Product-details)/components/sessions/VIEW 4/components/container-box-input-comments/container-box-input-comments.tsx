@@ -136,7 +136,7 @@ export const ContainerBoxInputComments = component$(({ datePurchase }: any) => {
             <div class="container-img-preview">
               {preview.value.map((image: string, i) => (
                 <div class="img-preview" key={i}>
-                  <img src={image} alt="" />
+                  <img width={300} height={300} src={image} alt="" />
                 </div>
               ))}
               <br></br>
