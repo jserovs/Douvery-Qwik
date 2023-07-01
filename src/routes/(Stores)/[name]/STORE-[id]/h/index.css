@@ -34,6 +34,20 @@ ul {
 
 }
 
+@media (max-width:1300px) {
+    .box {
+        flex: 1 0 calc(100.333% - 98px);
+        max-width: calc(50% - 98px);
+
+    }
+
+    .container-title {
+        width: 100%;
+        padding: 0px 20px;
+        margin-top: 30px;
+    }
+}
+
 @media (max-width: 800px) {
     .box {
         flex: none;
@@ -42,12 +56,18 @@ ul {
     }
 
     ul {
-        flex-direction: column;
-        justify-content: center;
-        overflow: hidden;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow: scroll;
         column-gap: 20px;
         row-gap: 20px;
         padding: 0 20px;
+    }
+
+    li {
+        width: 250px;
+
     }
 
     .container-title {
