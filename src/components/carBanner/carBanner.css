@@ -70,3 +70,18 @@
     opacity: 0;
     cursor: default;
 }
+
+.carousel__image.mobile {
+    display: none;
+}
+
+
+@media screen and (max-width: 768px) {
+    .carousel__image.desktop {
+        display: none;
+    }
+
+    .carousel__image.mobile {
+        display: block;
+    }
+}

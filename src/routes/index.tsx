@@ -71,38 +71,7 @@ export default component$(() => {
             styleNumber={11}
           />
         </div>
-        <div class="container-aoutandingproducts">
-          <div class="title-show">
-            <h2>Explora lo mejor de Douvery </h2>
-            <div class="show-more">
-              {' '}
-              <a href="dsaf/">Ver mas</a>
-            </div>
-          </div>
-          <OutstandingProductFlex1 />
-        </div>
-        <div class="container-carousel-interes">
-          <div class="title-show">
-            <h2>Explora algunos productos</h2>
-            <div class="show-more">
-              {' '}
-              <a href="dsaf/">Ver mas</a>
-            </div>
-          </div>
-          <Promotion_CarouselInterestViews ref={ref(3)} styleNumber={6} />
-        </div>
-
-        <br />
         <div class="container-card-store-categorie">
-          {user?.id && (
-            <>
-              {' '}
-              <PromotionRecomend_Carousel_5LastView
-                ref={ref(4)}
-                styleNumber={11}
-              />
-            </>
-          )}
           <div class="title-show">
             <h2>
               {' '}
@@ -116,11 +85,41 @@ export default component$(() => {
           </div>
           <br />
 
-          <AllCategoryStoresId1
-            ref={ref(4)}
-            storeId="3465460B-51D47297-87C20FED"
-            store="Douvery"
-          />
+          <AllCategoryStoresId1 />
+          <div class="separator_custom" />
+          {user?.id && (
+            <>
+              {' '}
+              <PromotionRecomend_Carousel_5LastView
+                ref={ref(4)}
+                styleNumber={11}
+              />
+              <div class="separator_custom" />
+            </>
+          )}
+        </div>
+
+        <div class="container-carousel-interes">
+          <div class="title-show">
+            <h2>Explora algunos productos</h2>
+            <div class="show-more">
+              {' '}
+              <a href="dsaf/">Ver mas</a>
+            </div>
+          </div>
+          <Promotion_CarouselInterestViews ref={ref(3)} styleNumber={6} />
+        </div>
+
+        <br />
+        <div class="container-aoutandingproducts">
+          <div class="title-show">
+            <h2>Explora lo mejor de Douvery </h2>
+            <div class="show-more">
+              {' '}
+              <a href="dsaf/">Ver mas</a>
+            </div>
+          </div>
+          <OutstandingProductFlex1 />
         </div>
 
         {lastViewDui.value && (

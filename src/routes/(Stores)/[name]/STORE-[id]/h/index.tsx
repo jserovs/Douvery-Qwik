@@ -9,7 +9,7 @@ import { CategoryGrid1 } from '~/components/use/Categories/CategoryGrid1/categor
 import { fetchStoreCategoriesAndImg } from '~/services/store/store';
 import type { Product } from '~/utils/types';
 import styles from './index.css?inline';
-export default component$(({ storeId }: any) => {
+export default component$(({ storeId, storeName }: any) => {
   useStylesScoped$(styles);
   const loc = useLocation();
   const prodcureducer = useResource$<Product[]>(async ({ cleanup, track }) => {
@@ -42,7 +42,10 @@ export default component$(({ storeId }: any) => {
               <>
                 {' '}
                 <div class="container-title">
-                  <h1>Descubre todas las categorias de {loc.params.name}</h1>
+                  <h1>
+                    Descubre todas las categorias de{' '}
+                    {loc.params.name ? loc.params.name : storeName}
+                  </h1>
                 </div>
                 <ul>
                   {data.categories.map((dat: any) => (

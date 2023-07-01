@@ -1,71 +1,21 @@
-import {
-  Resource,
-  component$,
-  useResource$,
-  useStylesScoped$,
-} from '@builder.io/qwik';
-import { useLocation } from '@builder.io/qwik-city';
-import { fetchStoreCategoriesDiscounts } from '~/services/store/store';
-import type { Product } from '~/utils/types';
+import { component$, useStylesScoped$ } from '@builder.io/qwik';
+
 import styles from './index.css?inline';
-import { CategoryGrid2 } from '~/components/use/Categories/CategoryGrid2/category-grid-2';
-export default component$(({ storeId, ref }: any) => {
+import H from '~/routes/(Stores)/[name]/STORE-[id]/h';
+export default component$(() => {
   useStylesScoped$(styles);
-  const loc = useLocation();
-  const prodcureducer = useResource$<Product[]>(async ({ cleanup, track }) => {
-    track(() => loc.params.id);
-
-    const controller = new AbortController();
-    cleanup(() => controller.abort());
-
-    return fetchStoreCategoriesDiscounts(loc.params.id || storeId, controller);
-  });
 
   return (
     <div class="container-all">
       {' '}
-      <Resource
-        value={prodcureducer}
-        onPending={() => <div class="loader"></div>}
-        onRejected={() => (
-          <>
-            Al parecer, hay un error en la solicitud. Por favor, actualiza la
-            página para verificar nuevamente.
-          </>
-        )}
-        onResolved={(data: any) => (
-          <>
-            {' '}
-            {data.categories.length === 0 ? (
-              <p>No hay productos para mostrar.</p>
-            ) : (
-              <>
-                {' '}
-                <img
-                  width={1800}
-                  height={200}
-                  class="store-banner"
-                  src={data.store.design.banners[0]}
-                  alt="STORE BANNER IMAGE Douvery Store Banner DOUVERY AND PRODUCT"
-                />{' '}
-                <ul>
-                  {data.categories.map((dat: any) => (
-                    <>
-                      <li class="box">
-                        <CategoryGrid2
-                          ref={ref}
-                          categorie={dat}
-                          store={data.store}
-                        />
-                      </li>
-                    </>
-                  ))}
-                </ul>
-              </>
-            )}
-          </>
-        )}
-      />
+      <img
+        width={1800}
+        height={200}
+        class="store-banner"
+        src="https://res.cloudinary.com/douvery/image/upload/v1682891383/STORES/3465460B-51D47297-87C20FED/BANNERS/hqgxhnrjdgatkjvayqs8.webp"
+        alt="STORE BANNER IMAGE Douvery Store Banner DOUVERY AND PRODUCT"
+      />{' '}
+      <H storeId="3465460B-51D47297-87C20FED" storeName="Douvery" />
     </div>
   );
 });

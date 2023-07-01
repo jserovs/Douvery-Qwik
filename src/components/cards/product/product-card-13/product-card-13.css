@@ -5,7 +5,7 @@
     flex-direction: column;
     text-align: start;
     justify-content: flex-start;
-
+    background-color: var(--color-background-card2);
     padding: 10px 10px;
     position: relative;
 
@@ -33,14 +33,14 @@
 }
 
 .product-name {
-    background-color: var(--color-background-card2);
+    background-color: var(--color-background-white);
     width: 100%;
-    padding: 6px 10px;
-    height: 30px;
+    padding: 0px 10px;
+    height: 20px;
     margin: 10px 0;
-    text-align: center;
+    border-radius: 10px;
     font-size: small;
-
+    text-align: center;
     text-overflow: ellipsis;
     overflow: hidden;
     display: -webkit-box;
