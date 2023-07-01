@@ -6,7 +6,7 @@
      /* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
      height: 100%;
 
-     background-color: var(--color-background-card);
+     background-color: var(--color-background-white);
 
      padding: 20px;
      gap: 64px;

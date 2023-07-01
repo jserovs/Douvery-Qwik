@@ -25,9 +25,11 @@ export const BannerCarouselHome = component$(({ ref }: any) => {
     {
       type: 'image',
       desktopImageUrl:
-        'https://res.cloudinary.com/douvery/image/upload/v1688178890/ofqribtirlknzbl2bjqf.webp',
+        'https://res.cloudinary.com/douvery/image/upload/v1688202628/ppjvtsk83tztxwg8xvpn.webp',
+      laptopImageUrl:
+        'https://res.cloudinary.com/douvery/image/upload/v1688202628/ppjvtsk83tztxwg8xvpn.webp',
       mobileImageUrl:
-        'https://res.cloudinary.com/douvery/image/upload/v1688178890/ofqribtirlknzbl2bjqf.webp',
+        'https://res.cloudinary.com/douvery/image/upload/v1688203427/g6f1lpticpc0bbfocik7.webp',
       linkUrl: 'url-a-la-que-redirigir-1' + ref,
       alt: 'Enjoy with us...Douvery! ',
     },
@@ -35,6 +37,8 @@ export const BannerCarouselHome = component$(({ ref }: any) => {
       type: 'image',
       desktopImageUrl:
         'https://res.cloudinary.com/douvery/image/upload/v1686858193/aoy0brpbrrupoon9jakh.webp',
+      laptopImageUrl:
+        'https://res.cloudinary.com/douvery/image/upload/v1688202628/ppjvtsk83tztxwg8xvpn.webp',
       mobileImageUrl:
         'https://res.cloudinary.com/douvery/image/upload/v1686858193/aoy0brpbrrupoon9jakh.webp',
       linkUrl: 'url-a-la-que-redirigir-1' + ref,
@@ -44,6 +48,8 @@ export const BannerCarouselHome = component$(({ ref }: any) => {
       type: 'image',
       desktopImageUrl:
         'https://res.cloudinary.com/douvery/image/upload/v1685304113/eqqjyggjmogzbfny0rgu.webp',
+      laptopImageUrl:
+        'https://res.cloudinary.com/douvery/image/upload/v1688202628/ppjvtsk83tztxwg8xvpn.webp',
       mobileImageUrl:
         'https://res.cloudinary.com/douvery/image/upload/v1685361847/xuqgkyzgkzhtwe1cvzqt.webp',
       linkUrl: 'url-a-la-que-redirigir-1' + ref,
@@ -53,6 +59,8 @@ export const BannerCarouselHome = component$(({ ref }: any) => {
       type: 'image',
       desktopImageUrl:
         'https://res.cloudinary.com/douvery/image/upload/v1684406805/dd30bir4sqyimtnkbhb1.webp',
+      laptopImageUrl:
+        'https://res.cloudinary.com/douvery/image/upload/v1688202628/ppjvtsk83tztxwg8xvpn.webp',
       mobileImageUrl:
         'https://res.cloudinary.com/douvery/image/upload/v1685361844/g5cmkukrjubj4wxpnnld.webp',
       linkUrl: 'url-a-la-que-redirigir-1' + ref,
@@ -62,6 +70,8 @@ export const BannerCarouselHome = component$(({ ref }: any) => {
       type: 'video',
       desktopVideoUrl:
         'https://res.cloudinary.com/douvery/video/upload/v1685469644/lj4zepeo4a3geadmqucw.mp4',
+      laptopVideoUrl:
+        'https://res.cloudinary.com/douvery/image/upload/v1688202628/ppjvtsk83tztxwg8xvpn.webp',
       mobileVideoUrl:
         'https://res.cloudinary.com/douvery/video/upload/v1685469644/lj4zepeo4a3geadmqucw.mp4',
       linkUrl: 'url-a-la-que-redirigir-1' + ref,
@@ -99,13 +109,22 @@ export const BannerCarouselHome = component$(({ ref }: any) => {
 
           <div class="carousel__image-container">
             {contents[currentIndex.SetCurrentIndex].type === 'image' ? (
-              <img
-                width={1800}
-                height={280}
-                class="carousel__image"
-                src={contents[currentIndex.SetCurrentIndex].desktopImageUrl}
-                alt="Imagen del carrusel"
-              />
+              <>
+                <img
+                  width={1800}
+                  height={280}
+                  class="carousel__image desktop"
+                  src={contents[currentIndex.SetCurrentIndex].desktopImageUrl}
+                  alt="Imagen del carrusel"
+                />
+                <img
+                  width={600}
+                  height={280}
+                  class="carousel__image mobile"
+                  src={contents[currentIndex.SetCurrentIndex].mobileImageUrl}
+                  alt="Imagen del carrusel"
+                />
+              </>
             ) : (
               <video
                 width={1800}
