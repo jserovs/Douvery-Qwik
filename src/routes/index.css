@@ -146,12 +146,12 @@
 
 @media only screen and (max-width: 1305px) {
     .container-aoutandingproducts {
-        margin: 20px 20px;
+        margin: 20px 10px;
     }
 
     .container-carousel-interes,
     .container-card-store-categorie {
-        margin: 20px 20px;
+        margin: 20px 10px;
     }
 }
 
@@ -173,12 +173,12 @@
     }
 
     .container-aoutandingproducts {
-        margin: 0px 0px;
+        margin: 10px 0px;
     }
 
     .container-carousel-interes,
     .container-card-store-categorie {
-        margin: 0 0px;
+        margin: 10PX 0px;
     }
 }
 
