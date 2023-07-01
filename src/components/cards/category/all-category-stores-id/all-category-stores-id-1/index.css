@@ -50,9 +50,23 @@ ul {
 
 .box {
     flex: 1 0 calc(100.333% - 98px);
-    /* 33.333% es un tercio del espacio disponible y 98px es el espacio entre columnas */
+
     max-width: calc(32.333% - 98px);
 
+}
+
+@media (max-width:1300px) {
+    .box {
+        flex: 1 0 calc(100.333% - 98px);
+        max-width: calc(50% - 98px);
+
+    }
+
+    .container-title {
+        width: 100%;
+        padding: 0px 20px;
+        margin-top: 30px;
+    }
 }
 
 @media (max-width:800px) {
