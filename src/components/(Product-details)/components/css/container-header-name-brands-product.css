@@ -9,7 +9,7 @@
     background-color: var(--color-background-light);
 
     padding: 5px 5px 0px 5px;
-
+    padding-bottom: 15px;
 
 
 }
@@ -36,8 +36,8 @@
 
 
 .crt--tlr-brnd {
-    padding: 0px 0px 10px 0px;
-    border-bottom: 1px solid var(--border-width-0);
+    padding: 0px 0px 20px 0px;
+    border-bottom: 1px solid var(--border-width-1);
 
 }
 
