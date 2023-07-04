@@ -34,6 +34,17 @@ export const BannerCarouselHome = component$(({ ref }: any) => {
       alt: 'Enjoy with us...Douvery! ',
     },
     {
+      type: 'video',
+      desktopVideoUrl:
+        'https://res.cloudinary.com/douvery/video/upload/v1688481480/yoekqy1bhhqunt0cfyed.mp4',
+      laptopVideoUrl:
+        'https://res.cloudinary.com/douvery/video/upload/v1688481480/yoekqy1bhhqunt0cfyed.mp4',
+      mobileVideoUrl:
+        'https://res.cloudinary.com/douvery/video/upload/v1688481480/yoekqy1bhhqunt0cfyed.mp4',
+      linkUrl: 'url-a-la-que-redirigir-1' + ref,
+      alt: 'VIDEO DOUVERY',
+    },
+    {
       type: 'image',
       desktopImageUrl:
         'https://res.cloudinary.com/douvery/image/upload/v1686858193/aoy0brpbrrupoon9jakh.webp',
