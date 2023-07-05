@@ -20,6 +20,10 @@
 
 }
 
+.container__ratings {
+    margin-bottom: 5px;
+}
+
 .container-brand-product {
     display: flex;
     flex-direction: row;
