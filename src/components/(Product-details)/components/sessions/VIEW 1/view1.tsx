@@ -52,21 +52,29 @@ export const View1 = component$(({ props }: any) => {
 
   return (
     <div>
-      {DetailView}
       <ProductView
         loc={loc}
         props={props}
         img={img}
         quantityCart={quantityCart}
         isOpen={isOpen}
+        DetailView={DetailView}
       />
+
       <ExtraButtonContainer props={props} />
     </div>
   );
 });
 
 // Subcomponents
-const ProductView = ({ loc, props, img, quantityCart, isOpen }: any) => (
+const ProductView = ({
+  loc,
+  props,
+  img,
+  quantityCart,
+  isOpen,
+  DetailView,
+}: any) => (
   <div class="container-view-product">
     <div class="vert-left">
       <ImageDetailContainer props={props} img={img} isOpen={isOpen} />
@@ -79,6 +87,7 @@ const ProductView = ({ loc, props, img, quantityCart, isOpen }: any) => (
         img={img}
         quantityCart={quantityCart}
         isOpen={isOpen}
+        DetailView={DetailView}
       />
     </div>
 
@@ -88,7 +97,14 @@ const ProductView = ({ loc, props, img, quantityCart, isOpen }: any) => (
   </div>
 );
 
-const ProductCenter = ({ props, loc, img, quantityCart, isOpen }: any) => {
+const ProductCenter = ({
+  props,
+  loc,
+  img,
+  quantityCart,
+  isOpen,
+  DetailView,
+}: any) => {
   const view = loc.url.searchParams.get('ss_v');
 
   const DetailViewHoriz =
@@ -103,7 +119,7 @@ const ProductCenter = ({ props, loc, img, quantityCart, isOpen }: any) => {
     <div class="crtr-div-ifrms-aetr">
       <size-w class="size-w-10" />
       <ProductNameHeaderContainer props={props} />
-      {DetailViewHoriz}
+      {DetailView}
       {props.variations !== 0 && (
         <div class="crt-variations">
           <VariationsDetailContainer
@@ -114,6 +130,7 @@ const ProductCenter = ({ props, loc, img, quantityCart, isOpen }: any) => {
         </div>
       )}
 
+      {DetailViewHoriz}
       <div class="buttons-mobiles">
         <div class="brt-irft">
           <div class="slect-qty-prt">
@@ -127,6 +144,7 @@ const ProductCenter = ({ props, loc, img, quantityCart, isOpen }: any) => {
           quantity={quantityCart.setQuantityCart}
         />
       </div>
+
       <Description props={props} />
     </div>
   );

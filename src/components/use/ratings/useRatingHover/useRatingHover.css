@@ -41,3 +41,7 @@
 .ctr-stars:hover .ctr-progr {
     animation: smoApp 0.5s ease-in-out;
 }
+
+.ct-ratig {
+    font-size: 14px;
+}

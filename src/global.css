@@ -135,8 +135,15 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-button:active {
-  transform: translateY(-0.1em);
+
+
+button:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+button:focus-visible {
+  box-shadow: none;
 }
 
 *,
