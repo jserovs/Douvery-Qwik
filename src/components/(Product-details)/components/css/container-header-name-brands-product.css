@@ -17,7 +17,11 @@
 .container-title-product h4 {
     font-size: 20px;
     font-weight: var(--font-weight-normal);
-    margin-bottom: 0.3em;
+
+}
+
+.container__ratings {
+    margin-bottom: 5px;
 }
 
 .container-brand-product {

@@ -2,8 +2,6 @@ import { component$, useStore, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './DetailPriceContainerVert.css?inline';
 
 import numeral from 'numeral';
-
-import { UseStarRating } from '~/components/use/ratings/useRatingHover/useRatingHover';
 import { ButtonDetailVerticalContainer } from '~/components/(Product-details)/components/components/buttons-cart/buttons-cart';
 
 export const DetailPriceContainerVert = component$(({ props }: any) => {
@@ -21,24 +19,6 @@ export const DetailPriceContainerVert = component$(({ props }: any) => {
       <div class="product-container">
         <div class="product-details-mobile">
           <div class="container-price-discount">
-            {props.discount === 0 ? (
-              ''
-            ) : (
-              <>
-                <h5 class="tach price-tach ">
-                  {' '}
-                  {numeral(props.price).format(currencyFormat)}
-                </h5>
-
-                {props.discount < 20 ? (
-                  ''
-                ) : (
-                  <div class="ctr-save-pr">
-                    SAVE {numeral(discount).format(currencyFormat)}
-                  </div>
-                )}
-              </>
-            )}
             <div class="product-price-mobile">
               <div class="price-value-mobile">
                 <h4 class="price-text-mobile">
@@ -52,21 +32,29 @@ export const DetailPriceContainerVert = component$(({ props }: any) => {
               </div>
             </div>
             {props.discount === 0 ? (
-              <div class="free-shipping-notice">Envio gratis</div>
+              ''
             ) : (
-              <div class="discount-notice-mobile">
-                <div class="discount-value-mobile">
-                  <h6 class="discount-text-mobile">
-                    -%
-                    {props.discount}
-                  </h6>
-                </div>
-              </div>
+              <>
+                <h5 class="tach price-tach ">
+                  {' '}
+                  {numeral(props.price).format(currencyFormat)}
+                </h5>
+              </>
             )}
           </div>
+          {props.discount === 0 ? (
+            <div class="free-shipping-notice">Envio gratis</div>
+          ) : (
+            <div class="discount-notice-mobile">
+              <div class="discount-value-mobile">
+                <h6 class="discount-text-mobile">
+                  -%
+                  {props.discount}
+                </h6>
+              </div>
+            </div>
+          )}
         </div>
-        <div class="separator-border" />
-
         <div class="separator-border" />
 
         <div class="product-details-web">
@@ -78,9 +66,6 @@ export const DetailPriceContainerVert = component$(({ props }: any) => {
           ) : (
             <>
               <div class="select-container">
-                <div class="product-rating-mobile">
-                  <p>Ratings: </p> <UseStarRating product={props} size="20" />
-                </div>
                 <div class="select-input-cart">
                   <select
                     value={quantityCart.setQuantityCart}
