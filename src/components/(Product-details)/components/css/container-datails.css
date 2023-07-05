@@ -34,10 +34,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30PX;
+    padding: 20PX;
     border: 1px solid var(--border-width-1);
     border-radius: 4px;
 
+}
+
+.content_qty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.content_qty span {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--color-text-light);
 }
 
 @keyframes appear {

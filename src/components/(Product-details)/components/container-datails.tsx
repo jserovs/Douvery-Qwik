@@ -113,19 +113,22 @@ export const DetailContainer = component$(({ props }: any) => {
                 <h5 class="title-prtsea">Articulo agotado</h5>
               </div>
             ) : (
-              <div class="div-input-sertts">
-                <div class="select-input-cart">
-                  <select
-                    value={quantityCart.setQuantityCart}
-                    onChange$={(event) =>
-                      (quantityCart.setQuantityCart = event.target.value)
-                    }
-                  >
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                  </select>
+              <div class="content_qty">
+                <span>Qty:</span>
+                <div class="div-input-sertts">
+                  <div class="select-input-cart">
+                    <select
+                      value={quantityCart.setQuantityCart}
+                      onChange$={(event) =>
+                        (quantityCart.setQuantityCart = event.target.value)
+                      }
+                    >
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
+                  </div>
                 </div>
               </div>
             )}
