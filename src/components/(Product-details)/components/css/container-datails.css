@@ -261,7 +261,7 @@
 }
 
 .price-descount-table-mobiles {
-    width: 100%;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -283,7 +283,7 @@
 
 
 .price-table-mobiles {
-    width: 100%;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -406,6 +406,7 @@ select option {
 
     }
 
+
     .ctr-porce {
         width: 100PX;
     }
@@ -432,10 +433,20 @@ select option {
 
     .container-NavAggPayProduct-table-mobiles {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
         height: 80px;
+        justify-content: flex-start;
+        gap: 10px;
+        align-items: baseline;
+        padding: 20px;
+
+    }
+
+    .price-table-mobiles {
+
+        font-size: 38px;
+        font-weight: 400;
+        align-items: center;
+        justify-content: flex-start;
     }
 
     .buttom-mobiles {
@@ -444,10 +455,6 @@ select option {
         position: relative;
     }
 
-    .price-descount-table-mobiles {
-        width: 100%;
-
-    }
 
     .shw-free {
         display: grid;

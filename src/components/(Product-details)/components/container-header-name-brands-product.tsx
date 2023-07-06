@@ -58,16 +58,7 @@ export const ProductNameHeaderContainer = component$(({ props }: any) => {
                 </>
               )}
               <a href={'/s-categorie/' + props.category}>{props.category}</a>
-              {props.vrfDouvery ? (
-                <>
-                  {' '}
-                  <vrf-drv class="vrs-fd">
-                    <DouveryIcon color="#6466e8" /> Verified by Douvery
-                  </vrf-drv>
-                </>
-              ) : (
-                <></>
-              )}{' '}
+
               <div class="ctr-opa">|</div>
               <div class="container__ratings">
                 <UseStarsRatingNoHover
@@ -81,8 +72,21 @@ export const ProductNameHeaderContainer = component$(({ props }: any) => {
               <ContainerPoput product={props} title={'Compartir'} />
             </div>
           </div>
+          <div class="content_verified">
+            {props.vrfDouvery ? (
+              <>
+                {' '}
+                <vrf-drv class="vrs-fd">
+                  <DouveryIcon color="#6466e8" /> Verified by Douvery
+                </vrf-drv>
+              </>
+            ) : (
+              <></>
+            )}{' '}
+          </div>
         </div>
       </div>
+
       <div class="dsier-strs-lapto">
         {props.quantity <= 1 ? (
           <>
@@ -122,7 +126,6 @@ export const ProductNameHeaderContainer = component$(({ props }: any) => {
         <strong class="hs-sr1">Estado:</strong>{' '}
         <p class="ps-sr1">{props.item_condition}</p>
       </div>
-
       <div class="crtr-shr-">
         {' '}
         <div class="shrt-prd-alrt">
@@ -176,7 +179,6 @@ export const ProductNameHeaderContainer = component$(({ props }: any) => {
           </div>
         </div>
       </div>
-
       {props.quantity == 0 ? <></> : <ContainerExpectedShippingTime />}
       <ContainerAlertArt props={props} />
     </div>
