@@ -12,7 +12,6 @@ import { ContainerPoput } from './components/popupSHARE';
 import { DouveryIcon } from '~/components/icons/douvery';
 
 import { TextCL } from '~/components/use/textCL/textCL';
-import { UseStarRating } from '~/components/use/ratings/useRatingHover/useRatingHover';
 
 export const ProductNameHeaderContainer = component$(({ props }: any) => {
   useStylesScoped$(sryles);
