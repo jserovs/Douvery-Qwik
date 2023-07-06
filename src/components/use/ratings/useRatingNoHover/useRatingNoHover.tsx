@@ -1,18 +1,19 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './useRatingNoHover.css?inline';
 import { Stars } from '~/components/Ratings/stars/stars';
+import { truncarDecimales } from '~/services/fuction';
 
 export const UseStarsRatingNoHover = component$(
   ({ rating, count, color, size }: any) => {
     useStylesScoped$(styles);
-
+    const rate = truncarDecimales(rating, 1);
     return (
       <div class="container-all">
         <div class="ctr-stars">
-          <Stars size={size} color={color} rating={rating} />{' '}
+          <Stars size={size} color={color} rating={rate} />{' '}
         </div>
         <div class="ct-ratig">
-          ({rating}) {count}
+          ({rate}) {count}
         </div>
       </div>
     );

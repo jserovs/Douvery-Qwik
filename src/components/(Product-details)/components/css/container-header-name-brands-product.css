@@ -156,7 +156,12 @@
 
 }
 
-
+.content_verified {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
 
 .dsier-strs-lapto {
 
@@ -433,7 +438,7 @@
     .mobiles-title-brand {
 
         margin-top: 5PX;
-        margin-bottom: 10px;
+
         padding: 10px 15PX 30PX 15px;
         background-color: var(--color-background-light);
     }

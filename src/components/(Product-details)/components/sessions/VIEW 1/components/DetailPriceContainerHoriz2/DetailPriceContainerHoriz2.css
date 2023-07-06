@@ -447,7 +447,7 @@ select option {
     .container-NavAggPayProduct-table-mobiles {
         display: grid;
         justify-content: center;
-        grid-template-columns: 35% 40% 25%;
+
         overflow: hidden;
     }
 

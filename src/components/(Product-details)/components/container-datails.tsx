@@ -48,6 +48,9 @@ export const DetailContainer = component$(({ props }: any) => {
                     {props.discount}
                   </h6>
                 </div>
+                <div class="ctr-save-pr">
+                  SAVE {numeral(discount).format(formCurrency)}
+                </div>
               </div>
             </>
           )}
