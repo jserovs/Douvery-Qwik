@@ -9,7 +9,7 @@ export async function fetchProduct(
 ): Promise<any> {
   const response = await fetch(
     `
-    ${urlServerLocal}/api/products/${dui}`,
+    ${urlServerNode}/api/products/${dui}`,
     {
       signal: controller?.signal,
     }
