@@ -1,8 +1,9 @@
 import {
+  Resource,
   component$,
+  useResource$,
   useStore,
   useStylesScoped$,
-  useTask$,
 } from '@builder.io/qwik';
 import styles from './useRatingHover.css?inline';
 import { Stars } from '~/components/Ratings/stars/stars';
@@ -20,30 +21,42 @@ export const UseStarRating = component$(({ product, color, size }: any) => {
     rating: 0,
     count: 0,
   });
-  useTask$(async () => {
+  const productRating = useResource$(async ({ cleanup }) => {
+    const controller = new AbortController();
+    cleanup(() => controller.abort());
+
     const response = await fetchProductRatings(product.dui);
-    rating.rating = response.rating as any;
-    rating.count = response.count as any;
+    return response;
   });
+
   const rate = truncarDecimales(rating.rating, 1);
   return (
-    <div class="container-all">
-      <div class="ctr-stars">
-        <Stars size={size} color={color} rating={rating.rating} />{' '}
-        <div class="ctr-progr">
-          <div class="tolst-tip"></div>
-          <div class="pr-ttle">
-            <p class="hs-sr1">Ratings</p>
+    <>
+      <Resource
+        value={productRating}
+        onPending={() => <>Loading...</>}
+        onRejected={(error) => <>Error: {error.message}</>}
+        onResolved={(data: any) => (
+          <div class="container-all">
+            <div class="ctr-stars">
+              <Stars size={size} color={color} rating={data.rating} />{' '}
+              <div class="ctr-progr">
+                <div class="tolst-tip"></div>
+                <div class="pr-ttle">
+                  <p class="hs-sr1">Ratings</p>
+                </div>
+                <ContainerProgres product={product} />
+                <div class="pr-qtyon">
+                  <p class="ps-sr1">Sin preguntas Respondidas</p>
+                </div>
+              </div>
+            </div>
+            <div class="ct-ratig">
+              ({rate}) {data.count}
+            </div>
           </div>
-          <ContainerProgres product={product} />
-          <div class="pr-qtyon">
-            <p class="ps-sr1">Sin preguntas Respondidas</p>
-          </div>
-        </div>
-      </div>
-      <div class="ct-ratig">
-        ({rate}) {rating.count}
-      </div>
-    </div>
+        )}
+      />
+    </>
   );
 });

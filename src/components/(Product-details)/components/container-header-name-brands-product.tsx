@@ -44,9 +44,6 @@ export const ProductNameHeaderContainer = component$(({ props }: any) => {
           <h4>
             <TextCL text={props.name} />
           </h4>
-          <div class="container__ratings">
-            <UseStarRating product={props} size="18" />
-          </div>{' '}
           <div class="crtr-di">
             <div class="di">
               {props.isBestInCategory ? (

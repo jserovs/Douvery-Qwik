@@ -21,13 +21,8 @@ import { LikeButtons } from '../../components/buttons-I-like/button-I-like';
 import { SponsoredProductContainer } from '../VIEW 2/components/container-sponsore-vert';
 import { useLocation } from '@builder.io/qwik-city';
 import { DetailPriceContainerVert } from './components/DetailPriceContainerVert/DetailPriceContainerVert';
-import { DetailPriceContainerHoriz2 } from './components/DetailPriceContainerHoriz2/DetailPriceContainerHoriz2';
 
-import {
-  HashProductDetailsPriceCenter,
-  HashProductDetailsPriceRightTop,
-  HashProductDetailsPriceTopCenter,
-} from '~/services/hash/hash';
+import { HashProductDetailsPriceRightTop } from '~/services/hash/hash';
 
 // Main component
 export const View1 = component$(({ props }: any) => {
@@ -42,13 +37,13 @@ export const View1 = component$(({ props }: any) => {
 
   const quantityCart = useStore({ setQuantityCart: '1' });
   const loc = useLocation();
-  const view = loc.url.searchParams.get('ss_v');
-  const DetailView =
-    view === HashProductDetailsPriceTopCenter || view === null ? (
-      <DetailContainer isOpen={isOpen} props={props} />
-    ) : (
-      ''
-    );
+  // const view = loc.url.searchParams.get('ss_v');
+  const DetailView = <DetailContainer isOpen={isOpen} props={props} />;
+  //   view === HashProductDetailsPriceTopCenter || view === null ? (
+  //     <DetailContainer isOpen={isOpen} props={props} />
+  //   ) : (
+  //     ''
+  //   );
 
   return (
     <div>
@@ -99,22 +94,22 @@ const ProductView = ({
 
 const ProductCenter = ({
   props,
-  loc,
+  // loc,
   img,
   quantityCart,
-  isOpen,
+  // isOpen,
   DetailView,
 }: any) => {
-  const view = loc.url.searchParams.get('ss_v');
+  // const view = loc.url.searchParams.get('ss_v');
 
-  const DetailViewHoriz =
-    view === HashProductDetailsPriceCenter ? (
-      <div class="detail-view-horiz2">
-        <DetailPriceContainerHoriz2 isOpen={isOpen} props={props} />
-      </div>
-    ) : (
-      ''
-    );
+  // const DetailViewHoriz =
+  //   view === HashProductDetailsPriceCenter ? (
+  //     <div class="detail-view-horiz2">
+  //       <DetailPriceContainerHoriz2 isOpen={isOpen} props={props} />
+  //     </div>
+  //   ) : (
+  //     ''
+  //   );
   return (
     <div class="crtr-div-ifrms-aetr">
       <size-w class="size-w-10" />
@@ -130,7 +125,6 @@ const ProductCenter = ({
         </div>
       )}
 
-      {DetailViewHoriz}
       <div class="buttons-mobiles">
         <div class="brt-irft">
           <div class="slect-qty-prt">
