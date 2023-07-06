@@ -15,3 +15,8 @@
     justify-content: center;
     align-items: center;
 }
+
+.ct-ratig {
+    font-size: 14px;
+    color: var(--color-text-opaque);
+}
