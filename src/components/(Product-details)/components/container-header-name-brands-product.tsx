@@ -12,7 +12,6 @@ import { ContainerPoput } from './components/popupSHARE';
 import { DouveryIcon } from '~/components/icons/douvery';
 
 import { TextCL } from '~/components/use/textCL/textCL';
-import { UseStarRating } from '~/components/use/ratings/useRatingHover/useRatingHover';
 
 export const ProductNameHeaderContainer = component$(({ props }: any) => {
   useStylesScoped$(sryles);
@@ -44,9 +43,6 @@ export const ProductNameHeaderContainer = component$(({ props }: any) => {
           <h4>
             <TextCL text={props.name} />
           </h4>
-          <div class="container__ratings">
-            <UseStarRating product={props} size="18" />
-          </div>{' '}
           <div class="crtr-di">
             <div class="di">
               {props.isBestInCategory ? (
