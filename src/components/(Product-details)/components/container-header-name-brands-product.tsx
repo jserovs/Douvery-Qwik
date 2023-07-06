@@ -12,6 +12,7 @@ import { ContainerPoput } from './components/popupSHARE';
 import { DouveryIcon } from '~/components/icons/douvery';
 
 import { TextCL } from '~/components/use/textCL/textCL';
+import { UseStarsRatingNoHover } from '~/components/use/ratings/useRatingNoHover/useRatingNoHover';
 
 export const ProductNameHeaderContainer = component$(({ props }: any) => {
   useStylesScoped$(sryles);
@@ -42,7 +43,7 @@ export const ProductNameHeaderContainer = component$(({ props }: any) => {
           </div>
           <h4>
             <TextCL text={props.name} />
-          </h4>
+          </h4>{' '}
           <div class="crtr-di">
             <div class="di">
               {props.isBestInCategory ? (
@@ -67,6 +68,14 @@ export const ProductNameHeaderContainer = component$(({ props }: any) => {
               ) : (
                 <></>
               )}{' '}
+              <div class="ctr-opa">|</div>
+              <div class="container__ratings">
+                <UseStarsRatingNoHover
+                  rating={props.averageRating}
+                  count={props.reviewCount}
+                  size="18"
+                />
+              </div>
             </div>
             <div class="brt-shared-art">
               <ContainerPoput product={props} title={'Compartir'} />
