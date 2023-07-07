@@ -171,6 +171,9 @@
 
 @media only screen and (max-width: 885px) {
 
+    .text_action_img {
+        display: none;
+    }
 
     .preview_img-vert {
         display: flex;
