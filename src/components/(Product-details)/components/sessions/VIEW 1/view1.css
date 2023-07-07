@@ -12,6 +12,7 @@
 }
 
 .crtr-div-ifrms-aetr {
+    position: relative;
     width: 100%;
 
 }
@@ -29,6 +30,7 @@
 
 
 .center {
+    position: relative;
     display: grid;
     grid-template-rows: auto 0px;
     position: relative;
@@ -36,6 +38,26 @@
     height: 100%;
     padding-left: 15px;
     margin-bottom: 50px;
+
+}
+
+.zoom_box {
+    position: absolute;
+    padding: 20px;
+    z-index: 1000;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--color-background-light);
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+
+.zoomed_image {
+    height: 100%;
+    width: 500%;
+    transition: transform 0.1s linear;
+    object-fit: contain;
 
 }
 

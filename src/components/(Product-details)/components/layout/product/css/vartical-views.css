@@ -98,10 +98,21 @@
     cursor: pointer;
 }
 
+.base-image {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
 
-
-
-
+.mouse-follower {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #0592973f;
+    border-radius: 10px;
+    pointer-events: none;
+}
 
 @keyframes desplazamientoIzquierda {
     from {

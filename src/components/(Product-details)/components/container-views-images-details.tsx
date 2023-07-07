@@ -8,7 +8,16 @@ import { LibPermVerticalViewProductIMG } from './layout/product/books-perm-verti
 import { ContainerBreadcrumbs } from './sessions/VIEW 1/components/Breadcrumbs/container-breadcrumbs';
 
 export const ImageDetailContainer = component$(
-  ({ props, img, isOpen }: any) => {
+  ({
+    props,
+    img,
+    isOpen,
+    handleMouseOver,
+    handleMouseMove,
+    handleMouseOut,
+    showZoom,
+    position,
+  }: any) => {
     useStylesScoped$(styles);
 
     function selectComponent() {
@@ -30,7 +39,16 @@ export const ImageDetailContainer = component$(
           );
         case 'style1':
           return (
-            <VarticalViewProductIMG img={img} isOpen={isOpen} props={props} />
+            <VarticalViewProductIMG
+              handleMouseOver={handleMouseOver}
+              handleMouseMove={handleMouseMove}
+              handleMouseOut={handleMouseOut}
+              showZoom={showZoom}
+              position={position}
+              img={img}
+              isOpen={isOpen}
+              props={props}
+            />
           );
         case 'style-books':
           return (
@@ -42,7 +60,16 @@ export const ImageDetailContainer = component$(
           );
         default:
           return (
-            <VarticalViewProductIMG img={img} isOpen={isOpen} props={props} />
+            <VarticalViewProductIMG
+              handleMouseOver={handleMouseOver}
+              handleMouseMove={handleMouseMove}
+              handleMouseOut={handleMouseOut}
+              showZoom={showZoom}
+              position={position}
+              img={img}
+              isOpen={isOpen}
+              props={props}
+            />
           );
       }
     }
