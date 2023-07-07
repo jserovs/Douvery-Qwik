@@ -1,7 +1,7 @@
 export const DouveryLogo105X40PX = () => (
   <svg
-    width="155"
-    height="45"
+    width="145"
+    height="40"
     viewBox="0 0 157 38"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
