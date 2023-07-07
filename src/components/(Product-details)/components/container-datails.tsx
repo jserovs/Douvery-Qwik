@@ -58,18 +58,20 @@ export const DetailContainer = component$(({ props }: any) => {
 
         <div class="container-NavAggPayProduct-web">
           <div class="session_price">
+            <div class="titles-of">Precio :</div>
+            <size-w class="size-w-10" />{' '}
+            <h4 class="font-price ">
+              {props.discount === 0 ? (
+                <>{numeral(props.price).format(formCurrency)}</>
+              ) : (
+                <div>{numeral(price_discount).format(formCurrency)}</div>
+              )}
+            </h4>{' '}
+            <size-w class="size-w-10" />
             {props.discount === 0 ? (
               ''
             ) : (
               <>
-                <div class="titles-of"> Antes: </div>
-                <size-w class="size-w-10" />{' '}
-                <h5 class="tach price-tach ">
-                  {' '}
-                  {numeral(props.price).format(formCurrency)}
-                </h5>
-                <size-w class="size-w-10" />
-                <size-w class="size-w-10" />
                 <div class="ctr-p-s">
                   {' '}
                   <div
@@ -91,20 +93,16 @@ export const DetailContainer = component$(({ props }: any) => {
                   )}
                 </div>
                 <size-w class="size-w-10" />
+                <size-w class="size-w-10" />
+                <div class="titles-of"> Antes: </div>
+                <size-w class="size-w-10" />{' '}
+                <h5 class="tach price-tach ">
+                  {' '}
+                  {numeral(props.price).format(formCurrency)}
+                </h5>
+                <size-w class="size-w-10" />
               </>
             )}
-            <size-w class="size-w-10" />
-            <size-w class="size-w-10" />
-            <div class="titles-of">Precio :</div>
-            <size-w class="size-w-10" />{' '}
-            <h4 class="font-price ">
-              {props.discount === 0 ? (
-                <>{numeral(props.price).format(formCurrency)}</>
-              ) : (
-                <div>{numeral(price_discount).format(formCurrency)}</div>
-              )}
-            </h4>{' '}
-            <size-w class="size-w-10" />
             <size-w class="size-w-10" />
             <size-w class="size-w-10" />
             <size-w class="size-w-10" />

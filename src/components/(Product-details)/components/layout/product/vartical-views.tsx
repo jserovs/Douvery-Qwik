@@ -2,7 +2,16 @@ import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './css/vartical-views.css?inline';
 import { ModalD } from '../modal/modal-de';
 export const VarticalViewProductIMG = component$(
-  ({ props, img, isOpen }: any) => {
+  ({
+    props,
+    img,
+    isOpen,
+    handleMouseOver,
+    handleMouseMove,
+    handleMouseOut,
+    showZoom,
+    position,
+  }: any) => {
     useStylesScoped$(styles);
 
     return (
@@ -64,11 +73,26 @@ export const VarticalViewProductIMG = component$(
                 loading="lazy"
                 lang="en"
                 onClick$={() => (isOpen.setIsOpen = true)}
+                onMouseOver$={handleMouseOver}
+                onMouseMove$={handleMouseMove}
+                onMouseOut$={handleMouseOut}
                 src={img.setImage}
                 alt={props.slug}
                 class="img-product-llg"
                 title="Aumentar tamaño de imagen"
               />
+              {showZoom.value && (
+                <>
+                  {' '}
+                  <div
+                    class="mouse-follower"
+                    style={{
+                      left: `${position.setPosition.x - 50}px`,
+                      top: `${position.setPosition.y - 40}px`,
+                    }}
+                  />
+                </>
+              )}
             </div>
           </div>
         </div>

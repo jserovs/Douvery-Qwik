@@ -1,6 +1,8 @@
 // Component imports
 import {
+  $,
   component$,
+  useSignal,
   useStore,
   useStylesScoped$,
   useTask$,
@@ -45,6 +47,26 @@ export const View1 = component$(({ props }: any) => {
   //     ''
   //   );
 
+  const showZoom = useSignal(false);
+  const position = useStore({ setPosition: { x: 0, y: 0 } });
+  const handleMouseOver = $((e: any) => {
+    const rect = e.target.getBoundingClientRect();
+    const x = e.clientX - rect.left; // Posición x del ratón relativa a la imagen
+    const y = e.clientY - rect.top; // Posición y del ratón relativa a la imagen
+    position.setPosition = { x, y };
+    showZoom.value = true;
+  });
+
+  const handleMouseMove = $((e: any) => {
+    const rect = e.target.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    position.setPosition = { x, y };
+  });
+
+  const handleMouseOut = $(() => {
+    showZoom.value = false;
+  });
   return (
     <div>
       <ProductView
@@ -54,6 +76,11 @@ export const View1 = component$(({ props }: any) => {
         quantityCart={quantityCart}
         isOpen={isOpen}
         DetailView={DetailView}
+        handleMouseOver={handleMouseOver}
+        handleMouseMove={handleMouseMove}
+        handleMouseOut={handleMouseOut}
+        showZoom={showZoom}
+        position={position}
       />
 
       <ExtraButtonContainer props={props} />
@@ -69,10 +96,24 @@ const ProductView = ({
   quantityCart,
   isOpen,
   DetailView,
+  handleMouseOver,
+  handleMouseMove,
+  handleMouseOut,
+  showZoom,
+  position,
 }: any) => (
   <div class="container-view-product">
     <div class="vert-left">
-      <ImageDetailContainer props={props} img={img} isOpen={isOpen} />
+      <ImageDetailContainer
+        handleMouseOver={handleMouseOver}
+        handleMouseMove={handleMouseMove}
+        handleMouseOut={handleMouseOut}
+        showZoom={showZoom}
+        position={position}
+        props={props}
+        img={img}
+        isOpen={isOpen}
+      />
     </div>
 
     <div class="center">
@@ -83,6 +124,8 @@ const ProductView = ({
         quantityCart={quantityCart}
         isOpen={isOpen}
         DetailView={DetailView}
+        showZoom={showZoom}
+        position={position}
       />
     </div>
 
@@ -99,6 +142,8 @@ const ProductCenter = ({
   quantityCart,
   // isOpen,
   DetailView,
+  showZoom,
+  position,
 }: any) => {
   // const view = loc.url.searchParams.get('ss_v');
 
@@ -112,6 +157,19 @@ const ProductCenter = ({
   //   );
   return (
     <div class="crtr-div-ifrms-aetr">
+      {showZoom.value && (
+        <div class="zoom_box">
+          <img
+            width={300}
+            height={300}
+            src={img.setImage}
+            class="zoomed_image"
+            style={{
+              transform: `translate(-${position.setPosition.x}px, -${position.setPosition.y}px)`,
+            }}
+          />
+        </div>
+      )}
       <size-w class="size-w-10" />
       <ProductNameHeaderContainer props={props} />
       {DetailView}

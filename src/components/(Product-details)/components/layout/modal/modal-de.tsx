@@ -14,7 +14,7 @@ export const ModalD = component$(({ props, img, isOpen }: any) => {
             onClick$={() => (isOpen.setIsOpen = false)}
           ></div>
           <div class={`modal ${!isOpen && 'modal-close'}`}>
-            <div class="content-modal">
+            <div class="header_modal">
               <div class="conten_price__brand">
                 <h4>
                   <TextCL text={props.name} />
@@ -35,6 +35,17 @@ export const ModalD = component$(({ props, img, isOpen }: any) => {
                   </a>
                 </div>
               </div>
+              <div class="modal-close-btn">
+                <TextCL text="Volver" />
+                <button
+                  onClick$={() => (isOpen.setIsOpen = false)}
+                  class="btn-close-modal"
+                >
+                  X
+                </button>
+              </div>
+            </div>
+            <div class="content-modal">
               <div class="content-imgprimary">
                 <img
                   width={400}
