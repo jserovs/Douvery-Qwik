@@ -101,7 +101,7 @@ export const VarticalViewProductIMG = component$(
                 ) : (
                   <>
                     <p>
-                      Desliza el cursor sobre la imagen para aplicar el zoom
+                      Desliza el cursor sobre la imagen para aplicar el zoom.
                     </p>
                   </>
                 )}
