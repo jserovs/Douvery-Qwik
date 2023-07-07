@@ -18,7 +18,7 @@ export default component$(() => {
         <meta name="theme-color" content="#fff" />
         <meta
           name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1"
+          content="width=device-width, initial-scale=1, maximum-scale=5"
         />
         <link rel="canonical" href="https://www.douvery.com/" />
 

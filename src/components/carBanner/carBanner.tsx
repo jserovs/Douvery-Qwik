@@ -123,6 +123,7 @@ export const BannerCarouselHome = component$(({ ref }: any) => {
         <div class="content">
           <button
             class="carousel__btn carousel__btn--prev"
+            name="button previeus"
             onClick$={prevContent}
             disabled={currentIndex.SetCurrentIndex === 0} // Desactivar si es el primer índice
           >
@@ -164,6 +165,7 @@ export const BannerCarouselHome = component$(({ ref }: any) => {
 
           <button
             class="carousel__btn carousel__btn--next"
+            name="button next"
             onClick$={nextContent}
             disabled={currentIndex.SetCurrentIndex === contents.length - 1} // Desactivar si es el último índice
           >
