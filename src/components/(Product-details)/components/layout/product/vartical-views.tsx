@@ -79,8 +79,8 @@ export const VarticalViewProductIMG = component$(
                 src={img.setImage}
                 alt={props.slug}
                 class="img-product-llg"
-                title="Aumentar tamaño de imagen"
               />
+
               {showZoom.value && (
                 <>
                   {' '}
@@ -93,6 +93,19 @@ export const VarticalViewProductIMG = component$(
                   />
                 </>
               )}
+              <div class="text_action_img">
+                {showZoom.value ? (
+                  <>
+                    <p>Haz un clic en la imagen para ampliarla.</p>
+                  </>
+                ) : (
+                  <>
+                    <p>
+                      Desliza el cursor sobre la imagen para aplicar el zoom
+                    </p>
+                  </>
+                )}
+              </div>
             </div>
           </div>
         </div>
