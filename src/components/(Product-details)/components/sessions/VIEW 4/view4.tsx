@@ -33,7 +33,6 @@ export const View4 = component$(({ product }: any) => {
     const data = await fetchCanUserComments(loc.params.dui, `${user?.id}`);
     state.checkReviewsProduct = data;
   });
-
   return (
     <div class="ctnr-view-4">
       {' '}
