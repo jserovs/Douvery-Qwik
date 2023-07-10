@@ -33,10 +33,10 @@
 }
 
 .product-name {
-    background-color: var(--color-background-card2);
+
     width: 100%;
-    padding: 6px 10px;
-    height: 30px;
+    padding: 0px 10px;
+
     margin: 10px 0;
     text-align: center;
     font-size: small;
