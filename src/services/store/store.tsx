@@ -92,6 +92,7 @@ export async function fetchStoreCategoriesAndImg(
       },
       body: JSON.stringify({
         ospayne: ospayne,
+        limit: 2,
       }),
     }
   );
