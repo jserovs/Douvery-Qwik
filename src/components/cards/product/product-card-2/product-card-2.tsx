@@ -4,7 +4,7 @@ import styles from './product-card-2.css?inline';
 import { UsePrice } from '~/components/use/price/price';
 
 import { Stars } from '~/components/Ratings/stars/stars';
-import { DouveryIcon } from '~/components/icons/douvery';
+
 import { UseProductDetailsLink } from '~/services/fuction';
 
 export const ContainerCardProduct2 = component$(({ product, ref }: any) => {
@@ -19,7 +19,13 @@ export const ContainerCardProduct2 = component$(({ product, ref }: any) => {
     <div class="product-card">
       <a href={UseProductDetailsLink(product, ref)}>
         {' '}
-        <img src={product.images[0]} alt={product.name} class="product-image" />
+        <img
+          width={200}
+          height={200}
+          src={product.images[0]}
+          alt={product.name}
+          class="product-image"
+        />
       </a>
       <a href={UseProductDetailsLink(product, ref)}>
         <h2 class="product-name">
@@ -30,6 +36,7 @@ export const ContainerCardProduct2 = component$(({ product, ref }: any) => {
       <div class="ctr-stars">
         <Stars size="16" rating={totalRating} /> ({totalRating}){' '}
       </div>
+
       <div class=" product-brand"> {product.marca}</div>
 
       <div class="crt-prc">
@@ -52,19 +59,7 @@ export const ContainerCardProduct2 = component$(({ product, ref }: any) => {
           </>
         )}
       </div>
-      <div class="ETQ-">
-        {' '}
-        {product.vrfDouvery ? (
-          <>
-            {' '}
-            <div class="etq-vrs">
-              <DouveryIcon color="#6466e8" /> Verified to Douvery
-            </div>
-          </>
-        ) : (
-          <></>
-        )}
-      </div>
+
       {product.sponsored ? (
         <>
           {' '}

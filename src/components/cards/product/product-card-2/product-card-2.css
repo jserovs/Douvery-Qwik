@@ -67,6 +67,7 @@
     font-size: small;
     color: var(--color-primary);
     font-weight: var(--font-weight-normal);
+    margin-top: 5px;
 }
 
 .product-price {
