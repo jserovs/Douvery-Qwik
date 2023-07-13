@@ -27,7 +27,6 @@ import { addToViewedProducts } from '~/services/viewed/viewed';
 import { sendUserTimestamp } from '~/services/userTimestamp/userTimestamp';
 import { useGetCurrentUser } from '~/routes/layout';
 import { UseProductDetailsLink } from '~/services/fuction';
-import { View3 } from '~/components/(Product-details)/components/sessions/VIEW 3/view3';
 
 export const useProductInfo = routeLoader$(async (requestEvent) => {
   const dui = requestEvent.params.dui;
@@ -75,7 +74,7 @@ export default component$(() => {
           </div>
         )}
 
-        <View3 product={productData.value} />
+        {/* <View3 product={productData.value} /> */}
         <View4 product={productData.value} />
         <div class="container-views">
           <View5 product={productData.value} />
