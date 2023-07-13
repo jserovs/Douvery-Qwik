@@ -46,10 +46,8 @@ export const DetailContainer = component$(({ props }: any) => {
                   <h6 class="porce-mobiles  ">
                     -%
                     {props.discount}
+                    SAVE {numeral(discount).format(formCurrency)}
                   </h6>
-                </div>
-                <div class="ctr-save-pr">
-                  SAVE {numeral(discount).format(formCurrency)}
                 </div>
               </div>
             </>
@@ -82,15 +80,13 @@ export const DetailContainer = component$(({ props }: any) => {
                     <h6 class="porce  ">
                       -%
                       {props.discount}
+                      {/* {props.discount < 20 ? (
+                        ''
+                      ) : (
+                        <> SAVE {numeral(discount).format(formCurrency)}</>
+                      )} */}
                     </h6>
                   </div>
-                  {props.discount < 20 ? (
-                    ''
-                  ) : (
-                    <div class="ctr-save-pr">
-                      SAVE {numeral(discount).format(formCurrency)}
-                    </div>
-                  )}
                 </div>
                 <size-w class="size-w-10" />
                 <size-w class="size-w-10" />

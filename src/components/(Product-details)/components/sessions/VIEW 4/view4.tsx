@@ -53,13 +53,17 @@ export const View4 = component$(({ product }: any) => {
           value={checkReviewsProduct}
           onPending={() => <div class="loader"></div>}
           onRejected={() => (
-            <>
-              Debe iniciar sesión y comprar un producto antes de poder dejar un
-              comentario. <br />
+            <span class="no_session_comment">
+              <p>
+                {' '}
+                Debe iniciar sesión y comprar un producto antes de poder dejar
+                un comentario.
+              </p>{' '}
+              <div class="ctr-opa">|</div>
               <a class="link-login" href="/a/login">
                 Iniciar sesión
               </a>
-            </>
+            </span>
           )}
           onResolved={() => (
             <>
