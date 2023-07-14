@@ -12,6 +12,26 @@ export const DetailContainer = component$(({ props }: any) => {
   //*CALCULAR EL DESCUENTO
   const discount = (props.price * props.discount) / 100;
   const price_discount = props.price - discount;
+  let priceDecreasePercentage;
+  if (props.priceHistory && props.priceHistory.length >= 2) {
+    const currentPrice =
+      props.priceHistory[props.priceHistory.length - 1].price;
+    let previousPriceIndex = props.priceHistory.length - 2;
+    while (
+      previousPriceIndex >= 0 &&
+      props.priceHistory[previousPriceIndex].price === currentPrice
+    ) {
+      previousPriceIndex--;
+    }
+
+    if (previousPriceIndex >= 0) {
+      const previousPrice = props.priceHistory[previousPriceIndex].price;
+      const priceDifference = previousPrice - currentPrice;
+      priceDecreasePercentage = (priceDifference / previousPrice) * 100;
+    }
+  }
+
+  console.log(priceDecreasePercentage);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const locateCurrency = 'US';
   const formCurrency = '$0,0.00';
@@ -46,7 +66,6 @@ export const DetailContainer = component$(({ props }: any) => {
                   <h6 class="porce-mobiles  ">
                     -%
                     {props.discount}
-                    SAVE {numeral(discount).format(formCurrency)}
                   </h6>
                 </div>
               </div>
@@ -103,6 +122,35 @@ export const DetailContainer = component$(({ props }: any) => {
             <size-w class="size-w-10" />
             <size-w class="size-w-10" />
           </div>
+
+          <div class="content_priceHistory">
+            <p>
+              Price history
+              <svg
+                width="19"
+                height="19"
+                viewBox="0 0 24 27"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10.1667 5.83333V13.0467L13.3133 16.1933L14.7 13.8067L12.8333 11.9533V5.83333H10.1667ZM23.5 12.5C23.5 9.3174 22.2357 6.26516 19.9853 4.01472C17.7348 1.76428 14.6826 0.5 11.5 0.5C7.72667 0.5 4.36667 2.26 2.16667 4.98V1.83333H-0.5V9.83333H7.5V7.16667H3.84667C4.70663 5.93359 5.85135 4.92614 7.18368 4.2298C8.51602 3.53346 9.99667 3.16877 11.5 3.16667C16.6467 3.16667 20.8333 7.35333 20.8333 12.5H23.5ZM9.98 21.7133C5.99333 21.06 2.84667 17.8467 2.27333 13.8333H-0.42C0.246667 19.8333 5.32667 24.5 11.5 24.5H11.5933L9.98 21.7133Z"
+                  fill="black"
+                />
+                <path
+                  d="M15.7585 24V15.2727H19.2017C19.8636 15.2727 20.4276 15.3991 20.8935 15.652C21.3594 15.902 21.7145 16.25 21.9588 16.696C22.206 17.1392 22.3295 17.6506 22.3295 18.2301C22.3295 18.8097 22.2045 19.321 21.9545 19.7642C21.7045 20.2074 21.3423 20.5526 20.8679 20.7997C20.3963 21.0469 19.8253 21.1705 19.1548 21.1705H16.9602V19.6918H18.8565C19.2116 19.6918 19.5043 19.6307 19.7344 19.5085C19.9673 19.3835 20.1406 19.2116 20.2543 18.9929C20.3707 18.7713 20.429 18.517 20.429 18.2301C20.429 17.9403 20.3707 17.6875 20.2543 17.4716C20.1406 17.2528 19.9673 17.0838 19.7344 16.9645C19.5014 16.8423 19.206 16.7812 18.848 16.7812H17.6037V24H15.7585Z"
+                  fill="black"
+                />
+              </svg>
+            </p>
+            {priceDecreasePercentage && (
+              <div class="priceDecrease">
+                {priceDecreasePercentage.toFixed(2)}% más barato que la última
+                vez.
+              </div>
+            )}
+          </div>
+
           <div class="session_buttons">
             {props.quantity <= 1 ? (
               <div class="no-stock">
