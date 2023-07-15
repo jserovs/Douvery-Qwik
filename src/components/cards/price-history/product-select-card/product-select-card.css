@@ -56,6 +56,10 @@
     font-weight: 500;
 }
 
+.container-brand-product:hover {
+    text-decoration: underline;
+}
+
 @keyframes carga {
     0% {
         opacity: 0;

@@ -26,7 +26,7 @@
     align-items: center;
     justify-content: center;
 
-    z-index: 1;
+
 }
 
 .session_buttons {
@@ -77,6 +77,92 @@
 .font-price {
     font-size: 24px;
     font-weight: 500;
+}
+
+.tooltip-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOutUp {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+.tooltip-content {
+    width: 220px;
+    background-color: #FFF;
+    color: #666;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+
+    outline: 0;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    top: 125%;
+    /* Posición del tooltip */
+    left: 50%;
+    margin-left: -110px;
+    /* Alinea el tooltip al centro */
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+
+}
+
+.tooltip-content.show {
+    animation: smoApp 1.5s normal;
+    /* Aparece con un efecto de desplazamiento hacia abajo */
+}
+
+.tooltip-content.hide {
+    animation: smoApp 1.5s normal;
+    /* Desaparece con un efecto de desplazamiento hacia arriba */
+}
+
+.tooltip-content p {
+    font-size: 12px;
+}
+
+.tooltip-arrow {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent var(--color-stars) transparent;
+}
+
+.login-button {
+
+    text-decoration: underline;
+    color: var(--color-stars);
+
+}
+
+.login-button:active {
+    transform: scale(0.95);
 }
 
 .price-tach {
