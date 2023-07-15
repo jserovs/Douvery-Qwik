@@ -1,0 +1,18 @@
+.breadcrumb {
+    font-size: 13px;
+    color: #6e6e73;
+
+}
+
+.breadcrumb a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb span:last-child {
+    color: #6e6e73;
+}
