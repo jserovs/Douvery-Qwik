@@ -1,4 +1,4 @@
-import { urlServerLocal } from '../fechProduct';
+import { urlServerNode } from '../fechProduct';
 
 export async function fetchProductPriceHistory(
   dui: string,
@@ -6,7 +6,7 @@ export async function fetchProductPriceHistory(
 ): Promise<any> {
   const response = await fetch(
     `
-    ${urlServerLocal}/api/product/${dui}/price-history`,
+    ${urlServerNode}/api/product/${dui}/price-history`,
     {
       signal: controller?.signal,
     }

@@ -1,7 +1,6 @@
 import { $, component$, useStylesScoped$ } from '@builder.io/qwik';
 import style from './header_info_button.css?inline';
 import { DouveryArrowLeft1 } from '~/components/icons/arrow-left-1';
-import { BreadcrumbsSTL1 } from '../../breadcrumb/style1_breadcrumb/BreadcrumbsSTL1';
 export const Header_info_button = component$(({ title }: any) => {
   useStylesScoped$(style);
   const goBack = $(() => {
