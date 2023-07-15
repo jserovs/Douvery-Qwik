@@ -1,0 +1,21 @@
+.title-show {
+    display: flex;
+    gap: 10px;
+    padding: 10px 0px;
+}
+
+.title-show h2 {
+    color: #000;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.show-more a {
+    color: #008080;
+    font-size: 12.5px;
+}
+
+.show-more a:hover {
+    color: #008080;
+    text-decoration: underline;
+}

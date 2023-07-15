@@ -9,6 +9,10 @@ import { formatDateWithMinutes } from '~/services/fuction';
 import { DouveryArrowUp } from '~/components/icons/arrow-up';
 import { DouveryArrowDown } from '~/components/icons/arrow-down';
 import { PromotionRecomend_Carousel_DuiPass } from '~/components/(Promotions)/carousel/carousel-recomend-dui-pass-product/carousel-recomend-dui-pass-product';
+import { Title__showmore1 } from '~/components/use/title__showmore/title__showmore1/title__showmore1';
+import { PromotionRecomend_Carousel_5LastView } from '~/components/(Promotions)/carousel/carousel-recomend-5last-view-product/carousel-recomend-5last-view-product ';
+import { useGetCurrentUser } from '~/routes/layout';
+import { fuctionRef } from '~/fuctions/fuctionRef';
 
 export const useProductInfo = routeLoader$(async (requestEvent) => {
   const dui = requestEvent.params.dui;
@@ -21,6 +25,13 @@ export default component$(() => {
   const loc = useLocation();
   const productData = useProductInfo();
   const dui = loc.params.dui;
+  const user = useGetCurrentUser().value;
+  function ref(index: Number) {
+    const fuction = fuctionRef(
+      'history_price/' + 'history_price/' + 'history_price_carousel=' + index
+    );
+    return fuction;
+  }
   return (
     <div class="container__all">
       <Header_info_button title="Product price history" />
@@ -28,7 +39,12 @@ export default component$(() => {
       <div class="content">
         {' '}
         <CardProductSelect1 product={productData.value} />
-        <div class="price-history">
+        <div class="content__price_history">
+          <Title__showmore1
+            title="Price history"
+            titleLink="Aprender mas"
+            link="/"
+          />
           <div class="price-history">
             {productData.value.priceHistory.map(
               (item: any, index: any, array: any) => {
@@ -59,15 +75,15 @@ export default component$(() => {
 
                 return (
                   <div key={index} class="price-history-item">
-                    <p class="price-history-date">
-                      {formatDateWithMinutes(item.date)}
-                    </p>
                     <p class={`price-history-price ${priceChangeClass}`}>
                       {PriceChangeIcon}
                       {PriceChangeText && (
                         <span class="price-change-text">{PriceChangeText}</span>
                       )}
                       <UsePrice price={item.price} />
+                    </p>
+                    <p class="price-history-date">
+                      {formatDateWithMinutes(item.date)}
                     </p>
                   </div>
                 );
@@ -79,14 +95,24 @@ export default component$(() => {
       <br />
       <div class="container__product_promotions">
         {' '}
-        <div class="title-show">
-          <h2>Explora productos populares</h2>
-          <div class="show-more">
-            {' '}
-            <a href="dsaf/">Ver mas</a>
-          </div>
-        </div>
+        <Title__showmore1
+          title="Basado en el producto que estas viendo"
+          link="/"
+        />
         <PromotionRecomend_Carousel_DuiPass styleNumber={11} dui={dui} />
+      </div>
+      <div class="container__product_promotions">
+        {' '}
+        {user?.id && (
+          <>
+            {' '}
+            <PromotionRecomend_Carousel_5LastView
+              ref={ref(2)}
+              styleNumber={10}
+            />
+            <div class="separator_custom" />
+          </>
+        )}
       </div>
     </div>
   );

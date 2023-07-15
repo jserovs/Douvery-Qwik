@@ -6,6 +6,7 @@ import { UseNumberOneCategory } from '~/components/use/numberOne/numberOneCatego
 import { DouveryCheckMark } from '~/components/icons/checkMark';
 import { UseProductDetailsLink } from '~/services/fuction';
 import { ButtonDetailContainer } from '~/components/(Product-details)/components/container-button-details';
+import { ContainerDescription } from '~/components/(Product-details)/components/crtr-description';
 
 // import { ButtonCardHover } from '~/components/use/bropdown-button-cart-fast-pay/button-card/button-card-hover';
 export const CardProductSelect1 = component$(({ product, ref }: any) => {
@@ -24,15 +25,34 @@ export const CardProductSelect1 = component$(({ product, ref }: any) => {
           class="product-image"
         />
         <div class="product-info">
+          <div class="container-title-product">
+            {' '}
+            <div class="container-brand-product">
+              <a
+                href={
+                  '/' +
+                  product.storeName +
+                  '/' +
+                  'STORE-' +
+                  product.storeOspayne +
+                  '/h/'
+                }
+                aria-label={product.marca}
+              >
+                <strong class="container-brand-product">
+                  {' '}
+                  Explore the {product.storeName} store
+                </strong>
+              </a>
+            </div>
+          </div>
           <a href={UseProductDetailsLink(product, ref)}>
             {' '}
             <h2 class="product-title">
               <TextCL text={product.name} />{' '}
             </h2>
           </a>
-          <p class="product-description">{product.marca}</p>
           <UseNumberOneCategory product={product} />
-
           <div class="brt-irft-lapto">
             <strong class="hs-sr1">Estado:</strong>{' '}
             <p class="ps-sr1">{product.item_condition}</p>
@@ -64,7 +84,6 @@ export const CardProductSelect1 = component$(({ product, ref }: any) => {
               </>
             )}
           </div>
-
           <div class="product-price">
             {product.discount > 0 ? (
               <>
@@ -108,15 +127,17 @@ export const CardProductSelect1 = component$(({ product, ref }: any) => {
                 </div>
               </div>
             )}
+            <br />
             <div class="div-button">
               {' '}
               <ButtonDetailContainer
                 product={product}
                 quantity={quantityCart.setQuantityCart}
-                vert={true}
               />
             </div>
           </div>
+          <br />
+          <ContainerDescription product={product} limitChara={150} />
         </div>
 
         {/* <div class="container-hover-button">

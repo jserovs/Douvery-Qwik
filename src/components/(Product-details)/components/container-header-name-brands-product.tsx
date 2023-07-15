@@ -6,7 +6,6 @@ import { DouveryCircleLock } from '~/components/icons/circle-lock';
 import { ContainerExpectedShippingTime } from './container-expected-shipping-time';
 import { Dropdown } from '~/components/dropdown/dropdown';
 import { ContainerAlertArt } from './container-alert-art';
-import { Link } from '@builder.io/qwik-city';
 
 import { ContainerPoput } from './components/popupSHARE';
 import { DouveryIcon } from '~/components/icons/douvery';
@@ -24,7 +23,7 @@ export const ProductNameHeaderContainer = component$(({ props }: any) => {
         <div class="container-title-product">
           {' '}
           <div class="container-brand-product">
-            <Link
+            <a
               href={
                 '/' +
                 props.storeName +
@@ -39,7 +38,7 @@ export const ProductNameHeaderContainer = component$(({ props }: any) => {
                 {' '}
                 Explore the {props.storeName} store
               </strong>
-            </Link>
+            </a>
           </div>
           <h4>
             <TextCL text={props.name} />
