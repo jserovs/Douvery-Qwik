@@ -19,7 +19,7 @@ export const ShortDescriptionContainer = component$(({ props }: any) => {
   };
   return (
     <div class="crtr-sbr-art">
-      <ContainerDescription props={props} />
+      <ContainerDescription product={props} />
       {props.vinetas && (
         <div class="drtr-arte-ores">
           <div class="srte-prdsr-isrndfotms">

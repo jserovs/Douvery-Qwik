@@ -3,7 +3,7 @@
 
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     background-color: var(--color-background-white);
     padding: 10px;
 
@@ -12,34 +12,37 @@
 }
 
 .content {
-    width: 100%;
+
     display: flex;
 
     justify-content: flex-start;
     align-items: flex-start;
     gap: 20px;
+
+
 }
 
 .price-history {
-    width: 100%;
-    max-width: 600px;
+    width: 400px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     gap: 10px;
     padding: 20px;
+    background-color: var(--color-background-white);
 
     border-radius: 10px;
-
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
 }
 
 .price-history-item {
-    display: flex;
+
     gap: 100PX;
     align-items: center;
     justify-content: flex-start;
     padding: 10px;
-    border-bottom: 1px solid #E5E5E5;
+    border-bottom: 1px solid var(--border-width-1);
+
 
 }
 
