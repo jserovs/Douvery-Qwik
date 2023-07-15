@@ -6,7 +6,7 @@
     align-items: flex-start;
     background-color: var(--color-background-white);
     padding: 10px;
-    position: relative;
+
     height: 100%;
     min-height: 100rem;
 }
@@ -15,14 +15,14 @@
     width: 100%;
     display: flex;
 
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
     gap: 20px;
 }
 
 .price-history {
     width: 100%;
-
+    max-width: 600px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -67,4 +67,14 @@
 .price-decrease {
     color: #CD1818;
     fill: #CD1818;
+}
+
+.container__product_promotions {
+    width: 100%;
+    padding: 30px;
+}
+
+.title-show {
+    display: flex;
+    gap: 10px;
 }

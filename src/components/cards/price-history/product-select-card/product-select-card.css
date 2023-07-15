@@ -6,21 +6,31 @@
     gap: 5px;
     position: relative;
     background-color: var(--color-background-white);
-    position: fixed;
-    bottom: 0;
+
 
     border-top: 1px solid rgba(9, 30, 66, 0.13);
 }
 
 .card {
     display: grid;
-    grid-template-columns: 230px auto;
+    grid-template-columns: auto auto;
     align-items: start;
 
     gap: 30px;
     padding: 1rem;
     margin: 0.5rem;
 
+}
+
+.card img {
+    width: 100%;
+    max-width: 450px;
+    height: 450px;
+    object-fit: contain;
+
+    background-color: var(--color-background-card);
+    padding: 10px;
+    z-index: 1000;
 }
 
 .container-hover-button {
@@ -137,17 +147,22 @@
 }
 
 .container-buttons {
-    display: flex;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     gap: 10px;
 }
 
 
 .buttonCart {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     min-width: 180px;
+    max-width: 300px;
     background-color: var(--color-button-cart);
     color: var(--color-background-light);
     border: none;
@@ -174,6 +189,7 @@
 .buttonPay {
     display: grid;
     min-width: 180px;
+    max-width: 300px;
     background-color: var(--color-button-pay);
     color: var(--color-background-light);
     border: none;
@@ -192,6 +208,157 @@
     border-color: #0a58ca;
 }
 
+.dsier-strs-lapto {
+
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+    align-items: center;
+
+}
+
+.dsier-strs-lapto div {
+    display: flex;
+    gap: 5PX;
+}
+
+.dsier-strs-lapto p {
+    font-size: 13px;
+    color: #008000;
+    fill: #008000;
+    font-weight: 500;
+}
+
+.dsier-strs-lapto .exhausted-for {
+    font-size: 68%;
+    color: #DC143C;
+    opacity: 90%;
+    font-weight: 500;
+    margin-right: 15px;
+}
+
+.art-stock {
+    display: flex;
+    align-items: center;
+}
+
+.icrt-checkmark {
+    fill: #008000;
+}
+
+.minus-dolceid-alert-buty {
+    opacity: 85%;
+    padding: 0px;
+    margin: 0px;
+    background-color: var(--color-background-light);
+    color: #cd0000;
+    font-weight: 500;
+}
+
+
+
+.brt-irft-lapto {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.brt-irft-lapto h5 {
+    font-size: 63%;
+    color: var(--color-text-opaque);
+    display: flex;
+    gap: 5px;
+    margin-right: 8PX;
+
+}
+
+.brt-irft-lapto h4 {
+    font-size: 73%;
+
+    color: var(--color-text-opaque);
+    display: flex;
+    gap: 5px;
+    margin-right: 8PX;
+
+}
+
+
+.session_buttons {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1;
+}
+
+.session_buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20PX;
+    border-top: 1px solid rgba(9, 30, 66, 0.13);
+    border-bottom: 1px solid rgba(9, 30, 66, 0.13);
+    border-radius: 4px;
+
+}
+
+.content_qty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.content_qty span {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--color-text-light);
+}
+
+.select-input-cart {
+
+    background-color: var(--color-background-light);
+    border: 1px solid #d9d9d9;
+    overflow: hidden;
+    padding: 3px;
+    position: relative;
+    border-radius: 5px;
+}
+
+select {
+    color: var(--color-black);
+}
+
+select {
+
+
+    background: transparent;
+    border: none;
+    font-size: 14px;
+
+}
+
+select:focus {
+    outline: none;
+}
+
+select {
+    display: block;
+    padding: 2px 10px;
+    ;
+
+
+
+}
+
+select option {
+
+    padding: 20px;
+}
 
 @media only screen and (max-width: 885px) {
     .card {

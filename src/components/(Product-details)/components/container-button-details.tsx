@@ -21,14 +21,17 @@ export const AddCart = $(({ product, quantity, nav, isLoader }: any) => {
 });
 
 export const ButtonDetailContainer = component$(
-  ({ product, quantity }: any) => {
+  ({ product, quantity, vert }: any) => {
     useStylesScoped$(styles);
     const nav = useNavigate();
     const isLoader = useSignal(false);
 
     return (
       <div>
-        <div class="button-lapto">
+        <div
+          class="button-lapto"
+          style={vert ? { display: 'grid', gap: '5px' } : {}}
+        >
           <size-w class="size-w-10" />
           {product.quantity <= 1 ? (
             <></>
