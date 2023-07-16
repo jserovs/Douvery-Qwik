@@ -29,6 +29,7 @@ export default component$(() => {
           type="text/partytown"
           src="https://www.googletagmanager.com/gtag/js?id=G-F6975H93NJ"
         />
+        <script defer src="/_vercel/insights/script.js"></script>
 
         <RouterHead />
       </head>
