@@ -194,12 +194,12 @@ export const DetailContainer = component$(({ props }: any) => {
                     />
                   </svg>
                 </p>
-                {priceDecreasePercentage && (
+                {(priceDecreasePercentage as any) >= 10 && (
                   <div class="priceDecrease">
                     <span class="tooltip_arrow_decrease"></span>
                     <p>
                       {' '}
-                      {priceDecreasePercentage.toFixed(2)}% más barato que la
+                      {priceDecreasePercentage?.toFixed(2)}% más barato que la
                       última vez.
                     </p>
                   </div>
