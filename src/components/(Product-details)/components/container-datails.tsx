@@ -10,6 +10,7 @@ import { ButtonDetailContainer } from './container-button-details';
 
 import numeral from 'numeral';
 import { useGetCurrentUser } from '~/routes/layout';
+import { useLocation } from '@builder.io/qwik-city';
 
 export const DetailContainer = component$(({ props }: any) => {
   useStylesScoped$(styles);
@@ -37,7 +38,6 @@ export const DetailContainer = component$(({ props }: any) => {
     }
   }
 
-  console.log(priceDecreasePercentage);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const locateCurrency = 'US';
   const formCurrency = '$0,0.00';
@@ -59,7 +59,7 @@ export const DetailContainer = component$(({ props }: any) => {
     };
   });
   const user = useGetCurrentUser().value;
-
+  const { url } = useLocation();
   return (
     <>
       <div class="super-container">
@@ -121,8 +121,13 @@ export const DetailContainer = component$(({ props }: any) => {
                       }`}
                     >
                       <span class="tooltip-arrow"></span>
-                      <p> Si quiere ver el historial de precio</p>
-                      <button class="login-button">Iniciar sesión.</button>
+                      <p>Si quieres ver el historial de precios</p>
+                      <a
+                        href={'/a/login?rr=' + url.pathname + url.search}
+                        class="login-button"
+                      >
+                        Iniciar Sesión.
+                      </a>
                     </div>
                   )}
                 </>
@@ -191,8 +196,12 @@ export const DetailContainer = component$(({ props }: any) => {
                 </p>
                 {priceDecreasePercentage && (
                   <div class="priceDecrease">
-                    {priceDecreasePercentage.toFixed(2)}% más barato que la
-                    última vez.
+                    <span class="tooltip_arrow_decrease"></span>
+                    <p>
+                      {' '}
+                      {priceDecreasePercentage.toFixed(2)}% más barato que la
+                      última vez.
+                    </p>
                   </div>
                 )}
               </a>

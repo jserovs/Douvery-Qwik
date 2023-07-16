@@ -110,9 +110,9 @@
 
 .tooltip-content {
     width: 220px;
-    background-color: #FFF;
-    color: #666;
-    border: 1px solid #d5d9d9;
+    background-color: var(--color-stars);
+    color: #fff;
+    border: 1px solid #fff;
     border-radius: 8px;
 
     outline: 0;
@@ -126,7 +126,7 @@
     left: 50%;
     margin-left: -110px;
     /* Alinea el tooltip al centro */
-    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+
 
 }
 
@@ -142,6 +142,7 @@
 
 .tooltip-content p {
     font-size: 12px;
+    color: #fff;
 }
 
 .tooltip-arrow {
@@ -152,12 +153,15 @@
     border-width: 5px;
     border-style: solid;
     border-color: transparent transparent var(--color-stars) transparent;
+
 }
+
+
 
 .login-button {
 
     text-decoration: underline;
-    color: var(--color-stars);
+    color: #fff;
 
 }
 
@@ -488,16 +492,16 @@ select option {
 
 .content_priceHistory {
     display: flex;
-
-    justify-content: center;
+    position: relative;
+    justify-content: flex-start;
     align-items: flex-start;
     gap: 10px;
 }
 
 .content_priceHistory p {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     gap: 10px;
     font-size: 14px;
     color: #333;
@@ -510,17 +514,54 @@ select option {
 }
 
 .priceDecrease {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 300px;
-    border: 1px solid #3C4048;
-    padding: 10px;
-    width: 500px;
-    color: #008000;
-    font-weight: normal;
-    border-radius: 10px;
-    background-color: #FFF;
+    background-color: #009595;
+    border: 1px solid #d5d9d9;
+    border-radius: 5px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 29px;
+    padding: 0 10px 0 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: 100%;
+    margin-top: 5px;
+
+}
+
+.priceDecrease {
+
+
+    border-color: #009595;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    outline: 0;
+
+}
+
+.priceDecrease p {
+    text-align: center;
+    color: #fff;
+    font-size: 13px;
+}
+
+
+.priceDecrease .tooltip_arrow_decrease {
+    position: absolute;
+    bottom: 100%;
+    left: 20%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #009595 transparent;
 
 }
 
