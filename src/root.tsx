@@ -7,10 +7,10 @@ import {
 import { RouterHead } from './components/router-head/router-head';
 import { QwikPartytown } from './components/partytown/partytown';
 import globalStyles from './global.css?inline';
-
+import { inject } from '@vercel/analytics';
 export default component$(() => {
   useStyles$(globalStyles);
-
+  inject();
   return (
     <QwikCityProvider>
       <head>
