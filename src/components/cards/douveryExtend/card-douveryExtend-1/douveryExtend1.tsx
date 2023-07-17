@@ -24,7 +24,7 @@ export const ExtendedCardDouvery = component$(() => {
             <img
               width={300}
               height={300}
-              src="https://res.cloudinary.com/douvery/image/upload/v1684492886/buwaumgmxfc1uz43jcux.png"
+              src="https://res.cloudinary.com/douvery/image/upload/v1689602889/g570gihnt2gfrt9yacux.png"
               alt=""
             />
 
