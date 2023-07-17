@@ -199,17 +199,34 @@
 }
 
 .dsier-strs-lapto button {
-    display: flex;
+    background-color: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #0f1111;
+    cursor: pointer;
+    display: FLEX;
     gap: 5px;
     align-items: center;
     justify-content: center;
-    padding: 5px;
-    border-radius: 5px;
-    color: #Fff;
-    background-color: #362FD9;
 
-    font-size: 14px;
-    padding: 5px 10px;
+    font-size: 13px;
+    line-height: 29px;
+    padding: 0 10px 0 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.dsier-strs-lapto button:active {
+    border: 1px solid #048686;
+    color: #048686;
 }
 
 .minus-dolceid-alert-buty {

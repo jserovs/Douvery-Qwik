@@ -35,7 +35,7 @@ export const ContainerCardProduct1 = component$(({ product, ref }: any) => {
             <strong class="hs-sr1 product-price">
               <UsePrice price={discoun} />
             </strong>
-            <p class="ps-sr1 product-price tach">
+            <p class="ps-sr1 product-price tach product-price-discount">
               <UsePrice price={product.price} />
             </p>
           </>
@@ -54,7 +54,7 @@ export const ContainerCardProduct1 = component$(({ product, ref }: any) => {
         <>
           {' '}
           <et-sr2>
-            <DouveryIcon color="#FFF" /> Verified to Douvery
+            Verified by <DouveryIcon color="#FFF" />
           </et-sr2>
         </>
       ) : (

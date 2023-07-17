@@ -108,14 +108,14 @@ export default component$(() => {
             />
             <PromotionRecomend_Carousel_DuiPass styleNumber={11} dui={dui} />
           </div>
-          <div class="container__product_promotions">
+          {/* <div class="container__product_promotions">
             {' '}
             <Title__showmore1 title="Explora productos populares" link="/" />
             <Promotion_Carousel__PopularProductsAll
               ref={ref(3)}
               styleNumber={11}
             />
-          </div>
+          </div> */}
         </div>
       ) : (
         <div class="login-popup">

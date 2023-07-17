@@ -511,6 +511,7 @@ select option {
 
 .content_priceHistory svg {
     fill: #999999;
+    width: 15px;
 }
 
 .priceDecrease {

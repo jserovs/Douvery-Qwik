@@ -1,0 +1,33 @@
+.div-car {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.title-show {
+    background-color: #fff;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 0px;
+
+}
+
+.title-show h2 {
+    color: #000;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.show-more a {
+    color: #008080;
+    font-size: 12.5px;
+}
+
+.show-more a:hover {
+    color: #008080;
+    text-decoration: underline;
+}
