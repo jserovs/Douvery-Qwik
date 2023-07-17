@@ -11,6 +11,7 @@ import { ButtonDetailContainer } from './container-button-details';
 import numeral from 'numeral';
 import { useGetCurrentUser } from '~/routes/layout';
 import { useLocation } from '@builder.io/qwik-city';
+import { Carousel_QuantiyViewedProducts } from '~/components/(Promotions)/carousel/carousel-recomend-quantyview-product copy/carousel-recomend-quantyview-product';
 
 export const DetailContainer = component$(({ props }: any) => {
   useStylesScoped$(styles);
@@ -171,7 +172,6 @@ export const DetailContainer = component$(({ props }: any) => {
             <size-w class="size-w-10" />
             <size-w class="size-w-10" />
           </div>
-
           {user?.id ? (
             <div class="content_priceHistory">
               <a href={'/price-history/' + props.dui}>
@@ -208,14 +208,15 @@ export const DetailContainer = component$(({ props }: any) => {
             </div>
           ) : (
             ''
-          )}
-          <div class="session_buttons">
-            {props.quantity <= 1 ? (
-              <div class="no-stock">
-                <div class="circle"></div>
-                <h5 class="title-prtsea">Articulo agotado</h5>
-              </div>
-            ) : (
+          )}{' '}
+          {props.quantity <= 1 ? (
+            <>
+              {' '}
+              <p>Options:</p>
+              <Carousel_QuantiyViewedProducts product={props} qty={3} />
+            </>
+          ) : (
+            <div class="session_buttons">
               <div class="content_qty">
                 <span>Qty:</span>
                 <div class="div-input-sertts">
@@ -234,15 +235,16 @@ export const DetailContainer = component$(({ props }: any) => {
                   </div>
                 </div>
               </div>
-            )}
-            <div class="div-button">
-              {' '}
-              <ButtonDetailContainer
-                product={props}
-                quantity={quantityCart.setQuantityCart}
-              />
+
+              <div class="div-button">
+                {' '}
+                <ButtonDetailContainer
+                  product={props}
+                  quantity={quantityCart.setQuantityCart}
+                />
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </>

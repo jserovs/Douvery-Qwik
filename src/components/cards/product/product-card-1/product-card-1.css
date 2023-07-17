@@ -26,8 +26,7 @@
 }
 
 .product-name,
-.product-brand,
-.product-price {
+.product-brand {
     width: 100%;
 
 }
@@ -63,13 +62,21 @@
 }
 
 .product-price {
+    font-size: 16px;
+}
+
+.product-price-discount {
+
     font-size: 14px;
+    color: #64748B;
 }
 
 .crt-prc {
+    width: 100%;
     display: flex;
     gap: 10px;
     align-items: center;
+    margin-top: 5px;
 }
 
 .etq-vrs {

@@ -47,7 +47,7 @@ export const ContainerCardProduct2 = component$(({ product, ref }: any) => {
             <strong class="hs-sr1 product-price">
               <UsePrice price={discoun} />
             </strong>
-            <p class="ps-sr1 product-price tach">
+            <p class="ps-sr1  tach product-price-discount">
               <UsePrice price={product.price} />
             </p>
           </>

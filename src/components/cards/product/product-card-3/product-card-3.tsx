@@ -59,7 +59,7 @@ export const ContainerCardProduct3 = component$(({ product, ref }: any) => {
           <>
             {' '}
             <div class="etq-vrs">
-              <DouveryIcon color="#6466e8" /> Verified to Douvery
+              Verified by <DouveryIcon color="#6466e8" />
             </div>
           </>
         ) : (

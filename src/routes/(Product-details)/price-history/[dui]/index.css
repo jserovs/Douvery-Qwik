@@ -14,7 +14,7 @@
 .content {
 
     display: flex;
-
+    max-width: 1500px;
     justify-content: flex-start;
     align-items: flex-start;
     gap: 20px;
@@ -86,7 +86,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
     gap: 00px;
