@@ -12,9 +12,6 @@ export const DouveryAuthLogo = component$(() => {
         class="inline-flex items-center iteam-douvery"
       >
         <DouveryLogo40x40 color="var(--color-primary)" />
-        <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-          Douvery
-        </span>
       </a>
     </div>
   );
