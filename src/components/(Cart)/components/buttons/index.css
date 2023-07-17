@@ -105,6 +105,12 @@
     gap: 10px;
 }
 
+.buttons-ca button:active {
+    transform: scale(0.95);
+    background-color: #c7c2c2;
+
+}
+
 @media only screen and (max-width: 885px) {
     .buttos-cart {
         display: flex;
