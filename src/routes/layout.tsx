@@ -22,7 +22,9 @@ export const useGetCurrentUser = routeLoader$<UserACC | null>(
     const accessCookie = cookie.get(DATA_ACCESS_COOKIE_NAME)?.value;
 
     if (accessCookie) {
-      return decodeToken(accessCookie, passwordKEY, serverKey);
+      const data = decodeToken(accessCookie, passwordKEY, serverKey);
+
+      return data;
     }
     return null;
   }

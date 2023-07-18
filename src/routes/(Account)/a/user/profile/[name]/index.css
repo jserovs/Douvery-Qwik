@@ -22,7 +22,7 @@
     grid-template-columns: auto auto;
 
     align-items: start;
-    justify-content: space-around;
+
 }
 
 
@@ -62,11 +62,11 @@ button:active {
 }
 
 .container-box-content {
-    width: 80%;
+    width: 100%;
     display: grid;
     gap: 30px;
     text-align: start;
-    justify-content: stretch;
+
     padding: 0px 50px;
 
 }
