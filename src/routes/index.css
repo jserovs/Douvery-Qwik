@@ -49,8 +49,13 @@
 
     position: relative;
     margin-bottom: 25px;
+    background-color: var(--color-background-white);
+    padding: 0px 10px;
 
+}
 
+.border_1 {
+    border-bottom: 1px solid var(--border-width-1);
 }
 
 .container-aoutandingproducts .title-show {

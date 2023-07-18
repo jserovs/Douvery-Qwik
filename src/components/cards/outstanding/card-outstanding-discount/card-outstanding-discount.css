@@ -4,13 +4,13 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    background-color: var(--color-background-white);
+
     flex-direction: row-reverse;
     height: 300px;
     gap: 0px;
     border-radius: 10px;
     position: relative;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
 }
 
 .container-a {
@@ -31,11 +31,11 @@
     object-fit: contain;
     border-radius: 5px;
     padding: 20px;
+    background-color: var(--color-background-card);
 }
 
 .image-container:hover {
     cursor: pointer;
-    background-color: var(--color-background-card);
 
 }
 
@@ -73,5 +73,5 @@
         font-size: 16px;
     }
 
-    
+
 }

@@ -22,6 +22,7 @@ import { fuctionRef } from '~/fuctions/fuctionRef';
 import { BannerCarouselHome } from '~/components/carBanner/carBanner';
 import { PromotionRecomend_Carousel_5LastView } from '~/components/(Promotions)/carousel/carousel-recomend-5last-view-product/carousel-recomend-5last-view-product ';
 import { useGetCurrentUser } from './layout';
+import { Title__showmore1 } from '~/components/use/title__showmore/title__showmore1/title__showmore1';
 
 export default component$(() => {
   useStylesScoped$(styles);
@@ -86,17 +87,6 @@ export default component$(() => {
           <br />
 
           <AllCategoryStoresId1 />
-          <div class="separator_custom" />
-          {user?.id && (
-            <>
-              {' '}
-              <PromotionRecomend_Carousel_5LastView
-                ref={ref(4)}
-                styleNumber={11}
-              />
-              <div class="separator_custom" />
-            </>
-          )}
         </div>
 
         <div class="container-carousel-interes">
@@ -107,18 +97,13 @@ export default component$(() => {
               <a href="dsaf/">Ver mas</a>
             </div>
           </div>
-          <Promotion_CarouselInterestViews ref={ref(3)} styleNumber={6} />
+          <Promotion_CarouselInterestViews ref={ref(3)} styleNumber={11} />
         </div>
 
         <br />
         <div class="container-aoutandingproducts">
-          <div class="title-show">
-            <h2>Explora lo mejor de Douvery </h2>
-            <div class="show-more">
-              {' '}
-              <a href="dsaf/">Ver mas</a>
-            </div>
-          </div>
+          <Title__showmore1 title="Explora lo mejor de Douvery" />
+          <div class="border_1"></div>
           <OutstandingProductFlex1 />
         </div>
 
@@ -141,6 +126,16 @@ export default component$(() => {
             </div>
             <br />
           </>
+        )}
+        {user?.id && (
+          <div class="container-carousel-interes">
+            <div class="separator_custom" />
+            <PromotionRecomend_Carousel_5LastView
+              ref={ref(4)}
+              styleNumber={11}
+            />
+            <div class="separator_custom" />
+          </div>
         )}
       </div>
     </div>
