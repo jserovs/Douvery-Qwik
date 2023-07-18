@@ -39,7 +39,7 @@
     object-fit: contain;
     border-radius: 5px;
     padding: 20px;
-    background-color: var(--color-background-card);
+
 }
 
 .image-container:hover {
