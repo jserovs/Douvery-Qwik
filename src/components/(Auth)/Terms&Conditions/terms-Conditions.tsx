@@ -6,7 +6,11 @@ export const TermsConditions = component$(() => {
     <div class="terms-and-conditions">
       {' '}
       <p>
-        Al continuar, aceptas nuestros <a href="#">Términos y condiciones</a>.
+        Al continuar, aceptas nuestros{' '}
+        <a href="https://help.douvery.com/help/Pol%C3%ADticas/privacy-policy">
+          Términos y condiciones
+        </a>
+        .
       </p>
     </div>
   );

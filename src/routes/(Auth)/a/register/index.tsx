@@ -1,6 +1,6 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import { Form, globalAction$, z, zod$ } from '@builder.io/qwik-city';
-import type { RequestHandler } from '@builder.io/qwik-city';
+import type { DocumentHead, RequestHandler } from '@builder.io/qwik-city';
 import {
   DATA_ACCESS_COOKIE_NAME,
   setCookiesData,
@@ -199,3 +199,12 @@ export default component$(() => {
     </div>
   );
 });
+export const head: DocumentHead = {
+  title: 'Douvery: Create account',
+  meta: [
+    {
+      name: 'description',
+      content: 'Create account to Douvery',
+    },
+  ],
+};
