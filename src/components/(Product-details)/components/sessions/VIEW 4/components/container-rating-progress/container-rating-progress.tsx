@@ -13,7 +13,7 @@ import { fetchProductRatingsCounts } from '~/services/reviews/rating/rating';
 export const ContaineProductReviewsRatingProgress = component$(
   ({ product }: any) => {
     useStylesScoped$(styles);
-    const totalRat = useSignal(0);
+
     const ratingCounts = useSignal({
       1: 0,
       2: 0,
@@ -44,7 +44,7 @@ export const ContaineProductReviewsRatingProgress = component$(
           <div class="crrtr-srtrt">
             <div class="ctr-ratings-total">
               <div class="ctr-stars">
-                <p-sr3>{totalRat.value}</p-sr3>{' '}
+                <p-sr3>{product.averageRating}</p-sr3>{' '}
                 <OneStar color="#008080" rating={1} size="25" />
               </div>
               <div class="ctr-total">
