@@ -34,12 +34,13 @@
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     padding: 10PX 20px;
     transition: opacity 5s;
-    z-index: 1000;
+    z-index: 1;
 }
 
 
 .ctr-stars:hover .ctr-progr {
     animation: smoApp 0.5s ease-in-out;
+    z-index: 10000000;
 }
 
 .ct-ratig {
