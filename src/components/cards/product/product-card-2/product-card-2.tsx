@@ -3,18 +3,13 @@ import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './product-card-2.css?inline';
 import { UsePrice } from '~/components/use/price/price';
 
-import { Stars } from '~/components/Ratings/stars/stars';
-
 import { UseProductDetailsLink } from '~/services/fuction';
+import { UseStarRatingNoHover } from '~/components/use/ratings/UseStarRatingNoHover/UseStarRatingNoHover';
 
 export const ContainerCardProduct2 = component$(({ product, ref }: any) => {
   useStylesScoped$(styles);
   const discoun = product.price - product.price * (product.discount / 100);
 
-  let totalRating = 0.0;
-  for (let i = 0; i < product.ratings.length; i++) {
-    totalRating = product.ratings[i].rating;
-  }
   return (
     <div class="product-card">
       <a href={UseProductDetailsLink(product, ref)}>
@@ -33,8 +28,8 @@ export const ContainerCardProduct2 = component$(({ product, ref }: any) => {
           {product.name[0].toUpperCase() + product.name.substring(1)}
         </h2>
       </a>
-      <div class="ctr-stars">
-        <Stars size="16" rating={totalRating} /> ({totalRating}){' '}
+      <div class="container-ratings">
+        <UseStarRatingNoHover product={product} size={18} />
       </div>
 
       <div class=" product-brand"> {product.marca}</div>

@@ -74,11 +74,7 @@ export default component$(() => {
         </div>
         <div class="container-card-store-categorie">
           <div class="title-show">
-            <h2>
-              {' '}
-              Explora algunas de las categorías disponibles en la tienda de{' '}
-              Douvery.
-            </h2>
+            <h2> Explora la store de Douvery.</h2>
             <div class="show-more">
               {' '}
               <a href="dsaf/">Ver mas</a>

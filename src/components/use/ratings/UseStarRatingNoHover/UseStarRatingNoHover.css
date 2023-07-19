@@ -16,6 +16,11 @@
     align-items: center;
 }
 
+.ct-ratig {
+    font-size: 13px;
+    color: #000;
+}
+
 .ctr-progr {
     display: none;
 

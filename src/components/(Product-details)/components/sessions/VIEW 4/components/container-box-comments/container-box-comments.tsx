@@ -77,7 +77,7 @@ export const ContainerBoxComments = component$(({ datePurchase }: any) => {
                               <>
                                 {' '}
                                 <div class="container-img-reviews">
-                                  <img src={img} />
+                                  <img width={100} height={200} src={img} />
                                 </div>
                               </>
                             ))}
@@ -107,57 +107,53 @@ export const ContainerBoxComments = component$(({ datePurchase }: any) => {
                   </>
                 )}
 
-                {state.reviewsProduct.length > 0 ? (
-                  <ul>
-                    {state.reviewsProduct
-                      .slice(0, state.reviewsToShow)
-                      .map((review: any) => {
-                        return (
-                          <div class="container-box-reviews" key={review.id}>
-                            <CardComment1
-                              id={review._id}
-                              timePublic={review.date}
-                              buyTime={review.purchaseDates[0]}
-                              avatar={review.buyer.avatar}
-                              name={
-                                review.buyer.name + ' ' + review.buyer.lastname
-                              }
-                              rating={review.rating}
-                              title={review.title}
-                              comment={review.review}
-                              images={review.photos}
-                              helpful={review.helpful}
-                              notHelpful={review.notHelpful}
-                              datePurchase={datePurchase}
-                              comments={review.comments}
-                            />
-                          </div>
-                        );
-                      })}
-                    <div class="cotainer-reviewshow">
-                      {state.reviewsProduct.length > state.reviewsToShow && (
-                        <button
-                          onClick$={() => {
-                            state.reviewsToShow += 5;
-                          }}
-                        >
-                          Ver más
-                        </button>
-                      )}
-                      {state.reviewsToShow > 5 && (
-                        <button
-                          onClick$={() => {
-                            state.reviewsToShow = 5;
-                          }}
-                        >
-                          Ver menos
-                        </button>
-                      )}
-                    </div>
-                  </ul>
-                ) : (
-                  <div class="no-results"> No hay resultados </div>
-                )}
+                <ul>
+                  {state.reviewsProduct
+                    .slice(0, state.reviewsToShow)
+                    .map((review: any) => {
+                      return (
+                        <div class="container-box-reviews" key={review.id}>
+                          <CardComment1
+                            id={review._id}
+                            timePublic={review.date}
+                            buyTime={review.purchaseDates[0]}
+                            avatar={review.buyer.avatar}
+                            name={
+                              review.buyer.name + ' ' + review.buyer.lastname
+                            }
+                            rating={review.rating}
+                            title={review.title}
+                            comment={review.review}
+                            images={review.photos}
+                            helpful={review.helpful}
+                            notHelpful={review.notHelpful}
+                            datePurchase={datePurchase}
+                            comments={review.comments}
+                          />
+                        </div>
+                      );
+                    })}
+                  <div class="cotainer-reviewshow">
+                    {state.reviewsProduct.length > state.reviewsToShow && (
+                      <button
+                        onClick$={() => {
+                          state.reviewsToShow += 5;
+                        }}
+                      >
+                        Ver más
+                      </button>
+                    )}
+                    {state.reviewsToShow > 5 && (
+                      <button
+                        onClick$={() => {
+                          state.reviewsToShow = 5;
+                        }}
+                      >
+                        Ver menos
+                      </button>
+                    )}
+                  </div>
+                </ul>
               </>
             )}
           />
