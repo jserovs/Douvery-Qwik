@@ -5,3 +5,8 @@ footer {
 a:hover {
     text-decoration: underline;
 }
+
+.link {
+    color: var(--color-action-show-more);
+    text-decoration: none;
+}
