@@ -11,15 +11,15 @@ export const Footer = component$(() => {
       <div class="bg-white px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div class="grid gap-16 row-gap-10 mb-8 lg:grid-cols-6">
           <div class="md:max-w-md lg:col-span-2">
-           
-           
+
+
             <a
               href="/"
-              aria-label="Go home"
+              aria-label="Go home - Douvery"
               title="Douvery"
               class="inline-flex items-center"
             >
-              <DouveryLogo40x40Cuadre />
+              <DouveryLogo40x40Cuadre size={20} />
               <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
                 Douvery
               </span>
@@ -30,15 +30,16 @@ export const Footer = component$(() => {
                 bienvenido a Douvery.
               </p>
               <br />
-              <a href="">Ir a Douvery</a>
+
             </div>
             <br /> <a
-              href="/"
-              aria-label="Go home"
+              href="https://stores.douvery.com/"
+
+              aria-label="Go home - Douvery Stores"
               title="Douvery"
               class="inline-flex items-center"
             >
-              <DouveryLogo40x40Cuadre />
+              <DouveryLogo40x40Cuadre size={20} />
               <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
                 Douvery Stores
               </span>
@@ -48,6 +49,7 @@ export const Footer = component$(() => {
                 Recursos infinitos para tu tienda, vende con facilidad en
                 Douvery.
               </p>
+              <a class='link' href="https://stores.douvery.com/">Ir a Douvery Stores</a>
             </div>
           </div>
           <div class="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4">

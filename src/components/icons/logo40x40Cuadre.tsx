@@ -1,47 +1,22 @@
 //TODO: Logo transpartnt background
 
 export const DouveryLogo40x40Cuadre = ({ size }: any) => (
-  <svg
-    width={size || 40}
-    height={size || 40}
-    viewBox="0 0 48 48"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M0 5C0 2.23858 2.23858 0 5 0H43C45.7614 0 48 2.23858 48 5V43C48 45.7614 45.7614 48 43 48H5C2.23858 48 0 45.7614 0 43V5Z"
-      fill="#0D47A1"
-    />
-    <g filter="url(#filter0_b_316_2)">
-      <path
-        d="M36.2071 15.04L17.293 18.6819C16.9745 18.7432 16.8576 19.1383 17.0915 19.3631L21.6243 23.7195C21.8532 23.9395 21.7468 24.3258 21.4374 24.3975L10.6257 26.9029L4.69827 28.1766C4.22929 28.2773 4.30262 28.9676 4.7823 28.9676H16.5346H35.6016C35.9337 28.9676 36.1211 28.5865 35.9185 28.3235L32.1378 23.4176C31.9351 23.1546 32.1226 22.7734 32.4547 22.7734H43.257C43.6139 22.7734 43.7921 22.3416 43.5392 22.0899L36.5649 15.1493C36.471 15.0559 36.3371 15.015 36.2071 15.04Z"
-        fill="white"
-      />
+  <svg width={size || "104"} height={size || "104"} viewBox="0 0 104 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <mask id="mask0_2_94" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="104" height="102">
+      <path d="M80 0H24C10.7452 0 0 10.7452 0 24V78C0 91.2548 10.7452 102 24 102H80C93.2548 102 104 91.2548 104 78V24C104 10.7452 93.2548 0 80 0Z" fill="white" />
+    </mask>
+    <g mask="url(#mask0_2_94)">
+      <path d="M-18 -2.14287V104.143C-18 116.767 -9.23355 127 1.58042 127H102.42C113.234 127 122 116.767 122 104.143V-2.14287C122 -14.7665 113.234 -25 102.42 -25H1.58042C-9.23355 -25 -18 -14.7665 -18 -2.14287Z" fill="#212A3E" />
+      <path d="M23 53.1494L23 27" stroke="#0567FF" stroke-width="13" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M23 73.0305V52" stroke="#00C9C9" stroke-width="13" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+      <mask id="mask1_2_94" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="32" y="21" width="57" height="59">
+        <path d="M88.3386 21.948H32.5957V79.2843H88.3386V21.948Z" fill="white" />
+      </mask>
+      <g mask="url(#mask1_2_94)">
+        <path d="M32 79.3363V22H56.0899C61.272 22 65.8379 22.7558 69.7595 24.2545C73.7091 25.7661 77.0145 27.8156 79.6756 30.4032C82.3226 33.0035 84.3255 36.0394 85.67 39.5237C87.0426 42.9823 87.7429 46.6715 87.7429 50.5913C87.7429 54.9722 86.9726 58.9176 85.4459 62.4275C83.9473 65.9501 81.8184 68.9732 79.0593 71.4967C76.2862 73.9946 72.9668 75.9289 69.0872 77.2867C65.1936 78.6574 60.8658 79.3363 56.0899 79.3363H32ZM70.2637 50.5913C70.2637 48.3752 69.9276 46.3641 69.2553 44.5451C68.611 42.7005 67.6866 41.1505 66.4541 39.8824C65.2496 38.5886 63.779 37.5766 62.0283 36.8593C60.2636 36.1163 58.2888 35.732 56.0899 35.732H49.1991V65.6043H56.0899C58.3308 65.6043 60.3196 65.2328 62.0843 64.477C63.8771 63.734 65.3617 62.6836 66.5662 61.3514C67.7567 59.9936 68.667 58.4052 69.3113 56.5862C69.9416 54.7416 70.2637 52.7433 70.2637 50.5913Z" fill="white" />
+      </g>
     </g>
-    <defs>
-      <filter
-        id="filter0_b_316_2"
-        x="-5.61792"
-        y="5.03271"
-        width="59.2758"
-        height="33.9348"
-        filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
-      >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
-        <feGaussianBlur in="BackgroundImageFix" stdDeviation="5" />
-        <feComposite
-          in2="SourceAlpha"
-          operator="in"
-          result="effect1_backgroundBlur_316_2"
-        />
-        <feBlend
-          mode="normal"
-          in="SourceGraphic"
-          in2="effect1_backgroundBlur_316_2"
-          result="shape"
-        />
-      </filter>
-    </defs>
   </svg>
+
 );
+

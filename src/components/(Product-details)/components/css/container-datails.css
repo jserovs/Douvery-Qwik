@@ -109,7 +109,7 @@
 }
 
 .tooltip-content {
-    width: 220px;
+    width: 245px;
     background-color: var(--color-stars);
     color: #fff;
     border: 1px solid #fff;
@@ -124,7 +124,7 @@
     top: 125%;
     /* Posición del tooltip */
     left: 50%;
-    margin-left: -110px;
+    margin-left: -130px;
     /* Alinea el tooltip al centro */
 
 
