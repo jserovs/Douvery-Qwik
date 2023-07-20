@@ -24,13 +24,25 @@ export default component$(() => {
 
         <link rel="manifest" href="/manifest.json" />
         <QwikPartytown forward={['dataLayer.push']} />
+
+        <script defer src="/_vercel/insights/script.js"></script>
+        <QwikPartytown forward={['gtag', 'dataLayer.push']} debug={true} />
+        <script
+          type="text/partytown"
+          dangerouslySetInnerHTML={`
+                    window.dataLayer = window.dataLayer || [];
+                    window.gtag = function() {
+                    dataLayer.push(arguments);
+                    }
+                    gtag("js", new Date());
+                    gtag("config", "G-F6975H93NJ");
+                    `}
+        />
         <script
           async
           type="text/partytown"
-          src="https://www.googletagmanager.com/gtag/js?id=G-F6975H93NJ"
+          src={`https://www.googletagmanager.com/gtag/js?id=G-F6975H93NJ`}
         />
-        <script defer src="/_vercel/insights/script.js"></script>
-
         <RouterHead />
       </head>
       <body lang="es">
